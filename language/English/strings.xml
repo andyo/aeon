@@ -4,10 +4,10 @@
 
  <strings>
 	<string id="31000">0.9 (STARK)</string> <!-- DO NOT CHANGE -->
-	<string id="31001"></string>
+	<string id="31001">N/A</string>
 	<string id="31002">MUTED</string>
 	<string id="31003">WEATHER SCREEN OPTIONS UNAVAILABLE IN THIS VERSION</string>
-	<string id="31004">RESET BACKDROP</string>
+	<string id="31004">RESET[CR]BACKDROP</string>
 	<string id="31005">ITEMS</string>
 	<string id="31006">NOW PLAYING</string>
 	<string id="31007">PAUSED</string>
@@ -45,33 +45,46 @@
 	<string id="31041">BY:</string>
 
 <!-- Media Window options -->
-  
+
+	<string id="31042">FLOOR: LIGHT</string>
+	<string id="31043">FLOOR: NIGHT</string>
+	<string id="31044">ART</string>
+	<string id="31045">THUMB</string>
+	<string id="31046">PLOT</string>
+	<string id="31047">STYLE</string>
+	<string id="31048">TRIGGER</string>
+	<string id="31049">AUTO</string>
 	<string id="31050">VIEW:</string> 
-	<string id="31051">RANDOM: OFF</string>
-	<string id="31052">RANDOM: ON</string> 
-	<string id="31053">LIBRARY: OFF</string> 
+	<string id="31051">RANDOM</string>
+	<string id="31052">THICK</string> 
+	<string id="31053">THIN</string> 
 	<string id="31054">SETUP</string> 
-	<string id="31055">STACK: ON</string> 
-	<string id="31056">STACK: OFF</string>
+	<string id="31055">STACK</string> 
+	<string id="31056">THUMB: SQUARE</string>
 	<string id="31057">FILES</string>
-	<string id="31058">HIDE WATCHED: ON</string>
-	<string id="31059">HIDE WATCHED: OFF</string>
+	<string id="31058">HIDE WATCHED</string>
+	<string id="31059">THUMB: POSTER</string>
 	<string id="31060">LAYOUT: FLAT</string>
 	<string id="31061">LAYOUT: FLOW</string>
 	<string id="31062">SEASON</string>
 	<string id="31063">EPISODE</string>
-	<string id="31064">FANART: OFF</string>
-	<string id="31065">FANART: ON</string>
-	<string id="31066">BACKDROP: ON</string>
-	<string id="31067">BACKDROP: OFF</string>
-	<string id="31068">LIBRARY: ON</string>
-	<string id="31069">FLAGS: ON</string>
-	<string id="31070">FLAGS: OFF</string>
-	<string id="31071">THUMBS: SINGLE</string>
-	<string id="31072">THUMBS: MULTI</string>
-	<string id="31073">GRID: DEFAULT</string>
-	<string id="31074">GRID: MAX</string>
-  
+	<string id="31064">FANART</string>
+	<string id="31065">PANEL</string>
+	<string id="31066">OVERLAY</string>
+	<string id="31067">BACKDROP</string>
+	<string id="31068">LIBRARY</string>
+	<string id="31069">FLAGS</string>
+	<string id="31070">INFO</string>
+	<string id="31071">SLIM</string>
+	<string id="31072">FULL</string>
+	<string id="31073">DEFAULT</string>
+	<string id="31074">MAX</string>
+	<string id="31075">LAYOUT</string>
+	<string id="31076">GRID</string>
+	<string id="31077">ON</string>
+	<string id="31078">OFF</string>
+	<string id="31079">AUTOHIDE</string>
+	
 <!-- Aeon Customisation Virtual Home page labels -->
   
 	<string id="31080">BACKDROPS</string>
@@ -192,9 +205,16 @@
 	<string id="31243">DISABLE ALL</string>
 	<string id="31244">MENUS</string>
 	<string id="31245">BROWSING LAYOUT</string>
+	<string id="31246">TWEAKS</string>
+	<string id="31247">MODS SETTINGS</string>
   
 <!-- Aeon Advanced options -->
- 
+
+	<string id="31249">MEDIA FLAGS TOGGLE</string>
+	<string id="31250">MULTIPLEX LAYOUT (FANART, PLOT, POSTER, THUMBSHOW)</string>
+	<string id="31251">MULTIPLEX INFO TOGGLE (ON, OFF, AUTO, TRIGGER)</string>
+	<string id="31252">GRADIENT EFFECT FOR HOME MAIN MENU</string>
+	<string id="31253">LINK GAMES SHORTCUT TO 'LAUNCHER' PLUGIN</string>
 	<string id="31258">SHOW RATINGS (IMDB, ETC.) IN MOVIE INFO PAGE</string>
 	<string id="31259">DEFAULT ICONS FOR MEDIA FLAGS (OFF FOR BLANK SPACES)</string>
 	<string id="31260">SHOW TIME PANEL</string>
@@ -222,7 +242,7 @@
 	<string id="31293">FILES VIEW SHORTCUT (MOVIE AND TV LIBRARIES)</string>
 	<string id="31294">LARGER KEYBOARD / NUMERIC KEYPAD</string>
 	<string id="31295">IMPROVED LEGIBILITY (LARGER TIME AND RSS)</string>
-	<string id="31296">SINGLE/MULTI THUMBNAILS TOGGLE</string>
+	<string id="31296">LIGHT / NIGHT THEME TOGGLE</string>
 	<string id="31297">USE SINGLE THUMBNAIL FOR MUSIC LIST</string>
 	<string id="31298">USE SINGLE THUMBNAIL FOR MOVIE LIST</string>
 	<string id="31299">SHOW RSS / NOW PLAYING IN SHOWCASE VIEW</string>
@@ -279,7 +299,7 @@
 	<string id="31400">NO POSTER?[CR][CR]CHECK YOU HAVE A SEPARATE "BIG" THUMB[CR]ALONGSIDE YOUR MOVIE FILE AND THAT[CR]THE NAMING CONVENTION IS OBEYED[CR](BARBARELLA.MKV-BIG.PNG)[CR][CR]CHECK THE AEON MANUAL FOR MORE DETAILS</string>
 	<string id="31401">WRITTEN BY</string>
 	<string id="31402">DIRECTED BY</string>
-	<string id="31403">EPISODES:</string>
+	<string id="31403">EPISODES</string>
 	<string id="31404">STUDIO:</string>
 	<string id="31405">STARRING</string>
 	<string id="31406">EPISODES</string>
@@ -312,7 +332,15 @@
 	<string id="31433">EPISODE</string>
 	<string id="31434">DURATION</string>
 	<string id="31435">CAST DETAILS UNAVAILABLE</string>
-
+	<string id="31436">YEAR</string>
+	<string id="31438">GENRE</string>
+	<string id="31439">WATCHED</string>
+	<string id="31440">UNWATCHED</string>
+	<string id="31441">DATE INFO UNAVAILABLE</string>
+	<string id="31442">DATE MODIFIED INFO UNAVAILABLE</string>
+	<string id="31443">RESOLUTION INFO UNAVAILABLE</string>
+	<string id="31444">FILESIZE INFO UNAVAILABLE</string>
+	
 <!--  Aeon Assistant  -->
 
 	<string id="31500">NEWS</string>
@@ -402,6 +430,8 @@
 	<string id="31754">SELECT</string>	
 	<string id="31755">DIRECTIONS CHOOSE VIEWS[CR]CLICK TO ESCAPE</string>	
 	<string id="31756">ONLY LIST VIEW IS AVAILABLE FOR EPISODES</string>
+	<string id="31757">MULTIPLEX</string>
+	<string id="31578">STRIPSHOW</string>
 
 <!-- Aeon Settings panel labels -->
   
@@ -441,5 +471,27 @@
 	<string id="31908">...AND YOU</string>
 	<string id="31909">AEON WILL RETURN IN</string>
 	<string id="31910">WEATHER WALLPAPERS</string>
+	
+<!-- Submenu / Objects -->
+
+	<string id="31920">RECENT</string>
+	<string id="31921">TITLES</string>
+	<string id="31922">GENRES</string>
+	<string id="31923">YEARS</string>
+	<string id="31924">ACTORS</string>
+	<string id="31925">DIRECTORS</string>
+	<string id="31926">STUDIOS</string>
+	<string id="31927">ARTISTS</string>
+	<string id="31928">ALBUMS</string>
+	<string id="31929">PLAYLISTS</string>
+	<string id="31930">TOP 100</string>
+	<string id="31931">VIDEOS</string>
+	<string id="31932">FILES</string>
+	<string id="31933">SHOWS</string>
+	<string id="31934">MOVIES</string>
+	<string id="31935">ITEMS</string>
+	<string id="31936">TRACKS</string>
+	<string id="31937">SEASONS</string>
+	<string id="31938">EPISODES</string>
 	
 </strings>

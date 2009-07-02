@@ -1,5 +1,8 @@
 <window type="dialog" id="2000">
 	<defaultcontrol>3</defaultcontrol>
+										<!-- castmod let window appear in front of video info -->
+										<zorder>3</zorder>
+										<!-- end castmod let window appear in front of video info -->
 	<coordinates>
 	<system>1</system>
 	<posx>0</posx>
@@ -17,15 +20,21 @@
 		<texture>osd/osd_settings_back.png</texture>
 	</control>
 
-	<control type="label" id="2">
-		<description>Number of Files Label</description>
-		<posx>350</posx>
-		<posy>475</posy>
-		<label>-</label>
-		<font>fruity17</font>
-		<textcolor>FF818181</textcolor>
-		<include>common-fade</include>
-	</control>
+										<!-- castmod keeps plot/cast button from disappearing -->
+										<control type="button" id="5">
+											<description>manual button</description>
+											<posx>12</posx>
+											<posy>330</posy>
+											<width>90</width>
+											<align>center</align>
+											<label>368</label>
+											<font>font10</font>
+											<onleft>3</onleft>
+											<onright>3</onright>
+											<onup>3</onup>
+											<ondown>3</ondown>
+										</control>
+										<!-- end castmod keeps plot/cast button from disappearing -->
 
 	<control type="list" id="3">
 		<posx>250</posx>

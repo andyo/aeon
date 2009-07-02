@@ -117,8 +117,17 @@
 				</control>
 				<control type="image">
 					<include>Objects_WeatherIcon</include>
-					<texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>				
+					<texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>
+					<visible>!Skin.HasSetting(weathericons)</visible>					
 				</control>
+				<control type="multiimage">
+					<include>Objects_WeatherIcon</include>
+					<imagepath>\icon\$INFO[Window(Weather).Property(Day0.FanartCode)]</imagepath>
+					<timeperimage>75</timeperimage>
+					<randomize>false</randomize>
+					<fadetime>0</fadetime>
+					<visible>Skin.HasSetting(weathericons)</visible>					
+				</control>				
 			</control>
 			<control type="group">
 				<posx>586</posx>
@@ -144,7 +153,16 @@
 				</control>
 				<control type="image">
 					<include>Objects_WeatherIcon</include>
-					<texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>				
+					<texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>
+					<visible>!Skin.HasSetting(weathericons)</visible>				
+				</control>
+				<control type="multiimage">
+					<include>Objects_WeatherIcon</include>
+					<imagepath>\icon\$INFO[Window(Weather).Property(Day1.FanartCode)]</imagepath>
+					<timeperimage>75</timeperimage>
+					<randomize>false</randomize>
+					<fadetime>0</fadetime>
+					<visible>Skin.HasSetting(weathericons)</visible>					
 				</control>
 			</control>
 			<control type="group">
@@ -171,7 +189,16 @@
 				</control>
 				<control type="image">
 					<include>Objects_WeatherIcon</include>
-					<texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>				
+					<texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>
+					<visible>!Skin.HasSetting(weathericons)</visible>				
+				</control>
+				<control type="multiimage">
+					<include>Objects_WeatherIcon</include>
+					<imagepath>\icon\$INFO[Window(Weather).Property(Day2.FanartCode)]</imagepath>
+					<timeperimage>75</timeperimage>
+					<randomize>false</randomize>
+					<fadetime>0</fadetime>
+					<visible>Skin.HasSetting(weathericons)</visible>					
 				</control>
 			</control>
 			<control type="group">
@@ -198,7 +225,16 @@
 				</control>
 				<control type="image">
 					<include>Objects_WeatherIcon</include>
-					<texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>				
+					<texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>
+					<visible>!Skin.HasSetting(weathericons)</visible>				
+				</control>
+				<control type="multiimage">
+					<include>Objects_WeatherIcon</include>
+					<imagepath>\icon\$INFO[Window(Weather).Property(Day3.FanartCode)]</imagepath>
+					<timeperimage>75</timeperimage>
+					<randomize>false</randomize>
+					<fadetime>0</fadetime>
+					<visible>Skin.HasSetting(weathericons)</visible>					
 				</control>
 			</control>
 		</control>
@@ -207,7 +243,7 @@
 <!-- Media windows -->
 
 	<include name="Objects_MediaLogo">
-		<posx>49</posx> 
+		<posx>15</posx> 
 		<posy>13</posy>
 		<width>44</width>
 		<height>30</height>
@@ -216,7 +252,7 @@
 	</include>
 
 	<include name="Objects_MediaLabel">
-		<posx>111</posx> 
+		<posx>70</posx> 
 		<posy>14</posy>
 		<height>25</height>
 		<font>Font_MediaWindowTitle</font>
@@ -229,9 +265,9 @@
 	</include>
 	
 	<include name="Objects_MediaMenuGroup">	
-		<posx>230</posx>
+		<posx>200</posx>
 		<posy>9</posy>
-		<width>990</width>
+		<width>1050</width>
 		<height>34</height>
 		<itemgap>0</itemgap>
 		<orientation>horizontal</orientation>
@@ -245,7 +281,7 @@
 
 	<include name="Objects_MediaMenuButton">
 		<height>34</height>
-		<width>195</width>
+		<width>150</width>
 		<texturenofocus>windows/menudivider.png</texturenofocus>
 		<texturefocus>windows/menudivider.png</texturefocus>
 		<alttexturenofocus>windows/menudivider.png</alttexturenofocus>
@@ -262,8 +298,8 @@
 
 	<include name="Objects_WallBackdropButton">
 		<control type="togglebutton" id="907">
-			<label>31067</label>
-			<altlabel>31066</altlabel>
+			<label>$LOCALIZE[31067]: $LOCALIZE[31078]</label>
+			<altlabel>$LOCALIZE[31067]: $LOCALIZE[31077]</altlabel>
 			<usealttexture>Skin.HasSetting(transparentwall)</usealttexture>
 			<include>Objects_MediaMenuButton</include>
 			<onclick>Skin.ToggleSetting(transparentwall)</onclick>
@@ -273,33 +309,44 @@
 	
 	<include name="Objects_FlagsButton">
 		<control type="togglebutton" id="916">
-			<label>31069</label>
-			<altlabel>31070</altlabel>
+			<label>$LOCALIZE[31069]: $LOCALIZE[31077]</label>
+			<altlabel>$LOCALIZE[31069]: $LOCALIZE[31078]</altlabel>
 			<usealttexture>Skin.HasSetting(nomediaflags)</usealttexture>
 			<include>Objects_MediaMenuButton</include>
 			<onclick>Skin.ToggleSetting(nomediaflags)</onclick>
-			<visible>Control.IsVisible(57) | Control.IsVisible(55) + Container.Content(movies)</visible>
+			<visible>Control.IsVisible(57) | Control.IsVisible(52) + Container.Content(movies)</visible>
 		</control>
 	</include>
 
-	<include name="Objects_ThumbsButton">
-		<control type="togglebutton" id="920">
-			<label>31071</label>
-			<altlabel>31072</altlabel>
-			<usealttexture>!Skin.HasSetting(singlemovielisticon)</usealttexture>
-			<include>Objects_MediaMenuButton</include>
-			<onclick>Skin.ToggleSetting(singlemovielisticon)</onclick>
-			<visible>!Skin.HasSetting(nomenuthumbs) + Control.IsVisible(50) + [!Container.Content(episodes) + [Window.IsActive(28) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(1)]]</visible>
+	<include name="Objects_PanelDensityButton">
+		<control type="togglebutton" id="942">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31065]: $LOCALIZE[31052]</label>
+			<altlabel>$LOCALIZE[31065]: $LOCALIZE[31053]</altlabel>
+			<usealttexture>Skin.HasSetting(listpanelthin)</usealttexture>
+			<onclick>Skin.SetBool(listpanelthin)</onclick>
+			<altclick>Skin.Reset(listpanelthin)</altclick>
+			<visible>Control.IsVisible(50)</visible>
 		</control>
-		<control type="togglebutton" id="921">
-			<label>31071</label>
-			<altlabel>31072</altlabel>
-			<usealttexture>!Skin.HasSetting(singlemusiclisticon)</usealttexture>
-			<include>Objects_MediaMenuButton</include>
-			<onclick>Skin.ToggleSetting(singlemusiclisticon)</onclick>
-			<visible>!Skin.HasSetting(nomenuthumbs) + Control.IsVisible(50) + [Window.IsActive(20) | Window.IsActive(2) | Window.IsActive(501) | Window.IsActive(500) | Window.IsActive(502) | Container.Content(episodes)]</visible>
-		</control>		
-	</include>		
+		<control type="togglebutton" id="944">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31065]: $LOCALIZE[31052]</label>
+			<altlabel>$LOCALIZE[31065]: $LOCALIZE[31053]</altlabel>
+			<usealttexture>Skin.HasSetting(multiplexthin)</usealttexture>
+			<onclick>Skin.ToggleSetting(multiplexthin)</onclick>
+			<visible>Control.IsVisible(52) + !Skin.HasSetting(oldmultiplex)</visible>
+		</control>			
+	</include>
+	
+	<include name="Objects_ListLayoutStrings">
+		<label>$LOCALIZE[31075]: $LOCALIZE[31071]</label>
+		<altlabel>$LOCALIZE[31075]: $LOCALIZE[31072]</altlabel>	
+	</include>
+
+	<include name="Objects_FanartToggleStrings">
+		<label>$LOCALIZE[31064]: $LOCALIZE[31077]</label>
+		<altlabel>$LOCALIZE[31064]: $LOCALIZE[31078]</altlabel>
+	</include>
 	
 	<include name="Objects_VideoSetupButton">
 		<control type="button" id="915">
@@ -344,8 +391,8 @@
 			<usealttexture>Skin.HasSetting(flattenshowcase)</usealttexture>
 			<include>Objects_MediaMenuButton</include>
 			<onclick>Skin.ToggleSetting(flattenshowcase)</onclick>
-			<visible>Control.IsVisible(57) + !Container.Content(episodes)</visible>
-		</control>		
+			<visible>[Control.IsVisible(57) + !Container.Content(episodes)] | [Control.IsVisible(52) + Container.Content(movies)] | [Control.IsVisible(52) + !Container.Content(seasons)  + !Container.Content(episodes)]</visible>
+        </control>		
 		
 		<control type="togglebutton" id="909">
 			<label>31061</label>
@@ -373,6 +420,234 @@
 		</control>
 	</include>
 
+	<include name="Objects_LightNightButtons">
+		<control type="togglebutton" id="996">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
+			<onclick>Skin.ToggleSetting(darkshowcase)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>!Control.IsVisible(53)</visible>
+		</control>
+	</include>
+
+	<include name="Objects_LightDarkWindows">
+		<control type="togglebutton" id="1100">
+			<include>Objects_MediaMenuButton</include>				
+			<label>WINDOW:LIGHT</label>
+			<altlabel>WINDOW:NIGHT</altlabel>
+			<usealttexture>Skin.HasSetting(darkwindow)</usealttexture>
+			<onclick>Skin.ToggleSetting(darkwindow)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>!Control.IsVisible(53)</visible>
+		</control>
+	</include>
+
+    <include name="Objects_MultiplexShadeButtons">
+		<control type="button" id="1101">
+			<include>Objects_MediaMenuButton</include>				
+			<label>SHADE: BLACK</label>
+			<onclick>Skin.SetBool(multiplexgrey)</onclick>
+			<onclick>Skin.Reset(multiplexblack)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>!Control.IsVisible(53) + Skin.HasSetting(multiplexblack)</visible>
+		</control>
+		
+		<control type="button" id="1102">
+			<include>Objects_MediaMenuButton</include>				
+			<label>SHADE: GREY</label>
+			<onclick>Skin.SetBool(multiplexgreen)</onclick>
+			<onclick>Skin.Reset(multiplexgrey)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>!Control.IsVisible(53) + Skin.HasSetting(multiplexgrey)</visible>
+		</control>	
+
+		<control type="button" id="1103">
+			<include>Objects_MediaMenuButton</include>				
+			<label>SHADE: GREEN</label>
+			<onclick>Skin.SetBool(multiplexblack)</onclick>
+			<onclick>Skin.Reset(multiplexgreen)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>!Control.IsVisible(53) + Skin.HasSetting(multiplexgreen)</visible>
+		</control>
+    </include>
+	
+	<include name="Objects_CurtainsButton">
+		<control type="togglebutton" id="997">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31067]S: $LOCALIZE[31078]</label>
+			<altlabel>$LOCALIZE[31067]S: $LOCALIZE[31077]</altlabel>
+			<usealttexture>Skin.HasSetting(nocurtains)</usealttexture>
+			<onclick>Skin.ToggleSetting(nocurtains)</onclick>
+			<visible>Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(57)</visible>
+		</control>
+	</include>	
+	
+	<include name="Objects_MultiplexInfoButtons">
+		<control type="button" id="980">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
+			<onclick>Skin.SetBool(multiplexinfoauto)</onclick>
+			<onclick>Skin.Reset(multiplexinfooff)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfooff)</visible>
+		</control>
+		
+		<control type="button" id="981">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
+			<onclick>Skin.SetBool(multiplexinfotrigger)</onclick>
+			<onclick>Skin.Reset(multiplexinfoauto)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + ![Skin.HasSetting(multiplexinfotrigger) | Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfoon)]</visible>
+		</control>
+
+		<control type="button" id="982">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
+			<onclick>Skin.SetBool(multiplexinfoon)</onclick>
+			<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfotrigger)</visible>
+		</control>	
+
+		<control type="button" id="983">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
+			<onclick>Skin.SetBool(multiplexinfooff)</onclick>
+			<onclick>Skin.Reset(multiplexinfoon)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfoon)</visible>
+		</control>
+
+		<control type="button" id="984">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
+			<onclick>Skin.SetBool(multiplextvinfoauto)</onclick>
+			<onclick>Skin.Reset(multiplextvinfooff)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52) + Skin.HasSetting(multiplextvinfooff)</visible>
+		</control>
+		
+		<control type="button" id="985">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
+			<onclick>Skin.SetBool(multiplextvinfotrigger)</onclick>
+			<onclick>Skin.Reset(multiplextvinfoauto)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52) + ![Skin.HasSetting(multiplextvinfotrigger) | Skin.HasSetting(multiplextvinfooff) | Skin.HasSetting(multiplextvinfoon)]</visible>
+		</control>
+
+		<control type="button" id="986">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
+			<onclick>Skin.SetBool(multiplextvinfoon)</onclick>
+			<onclick>Skin.Reset(multiplextvinfotrigger)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52) + Skin.HasSetting(multiplextvinfotrigger)</visible>
+		</control>	
+
+		<control type="button" id="987">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
+			<onclick>Skin.SetBool(multiplextvinfooff)</onclick>
+			<onclick>Skin.Reset(multiplextvinfoon)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52) + Skin.HasSetting(multiplextvinfoon)</visible>
+		</control>		
+		<control type="button" id="1984">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
+			<onclick>Skin.SetBool(multiplexmusicinfoauto)</onclick>
+			<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfooff)</visible>
+		</control>
+		
+		<control type="button" id="1985">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
+			<onclick>Skin.SetBool(multiplexmusicinfotrigger)</onclick>
+			<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(music) + Control.IsVisible(52) + ![Skin.HasSetting(multiplexmusicinfotrigger) | Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfoon)]</visible>
+		</control>
+
+		<control type="button" id="1986">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
+			<onclick>Skin.SetBool(multiplexmusicinfoon)</onclick>
+			<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfotrigger)</visible>
+		</control>	
+
+		<control type="button" id="1987">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
+			<onclick>Skin.SetBool(multiplexmusicinfooff)</onclick>
+			<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfoon)</visible>
+		</control>		
+	</include>
+	
+	<include name="Objects_MultiplexStyleButtons">
+		<control type="button" id="988">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31047]: POSTER</label>
+			<onclick>Skin.SetBool(multiplexbigthumb)</onclick>
+			<onclick>Skin.Reset(multiplexposter)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + ![Skin.HasSetting(multiplexbigthumb) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexplot)]</visible>
+		</control>		
+		
+		<control type="button" id="989">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31047]: $LOCALIZE[31045]</label>
+			<onclick>Skin.SetBool(multiplexfanart)</onclick>
+			<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexbigthumb)</visible>
+		</control>
+
+		<control type="button" id="990">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31047]: $LOCALIZE[31044]</label>
+			<onclick>Skin.SetBool(multiplexplot)</onclick>
+			<onclick>Skin.Reset(multiplexfanart)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexfanart)</visible>
+		</control>
+
+		<control type="button" id="999">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31047]: $LOCALIZE[31046]</label>
+			<onclick>Skin.SetBool(multiplexposter)</onclick>
+			<onclick>Skin.Reset(multiplexplot)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexplot)</visible>
+		</control>
+
+		<control type="togglebutton" id="995">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31045]: $LOCALIZE[31063]</label>
+			<altlabel>$LOCALIZE[31045]: $LOCALIZE[31064]</altlabel>
+			<usealttexture>!Skin.HasSetting(multiplextvbigthumb)</usealttexture>
+			<onclick>Skin.ToggleSetting(multiplextvbigthumb)</onclick>
+			<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52)</visible>
+		</control>		
+		<control type="togglebutton" id="998">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31045]: $LOCALIZE[31063]</label>
+			<altlabel>$LOCALIZE[31045]: $LOCALIZE[31064]</altlabel>
+			<usealttexture>!Skin.HasSetting(multiplexmusicbigthumb)</usealttexture>
+			<onclick>Skin.ToggleSetting(multiplemusicbigthumb)</onclick>
+			<visible>Container.Content(albums) + Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(52)</visible>
+		</control>		
+	</include>
+
 	<include name="Objects_ViewtypeClick">
 		<onclick>SetFocus(69)</onclick>	
 	</include>
@@ -380,8 +655,8 @@
 	<include name="Objects_WallGridButton">
 		<control type="togglebutton" id="922">
 			<include>Objects_MediaMenuButton</include>				
-			<label>31074</label>
-			<altlabel>31073</altlabel>
+			<label>$LOCALIZE[31076]: $LOCALIZE[31074]</label>
+			<altlabel>$LOCALIZE[31076]: $LOCALIZE[31073]</altlabel>
 			<usealttexture>!Skin.HasSetting(smallmoviewall)</usealttexture>
 			<onclick>Skin.ToggleSetting(smallmoviewall)</onclick>
 			<onclick>XBMC.ReloadSkin</onclick>
@@ -390,8 +665,8 @@
 		</control>
 		<control type="togglebutton" id="923">
 			<include>Objects_MediaMenuButton</include>				
-			<label>31074</label>
-			<altlabel>31073</altlabel>
+			<label>$LOCALIZE[31076]: $LOCALIZE[31074]</label>
+			<altlabel>$LOCALIZE[31076]: $LOCALIZE[31073]</altlabel>
 			<usealttexture>!Skin.HasSetting(smallmusicwall)</usealttexture>
 			<onclick>Skin.ToggleSetting(smallmusicwall)</onclick>
 			<onclick>XBMC.ReloadSkin</onclick>
@@ -473,10 +748,28 @@
 	</include>
 
 	<include name="Objects_FSInfoCertificate">
-		<posx>7</posx>
-		<posy>68</posy>
-		<width>166</width>
-		<height>38</height>	
+		<posx>2</posx>
+		<posy>67</posy>
+		<width>176</width>
+		<height>40</height>	
+        <colordiffuse>FF7c7c7c</colordiffuse>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+	</include>
+	<include name="Objects_FSUKInfoCertificate">
+		<posx>3</posx>
+		<posy>62</posy>
+		<width>140</width>
+		<height>50</height>	
+        <colordiffuse>FF7c7c7c</colordiffuse>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+	</include>
+	<include name="Objects_FSDEInfoCertificate">
+		<posx>1</posx>
+		<posy>62</posy>
+		<width>58</width>
+		<height>50</height>	
+        <colordiffuse>FF7c7c7c</colordiffuse>
+        <aspectratio scalediffuse="false">scale</aspectratio>
 	</include>
 	
 	<include name="Objects_FSInfoYear">
@@ -558,7 +851,7 @@
 			<height>57</height>
 			<texture>showcase/showcase_menupanel.png</texture>
 			<include>Animation_MediaMenuSlide</include>
-			<visible>Control.IsVisible(57) | Control.IsVisible(53)</visible>
+			<visible>Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(51) | Control.IsVisible(57) | Control.IsVisible(53)</visible>
 		</control>
 	</include>
 	
@@ -568,14 +861,19 @@
 		<description>button template</description>
 		<posx>0</posx>
 		<posy>0</posy>
-		<height>37</height>
-		<width>280</width>
-		<textcolor>FFd4d4d4</textcolor>
-		<focusedcolor>FF000000</focusedcolor>
-		<texturenofocus>-</texturenofocus>
+		<height>39</height>
+		<width>308</width>
+		<textcolor>FF383838</textcolor>
+		<focusedcolor>FFdfdfdf</focusedcolor>
+		<texturenofocus>dialogs/context_nofocus.png</texturenofocus>
 		<texturefocus>dialogs/context_highlight.png</texturefocus>
+        <alttexturefocus>dialogs/context_highlight.png</alttexturefocus> 
+        <alttexturenofocus>dialogs/context_nofocus.png</alttexturenofocus> 
+		<pulseonselect>true</pulseonselect>
 		<align>center</align>
+		<aligny>top</aligny>
 		<font>Font_ContextMenuButton</font>
+		<textoffsety>8</textoffsety>
 	</include>
 	
 	<include name="Objects_ContextMenuRadioButton">
@@ -927,15 +1225,15 @@
 	</include>	
 
 	<include name="Objects_ButtonMenu10Group">
-			<height>370</height>	
+			<height>390</height>	
 	</include>
 	
 	<include name="Objects_ButtonMenu9Group">
-			<height>333</height>	
+			<height>351</height>	
 	</include>
 	
 	<include name="Objects_ButtonMenu8Group">
-			<height>296</height>	
+			<height>312</height>	
 	</include>
 
 <!-- Login Screen -->
@@ -956,7 +1254,7 @@
 	
 	<include name="LoginThumb">
 	    <include>LoginThumbDimensions</include>
-		<texture diffuse="thumbs/cdcover_mask.png">defaultaudiobig.png</texture>
+		<texture diffuse="thumbs/cdcover_mask.png">defaultAudio.png</texture>
 	    <aspectratio scalediffuse="false">scale</aspectratio>
 	</include>
 

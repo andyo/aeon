@@ -4,50 +4,47 @@
 	<controls>
 
 	<control type="multiimage">
-		<include>Background_SingleImage</include>
-		<imagepath>backdrops/default_music</imagepath>
-		<info>Skin.String(CustomMusic)</info>
-		<visible>!Skin.String(CustomMusicFolder)</visible>
+		<include>BackgroundVarsGlobal</include>
+		<include>BackgroundVarsMusic</include>
 	</control>
 
-	<control type="multiimage">
-		<include>Background_ImageFolder</include>
-		<info>Skin.String(CustomMusicFolder)</info>
-		<visible>Skin.String(CustomMusicFolder)</visible>
-	</control>
-
-	<control type="largeimage" id="102">
-		<include>FullscreenDimensions</include>
-        <visible>!Control.IsVisible(103) + Control.IsVisible(57) + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
-		<fadetime>400</fadetime>
-		<texture>$INFO[listitem.property(fanart_image)]</texture>
-		<include>Animation_FanartFade</include>
+    <control type="image" id="109">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>0</width>
+		<height>0</height>
+		<texture>-</texture>
+		<visible>Skin.HasSetting(music) + !Skin.HasSetting(nomultiplexmusicpopup) + ![Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfotrigger)] + [Control.HasFocus(52) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container(52).OnNext + !Container(52).OnPrevious]</visible>
+		<animation effect="fade" start="0" end="100" time="150" delay="1500">Visible</animation>
 	</control>
 
 	<control type="largeimage" id="103">
 		<include>FullscreenDimensions</include>
-        <visible>Control.IsVisible(57) + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+        <visible>[Control.IsVisible(57) | Control.IsVisible(52)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[container.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
 	</control>
+
+	<include>MediaBackdropsMultiplex</include>	
 	
 	<include>Furniture_WallBackground</include>	
 
 	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
-		<include>Furniture_Time</include>
-		<include>Furniture_WindowRSS</include>
-		<include>Furniture_MediaPanel</include>
+		<include>Conditions_HiddenByInfoPages</include>
+        <include>Furniture_FloorBack</include>
+        <include>Furniture_shadow</include>
+		<include>Viewtype_Multiplex</include>
+		<include>Furniture_Time</include>		
+		<include>ListFade</include>
 		<include>Objects_ShowcaseMenuPanel</include>
-
 		<include>Viewtype_Wall</include>
 		<include>Furniture_WallTime</include>
-		<include>Furniture_WallRSS</include>
+		<include>Furniture_WallRSS</include>		
 		
 		<control type="group">
-			<include>Animation_MediaMenuPosition</include>
 	
 			<control type="image">
 				<include>Objects_MediaLogo</include>
@@ -69,50 +66,77 @@
 					<onclick>SetFocus(69)</onclick>
 				</control>
 
-				<include>Objects_FlattenFlowButton</include>
-				
 				<control type="button" id="3">
 					<label>103</label>
 					<include>Objects_MediaMenuButton</include>
 				</control>
 
+				<include>Objects_FlattenFlowButton</include>
+
+				<control type="togglebutton" id="940">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(musiclistfull)</usealttexture>
+					<onclick>Skin.SetBool(musiclistfull)</onclick>
+					<altclick>Skin.Reset(musiclistfull)</altclick>
+					<visible>Control.IsVisible(50)</visible>
+				</control>
+
+				<include>Objects_PanelDensityButton</include>				
+				<include>Objects_LightNightButtons</include>
+				<include>Objects_LightDarkWindows</include>
+
+				<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">Objects_MultiplexInfoButtons</include>			
+				
 				<control type="togglebutton" id="901">
 					<include>Objects_MediaMenuButton</include>				
-					<label>31065</label>
-					<altlabel>31064</altlabel>
+					<include>Objects_FanartToggleStrings</include>
 					<usealttexture>Skin.HasSetting(nomusicfanart)</usealttexture>
 					<onclick>Skin.SetBool(nomusicfanart)</onclick>
 					<altclick>Skin.Reset(nomusicfanart)</altclick>
-					<visible>Control.IsVisible(57)</visible>
+					<visible>Control.IsVisible(57) | Control.IsVisible(52)</visible>
 				</control>
 
-				<include>Objects_ThumbsButton</include>	
+				<include condition="!Skin.HasSetting(nomediaflagsbutton)">Objects_FlagsButton</include>
 
 				<include>Objects_WallGridButton</include>
 				
 				<include>Objects_WallBackdropButton</include>				
+
+<!--				<control type="togglebutton" id="991">
+					<include>Objects_MediaMenuButton</include>				
+					<label>$LOCALIZE[31066]: $LOCALIZE[31077]</label>
+					<altlabel>$LOCALIZE[31066]: $LOCALIZE[31078]</altlabel>
+					<usealttexture>Skin.HasSetting(nooverlays)</usealttexture>
+					<onclick>Skin.ToggleSetting(nooverlays)</onclick>
+					<visible>Window.IsActive(25) + Skin.HasSetting(music)</visible>
+				</control>  -->
+
+				<include>Objects_CurtainsButton</include>
 				
 				<control type="button" id="5">
-					<label>31068</label>
+					<label>31057</label>
 					<include>Objects_MediaMenuButton</include>
 					<onclick>XBMC.ReplaceWindow(MyMusicFiles)</onclick>
 				</control>
 				
 				<include>Objects_MusicSetupButton</include>
-				
 				<include>Objects_MediaDebugButtons</include>
 			</control>
-		</control>
-	
-		<include>Viewtype_List</include>
-		<include>Viewtype_Showcase</include>
-		<include>Viewtype_Coverflow</include>
 
+		<include>Viewtype_Showcase</include>
+		<include>Viewtype_List</include>
+
+		</control>
+
+<!--    <include condition="Skin.HasSetting(videotv)">Furniture_Multiplex_Showscase_MusicMediaFlags</include>  -->
+	
 	</control>
 
+	<include>Furniture_DarkGradient</include>	
 	<include>ViewChange</include>
-	<include>Background_ContextBlack</include>
-	<include>Furniture_Debug</include>
+	<!--<include>Background_ContextBlack</include>-->
+	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	
 	</controls>
 </window>

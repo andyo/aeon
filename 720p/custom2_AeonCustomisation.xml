@@ -50,7 +50,17 @@
 					<animation effect="fade" time="300">Hidden</animation>
 				</control>
 		
-				<include>Background_VirtualWallpaper</include>
+				<control type="multiimage">
+					<include>BackgroundVarsVirtual</include>
+					<imagepath background="true">$INFO[Container(300).ListItem.Icon]</imagepath>
+					<visible>Control.IsVisible(300)</visible>
+				</control>
+				
+				<control type="multiimage">
+					<include>BackgroundVarsVirtual</include>
+					<imagepath background="true">$INFO[Container(301).ListItem.Icon]</imagepath>
+					<visible>Control.IsVisible(301)</visible>
+				</control>				
 
 				<include>Furniture_VirtualTime</include>
 				<include>Furniture_VirtualRSS</include>
@@ -94,6 +104,17 @@
 						
 					</control>
 
+					<control type="image">
+						<posx>0</posx>
+						<posy>211</posy>
+						<width>840</width>
+						<height>99</height>
+						<texture>home/homemenu_gradient.png</texture>
+						<include>Animation_CommonFade</include>
+						<visible>!Skin.HasSetting(nohomegradient)</visible>
+						<colordiffuse>d0FFFFFF</colordiffuse>						
+					</control>	
+					
 				</control>
 			</control>
 			
@@ -113,7 +134,7 @@
 				<visible>Control.HasFocus(10) | Control.HasFocus(60) | Control.HasFocus(61) | Control.HasFocus(62)</visible>
 
 				<control type="multiimage">
-					<include>Background_VirtualImageFolder</include>
+					<include>BackgroundVarsVirtual</include>
 					<imagepath>backdrops/virtualosd</imagepath>
 				</control>
 				
@@ -322,11 +343,9 @@
 				<texturenofocus>-</texturenofocus>
 				<texturefocus>-</texturefocus>
 				<visible allowhiddenfocus="true">Control.HasFocus(92)</visible>
-				<onup>Skin.Reset($INFO[Skin.String(customslideshow)])</onup>
-				<onup>Skin.SetImage($INFO[Skin.String(customsingle)])</onup>
+				<onup>Skin.SetImage($INFO[Skin.String(custom)])</onup>
 				<onup>SetFocus(300)</onup>
-				<ondown>Skin.Reset($INFO[Skin.String(customsingle)])</ondown>
-				<ondown>Skin.SetPath($INFO[Skin.String(customslideshow)])</ondown>
+				<ondown>Skin.SetPath($INFO[Skin.String(custom)])</ondown>
 				<ondown>SetFocus(300)</ondown>
 				<onleft>300</onleft>
 				<onright>300</onright>
@@ -364,7 +383,7 @@
 			
 		</control>
 
-	<include>Background_ContextBlack</include>
+	<!--<include>Background_ContextBlack</include>-->
 	<include>Furniture_Debug</include>
 	
 </controls>

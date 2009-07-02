@@ -775,7 +775,7 @@
 				<onclick>SetFocus(400)</onclick>
 				<onleft>400</onleft>
 				<onright>400</onright>
-				<onup>9</onup>
+				<onup>15</onup>
 				<ondown>7</ondown>
 				<visible allowhiddenfocus="true">![Control.HasFocus(6) | ControlGroup(20).HasFocus]</visible>
 			</control>
@@ -787,7 +787,7 @@
 				<onclick>SetFocus(400)</onclick>
 				<onleft>400</onleft>
 				<onright>400</onright>
-				<onup>10</onup>
+				<onup>15</onup>
 				<ondown>7</ondown>
 				<visible>Control.HasFocus(6) | ControlGroup(20).HasFocus</visible>
 			</control>
@@ -924,7 +924,7 @@
 				<label>31244</label>
 				<include>Objects_SettingsSectionMenuButton</include>
 				<onup>9</onup>
-				<ondown>11</ondown>
+				<ondown>15</ondown>
 				<onleft>800</onleft>
 				<onright>800</onright>
 				<visible allowhiddenfocus="true">![Control.HasFocus(10) | ControlGroup(14).HasFocus]</visible>
@@ -935,7 +935,7 @@
 				<label>31244</label>
 				<include>Objects_SettingsSectionMenuButtonFocused</include>
 				<onup>9</onup>
-				<ondown>6</ondown>
+				<ondown>15</ondown>
 				<onleft>40</onleft>
 				<onright>40</onright>
 				<visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
@@ -955,6 +955,46 @@
 				<textcolor>FF262728</textcolor>
 				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 				<visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
+			</control>
+			<control type="button" id="15">
+				<description>Multiplex</description>
+				<posy>290</posy>
+				<label>31246</label>
+				<include>Objects_SettingsSectionMenuButton</include>
+				<onclick>SetFocus(900)</onclick>
+				<onleft>900</onleft>
+				<onright>900</onright>
+				<onup>10</onup>
+				<ondown>6</ondown>
+				<visible allowhiddenfocus="true">![Control.HasFocus(15) | ControlGroup(21).HasFocus]</visible>
+			</control>
+			<control type="button">
+				<description>Multiplex</description>
+				<posy>290</posy>
+				<label>31246</label>
+				<include>Objects_SettingsSectionMenuButtonFocused</include>
+				<onclick>SetFocus(900)</onclick>
+				<onleft>900</onleft>
+				<onright>900</onright>
+				<onup>10</onup>
+				<ondown>6</ondown>
+				<visible>Control.HasFocus(15) | ControlGroup(21).HasFocus</visible>
+			</control>
+			<control type="label">
+				<description>Multiplex Unfocused</description>
+				<posy>322</posy>
+				<label>31247</label>
+				<textcolor>FFf5f5f5</textcolor>
+				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+				<visible>![Control.HasFocus(15) | ControlGroup(21).HasFocus]</visible>
+			</control>
+			<control type="label">
+				<description>Multiplex Focused</description>
+				<posy>322</posy>
+				<label>31247</label>
+				<textcolor>FF262728</textcolor>
+				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+				<visible>Control.HasFocus(15) | ControlGroup(21).HasFocus</visible>
 			</control>
 		</control>
 	</include>

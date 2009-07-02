@@ -1,5 +1,5 @@
 <window id="135">
-	<defaultcontrol>12</defaultcontrol>
+	<defaultcontrol>9000</defaultcontrol>
 	<zorder>2</zorder>
 	<coordinates>
 	<system>1</system>
@@ -61,7 +61,7 @@
 		<posy>0</posy>
 		<width>772</width>
 		<height>720</height>
-		<texture>info/info_rightpaneltop.png</texture>
+		<texture>info/lite/info_rightpaneltop.png</texture>
 	</control>
 
 	<control type="group">
@@ -163,7 +163,8 @@
 			<label>31418</label>
 			<include>Objects_FSInfoButton</include>
 			<onup>IncreaseRating</onup>
-			<ondown>DecreaseRating</ondown>			
+			<ondown>DecreaseRating</ondown>
+			<visible>!Skin.HasSetting(kiosk)</visible>			
 			</control>
 
 			<control type="button" id="10">
@@ -225,7 +226,7 @@
 		
 	</control>
 
-	<include>Background_ContextBlack</include>
+	<!--<include>Background_ContextBlack</include>-->
 	
 	</controls>
 </window>

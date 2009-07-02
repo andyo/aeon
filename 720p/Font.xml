@@ -11,6 +11,12 @@
 	</font>
 	
 	<font>
+	  <name>Font_Submenu</name>
+	  <filename>aeon_rss.ttf</filename>
+	  <size>19</size>
+	</font>	
+	
+	<font>
 	  <name>Font_Time</name>
 	  <filename>aeon_rss.ttf</filename>
 	  <size>16</size>
@@ -62,6 +68,13 @@
 	</font>
 	
 	<font>
+	  <name>Font_ListPlaying</name>
+	  <filename>aeon_player.ttf</filename>
+	  <size>17</size>
+	  <linespacing>1.05</linespacing>
+	</font>	
+	
+	<font>
 	  <name>Font_WeatherTitle</name>
 	  <filename>aeon_title.ttf</filename>
 	  <size>24</size>
@@ -80,6 +93,18 @@
 	  <size>55</size>
 	</font>		
 
+    <font>
+      <name>Font_LatestAdditionsTiles</name>
+      <filename>aeon_main_kr.ttf</filename>
+      <size>18</size>
+    </font>
+	
+    <font>
+      <name>Font_LatestAdditionsYear</name>
+      <filename>aeon_main_kr.ttf</filename>
+      <size>16</size>
+    </font>
+
 <!-- Media windows -->
 
 	<font>
@@ -96,9 +121,15 @@
 	
 	<font>
 		<name>Font_List</name>
-		<filename>aeon_list.ttf</filename>
-		<size>16</size>
+		<filename>aeon_title.ttf</filename>
+		<size>22</size>
 	</font>
+	
+	<font>
+		<name>Font_ListSmall</name>
+		<filename>aeon_title.ttf</filename>
+		<size>19</size>
+	</font>	
 	
 	<font>
 		<name>font13</name>
@@ -108,9 +139,33 @@
 
 	<font>
 		<name>Font_ListDetail</name>
-		<filename>aeon_list.ttf</filename>
-		<size>13</size>
+		<filename>aeon_title.ttf</filename>
+		<size>18</size>
 	</font>
+	
+	<font>
+		<name>Font_ListDetailTV</name>
+		<filename>aeon_title.ttf</filename>
+		<size>16</size>
+	</font>	
+
+	<font>
+		<name>Font_ListTrack</name>
+		<filename>aeon_title.ttf</filename>
+		<size>47</size>
+	</font>
+	
+	<font>
+		<name>Font_ListSub</name>
+		<filename>aeon_title.ttf</filename>
+		<size>18</size>
+	</font>	
+	
+	<font>
+		<name>Font_ListObjects</name>
+		<filename>aeon_title.ttf</filename>
+		<size>17</size>
+	</font>	
 	
 <!-- Settings screens -->
 
@@ -166,10 +221,28 @@
 
 <!-- Context menus and dialogs -->
 
+	<font>
+	  <name>Font_FileBrowserButton</name>
+	  <filename>aeon_settings.ttf</filename>
+	  <size>22</size>
+	</font>
+	
+	<font>
+	  <name>Font_FileBrowserDetail</name>
+	  <filename>aeon_title.ttf</filename>
+	  <size>15</size>
+	</font>
+
+	<font>
+	  <name>Font_FileBrowserHeading</name>
+	  <filename>aeon_settings.ttf</filename>
+	  <size>31</size>
+	</font>	
+
     <font>
       <name>Font_ContextMenuButton</name>
-      <filename>aeon_settings.ttf</filename>
-      <size>20</size>
+      <filename>aeon_title.ttf</filename>
+      <size>18</size>
     </font>
 
     <font>
@@ -182,6 +255,12 @@
 	  <name>Font_SetContentMenu</name>
 	  <filename>aeon_settings.ttf</filename>
 	  <size>20</size>
+	</font>
+
+	<font>
+	  <name>Font_ProgressLabel</name>
+	  <filename>aeon_title.ttf</filename>
+	  <size>16</size>
 	</font>
 	
 	<font>
@@ -255,6 +334,118 @@
       <filename>aeon_list.ttf</filename>
       <size>16</size>
     </font>
+
+<!-- StripShow -->
+
+    <font>
+      <name>Font_StripshowLabel</name>
+      <filename>aeon_settings.ttf</filename>
+      <size>55</size>
+    </font>
+	
+    <font>
+      <name>Font_StripshowLabelSmall</name>
+      <filename>aeon_title.ttf</filename>
+      <size>24</size>
+    </font>	
+	
+    <font>
+      <name>Font_StripshowDetail</name>
+      <filename>aeon_title.ttf</filename>
+      <size>18</size>
+    </font>	
+	
+<!-- Multiplex -->
+
+    <font>
+      <name>Font_MultiplexMainLabel</name>
+      <filename>aeon_settings.ttf</filename>
+      <size>55</size>
+    </font>
+	
+    <font>
+      <name>Font_MultiplexTVLabel</name>
+      <filename>aeon_settings.ttf</filename>
+      <size>55</size>
+    </font>	
+	
+    <font>
+      <name>Font_MultiplexSeasonLabel</name>
+      <filename>aeon_settings.ttf</filename>
+      <size>31</size>
+    </font>		
+
+    <font>
+      <name>Font_MultiplexPlot</name>
+      <filename>aeon_player.ttf</filename>
+      <size>21</size>
+	  <linespacing>1.36</linespacing>	  
+    </font>
+	
+    <font>
+      <name>Font_MultiplexPlotSmall</name>
+      <filename>aeon_player.ttf</filename>
+      <size>18</size>
+	  <linespacing>1.1</linespacing>	  
+    </font>
+	
+    <font>
+      <name>Font_MultiplexInfoLabel</name>
+      <filename>aeon_rss.ttf</filename>
+      <size>15</size>
+    </font>	
+	
+    <font>
+      <name>Font_MultiplexInfoValue</name>
+      <filename>aeon_rss.ttf</filename>
+      <size>16</size>
+    </font>	
+
+    <font>
+      <name>Font_MultiplexEpisodeLabel</name>
+      <filename>aeon_rss.ttf</filename>
+      <size>18</size>
+    </font>	
+	
+	<font>
+	  <name>trailer</name>
+	  <filename>aeon_settings.ttf</filename>
+	  <size>14</size>
+	</font>
+
+- <!--  Multiplex Old  --> 
+
+	<font>
+		<name>Font_MultiplexMainLabelOld</name> 
+		<filename>aeon_settings.ttf</filename> 
+		<size>55</size> 
+	</font>
+	<font>
+		<name>Font_MultiplexTVLabelOld</name> 
+		<filename>aeon_settings.ttf</filename> 
+		<size>55</size> 
+	</font>
+	<font>
+		<name>Font_MultiplexSeasonLabelOld</name> 
+		<filename>aeon_settings.ttf</filename> 
+		<size>31</size> 
+	</font>
+	<font>
+		<name>Font_MultiplexPlotOld</name> 
+		<filename>aeon_sublist_cy.ttf</filename> 
+		<size>19</size> 
+		<linespacing>1</linespacing> 
+	</font>
+	<font>
+		<name>Font_MultiplexInfoLabelOld</name> 
+		<filename>aeon_multiplex.ttf</filename> 
+		<size>16</size> 
+	</font>
+	<font>
+		<name>Font_MultiplexInfoValueOld</name> 
+		<filename>aeon_multiplex.ttf</filename> 
+		<size>17</size> 
+	</font>
 	
 <!-- Fullscreen Info pages -->
 
@@ -305,6 +496,7 @@
       <name>Font_FSInfoPlot</name>
       <filename>aeon_player.ttf</filename>
       <size>21</size>
+	  <linespacing>1.1</linespacing>	  
     </font>
 
     <font>
@@ -344,7 +536,7 @@
       <name>Font_Vitals</name>
       <filename>aeon_settings.ttf</filename>
       <size>21</size>
-	  <linespacing>1.9</linespacing>
+	  <linespacing>2.4</linespacing>
     </font>
 
 <!-- Wall -->
@@ -425,20 +617,32 @@
 
 	<font>
 		<name>Font_KeyboardKeys</name>
-		<filename>aeon_edit.ttf</filename>
-		<size>17</size>
+		<filename>aeon_player.ttf</filename>
+		<size>19</size>
+	</font>
+	
+	<font>
+		<name>Font_KeyboardTitle</name>
+		<filename>aeon_title.ttf</filename>
+		<size>19</size>
 	</font>
 
 	<font>
 		<name>Font_KeyboardShapes</name>
 		<filename>aeon_shapes.ttf</filename>
 		<size>19</size>
+	</font>
+
+	<font>
+		<name>Font_ListPlay</name>
+		<filename>aeon_shapes.ttf</filename>
+		<size>60</size>
 	</font>	
 
 	<font>
 		<name>Font_KeyboardEdit</name>
-		<filename>aeon_edit.ttf</filename>
-		<size>19</size>
+		<filename>aeon_player.ttf</filename>
+		<size>21</size>
 	</font>	
 
 <!-- OSD -->
