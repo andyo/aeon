@@ -469,7 +469,7 @@
 			<onclick>Skin.SetBool(multiplexblack)</onclick>
 			<onclick>Skin.Reset(multiplexgreen)</onclick>
 			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>!Control.IsVisible(53) + Skin.HasSetting(multiplexgreen)</visible>
+			<visible>!Control.IsVisible(53) + [!Skin.HasSetting(multiplexgrey) | !Skin.HasSetting(multiplexblack)]</visible>
 		</control>
     </include>
 	
