@@ -14,7 +14,7 @@
 
 	<!--Latest Movie-->
 		<control type="list" id="510">
-			<visible>Container(300).HasFocus(6) + !Skin.HasSetting(noweatherpopup) + Skin.HasSetting(homelatest)</visible>
+			<visible>Container(300).HasFocus(6) + Skin.HasSetting(homelatest)</visible>
 
 			<posx>50</posx>
 			<posy>40</posy>
@@ -173,7 +173,7 @@
 
 	<!--Latest Episode-->
 		<control type="list" id="510">
-			<visible>Container(300).HasFocus(7) + !Skin.HasSetting(noweatherpopup) + Skin.HasSetting(homelatest)</visible>
+			<visible>Container(300).HasFocus(7) + Skin.HasSetting(homelatest)</visible>
 
 			<posx>70</posx>
 			<posy>40</posy>
@@ -348,7 +348,7 @@
 		</control>
 	<!--Latest Movie-->
 		<control type="list" id="510">
-			<visible>Container(300).HasFocus(1) + !Skin.HasSetting(noweatherpopup) + Skin.HasSetting(homelatest)</visible>
+			<visible>Container(300).HasFocus(1) + Skin.HasSetting(homelatest)</visible>
 
 			<posx>50</posx>
 			<posy>40</posy>
