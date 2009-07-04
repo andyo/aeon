@@ -582,7 +582,7 @@
 			<control type="image">
 				<width>1280</width>
 				<height>610</height>
-				<texture>multiplex/fulscreenmultiplex_back.png</texture>
+				<texture>multiplex/nmultiplex_fullscreen_back.png</texture>
 				<visible>!Skin.HasSetting(multiplexthin)</visible>
 				<include>Animation_CommonFade</include>
 			</control>			
@@ -590,111 +590,111 @@
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_poster_green.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_poster_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_plot_green.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_plot_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_bigthumb_green.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_bigthumb_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
             </control>				
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_plot_green.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_plot_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_poster_green.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_poster_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_bigthumb_green.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_bigthumb_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
             </control>	
 
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_plot_grey.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_plot_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_poster_grey.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_poster_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_bigthumb_grey.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_bigthumb_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
             </control>				
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_plot_grey.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_plot_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + !Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_poster_grey.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_poster_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + !Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_bigthumb_grey.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_bigthumb_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + !Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
             </control>	
 
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_black.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_poster_black.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_poster_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_bigthumb_black.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_bigthumb_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
             </control>				
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_black.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + !Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_poster_black.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_poster_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + !Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_bigthumb_black.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_bigthumb_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + !Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
             </control>	
 
@@ -2455,7 +2455,7 @@
 			<control type="image">
 				<width>1280</width>
 				<height>610</height>
-				<texture>multiplex/fulscreenmultiplex_back.png</texture>
+				<texture>multiplex/multiplex_fullscreen_back.png</texture>
 				<visible>!Skin.HasSetting(multiplexthin)</visible>
 				<include>Animation_CommonFade</include>
 			</control>			
@@ -2463,39 +2463,39 @@
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tvtablet_green.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tvtablet_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow)</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tvtablet_green.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tvtablet_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow)</visible>				
             </control>
 
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tvtablet_grey.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tvtablet_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(darkwindow)</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tvtablet_grey.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tvtablet_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + !Skin.HasSetting(darkwindow)</visible>				
             </control>
 
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tvtablet_black.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tvtablet_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + Skin.HasSetting(darkwindow)</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tvtablet_black.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tvtablet_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + !Skin.HasSetting(darkwindow)</visible>				
             </control>
 
@@ -3236,44 +3236,44 @@
 			<control type="image">
 				<width>1280</width>
 				<height>610</height>
-				<texture>multiplex/fulscreenmultiplex_back.png</texture>
+				<texture>multiplex/multiplex_fullscreen_back.png</texture>
 				<visible>!Skin.HasSetting(multiplexthin)</visible>
 				<include>Animation_CommonFade</include>
 			</control>			
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_music_green.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_music_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow)</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_music_grey.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_music_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(darkwindow)</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/fullscreenmultiplex_tablet_music_black.png</texture>
+                <texture>multiplex/multiplex_fullscreen_tablet_music_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + Skin.HasSetting(darkwindow)</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_music_green.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_music_green.png</texture>
                 <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow)</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_music_grey.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_music_grey.png</texture>
                 <visible>Skin.HasSetting(multiplexgrey) + !Skin.HasSetting(darkwindow)</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
-                <texture>multiplex/lite/fullscreenmultiplex_tablet_music_black.png</texture>
+                <texture>multiplex/lite/multiplex_fullscreen_tablet_music_black.png</texture>
                 <visible>Skin.HasSetting(multiplexblack) + !Skin.HasSetting(darkwindow)</visible>				
             </control>
 
@@ -3419,7 +3419,7 @@
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[Container(52).listitem.property(fanart_image)]</texture>
-                    <visible>!Skin.HasSetting(multiplexmusicbigthumb) | !Container.Content(albums)</visible>					
+                    <visible>!Skin.HasSetting(multiplexmusicbigthumb)</visible>					
                     <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="largeimage">
