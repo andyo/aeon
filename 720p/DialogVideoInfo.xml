@@ -647,7 +647,7 @@
 		
 		<control type="label">
 			<description>IMDB rating</description>
-			<posx>360</posx>
+			<posx>411</posx>
 			<posy>578</posy>
 			<width>110</width>
 			<height>29</height>
@@ -656,6 +656,20 @@
 			<label>[UPPERCASE]$INFO[ListItem.Rating][/UPPERCASE]</label>
 			<include>Colour_Grey</include>
 			<visible>Skin.HasSetting(inforatings) + Skin.HasSetting(movieratingtext)</visible>			
+			<animation effect="slide" start="-58,0" end="-58,0" time="0" condition="Control.IsVisible(91) + Control.IsVisible(92) + !Control.IsVisible(93) + Control.IsVisible(94)">Conditional</animation>				
+			<animation effect="slide" start="-323,0" end="-323,0" time="0" condition="!Control.IsVisible(91) + !Control.IsVisible(92) + !Control.IsVisible(93) + Control.IsVisible(94)">Conditional</animation>
+			<animation effect="slide" start="-302,0" end="-302,0" time="0" condition="Control.IsVisible(91) + !Control.IsVisible(92) + !Control.IsVisible(93) + !Control.IsVisible(94)">Conditional</animation>			
+			<animation effect="slide" start="-150,0" end="-150,0" time="0" condition="Control.IsVisible(91) + Control.IsVisible(92) + !Control.IsVisible(93) + !Control.IsVisible(94)">Conditional</animation>			
+			<animation effect="slide" start="-260,0" end="-260,0" time="0" condition="!Control.IsVisible(91) + Control.IsVisible(92) + !Control.IsVisible(93) + !Control.IsVisible(94)">Conditional</animation>				
+			<animation effect="slide" start="-88,0" end="-88,0" time="0" condition="Control.IsVisible(91) + Control.IsVisible(92) + Control.IsVisible(93) + !Control.IsVisible(94)">Conditional</animation>
+			<animation effect="slide" start="-108,0" end="-108,0" time="0" condition="!Control.IsVisible(91) + Control.IsVisible(92) + Control.IsVisible(93) + Control.IsVisible(94)">Conditional</animation>			
+			<animation effect="slide" start="-200,0" end="-200,0" time="0" condition="!Control.IsVisible(91) + Control.IsVisible(92) + Control.IsVisible(93) + !Control.IsVisible(94)">Conditional</animation>				
+			<animation effect="slide" start="-407,0" end="-407,0" time="0" condition="![Control.IsVisible(91) | Control.IsVisible(92) | Control.IsVisible(93) | Control.IsVisible(94)]">Conditional</animation>				
+			<animation effect="slide" start="-261,0" end="-261,0" time="0" condition="!Control.IsVisible(91) + !Control.IsVisible(92) + Control.IsVisible(93) + Control.IsVisible(94)">Conditional</animation>
+			<animation effect="slide" start="-148,0" end="-148,0" time="0" condition="Control.IsVisible(91) + !Control.IsVisible(92) + Control.IsVisible(93) + Control.IsVisible(94)">Conditional</animation>			
+			<animation effect="slide" start="-350,0" end="-350,0" time="0" condition="!Control.IsVisible(91) + !Control.IsVisible(92) + Control.IsVisible(93) + !Control.IsVisible(94)">Conditional</animation>			
+			<animation effect="slide" start="-238,0" end="-238,0" time="0" condition="Control.IsVisible(91) + !Control.IsVisible(92) + Control.IsVisible(93) + !Control.IsVisible(94)">Conditional</animation>				
+			<animation effect="slide" start="-177,0" end="-177,0" time="0" condition="!Control.IsVisible(91) + Control.IsVisible(92) + !Control.IsVisible(93) + Control.IsVisible(94)">Conditional</animation>			
 		</control>
 
 		
