@@ -582,7 +582,7 @@
 			<control type="image">
 				<width>1280</width>
 				<height>610</height>
-				<texture>multiplex/nmultiplex_fullscreen_back.png</texture>
+				<texture>multiplex/multiplex_fullscreen_back.png</texture>
 				<visible>!Skin.HasSetting(multiplexthin)</visible>
 				<include>Animation_CommonFade</include>
 			</control>			
