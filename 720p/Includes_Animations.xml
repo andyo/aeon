@@ -184,7 +184,7 @@
 		<animation effect="fade" condition="Skin.HasSetting(nozooms)" time="200">WindowClose</animation>
 	</include>
 
-<include name="Animation_SettingsButtonFade">
+<include name="Animations_SettingsButtonFade">
 	<animation effect="fade" time="125">Visible</animation>
 	<animation effect="fade" time="125">Hidden</animation>
 	<animation effect="fade" time="125">WindowOpen</animation>
