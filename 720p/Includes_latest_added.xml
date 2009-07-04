@@ -34,8 +34,9 @@
 			<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 
-			<animation effect="fade" start="0" end="100" delay="800" time="400">Visible</animation>
+			<animation effect="fade" start="0" end="100" delay="1000" time="1000">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<animation effect="fade" start="100" end="0" delay="8000" time="1000" condition="Container(300).HasFocus(6) + !Control.HasFocus(510)">Conditional</animation>
 
 
 			<itemlayout width="198" height="287">
