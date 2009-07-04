@@ -575,9 +575,9 @@
 			<width>1280</width>
 			<height>381</height>
 			<visible>Skin.HasSetting(fullscreenmultiplex) + Container.Content(movies) + Control.IsVisible(52) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
-			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexinfoon)">WindowOpen</animation>			
-			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
-			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>			
+			<animation effect="slide" start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexinfoon)">WindowOpen</animation>			
+			<animation effect="slide" start="0,590" end="0,0">WindowClose</animation>
+			<animation effect="slide" start="0,590" end="0,0" time="500">VisibleChange</animation>			
 
 			<control type="image">
 				<width>1280</width>
@@ -2464,13 +2464,13 @@
                 <width>1280</width>
                 <height>610</height>
                 <texture>multiplex/multiplex_fullscreen_tvtablet_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow)</visible>				
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow)</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
                 <texture>multiplex/lite/multiplex_fullscreen_tvtablet_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow)</visible>				
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow)</visible>				
             </control>
 
             <control type="image">
@@ -2874,14 +2874,14 @@
                 <width>1130</width>
                 <height>564</height>
                 <texture>multiplex/multiplex_tvtablet_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow)</visible>				
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow)</visible>				
             </control>	
             <control type="image">
                 <posx>75</posx>
                 <width>1130</width>
                 <height>564</height>
                 <texture>multiplex/lite/multiplex_tvtablet_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow)</visible>				
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow)</visible>				
             </control>	
 
             <control type="image">
