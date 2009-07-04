@@ -175,9 +175,9 @@
 		<control type="list" id="510">
 			<visible>Container(300).HasFocus(7) + Skin.HasSetting(homelatest)</visible>
 
-			<posx>70</posx>
+			<posx>60</posx>
 			<posy>40</posy>
-			<width>1180</width>
+			<width>1200</width>
 			<height>287</height>
 			<scrolltime>600</scrolltime>
 			<orientation>horizontal</orientation>
@@ -196,7 +196,7 @@
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 
 
-			<itemlayout width="283" height="287">
+			<itemlayout width="293" height="287">
 				<control type="image">
 					<posy>0</posy>
 					<width>283</width>
@@ -248,7 +248,7 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 				</control>
 			</itemlayout>
-			<focusedlayout width="283" height="287">
+			<focusedlayout width="293" height="287">
 				<control type="image">
 					<posy>0</posy>
 					<width>283</width>
