@@ -32,7 +32,7 @@
 		<onup>110</onup>
 	</include>	
 	
-	<include name="MultiplexMoviesGroupVars">
+<!--	<include name="MultiplexMoviesGroupVars">
 		<posx>-83</posx>
 		<posy>380</posy>
 		<width>1446</width>
@@ -51,7 +51,7 @@
 		<posy>380</posy>
 		<width>1446</width>
 		<height>350</height>			
-	</include>
+	</include>  -->
 
 <!-- Movie Multiplex Variables: Main thumbs -->
 	
@@ -3227,8 +3227,6 @@
 	<include name="MultiplexInfoPaneMusic">
         <!-- FULLSCREEN MULTIPLEX MUSIC WINDOW & TEXT -->
 		<control type="group">
-			<posx>0</posx>
-			<posy>0</posy>
 			<visible>Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(music) + Control.IsVisible(52) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexmusicinfoon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
@@ -3282,6 +3280,7 @@
                 <posx>-40</posx>
                 <posy>50</posy>
                 <width>0</width>
+                <align>left</align>
                 <control type="fadelabel">
                     <font>Font_MultiplexTVLabel</font>
                     <width>1200</width>
@@ -3310,7 +3309,8 @@
             <control type="group">
                 <posx>-40</posx>
                 <posy>20</posy>
-                <control type="fadelabel">
+                <visible>Container.Content(songs)</visible>
+                <control type="label">
                     <font>Font_MultiplexTVLabel</font>
                     <width>900</width>
                     <shadowcolor>ff000000</shadowcolor>
@@ -3319,9 +3319,8 @@
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
-                    <visible>Container.Content(songs)</visible>
                 </control>
-                <control type="fadelabel">
+                <control type="label">
                     <posy>50</posy>
                     <width>600</width>
                     <font>Font_MultiplexSeasonLabel</font>
@@ -3331,12 +3330,21 @@
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
-                    <visible>Container.Content(songs)</visible>
+                </control>
+                <control type="textbox">
+                    <posx>15</posx>
+                    <posy>180</posy>
+                    <width>535</width>
+                    <height>280</height>
+                    <font>Font_MultiplexPlotSmall</font>
+                    <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
+                    <textcolor>d0FFFFFF</textcolor>
+                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
                 </control>
             </control>
             
             <control type="group">
-                <posx>15</posx>
+                <posx>-40</posx>
                 <posy>100</posy>
                 <visible>Container.Content(albums)</visible>
                 <control type="group">
@@ -3354,7 +3362,6 @@
                         <scroll>true</scroll>
                     </control>
                 </control>
-                
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
@@ -3370,7 +3377,6 @@
                         <scroll>true</scroll>
                     </control>			
                 </control>
-
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
@@ -3386,19 +3392,180 @@
                         <scroll>true</scroll>
                     </control>
                 </control>
+                <control type="textbox">
+                    <posx>15</posx>
+                    <posy>180</posy>
+                    <width>535</width>
+                    <height>280</height>
+                    <font>Font_MultiplexPlotSmall</font>
+                    <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
+                    <textcolor>d0FFFFFF</textcolor>
+                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+                </control>
             </control>	
+            
+	<!-- Artist Info -->
+			<control type="group">
+				<posx>-65</posx>
+				<posy>110</posy>
+				<visible>Container.Content(artists)</visible>
+                <control type="label">
+                <posy>0</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>Formed:</label>
+                </control>
+                <control type="label">
+                <posy>15</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).ListItem.Property(Formed)]</label>
+                </control>			
+                <control type="label">
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>Years Active:</label>
+                </control>
+                <control type="label">
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).ListItem.Property(YearsActive)]</label>
+                </control>			
 
-            <control type="textbox">
-                <posx>15</posx>
-                <posy>180</posy>
-                <width>535</width>
-                <height>280</height>
-                <font>Font_MultiplexPlotSmall</font>
-                <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
-                <textcolor>d0FFFFFF</textcolor>
-                <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-                <visible>Container.Content(albums) | Container.Content(songs)</visible>	
-            </control>
+
+                <control type="label">
+                <posy>75</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[21893] - Died:</label>
+                </control>
+                <control type="label">
+                    <posy>90</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).listitem.Property(born)] - $INFO[Container(51).listitem.Property(died)]</label>
+                </control>			
+
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>0</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[515]:</label>
+                </control>
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>15</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).listitem.Property(Genre)]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[176]:</label>
+                </control>
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).listitem.Property(style)]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+		
+                <control type="label">
+                    <posx>500</posx>
+                    <posy>0</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[175]:</label>
+                </control>
+                <control type="label">
+                    <posx>500</posx>
+                    <posy>15</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).ListItem.Property(mood)]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posx>500</posx>
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>instruments:</label>
+                </control>
+                <control type="label">
+                    <posx>500</posx>
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).ListItem.Property(Instruments)]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="textbox">
+                    <posx>80</posx>
+                    <posy>90</posy>
+                    <width>620</width>
+                    <height>240</height>
+                    <font>Font_MultiplexPlotSmall</font>
+                    <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
+                    <textcolor>d0FFFFFF</textcolor>
+                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+                </control>
+
+			</control>
+
+<!-- End Artist Info -->
 
             <control type="group">
                 <posx>652</posx>
@@ -3419,7 +3586,6 @@
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[Container(52).listitem.property(fanart_image)]</texture>
-                    <visible>!Skin.HasSetting(multiplexmusicbigthumb)</visible>					
                     <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="largeimage">
