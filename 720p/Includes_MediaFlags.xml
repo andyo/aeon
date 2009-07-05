@@ -335,6 +335,11 @@
                 <!-- UK Certification -->
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>flags/rating/uk/BBFC_U_Certificate_UK.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:U)</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
 					<texture>flags/rating/uk/BBFC_PG_Certificate_UK.png</texture>
 					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:PG)</visible>
 				</control>				
