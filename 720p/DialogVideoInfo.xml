@@ -121,13 +121,65 @@
 		<visible>Skin.HasSetting(videotv)</visible>		
 	</control>	
 		
-	<control type="image">
-		<description>background image</description>
-		<posx>486</posx>
-		<posy>0</posy>
-		<width>795</width>
-		<height>720</height>
-		<texture>info/lite/info_rightpaneltop.png</texture>
+	<control type="group">
+        <visible>!Skin.HasSetting(darkwindow)</visible>
+        <control type="image">
+            <description>background image</description>
+            <posx>486</posx>
+            <posy>0</posy>
+            <width>795</width>
+            <height>720</height>
+            <visible>!Skin.HasSetting(multiplexgrey) | !Skin.HasSetting(multiplexblack)</visible>
+            <texture>info/lite/info_rightpaneltop_green.png</texture>
+        </control>	
+        <control type="image">
+            <description>background image</description>
+            <posx>486</posx>
+            <posy>0</posy>
+            <width>795</width>
+            <height>720</height>
+            <visible>Skin.HasSetting(multiplexgrey)</visible>
+            <texture>info/lite/info_rightpaneltop_grey.png</texture>
+        </control>	
+        <control type="image">
+            <description>background image</description>
+            <posx>486</posx>
+            <posy>0</posy>
+            <width>795</width>
+            <height>720</height>
+            <visible>Skin.HasSetting(multiplexblack)</visible>
+            <texture>info/lite/info_rightpaneltop_black.png</texture>
+        </control>	
+	</control>	
+	<control type="group">
+        <visible>Skin.HasSetting(darkwindow)</visible>
+        <control type="image">
+            <description>background image</description>
+            <posx>486</posx>
+            <posy>0</posy>
+            <width>795</width>
+            <height>720</height>
+            <visible>!Skin.HasSetting(multiplexgrey) | !Skin.HasSetting(multiplexblack)</visible>
+            <texture>info/night/info_rightpaneltop_green.png</texture>
+        </control>	
+        <control type="image">
+            <description>background image</description>
+            <posx>486</posx>
+            <posy>0</posy>
+            <width>795</width>
+            <height>720</height>
+            <visible>Skin.HasSetting(multiplexgrey)</visible>
+            <texture>info/night/info_rightpaneltop_grey.png</texture>
+        </control>	
+        <control type="image">
+            <description>background image</description>
+            <posx>486</posx>
+            <posy>0</posy>
+            <width>795</width>
+            <height>720</height>
+            <visible>Skin.HasSetting(multiplexblack)</visible>
+            <texture>info/night/info_rightpaneltop_black.png</texture>
+        </control>	
 	</control>	
 
         <!-- debug data -->

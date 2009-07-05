@@ -597,31 +597,31 @@
                 <width>1280</width>
                 <height>610</height>
                 <texture>multiplex/multiplex_fullscreen_tablet_plot_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
                 <texture>multiplex/multiplex_fullscreen_tablet_bigthumb_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
             </control>				
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
                 <texture>multiplex/lite/multiplex_fullscreen_tablet_plot_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>			
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
                 <texture>multiplex/lite/multiplex_fullscreen_tablet_poster_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
             </control>
             <control type="image">
                 <width>1280</width>
                 <height>610</height>
                 <texture>multiplex/lite/multiplex_fullscreen_tablet_bigthumb_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
             </control>	
 
             <control type="image">
@@ -1748,35 +1748,35 @@
                 <width>1130</width>
                 <height>564</height>
                 <texture>multiplex/multiplex_tablet_poster_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
             </control>
             <control type="image">
                 <posx>75</posx>
                 <width>1130</width>
                 <height>564</height>
                 <texture>multiplex/multiplex_tablet_plot_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>
             </control>
             <control type="image">
                 <posx>75</posx>
                 <width>1130</width>
                 <height>564</height>
                 <texture>multiplex/multiplex_tablet_bigthumb_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
             </control>				
             <control type="image">
                 <posx>75</posx>
                 <width>1130</width>
                 <height>564</height>
                 <texture>multiplex/lite/multiplex_tablet_plot_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + Skin.HasSetting(multiplexplot)</visible>
             </control>
             <control type="image">
                 <posx>75</posx>
                 <width>1130</width>
                 <height>564</height>
                 <texture>multiplex/lite/multiplex_tablet_poster_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
+                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
             </control>
             <control type="image">
                 <posx>75</posx>
