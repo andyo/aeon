@@ -137,6 +137,14 @@
 		<texture>info/info_flagupright.png</texture>
 		<animation effect="fade" start="70" end="70" time="0" condition="Skin.HasSetting(lite)">Conditional</animation>	
 	</include>
+
+	<include name="Furniture_FlagUprightCertification">
+        <posy>60</posy>		
+        <width>1</width>
+        <height>54</height>
+        <texture>info/info_flagupright.png</texture>
+        <animation effect="fade" start="70" end="70" time="0" condition="Skin.HasSetting(lite)">Conditional</animation>	
+	</include>
 	
 	<include name="Furniture_MovieInfoMediaFlags">
 	

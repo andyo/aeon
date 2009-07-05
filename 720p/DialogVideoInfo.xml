@@ -196,30 +196,26 @@
 			<width>695</width>
 			<height>569</height>
 			<texture>info/info_panellines_movie.png</texture>
-            <visible>![substring(listitem.mpaa,UK) | substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )]</visible>
+<!--            <visible>![substring(listitem.mpaa,UK) | substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )]</visible>  -->
 			<animation effect="fade" start="70" end="70" time="0" condition="Skin.HasSetting(lite)">Conditional</animation>				
 		</control>
+
 		<control type="image">
-			<description>background image</description>
 			<posx>0</posx>
-			<posy>60</posy>
-			<width>695</width>
-			<height>569</height>
-			<texture>info/info_UK_panellines_movie.png</texture>
-            <visible>substring(listitem.mpaa,UK)</visible>
-			<animation effect="fade" start="70" end="70" time="0" condition="Skin.HasSetting(lite)">Conditional</animation>				
-		</control>
-        
+			<include>Furniture_FlagUprightCertification</include>
+			<visible>Control.IsVisible(94)</visible>
+			<animation effect="slide" start="187,0" end="187,0" time="0" condition="![substring(listitem.mpaa,UK) | substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )]">Conditional</animation>			
+			<animation effect="slide" start="150,0" end="150,0" time="0" condition="substring(listitem.mpaa,UK)">Conditional</animation>
+			<animation effect="slide" start="70,0" end="70,0" time="0" condition="substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )">Conditional</animation>				
+		</control>		
 		<control type="image">
-			<description>background image</description>
 			<posx>0</posx>
-			<posy>60</posy>
-			<width>695</width>
-			<height>569</height>
-			<texture>info/info_DE_panellines_movie.png</texture>
-            <visible>substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )</visible>
-			<animation effect="fade" start="70" end="70" time="0" condition="Skin.HasSetting(lite)">Conditional</animation>				
-		</control>
+			<include>Furniture_FlagUprightCertification</include>
+			<visible>Control.IsVisible(94)</visible>
+			<animation effect="slide" start="295,0" end="295,0" time="0" condition="![substring(listitem.mpaa,UK) | substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )]">Conditional</animation>			
+			<animation effect="slide" start="258,0" end="258,0" time="0" condition="substring(listitem.mpaa,UK)">Conditional</animation>
+			<animation effect="slide" start="178,0" end="178,0" time="0" condition="substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )">Conditional</animation>				
+		</control>		
         
 		<control type="image">
 			<include>Objects_FSInfoCertificate</include>
@@ -353,56 +349,27 @@
 		</control>
 		
 		<control type="label">
-			<description>MPAA</description>
-			<posx>181</posx>
+			<description>Year</description>
+			<posx>0</posx>
 			<posy>58</posy>
 			<align>center</align>
 			<include>Objects_FSInfoYear</include>
-            <visible>substring(listitem.mpaa,US) | substring(listitem.mpaa,Rated</visible>
-		</control>
-		<control type="label">
-			<description>MPAA</description>
-			<posx>310</posx>
-			<posy>58</posy>
-			<width>370</width>
-			<include>Objects_FSInfoGenre</include>
-            <visible>substring(listitem.mpaa,US) | substring(listitem.mpaa,Rated</visible>
+			<animation effect="slide" start="187,0" end="187,0" time="0" condition="![substring(listitem.mpaa,UK) | substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )]">Conditional</animation>			
+			<animation effect="slide" start="149,0" end="149,0" time="0" condition="substring(listitem.mpaa,UK)">Conditional</animation>
+			<animation effect="slide" start="68,0" end="68,0" time="0" condition="substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )">Conditional</animation>
 		</control>
 
 		<control type="label">
-			<description>MPAA</description>
-			<posx>145</posx>
-			<posy>58</posy>
-			<align>center</align>
-			<include>Objects_FSInfoYear</include>
-            <visible>substring(listitem.mpaa,UK)</visible>
-		</control>
-		<control type="label">
-			<description>MPAA</description>
-			<posx>274</posx>
+			<description>Genre</description>
+			<posx>0</posx>
 			<posy>58</posy>
 			<width>370</width>
 			<include>Objects_FSInfoGenre</include>
-            <visible>substring(listitem.mpaa,UK)</visible>
+			<animation effect="slide" start="310,0" end="310,0" time="0" condition="![substring(listitem.mpaa,UK) | substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )]">Conditional</animation>			
+			<animation effect="slide" start="274,0" end="274,0" time="0" condition="substring(listitem.mpaa,UK)">Conditional</animation>
+			<animation effect="slide" start="194,0" end="194,0" time="0" condition="substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )">Conditional</animation>
 		</control>
-
-		<control type="label">
-			<description>MPAA</description>
-			<posx>65</posx>
-			<posy>58</posy>
-			<align>center</align>
-			<include>Objects_FSInfoYear</include>
-            <visible>substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )</visible>
-		</control>
-		<control type="label">
-			<description>MPAA</description>
-			<posx>194</posx>
-			<posy>58</posy>
-			<width>370</width>
-			<include>Objects_FSInfoGenre</include>
-            <visible>substring(listitem.mpaa,Germany) | substring(listitem.mpaa,ab )</visible>
-		</control>
-
+        
         <control type="label">
 			<description>Directed by:</description>
 			<posy>112</posy>
