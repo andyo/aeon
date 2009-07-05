@@ -1,0 +1,509 @@
+<includes>
+
+	<include name="latest_added">
+		<control type="button" id="500">
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<onclick>-</onclick>
+			<label>-</label>
+			<posy>-100</posy>
+			<posx>0</posx>
+			<onfocus>XBMC.RunScript(special://skin/extras/RecentlyAdded.py,limit=6&amp;albums=True)</onfocus>
+			<onfocus>SetFocus(300)</onfocus>
+		</control>
+
+	<!--Latest Movie-->
+		<control type="list" id="510">
+			<visible>Container(300).HasFocus(6) + Skin.HasSetting(homelatest)</visible>
+
+			<posx>50</posx>
+			<posy>40</posy>
+			<width>1190</width>
+			<height>287</height>
+			<scrolltime>600</scrolltime>
+			<orientation>horizontal</orientation>
+            <focusposition>0</focusposition>
+
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onleft>510</onleft>
+			<onright>510</onright>
+
+			<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="!Skin.HasSetting(highertime)">Conditional</animation>
+			<animation effect="zoom" start="100" end="90" time="200" center="640,80" condition="Player.HasAudio + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+
+			<animation effect="fade" start="0" end="100" delay="1000" time="1000">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<animation effect="fade" start="100" end="0" delay="8000" time="1000" condition="Container(300).HasFocus(6) + !Control.HasFocus(510)">Conditional</animation>
+
+
+			<itemlayout width="198" height="287">
+				<control type="image">
+					<posy>0</posy>
+					<width>190</width>
+					<height>287</height>
+					<texture>home/home_weather_big.png</texture>
+				</control>
+				<control type="label">
+					<posx>95</posx>
+					<posy>0</posy>
+					<width>170</width>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsTiles</font>
+					<textcolor>7FFFFFFF</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>30</scrollspeed>
+					<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>95</posx>
+					<posy>40</posy>
+					<width>170</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsYear</font>
+					<textcolor>7FFFFFFF</textcolor>	
+					<label>[UPPERCASE]$INFO[ListItem.label2][/UPPERCASE]</label>
+				</control>
+				<control type="image">
+					<texture diffuse="multiplex/multiplex_mask.png">$INFO[ListItem.icon]</texture>
+					<posx>33</posx>
+					<posy>73</posy>
+					<width>137</width>
+					<height>207</height>
+				</control>
+			</itemlayout>
+			<focusedlayout width="198" height="287">
+				<control type="image">
+					<posy>0</posy>
+					<width>190</width>
+					<height>287</height>
+					<texture>home/home_weather_big.png</texture>
+				</control>
+				<control type="label">
+					<posx>95</posx>
+					<posy>0</posy>
+					<width>170</width>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsTiles</font>
+					<textcolor>FFFFFFFF</textcolor>	
+                    <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>30</scrollspeed>
+					<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>95</posx>
+					<posy>40</posy>
+					<width>170</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsYear</font>
+					<textcolor>FFFFFFFF</textcolor>	
+					<label>[UPPERCASE]$INFO[ListItem.label2][/UPPERCASE]</label>
+				</control>
+				<control type="image">
+					<texture diffuse="multiplex/multiplex_mask.png">$INFO[ListItem.icon]</texture>
+					<posx>33</posx>
+					<posy>73</posy>
+					<width>137</width>
+					<height>207</height>
+				</control>
+			</focusedlayout>
+			<content>
+				<item>
+					<label>$INFO[Window.Property(LatestMovie.1.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.1.Year)] / $INFO[Window.Property(LatestMovie.1.RunningTime)]</label2>
+					<onclick>$INFO[Window.Property(LatestMovie.1.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestMovie.1.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestMovie.1.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestMovie.1.Title))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestMovie.2.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.2.Year)] / $INFO[Window.Property(LatestMovie.2.RunningTime)]</label2>
+					<onclick>$INFO[Window.Property(LatestMovie.2.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestMovie.2.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestMovie.2.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestMovie.2.Title))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestMovie.3.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.3.Year)] / $INFO[Window.Property(LatestMovie.3.RunningTime)]</label2>
+					<onclick>$INFO[Window.Property(LatestMovie.3.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestMovie.3.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestMovie.3.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestMovie.3.Title))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestMovie.4.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.4.Year)] / $INFO[Window.Property(LatestMovie.4.RunningTime)]</label2>
+					<onclick>$INFO[Window.Property(LatestMovie.4.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestMovie.4.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestMovie.4.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestMovie.4.Title))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestMovie.5.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.5.Year)] / $INFO[Window.Property(LatestMovie.5.RunningTime)]</label2>
+					<onclick>$INFO[Window.Property(LatestMovie.5.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestMovie.5.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestMovie.5.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestMovie.5.Title))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestMovie.6.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.6.Year)] / $INFO[Window.Property(LatestMovie.6.RunningTime)]</label2>
+					<onclick>$INFO[Window.Property(LatestMovie.6.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestMovie.6.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestMovie.6.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestMovie.6.Title))</visible>
+				</item>
+			</content> 
+		</control>
+
+
+
+	<!--Latest Episode-->
+		<control type="list" id="510">
+			<visible>Container(300).HasFocus(7) + Skin.HasSetting(homelatest)</visible>
+
+			<posx>60</posx>
+			<posy>40</posy>
+			<width>1200</width>
+			<height>287</height>
+			<scrolltime>600</scrolltime>
+			<orientation>horizontal</orientation>
+
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onleft>510</onleft>
+			<onright>510</onright>
+
+			<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="!Skin.HasSetting(highertime)">Conditional</animation>
+			<animation effect="zoom" start="100" end="90" time="200" center="640,80" condition="Player.HasAudio + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+
+			<animation effect="fade" start="0" end="100" delay="1000" time="1000">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<animation effect="fade" start="100" end="0" delay="8000" time="1000" condition="Container(300).HasFocus(7) + !Control.HasFocus(510)">Conditional</animation>
+
+
+			<itemlayout width="293" height="287">
+				<control type="image">
+					<posy>0</posy>
+					<width>283</width>
+					<height>237</height>
+					<texture>home/home_weather_big.png</texture>
+				</control>
+				<control type="label">
+					<posx>141</posx>
+					<posy>-7</posy>
+					<width>260</width>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsTiles</font>
+					<textcolor>7FFFFFFF</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>30</scrollspeed>
+					<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>141</posx>
+					<posy>30</posy>
+					<width>260</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsYear</font>
+					<textcolor>7FFFFFFF</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>30</scrollspeed>
+					<label>[UPPERCASE]$INFO[ListItem.label2][/UPPERCASE]</label>
+				</control>
+				<control type="image">
+					<texture diffuse="multiplex/multiplex_tvmask.png">defaultvideo.png</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<info>ListItem.Icon</info>
+					<posx>10</posx>
+					<posy>70</posy>
+					<width>260</width>
+					<height>151</height>
+				</control>
+				<control type="image">
+					<texture diffuse="multiplex/multiplex_tvmask.png">multiplex/multiplex_tvglass.png</texture>
+					<posx>10</posx>
+					<posy>70</posy>
+					<width>260</width>
+					<height>151</height>
+					<colordiffuse>aaFFFFFF</colordiffuse>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+				</control>
+			</itemlayout>
+			<focusedlayout width="293" height="287">
+				<control type="image">
+					<posy>0</posy>
+					<width>283</width>
+					<height>237</height>
+					<texture>home/home_weather_big.png</texture>
+				</control>
+				<control type="label">
+					<posx>141</posx>
+					<posy>-7</posy>
+					<width>260</width>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsTiles</font>
+					<textcolor>FFFFFFFF</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>30</scrollspeed>
+				        <wrapmultiline>true</wrapmultiline>
+					<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>141</posx>
+					<posy>30</posy>
+					<width>260</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsYear</font>
+					<textcolor>FFFFFFFF</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>30</scrollspeed>
+					<label>[UPPERCASE]$INFO[ListItem.label2][/UPPERCASE]</label>
+				</control>
+				<control type="image">
+					<texture diffuse="multiplex/multiplex_tvmask.png">defaultvideo.png</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<info>ListItem.Icon</info>
+					<posx>10</posx>
+					<posy>70</posy>
+					<width>260</width>
+					<height>151</height>
+				</control>
+				<control type="image">
+					<texture diffuse="multiplex/multiplex_tvmask.png">multiplex/multiplex_tvglass.png</texture>
+					<posx>10</posx>
+					<posy>70</posy>
+					<width>260</width>
+					<height>151</height>
+					<colordiffuse>aaFFFFFF</colordiffuse>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+				</control>
+			</focusedlayout>
+			<content>
+
+			<!--Latest Episode-->
+				<item>
+					<label>$INFO[Window.Property(LatestEpisode.1.ShowTitle)]</label>
+					<label2>$INFO[Window.Property(LatestEpisode.1.EpisodeTitle)]</label2>
+					<label3>$INFO[Window.Property(LatestEpisode.1.EpisodeNo)]</label3>
+					<label4>$INFO[Window.Property(LatestEpisode.1.PlayedTime)]</label4>
+					<onclick>$INFO[Window.Property(LatestEpisode.1.Path),PlayMedia(,)]</onclick>
+					<fanart>$INFO[Window.Property(LatestEpisode.1.Fanart)]</fanart>
+					<thumb>$INFO[Window.Property(LatestEpisode.1.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestEpisode.1.ShowTitle))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestEpisode.2.ShowTitle)]</label>
+					<label2>$INFO[Window.Property(LatestEpisode.2.EpisodeTitle)]</label2>
+					<label3>$INFO[Window.Property(LatestEpisode.2.EpisodeNo)]</label3>
+					<label4>$INFO[Window.Property(LatestEpisode.2.PlayedTime)]</label4>
+					<onclick>$INFO[Window.Property(LatestEpisode.2.Path),PlayMedia(,)]</onclick>
+					<fanart>$INFO[Window.Property(LatestEpisode.2.Fanart)]</fanart>
+					<thumb>$INFO[Window.Property(LatestEpisode.2.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestEpisode.2.ShowTitle))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestEpisode.3.ShowTitle)]</label>
+					<label2>$INFO[Window.Property(LatestEpisode.3.EpisodeTitle)]</label2>
+					<label3>$INFO[Window.Property(LatestEpisode.3.EpisodeNo)]</label3>
+					<label4>$INFO[Window.Property(LatestEpisode.3.PlayedTime)]</label4>
+					<onclick>$INFO[Window.Property(LatestEpisode.3.Path),PlayMedia(,)]</onclick>
+					<fanart>$INFO[Window.Property(LatestEpisode.3.Fanart)]</fanart>
+					<thumb>$INFO[Window.Property(LatestEpisode.3.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestEpisode.3.ShowTitle))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestEpisode.4.ShowTitle)]</label>
+					<label2>$INFO[Window.Property(LatestEpisode.4.EpisodeTitle)]</label2>
+					<label3>$INFO[Window.Property(LatestEpisode.4.EpisodeNo)]</label3>
+					<label4>$INFO[Window.Property(LatestEpisode.4.PlayedTime)]</label4>
+					<onclick>$INFO[Window.Property(LatestEpisode.4.Path),PlayMedia(,)]</onclick>
+					<fanart>$INFO[Window.Property(LatestEpisode.4.Fanart)]</fanart>
+					<thumb>$INFO[Window.Property(LatestEpisode.4.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestEpisode.4.ShowTitle))</visible>
+				</item>
+			</content> 
+		</control>
+	<!--Latest Movie-->
+		<control type="list" id="510">
+			<visible>Container(300).HasFocus(1) + Skin.HasSetting(homelatest)</visible>
+
+			<posx>50</posx>
+			<posy>40</posy>
+			<width>1190</width>
+			<height>287</height>
+			<scrolltime>600</scrolltime>
+			<orientation>horizontal</orientation>
+            <focusposition>0</focusposition>
+
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onleft>510</onleft>
+			<onright>510</onright>
+
+			<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="!Skin.HasSetting(highertime)">Conditional</animation>
+			<animation effect="zoom" start="100" end="90" time="200" center="640,80" condition="Player.HasAudio + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+
+			<animation effect="fade" start="0" end="100" delay="1000" time="1000">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<animation effect="fade" start="100" end="0" delay="8000" time="1000" condition="Container(300).HasFocus(1) + !Control.HasFocus(510)">Conditional</animation>
+
+
+			<itemlayout width="198" height="287">
+				<control type="image">
+					<posy>0</posy>
+					<width>190</width>
+					<height>237</height>
+					<texture>home/home_weather_big.png</texture>
+				</control>
+				<control type="label">
+					<posx>95</posx>
+					<posy>-7</posy>
+					<width>170</width>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsTiles</font>
+					<textcolor>7FFFFFFF</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>30</scrollspeed>
+					<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>95</posx>
+					<posy>28</posy>
+					<width>170</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsYear</font>
+					<textcolor>7FFFFFFF</textcolor>	
+					<label>[UPPERCASE]$INFO[ListItem.label2][/UPPERCASE]</label>
+				</control>
+				<control type="image">
+					<texture diffuse="multiplex/multiplex_mask.png">$INFO[ListItem.icon]</texture>
+					<posx>20</posx>
+					<posy>70</posy>
+					<width>150</width>
+					<height>150</height>
+				</control>
+			</itemlayout>
+			<focusedlayout width="198" height="287">
+				<control type="image">
+					<posy>0</posy>
+					<width>190</width>
+					<height>237</height>
+					<texture>home/home_weather_big.png</texture>
+				</control>
+				<control type="label">
+					<posx>95</posx>
+					<posy>-7</posy>
+					<width>170</width>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsTiles</font>
+					<textcolor>FFFFFFFF</textcolor>	
+                    <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>30</scrollspeed>
+					<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>95</posx>
+					<posy>28</posy>
+					<width>170</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_LatestAdditionsYear</font>
+					<textcolor>FFFFFFFF</textcolor>	
+					<label>[UPPERCASE]$INFO[ListItem.label2][/UPPERCASE]</label>
+				</control>
+				<control type="image">
+					<texture diffuse="multiplex/multiplex_mask.png">$INFO[ListItem.icon]</texture>
+					<posx>20</posx>
+					<posy>70</posy>
+					<width>150</width>
+					<height>150</height>
+				</control>
+			</focusedlayout>
+			<content>
+				<item>
+					<label>$INFO[Window.Property(LatestSong.1.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.1.Artist)]</label2>
+					<onclick>$INFO[Window.Property(LatestSong.1.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestSong.1.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestSong.1.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestSong.1.Album))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestSong.2.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.2.Artist)]</label2>
+					<onclick>$INFO[Window.Property(LatestSong.2.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestSong.2.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestSong.2.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestSong.2.Album))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestSong.3.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.3.Artist)]</label2>
+					<onclick>$INFO[Window.Property(LatestSong.3.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestSong.3.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestSong.3.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestSong.3.Album))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestSong.4.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.4.Artist)]</label2>
+					<onclick>$INFO[Window.Property(LatestSong.4.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestSong.4.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestSong.4.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestSong.4.Album))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestSong.5.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.5.Artist)]</label2>
+					<onclick>$INFO[Window.Property(LatestSong.5.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestSong.5.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestSong.5.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestSong.5.Album))</visible>
+				</item>
+				<item>
+					<label>$INFO[Window.Property(LatestSong.6.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.6.Artist)]</label2>
+					<onclick>$INFO[Window.Property(LatestSong.6.Path),PlayMedia(,)]</onclick>
+					<Fanart>$INFO[Window.Property(LatestSong.6.Fanart)]</Fanart>
+					<thumb>$INFO[Window.Property(LatestSong.6.Thumb)]</thumb>
+					<visible>!IsEmpty(Window.Property(LatestSong.6.Album))</visible>
+				</item>
+			</content> 
+		</control>
+
+	</include>
+
+</includes>
