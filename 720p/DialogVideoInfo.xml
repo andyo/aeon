@@ -1086,7 +1086,7 @@
                 <width>22</width>
                 <height>22</height>
                 <texture>DefaultActorBig.png</texture>
-                <info>cast/ListItem.Icon</info>
+                <info>ListItem.Icon</info>
             </control>
             <control type="label">
                 <posx>30</posx>
@@ -1096,7 +1096,6 @@
                 <font>Font_FSInfoPlot</font>
                 <include>Colour_Grey</include>
                 <aligny>center</aligny>
-                <selectedcolor>green</selectedcolor>
                 <align>left</align>
                 <info>ListItem.Label</info>
             </control>
@@ -1117,9 +1116,9 @@
                 <height>22</height>
                 <font>Font_FSInfoPlot</font>
                 <aligny>center</aligny>
-                <selectedcolor>green</selectedcolor>
+                <textcolor>FFFFFFFF</textcolor>		
                 <align>left</align>
-                <info>cast/ListItem.Label</info>
+                <info>ListItem.Label</info>
             </control>
         </focusedlayout>
     </control>
