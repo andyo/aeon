@@ -187,7 +187,7 @@
 		<control type="image" id="91">
 			<include>Furniture_MovieInfoFlagSource</include>
 			<texture>$INFO[ListItem.VideoCodec,flags/info/,.png]</texture>
-			<visible>!substring(listitem.filename,dvd) + !substring(listitem.filename,bluray) + !substring(listitem.filename,blu-ray) + !substring(listitem.filename,bdrip) + !substring(listitem.filename,.iso,Right) + !substring(listitem.filename,.ifo,Right)</visible>
+			<visible>!substring(listitem.filename,dvd) + !substring(listitem.filename,bluray) + !substring(listitem.filename,blu-ray) + !substring(listitem.filename,bdrip) + !substring(listitem.filename,hdtv) + !substring(listitem.filename,.iso,Right) + !substring(listitem.filename,.ifo,Right)</visible>
 		</control>
 		
 		<control type="image" id="91">
@@ -217,19 +217,13 @@
 		<control type="image" id="92">
 			<include>Furniture_MovieInfoFlagSound</include>
 			<texture>flags/info/dd51.png</texture>
-			<visible>substring(listitem.audiochannels,6) + substring(listitem.audiocodec,ac-3)</visible>
-		</control>
-
-		<control type="image" id="92">
-			<include>Furniture_MovieInfoFlagSound</include>
-			<texture>flags/info/dd51.png</texture>
-			<visible>substring(listitem.audiochannels,6) + substring(listitem.audiocodec,aac)</visible>
+			<visible>[substring(listitem.audiochannels,6) + substring(listitem.audiocodec,ac-3)] | [substring(listitem.audiochannels,6) + substring(listitem.audiocodec,ac3)] | [substring(listitem.audiochannels,6) + substring(listitem.audiocodec,aac)]</visible>
 		</control>
 
 		<control type="image" id="92">
 			<include>Furniture_MovieInfoFlagSound</include>
 			<texture>flags/info/dd71.png</texture>
-			<visible>substring(listitem.audiochannels,8) + substring(listitem.audiocodec,ac-3)</visible>
+			<visible>[substring(listitem.audiochannels,8) + substring(listitem.audiocodec,ac-3)] | [substring(listitem.audiochannels,8) + substring(listitem.audiocodec,ac3)}</visible>
 		</control>
 
 		<control type="image" id="92">
