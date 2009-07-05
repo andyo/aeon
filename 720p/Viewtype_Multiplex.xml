@@ -32,7 +32,7 @@
 		<onup>110</onup>
 	</include>	
 	
-<!--	<include name="MultiplexMoviesGroupVars">
+<!--  <include name="MultiplexMoviesGroupVars">
 		<posx>-83</posx>
 		<posy>380</posy>
 		<width>1446</width>
