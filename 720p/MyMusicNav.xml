@@ -108,6 +108,7 @@
 				<include>Objects_PanelDensityButton</include>				
 				<include>Objects_LightNightButtons</include>
 				<include>Objects_LightDarkWindows</include>
+				<include>Objects_MultiplexShadeButtons</include>
 
 				<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">Objects_MultiplexInfoButtons</include>			
 				
