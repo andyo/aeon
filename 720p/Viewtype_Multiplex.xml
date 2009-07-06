@@ -3366,8 +3366,8 @@
                     <width>180</width>
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).listitem.Property(Genre)]</label>
-                    <scrollspeed>30</scrollspeed>
+                    <label fallback="31425">$INFO[listitem.Property(Genre)]</label>
+                    <scrollspeed>20</scrollspeed>
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
@@ -3386,10 +3386,14 @@
                     <posx>500</posx>
                     <posy>15</posy>
                     <height>13</height>
-                    <width>100</width>
+                    <width>200</width>
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Clistitem.Property(born)] - $INFO[listitem.Property(died)]</label>
+                    <label fallback="31425">$INFO[listitem.Property(born)] - $INFO[listitem.Property(died)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
                 </control>			
 
                 <control type="label">
@@ -3408,8 +3412,8 @@
                     <width>300</width>
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).listitem.Property(style)]</label>
-                    <scrollspeed>30</scrollspeed>
+                    <label fallback="31425">$INFO[listitem.Property(style)]</label>
+                    <scrollspeed>20</scrollspeed>
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
@@ -3429,8 +3433,8 @@
                     <width>300</width>
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).ListItem.Property(mood)]</label>
-                    <scrollspeed>30</scrollspeed>
+                    <label fallback="31425">$INFO[ListItem.Property(mood)]</label>
+                    <scrollspeed>20</scrollspeed>
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
@@ -3460,7 +3464,7 @@
                     <font>Font_MultiplexTVLabel</font>
                     <shadowcolor>ff000000</shadowcolor>
                     <label>[UPPERCASE]$INFO[listitem.album][/UPPERCASE]</label>
-                    <scrollspeed>30</scrollspeed>
+                    <scrollspeed>20</scrollspeed>
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
@@ -3478,58 +3482,122 @@
                     <scroll>true</scroll>
                 </control>
             </control>
-            <control type="group">
-                <posx>15</posx>
-                <posy>90</posy>
+
+			<control type="group">
+				<posx>-65</posx>
+				<posy>110</posy>
                 <visible>Container.Content(albums)</visible>
-                <control type="group">
-                    <posy>22</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31438]:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Genre]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>
+                <control type="label">
+                <posy>0</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>Year:</label>
                 </control>
-                <control type="group">
-                    <posy>22</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel3BigThumb</include>				
-                        <label>$LOCALIZE[31436]:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue3BigThumb</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Year]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>			
+                <control type="label">
+                <posy>15</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[ListItem.Year]</label>
+                </control>			
+
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>0</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[515]:</label>
                 </control>
-                <control type="group">
-                    <posy>22</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel2BigThumb</include>				
-                        <label>Label:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue2BigThumb</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Property(Label)]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>15</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[listitem.Genre]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posx>500</posx>
+                    <posy>0</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>Label:</label>
                 </control>
+                <control type="label">
+                    <posx>500</posx>
+                    <posy>15</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[ListItem.Property(Label)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posx>400</posx>
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>300</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[176]:</label>
+                </control>
+                <control type="label">
+                    <posx>400</posx>
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>300</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).listitem.Property(style)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+		
+                <control type="label">
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[175]:</label>
+                </control>
+                <control type="label">
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>300</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).ListItem.Property(mood)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+
                 <control type="textbox">
-                    <posx>0</posx>
-                    <posy>105</posy>
+                    <posx>80</posx>
+                    <posy>85</posy>
                     <width>620</width>
                     <height>260</height>
                     <font>Font_MultiplexPlotSmall</font>
@@ -3537,8 +3605,8 @@
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
                 </control>
-            </control>	
-            
+			</control>
+
 
             <control type="group">
                 <posx>652</posx>
@@ -5335,8 +5403,8 @@
 
     <include name="MultiplexMovies">
         <control type="group" id="8001">
-            <include condition="Skin.HasSetting(videomovies)">MultiplexMoviePosterFloor</include>			
-            <include condition="Skin.HasSetting(videotv)">MultiplexTVPosterFloor</include>			
+            <include condition="Skin.HasSetting(videomovies) | Skin.HasSetting(videogenres)">MultiplexMoviePosterFloor</include>			
+            <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVPosterFloor</include>			
             <camera x="640" y="540" />
             <visible>Control.IsVisible(52) + Container.OnNext + !Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Skin.HasSetting(tvposterview) + !Container.Content(episodes)] | [Control.IsVisible(52) + Container.OnNext + Container.Content(genres)]</visible>
             <animation effect="slide" end="-60,0" time="250" reversible="false">Hidden</animation>
@@ -6169,8 +6237,8 @@
         
         
         <control type="group" id="8002">
-            <include condition="Skin.HasSetting(videomovies)">MultiplexMoviePosterFloor</include>			
-            <include condition="Skin.HasSetting(videotv)">MultiplexTVPosterFloor</include>			
+            <include condition="Skin.HasSetting(videomovies) | Skin.HasSetting(videogenres)">MultiplexMoviePosterFloor</include>			
+            <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVPosterFloor</include>			
             <camera x="640" y="540" />
             <visible>Control.IsVisible(52) + Container.OnPrevious + !Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Skin.HasSetting(tvposterview) + !Container.Content(episodes)] | [Control.IsVisible(52) + Container.OnPrevious + Container.Content(genres)]</visible>
             <animation effect="slide" end="60,0" time="250" reversible="false">Hidden</animation>
@@ -7009,8 +7077,8 @@
 		</control>
        
         <control type="group" id="8000">
-            <include condition="Skin.HasSetting(videomovies)">MultiplexMoviePosterFloor</include>			
-            <include condition="Skin.HasSetting(videotv)">MultiplexTVPosterFloor</include>			
+            <include condition="Skin.HasSetting(videomovies) | Skin.HasSetting(videogenres)">MultiplexMoviePosterFloor</include>			
+            <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVPosterFloor</include>			
             <animation effect="fade" time="500">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
             <visible>[Control.IsVisible(52) + !Control.IsVisible(8001) + !Control.IsVisible(8002) + Control.IsVisible(960) + [Skin.HasSetting(tvposterview) + !Container.Content(episodes) | !Skin.HasSetting(videotv)]] |  [Control.IsVisible(52) + !Control.IsVisible(8001) + !Control.IsVisible(8002) + Control.IsVisible(960) + Container.Content(genres)]</visible>
@@ -10064,9 +10132,9 @@
         <control type="wraplist" id="52">
             <viewtype label="Multiplex">list</viewtype>
             <include condition="Skin.HasSetting(music)">MultiplexMusicVarsWrap</include>
-            <include condition="Skin.HasSetting(videomovies)">MultiplexMovieVarsWrap</include>
-            <include condition="Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview) + !Container.Content(episodes)">MultiplexTVPosterVarsWrap</include>
-            <include condition="Skin.HasSetting(videotv)">MultiplexTVVarsWrap</include>			
+            <include condition="Skin.HasSetting(videomovies) | Skin.HasSetting(videogenres)">MultiplexMovieVarsWrap</include>
+            <include condition="Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview) + !Container.Content(episodes) + !Skin.HasSetting(videogenres)">MultiplexTVPosterVarsWrap</include>
+            <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVVarsWrap</include>			
             <onleft>52</onleft>
             <onright>52</onright>
            <include condition="[Skin.HasSetting(videomovies) + !Skin.HasSetting(multiplexinfotrigger)] | [Skin.HasSetting(videotv) + !Skin.HasSetting(multiplextvinfotrigger)] | [Skin.HasSetting(music) + !Skin.HasSetting(multiplexmusicinfotrigger)]">MultiplexInfoAutoUp</include>
