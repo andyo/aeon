@@ -562,7 +562,7 @@
 			<onclick>Skin.SetBool(multiplexmusicinfoauto)</onclick>
 			<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
 			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Window.IsActive(25) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfooff)</visible>
+			<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfooff)</visible>
 		</control>
 		
 		<control type="button" id="1985">
@@ -571,7 +571,7 @@
 			<onclick>Skin.SetBool(multiplexmusicinfotrigger)</onclick>
 			<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
 			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Window.IsActive(25) + Skin.HasSetting(music) + Control.IsVisible(52) + ![Skin.HasSetting(multiplexmusicinfotrigger) | Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfoon)]</visible>
+			<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(52) + ![Skin.HasSetting(multiplexmusicinfotrigger) | Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfoon)]</visible>
 		</control>
 
 		<control type="button" id="1986">
@@ -580,7 +580,7 @@
 			<onclick>Skin.SetBool(multiplexmusicinfoon)</onclick>
 			<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
 			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Window.IsActive(25) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfotrigger)</visible>
+			<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfotrigger)</visible>
 		</control>	
 
 		<control type="button" id="1987">
@@ -589,7 +589,7 @@
 			<onclick>Skin.SetBool(multiplexmusicinfooff)</onclick>
 			<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
 			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Window.IsActive(25) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfoon)</visible>
+			<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfoon)</visible>
 		</control>		
 	</include>
 	
