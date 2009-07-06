@@ -413,6 +413,17 @@
 	  <size>14</size>
 	</font>
 
+	<font>
+	  <name>Font_RatingFloor</name>
+	  <filename>aeon_edit_ce.ttf</filename>
+	  <size>32</size>
+	</font>
+	<font>
+	  <name>Font_RatingBGFloor</name>
+	  <filename>aeon_shapes.ttf</filename>
+	  <size>42</size>
+	</font>
+
 - <!--  Multiplex Old  --> 
 
 	<font>
