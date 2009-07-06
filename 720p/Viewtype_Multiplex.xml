@@ -200,7 +200,7 @@
 	</include>
 	
 	<include name="MusicMultiplexThumbStretch">
-        <aspectratio scalediffuse="false">stretch</aspectratio>	
+        <aspectratio scalediffuse="false">scale</aspectratio>	
 	</include>	
 
     <include name="MusicMultiplexThumb">
@@ -592,55 +592,55 @@
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tablet_poster_green.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_poster_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tablet_plot_green.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_plot_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(multiplexplot)</visible>			
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tablet_bigthumb_green.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_bigthumb_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
                 </control>				
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tablet_plot_grey.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_plot_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexplot)</visible>			
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tablet_poster_grey.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_poster_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tablet_bigthumb_grey.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_bigthumb_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
                 </control>				
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tablet_plot_black.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_plot_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack) + Skin.HasSetting(multiplexplot)</visible>			
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tablet_poster_black.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_poster_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tablet_bigthumb_black.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_bigthumb_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
                 </control>				
             </control>	
@@ -1756,63 +1756,63 @@
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/multiplex_tablet_poster_green.png</texture>
+                    <texture>multiplex/night/multiplex_tablet_poster_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/multiplex_tablet_plot_green.png</texture>
+                    <texture>multiplex/night/multiplex_tablet_plot_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(multiplexplot)</visible>
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/multiplex_tablet_bigthumb_green.png</texture>
+                    <texture>multiplex/night/multiplex_tablet_bigthumb_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
                 </control>				
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/multiplex_tablet_plot_grey.png</texture>
+                    <texture>multiplex/night/multiplex_tablet_plot_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexplot)</visible>			
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/multiplex_tablet_poster_grey.png</texture>
+                    <texture>multiplex/night/multiplex_tablet_poster_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/multiplex_tablet_bigthumb_grey.png</texture>
+                    <texture>multiplex/night/multiplex_tablet_bigthumb_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
                 </control>				
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/multiplex_tablet_plot_black.png</texture>
+                    <texture>multiplex/night/multiplex_tablet_plot_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack) + Skin.HasSetting(multiplexplot)</visible>			
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/multiplex_tablet_poster_black.png</texture>
+                    <texture>multiplex/night/multiplex_tablet_poster_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack) + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/multiplex_tablet_bigthumb_black.png</texture>
+                    <texture>multiplex/night/multiplex_tablet_bigthumb_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
                 </control>				
             </control>				
@@ -2477,19 +2477,19 @@
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tvtablet_green.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tvtablet_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tvtablet_grey.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tvtablet_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/multiplex_fullscreen_tvtablet_black.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tvtablet_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>
             </control>
@@ -2517,10 +2517,11 @@
             </control>
 
             <control type="group">
-                <posx>-40</posx>
-                <posy>50</posy>
-                <width>600</width>
-                <control type="fadelabel">
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>50</posy>
+                    <width>1000</width>
+                    <width>1000</width>
                     <font>Font_MultiplexTVLabel</font>
                     <width>600</width>
                     <shadowcolor>ff000000</shadowcolor>
@@ -2533,11 +2534,11 @@
                 </control>
             </control>
             <control type="group">
-                <posx>-40</posx>
-                <posy>20</posy>
-                <control type="fadelabel">
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>20</posy>
+                    <width>1000</width>
                     <font>Font_MultiplexTVLabel</font>
-                    <width>600</width>
                     <shadowcolor>ff000000</shadowcolor>
                     <label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
                     <scrollspeed>30</scrollspeed>
@@ -2546,8 +2547,10 @@
                     <scroll>true</scroll>
                     <visible>Container.Content(episodes)</visible>
                 </control>
-                <control type="fadelabel">
-                <posy>50</posy>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>70</posy>
+                    <width>1000</width>
                     <font>Font_MultiplexSeasonLabel</font>
                     <shadowcolor>ff000000</shadowcolor>
                     <label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
@@ -2886,49 +2889,54 @@
 				<include>Animation_CommonFade</include>
 			</control>			
 
-            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/multiplex_tvtablet_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow)</visible>				
-            </control>	
-            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/lite/multiplex_tvtablet_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow)</visible>				
-            </control>	
-
-            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/multiplex_tvtablet_grey.png</texture>
-                <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(darkwindow)</visible>				
-            </control>	
-            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/lite/multiplex_tvtablet_grey.png</texture>
-                <visible>Skin.HasSetting(multiplexgrey) + !Skin.HasSetting(darkwindow)</visible>				
+            <control type="group">
+                <visible>Skin.HasSetting(darkwindow)</visible>				
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/night/multiplex_tvtablet_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
+                </control>	
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/night/multiplex_tvtablet_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>				
+                </control>	
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/night/multiplex_tvtablet_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>				
+                </control>	
             </control>	
 
-            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/multiplex_tvtablet_black.png</texture>
-                <visible>Skin.HasSetting(multiplexblack) + Skin.HasSetting(darkwindow)</visible>				
-            </control>	
-            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/lite/multiplex_tvtablet_black.png</texture>
-                <visible>Skin.HasSetting(multiplexblack) + !Skin.HasSetting(darkwindow)</visible>				
+            <control type="group">
+                <visible>!Skin.HasSetting(darkwindow)</visible>				
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/lite/multiplex_tvtablet_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
+                </control>	
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/lite/multiplex_tvtablet_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>				
+                </control>	
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/lite/multiplex_tvtablet_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>				
+                </control>	
             </control>	
 
             <control type="group">
@@ -3174,7 +3182,7 @@
             <control type="group">
                 <posx>508</posx>
                 <posy>50</posy>
-                <visible>Skin.HasSetting(tvpreview) + Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)</visible>	
+                <visible>Skin.HasSetting(tvpreview) + Container.Content(episodes)</visible>	
                 <control type="image">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -3255,44 +3263,53 @@
 				<visible>!Skin.HasSetting(multiplexthin)</visible>
 				<include>Animation_CommonFade</include>
 			</control>			
-            <control type="image">
-                <width>1280</width>
-                <height>610</height>
-                <texture>multiplex/multiplex_fullscreen_tablet_music_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow)</visible>				
+
+            <control type="group">
+                <visible>Skin.HasSetting(darkwindow)</visible>				
+                <control type="image">
+                    <width>1280</width>
+                    <height>610</height>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_music_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
+                </control>
+                <control type="image">
+                    <width>1280</width>
+                    <height>610</height>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_music_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>				
+                </control>
+                <control type="image">
+                    <width>1280</width>
+                    <height>610</height>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_music_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>				
+                </control>
             </control>
-            <control type="image">
-                <width>1280</width>
-                <height>610</height>
-                <texture>multiplex/multiplex_fullscreen_tablet_music_grey.png</texture>
-                <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(darkwindow)</visible>				
-            </control>
-            <control type="image">
-                <width>1280</width>
-                <height>610</height>
-                <texture>multiplex/multiplex_fullscreen_tablet_music_black.png</texture>
-                <visible>Skin.HasSetting(multiplexblack) + Skin.HasSetting(darkwindow)</visible>				
-            </control>
-            <control type="image">
-                <width>1280</width>
-                <height>610</height>
-                <texture>multiplex/lite/multiplex_fullscreen_tablet_music_green.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow)</visible>				
-            </control>
-            <control type="image">
-                <width>1280</width>
-                <height>610</height>
-                <texture>multiplex/lite/multiplex_fullscreen_tablet_music_grey.png</texture>
-                <visible>Skin.HasSetting(multiplexgrey) + !Skin.HasSetting(darkwindow)</visible>				
-            </control>
-            <control type="image">
-                <width>1280</width>
-                <height>610</height>
-                <texture>multiplex/lite/multiplex_fullscreen_tablet_music_black.png</texture>
-                <visible>Skin.HasSetting(multiplexblack) + !Skin.HasSetting(darkwindow)</visible>				
+
+            <control type="group">
+                <visible>!Skin.HasSetting(darkwindow)</visible>				
+                <control type="image">
+                    <width>1280</width>
+                    <height>610</height>
+                    <texture>multiplex/lite/multiplex_fullscreen_tablet_music_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
+                </control>
+                <control type="image">
+                    <width>1280</width>
+                    <height>610</height>
+                    <texture>multiplex/lite/multiplex_fullscreen_tablet_music_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>				
+                </control>
+                <control type="image">
+                    <width>1280</width>
+                    <height>610</height>
+                    <texture>multiplex/lite/multiplex_fullscreen_tablet_music_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>				
+                </control>
             </control>
 
 
+<!-- Main Info -->
             <control type="group">
                 <posx>-40</posx>
                 <posy>50</posy>
@@ -3309,60 +3326,161 @@
                     <scroll>true</scroll>
                     <visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)</visible>
                 </control>
-
-                <control type="fadelabel">
-                    <font>Font_MultiplexTVLabel</font>
-                    <width>1200</width>
-                    <shadowcolor>ff000000</shadowcolor>
-                    <label>[UPPERCASE]$INFO[ListItem.album] - $INFO[listitem.artist][/UPPERCASE]</label>
-                    <scrollspeed>45</scrollspeed>
-                    <scrollout>true</scrollout>
-                    <pauseatend>3000</pauseatend>
-                    <scroll>true</scroll>
-                    <visible>Container.Content(albums)</visible>
-                </control>
             </control>
 
-            <control type="group">
-                <posx>-40</posx>
-                <posy>20</posy>
-                <visible>Container.Content(songs)</visible>
+<!-- Artist Info -->
+			<control type="group">
+				<posx>-65</posx>
+				<posy>110</posy>
+				<visible>Container.Content(artists)</visible>
                 <control type="label">
-                    <font>Font_MultiplexTVLabel</font>
-                    <width>900</width>
-                    <shadowcolor>ff000000</shadowcolor>
-                    <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+                <posy>0</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>Formed:</label>
+                </control>
+                <control type="label">
+                <posy>15</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).ListItem.Property(Formed)]</label>
+                </control>			
+
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>0</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[515]:</label>
+                </control>
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>15</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).listitem.Property(Genre)]</label>
                     <scrollspeed>30</scrollspeed>
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posx>500</posx>
+                    <posy>0</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[21893] - Died:</label>
                 </control>
                 <control type="label">
-                    <posy>50</posy>
-                    <width>600</width>
-                    <font>Font_MultiplexSeasonLabel</font>
-                    <shadowcolor>ff000000</shadowcolor>
-                    <label>[UPPERCASE]$INFO[listitem.artist] - $INFO[listitem.album][/UPPERCASE]</label>
+                    <posx>500</posx>
+                    <posy>15</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Clistitem.Property(born)] - $INFO[listitem.Property(died)]</label>
+                </control>			
+
+                <control type="label">
+                    <posx>400</posx>
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>300</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[176]:</label>
+                </control>
+                <control type="label">
+                    <posx>400</posx>
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>300</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).listitem.Property(style)]</label>
                     <scrollspeed>30</scrollspeed>
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
+                </control>			
+		
+                <control type="label">
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>100</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[175]:</label>
                 </control>
+                <control type="label">
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>300</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[Container(52).ListItem.Property(mood)]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+
                 <control type="textbox">
-                    <posx>15</posx>
-                    <posy>180</posy>
-                    <width>535</width>
-                    <height>280</height>
+                    <posx>80</posx>
+                    <posy>90</posy>
+                    <width>620</width>
+                    <height>240</height>
                     <font>Font_MultiplexPlotSmall</font>
                     <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
                 </control>
-            </control>
-            
+			</control>
+<!-- End Artist Info -->
+
+<!-- Album Info -->
             <control type="group">
-                <posx>-40</posx>
-                <posy>100</posy>
+                <visible>Container.Content(albums)</visible>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>20</posy>
+                    <width>1000</width>
+                    <font>Font_MultiplexTVLabel</font>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>[UPPERCASE]$INFO[listitem.album][/UPPERCASE]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>70</posy>
+                    <width>1000</width>
+                    <font>Font_MultiplexSeasonLabel</font>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>[UPPERCASE]$INFO[listitem.artist][/UPPERCASE]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>
+            </control>
+            <control type="group">
+                <posx>15</posx>
+                <posy>90</posy>
                 <visible>Container.Content(albums)</visible>
                 <control type="group">
                     <posy>22</posy>
@@ -3410,10 +3528,10 @@
                     </control>
                 </control>
                 <control type="textbox">
-                    <posx>15</posx>
-                    <posy>180</posy>
-                    <width>535</width>
-                    <height>280</height>
+                    <posx>0</posx>
+                    <posy>105</posy>
+                    <width>620</width>
+                    <height>260</height>
                     <font>Font_MultiplexPlotSmall</font>
                     <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
                     <textcolor>d0FFFFFF</textcolor>
@@ -3421,168 +3539,6 @@
                 </control>
             </control>	
             
-	<!-- Artist Info -->
-			<control type="group">
-				<posx>-65</posx>
-				<posy>110</posy>
-				<visible>Container.Content(artists)</visible>
-                <control type="label">
-                <posy>0</posy>
-                    <height>13</height>
-                    <width>200</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>Formed:</label>
-                </control>
-                <control type="label">
-                <posy>15</posy>
-                    <height>13</height>
-                    <width>200</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).ListItem.Property(Formed)]</label>
-                </control>			
-                <control type="label">
-                    <posy>45</posy>
-                    <height>13</height>
-                    <width>200</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>Years Active:</label>
-                </control>
-                <control type="label">
-                    <posy>60</posy>
-                    <height>13</height>
-                    <width>200</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).ListItem.Property(YearsActive)]</label>
-                </control>			
-
-
-                <control type="label">
-                <posy>75</posy>
-                    <height>13</height>
-                    <width>100</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>$LOCALIZE[21893] - Died:</label>
-                </control>
-                <control type="label">
-                    <posy>90</posy>
-                    <height>13</height>
-                    <width>100</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).listitem.Property(born)] - $INFO[Container(51).listitem.Property(died)]</label>
-                </control>			
-
-                <control type="label">
-                    <posx>300</posx>
-                    <posy>0</posy>
-                    <height>13</height>
-                    <width>180</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>$LOCALIZE[515]:</label>
-                </control>
-                <control type="label">
-                    <posx>300</posx>
-                    <posy>15</posy>
-                    <height>13</height>
-                    <width>180</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).listitem.Property(Genre)]</label>
-                    <scrollspeed>30</scrollspeed>
-                    <scrollout>true</scrollout>
-                    <pauseatend>3000</pauseatend>
-                    <scroll>true</scroll>
-                </control>			
-
-                <control type="label">
-                    <posx>300</posx>
-                    <posy>45</posy>
-                    <height>13</height>
-                    <width>180</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>$LOCALIZE[176]:</label>
-                </control>
-                <control type="label">
-                    <posx>300</posx>
-                    <posy>60</posy>
-                    <height>13</height>
-                    <width>180</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).listitem.Property(style)]</label>
-                    <scrollspeed>30</scrollspeed>
-                    <scrollout>true</scrollout>
-                    <pauseatend>3000</pauseatend>
-                    <scroll>true</scroll>
-                </control>			
-		
-                <control type="label">
-                    <posx>500</posx>
-                    <posy>0</posy>
-                    <height>13</height>
-                    <width>100</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>$LOCALIZE[175]:</label>
-                </control>
-                <control type="label">
-                    <posx>500</posx>
-                    <posy>15</posy>
-                    <height>13</height>
-                    <width>180</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).ListItem.Property(mood)]</label>
-                    <scrollspeed>30</scrollspeed>
-                    <scrollout>true</scrollout>
-                    <pauseatend>3000</pauseatend>
-                    <scroll>true</scroll>
-                </control>			
-
-                <control type="label">
-                    <posx>500</posx>
-                    <posy>45</posy>
-                    <height>13</height>
-                    <width>100</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>instruments:</label>
-                </control>
-                <control type="label">
-                    <posx>500</posx>
-                    <posy>60</posy>
-                    <height>13</height>
-                    <width>180</width>
-                    <font>Font_MultiplexInfoLabel</font>	
-                    <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[Container(52).ListItem.Property(Instruments)]</label>
-                    <scrollspeed>30</scrollspeed>
-                    <scrollout>true</scrollout>
-                    <pauseatend>3000</pauseatend>
-                    <scroll>true</scroll>
-                </control>			
-
-                <control type="textbox">
-                    <posx>80</posx>
-                    <posy>90</posy>
-                    <width>620</width>
-                    <height>240</height>
-                    <font>Font_MultiplexPlotSmall</font>
-                    <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
-                    <textcolor>d0FFFFFF</textcolor>
-                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-                </control>
-
-			</control>
-
-<!-- End Artist Info -->
 
             <control type="group">
                 <posx>652</posx>
@@ -3650,93 +3606,315 @@
 				<include>Animation_CommonFade</include>
 			</control>			
 
-<!--            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/multiplex_tvtablet.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + Skin.HasSetting(darkwindow)</visible>				
-            </control>	
-            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/lite/multiplex_tvtablet.png</texture>
-                <visible>![Skin.HasSetting(multiplexgrey) + Skin.HasSetting(multiplexblack)] + !Skin.HasSetting(darkwindow)</visible>				
-            </control>	
-            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/multiplex_tvtablet_grey.png</texture>
-                <visible>Skin.HasSetting(multiplexgrey) + Skin.HasSetting(darkwindow)</visible>				
-            </control>	
-            <control type="image">
-                <posx>75</posx>
-                <width>1130</width>
-                <height>564</height>
-                <texture>multiplex/lite/multiplex_tvtablet_grey.png</texture>
-                <visible>Skin.HasSetting(multiplexgrey) + !Skin.HasSetting(darkwindow)</visible>				
-            </control>	-->
-
-
             <control type="group">
-                <posx>105</posx>
-                <posy>30</posy>
-                <visible>Container.Content(episodes)</visible>
-                <control type="group">
-                    <posy>22</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31402]:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Director]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>			
+                <visible>Skin.HasSetting(darkwindow)</visible>				
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/night/multiplex_tablet_music_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>
-                
-                <control type="group">
-                    <posy>72</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31401]:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Writer]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>			
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/night/multiplex_tablet_music_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>
-
-                <control type="group">
-                    <posy>122</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31436]:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Year]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>			
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/night/multiplex_fullscreen_tablet_music_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>
             </control>
-            
+
             <control type="group">
-                <posx>105</posx>
-                <posy>30</posy>
-                <visible>Container.Content(tvshows)</visible>
+                <visible>!Skin.HasSetting(darkwindow)</visible>				
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/lite/multiplex_tablet_music_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
+                </control>
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/lite/multiplex_tablet_music_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>				
+                </control>
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/lite/multiplex_tablet_music_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>				
+                </control>
+            </control>
+
+
+	<!-- Artist Info -->
+			<control type="group">
+				<posx>15</posx>
+				<posy>45</posy>
+				<visible>Container.Content(artists)</visible>
+                <control type="label">
+                <posy>0</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>Formed:</label>
+                </control>
+                <control type="label">
+                <posy>15</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[ListItem.Property(Formed)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[515]:</label>
+                </control>
+                <control type="label">
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[listitem.Property(Genre)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>70</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[176]:</label>
+                </control>
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>240</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[listitem.Property(style)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+		
+                <control type="label">
+                    <posy>85</posy>
+                    <height>13</height>
+                    <width>70</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[175]:</label>
+                </control>
+                <control type="label">
+                    <posy>100</posy>
+                    <height>13</height>
+                    <width>460</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[ListItem.Property(mood)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>0</posy>
+                    <height>13</height>
+                    <width>80</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[21893] - Died:</label>
+                </control>
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>15</posy>
+                    <height>13</height>
+                    <width>240</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                    <label fallback="31425">$INFO[listitem.Property(born)] - $INFO[listitem.Property(died)]</label>
+                </control>			
+
+                <control type="textbox">
+                    <posx>80</posx>
+                    <posy>140</posy>
+                    <width>450</width>
+                    <height>200</height>
+                    <font>Font_MultiplexPlotSmall</font>
+                    <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
+                    <textcolor>d0FFFFFF</textcolor>
+                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+                </control>
+			</control>
+<!-- End Artist Info -->
+<!-- Album Info -->
+			<control type="group">
+				<posx>15</posx>
+				<posy>45</posy>
+				<visible>Container.Content(albums)</visible>
+                <control type="label">
+                <posy>0</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>Year:</label>
+                </control>
+                <control type="label">
+                <posy>15</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[ListItem.Year]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[515]:</label>
+                </control>
+                <control type="label">
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>180</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[listitem.Genre]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>45</posy>
+                    <height>13</height>
+                    <width>70</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[176]:</label>
+                </control>
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>60</posy>
+                    <height>13</height>
+                    <width>240</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[listitem.Property(style)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+		
+                <control type="label">
+                    <posy>85</posy>
+                    <height>13</height>
+                    <width>70</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>$LOCALIZE[175]:</label>
+                </control>
+                <control type="label">
+                    <posy>100</posy>
+                    <height>13</height>
+                    <width>460</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[ListItem.Property(mood)]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>			
+
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>0</posy>
+                    <height>13</height>
+                    <width>80</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>Label:</label>
+                </control>
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>15</posy>
+                    <height>13</height>
+                    <width>240</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                    <label fallback="31425">$INFO[listitem.Property(Label)]</label>
+                </control>			
+
+                <control type="textbox">
+                    <posx>80</posx>
+                    <posy>140</posy>
+                    <width>450</width>
+                    <height>200</height>
+                    <font>Font_MultiplexPlotSmall</font>
+                    <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
+                    <textcolor>d0FFFFFF</textcolor>
+                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+                </control>
+			</control>
+
+
+<!--            <control type="group">
+                <posx>-40</posx>
+                <posy>100</posy>
+                <visible>Container.Content(albums)</visible>
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
@@ -3745,226 +3923,101 @@
                     </control>
                     <control type="fadelabel">
                         <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Genre]</label>
+                        <label fallback="31425">$INFO[ListItem.Genre]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
                         <scroll>true</scroll>
-                    </control>			
-                </control>
-                
-                <control type="group">
-                    <posy>72</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31406]:</label>
                     </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Episode]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>			
                 </control>
-
-                <control type="group">
-                    <posy>122</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31407]:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Date]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>			
-                </control>
-            </control>	
-
-            <control type="group">
-                <posx>105</posx>
-                <posy>30</posy>
-                <visible>Container.Content(seasons)</visible>
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31403]:</label>
+                        <include>MultiplexInfoLabel3BigThumb</include>				
+                        <label>$LOCALIZE[31436]:</label>
                     </control>
                     <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Episode]</label>
+                        <include>MultiplexInfoValue3BigThumb</include>				
+                        <label fallback="31425">$INFO[ListItem.Year]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
                         <scroll>true</scroll>
                     </control>			
                 </control>
-                
                 <control type="group">
-                    <posy>72</posy>
+                    <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31439]:</label>
+                        <include>MultiplexInfoLabel2BigThumb</include>				
+                        <label>Label:</label>
                     </control>
                     <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Property(WatchedEpisodes)]</label>
+                        <include>MultiplexInfoValue2BigThumb</include>				
+                        <label fallback="31425">$INFO[ListItem.Property(Label)]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
                         <scroll>true</scroll>
-                    </control>			
+                    </control>
                 </control>
+                <control type="textbox">
+                    <posx>15</posx>
+                    <posy>180</posy>
+                    <width>535</width>
+                    <height>280</height>
+                    <font>Font_MultiplexPlotSmall</font>
+                    <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
+                    <textcolor>d0FFFFFF</textcolor>
+                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+                </control>
+            </control>	 -->
 
-                <control type="group">
-                    <posy>122</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31440]:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Property(UnwatchedEpisodes)]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>			
-                </control>
-            </control>				
-            
-            <control type="textbox">
-                <posx>105</posx>
-                <posy>214</posy>
-                <width>375</width>
-                <height>225</height>
-                <font>Font_MultiplexPlotSmall</font>
-                <info>Container(52).ListItem.Plot</info>
-                <textcolor>d0FFFFFF</textcolor>
-                <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-                <visible>!Container.Content(seasons) + !IsEmpty(ListItem.Plot)</visible>	
-            </control>
-            <control type="textbox">
-                <posx>105</posx>
-                <posy>214</posy>
-                <width>375</width>
-                <height>225</height>
-                <font>Font_MultiplexPlotSmall</font>
-                <info>Container(52).ListItem.PlotOutline</info>
-                <textcolor>d0FFFFFF</textcolor>
-                <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-                <visible>!Container.Content(seasons) + IsEmpty(ListItem.Plot)</visible>	
-            </control>
-            
-            <control type="textbox">
-                <posx>105</posx>
-                <posy>214</posy>
-                <width>375</width>
-                <height>225</height>
-                <font>Font_MultiplexPlotSmall</font>
-                <info>Container(52).ShowPlot</info>
-                <textcolor>d0FFFFFF</textcolor>
-                <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-                <visible>Container.Content(seasons)</visible>	
-            </control>			
-            
+
+<!-- Fanart -->
             <control type="group">
-                <posx>508</posx>
-                <posy>50</posy>
+                <posx>572</posx>
+                <posy>43</posy>
                 <control type="image">
                     <posx>0</posx>
                     <posy>0</posy>
-                    <width>670</width>
-                    <height>378</height>
+                    <width>622</width>
+                    <height>350</height>
                     <texture>common/black.png</texture>
                     <colordiffuse>94FFFFFF</colordiffuse>
-                </control>				
+                </control>
                 <control type="largeimage">
                     <posx>1</posx>
                     <posy>1</posy>
-                    <width>668</width>
-                    <height>376</height>
+                    <width>620</width>
+                    <height>349</height>
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[Container(52).listitem.property(fanart_image)]</texture>
-                    <visible>!Skin.HasSetting(multiplextvbigthumb) | !Container.Content(episodes)</visible>					
                     <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="largeimage">
                     <posx>1</posx>
                     <posy>1</posy>
-                    <width>668</width>
-                    <height>376</height>
+                    <width>620</width>
+                    <height>349</height>
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[Fanart.Image]</texture>
-                    <visible>!Skin.HasSetting(multiplextvbigthumb) | !Container.Content(episodes)</visible>
+                    <visible>!Skin.HasSetting(multiplexmusicbigthumb) | Container.Content(albums)</visible>
                     <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="image">
                     <posx>1</posx>
                     <posy>1</posy>
-                    <width>668</width>
-                    <height>376</height>
+                    <width>620</width>
+                    <height>349</height>
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[Container(52).listitem.thumb]</texture>
-                    <visible>Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)</visible>
+                    <visible>Skin.HasSetting(multiplexmusicbigthumb) + Container.Content(albums)</visible>
                     <include>Animation_VisibleChange200</include>
                 </control>
             </control>
-
-<!--            <control type="group">
-                <posx>508</posx>
-                <posy>50</posy>
-                <visible>Skin.HasSetting(tvpreview) + Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)</visible>	
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>670</width>
-                    <height>378</height>
-                    <texture>common/black.png</texture>
-                    <visible>Player.HasVideo</visible>
-                    <animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
-                </control>				
-                <control type="videowindow">
-                    <posx>1</posx>
-                    <posy>1</posy>
-                    <width>668</width>
-                    <height>376</height>
-                    <aspectratio>scale</aspectratio>
-                    <visible>Player.HasVideo</visible>
-                    <animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
-                </control>
-                <control type="image">
-                    <posx>250</posx>
-                    <posy>363</posy>
-                    <align>center</align>
-                    <width>170</width>
-                    <height>30</height>
-                    <texture>list/progress_back.png</texture>
-                    <visible>!Player.HasMedia</visible>
-                    <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
-                </control>
-                <control type="label">
-                    <posx>0</posx>
-                    <posy>370</posy>
-                    <align>center</align>
-                    <width>670</width>
-                    <height>30</height>
-                    <font>trailer</font>
-                    <label>Press Down to preview episode</label>
-                    <visible>!Player.HasMedia</visible>
-                    <colordiffuse>d0FFFFFF</colordiffuse>
-                    <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
-                </control>
-            </control>	-->			
         </control>	
 	</include>
 
@@ -9958,7 +10011,7 @@
 
         <control type="group" id="110">
             <control type="button" id="111">
-                <visible>[!Skin.HasSetting(videomovies) + !Skin.HasSetting(movietrailers) + !Player.HasMedia] | [!Skin.HasSetting(videotv) + !Skin.HasSetting(tvpreview) + !Player.HasMedia]</visible>
+                <visible>[Skin.HasSetting(videomovies) + !Skin.HasSetting(movietrailers)] | [Skin.HasSetting(videotv) + !Skin.HasSetting(tvpreview)] | [Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview) + !Container.Content(episodes)] | Skin.HasSetting(music)</visible>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>0</width>
@@ -9971,7 +10024,7 @@
                 <ondown>52</ondown>
             </control>
             <control type="button" id="112">
-                <visible>[Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !Player.HasMedia] | [Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview) + !Player.HasMedia]</visible>
+                <visible>[Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview) + Container.Content(episodes)]</visible>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>0</width>
@@ -9982,6 +10035,7 @@
                 <onright>52</onright>
                 <onup>7000</onup>
                 <ondown>600</ondown>
+                <onclick>PlayMedia($INFO[listitem.path]$INFO[listitem.filename])</onclick>
             </control>
         </control>
 
@@ -10017,9 +10071,6 @@
             <onright>52</onright>
            <include condition="[Skin.HasSetting(videomovies) + !Skin.HasSetting(multiplexinfotrigger)] | [Skin.HasSetting(videotv) + !Skin.HasSetting(multiplextvinfotrigger)] | [Skin.HasSetting(music) + !Skin.HasSetting(multiplexmusicinfotrigger)]">MultiplexInfoAutoUp</include>
             <include condition="[Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexinfotrigger)] | [Skin.HasSetting(videotv) + Skin.HasSetting(multiplextvinfotrigger)] | [Skin.HasSetting(music) + Skin.HasSetting(multiplexmusicinfotrigger)]">MultiplexInfoTriggerUp</include>
-<!--            <include condition="Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers)">Trailer</include>
-            <include condition="Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview)">TVshow</include>
-            <include condition="!Skin.HasSetting(movietrailers) + !Skin.HasSetting(tvpreview)">Scrollbar</include> -->
             <ondown>600</ondown>
             <pagecontrol>60</pagecontrol>
             <orientation>horizontal</orientation>
@@ -10321,13 +10372,13 @@
                 <control type="image">
                     <include>MultiplexIconDimensionsMusicWrap</include>
                     <texture diffuse="thumbs/cdcover_mask.png">common/black.png</texture>
-                    <aspectratio scalediffuse="false">strech</aspectratio>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
                     <visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(9000)</visible>
                 </control>				
                 <control type="image">
                     <include>MultiplexIconDimensionsMusicWrap</include>
                     <texture background="true" diffuse="thumbs/cdcover_mask.png">defaultaudio.png</texture>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
                     <info>ListItem.Icon</info>
                     <visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(9000)</visible>
                 </control>
