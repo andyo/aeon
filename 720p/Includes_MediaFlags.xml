@@ -34,11 +34,11 @@
 		<include condition="Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagNightShade</include>
 	</include>
 	<include name="Furniture_ShowcaseMediaFlagsVars_stars_text">
-		<posy>650</posy>
-        <posx>30</posx>
+		<posy>662</posy>
+        <posx>20</posx>
 		<width>110</width>
 		<height>23</height>
-        <font>Font_MultiplexMainLabel</font>
+        <font>Font_RatingFloor</font>
 		<include>Animation_CommonFade</include>
 		<include>Animation_HideShowcase</include>
 		<include>Animation_HideMultiplex</include>
@@ -503,7 +503,7 @@
 				</control>
 				<control type="label">
 					<include>Furniture_ShowcaseMediaFlagsVars_stars_text</include>
-                    <label>$INFO[Container(52).ListItem.Rating]</label>
+                    <label>$INFO[ListItem.Rating]</label>
 					<visible>!Skin.HasSetting(noimdbflag) + Skin.HasSetting(movieratingtext)</visible>
 				</control>
 
