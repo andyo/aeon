@@ -10470,14 +10470,6 @@
                     <visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(9000)</visible>
                 </control>				
                 <control type="image">
-                    <posx>14</posx>
-                    <posy>92</posy>
-                    <width>185</width>
-                    <height>60</height>
-                    <texture>multiplex/multiplex_labelblock.png</texture>
-                    <visible>[Container.Content(seasons) + Skin.HasSetting(flattenshowcase)] | [Container.Content(episodes) + Skin.HasSetting(flattenshowcase)]</visible>
-                </control>
-                <control type="image">
                     <posx>173</posx>
                     <posy>0</posy>
                     <width>35</width>
@@ -10486,36 +10478,6 @@
                     <info>ListItem.Overlay</info>
                     <visible>Skin.HasSetting(flattenshowcase) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
                 </control>
-                <control type="label">
-                    <posx>107</posx>
-                    <posy>98</posy>
-                    <width>185</width>
-                    <height>60</height>
-                    <align>center</align>
-                    <label>EPISODE $INFO[ListItem.Episode]</label>
-                    <font>Font_MultiplexInfoLabel</font>
-                    <visible>Container.Content(episodes) + Skin.HasSetting(flattenshowcase)</visible>
-                </control>
-                <control type="label">
-                    <posx>107</posx>
-                    <posy>98</posy>
-                    <width>185</width>
-                    <height>60</height>
-                    <align>center</align>
-                    <label>$INFO[ListItem.Label]</label>
-                    <font>Font_MultiplexInfoLabel</font>
-                    <visible>Container.Content(seasons) + !IsEmpty(ListItem.Season) + Skin.HasSetting(flattenshowcase)</visible>
-                </control>
-                <control type="label">
-                    <posx>107</posx>
-                    <posy>98</posy>
-                    <width>185</width>
-                    <height>60</height>
-                    <align>center</align>
-                    <label>ALL SEASONS</label>
-                    <font>Font_MultiplexInfoLabel</font>
-                    <visible>Container.Content(seasons) + IsEmpty(ListItem.Season) + Skin.HasSetting(flattenshowcase)</visible>
-                </control>					
             </itemlayout>
             <focusedlayout width="190" height="300" condition="Skin.HasSetting(music)">
                 <control type="image">
@@ -10839,51 +10801,51 @@
                 <include>Animation_HideMultiplex</include>
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-                    <include>ShowcaseMainLabel</include>
+                    <include>MultiplexMainLabel</include>
                     <visible>Container.Content(movies) + !Skin.HasSetting(nomediaflags) + !Window.IsActive(24)</visible>
                 </control>
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-                    <include>ShowcaseMainLabel</include>
+                    <include>MultiplexMainLabel</include>
                     <visible>!Container.Content(episodes) + [[!Container.Content(movies) | Window.IsActive(24)] | [Container.Content(movies) + Skin.HasSetting(nomediaflags)]]</visible>					
                 </control>
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Season].$INFO[ListItem.Episode]: $INFO[ListItem.Title][/UPPERCASE]</label>
-                    <include>ShowcaseMainLabel</include>
+                    <include>MultiplexMainLabel</include>
                     <visible>Container.Content(episodes)</visible>					
                 </control>			
                 <control type="label">
                     <label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31005][/UPPERCASE]</label>
-                    <include>ShowcaseItemsLabel</include>
+                    <include>MultiplexItemsLabel</include>
                 </control>				
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
-                    <include>ShowcaseDetailLabel</include>
+                    <include>MultiplexDetailLabel</include>
                     <visible>Container.Content(movies) + !IsEmpty(ListItem.Genre)</visible>
                 </control>
                 <control type="label" id="72">
                     <label>$INFO[ListItem.Album,, -] $INFO[ListItem.Artist]</label>
-                    <include>ShowcaseDetailLabel</include>
+                    <include>MultiplexDetailLabel</include>
                     <visible>Container.Content(songs)</visible>
                 </control>
                 <control type="label" id="72">
                     <info>ListItem.Label2</info>
-                    <include>ShowcaseDetailLabel</include>
+                    <include>MultiplexDetailLabel</include>
                     <visible>Window.IsActive(1) | Container.Content(albums) | Window.IsActive(501)</visible>
                 </control>
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
-                    <include>ShowcaseDetailLabel</include>
+                    <include>MultiplexDetailLabel</include>
                     <visible>[Container.Content(tvshows)] + !IsEmpty(ListItem.Genre)</visible>
                 </control>
                 <control type="label" id="72">
                     <label>$INFO[ListItem.TVShowTitle]</label>
-                    <include>ShowcaseDetailLabel</include>
+                    <include>MultiplexDetailLabel</include>
                     <visible>[Container.Content(episodes) + !IsEmpty(ListItem.Episode)] | Container.Content(seasons)</visible>
                 </control>
                 <control type="label" id="72">
                     <info>ListItem.PictureResolution</info>
-                    <include>ShowcaseDetailLabel</include>
+                    <include>MultiplexDetailLabel</include>
                     <visible>Window.IsActive(2) + !IsEmpty(ListItem.PictureResolution)</visible>
                 </control>
             </control>
@@ -10891,13 +10853,13 @@
 <!-- FULLSCREEN FLOOR TEXT -->
             <control type="group">
                 <visible>Skin.HasSetting(fullscreenmultiplex)</visible>
-                <!-- Movie Text -->
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-                    <include>ShowcaseMainLabel</include>
-                    <visible>![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [!Container.Content(movies) | Window.IsActive(24)]</visible>					
+                    <include>MultiplexMainLabel</include>
+                    <visible>![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + [!Container.Content(movies) | Window.IsActive(24)]</visible>					
                 </control>
 
+                <!-- Movie Text -->
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
