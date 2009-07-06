@@ -476,8 +476,8 @@
 	<include name="Objects_CurtainsButton">
 		<control type="togglebutton" id="997">
 			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31067]S: $LOCALIZE[31078]</label>
-			<altlabel>$LOCALIZE[31067]S: $LOCALIZE[31077]</altlabel>
+			<label>$LOCALIZE[31067]: $LOCALIZE[31078]</label>
+			<altlabel>$LOCALIZE[31067]: $LOCALIZE[31077]</altlabel>
 			<usealttexture>Skin.HasSetting(nocurtains)</usealttexture>
 			<onclick>Skin.ToggleSetting(nocurtains)</onclick>
 			<visible>Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(57)</visible>
