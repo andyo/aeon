@@ -57,6 +57,7 @@
                     <onclick>Skin.SetBool(videomovies)</onclick>
                     <onclick>Skin.Reset(videotv)</onclick>
                     <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedmovies,return)</onclick>
 				</control>
 				<control type="button" id="41">
@@ -66,6 +67,7 @@
                     <onclick>Skin.SetBool(videomovies)</onclick>
                     <onclick>Skin.Reset(videotv)</onclick>
                     <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,movietitles,return)</onclick>
 				</control>
 				<control type="button" id="42">
@@ -73,6 +75,7 @@
 					<include>MovieShortcutBools</include>					
 					<label>31922</label>
                     <onclick>Skin.SetBool(videomovies)</onclick>
+                    <onclick>Skin.SetBool(videogenres)</onclick>
                     <onclick>Skin.Reset(videotv)</onclick>
                     <onclick>Skin.Reset(music)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviegenres,return)</onclick>
@@ -84,6 +87,7 @@
                     <onclick>Skin.SetBool(videomovies)</onclick>
                     <onclick>Skin.Reset(videotv)</onclick>
                     <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,movieyears,return)</onclick>
 				</control>
 				<control type="button" id="44">
@@ -93,6 +97,7 @@
                     <onclick>Skin.SetBool(videomovies)</onclick>
                     <onclick>Skin.Reset(videotv)</onclick>
                     <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,movieactors,return)</onclick>
 				</control>
 				<control type="button" id="45">
@@ -102,6 +107,7 @@
                     <onclick>Skin.SetBool(videomovies)</onclick>
                     <onclick>Skin.Reset(videotv)</onclick>
                     <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviedirectors,return)</onclick>
 				</control>
 				<control type="button" id="46">
@@ -111,6 +117,7 @@
                     <onclick>Skin.SetBool(videomovies)</onclick>
                     <onclick>Skin.Reset(videotv)</onclick>
                     <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviestudios,return)</onclick>
 				</control>				
 			</control>
@@ -203,36 +210,42 @@
 					<include>Submenu_Button</include>
 					<include>TVShortcutBools</include>					
 					<label>31920</label>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedepisodes,return)</onclick>
 				</control>
 				<control type="button" id="41">
 					<include>Submenu_Button</include>
 					<include>TVShortcutBools</include>					
 					<label>31933</label>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowtitles,return)</onclick>
 				</control>
 				<control type="button" id="42">
 					<include>Submenu_Button</include>
 					<include>TVShortcutBools</include>					
 					<label>31922</label>
+                    <onclick>Skin.SetBool(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowgenres,return)</onclick>
 				</control>
 				<control type="button" id="43">
 					<include>Submenu_Button</include>
 					<include>TVShortcutBools</include>					
 					<label>31924</label>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowactors,return)</onclick>
 				</control>
 				<control type="button" id="44">
 					<include>Submenu_Button</include>
 					<include>TVShortcutBools</include>					
 					<label>31923</label>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowyears,return)</onclick>
 				</control>
 				<control type="button" id="45">
 					<include>Submenu_Button</include>
 					<include>TVShortcutBools</include>					
 					<label>31057</label>
+                    <onclick>Skin.Reset(videogenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideos,tvshows,return)</onclick>
 				</control>
 			</control>			
