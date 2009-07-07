@@ -5403,10 +5403,10 @@
 
     <include name="MultiplexMovies">
         <control type="group" id="8001">
-            <include condition="Skin.HasSetting(videomovies) | Skin.HasSetting(videogenres)">MultiplexMoviePosterFloor</include>			
+            <include condition="Skin.HasSetting(videomovies) | [Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">MultiplexMoviePosterFloor</include>			
             <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVPosterFloor</include>			
             <camera x="640" y="540" />
-            <visible>Control.IsVisible(52) + Container.OnNext + !Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Skin.HasSetting(tvposterview) + !Container.Content(episodes)] | [Control.IsVisible(52) + Container.OnNext + Container.Content(genres)]</visible>
+            <visible>Control.IsVisible(52) + Container.OnNext + !Skin.HasSetting(flattenshowcase) + [Container.Content(genres) | Container.Content(movies) | Skin.HasSetting(tvposterview) + !Container.Content(episodes)]</visible>
             <animation effect="slide" end="-60,0" time="250" reversible="false">Hidden</animation>
             <control type="group">
                 <posx>45</posx>
@@ -6237,10 +6237,10 @@
         
         
         <control type="group" id="8002">
-            <include condition="Skin.HasSetting(videomovies) | Skin.HasSetting(videogenres)">MultiplexMoviePosterFloor</include>			
+            <include condition="Skin.HasSetting(videomovies) | [Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">MultiplexMoviePosterFloor</include>			
             <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVPosterFloor</include>			
             <camera x="640" y="540" />
-            <visible>Control.IsVisible(52) + Container.OnPrevious + !Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Skin.HasSetting(tvposterview) + !Container.Content(episodes)] | [Control.IsVisible(52) + Container.OnPrevious + Container.Content(genres)]</visible>
+            <visible>Control.IsVisible(52) + Container.OnPrevious + !Skin.HasSetting(flattenshowcase) + [Container.Content(genres) | Container.Content(movies) | Skin.HasSetting(tvposterview) + !Container.Content(episodes)]</visible>
             <animation effect="slide" end="60,0" time="250" reversible="false">Hidden</animation>
             <control type="group">
                 <posx>965</posx>
@@ -7077,7 +7077,7 @@
 		</control>
        
         <control type="group" id="8000">
-            <include condition="Skin.HasSetting(videomovies) | Skin.HasSetting(videogenres)">MultiplexMoviePosterFloor</include>			
+            <include condition="Skin.HasSetting(videomovies) | [Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">MultiplexMoviePosterFloor</include>			
             <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVPosterFloor</include>			
             <animation effect="fade" time="500">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
@@ -7086,11 +7086,11 @@
             <control type="group">
                 <posx>45</posx>
                 <animation effect="rotatey" center="-80" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="-80" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="-500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="-80" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7134,11 +7134,11 @@
             <control type="group">
                 <posx>105</posx>
                 <animation effect="rotatey" center="-20" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="-20" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="-500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="-20" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7182,11 +7182,11 @@
             <control type="group">
                 <posx>165</posx>
                 <animation effect="rotatey" center="40" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="40" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="-500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="40" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7230,11 +7230,11 @@
             <control type="group">
                 <posx>225</posx>
                 <animation effect="rotatey" center="100" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="100" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="-500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="100" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7278,11 +7278,11 @@
             <control type="group">
                 <posx>285</posx>
                 <animation effect="rotatey" center="160" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="160" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="160" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7326,11 +7326,11 @@
             <control type="group">
                 <posx>345</posx>
                 <animation effect="rotatey" center="220" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="220" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="-320,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="220" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-320" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7374,11 +7374,11 @@
             <control type="group">
                 <posx>405</posx>
                 <animation effect="rotatey" center="280" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="280" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="-260,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="280" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-260" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7422,11 +7422,11 @@
             <control type="group">
                 <posx>465</posx>
                 <animation effect="rotatey" center="340" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="340" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="-200,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="340" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-200" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7470,11 +7470,11 @@
             <control type="group">
                 <posx>525</posx>
                 <animation effect="rotatey" center="400" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="400" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="-140,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="400" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-140" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7518,11 +7518,11 @@
             <control type="group">
                 <posx>965</posx>
                 <animation effect="rotatey" center="1370" start="55" end="55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1370" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1370" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7566,11 +7566,11 @@
             <control type="group">
                 <posx>905</posx>
                 <animation effect="rotatey" center="1310" start="55" end="55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1310" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1310" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7614,11 +7614,11 @@
             <control type="group">
                 <posx>845</posx>
                 <animation effect="rotatey" center="1250" start="55" end="55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1250" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1250" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7662,11 +7662,11 @@
             <control type="group">
                 <posx>785</posx>
                 <animation effect="rotatey" center="1190" start="55" end="55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1190" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1190" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7710,11 +7710,11 @@
             <control type="group">
                 <posx>725</posx>
                 <animation effect="rotatey" center="1130" start="55" end="55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1130" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1130" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7758,11 +7758,11 @@
             <control type="group">
                 <posx>665</posx>
                 <animation effect="rotatey" center="1070" start="55" end="55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1070" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="320,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1070" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="320" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7806,11 +7806,11 @@
             <control type="group">
                 <posx>605</posx>
                 <animation effect="rotatey" center="1010" start="55" end="55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1010" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="260,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1010" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="260" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7854,11 +7854,11 @@
             <control type="group">
                 <posx>545</posx>
                 <animation effect="rotatey" center="950" start="55" end="55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="950" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="200,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="950" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="200" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7902,11 +7902,11 @@
             <control type="group">
                 <posx>485</posx>
                 <animation effect="rotatey" center="890" start="55" end="55" time="0" condition="true">Conditional</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="890" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0,0" end="140,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)">
+                <animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videomovies)] | [Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="890" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="140" time="800" tween="cubic" easing="inout" />
 				</animation>
@@ -7949,7 +7949,7 @@
             </control>
             <control type="group">
                 <posx>505</posx>
-                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv)">
+                <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="slide" start="0,0" end="0,-28" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
@@ -10132,8 +10132,8 @@
         <control type="wraplist" id="52">
             <viewtype label="Multiplex">list</viewtype>
             <include condition="Skin.HasSetting(music)">MultiplexMusicVarsWrap</include>
-            <include condition="Skin.HasSetting(videomovies) | Skin.HasSetting(videogenres)">MultiplexMovieVarsWrap</include>
-            <include condition="Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview) + !Container.Content(episodes) + !Skin.HasSetting(videogenres)">MultiplexTVPosterVarsWrap</include>
+            <include condition="Skin.HasSetting(videomovies) | [Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">MultiplexMovieVarsWrap</include>
+            <include condition="Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview)">MultiplexTVPosterVarsWrap</include>
             <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVVarsWrap</include>			
             <onleft>52</onleft>
             <onright>52</onright>
@@ -10142,7 +10142,7 @@
             <ondown>600</ondown>
             <pagecontrol>60</pagecontrol>
             <orientation>horizontal</orientation>
-            <include condition="Skin.HasSetting(videomovies) | [Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview)  + !Container.Content(episodes)]">MultiplexFocusMovies</include>
+            <include condition="Skin.HasSetting(videomovies) | Skin.HasSetting(videogenres) | [Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview)]">MultiplexFocusMovies</include>
             <include condition="Skin.HasSetting(videotv)">MultiplexFocusTV</include>
             <include condition="Skin.HasSetting(music)">MultiplexFocusMusic</include>
             <scrolltime>400</scrolltime>

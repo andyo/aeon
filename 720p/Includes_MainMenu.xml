@@ -110,6 +110,7 @@
 				<onclick>Skin.SetBool(music)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
 				<onclick>XBMC.ActivateWindow(MyMusic,return)</onclick>
 				<visible>!Skin.HasSetting(nomusic)</visible>
 				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenumusic)] | !Skin.HasSetting(onetouch)</visible>
@@ -147,6 +148,7 @@
 				<onclick>Skin.SetBool(videomovies)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
 				<onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
 				<onclick>XBMC.ActivateWindow(MyVideoLibrary,movietitles,return)</onclick>
 				<visible>!Skin.HasSetting(nomovies)</visible>
 				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenumovies)] | !Skin.HasSetting(onetouch)</visible>
@@ -158,6 +160,7 @@
 				<onclick>Skin.SetBool(videotv)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
 				<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowtitles,return)</onclick>
 				<visible>!Skin.HasSetting(notvshows)</visible>
 				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenutv)] | !Skin.HasSetting(onetouch)</visible>
