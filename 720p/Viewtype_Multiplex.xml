@@ -590,6 +590,50 @@
             <control type="group">
                 <visible>Skin.HasSetting(darkwindow)</visible> 
                 <control type="image">
+				<width>1280</width>
+				<height>610</height>
+                    <texture>multiplex/night/multiplex_fullscreen_movie_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>
+                </control>
+                <control type="image">
+				<width>1280</width>
+				<height>610</height>
+                    <texture>multiplex/night/multiplex_fullscreen_movie_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>
+                </control>
+                <control type="image">
+				<width>1280</width>
+				<height>610</height>
+                    <texture>multiplex/night/multiplex_fullscreen_movie_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>
+                </control>				
+            </control>				
+            <control type="group">
+                <visible>!Skin.HasSetting(darkwindow)</visible> 
+                <control type="image">
+				<width>1280</width>
+				<height>610</height>
+                    <texture>multiplex/lite/multiplex_fullscreen_movie_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>
+                </control>
+                <control type="image">
+				<width>1280</width>
+				<height>610</height>
+                    <texture>multiplex/lite/multiplex_fullscreen_movie_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>
+                </control>
+                <control type="image">
+				<width>1280</width>
+				<height>610</height>
+                    <texture>multiplex/lite/multiplex_fullscreen_movie_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>
+                </control>				
+            </control>				
+
+
+<!--            <control type="group">
+                <visible>Skin.HasSetting(darkwindow)</visible> 
+                <control type="image">
                     <width>1280</width>
                     <height>610</height>
                     <texture>multiplex/night/multiplex_fullscreen_tablet_poster_green.png</texture>
@@ -703,7 +747,103 @@
                     <texture>multiplex/lite/multiplex_fullscreen_tablet_bigthumb_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>			
                 </control>	
-            </control>	
+            </control>	-->
+
+
+<!-- END MOVIE FULLSCREEN LINES -->
+            <control type="group">
+                <visible>Skin.HasSetting(videomovies)</visible>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>56</posy>
+                    <width>1280</width>
+                    <height>2</height>
+                    <texture flipy="false">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>467</posy>
+                    <width>1280</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END MOVIE FULLSCREEN LINES -->
+
+<!-- POSTER VIEW LINES -->
+            <control type="group">
+                <visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
+                <control type="image">
+                    <posx>272</posx>
+                    <posy>58</posy>
+                    <width>2</width>
+                    <height>409</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>929</posx>
+                    <posy>58</posy>
+                    <width>2</width>
+                    <height>409</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>274</posx>
+                    <posy>112</posy>
+                    <width>656</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END POSTER VIEW LINES -->
+
+<!-- PLOT VIEW LINES -->
+            <control type="group">
+                <visible>Skin.HasSetting(multiplexplot)</visible>				
+                <control type="image">
+                    <posx>349</posx>
+                    <posy>58</posy>
+                    <width>2</width>
+                    <height>409</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>929</posx>
+                    <posy>58</posy>
+                    <width>2</width>
+                    <height>409</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>351</posx>
+                    <posy>112</posy>
+                    <width>579</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END POSTER VIEW LINES -->
+
+<!-- THUMB & ART VIEW LINES -->
+            <control type="group">
+                <visible>Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)</visible>				
+                <control type="image">
+                    <posx>559</posx>
+                    <posy>58</posy>
+                    <width>2</width>
+                    <height>409</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>112</posy>
+                    <width>560</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END THUMB & ART VIEW LINES -->
+
 
             <control type="group">
                 <posx>0</posx>
@@ -1756,6 +1896,55 @@
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
+                    <texture>multiplex/night/multiplex_movie_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>
+                </control>
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/night/multiplex_movie_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>
+                </control>
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/night/multiplex_movie_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>
+                </control>				
+            </control>				
+            <control type="group">
+                <visible>!Skin.HasSetting(darkwindow)</visible> 
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/lite/multiplex_movie_green.png</texture>
+                    <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>
+                </control>
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/lite/multiplex_movie_grey.png</texture>
+                    <visible>Skin.HasSetting(multiplexgrey)</visible>
+                </control>
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
+                    <texture>multiplex/lite/multiplex_movie_black.png</texture>
+                    <visible>Skin.HasSetting(multiplexblack)</visible>
+                </control>				
+            </control>				
+
+<!--            <control type="group">
+                <visible>Skin.HasSetting(darkwindow)</visible> 
+                <control type="image">
+                    <posx>75</posx>
+                    <width>1130</width>
+                    <height>564</height>
                     <texture>multiplex/night/multiplex_tablet_poster_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)] + ![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
                 </control>
@@ -1882,7 +2071,94 @@
                     <texture>multiplex/lite/multiplex_tablet_bigthumb_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>
                 </control>				
-            </control>				
+            </control>				-->
+
+<!-- MOVIE POPUP LINES -->
+            <control type="group">
+                <visible>Skin.HasSetting(videomovies)</visible>
+                <control type="image">
+                    <posx>85</posx>
+                    <posy>37</posy>
+                    <width>1112</width>
+                    <height>2</height>
+                    <texture flipy="false">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>85</posx>
+                    <posy>399</posy>
+                    <width>1112</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END MOVIE POPUP LINES -->
+
+<!-- POSTER VIEW LINES -->
+            <control type="group">
+                <visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
+                <control type="image">
+                    <posx>398</posx>
+                    <posy>39</posy>
+                    <width>2</width>
+                    <height>360</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>950</posx>
+                    <posy>39</posy>
+                    <width>2</width>
+                    <height>360</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+            </control>
+<!-- END POSTER VIEW LINES -->
+
+<!-- PLOT VIEW LINES -->
+            <control type="group">
+                <visible>Skin.HasSetting(multiplexplot)</visible>				
+                <control type="image">
+                    <posx>398</posx>
+                    <posy>39</posy>
+                    <width>2</width>
+                    <height>360</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>889</posx>
+                    <posy>39</posy>
+                    <width>2</width>
+                    <height>360</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+            </control>
+<!-- END POSTER VIEW LINES -->
+
+<!-- THUMB & ART VIEW LINES -->
+            <control type="group">
+                <visible>Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)</visible>				
+                <control type="image">
+                    <posx>323</posx>
+                    <posy>39</posy>
+                    <width>2</width>
+                    <height>164</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>575</posx>
+                    <posy>39</posy>
+                    <width>2</width>
+                    <height>360</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>83</posx>
+                    <posy>202</posy>
+                    <width>493</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END THUMB & ART VIEW LINES -->
 
             <!-- MAIN TEXT FOR WINDOW --> 
             <control type="group">
@@ -1896,7 +2172,7 @@
                     </control>
                     <control type="fadelabel">
                         <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Director]</label>
+                        <label fallback="31425">$INFO[ListItem.Director]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -1912,7 +2188,7 @@
                     </control>
                     <control type="fadelabel">
                         <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Writer]</label>
+                        <label fallback="31425">$INFO[ListItem.Writer]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -1928,7 +2204,7 @@
                     </control>
                     <control type="fadelabel">
                         <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Year]</label>
+                        <label fallback="31425">$INFO[ListItem.Year]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -1950,7 +2226,7 @@
                     </control>
                     <control type="fadelabel">
                         <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Duration]</label>
+                        <label fallback="31425">$INFO[ListItem.Duration]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -1966,7 +2242,7 @@
                     </control>
                     <control type="fadelabel">
                         <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Genre]</label>
+                        <label fallback="31425">$INFO[ListItem.Genre]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -1982,7 +2258,7 @@
                     </control>
                     <control type="fadelabel">
                         <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.MPAA]</label>
+                        <label fallback="31425">$INFO[ListItem.MPAA]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -1998,7 +2274,7 @@
                     </control>
                     <control type="fadelabel">
                         <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.RatingAndVotes]</label>
+                        <label fallback="31425">$INFO[ListItem.RatingAndVotes]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -2021,7 +2297,7 @@
                     </control>
                     <control type="label">
                         <include>MultiplexInfoValueBigThumb</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.Duration]</label>
+                        <label fallback="31425">$INFO[ListItem.Duration]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -2037,7 +2313,7 @@
                     </control>
                     <control type="label">
                         <include>MultiplexInfoValueBigThumb</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.MPAA]</label>
+                        <label fallback="31425">$INFO[ListItem.MPAA]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -2053,7 +2329,7 @@
                     </control>
                     <control type="label">
                         <include>MultiplexInfoValueBigThumb</include>				
-                        <label fallback="31425">$INFO[Container(52).ListItem.RatingAndVotes]</label>
+                        <label fallback="31425">$INFO[ListItem.RatingAndVotes]</label>
                         <scrollspeed>30</scrollspeed>
                         <scrollout>true</scrollout>
                         <pauseatend>3000</pauseatend>
@@ -2114,7 +2390,7 @@
             <control type="textbox">
                 <posx>105</posx>
                 <posy>207</posy>
-                <width>435</width>
+                <width>455</width>
                 <height>182</height>
                 <font>Font_MultiplexPlotSmall</font>
                 <info>Container(52).ListItem.Plot</info>
@@ -2125,7 +2401,7 @@
             <control type="textbox">
                 <posx>105</posx>
                 <posy>207</posy>
-                <width>435</width>
+                <width>455</width>
                 <height>182</height>
                 <font>Font_MultiplexPlotSmall</font>
                 <info>Container(52).ListItem.PlotOutline</info>
@@ -2136,7 +2412,7 @@
             
             <!-- IMAGES PLOT VIEW -->
             <control type="group">
-                <posx>905</posx>
+                <posx>913</posx>
                 <posy>50</posy>
                 <visible>Skin.HasSetting(multiplexplot)</visible>				
                 <control type="image">
@@ -2249,14 +2525,14 @@
 
             <!-- IMAGES FOR POSTER VIEW -->
             <control type="group">
-                <posx>953</posx>
-                <posy>38</posy>
+                <posx>952</posx>
+                <posy>39</posy>
                 <visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
                 <control type="largeimage">
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>245</width>
-                    <height>361</height>
+                    <height>360</height>
                     <aspectratio>scale</aspectratio>
                     <fadetime>400</fadetime>
                     <texture>$INFO[ListItem.Icon]</texture>
@@ -2334,7 +2610,7 @@
 
             <!-- IMAGES FOR THUMB VIEW -->
             <control type="group">
-                <posx>575</posx>
+                <posx>590</posx>
                 <posy>50</posy>
                 <visible>Skin.HasSetting(multiplexbigthumb)</visible>				
                 <control type="image">
@@ -2360,7 +2636,7 @@
 
             <!-- IMAGES FOR ART VIEW -->
             <control type="group">
-                <posx>575</posx>
+                <posx>590</posx>
                 <posy>50</posy>
                 <visible>Skin.HasSetting(multiplexfanart)</visible>				
                 <control type="image">
@@ -2385,7 +2661,7 @@
 
             <!-- VIDEO WINDOW MULTI-IMAGE VIEW -->
             <control type="group">
-                <posx>575</posx>
+                <posx>590</posx>
                 <posy>50</posy>
                 <visible>Skin.HasSetting(movietrailers) + Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)</visible>	
                 <control type="image">
@@ -2477,19 +2753,19 @@
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/night/multiplex_fullscreen_tvtablet_green.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tv_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/night/multiplex_fullscreen_tvtablet_grey.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tv_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/night/multiplex_fullscreen_tvtablet_black.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_tv_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>
             </control>
@@ -2499,22 +2775,65 @@
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/lite/multiplex_fullscreen_tvtablet_green.png</texture>
+                    <texture>multiplex/lite/multiplex_fullscreen_tv_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/lite/multiplex_fullscreen_tvtablet_grey.png</texture>
+                    <texture>multiplex/lite/multiplex_fullscreen_tv_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/lite/multiplex_fullscreen_tvtablet_black.png</texture>
+                    <texture>multiplex/lite/multiplex_fullscreen_tv_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>
             </control>
+
+<!-- TV FULLSCREEN LINES -->
+            <control type="group">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>106</posy>
+                    <width>1280</width>
+                    <height>2</height>
+                    <texture flipy="false">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>609</posy>
+                    <width>1280</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+
+            <control type="group">
+                <control type="image">
+                    <posx>560</posx>
+                    <posy>108</posy>
+                    <width>2</width>
+                    <height>407</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>171</posy>
+                    <width>561</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>515</posy>
+                    <width>1280</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END TV FULLSCREEN LINES -->
 
             <control type="group">
                 <control type="label">
@@ -2895,21 +3214,21 @@
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/night/multiplex_tvtablet_green.png</texture>
+                    <texture>multiplex/night/multiplex_tv_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>	
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/night/multiplex_tvtablet_grey.png</texture>
+                    <texture>multiplex/night/multiplex_tv_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>	
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/night/multiplex_tvtablet_black.png</texture>
+                    <texture>multiplex/night/multiplex_tv_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>	
             </control>	
@@ -2920,24 +3239,58 @@
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/lite/multiplex_tvtablet_green.png</texture>
+                    <texture>multiplex/lite/multiplex_tv_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>	
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/lite/multiplex_tvtablet_grey.png</texture>
+                    <texture>multiplex/lite/multiplex_tv_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>	
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/lite/multiplex_tvtablet_black.png</texture>
+                    <texture>multiplex/lite/multiplex_tv_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>	
             </control>	
+
+<!-- TV POPUP LINES -->
+            <control type="group">
+                <control type="image">
+                    <posx>85</posx>
+                    <posy>37</posy>
+                    <width>1112</width>
+                    <height>2</height>
+                    <texture flipy="false">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>85</posx>
+                    <posy>442</posy>
+                    <width>1112</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>495</posx>
+                    <posy>39</posy>
+                    <width>2</width>
+                    <height>403</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>85</posx>
+                    <posy>208</posy>
+                    <width>411</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END TV POPUP LINES -->
+
 
             <control type="group">
                 <posx>105</posx>
@@ -3269,19 +3622,19 @@
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/night/multiplex_fullscreen_tablet_music_green.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_music_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/night/multiplex_fullscreen_tablet_music_grey.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_music_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/night/multiplex_fullscreen_tablet_music_black.png</texture>
+                    <texture>multiplex/night/multiplex_fullscreen_music_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>
             </control>
@@ -3291,23 +3644,65 @@
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/lite/multiplex_fullscreen_tablet_music_green.png</texture>
+                    <texture>multiplex/lite/multiplex_fullscreen_music_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/lite/multiplex_fullscreen_tablet_music_grey.png</texture>
+                    <texture>multiplex/lite/multiplex_fullscreen_music_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>
                 <control type="image">
                     <width>1280</width>
                     <height>610</height>
-                    <texture>multiplex/lite/multiplex_fullscreen_tablet_music_black.png</texture>
+                    <texture>multiplex/lite/multiplex_fullscreen_music_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>
             </control>
 
+<!-- MUSIC FULLSCREEN LINES -->
+            <control type="group">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>106</posy>
+                    <width>1280</width>
+                    <height>2</height>
+                    <texture flipy="false">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>609</posy>
+                    <width>1280</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+
+            <control type="group">
+                <control type="image">
+                    <posx>646</posx>
+                    <posy>108</posy>
+                    <width>2</width>
+                    <height>360</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>191</posy>
+                    <width>647</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>466</posy>
+                    <width>1280</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END MUSIC FULLSCREEN LINES -->
 
 <!-- Main Info -->
             <control type="group">
@@ -3680,21 +4075,21 @@
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/night/multiplex_tablet_music_green.png</texture>
+                    <texture>multiplex/night/multiplex_music_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/night/multiplex_tablet_music_grey.png</texture>
+                    <texture>multiplex/night/multiplex_music_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/night/multiplex_fullscreen_tablet_music_black.png</texture>
+                    <texture>multiplex/night/multiplex_music_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>
             </control>
@@ -3705,25 +4100,57 @@
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/lite/multiplex_tablet_music_green.png</texture>
+                    <texture>multiplex/lite/multiplex_music_green.png</texture>
                     <visible>![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>				
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/lite/multiplex_tablet_music_grey.png</texture>
+                    <texture>multiplex/lite/multiplex_music_grey.png</texture>
                     <visible>Skin.HasSetting(multiplexgrey)</visible>				
                 </control>
                 <control type="image">
                     <posx>75</posx>
                     <width>1130</width>
                     <height>564</height>
-                    <texture>multiplex/lite/multiplex_tablet_music_black.png</texture>
+                    <texture>multiplex/lite/multiplex_music_black.png</texture>
                     <visible>Skin.HasSetting(multiplexblack)</visible>				
                 </control>
             </control>
 
+<!-- TV POPUP LINES -->
+            <control type="group">
+                <control type="image">
+                    <posx>85</posx>
+                    <posy>37</posy>
+                    <width>1112</width>
+                    <height>2</height>
+                    <texture flipy="false">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>85</posx>
+                    <posy>399</posy>
+                    <width>1112</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>566</posx>
+                    <posy>39</posy>
+                    <width>2</width>
+                    <height>360</height>
+                    <texture>multiplex/vert_line.png</texture>
+                </control>
+                <control type="image">
+                    <posx>85</posx>
+                    <posy>177</posy>
+                    <width>482</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                </control>
+            </control>
+<!-- END TV POPUP LINES -->
 
 	<!-- Artist Info -->
 			<control type="group">
