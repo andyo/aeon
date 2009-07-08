@@ -383,7 +383,6 @@
 				<onright>61</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
-				<visible>![Window.IsActive(25) + Skin.HasSetting(videotv)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + Skin.HasSetting(unlockTVviews)]</visible>
 				<itemlayout condition="Window.IsActive(1) | Window.IsActive(20) | [Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(movies)+ !Container.Content(tvshows)+ !Container.Content(episodes)] | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + Container.Content(movies)] | [Window.IsActive(25) + Container.Content(tvshows) + !Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + !Container.Content(albums)+!Container.Content(songs)] | [Window.IsActive(502) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]" height="40">
 					<control type="image">
 						<posx>12</posx>
