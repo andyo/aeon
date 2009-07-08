@@ -286,6 +286,10 @@
 			<onclick>Skin.Reset(notvfanart)</onclick>
 			<onclick>Skin.Reset(nopicturefanart)</onclick>
 			<onclick>Skin.Reset(noinfofanart)</onclick>
+			<onclick>Skin.Reset(moviegenre_on)</onclick>
+			<onclick>Skin.Reset(moviegenre_default_onoff)</onclick>
+			<onclick>Skin.Reset(genre_fanart_onoff)</onclick>
+			<onclick>Skin.Reset(musicgenre_on)</onclick>
 			<visible>Skin.HasSetting(nomusicfanart) | Skin.HasSetting(nomoviefanart) | Skin.HasSetting(notvfanart) | Skin.HasSetting(nopicturefanart) | Skin.HasSetting(noinfofanart)</visible>
 		</control>
 
@@ -304,12 +308,12 @@
 		<control type="radiobutton" id="707">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>Movie genre Icons on/off</label>
-			<onclick>Skin.ToggleSetting(moviegenre_onoff)</onclick>
-			<selected>!Skin.HasSetting(moviegenre_onoff)</selected>
+			<onclick>Skin.ToggleSetting(moviegenre_on)</onclick>
+			<selected>Skin.HasSetting(moviegenre_on)</selected>
 		</control>
 
 		<control type="radiobutton" id="708">
-			<visible>!Skin.HasSetting(moviegenre_onoff)</visible>
+			<visible>Skin.HasSetting(moviegenre_on)</visible>
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>Movie Genre fallback image on/off</label>
 			<onclick>Skin.ToggleSetting(moviegenre_default_onoff)</onclick>
@@ -321,17 +325,18 @@
 			<onclick>Skin.ToggleSetting(genre_fanart_onoff)</onclick>
 			<selected>skin.HasSetting(genre_fanart_onoff)</selected>
 		</control>			
+
 		<control type="radiobutton" id="710">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>music genre Icons on/off</label>
-			<onclick>Skin.ToggleSetting(musicgenre_onoff)</onclick>
-			<selected>!Skin.HasSetting(musicgenre_onoff)</selected>
+			<label>Music Genre Icons on/off</label>
+			<onclick>Skin.ToggleSetting(musicgenre_on)</onclick>
+			<selected>Skin.HasSetting(musicgenre_on)</selected>
 		</control>
 		<control type="radiobutton" id="711">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>music Genre fanart image on/off</label>
+			<label>Music Genre fanart image on/off</label>
 			<onclick>Skin.ToggleSetting(musicgenre_fanart_onoff)</onclick>
-			<selected>skin.HasSetting(musicgenre_fanart_onoff)</selected>
+			<selected>Skin.HasSetting(musicgenre_fanart_onoff)</selected>
 		</control>			
 	<!-- <<<<< Genre Fanart -->
 		
