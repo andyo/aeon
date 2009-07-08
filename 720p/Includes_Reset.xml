@@ -27,6 +27,7 @@
 		<onclick>Skin.Reset(arcade)</onclick>
 		<onclick>Skin.Reset(apps)</onclick>
 		<onclick>Skin.Reset(nomovies)</onclick>
+		<onclick>Skin.Reset(nofavourites)</onclick>
 		<onclick>Skin.Reset(movielibrary)</onclick>
 		<onclick>Skin.Reset(notvshows)</onclick>
 		<onclick>Skin.Reset(tvlibrary)</onclick>
@@ -43,6 +44,7 @@
 		<onclick>Skin.Reset(vignettehome)</onclick>
 		<onclick>Skin.Reset(videoadult)</onclick>
 		<onclick>Skin.Reset(videomovies)</onclick>
+		<onclick>Skin.Reset(videogenres)</onclick>
 		<onclick>Skin.Reset(videotv)</onclick>
 		<onclick>Skin.Reset(videoclips)</onclick>
 		<onclick>Skin.Reset(adultpics)</onclick>

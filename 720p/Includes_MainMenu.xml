@@ -165,6 +165,18 @@
 				<visible>!Skin.HasSetting(notvshows)</visible>
 				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenutv)] | !Skin.HasSetting(onetouch)</visible>
 			</item>
+			<item id="14">
+				<label>FAVORITES</label>
+				<include>BackgroundVarsMovies</include>				
+				<onclick>Skin.SetBool(favorites)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+				<onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+				<onclick>XBMC.ActivateWindow(Favourites)</onclick>
+				<visible>!Skin.HasSetting(nofavourites)</visible>
+				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenfavourites)] | !Skin.HasSetting(onetouch)</visible>
+			</item>
+
 			<item id="8">
 				<label>31015</label>
 				<include>BackgroundVarsVideo</include>				
