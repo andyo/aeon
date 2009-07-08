@@ -493,5 +493,9 @@
 	<string id="31936">TRACKS</string>
 	<string id="31937">SEASONS</string>
 	<string id="31938">EPISODES</string>
+
+<!-- ShowMix -->
+
+	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
 	
 </strings>

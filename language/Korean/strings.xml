@@ -433,5 +433,9 @@
 	<string id="31907">XBMC 포럼의 모든분께</string>
 	<string id="31908">...그리고 여러분</string>
 	<string id="31909">AEON은 돌아옵니다</string>
+
+<!-- ShowMix -->
+
+	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
     
 </strings>

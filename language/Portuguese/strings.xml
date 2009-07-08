@@ -415,5 +415,9 @@
 	<string id="31907">TODOS NOS FÓRUNS DO XBMC</string>
 	<string id="31908">...E A SI</string>
 	<string id="31909">A AEON VOLTARÁ EM</string>
+
+<!-- ShowMix -->
+
+	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
 	
 </strings>

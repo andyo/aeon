@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <!--Polish translation by Halibutt-->
 <!--Some fonts and strings by Marcin77-->
 <!--Build April 2, 2009-->
@@ -456,6 +456,10 @@
 	<string id="31908">...I TOBIE</string>
 	<string id="31909">AEON POWRÓCI W</string>
 	<string id="31910">TAPETY POGODOWE</string>
+
+<!-- ShowMix -->
+
+	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
 
 	
 </strings>

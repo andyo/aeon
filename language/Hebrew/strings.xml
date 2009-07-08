@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
 <!--Date of translation: 07/06/2009-->
 <!--$Revision$-->
@@ -423,4 +423,9 @@
   <string id="31936">רצועות</string>
   <string id="31937">עונות</string>
   <string id="31938">פרקים</string>
+
+<!-- ShowMix -->
+
+	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
+
 </strings>

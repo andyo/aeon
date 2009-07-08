@@ -103,6 +103,13 @@
 		<info>Skin.String(CustomVideos)</info>		
 	</include>
 
+	<include name="BackgroundVarsfavourites">
+		<icon>special://skin/media/backdrops/default_favourites/default.png</icon>
+		<thumb>$INFO[Skin.String(Customfavourites)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
+		<info>Skin.String(Customfavourites)</info>			
+	</include>
+
 	<include name="BackgroundVarsSettings">
 		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
 		<thumb>$INFO[Skin.String(CustomSettings)]</thumb>

@@ -467,4 +467,8 @@
 	<string id="31932">FICHIERS</string>
 	<string id="31933">SÉRIES</string>
 
+<!-- ShowMix -->
+
+	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
+
 </strings>

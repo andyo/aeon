@@ -415,5 +415,9 @@
 	<string id="31907">IEDERIEEN VAN HET XBMC FORUM</string>
 	<string id="31908">...EN JIJ</string>
 	<string id="31909">AEON ZAL TERUGKEREN OP</string>
+
+<!-- ShowMix -->
+
+	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
 	
 </strings>

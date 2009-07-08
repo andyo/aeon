@@ -165,23 +165,22 @@
 				<visible>!Skin.HasSetting(notvshows)</visible>
 				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenutv)] | !Skin.HasSetting(onetouch)</visible>
 			</item>
-			<item id="14">
-				<label>FAVORITES</label>
-				<include>BackgroundVarsMovies</include>				
-				<onclick>Skin.SetBool(favorites)</onclick>
-				<onclick>Skin.Reset(videotv)</onclick>
-				<onclick>Skin.Reset(music)</onclick>
-                <onclick>Skin.Reset(videogenres)</onclick>
-				<onclick>XBMC.ActivateWindow(Favourites)</onclick>
-				<visible>!Skin.HasSetting(nofavourites)</visible>
-				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenfavourites)] | !Skin.HasSetting(onetouch)</visible>
-			</item>
-
 			<item id="8">
 				<label>31015</label>
 				<include>BackgroundVarsVideo</include>				
 				<onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
 				<visible>!Skin.HasSetting(novideos)</visible>
+			</item>
+			<item id="14">
+				<label>90001</label>
+				<include>BackgroundVarsfavourites</include>				
+				<onclick>Skin.SetBool(favourites)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+				<onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+				<onclick>XBMC.ActivateWindow(favourites)</onclick>
+				<visible>!Skin.HasSetting(nofavourites)</visible>
+				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenfavourites)] | !Skin.HasSetting(onetouch)</visible>
 			</item>
 			<item id="10">
 				<description>Weather</description>
@@ -343,6 +342,13 @@
 				<onclick>SetFocus(92)</onclick>				
 				<label>31016</label>
 				<visible>!Skin.HasSetting(nosettings)</visible>
+			</item>
+			<item id="14">
+				<label>90001</label>
+				<include>BackgroundVarsfavourites</include>				
+				<onclick>Skin.SetString(custom,Customfavourites)</onclick>
+				<onclick>SetFocus(92)</onclick>
+				<visible>!Skin.HasSetting(nofavourites)</visible>
 			</item>
 			<item id="10">
 				<description>Weather</description>
@@ -515,6 +521,18 @@
 				<include>BackgroundVarsVideo</include>					
 				<onclick>Skin.Reset(novideos)</onclick>
 				<visible>Skin.HasSetting(novideos)</visible>
+			</item>
+			<item id="14">
+				<label>90001</label>
+				<include>BackgroundVarsfavourites</include>				
+				<onclick>Skin.SetBool(nofavourites)</onclick>
+				<visible>!Skin.HasSetting(nofavourites)</visible>
+			</item>
+			<item id="14">
+				<label2>90001</label2>
+				<include>BackgroundVarsfavourites</include>				
+				<onclick>Skin.Reset(nofavourites)</onclick>
+				<visible>Skin.HasSetting(nofavourites)</visible>
 			</item>
 			<item id="10">
 				<label>31017</label>
