@@ -3909,20 +3909,39 @@
 				<posy>110</posy>
                 <visible>Container.Content(albums)</visible>
                 <control type="label">
-                <posy>0</posy>
+                    <posy>0</posy>
                     <height>13</height>
-                    <width>200</width>
+                    <width>6    5</width>
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>abFFFFFF</textcolor>
                     <label>Year:</label>
                 </control>
                 <control type="label">
-                <posy>15</posy>
+                    <posy>15</posy>
+                    <height>13</height>
+                    <width>65</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label fallback="31425">$INFO[ListItem.Year]</label>
+                </control>			
+
+                <control type="label">
+                    <posx>150</posx>
+                    <posy>0</posy>
+                    <height>13</height>
+                    <width>200</width>
+                    <font>Font_MultiplexInfoLabel</font>	
+                    <textcolor>abFFFFFF</textcolor>
+                    <label>Albums:</label>
+                </control>
+                <control type="label">
+                    <posx>150</posx>
+                    <posy>15</posy>
                     <height>13</height>
                     <width>200</width>
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>FFFFFFFF</textcolor>
-                    <label fallback="31425">$INFO[ListItem.Year]</label>
+                    <label fallback="31425">$INFO[Container.NumItems]</label>
                 </control>			
 
                 <control type="label">
@@ -3949,7 +3968,7 @@
                 </control>			
 
                 <control type="label">
-                    <posx>500</posx>
+                    <posx>550</posx>
                     <posy>0</posy>
                     <height>13</height>
                     <width>100</width>
@@ -3958,10 +3977,10 @@
                     <label>Label:</label>
                 </control>
                 <control type="label">
-                    <posx>500</posx>
+                    <posx>550</posx>
                     <posy>15</posy>
                     <height>13</height>
-                    <width>100</width>
+                    <width>150</width>
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>FFFFFFFF</textcolor>
                     <label fallback="31425">$INFO[ListItem.Property(Label)]</label>
@@ -4562,6 +4581,7 @@
                 <animation effect="rotatey" center="30" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17) | stringcompare(Container.NumItems,18)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-9).Thumb</info>
@@ -4584,6 +4604,7 @@
                 <animation effect="rotatey" center="90" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-8).Thumb</info>
@@ -4606,6 +4627,7 @@
                 <animation effect="rotatey" center="150" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-7).Thumb</info>
@@ -4628,6 +4650,7 @@
                 <animation effect="rotatey" center="210" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-6).Thumb</info>
@@ -4650,6 +4673,7 @@
                 <animation effect="rotatey" center="270" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-5).Thumb</info>
@@ -4672,6 +4696,7 @@
                 <animation effect="rotatey" center="330" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-4).Thumb</info>
@@ -4694,6 +4719,7 @@
                 <animation effect="rotatey" center="390" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-3).Thumb</info>
@@ -4716,6 +4742,7 @@
                 <animation effect="rotatey" center="450" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-2).Thumb</info>
@@ -4737,6 +4764,7 @@
              <!-- image off screen to stop lag of fading new item -->
             <control type="group">
                 <posx>1500</posx>
+                <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17)]</visible>
                 <control type="image">
                     <include>MusicMultiplexThumb</include>
                     <info>ListItem(9).Thumb</info>
@@ -4751,6 +4779,7 @@
                 <animation effect="rotatey" center="1310" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(8).Thumb</info>
@@ -4771,6 +4800,7 @@
             <control type="group">
                 <posx>985</posx>
                 <animation effect="rotatey" center="1250" start="65" end="65" time="0" condition="true">Conditional</animation>
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13)]</visible>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
                     <control type="image">
@@ -4795,6 +4825,7 @@
                 <animation effect="rotatey" center="1190" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(6).Thumb</info>
@@ -4817,6 +4848,7 @@
                 <animation effect="rotatey" center="1130" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(5).Thumb</info>
@@ -4839,6 +4871,7 @@
                 <animation effect="rotatey" center="1070" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(4).Thumb</info>
@@ -4861,6 +4894,7 @@
                 <animation effect="rotatey" center="1010" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(3).Thumb</info>
@@ -4883,6 +4917,7 @@
                 <animation effect="rotatey" center="950" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(2).Thumb</info>
@@ -4905,6 +4940,7 @@
                 <animation effect="rotatey" center="890" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(1).Thumb</info>
@@ -4955,6 +4991,7 @@
                     <animation effect="rotatey" center="460" start="0" end="-65" time="250" reversible="false" tween="quadratic" easing="out">Hidden</animation>
                     <control type="group">
 						<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>					
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2)]</visible>
                         <control type="image">
                             <include>MusicMultiplexThumb</include>
                             <info>ListItem(-1).Thumb</info>
@@ -4987,6 +5024,7 @@
                 <animation effect="rotatey" center="1250" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(9).Thumb</info>
@@ -5009,6 +5047,7 @@
                 <animation effect="rotatey" center="1190" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(8).Thumb</info>
@@ -5031,6 +5070,7 @@
                 <animation effect="rotatey" center="1130" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(7).Thumb</info>
@@ -5053,6 +5093,7 @@
                 <animation effect="rotatey" center="1070" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(6).Thumb</info>
@@ -5075,6 +5116,7 @@
                 <animation effect="rotatey" center="1010" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(5).Thumb</info>
@@ -5097,6 +5139,7 @@
                 <animation effect="rotatey" center="950" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(4).Thumb</info>
@@ -5119,6 +5162,7 @@
                 <animation effect="rotatey" center="890" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(3).Thumb</info>
@@ -5141,6 +5185,7 @@
                 <animation effect="rotatey" center="830" start="65" end="65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(2).Thumb</info>
@@ -5163,6 +5208,7 @@
             <!-- image off screen to stop lag of fading new item -->
             <control type="group">
                 <posx>-400</posx>
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17) | stringcompare(Container.NumItems,18)]</visible>
                 <control type="image">
                     <include>MusicMultiplexThumb</include>
                     <info>ListItem(-9).Thumb</info>
@@ -5177,6 +5223,7 @@
                 <animation effect="rotatey" center="-30" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-8).Thumb</info>
@@ -5199,6 +5246,7 @@
                 <animation effect="rotatey" center="30" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-7).Thumb</info>
@@ -5221,6 +5269,7 @@
                 <animation effect="rotatey" center="90" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-6).Thumb</info>
@@ -5243,6 +5292,7 @@
                 <animation effect="rotatey" center="150" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-5).Thumb</info>
@@ -5265,6 +5315,7 @@
                 <animation effect="rotatey" center="210" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-4).Thumb</info>
@@ -5287,6 +5338,7 @@
                 <animation effect="rotatey" center="270" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-3).Thumb</info>
@@ -5309,6 +5361,7 @@
                 <animation effect="rotatey" center="330" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-2).Thumb</info>
@@ -5331,6 +5384,7 @@
                 <animation effect="rotatey" center="390" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-1).Thumb</info>
@@ -5381,6 +5435,7 @@
                     <animation effect="rotatey" center="820" start="0" end="65" time="250" reversible="false" tween="quadratic" easing="out">Hidden</animation>
                     <control type="group">
 						<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>					
+                        <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1)]</visible>
                         <control type="image">
                             <include>MusicMultiplexThumb</include>
                             <info>ListItem(1).Thumb</info>
@@ -5421,8 +5476,8 @@
 					<effect type="slide" start="0" end="-800" time="800" tween="cubic" easing="inout" />
 				</animation>				
                 <control type="group">
-                    <visible>stringcompare(NumItems,>16)</visible>
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-8).Thumb</info>
@@ -5448,8 +5503,8 @@
 					<effect type="slide" start="0" end="-800" time="800" tween="cubic" easing="inout" />
 				</animation>				
                 <control type="group">
-                    <visible>stringcompare(NumItems,>14)</visible>
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-7).Thumb</info>
@@ -5475,8 +5530,8 @@
 					<effect type="slide" start="0" end="-800" time="800" tween="cubic" easing="inout" />
 				</animation>				
                 <control type="group">
-                    <visible>stringcompare(NumItems,>12)</visible>
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-6).Thumb</info>
@@ -5494,14 +5549,6 @@
                     <include>genre_Multiplex_ref_-6</include><!-- <<<<<< Add this -->
                 </control>
             </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <height>13</height>
-                        <font>Font_MultiplexInfoLabel</font>
-                        <textcolor>abFFFFFF</textcolor>
-                        <label>$INFO[Container.NumItems]</label>
-                    </control>
             <control type="group">
                 <posx>305</posx>
                 <animation effect="rotatey" center="210" start="-65" end="-65" time="0" condition="true">Conditional</animation>
@@ -5510,8 +5557,8 @@
 					<effect type="slide" start="0" end="-800" time="800" tween="cubic" easing="inout" />
 				</animation>				
                 <control type="group">
-                    <visible>stringcompare(NumItems,>10)</visible>
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-5).Thumb</info>
@@ -5537,8 +5584,8 @@
 					<effect type="slide" start="0" end="-800" time="800" tween="cubic" easing="inout" />
 				</animation>				
                 <control type="group">
-                    <visible>stringcompare(NumItems,>8)</visible>
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-4).Thumb</info>
@@ -5564,8 +5611,8 @@
 					<effect type="slide" start="0" end="-800" time="800" tween="cubic" easing="inout" />
 				</animation>				
                 <control type="group">
-                    <visible>stringcompare(NumItems,>6)</visible>
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-3).Thumb</info>
@@ -5591,8 +5638,8 @@
 					<effect type="slide" start="0" end="-310" time="800" tween="cubic" easing="inout" />
 				</animation>	
                 <control type="group">
-                    <visible>stringcompare(NumItems,>4)</visible>
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(-2).Thumb</info>
@@ -5618,7 +5665,7 @@
 					<effect type="slide" start="0" end="-180" time="800" tween="cubic" easing="inout" />
 				</animation>	
                 <control type="group">
-                    <visible>stringcompare(NumItems,>2)</visible>
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1)  | stringcompare(Container.NumItems,2)]</visible>
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
@@ -5647,6 +5694,7 @@
 				</animation>				
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(8).Thumb</info>
@@ -5673,6 +5721,7 @@
 				</animation>				
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(7).Thumb</info>
@@ -5696,9 +5745,10 @@
                 <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase)">
 					<effect type="rotatey" center="1130" start="0" end="-65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="800" time="800" tween="cubic" easing="inout" />
-				</animation>				
+				</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(6).Thumb</info>
@@ -5725,6 +5775,7 @@
 				</animation>				
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(5).Thumb</info>
@@ -5751,6 +5802,7 @@
 				</animation>				
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(4).Thumb</info>
@@ -5777,6 +5829,7 @@
 				</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(3).Thumb</info>
@@ -5800,9 +5853,10 @@
                 <animation type="Conditional" condition="Skin.HasSetting(flattenshowcase)">
 					<effect type="rotatey" center="890" start="0" end="-65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="310 " time="800" tween="cubic" easing="inout" />
-				</animation>				
+				</animation>
                 <control type="group">
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
+                    <visible>![stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3)]</visible>
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
                         <info>ListItem(2).Thumb</info>
@@ -5828,6 +5882,7 @@
 					<effect type="slide" start="0" end="180" time="800" tween="cubic" easing="inout" />
 				</animation>	
                 <control type="group">
+                    <visible>![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1)]</visible>
 					<include condition="Window.IsActive(2)">MusicMultiplexBlack</include>				
                     <control type="image">
                         <include>MusicMultiplexThumb</include>
@@ -5869,6 +5924,9 @@
             </control>
         </control>
     </include>
+
+
+
 
     <include name="MultiplexMovies">
         <control type="group" id="8001">
