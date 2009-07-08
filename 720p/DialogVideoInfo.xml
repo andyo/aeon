@@ -182,53 +182,53 @@
         </control>	
 	</control>	
 
-        <!-- debug data -->
+<!-- DEBUG DAGTA -->
 	<control type="group">
             <visible>Skin.HasSetting(debug)</visible>
             <control type="label">
             <posx>550</posx>
-            <posy>10</posy>
+            <posy>8</posy>
             <width>430</width>
             <height>13</height>
             <font>Font_MultiplexInfoLabel</font>
             <textcolor>FFFFFFFF</textcolor>		
-            <label>SOURCE TAG:$INFO[listitem.filename,,]</label>
+            <label>SOURCE TAG: /$INFO[listitem.filename,,]</label>
         </control>
         <control type="label">
             <posx>550</posx>
-            <posy>25</posy>
+            <posy>23</posy>
             <width>430</width>
             <height>13</height>
             <font>Font_MultiplexInfoLabel</font>
             <textcolor>FFFFFFFF</textcolor>		
-            <label>AUDIO CHANNELS:$INFO[listitem.audiochannels,flags/info/,.png]</label>
+            <label>AUDIO CHANNELS: /$INFO[listitem.audiochannels,flags/sound/,.png]</label>
         </control>
         <control type="label">
             <posx>550</posx>
-            <posy>40</posy>
+            <posy>38</posy>
             <width>430</width>
             <height>13</height>
             <font>Font_MultiplexInfoLabel</font>
             <textcolor>FFFFFFFF</textcolor>		
-            <label>AUDIO CODEC:$INFO[listitem.audiocodec,flags/info/,.png]</label>
+            <label>AUDIO CODEC: /$INFO[listitem.audiocodec,flags/sound/,.png]</label>
         </control>
         <control type="label">
-            <posx>1000</posx>
-            <posy>10</posy>
+            <posx>850</posx>
+            <posy>23</posy>
             <width>400</width>
             <height>13</height>
             <font>Font_MultiplexInfoLabel</font>
             <textcolor>FFFFFFFF</textcolor>		
-            <label>STUDIO TAG:$INFO[listitem.studio,,]</label>
+            <label>STUDIO TAG: /$INFO[listitem.studio,flags/studio/,.png]</label>
         </control>
         <control type="label">
-            <posx>1000</posx>
-            <posy>25</posy>
+            <posx>850</posx>
+            <posy>38</posy>
             <width>400</width>
             <height>13</height>
             <font>Font_MultiplexInfoLabel</font>
             <textcolor>FFFFFFFF</textcolor>		
-            <label>VIDEO CODEC TAG:$INFO[listitem.VideoCodec,,]</label>
+            <label>VIDEO CODEC TAG: $INFO[listitem.VideoCodec,flags/codec/,.png]</label>
         </control>
     </control>
 
