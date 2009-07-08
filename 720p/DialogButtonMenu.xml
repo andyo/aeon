@@ -20,7 +20,7 @@
 	<posx>486</posx>
 	<posy>184</posy>
 	<width>308</width>
-	<height>404</height>
+	<height>443</height>
 	<animation effect="slide" start="0,-19" end="0,-19" time="0" condition="![system.hasloginscreen | System.HasMediaDVD]">Conditional</animation>
 	<animation effect="slide" start="0,-38" end="0,-38" time="0" condition="system.hasloginscreen + System.HasMediaDVD">Conditional</animation>	
 		<control type="image">
@@ -44,7 +44,7 @@
 		<control type="image">
 			<description>background bottom image</description>
 			<posx>0</posx>
-			<posy>351</posy>
+			<posy>390</posy>
 			<width>308</width>
 			<height>27</height>
 			<animation effect="slide" start="0,-39" end="0,-39" time="0" condition="![system.hasloginscreen | System.HasMediaDVD]">Conditional</animation>

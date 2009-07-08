@@ -1225,15 +1225,15 @@
 	</include>	
 
 	<include name="Objects_ButtonMenu10Group">
-			<height>390</height>	
+			<height>429</height>	
 	</include>
 	
 	<include name="Objects_ButtonMenu9Group">
-			<height>351</height>	
+			<height>390</height>	
 	</include>
 	
 	<include name="Objects_ButtonMenu8Group">
-			<height>312</height>	
+			<height>351</height>	
 	</include>
 
 <!-- Login Screen -->
