@@ -246,7 +246,7 @@
 					<include>TVShortcutBools</include>					
 					<label>31057</label>
                     <onclick>Skin.Reset(videogenres)</onclick>
-					<onclick>XBMC.ActivateWindow(MyVideos,tvshows,return)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
 				</control>
 			</control>			
 		</control>			
