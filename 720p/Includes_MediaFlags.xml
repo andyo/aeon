@@ -306,7 +306,7 @@
 	
 	<include name="Furniture_Multiplex_Showscase_MoviesMediaFlags">
 		<control type="group">
-			<visible>[Window.IsActive(25) + [Control.IsVisible(52) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
+			<visible>[Window.IsActive(25) + Control.IsVisible(52) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
 			<include>Animation_CommonFade</include>
 			<control type="image">
 				<posx>0</posx>
