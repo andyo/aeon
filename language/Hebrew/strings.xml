@@ -427,5 +427,21 @@
 <!-- ShowMix -->
 
 	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
+	<string id="90002">WINDOW</string>
+	<string id="90003">LIGHT</string>
+	<string id="90004">NIGHT</string>
+	<string id="90005">SHADE</string>
+	<string id="90006">GREEN</string>
+	<string id="90007">GREY</string>
+	<string id="90008">BLACK</string>
+	<string id="90009">TRANSPARENCY</string>
+	<string id="90010">POSTER</string>
+	<string id="90011">FULLSCREEN MULTIPLEX</string>
+	<string id="90012">TV PREVIEW</string>
+	<string id="90013">MOVIE TRAILERS</string>
+	<string id="90014">CERTIFICATION FLAG</string>
+	<string id="90015">IMDB FLAG</string>
+	<string id="90016">TV POSTER VIEW</string>
+	<string id="90019">ON/OFF</string>
 
 </strings>
