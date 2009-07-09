@@ -915,7 +915,7 @@
 			<include>MultiplexIconDimensionsWrap</include>
             <aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000)+Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
+			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)+Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
             <include>Animation_MultiplexFocusZoom</include>					
 		</control>
@@ -923,7 +923,7 @@
 			<include>MultiplexIconDimensionsWrap</include>
             <aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
+			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
             <include>Animation_MultiplexFocusZoom</include>					
 		</control>
         <control type="image">
@@ -931,14 +931,14 @@
             <bordertexture border="-17">multiplex/multiplex_border.png</bordertexture>
             <texture>common/blank.png</texture>
             <include>Animation_MultiplexFocusZoom</include>					
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
+			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
         </control>
         <control type="image">
             <include>MultiplexIconDimensionsWrap</include>
             <texture>multiplex/multiplex_glass.png</texture>
             <aspectratio scalediffuse="false">stretch</aspectratio>
             <include>Animation_MultiplexFocusZoom</include>						
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
+			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
         </control>				
 	</include>
 
@@ -947,26 +947,26 @@
 			<include>MultiplexIconDimensionsWrap</include>
             <aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
+			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 		</control>
 		<control type="image">
 			<include>MultiplexIconDimensionsWrap</include>
             <aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
+			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
 		</control>
         <control type="image">
             <include>MultiplexIconDimensionsWrap</include>
             <bordertexture border="-17">multiplex/multiplex_border.png</bordertexture>
             <texture>common/blank.png</texture>
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
+			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
         </control>
         <control type="image">
             <include>MultiplexIconDimensionsWrap</include>
             <texture>multiplex/multiplex_glass.png</texture>
             <aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
+			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
         </control>				
 	</include>
 
@@ -974,16 +974,16 @@
 		<control type="image">
 			<include>music_genre_Multiplex_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
-			<visible>[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)]+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
+			<visible>[Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(970)]+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
 			<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-			<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(52) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
+			<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(52) + [Skin.HasSetting(flattenmultiplex) | Container.Content(episodes)]">Unfocus</animation>						
 		</control>
 	</include>
 	<include name="genre_Multiplex_23">
 		<control type="image">
 			<include>music_genre_Multiplex_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
-			<visible>[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)]+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
+			<visible>[Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(970)]+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
 		</control>
 	</include>
 <!-- Multiplex End -->
@@ -1286,14 +1286,14 @@
         <include>MultiplexIconDimensionsWrapReflect</include>
 		<aspectratio scalediffuse="false">stretch</aspectratio>
         <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
-		<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
+		<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
         <include>Animation_MultiplexFocusZoom</include>					
 	</control>
 	<control type="image">
         <include>MultiplexIconDimensionsWrapReflect</include>
 		<aspectratio scalediffuse="false">stretch</aspectratio>
 		<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
-		<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
+		<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
         <include>Animation_MultiplexFocusZoom</include>					
 	</control>
 </include>
@@ -1303,7 +1303,7 @@
         <include>MultiplexIconDimensionsWrapReflect</include>
 		<aspectratio scalediffuse="false">stretch</aspectratio>
         <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
-		<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(8000) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
+		<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
 	</control>
 </include>
 <!-- Multiplex reflection End -->
