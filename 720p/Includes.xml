@@ -26,6 +26,8 @@
 <include file="Includes_genre.xml" /><!-- <<<<<< Add this -->
 <include file="Viewtype_Music_Multiplex.xml" /><!-- <<<<<< Add this -->
 <include file="Includes_latest_added.xml" />
+<include file="Includes_VerticalMenu.xml" />
+<include file="Includes_HorizontalMenu.xml" />
 
 <!-- Text colours ================================== -->
 

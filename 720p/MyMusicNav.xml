@@ -68,7 +68,8 @@
 		<include>Furniture_WallRSS</include>		
 		
 		<control type="group">
-	
+            <!--<visible>Skin.HasSetting(noverticalmenu)</visible>-->
+
 			<control type="image">
 				<include>Objects_MediaLogo</include>
 				<texture>windows/logo_music.png</texture>

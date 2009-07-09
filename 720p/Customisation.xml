@@ -145,7 +145,12 @@
 			<onclick>Skin.ToggleSetting(homelatest)</onclick>
 			<selected>Skin.HasSetting(homelatest)</selected>
 		</control>
-		
+		<control type="radiobutton" id="507">
+            <include>Objects_SettingsDefaultRadioButton</include>
+            <label>Vertical Video Menu on/off</label>
+            <onclick>Skin.ToggleSetting(noverticalmenu)</onclick>
+            <selected>!Skin.HasSetting(noverticalmenu)</selected>
+        </control>
 	</control>
 	
 	<control type="grouplist" id="12">
@@ -431,70 +436,37 @@
 		<visible>Control.HasFocus(15) | ControlGroup(21).HasFocus</visible>
 		<control type="radiobutton" id="900">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>FULLSCREEN MULTIPLEX</label>
+			<label>$LOCALIZE[90011] $LOCALIZE[90019]</label>
 			<onclick>Skin.ToggleSetting(fullscreenmultiplex)</onclick>
 			<selected>Skin.HasSetting(fullscreenmultiplex)</selected>
 		</control>		
-
-<!--		<control type="button" id="1101">
-			<include>Objects_MediaMenuButton</include>				
-			<label>SHADE: BLACK</label>
-			<onclick>Skin.SetBool(multiplexgrey)</onclick>
-			<onclick>Skin.Reset(multiplexblack)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>!Control.IsVisible(53) + Skin.HasSetting(multiplexblack)</visible>
-		</control>
-		<control type="button" id="1102">
-			<include>Objects_MediaMenuButton</include>				
-			<label>SHADE: GREY</label>
-			<onclick>Skin.SetBool(multiplexgreen)</onclick>
-			<onclick>Skin.Reset(multiplexgrey)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>!Control.IsVisible(53) + Skin.HasSetting(multiplexgrey)</visible>
-		</control>	
-		<control type="button" id="1103">
-			<include>Objects_MediaMenuButton</include>				
-			<label>SHADE: GREEN</label>
-			<onclick>Skin.SetBool(multiplexblack)</onclick>
-			<onclick>Skin.Reset(multiplexgreen)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>!Control.IsVisible(53) + Skin.HasSetting(multiplexgreen)</visible>
-		</control> -->
-        
-        
-<!--		<control type="radiobutton" id="901">
+		<control type="radiobutton" id="901">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>GREY SHADE VIEW</label>
-			<onclick>Skin.ToggleSetting(multiplexgrey)</onclick>
-			<selected>Skin.HasSetting(multiplexgrey)</selected>
-		</control>	-->	
-		<control type="radiobutton" id="910">
-			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>TV PREVIEW</label>
+			<label>$LOCALIZE[90012] $LOCALIZE[90019]</label>
 			<onclick>Skin.ToggleSetting(tvpreview)</onclick>
 			<selected>Skin.HasSetting(tvpreview)</selected>
 		</control>		
-		<control type="radiobutton" id="911">
+		<control type="radiobutton" id="902">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>MOVIE TRAILERS</label>
+			<label>$LOCALIZE[90013] $LOCALIZE[90019]</label>
 			<onclick>Skin.ToggleSetting(movietrailers)</onclick>
 			<selected>Skin.HasSetting(movietrailers)</selected>
 		</control>		
-		<control type="radiobutton" id="912">
+		<control type="radiobutton" id="903">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>CERTIFICATION FLAG</label>
+			<label>$LOCALIZE[90014] $LOCALIZE[90019]</label>
 			<onclick>Skin.ToggleSetting(nocertflag)</onclick>
 			<selected>!Skin.HasSetting(nocertflag)</selected>
 		</control>		
-		<control type="radiobutton" id="913">
+		<control type="radiobutton" id="904">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>IMDB FLAG</label>
+			<label>$LOCALIZE[90015] $LOCALIZE[90019]</label>
 			<onclick>Skin.ToggleSetting(noimdbflag)</onclick>
 			<selected>!Skin.HasSetting(noimdbflag)</selected>
 		</control>		
-		<control type="radiobutton" id="914">
+		<control type="radiobutton" id="905">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>POSTER VIEW (TV SHOWS & SEASONS)</label>
+			<label>$LOCALIZE[90016] $LOCALIZE[90019]</label>
 			<onclick>Skin.ToggleSetting(tvposterview)</onclick>
 			<selected>Skin.HasSetting(tvposterview)</selected>
 		</control>		
