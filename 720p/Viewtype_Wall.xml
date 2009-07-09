@@ -163,7 +163,7 @@
 					<info>ListItem.Icon</info>
 					<fadetime>500</fadetime>					
 					<visible>Window.IsActive(2)</visible>
-<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(musicgenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 				<control type="image">
 					<include>WallIconDimensions</include>
@@ -172,7 +172,7 @@
 					<info>ListItem.Icon</info>
 					<fadetime>500</fadetime>
 					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)</visible>
-<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(musicgenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 
 <include>mod_musicgenre_wall_2</include><!-- <<<<<< Add this -->
@@ -207,7 +207,7 @@
 					<fadetime>500</fadetime>						
 					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)</visible>
 					<animation effect="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
-<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(musicgenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 				<control type="image">
 					<include>WallIconDimensions</include>
@@ -217,7 +217,7 @@
 					<fadetime>500</fadetime>						
 					<visible>Window.IsActive(2)</visible>
 					<animation effect="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
-<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(musicgenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 
 <include>mod_musicgenre_wall_2</include><!-- <<<<<< Add this -->
@@ -247,7 +247,7 @@
 					<texture diffuse="wall/wall_mask.png">defaultpicture.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<visible>Window.IsActive(2)</visible>
-<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(musicgenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 				<control type="image">
 					<include>WallIconDimensionsSmall</include>
@@ -270,7 +270,7 @@
 					<info>ListItem.Icon</info>
 					<fadetime>500</fadetime>						
 					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)</visible>
-<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(musicgenre_on)</visible><!-- <<<<<< Add this -->
 				</control>				
 
 
@@ -289,7 +289,7 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)</visible>
 					<animation effect="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
-<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(musicgenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 				<control type="image">
 					<include>WallIconDimensionsSmall</include>
@@ -315,7 +315,7 @@
 					<fadetime>500</fadetime>						
 					<visible>Window.IsActive(2)</visible>
 					<animation effect="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
-<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(musicgenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 
 
@@ -355,7 +355,7 @@
 			<onup>900</onup>
 			<ondown>900</ondown>
 			<orientation>horizontal</orientation>
-			<visible>Window.IsActive(28) | Window.IsActive(1) | Window.IsActive(24)</visible>
+			<visible>Window.IsActive(28) | Window.IsActive(1) | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(videotv)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + Skin.HasSetting(unlockTVviews)]</visible>
 			<itemlayout width="123" height="179" condition="!Skin.HasSetting(smallmoviewall)">
 				<control type="image">
 					<include>WallIconMovieDimensions</include>
@@ -368,7 +368,7 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<info>ListItem.Icon</info>
 					<fadetime>500</fadetime>
-<visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(moviegenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 <include>mod_moviegenre_wall_1</include><!-- <<<<<< Add this -->
 				<control type="image">
@@ -391,7 +391,7 @@
 					<info>ListItem.Icon</info>
 					<fadetime>500</fadetime>					
 					<animation effect="zoom" center="62,90" start="100" end="160" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
-<visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(moviegenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 <include>mod_moviegenre_wall_1</include><!-- <<<<<< Add this -->
 				<control type="image">
@@ -426,7 +426,7 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<info>ListItem.Icon</info>
 					<fadetime>500</fadetime>
-<visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(moviegenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 <include>mod_moviegenre_wall_2</include><!-- <<<<<< Add this -->
 				<control type="image">
@@ -449,7 +449,7 @@
 					<fadetime>500</fadetime>
 					<info>ListItem.Icon</info>
 					<animation effect="zoom" center="44,71" start="100" end="160" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
-<visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
+<visible>!Container.Content(genres)|!Skin.HasSetting(moviegenre_on)</visible><!-- <<<<<< Add this -->
 				</control>
 <include>mod_moviegenre_wall_2</include><!-- <<<<<< Add this -->
 				<control type="image">
