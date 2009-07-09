@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
-<!--Date of translation: 07/06/2009-->
+<!--Date of translation: 07/09/2009-->
 <!--$Revision$-->
 <!--Based on english strings version 204-->
 <strings>
@@ -423,25 +423,21 @@
   <string id="31936">רצועות</string>
   <string id="31937">עונות</string>
   <string id="31938">פרקים</string>
-
-<!-- ShowMix -->
-
-	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
-	<string id="90002">WINDOW</string>
-	<string id="90003">LIGHT</string>
-	<string id="90004">NIGHT</string>
-	<string id="90005">SHADE</string>
-	<string id="90006">GREEN</string>
-	<string id="90007">GREY</string>
-	<string id="90008">BLACK</string>
-	<string id="90009">TRANSPARENCY</string>
-	<string id="90010">POSTER</string>
-	<string id="90011">FULLSCREEN MULTIPLEX</string>
-	<string id="90012">TV PREVIEW</string>
-	<string id="90013">MOVIE TRAILERS</string>
-	<string id="90014">CERTIFICATION FLAG</string>
-	<string id="90015">IMDB FLAG</string>
-	<string id="90016">TV POSTER VIEW</string>
-	<string id="90019">ON/OFF</string>
-
+  <string id="90001">מועדפים</string>
+  <string id="90002">חלון</string>
+  <string id="90003">אור</string>
+  <string id="90004">לילה</string>
+  <string id="90005">גוון</string>
+  <string id="90006">ירוק</string>
+  <string id="90007">אפור</string>
+  <string id="90008">שחור</string>
+  <string id="90009">שקיפות</string>
+  <string id="90010">פוסטר</string>
+  <string id="90011">MULTIPLEX מסך מלא</string>
+  <string id="90012">הצצה לפרק</string>
+  <string id="90013">קדימוני סרטים</string>
+  <string id="90014">דגל CERTIFICATION</string>
+  <string id="90015">דגל IMDB</string>
+  <string id="90016">תצוגת פוסטר לסדרות</string>
+  <string id="90019">מופעל/מכובה</string>
 </strings>
