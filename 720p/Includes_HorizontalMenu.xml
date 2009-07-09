@@ -1,6 +1,6 @@
 <includes>
 
-    <include name="HorizontalMenu">
+    <include name="HorizontalMovieMenu">
 		<control type="group">
             <visible>Skin.HasSetting(noverticalmenu)</visible>
 			<control type="image">
@@ -116,4 +116,90 @@
 			</control>
 		</control>
     </include>
+
+    <include name="HorizontalMusicMenu">
+		<control type="group">
+            <visible>Skin.HasSetting(noverticalmenu)</visible>
+			<control type="image">
+				<include>Objects_MediaLogo</include>
+				<texture>windows/logo_music.png</texture>
+			</control>	
+	
+			<control type="label">
+				<include>Objects_MediaLabel</include>
+				<label>31037</label>
+			</control>
+
+			<control type="grouplist" id="7000">
+				<include>Animation_MediaMenuSlide</include>
+				<include>Objects_MediaMenuGroup</include>
+
+				<control type="button" id="900">
+					<label>$LOCALIZE[31050] $INFO[Container.ViewMode]</label>
+					<include>Objects_MediaMenuButton</include>
+					<onclick>SetFocus(69)</onclick>
+				</control>
+
+				<control type="button" id="3">
+					<label>103</label>
+					<include>Objects_MediaMenuButton</include>
+				</control>
+
+				<include>Objects_FlattenFlowButton</include>
+
+				<control type="togglebutton" id="940">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(musiclistfull)</usealttexture>
+					<onclick>Skin.SetBool(musiclistfull)</onclick>
+					<altclick>Skin.Reset(musiclistfull)</altclick>
+					<visible>Control.IsVisible(50)</visible>
+				</control>
+
+				<include>Objects_PanelDensityButton</include>				
+				<include>Objects_LightNightButtons</include>
+				<include>Objects_LightDarkWindows</include>
+				<include>Objects_MultiplexShadeButtons</include>
+
+				<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">Objects_MultiplexInfoButtons</include>			
+				
+				<control type="togglebutton" id="901">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_FanartToggleStrings</include>
+					<usealttexture>Skin.HasSetting(nomusicfanart)</usealttexture>
+					<onclick>Skin.SetBool(nomusicfanart)</onclick>
+					<altclick>Skin.Reset(nomusicfanart)</altclick>
+					<visible>Control.IsVisible(57) | Control.IsVisible(52)</visible>
+				</control>
+
+				<include condition="!Skin.HasSetting(nomediaflagsbutton)">Objects_FlagsButton</include>
+
+				<include>Objects_WallGridButton</include>
+				
+				<include>Objects_WallBackdropButton</include>				
+
+<!--				<control type="togglebutton" id="991">
+					<include>Objects_MediaMenuButton</include>				
+					<label>$LOCALIZE[31066]: $LOCALIZE[31077]</label>
+					<altlabel>$LOCALIZE[31066]: $LOCALIZE[31078]</altlabel>
+					<usealttexture>Skin.HasSetting(nooverlays)</usealttexture>
+					<onclick>Skin.ToggleSetting(nooverlays)</onclick>
+					<visible>Window.IsActive(25) + Skin.HasSetting(music)</visible>
+				</control>  -->
+
+				<include>Objects_CurtainsButton</include>
+				
+				<control type="button" id="5">
+					<label>31057</label>
+					<include>Objects_MediaMenuButton</include>
+					<onclick>XBMC.ReplaceWindow(MyMusicFiles)</onclick>
+				</control>
+				
+				<include>Objects_MusicSetupButton</include>
+				<include>Objects_MediaDebugButtons</include>
+			</control>
+		</control>
+    </include>
+
+
 </includes>

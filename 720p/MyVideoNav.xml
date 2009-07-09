@@ -59,7 +59,7 @@
 		<include>Viewtype_List</include>
         <include condition="Skin.HasSetting(videomovies)">Furniture_Multiplex_Showscase_MoviesMediaFlags</include>
         <include condition="Skin.HasSetting(videotv)">Furniture_Multiplex_Showscase_TVShowsMediaFlags</include>
-        <include>HorizontalMenu</include>		
+        <include>HorizontalMovieMenu</include>		
         <include>VerticalMenu</include>		
 
 	</control>
