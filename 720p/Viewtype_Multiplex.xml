@@ -10680,34 +10680,34 @@
                     <include>MultiplexIconDimensionsWrap</include>
                     <texture diffuse="multiplex/multiplex_mask.png">defaultvideo.png</texture>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>
                 <control type="image">
                     <include>MultiplexIconDimensionsWrap</include>
                     <texture background="true" diffuse="multiplex/multiplex_mask.png">defaultvideo.png</texture>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <info>ListItem.Icon</info>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>
                 <control type="image">
                     <include>MultiplexIconDimensionsWrap</include>
                     <bordertexture border="-17">multiplex/multiplex_border.png</bordertexture>
                     <texture>common/blank.png</texture>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>
                 <include>genre_Multiplex_21</include><!-- <<<<<< Add this -->
                 <control type="image">
                     <include>MultiplexIconDimensionsWrap</include>
                     <texture>multiplex/multiplex_glass.png</texture>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>				
                 <control type="image">
                     <include>MultiplexIconDimensionsWrapReflect</include>
                     <texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">defaultvideo.png</texture>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <info>ListItem.Icon</info>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000) + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
                 </control>				
                 <include>genre_Multiplex_ref_21</include><!-- <<<<<< Add this -->
                 <control type="image">
@@ -10725,7 +10725,7 @@
                     <texture diffuse="multiplex/multiplex_mask.png">defaultvideo.png</texture>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <include>Animation_MultiplexFocusZoom</include>					
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>			
                 <control type="image">
                     <include>MultiplexIconDimensionsWrap</include>
@@ -10733,14 +10733,14 @@
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <info>ListItem.Icon</info>
                     <include>Animation_MultiplexFocusZoom</include>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>
                 <control type="image">
                     <include>MultiplexIconDimensionsWrap</include>
                     <bordertexture border="-17">multiplex/multiplex_border.png</bordertexture>
                     <texture>common/blank.png</texture>
                     <include>Animation_MultiplexFocusZoom</include>					
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>
                 <include>genre_Multiplex_20</include><!-- <<<<<< Add this -->
                 <control type="image">
@@ -10748,7 +10748,7 @@
                     <texture>multiplex/multiplex_glass.png</texture>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <include>Animation_MultiplexFocusZoom</include>						
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>				
                 <control type="image">
                     <include>MultiplexIconDimensionsWrapReflect</include>
@@ -10756,7 +10756,7 @@
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <info>ListItem.Icon</info>
                     <include>Animation_MultiplexFocusZoom</include>					
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>					
                 <include>genre_Multiplex_ref_20</include><!-- <<<<<< Add this -->
                 <control type="image">
@@ -10775,39 +10775,39 @@
                     <include>MultiplexIconDimensionsTVWrap</include>
                     <texture diffuse="multiplex/multiplex_tvmask.png">common/black.png</texture>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>				
                 <control type="image">
                     <include>MultiplexIconDimensionsTVWrap</include>
                     <texture diffuse="multiplex/multiplex_tvmask.png">defaultvideo.png</texture>
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <info>ListItem.Icon</info>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>
                 <control type="image">
                     <include>MultiplexIconDimensionsTVWrap</include>
                     <bordertexture border="-10">multiplex/multiplex_tvborder.png</bordertexture>
                     <texture>common/blank.png</texture>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>
                 <control type="image">
                     <include>MultiplexIconDimensionsTVWrap</include>
                     <texture diffuse="multiplex/multiplex_tvmask.png">multiplex/multiplex_tvglass.png</texture>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>				
                 <control type="image">
                     <include>MultiplexIconDimensionsTVWrap</include>
                     <texture>common/blank.png</texture>
                     <colordiffuse>58FFFFFF</colordiffuse>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>
                 <control type="image">
                     <include>MultiplexIconDimensionsTVWrapReflect</include>
                     <texture flipy="true" diffuse="multiplex/multiplex_tvmaskreflect.png">defaultvideo.png</texture>
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <info>ListItem.Icon</info>
-                    <visible>[!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>				
                 <control type="image">
                     <posx>14</posx>
