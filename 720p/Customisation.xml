@@ -103,54 +103,78 @@
 			<onclick>Skin.ToggleSetting(noweatherpopup)</onclick>
 			<selected>!Skin.HasSetting(noweatherpopup)</selected>
 		</control>
-
 		<control type="radiobutton" id="501">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>Conditional Weather Backdrop</label>
+			<onclick>Skin.ToggleSetting(conditionalweather)</onclick>
+			<selected>Skin.HasSetting(conditionalweather)</selected>
+		</control>
+		<control type="radiobutton" id="502">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>Animated Weather Icons</label>
+			<onclick>Skin.ToggleSetting(weathericons)</onclick>
+			<selected>Skin.HasSetting(weathericons)</selected>
+		</control>
+		<control type="radiobutton" id="503">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>31254</label>
+			<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+			<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+			<selected>[!Skin.HasSetting(weatherpopup36hour) + !Skin.HasSetting(weatherpopupweekend)] | !StringCompare(Weather.Plugin,weather.com plus)</selected>
+            <enable>!Skin.HasSetting(noweatherpopup)</enable>
+		</control>
+		<control type="radiobutton" id="504">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>31255</label>
+			<onclick>Skin.SetBool(weatherpopup36hour)</onclick>
+			<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+			<selected>Skin.HasSetting(weatherpopup36hour)</selected>
+            <enable>!Skin.HasSetting(noweatherpopup) + StringCompare(Weather.Plugin,weather.com plus)</enable>
+		</control>
+		<control type="radiobutton" id="505">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>31256</label>
+			<onclick>Skin.SetBool(weatherpopupweekend)</onclick>
+			<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+			<selected>Skin.HasSetting(weatherpopupweekend)</selected>
+            <enable>!Skin.HasSetting(noweatherpopup) + StringCompare(Weather.Plugin,weather.com plus)</enable>
+		</control>
+
+
+		<control type="radiobutton" id="506">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>31295</label>
 			<onclick>Skin.ToggleSetting(bighome)</onclick>
 			<selected>Skin.HasSetting(bighome)</selected>
 		</control>	
 
-		<control type="radiobutton" id="502">
+		<control type="radiobutton" id="507">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>31253</label>
 			<onclick>Skin.ToggleSetting(launcherforgames)</onclick>
 			<selected>Skin.HasSetting(launcherforgames)</selected>
 		</control>
 		
-		<control type="radiobutton" id="503">
+		<control type="radiobutton" id="508">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>31252</label>
 			<onclick>Skin.ToggleSetting(nohomegradient)</onclick>
 			<selected>!Skin.HasSetting(nohomegradient)</selected>
 		</control>		
-		
-		<control type="radiobutton" id="504">
-			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>Conditional Weather Backdrop</label>
-			<onclick>Skin.ToggleSetting(conditionalweather)</onclick>
-			<selected>Skin.HasSetting(conditionalweather)</selected>
-		</control>
 
-		<control type="radiobutton" id="505">
-			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>Animated Weather Icons</label>
-			<onclick>Skin.ToggleSetting(weathericons)</onclick>
-			<selected>Skin.HasSetting(weathericons)</selected>
-		</control>
-
-		<control type="radiobutton" id="506">
+		<control type="radiobutton" id="509">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>Latest Additions</label>
 			<onclick>Skin.ToggleSetting(homelatest)</onclick>
 			<selected>Skin.HasSetting(homelatest)</selected>
 		</control>
-		<control type="radiobutton" id="507">
+		<control type="radiobutton" id="510">
             <include>Objects_SettingsDefaultRadioButton</include>
             <label>Vertical Video Menu on/off</label>
             <onclick>Skin.ToggleSetting(noverticalmenu)</onclick>
             <selected>!Skin.HasSetting(noverticalmenu)</selected>
         </control>
+
 	</control>
 	
 	<control type="grouplist" id="12">

@@ -93,6 +93,12 @@
 	  <size>55</size>
 	</font>		
 
+	<font>
+	  <name>Font_WeatherPrecip</name>
+	  <filename>aeon_title.ttf</filename>
+	  <size>35</size>
+	</font>		
+
     <font>
       <name>Font_LatestAdditionsTiles</name>
       <filename>aeon_main_kr.ttf</filename>

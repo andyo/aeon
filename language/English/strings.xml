@@ -135,6 +135,7 @@
 	<string id="31128">OSD</string>
 	<string id="31129">LIVE MUSIC INFO</string>
 
+
 <!-- XBMC Settings Menu labels -->
   
 	<string id="31140">VIDEO</string>
@@ -207,6 +208,11 @@
 	<string id="31245">BROWSING LAYOUT</string>
 	<string id="31246">TWEAKS</string>
 	<string id="31247">MODS SETTINGS</string>
+
+	<string id="31254">- 4 DAY FORECAST</string>
+	<string id="31255">- 36 HOUR FORECAST</string>
+	<string id="31256">- WEEKEND FORECAST</string>
+
   
 <!-- Aeon Advanced options -->
 
