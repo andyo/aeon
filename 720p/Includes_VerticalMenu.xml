@@ -1,10 +1,7 @@
 <includes>
 		
 		<include name="Animation_MediaMenuSlideVertical">
-            <animation type="Conditional" condition="[[Control.IsVisible(52) | Control.IsVisible(54)] + [Control.HasFocus(52) | [Control.HasFocus(54)] | Control.HasFocus(60) | Control.HasFocus(197) | Control.HasFocus(110)]] | 
-[Control.IsVisible(50) + [Control.HasFocus(50) | Control.HasFocus(61)]] | [Control.IsVisible(51) + [Control.HasFocus(51) | Control.HasFocus(195) | Control.HasFocus(60)]] | [Control.IsVisible(58) + Control.HasFocus(58)] | 
-[Control.IsVisible(57) + [Control.HasFocus(57) | Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60)]] | 
-[Control.IsVisible(53) + [Control.HasFocus(53) | Control.HasFocus(71) | Control.HasFocus(85)]] | 
+            <animation type="Conditional" condition="[[Control.IsVisible(52) | Control.IsVisible(54)] + [Control.HasFocus(52) | [Control.HasFocus(54)] | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(197) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112)]] | [Control.IsVisible(50) + [Control.HasFocus(50) | Control.HasFocus(61)]] | [Control.IsVisible(51) + [Control.HasFocus(51) | Control.HasFocus(195) | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604)]] | [Control.IsVisible(58) + Control.HasFocus(58)] | [Control.IsVisible(57) + [Control.HasFocus(57) | Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60)]] | [Control.IsVisible(53) + [Control.HasFocus(53) | Control.HasFocus(71) | Control.HasFocus(85)]] | 
 [Control.IsVisible(59) + Control.HasFocus(59)]">
 				<effect type="slide" end="-150,0" time="400" easing="in" tween="cubic" />
 				<effect type="fade" start="100" end="0" time="400" />
