@@ -453,5 +453,9 @@
 	<string id="90015">IMDB FLAG</string>
 	<string id="90016">TV POSTER VIEW</string>
 	<string id="90019">ON/OFF</string>
-    
+	<string id="90017">MISCELLANEOUS</string>
+	<string id="90018">FULLSCREEN</string>
+	<string id="90020">CURRENT</string>
+	<string id="90021">VIEWTYPE OPTIONS</string>
+
 </strings>

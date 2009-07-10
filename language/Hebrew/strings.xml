@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
 <!--Date of translation: 07/09/2009-->
 <!--$Revision$-->
@@ -440,4 +440,8 @@
   <string id="90015">דגל IMDB</string>
   <string id="90016">תצוגת פוסטר לסדרות</string>
   <string id="90019">מופעל/מכובה</string>
+	<string id="90017">MISCELLANEOUS</string>
+	<string id="90018">FULLSCREEN</string>
+	<string id="90020">CURRENT</string>
+	<string id="90021">VIEWTYPE OPTIONS</string>
 </strings>
