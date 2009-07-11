@@ -1,7 +1,7 @@
 <includes>
 <!-- id: 30000 - 30300 reserved for Vertical menu --->		
 		<include name="Animation_MediaMenuSlideVertical">
-            <animation type="Conditional" condition="[[Control.IsVisible(52) | Control.IsVisible(54)] + [Control.HasFocus(52) | [Control.HasFocus(54)] | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(197) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112)]] | [Control.IsVisible(50) + [Control.HasFocus(50) | Control.HasFocus(61)]] | [Control.IsVisible(51) + [Control.HasFocus(51) | Control.HasFocus(195) | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604)]] | [Control.IsVisible(58) + Control.HasFocus(58)] | [Control.IsVisible(57) + [Control.HasFocus(57) | Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604)]] | [Control.IsVisible(53) + [Control.HasFocus(53) | Control.HasFocus(71) | Control.HasFocus(85)]] | [Control.IsVisible(59) + Control.HasFocus(59)]">
+            <animation type="Conditional" condition="[[Control.IsVisible(52) | Control.IsVisible(54)] + [Control.HasFocus(52) | [Control.HasFocus(54)] | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(197) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112)]] | [Control.IsVisible(50) + [Control.HasFocus(50) | Control.HasFocus(61)]] | [Control.IsVisible(51) + [Control.HasFocus(51) | Control.HasFocus(195) | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604)]] | [Control.IsVisible(58) + Control.HasFocus(58)] | [Control.IsVisible(57) + [Control.HasFocus(57) | Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604)]] | [Control.IsVisible(53) + [Control.HasFocus(53) | Control.HasFocus(71) | Control.HasFocus(85)]] | [Control.IsVisible(59) + Control.HasFocus(59)] | [Control.IsVisible(20) | Control.IsVisible(21)] + [Control.HasFocus(20) | Control.HasFocus(21)]">
 				<effect type="slide" end="-150,0" time="400" easing="in" tween="cubic" />
 				<effect type="fade" start="100" end="0" time="400" />
 			</animation>
@@ -1130,33 +1130,33 @@
 		
 
 		<include name="VerticalMenu_FilesButtons">
-			<control type="button" id="11">
+			<control type="button" id="30287">
 				<label>31057</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReplaceWindow(MyVideoFiles)</onclick>
 				<visible>Window.IsActive(25)</visible>
 			</control>
-			<control type="button" id="5">
+			<control type="button" id="30288">
 				<label>31057</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReplaceWindow(MyMusicFiles)</onclick>
-				<visible>!Window.IsActive(MyMusic)</visible>
+				<visible>Window.IsActive(MyMusicLibrary)</visible>
 			</control>
 		</include>
 
 
 		<include name="VerticalMenu_LibraryButtons">
-			<control type="button" id="11">
+			<control type="button" id="30289">
 				<label>31068</label>
 				<include>VerticalMenu_Button</include>
-				<onclick>XBMC.ReplaceWindow(MyMusicLibrary)</onclick>
-				<visible>Window.IsActive(MyMusic)</visible>
+				<onclick>XBMC.ReplaceWindow(MyVideoLibrary)</onclick>
+				<visible>Window.IsActive(MyVideos)</visible>
 			</control>
-			<control type="button" id="5">
+			<control type="button" id="30290">
 				<label>31068</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReplaceWindow(MyMusicLibrary)</onclick>
-				<visible>Window.IsActive(MyMusic)</visible>
+				<visible>Window.IsActive(MyMusicFiles)</visible>
 			</control>
 		</include>
 
@@ -1197,7 +1197,7 @@
 		
 
 		<include name="VerticalMenu_OverlayButton">
-			<control type="radiobutton" id="30287">
+			<control type="radiobutton" id="30291">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31066]</label>
 				<onclick>Skin.ToggleSetting(nooverlays)</onclick>
@@ -1208,19 +1208,19 @@
 		
 
 		<include name="VerticalMenu_SetupButtons">
-			<control type="button" id="30288">
+			<control type="button" id="30292">
 				<label>31016</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ActivateWindow(MusicSettings)</onclick>
 				<visible>Window.IsActive(502) | Window.IsActive(500) | Window.IsActive(501) + !Skin.HasSetting(nomenusettings)  </visible>
 			</control>
-			<control type="button" id="30289">
+			<control type="button" id="30293">
 				<label>31016</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ActivateWindow(VideosSettings)</onclick>
 				<visible>Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28) + !Skin.HasSetting(nomenusettings)</visible>			
 			</control>
-			<control type="button" id="30290">
+			<control type="button" id="30294">
 				<label>31016</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ActivateWindow(ProgramsSettings)</onclick>
@@ -1230,23 +1230,23 @@
 		
 
 		<include name="VerticalMenu_PlaylistButtons">
-			<control type="togglebutton" id="20">
+			<control type="togglebutton" id="30295">
 				<label>ORDER: NORMAL</label>
 				<altlabel>ORDER: RANDOM</altlabel>
 				<include>VerticalMenu_ToggleButton</include>
 				<visible>Window.IsActive(500)</visible>
 			</control>
-			<control type="button" id="26">
+			<control type="button" id="30296">
 				<label>REPEAT</label>
 				<include>VerticalMenu_Button</include>
 				<visible>Window.IsActive(500)</visible>
 			</control>
-			<control type="button" id="21">
+			<control type="button" id="30297">
 				<label>190</label>
 				<include>VerticalMenu_Button</include>
 				<visible>Window.IsActive(500)</visible>
 			</control>
-			<control type="button" id="22">
+			<control type="button" id="30298">
 				<label>192</label>
 				<include>VerticalMenu_Button</include>
 				<visible>Window.IsActive(500)</visible>
@@ -1254,13 +1254,13 @@
 		</include>
 		
 		<include name="VerticalMenu_MediaDebugButtons">
-			<control type="button" id="30291">
+			<control type="button" id="30299">
 				<label>31607</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<visible>Skin.HasSetting(debug)</visible>
 			</control>
-			<control type="button" id="30292">
+			<control type="button" id="30300">
 				<label>31608</label>
 				<onclick>Skin.ToggleSetting(debuginfo)</onclick>
 				<include>VerticalMenu_Button</include>
@@ -1443,6 +1443,8 @@
 					<include>VerticalMenu_FilterButton</include>
 					<include>VerticalMenu_SearchButton</include>
 					<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_LibraryButtons</include>
+					<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_FilesButtons</include>
+
 					<include condition="!Skin.HasSetting(nomenusettings)">VerticalMenu_SetupButtons</include>
  					<include condition="Skin.HasSetting(debug)">VerticalMenu_MediaDebugButtons</include>
 
