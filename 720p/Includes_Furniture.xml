@@ -1,4 +1,3 @@
-
 <includes>
 
 <!-- Time -->
@@ -127,7 +126,7 @@
 			<animation effect="slide" start="0,0" end="0,-27" time="200" condition="[Control.IsVisible(51) + !Control.HasFocus(51) + !Control.HasFocus(71)] | [Control.IsVisible(53) + !Control.HasFocus(53) + !Control.HasFocus(71)] | [Control.IsVisible(57) + ![Control.HasFocus(57) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60)]]">Conditional</animation>
 			<include>Animation_CommonFade</include>
 			<include>Furniture_TimePanelHigh</include>
-			<visible>[Control.IsVisible(51) | Control.IsVisible(53)] + !Skin.HasSetting(notime)</visible>
+			<visible>[Control.IsVisible(51) | Control.IsVisible(53) | Window.IsActive(3)] + !Skin.HasSetting(notime)</visible>
 		</control>		
 	</include>
 
@@ -287,7 +286,7 @@
 			<posy>406</posy>
 			<width>1280</width>
 			<height>57</height>
-			<visible>!Skin.HasSetting(lowerrss) + system.getbool(lookandfeel.enablerssfeeds) + ![ControlGroup(940).HasFocus() | ControlGroup(941).HasFocus() | ControlGroup(942).HasFocus() | ControlGroup(943).HasFocus()]</visible>
+			<visible>!Skin.HasSetting(lowerrss) + system.getbool(lookandfeel.enablerssfeeds) + ![ControlGroup(940).HasFocus() | ControlGroup(941).HasFocus() | ControlGroup(942).HasFocus() | ControlGroup(943).HasFocus() | ControlGroup(944).HasFocus()]</visible>
 	    	<animation effect="slide" start="0,0" end="0,225" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<include>Animation_OpenCloseZoom</include>
 			<include>Animation_VisibleChange200</include>

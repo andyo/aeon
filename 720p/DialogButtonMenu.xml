@@ -78,12 +78,19 @@
 				<onclick>Skin.SetBool(bmtransit)</onclick>				
 				<onclick>XBMC.ActivateWindow(604)</onclick>
 			</control>
-			<control type="button" id="803">
+<!--			<control type="button" id="803">
 				<description>Assistant</description>
 				<label>31202</label>
 				<include>Objects_ContextMenuButton</include>
 				<onclick>Skin.SetBool(bmtransit)</onclick>				
 				<onclick>XBMC.ActivateWindow(605)</onclick>
+			</control> -->
+			<!--File manager -->
+			<control type="button" id="812">
+				<description>Settings</description>
+				<label>10003</label>
+				<include>Objects_ContextMenuButton</include>
+				<onclick>XBMC.ActivateWindow(3)</onclick>
 			</control>
 			<control type="button" id="811">
 				<description>favourites</description>

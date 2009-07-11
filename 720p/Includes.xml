@@ -23,11 +23,12 @@
 <include file="Viewtype_MultiplexOld.xml" />
 <include file="Viewtype_List.xml" />
 <include file="Viewtype_Wall.xml" />
+
 <include file="Includes_genre.xml" /><!-- <<<<<< Add this -->
-<include file="Viewtype_Music_Multiplex.xml" /><!-- <<<<<< Add this -->
 <include file="Includes_latest_added.xml" />
 <include file="Includes_VerticalMenu.xml" />
 <include file="Includes_HorizontalMenu.xml" />
+<include file="Includes_Filemanager.xml" />
 
 <!-- Text colours ================================== -->
 
