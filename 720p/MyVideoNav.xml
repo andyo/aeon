@@ -49,7 +49,7 @@
 		<include condition="!Skin.HasSetting(oldmultiplex)">Viewtype_Multiplex</include>
 		<include condition="Skin.HasSetting(oldmultiplex)">Viewtype_MultiplexOld</include>
 		<include>Furniture_Time</include>		
-		<include>ListFade</include>
+<!--		<include>ListFade</include> -->
 		<include>Objects_ShowcaseMenuPanel</include>
 		<include>Viewtype_Wall</include>
 		<include>Furniture_WallTime</include>
