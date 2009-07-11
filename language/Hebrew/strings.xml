@@ -1,6 +1,6 @@
-3195<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
-<!--Date of translation: 07/09/2009-->
+<!--Date of translation: 07/11/2009-->
 <!--$Revision$-->
 <!--Based on english strings version 204-->
 <strings>
@@ -38,18 +38,18 @@
   <string id="31039">עורך</string>
   <string id="31040">מנגן:</string>
   <string id="31041">של:</string>
-  <string id="31042">ריצפה: מוארת</string>
-  <string id="31043">ריצפה: חשוכה</string>
-  <string id="31044">אומנות</string>
+  <string id="31042">ריצפה: אור</string>
+  <string id="31043">ריצפה: לילה</string>
+  <string id="31044">רקע</string>
   <string id="31045">צלמית</string>
   <string id="31046">עלילה</string>
-  <string id="31047">סגנון</string>
+  <string id="31047">פריסה</string>
   <string id="31048">לחיצה</string>
   <string id="31049">אוטומטי</string>
   <string id="31050">תצוגה:</string>
   <string id="31051">אקראי</string>
-  <string id="31052">מלא</string>
-  <string id="31053">שקוף</string>
+  <string id="31052">עבה</string>
+  <string id="31053">דק</string>
   <string id="31054">הגדרות</string>
   <string id="31055">ערימה</string>
   <string id="31056">צלמית: מרובעת</string>
@@ -61,7 +61,7 @@
   <string id="31062">עונה</string>
   <string id="31063">פרק</string>
   <string id="31064">FANART</string>
-  <string id="31065">חלון</string>
+  <string id="31065">PANEL</string>
   <string id="31066">סימון ניצפו</string>
   <string id="31067">רקע</string>
   <string id="31068">ספריה</string>
@@ -180,12 +180,15 @@
   <string id="31244">תפריטים</string>
   <string id="31245">אפשרויות עיון</string>
   <string id="31246">שינויים</string>
-  <string id="31247">הגדרת המוד</string>
+  <string id="31247">הגדרות המוד</string>
   <string id="31249">שינוי דגלי מדיה</string>
   <string id="31250">פריסת MULTIPLEX (רקע, עלילה, פוסטר, מצגת צלמיות)</string>
   <string id="31251">שינוי מידע MULTIPLEX (מופעל, מכובה, אוטו', לחיצה)</string>
   <string id="31252">אפקט GRADIENT לתפריט דף הבית</string>
   <string id="31253"> קשר את קיצור המשחקים לתוסף ה"LAUNCHER"</string>
+  <string id="31254">תחזית ל- 4 ימים -</string>
+  <string id="31255">תחזית ל- 36 שעות -</string>
+  <string id="31256">תחזית לסוף שבוע -</string>
   <string id="31258">הראה דירוגים בדף מידע הסרט</string>
   <string id="31259">סמלי ברירת מחדל לדגלי מדיה (כבה למקומות ריקים)</string>
   <string id="31260">הראה שעון</string>
@@ -439,10 +442,10 @@
   <string id="31964">דגל CERTIFICATION</string>
   <string id="31965">דגל IMDB</string>
   <string id="31966">תצוגת פוסטר לסדרות</string>
+  <string id="31967">שונות</string>
+  <string id="31968">מסך מלא</string>
   <string id="31969">מופעל/מכובה</string>
-	<string id="31967">MISCELLANEOUS</string>
-	<string id="31968">FULLSCREEN</string>
-	<string id="31970">CURRENT</string>
-	<string id="31971">VIEWTYPE OPTIONS</string>
-	<string id="31972">VERTICAL MENU</string>
+  <string id="31970">תצוגה נוכחית</string>
+  <string id="31971">אפשרויות תצוגה</string>
+  <string id="31972">תפריט אנכי</string>
 </strings>
