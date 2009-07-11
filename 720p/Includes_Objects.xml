@@ -941,8 +941,7 @@
 			<visible>[Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25)] + !Container.Content(episodes)</visible>
 		</control>
 		<control type="togglebutton" id="923">
-            <include condition="Skin.HasSetting(noverticalmenu)">Objects_MediaMenuButton</include>
-            <include condition="!Skin.HasSetting(noverticalmenu)">VerticalMenu_Button</include>
+			<include>Objects_MediaMenuButton</include>				
 			<label>$LOCALIZE[31076]: $LOCALIZE[31074]</label>
 			<altlabel>$LOCALIZE[31076]: $LOCALIZE[31073]</altlabel>
 			<usealttexture>!Skin.HasSetting(smallmusicwall)</usealttexture>
@@ -1129,7 +1128,7 @@
 			<height>57</height>
 			<texture>showcase/showcase_menupanel.png</texture>
 			<include>Animation_MediaMenuSlide</include>
-			<visible>[Skin.HasSetting(noverticalmenu) | Window.IsActive(502) | Window.IsActive(501) | Window.IsActive(500) | Window.IsActive(2)] + [Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(51) | Control.IsVisible(57) | Control.IsVisible(53)]</visible>
+			<visible>Skin.HasSetting(noverticalmenu)</visible>
 		</control>
 	</include>
 	
