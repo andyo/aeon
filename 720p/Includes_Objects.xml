@@ -712,8 +712,8 @@
 	<include name="Objects_LightDarkWindows">
 		<control type="togglebutton" id="1100">
 			<include>Objects_MediaMenuButton</include>				
-            <label>$LOCALIZE[90002] $LOCALIZE[90003]</label>
-            <altlabel>$LOCALIZE[90002] $LOCALIZE[90004]</altlabel>
+            <label>$LOCALIZE[31952] $LOCALIZE[31953]</label>
+            <altlabel>$LOCALIZE[31952] $LOCALIZE[31954]</altlabel>
 			<usealttexture>Skin.HasSetting(darkwindow)</usealttexture>
 			<onclick>Skin.ToggleSetting(darkwindow)</onclick>
 			<onclick>XBMC.ReloadSkin</onclick>
@@ -724,7 +724,7 @@
     <include name="Objects_MultiplexShadeButtons">
         <control type="button" id="1101">
             <include>Objects_MediaMenuButton</include>				
-            <label>$LOCALIZE[90005]: $LOCALIZE[90008]</label>
+            <label>$LOCALIZE[31955]: $LOCALIZE[31958]</label>
             <onclick>Skin.SetBool(multiplexgrey)</onclick>
             <onclick>Skin.Reset(multiplexblack)</onclick>
             <onclick>XBMC.ReloadSkin</onclick>
@@ -733,7 +733,7 @@
         
         <control type="button" id="1102">
             <include>Objects_MediaMenuButton</include>				
-            <label>$LOCALIZE[90005]: $LOCALIZE[90007]</label>
+            <label>$LOCALIZE[31955]: $LOCALIZE[31957]</label>
             <onclick>Skin.SetBool(multiplexgreen)</onclick>
             <onclick>Skin.Reset(multiplexgrey)</onclick>
             <onclick>XBMC.ReloadSkin</onclick>
@@ -742,7 +742,7 @@
 
         <control type="button" id="1103">
             <include>Objects_MediaMenuButton</include>				
-            <label>$LOCALIZE[90005]: $LOCALIZE[90006]</label>
+            <label>$LOCALIZE[31955]: $LOCALIZE[31956]</label>
             <onclick>Skin.SetBool(multiplexblack)</onclick>
             <onclick>Skin.Reset(multiplexgreen)</onclick>
             <onclick>XBMC.ReloadSkin</onclick>
@@ -873,7 +873,7 @@
 	<include name="Objects_MultiplexStyleButtons">
 		<control type="button" id="988">
 			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31047]: $LOCALIZE[90010]</label>
+			<label>$LOCALIZE[31047]: $LOCALIZE[31960]</label>
 			<onclick>Skin.SetBool(multiplexbigthumb)</onclick>
 			<onclick>Skin.Reset(multiplexposter)</onclick>
 			<onclick>XBMC.ReloadSkin</onclick>

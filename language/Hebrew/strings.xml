@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+3195<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
 <!--Date of translation: 07/09/2009-->
 <!--$Revision$-->
@@ -423,25 +423,26 @@
   <string id="31936">רצועות</string>
   <string id="31937">עונות</string>
   <string id="31938">פרקים</string>
-  <string id="90001">מועדפים</string>
-  <string id="90002">חלון</string>
-  <string id="90003">אור</string>
-  <string id="90004">לילה</string>
-  <string id="90005">גוון</string>
-  <string id="90006">ירוק</string>
-  <string id="90007">אפור</string>
-  <string id="90008">שחור</string>
-  <string id="90009">שקיפות</string>
-  <string id="90010">פוסטר</string>
-  <string id="90011">MULTIPLEX מסך מלא</string>
-  <string id="90012">הצצה לפרק</string>
-  <string id="90013">קדימוני סרטים</string>
-  <string id="90014">דגל CERTIFICATION</string>
-  <string id="90015">דגל IMDB</string>
-  <string id="90016">תצוגת פוסטר לסדרות</string>
-  <string id="90019">מופעל/מכובה</string>
-	<string id="90017">MISCELLANEOUS</string>
-	<string id="90018">FULLSCREEN</string>
-	<string id="90020">CURRENT</string>
-	<string id="90021">VIEWTYPE OPTIONS</string>
+  <string id="31951">מועדפים</string>
+  <string id="31952">חלון</string>
+  <string id="31953">אור</string>
+  <string id="31954">לילה</string>
+  <string id="31955">גוון</string>
+  <string id="31956">ירוק</string>
+  <string id="31957">אפור</string>
+  <string id="31958">שחור</string>
+  <string id="31959">שקיפות</string>
+  <string id="31960">פוסטר</string>
+  <string id="31961">MULTIPLEX מסך מלא</string>
+  <string id="31962">הצצה לפרק</string>
+  <string id="31963">קדימוני סרטים</string>
+  <string id="31964">דגל CERTIFICATION</string>
+  <string id="31965">דגל IMDB</string>
+  <string id="31966">תצוגת פוסטר לסדרות</string>
+  <string id="31969">מופעל/מכובה</string>
+	<string id="31967">MISCELLANEOUS</string>
+	<string id="31968">FULLSCREEN</string>
+	<string id="31970">CURRENT</string>
+	<string id="31971">VIEWTYPE OPTIONS</string>
+	<string id="31972">VERTICAL MENU</string>
 </strings>

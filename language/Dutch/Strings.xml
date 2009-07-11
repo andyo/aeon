@@ -418,26 +418,27 @@
 
 <!-- ShowMix -->
 
-	<string id="90001">FAVS</string>  <!-- FAVOURITES -->
-	<string id="90002">WINDOW</string>
-	<string id="90003">LIGHT</string>
-	<string id="90004">NIGHT</string>
-	<string id="90005">SHADE</string>
-	<string id="90006">GREEN</string>
-	<string id="90007">GREY</string>
-	<string id="90008">BLACK</string>
-	<string id="90009">TRANSPARENCY</string>
-	<string id="90010">POSTER</string>
-	<string id="90011">FULLSCREEN MULTIPLEX</string>
-	<string id="90012">TV PREVIEW</string>
-	<string id="90013">MOVIE TRAILERS</string>
-	<string id="90014">CERTIFICATION FLAG</string>
-	<string id="90015">IMDB FLAG</string>
-	<string id="90016">TV POSTER VIEW</string>
-	<string id="90019">ON/OFF</string>
-	<string id="90017">MISCELLANEOUS</string>
-	<string id="90018">FULLSCREEN</string>
-	<string id="90020">CURRENT</string>
-	<string id="90021">VIEWTYPE OPTIONS</string>
+	<string id="31951">FAVS</string>  <!-- FAVOURITES -->
+	<string id="31952">WINDOW</string>
+	<string id="31953">LIGHT</string>
+	<string id="31954">NIGHT</string>
+	<string id="31955">SHADE</string>
+	<string id="31956">GREEN</string>
+	<string id="31957">GREY</string>
+	<string id="31958">BLACK</string>
+	<string id="31959">TRANSPARENCY</string>
+	<string id="31960">POSTER</string>
+	<string id="31961">FULLSCREEN MULTIPLEX</string>
+	<string id="31962">TV PREVIEW</string>
+	<string id="31963">MOVIE TRAILERS</string>
+	<string id="31964">CERTIFICATION FLAG</string>
+	<string id="31965">IMDB FLAG</string>
+	<string id="31966">TV POSTER VIEW</string>
+	<string id="31969">ON/OFF</string>
+	<string id="31967">MISCELLANEOUS</string>
+	<string id="31968">FULLSCREEN</string>
+	<string id="31970">CURRENT</string>
+	<string id="31971">VIEWTYPE OPTIONS</string>
+	<string id="31972">VERTICAL MENU</string>
 	
 </strings>
