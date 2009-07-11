@@ -87,7 +87,7 @@
 			</control>
 			<control type="button" id="811">
 				<description>favourites</description>
-				<label>90001</label>
+				<label>31951</label>
 				<include>Objects_ContextMenuButton</include>
 				<onclick>Skin.SetBool(bmtransit)</onclick>			
 				<onclick>XBMC.ActivateWindow(favourites)</onclick>
