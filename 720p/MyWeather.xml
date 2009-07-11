@@ -43,14 +43,14 @@
 		</control>
 
 		<control type="multiimage">
-			<include>Background_ImageFolder</include>
+			<include>FullscreenDimensions</include>
 			<info>Skin.String(CustomWeatherFolder)</info>
 			<visible>Skin.String(CustomWeatherFolder)</visible>
 			<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
 		</control>
 
 		<control type="multiimage">
-			<include>Background_ImageFolder</include>
+			<include>FullscreenDimensions</include>
 			<imagepath>$INFO[Skin.String(CustomWeatherFolder)]$INFO[Weather.FanartCode]</imagepath>
 			<visible>Skin.String(CustomWeatherFolder)</visible>
 			<visible>Skin.HasSetting(CustomWeatherConditions)</visible>

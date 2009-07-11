@@ -22,48 +22,12 @@
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
 
-		<control type="group" id="7000">
-
-			<control type="image">
-				<include>Objects_MediaLogo</include>
-				<texture>-</texture>
-			</control>	
-		
-			<control type="label">
-				<label>31020</label>
-				<include>Objects_MediaLabel</include>
-			</control>
-
-			<control type="grouplist" id="7000">
-				<include>Animation_MediaMenuSlide</include>
-				<include>Objects_MediaMenuGroup</include>
-
-				<control type="button" id="900">
-					<label>$LOCALIZE[31050] $INFO[Container.ViewMode]</label>
-					<include>Objects_MediaMenuButton</include>
-					<onclick>SetFocus(69)</onclick>
-				</control>
-
-				<include>Objects_FlattenFlowButton</include>	
-
-				<control type="button" id="3">
-					<label>103</label>
-					<include>Objects_MediaMenuButton</include>
-				</control>
-
-				<include>Objects_ThumbsButton</include>	
-
-				<include>Objects_WallGridButton</include>
-				
-				<include>Objects_WallBackdropButton</include>
-				
-				<include>Objects_MediaDebugButtons</include>
-			</control>
-		</control>
 
 		<include>Viewtype_Showcase</include>
 		<include>Viewtype_List</include>
 
+        <include>HorizontalScriptsMenu</include>		
+        <include>VerticalMenu</include>		
 	</control>
 
 	<include>Furniture_DarkGradient</include>	

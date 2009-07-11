@@ -600,7 +600,7 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>Skin.HasSetting(fullscreenmultiplex) + Container.Content(movies) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
+			<visible>Skin.HasSetting(fullscreenmultiplex) + Container.Content(movies) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7014).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
 			<animation effect="slide" start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexinfoon)">WindowOpen</animation>			
 			<animation effect="slide" start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide" start="0,590" end="0,0" time="500">VisibleChange</animation>			
@@ -1067,7 +1067,7 @@
                     <info>ListItem.Plot</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-                    <visible>[Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] +  + !IsEmpty(ListItem.Plot)</visible>	
+                    <visible>[Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + !IsEmpty(ListItem.Plot)</visible>	
                 </control>
                 <control type="textbox">
                     <posx>0</posx>
@@ -1103,7 +1103,29 @@
                         <fadetime>400</fadetime>
                         <texture>$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
                     </control>
-                    
+                    <control type="largeimage">
+                        <posx>1</posx>
+                        <posy>1</posy>
+                        <width>336</width>
+                        <height>188</height>
+                        <aspectratio>scale</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture>$INFO[ListItem.Path,extrathumbs/thumb1.jpg]</texture>
+                        <visible>substring($INFO[ListItem.Path],STACK,)</visible>	
+                    </control>
+
+                    <!-- DEBUG DAGTA -->
+                    <control type="label">
+                        <posx>100</posx>
+                        <posy>-5</posy>
+                        <width>900</width>
+                        <height>13</height>
+                        <font>Font_MultiplexInfoLabel</font>
+                        <textcolor>FFFFFFFF</textcolor>		
+                        <label>$INFO[Listitem.FolderName,,extrathumbs/thumb1.jpg]</label>
+                        <visible>Skin.HasSetting(debug)</visible>
+                    </control>
+                
                     <control type="image">
                         <posx>0</posx>
                         <posy>206</posy>
@@ -1165,7 +1187,7 @@
                 <control type="group">
                     <posx>-12</posx>
                     <posy>62</posy>
-                    <visible>Skin.HasSetting(movietrailers) + !Skin.HasSetting(multiplextvinfotrigger)</visible>	
+                    <visible>Skin.HasSetting(movietrailers)</visible>	
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -1903,7 +1925,7 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>!Skin.HasSetting(fullscreenmultiplex) + Container.Content(movies) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
+			<visible>!Skin.HasSetting(fullscreenmultiplex) + Container.Content(movies) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexinfoon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
             <animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
@@ -2762,7 +2784,7 @@
 		<control type="group">
 			<posx>0</posx>
 			<posy>0</posy>
-			<visible>Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplextvinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplextvinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
+			<visible>Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplextvinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplextvinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplextvinfoon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
@@ -2898,12 +2920,25 @@
                     <width>1000</width>
                     <font>Font_MultiplexSeasonLabel</font>
                     <shadowcolor>ff000000</shadowcolor>
-                    <label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
+                    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                     <scrollspeed>30</scrollspeed>
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
-                    <visible>Container.Content(episodes) | Container.Content(seasons)</visible>
+                    <visible>[Container.Content(episodes) | Container.Content(seasons)] + !stringcompare(ListItem.Season,0)</visible>
+                </control>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>70</posy>
+                    <width>1000</width>
+                    <font>Font_MultiplexSeasonLabel</font>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>[UPPERCASE]SPECIALS[/UPPERCASE]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                    <visible>[Container.Content(episodes) | Container.Content(seasons)] + stringcompare(ListItem.Season,0)</visible>
                 </control>
             </control>
             
@@ -3221,7 +3256,7 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplextvinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplextvinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
+			<visible>!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplextvinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplextvinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplextvinfoon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>		
@@ -3631,7 +3666,7 @@
 	<include name="MultiplexInfoPaneMusic">
         <!-- FULLSCREEN MULTIPLEX MUSIC WINDOW & TEXT -->
 		<control type="group">
-			<visible>Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(music) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
+			<visible>Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(music) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexmusicinfoon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
@@ -4101,7 +4136,7 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(music) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)]]</visible>
+			<visible>!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(music) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplextvinfoon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>		
