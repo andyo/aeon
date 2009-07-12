@@ -789,6 +789,7 @@
 		</include>
 		
 
+
 <!-- 30241 - 30250 reserved for Style Buttons-->
 		<include name="VerticalMenu_MultiplexStyleButtons">
 			<control type="button" id="30241">
@@ -952,7 +953,7 @@
 				<onclick>Skin.SetBool(nomusicfanart)</onclick>
 				<onclick>Skin.SetBool(nopicturefanart)</onclick>
 				<selected>Skin.HasSetting(nocurtains)</selected>
-				<visible>!Window.IsActive(500) + Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50) | Control.IsVisible(57)</visible>
+				<visible>!Window.IsActive(500) + Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(57)</visible>
 			</control>
 		</include>
 		
@@ -978,7 +979,7 @@
                 <usealttexture>Skin.HasSetting(darkwindow)</usealttexture>
                 <onclick>Skin.ToggleSetting(darkwindow)</onclick>
                 <onclick>XBMC.ReloadSkin</onclick>
-                <visible>Control.IsVisible(52) | Control.IsVisible(54)</visible>
+                <visible>!Control.IsVisible(53)</visible>
             </control>
         </include>
 		
@@ -995,36 +996,30 @@
 
 
 		<include name="VerticalMenu_ListButtons">
-			<control type="togglebutton" id="30272">
+			<control type="radiobutton" id="30272">
 				<include>VerticalMenu_Button</include>				
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<include>Objects_ListLayoutStrings</include>
-				<usealttexture>Skin.HasSetting(movieslistfull)</usealttexture>
 				<onclick>Skin.SetBool(movieslistfull)</onclick>
-				<altclick>Skin.Reset(movieslistfull)</altclick>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(50)</visible>
 			</control>
 			
-			<control type="togglebutton" id="30273">
+			<control type="radiobutton" id="30273">
 				<include>VerticalMenu_Button</include>				
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<include>Objects_ListLayoutStrings</include>
-				<usealttexture>Skin.HasSetting(tvshowslistfull)</usealttexture>
 				<onclick>Skin.SetBool(tvshowslistfull)</onclick>
-				<altclick>Skin.Reset(tvshowslistfull)</altclick>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(tvshows)</visible>
 			</control>
 					
-			<control type="togglebutton" id="30274">
+			<control type="radiobutton" id="30274">
 				<include>VerticalMenu_Button</include>				
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<include>Objects_ListLayoutStrings</include>
-				<usealttexture>Skin.HasSetting(tvepisodeslistfull)</usealttexture>
 				<onclick>Skin.SetBool(tvepisodeslistfull)</onclick>
-				<altclick>Skin.Reset(tvepisodeslistfull)</altclick>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(episodes)</visible>
 			</control>
-        </include>
 
-
-		<include name="VerticalMenu_MusicLibraryListButton">
 			<control type="radiobutton" id="30275">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
@@ -1040,17 +1035,16 @@
 				<selected>Skin.HasSetting(musicsongslistfull)</selected>
 				<visible>Control.IsVisible(50) + Container.Content(songs) + !Window.IsActive(MyMusic)</visible>
 			</control>
-		</include>
-		
-		<include name="VerticalMenu_MusicFilesListButton">
-			<control type="radiobutton" id="30277">
+<!--			<control type="radiobutton" id="30277">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musiclistfull)</onclick>
 				<selected>Skin.HasSetting(musiclistfull)</selected>
 				<visible>Control.IsVisible(50)</visible>
-			</control>
-		</include>
+			</control> -->
+
+        </include>
+
 
 		
 		<include name="VerticalMenu_DVDCaseButtons">
