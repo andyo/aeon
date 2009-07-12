@@ -271,7 +271,7 @@
         
 		<control type="image">
 			<include>Objects_FSInfoCertificate</include>
-			<texture>flags/rating/mpaa_general.png</texture>
+			<texture>flags/rating/us/mpaa_general.png</texture>
 			<visible>substring(listitem.mpaa,US:G) | substring(listitem.mpaa,USA:G) | substring(listitem.mpaa,Rated G)</visible>
 		</control>
 
