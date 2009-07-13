@@ -149,7 +149,7 @@
 	</include>	
 
 	<include name="ListLabel_Track_Large">
-		<posx>62</posx>
+		<posx>66</posx>
 		<posy>0</posy>
 		<width>45</width>
 		<height>61</height>
@@ -471,9 +471,9 @@
 <!-- END POPUP LINES -->
 
 			<control type="image">
-				<posx>110</posx>
+				<posx>108</posx>
 				<posy>102</posy>
-				<width>35</width>
+				<width>39</width>
 				<height>540</height>
 				<texture>list/listpanel_detailwide.png</texture>
 				<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | [Window.IsActive(25) + Skin.HasSetting(videotv)]]</visible>
