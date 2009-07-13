@@ -107,7 +107,7 @@
 		<control type="group">
 			<include>Furniture_TimeGroupHighVars</include>
 			<visible>[[Skin.HasSetting(highertime) + Window.IsActive(Home)] | [Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(57)]] + !Skin.HasSetting(notime)</visible>
-			<animation effect="slide" start="0,0" end="0,-27" time="200" condition="[Control.IsVisible(52) + !Control.HasFocus(52) + !Control.HasFocus(71) + !Control.HasFocus(60) + !Control.HasFocus(110)] | [Control.IsVisible(50) + !Control.HasFocus(50) + !Control.HasFocus(71) + !Control.HasFocus(61)] | [Control.IsVisible(53) + !Control.HasFocus(53) + !Control.HasFocus(71)] | [Control.IsVisible(57) + ![Control.HasFocus(57) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60)]]">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-27" time="200" condition="[Control.IsVisible(52) + !Control.HasFocus(52) + !Control.HasFocus(71) + !Control.HasFocus(60) + !Control.HasFocus(110) + !ControlGroup(7000).HasFocus()] | [Control.IsVisible(50) + !Control.HasFocus(50) + !Control.HasFocus(71) + !Control.HasFocus(61) + !ControlGroup(7000).HasFocus()] | [Control.IsVisible(53) + !Control.HasFocus(53) + !Control.HasFocus(71)] | [Control.IsVisible(57) + ![Control.HasFocus(57) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60) + !ControlGroup(7000).HasFocus()]]">Conditional</animation>
 			<include>Animation_CommonFade</include>
 			<include>Furniture_TimePanelHigh</include>
 		</control>		
@@ -671,7 +671,6 @@
 	<include name="ShowcaseFloorFrontLight">
 		<texture>showcase/lite/showcase_floor_front.png</texture>		
 	</include>
-
 	<include name="ShowcaseFloorFrontNightFullscreen">
 		<texture>showcase/showcase_floor_front_fullscreen.png</texture>	
 	</include>
@@ -684,7 +683,6 @@
 	<include name="ShowcaseFloorBackLightFullscreen">
 		<texture>showcase/lite/showcase_floor_back_fullscreen.png</texture>		
 	</include>
-
 	<include name="ShowcaseSpotNight">
 	    <texture>showcase/showcase_spot.png</texture>
 	</include>
@@ -698,6 +696,48 @@
 	    <texture>showcase/lite/showcase_spot_fullscreen.png</texture>
 	</include>	
 
+
+	<include name="ListFloorBackNight">
+		<texture>list/list_floor_back.png</texture>	
+	</include>
+	<include name="ListFloorBackLight">
+		<texture>list/lite/List_floor_back.png</texture>		
+	</include>
+    <include name="ListFloorFrontNight">
+		<texture>list/list_floor_front.png</texture>	
+	</include>
+	<include name="ListFloorFrontLight">
+		<texture>list/lite/list_floor_front.png</texture>		
+	</include>
+
+	<include name="ListFloorFrontNightFullscreen">
+		<texture>list/list_floor_front_fullscreen.png</texture>	
+	</include>
+	<include name="ListFloorFrontLightFullscreen">
+		<texture>list/lite/List_floor_front_fullscreen.png</texture>		
+	</include>
+	<include name="ListFloorBackNightFullscreen">
+		<texture>list/list_floor_back_fullscreen.png</texture>	
+	</include>
+	<include name="ListFloorBackLightFullscreen">
+		<texture>list/lite/List_floor_back_fullscreen.png</texture>		
+	</include>
+
+	<include name="ListSpotNight">
+	    <texture>list/list_spot.png</texture>
+	</include>
+	<include name="ListSpotLight">
+	    <texture>list/lite/list_spot.png</texture>
+	</include>	
+	<include name="ListSpotNightFullscreen">
+	    <texture>list/list_spot_fullscreen.png</texture>
+	</include>
+	<include name="ListSpotLightFullscreen">
+	    <texture>list/lite/list_spot_fullscreen.png</texture>
+	</include>	
+
+
+
 	<include name="Furniture_FloorBack">
 		<control type="image">
 			<posx>0</posx>
@@ -706,33 +746,21 @@
 			<height>405</height>
 			<include condition="!Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ShowcaseFloorBackLight</include>
 			<include condition="!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ShowcaseFloorBackNight</include>			
-			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)</visible>
+			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)</visible>
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
 		</control>
-<!--		<control type="image">
-			<posx>0</posx>
-			<posy>315</posy>
-			<width>1280</width>
-			<height>405</height>
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ShowcaseFloorBackLightFullscreen</include>
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ShowcaseFloorBackNightFullscreen</include>			
-			<visible>Control.IsVisible(57) | Control.IsVisible(52)</visible>
-			<include>Animation_CommonFade</include>
-			<include>Animation_HideShowcase</include>
-			<include>Animation_HideMultiplex</include>
-		</control> -->
 	</include>
 
 
 	<include name="Furniture_MediaPanel">
-		<control type="image">
+<!--		<control type="image">
 			<include>FullscreenDimensions</include>
 			<texture>list/list_filter.png</texture>
 			<colordiffuse>d0FFFFFF</colordiffuse>
 			<visible>Control.IsVisible(50)</visible>
-		</control>
+		</control> -->
 		
 		<control type="image">
 			<posx>0</posx>
@@ -744,6 +772,21 @@
 			<include condition="Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontLightFullscreen</include>
 			<include condition="Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontNightFullscreen</include>	
 			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)</visible>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideShowcase</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+        
+		<control type="image">
+			<posx>0</posx>
+			<posy>315</posy>
+			<width>1280</width>
+			<height>405</height>
+			<include condition="!Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ListFloorFrontLight</include>
+			<include condition="!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ListFloorFrontNight</include>			
+			<include condition="Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ListFloorFrontLightFullscreen</include>
+			<include condition="Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ListFloorFrontNightFullscreen</include>	
+			<visible>Control.IsVisible(50)</visible>
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
@@ -764,19 +807,7 @@
 			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)</visible>
 		</control>
 	
-		<control type="image">
-			<posx>144</posx>
-			<posy>583</posy>
-			<width>993</width>
-			<height>137</height>
-			<include>ShowcaseSpotLight</include>
-			<include>Animation_CommonFade</include>
-			<include>Animation_HideShowcase</include>
-			<include>Animation_HideMultiplex</include>
-			<visible>Control.IsVisible(50)</visible>
-		</control>
-		
-		<control type="image">
+<!--		<control type="image">
 			<posx>0</posx>
 			<posy>315</posy>
 			<width>1280</width>
@@ -786,7 +817,23 @@
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>				
-		</control>		
+		</control>		-->
+
+		<control type="image">
+			<posx>350</posx>
+			<posy>583</posy>
+			<width>933</width>
+			<height>137</height>
+			<include condition="!Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ListSpotLight</include>
+			<include condition="!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ListSpotNight</include>
+			<include condition="Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ListSpotLightFullscreen</include>
+			<include condition="Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">LIstSpotNightFullscreen</include>			
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideShowcase</include>
+			<include>Animation_HideMultiplex</include>
+			<visible>Control.IsVisible(50)</visible>
+		</control>
+
 	</include>
 
 	<include name="Furniture_shadow">
@@ -1127,7 +1174,7 @@
 			<visible>Control.IsVisible(50) + Player.HasAudio</visible>
 			<control type="image">
 				<posx>870</posx>
-				<posy>570</posy>
+				<posy>565</posy>
 				<width>318</width>
 				<height>113</height>
 				<texture>list/list_nowplaying.png</texture>
@@ -1136,7 +1183,7 @@
 			<control type="progress" id="20">
 				<description>Progressbar</description>
 				<posx>855</posx>
-				<posy>650</posy>
+				<posy>645</posy>
 				<width>346</width>
 				<height>18</height>
 				<texturebg>list/progress_back.png</texturebg>
@@ -1149,7 +1196,7 @@
 
 			<control type="label">
 				<include>List_NowPlaying</include>
-				<posy>595</posy>
+				<posy>590</posy>
 				<textcolor>a8FFFFFF</textcolor>
 				<scroll>true</scroll>
 				<label>[UPPERCASE][COLOR a8FFFFFF]$INFO[MusicPlayer.Artist][/COLOR][CR][COLOR FFFFFFFF]$INFO[MusicPlayer.Title][/COLOR][/UPPERCASE]</label>

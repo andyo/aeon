@@ -15,7 +15,7 @@
 
 	<control type="largeimage" id="102">
 		<include>FullscreenDimensions</include>
-        <visible>[!Control.IsVisible(103) + Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(52)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+        <visible>[!Control.IsVisible(103) + Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550) | | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[listitem.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
@@ -23,11 +23,32 @@
 
 	<control type="largeimage" id="103">
 		<include>FullscreenDimensions</include>
-        <visible>[Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(52)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+        <visible>[Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[container.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
 	</control>
+    
+	<control type="largeimage" id="104">
+		<include>FullscreenDimensions</include>
+        <visible>[Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(nomusicfanart)</visible>
+		<fadetime>400</fadetime>
+		<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
+		<include>Animation_FanartFade</include>
+	</control>
+
+<!-- DEBUG INFO -->
+    <control type="label">
+        <posx>700</posx>
+        <posy>05</posy>
+        <width>900</width>
+        <height>13</height>
+        <font>Font_MultiplexInfoLabel</font>
+        <textcolor>FFFFFFFF</textcolor>		
+        <label>** $INFO[container.property(fanart_image)]</label>
+        <visible>Skin.HasSetting(debug)</visible>
+	</control>
+    
 <!-- <<<<< ADD this -->
 	</control>
 	 
@@ -49,7 +70,7 @@
 		<animation effect="fade" start="0" end="100" time="150" delay="1500">Visible</animation>
 	</control>
 
-	<include>MediaBackdropsMultiplex</include>	
+<!--	<include>MediaBackdropsMultiplex</include>	-->
 	
 	<include>Furniture_WallBackground</include>	
 

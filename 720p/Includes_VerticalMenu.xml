@@ -574,17 +574,17 @@
 						<control type="image">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texture>viewselect/vertical/vs_icon_multiplex_green_focus.png</texture>
-							<visible>Skin.HasSetting(multiplexgreen)</visible>
+							<visible>Skin.HasSetting(shadegreen)</visible>
 						</control>
 						<control type="image">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texture>viewselect/vertical/vs_icon_multiplex_grey_focus.png</texture>
-							<visible>Skin.HasSetting(multiplexgrey)</visible>
+							<visible>Skin.HasSetting(shadegrey)</visible>
 						</control>
 						<control type="image">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texture>viewselect/vertical/vs_icon_multiplex_black_focus.png</texture>
-							<visible>Skin.HasSetting(multiplexblack)</visible>
+							<visible>Skin.HasSetting(shadeblack)</visible>
 						</control>
 					</control>
 						
@@ -605,11 +605,11 @@
 							<texturefocus>viewselect/vertical/vs_icon_multiplex_green_focus.png</texturefocus>
       						<texturenofocus>viewselect/vertical/vs_icon_multiplex_green.png</texturenofocus>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <onclick>Skin.SetBool(multiplexgreen)</onclick>
-                            <onclick>Skin.Reset(multiplexblack)</onclick>
-                            <onclick>Skin.Reset(multiplexgrey)</onclick>
+                            <onclick>Skin.SetBool(shadegreen)</onclick>
+                            <onclick>Skin.Reset(shadeblack)</onclick>
+                            <onclick>Skin.Reset(shadegrey)</onclick>
                             <onclick>XBMC.ReloadSkin</onclick>
-                            <visible>[Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(multiplexgreen)</visible>
+                            <visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + !Skin.HasSetting(shadegreen)</visible>
 						</control>
 						
 						<control type="button" id="30042">
@@ -617,11 +617,11 @@
 							<texturefocus>viewselect/vertical/vs_icon_multiplex_grey_focus.png</texturefocus>
       						<texturenofocus>viewselect/vertical/vs_icon_multiplex_grey.png</texturenofocus>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <onclick>Skin.SetBool(multiplexgrey)</onclick>
-                            <onclick>Skin.Reset(multiplexgreen)</onclick>
-                            <onclick>Skin.Reset(multiplexblack)</onclick>
+                            <onclick>Skin.SetBool(shadegrey)</onclick>
+                            <onclick>Skin.Reset(shadegreen)</onclick>
+                            <onclick>Skin.Reset(shadeblack)</onclick>
                             <onclick>XBMC.ReloadSkin</onclick>
-                            <visible>[Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(multiplexgrey)</visible>
+                            <visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + !Skin.HasSetting(shadegrey)</visible>
 						</control>
 						
 						<control type="button" id="30043">
@@ -629,11 +629,11 @@
 							<texturefocus>viewselect/vertical/vs_icon_multiplex_black_focus.png</texturefocus>
       						<texturenofocus>viewselect/vertical/vs_icon_multiplex_black.png</texturenofocus>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-                            <onclick>Skin.SetBool(multiplexblack)</onclick>
-                            <onclick>Skin.Reset(multiplexgreen)</onclick>
-                            <onclick>Skin.Reset(multiplexgrey)</onclick>
+                            <onclick>Skin.SetBool(shadeblack)</onclick>
+                            <onclick>Skin.Reset(shadegreen)</onclick>
+                            <onclick>Skin.Reset(shadegrey)</onclick>
                             <onclick>XBMC.ReloadSkin</onclick>
-                            <visible>[Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(multiplexblack)</visible>
+                            <visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + !Skin.HasSetting(shadeblack)</visible>
 						</control>
 					</control>
 				</control>
@@ -848,7 +848,7 @@
 				<label>$LOCALIZE[31955]: $LOCALIZE[31956]</label>
 				<onclick>SetFocus(7014)</onclick>
 				<onright>SetFocus(7014)</onright>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(54)] + ![Skin.HasSetting(multiplexgrey) | Skin.HasSetting(multiplexblack)]</visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + ![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>
 			</control>
 	
 			<control type="button" id="30252">
@@ -856,7 +856,7 @@
 				<label>$LOCALIZE[31955]: $LOCALIZE[31957]</label>
 				<onclick>SetFocus(7014)</onclick>
 				<onright>SetFocus(7014)</onright>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(54)] + Skin.HasSetting(multiplexgrey)</visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + Skin.HasSetting(shadegrey)</visible>
 			</control>
 	
 			<control type="button" id="30253">
@@ -864,7 +864,7 @@
 				<label>$LOCALIZE[31955]: $LOCALIZE[31958]</label>
 				<onclick>SetFocus(7014)</onclick>
 				<onright>SetFocus(7014)</onright>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(54)] + Skin.HasSetting(multiplexblack)</visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + Skin.HasSetting(shadeblack)</visible>
 			</control>
         </include>
 
@@ -990,45 +990,48 @@
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(fullscreenmultiplex)</onclick>
 				<selected>Skin.HasSetting(fullscreenmultiplex)</selected>
-				<visible>Control.IsVisible(52) | Control.IsVisible(54)</visible>
+				<visible>Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)</visible>
 			</control>
 		</include>
 
 
 		<include name="VerticalMenu_ListButtons">
 			<control type="radiobutton" id="30272">
-				<include>VerticalMenu_Button</include>				
+				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
-				<include>Objects_ListLayoutStrings</include>
-				<onclick>Skin.SetBool(movieslistfull)</onclick>
+				<onclick>Skin.ToggleSetting(movieslistfull)</onclick>
+				<selected>Skin.HasSetting(movieslistfull)</selected>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(50)</visible>
 			</control>
-			
 			<control type="radiobutton" id="30273">
-				<include>VerticalMenu_Button</include>				
+				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
-				<include>Objects_ListLayoutStrings</include>
-				<onclick>Skin.SetBool(tvshowslistfull)</onclick>
+				<onclick>Skin.ToggleSetting(tvshowslistfull)</onclick>
+				<selected>Skin.HasSetting(tvshowslistfull)</selected>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(tvshows)</visible>
 			</control>
-					
 			<control type="radiobutton" id="30274">
-				<include>VerticalMenu_Button</include>				
+				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
-				<include>Objects_ListLayoutStrings</include>
-				<onclick>Skin.SetBool(tvepisodeslistfull)</onclick>
+				<onclick>Skin.ToggleSetting(tvseasonslistfull)</onclick>
+				<selected>Skin.HasSetting(tvseasonslistfull)</selected>
+				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(seasons)]</visible>
+			</control>
+			<control type="radiobutton" id="30275">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
+				<onclick>Skin.ToggleSetting(tvepisodeslistfull)</onclick>
+				<selected>Skin.HasSetting(tvepisodeslistfull)</selected>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(episodes)</visible>
 			</control>
-
-			<control type="radiobutton" id="30275">
+			<control type="radiobutton" id="30276">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musicalbumslistfull)</onclick>
 				<selected>Skin.HasSetting(musicalbumslistfull)</selected>
 				<visible>Control.IsVisible(50) + Container.Content(albums) + !Window.IsActive(MyMusic)</visible>
 			</control>
-
-			<control type="radiobutton" id="30276">
+			<control type="radiobutton" id="30277">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musicsongslistfull)</onclick>
@@ -1262,6 +1265,31 @@
 			</control>
 		</include>
 
+
+		<include name="VerticalMenu_PosterThumbButtons">
+			<control type="radiobutton" id="30301">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31059]</label>
+				<onclick>Skin.ToggleSetting(listvideosquare)</onclick>
+				<selected>Skin.HasSetting(listvideosquare)</selected>
+				<visible>Control.IsVisible(50) + Window.IsActive(24)</visible>
+			</control>
+			<control type="radiobutton" id="30302">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31059]</label>
+				<onclick>Skin.ToggleSetting(listgamessquare)</onclick>
+				<selected>Skin.HasSetting(listgamessquare)</selected>
+				<visible>Control.IsVisible(50) + Window.IsActive(35)</visible>
+			</control>
+			<control type="radiobutton" id="30303">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31059]</label>
+				<onclick>Skin.ToggleSetting(tvposterview)</onclick>
+				<selected>Skin.HasSetting(tvposterview)</selected>
+				<visible>Skin.HasSetting(videotv)</visible>
+			</control>
+		</include>
+
 	<!--#################################################### Vertical - Menu #####################################################-->
 	<!--##########################################################################################################################-->
 			
@@ -1411,6 +1439,7 @@
 					</control>
 					
 					<include>VerticalMenu_FlattenFlowButton</include>
+					<include>VerticalMenu_PosterThumbButtons</include>
 					<include condition="!Skin.HasSetting(nomultiplexstylebuttons)">VerticalMenu_MultiplexStyleButtons</include>
 					<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">VerticalMenu_MultiplexInfoButtons</include>
 					<include>VerticalMenu_ListButtons</include>

@@ -13,6 +13,8 @@
 	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
+        <include>Furniture_FloorBack</include>
+        <include>Furniture_shadow</include>
 		
 		<include>Furniture_Time</include>	
 		<include>Furniture_MediaPanel</include>
