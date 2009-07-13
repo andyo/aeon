@@ -3,10 +3,15 @@
 	<allowoverlay>no</allowoverlay>
 	<controls>
 
-	<control type="multiimage">
-		<include>FullscreenDimensions</include>
-		<imagepath>backdrops/default_settings</imagepath>
-		<info>Skin.String(CustomSettings)</info>
+    <control type="multiimage">
+        <include>FullscreenDimensions</include>
+        <timeperimage>10000</timeperimage>
+        <randomize>true</randomize>
+        <fadetime>1000</fadetime>
+        <include>Animation_BackgroundFade</include>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+        <imagepath>backdrops/default_settings</imagepath>
+        <info>Skin.String(CustomSettings)</info>
 	</control>
 
 	<include>Furniture_SettingsBackPanel</include>

@@ -2,24 +2,29 @@
 	<defaultcontrol always="true">6</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<controls>
-		<control type="multiimage">
-			<include>FullscreenDimensions</include>
-			<imagepath>backdrops/default_settings</imagepath>
-			<info>Skin.String(CustomSettings)</info>
-			<animation effect="fade" start="0" end="100" time="200" condition="[Skin.HasSetting(settingsfade) + Window.Previous(Home)] | Skin.HasSetting(bmtransit)">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="200" condition="[[Skin.HasSetting(settingsfade) | Skin.HasSetting(nosettings)] + Window.Next(Home)] | [Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)]">WindowClose</animation>
-		</control>
-
+    <control type="multiimage">
+        <include>FullscreenDimensions</include>
+        <timeperimage>20000</timeperimage>
+        <randomize>true</randomize>
+        <fadetime>1000</fadetime>
+        <include>Animation_BackgroundFade</include>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+        <imagepath>backdrops/default_settings</imagepath>
+        <info>Skin.String(CustomSettings)</info>
+		<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>		
+	</control>
+       
 		<control type="group">
 			<include>FullscreenDimensions</include>
-			<animation type="WindowOpen" reversible="false" condition="!Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(18) + !Window.Previous(19) + !Window.Previous(17) + !Window.Previous(604) + !Window.Previous(56) + !Window.Previous(34)">
+             <animation type="WindowOpen" reversible="false" condition="!Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(18) + !Window.Previous(19) + !Window.Previous(17) + !Window.Previous(604) + !Window.Previous(56) + !Window.Previous(34)">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 				<effect type="fade" start="0" end="100" time="300" />
 			</animation>
 			<animation type="WindowClose" reversible="false" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
-			</animation>			
+			</animation>
 			<include>Furniture_SettingsBackPanel</include>
 
 			<control type="image">
