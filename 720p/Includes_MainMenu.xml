@@ -125,6 +125,10 @@
 			<item id="2">
 				<label>31011</label>
 				<include>BackgroundVarsGames</include>					
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
 				<onclick>XBMC.ActivateWindow(MyPrograms)</onclick>
 				<visible>!Skin.HasSetting(nogames)</visible>
 				<visible>!Skin.HasSetting(launcherforgames)</visible>
@@ -132,6 +136,10 @@
 			<item id="2">
 				<label>31011</label>
 				<include>BackgroundVarsGames</include>					
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
 				<onclick>XBMC.ActivateWindow(1,plugin://programs/Launcher/)</onclick>
 				<visible>!Skin.HasSetting(nogames)</visible>
 				<visible>Skin.HasSetting(launcherforgames)</visible>
@@ -139,6 +147,10 @@
 			<item id="5">
 				<label>31012</label>
 				<include>BackgroundVarsPictures</include>				
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
 				<onclick>XBMC.ActivateWindow(MyPictures)</onclick>
 				<visible>!Skin.HasSetting(nopictures)</visible>
 			</item>
@@ -168,6 +180,10 @@
 			<item id="8">
 				<label>31015</label>
 				<include>BackgroundVarsVideo</include>				
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
 				<onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
 				<visible>!Skin.HasSetting(novideos)</visible>
 			</item>
@@ -193,6 +209,10 @@
 			<item id="9">
 				<label>31016</label>
 				<include>BackgroundVarsSettings</include>				
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
 				<onclick>Skin.Reset(settingsfade)</onclick>
 				<onclick>XBMC.ActivateWindow(4)</onclick>
 				<visible>!Skin.HasSetting(nosettings)</visible>
@@ -201,6 +221,10 @@
 				<description>Scripts</description>
 				<include>BackgroundVarsScripts</include>					
 				<label>31020</label>
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
 				<onclick>XBMC.ActivateWindow(20)</onclick>
 				<visible>Skin.HasSetting(scripts)</visible>
 			</item>
@@ -208,6 +232,10 @@
 				<description>Play DVD</description>
 				<include>BackgroundVarsPlayDVD</include>					
 				<label>31018</label>
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
 				<onclick>XBMC.PlayDVD</onclick>
 				<visible>System.HasMediadvd</visible>
 			</item>
@@ -222,6 +250,10 @@
 				<description>Assistant</description>
 				<include>BackgroundVarsAssistant</include>					
 				<label>31021</label>
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
 				<onclick>XBMC.ActivateWindow(605)</onclick>
 				<visible>Skin.HasSetting(assistant)</visible>
 			</item>
@@ -344,7 +376,7 @@
 				<visible>!Skin.HasSetting(nosettings)</visible>
 			</item>
 			<item id="14">
-				<label>90001</label>
+				<label>31951</label>
 				<include>BackgroundVarsfavourites</include>				
 				<onclick>Skin.SetString(custom,Customfavourites)</onclick>
 				<onclick>SetFocus(92)</onclick>
@@ -523,13 +555,13 @@
 				<visible>Skin.HasSetting(novideos)</visible>
 			</item>
 			<item id="14">
-				<label>90001</label>
+				<label>31951</label>
 				<include>BackgroundVarsfavourites</include>				
 				<onclick>Skin.SetBool(nofavourites)</onclick>
 				<visible>!Skin.HasSetting(nofavourites)</visible>
 			</item>
 			<item id="14">
-				<label2>90001</label2>
+				<label2>31951</label2>
 				<include>BackgroundVarsfavourites</include>				
 				<onclick>Skin.Reset(nofavourites)</onclick>
 				<visible>Skin.HasSetting(nofavourites)</visible>
