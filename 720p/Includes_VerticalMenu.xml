@@ -1271,14 +1271,14 @@
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(listvideosquare)</onclick>
-				<selected>Skin.HasSetting(listvideosquare)</selected>
+				<selected>!Skin.HasSetting(listvideosquare)</selected>
 				<visible>Control.IsVisible(50) + Window.IsActive(24)</visible>
 			</control>
 			<control type="radiobutton" id="30302">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(listgamessquare)</onclick>
-				<selected>Skin.HasSetting(listgamessquare)</selected>
+				<selected>!Skin.HasSetting(listgamessquare)</selected>
 				<visible>Control.IsVisible(50) + Window.IsActive(35)</visible>
 			</control>
 			<control type="radiobutton" id="30303">
