@@ -2531,8 +2531,8 @@
 		<control type="group">
 			<posx>0</posx>
 			<posy>0</posy>
-			<visible>Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplextvinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplextvinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
-			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplextvinfoon)">WindowOpen</animation>			
+			<visible>Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfoon)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfoon)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfoon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]]]</visible>
+			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="![[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
 			<control type="image">
@@ -3016,8 +3016,8 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplextvinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplextvinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
-			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplextvinfoon)">WindowOpen</animation>			
+			<visible>!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfoon)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfoon)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfoon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]]]</visible>
+			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="![[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>		
 			<control type="image">
@@ -3897,7 +3897,7 @@
 			<width>1280</width>
 			<height>381</height>
 			<visible>!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(music) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
-			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplextvinfoon)">WindowOpen</animation>			
+			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplextvshowsinfoon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>		
 			<control type="image">
@@ -10459,8 +10459,8 @@
             <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVVarsWrap</include>			
             <onleft>52</onleft>
             <onright>52</onright>
-           <include condition="[Skin.HasSetting(videomovies) + !Skin.HasSetting(multiplexinfotrigger)] | [Skin.HasSetting(videotv) + !Skin.HasSetting(multiplextvinfotrigger)] | [Skin.HasSetting(music) + !Skin.HasSetting(multiplexmusicinfotrigger)]">MultiplexInfoAutoUp</include>
-            <include condition="[Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexinfotrigger)] | [Skin.HasSetting(videotv) + Skin.HasSetting(multiplextvinfotrigger)] | [Skin.HasSetting(music) + Skin.HasSetting(multiplexmusicinfotrigger)]">MultiplexInfoTriggerUp</include>
+           <include condition="[Skin.HasSetting(videomovies) + !Skin.HasSetting(multiplexinfotrigger)] | [Skin.HasSetting(videotv) + ![Skin.HasSetting(multiplextvshowsinfotrigger) | Skin.HasSetting(multiplextvseasonsinfotrigger) | Skin.HasSetting(multiplextvepisodesinfotrigger)]] | [Skin.HasSetting(music) + !Skin.HasSetting(multiplexmusicinfotrigger)]">MultiplexInfoAutoUp</include>
+            <include condition="[Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexinfotrigger)] | [Skin.HasSetting(videotv) + [Skin.HasSetting(multiplextvshowsinfotrigger) | Skin.HasSetting(multiplextvseasonsinfotrigger) | Skin.HasSetting(multiplextvepisodesinfotrigger)]] | [Skin.HasSetting(music) + Skin.HasSetting(multiplexmusicinfotrigger)]">MultiplexInfoTriggerUp</include>
             <ondown>600</ondown>
             <pagecontrol>60</pagecontrol>
             <orientation>horizontal</orientation>
@@ -10833,8 +10833,8 @@
             <include condition="Skin.HasSetting(videotv)">MultiplexTVVarsWrap</include>			
             <onleft>52</onleft>
             <onright>52</onright>
-            <include condition="[Skin.HasSetting(videotv) + !Skin.HasSetting(multiplextvinfotrigger)]">MultiplexInfoAutoUp</include>
-            <include condition="[Skin.HasSetting(videotv) + Skin.HasSetting(multiplextvinfotrigger)]">MultiplexInfoTriggerUp</include>
+            <include condition="[Skin.HasSetting(videotv) + !Skin.HasSetting(multiplextvepisodesinfotrigger)]">MultiplexInfoAutoUp</include>
+            <include condition="[Skin.HasSetting(videotv) + Skin.HasSetting(multiplextvepisodesinfotrigger)]">MultiplexInfoTriggerUp</include>
             <ondown>600</ondown>
             <viewtype label="Multiplex">list</viewtype>
             <pagecontrol>60</pagecontrol>
@@ -11005,7 +11005,7 @@
 			
         <control type="group" id="600">
             <control type="button" id="601">
-                <visible>Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !Player.Playing + [!Skin.HasSetting(multiplextvinfooff) | !Skin.HasSetting(multiplexinfooff)]</visible>
+                <visible>Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !Player.Playing + [!Skin.HasSetting(multiplextvshowsinfooff) | !Skin.HasSetting(multiplexinfooff)]</visible>
                 <onleft>52</onleft>
                 <onright>52</onright>
                 <onup>7000</onup>
@@ -11014,7 +11014,7 @@
             </control>
 
             <control type="button" id="602">
-                <visible>Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview) + !Player.Playing + [!Skin.HasSetting(multiplextvinfooff) | !Skin.HasSetting(multiplexinfooff)]</visible>
+                <visible>Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview) + !Player.Playing + [!Skin.HasSetting(multiplextvshowsinfooff) | !Skin.HasSetting(multiplexinfooff)]</visible>
                 <onleft>52</onleft>
                 <onright>52</onright>
                 <onup>7000</onup>
@@ -11023,7 +11023,7 @@
             </control>
 
             <control type="button" id="603">
-            <visible>[!Skin.HasSetting(movietrailers) | !Skin.HasSetting(tvpreview) + !Player.Playing] | [Skin.HasSetting(multiplextvinfooff) | Skin.HasSetting(multiplexinfooff)]</visible>
+            <visible>[!Skin.HasSetting(movietrailers) | !Skin.HasSetting(tvpreview) + !Player.Playing] | [Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplexinfooff)]</visible>
             <onfocus>SetFocus(60)</onfocus>
             </control>
         </control>
@@ -11189,7 +11189,7 @@
                     <label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
                     <include condition="!Skin.HasSetting(tvposterview)">MultiplexMainLabel</include>
                     <include condition="Skin.HasSetting(tvposterview)">MultiplexMainLabelPoster</include>
-                    <visible>[Container.Content(seasons) | Container.Content(tvshows)] + [Skin.HasSetting(multiplextvinfooff) | Skin.HasSetting(multiplextvinfotrigger)]</visible>
+                    <visible>[Container.Content(seasons) + [Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(tvshows)] + [Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]]</visible>
                 </control>			
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
@@ -11201,13 +11201,13 @@
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <include condition="!Skin.HasSetting(tvposterview)">MultiplexDetailLabel</include>
                     <include condition="Skin.HasSetting(tvposterview)">MultiplexDetailLabelPoster</include>
-                    <visible>Container.Content(tvshows) + [Skin.HasSetting(multiplextvinfooff) | Skin.HasSetting(multiplextvinfotrigger)]</visible>
+                    <visible>Container.Content(tvshows) + [Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]</visible>
                 </control>
                 <control type="label" id="72">
                     <label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
                     <include condition="!Skin.HasSetting(tvposterview)">MultiplexDetailLabel</include>
                     <include condition="Skin.HasSetting(tvposterview)">MultiplexDetailLabelPoster</include>
-                    <visible>[Container.Content(seasons) | Container.Content(episodes)] + [Skin.HasSetting(multiplextvinfooff) | Skin.HasSetting(multiplextvinfotrigger)]</visible>
+                    <visible>[Container.Content(seasons) + [Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(episodes) + [Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfotrigger)]]</visible>
                 </control>
 
                 
