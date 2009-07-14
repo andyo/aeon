@@ -2667,12 +2667,25 @@
                     <width>1000</width>
                     <font>Font_MultiplexSeasonLabel</font>
                     <shadowcolor>ff000000</shadowcolor>
+                    <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                    <visible>Container.Content(episodes)</visible>
+                </control>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>70</posy>
+                    <width>1000</width>
+                    <font>Font_MultiplexSeasonLabel</font>
+                    <shadowcolor>ff000000</shadowcolor>
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                     <scrollspeed>30</scrollspeed>
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
-                    <visible>[Container.Content(episodes) | Container.Content(seasons)] + !stringcompare(ListItem.Season,0)</visible>
+                    <visible>Container.Content(seasons) + !stringcompare(ListItem.Season,0)</visible>
                 </control>
                 <control type="label">
                     <posx>10</posx>
@@ -2685,7 +2698,7 @@
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
-                    <visible>[Container.Content(episodes) | Container.Content(seasons)] + stringcompare(ListItem.Season,0)</visible>
+                    <visible>Container.Content(seasons) + stringcompare(ListItem.Season,0)</visible>
                 </control>
             </control>
             
