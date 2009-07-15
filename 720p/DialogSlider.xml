@@ -1,0 +1,56 @@
+<window id="145"> 
+    <defaultcontrol>11</defaultcontrol> 
+    <animation effect="fade" time="200">WindowOpen</animation> 
+    <animation effect="fade" time="200">WindowClose</animation> 
+    <coordinates> 
+        <system>1</system> 
+		<posx>545</posx>
+		<posy>550</posy>
+    </coordinates> 
+    <controls>     
+		<posx>545</posx>
+		<posy>550</posy>
+		<width>280</width>
+		<height>91</height>	
+        <include>Dialogs_Tablet_Audio_Offset</include> 
+
+        <control type="image"> 
+            <posx>6</posx> 
+            <posy>4</posy> 
+            <width>81</width> 
+            <height>82</height> 
+            <texture>dialogs/delay.png</texture> 
+        </control> 
+         
+        <control type="label" id="10"> 
+            <description>Dialog header</description> 
+            <include>Dialogs_Label1</include> 
+            <aligny>center</aligny> 
+        </control> 
+        <control type="label" id="12"> 
+            <description>Slider Value</description> 
+            <width>190</width> 
+            <height>21</height> 
+            <textcolor>FFF5F5F5</textcolor> 
+            <font>Font_ProgressLabel</font>         
+            <posy>36</posy>     
+            <align>center</align> 
+            <aligny>center</aligny> 
+        </control> 
+        <control type="slider" id="11"> 
+            <description>Slider</description> 
+            <posy>42</posy> 
+            <posx>82</posx> 
+            <width>190</width> 
+            <height>55</height> 
+            <align>center</align> 
+            <texturesliderbar>osd/osd_sliderback.png</texturesliderbar> 
+            <textureslidernib>osd/osd_slidernub.png</textureslidernib> 
+            <textureslidernibfocus>osd/osd_slidernubf.png</textureslidernibfocus> 
+            <onup>11</onup> 
+            <ondown>11</ondown> 
+            <onleft>11</onleft> 
+            <onright>11</onright> 
+        </control> 
+    </controls> 
+</window>
