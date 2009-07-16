@@ -378,14 +378,14 @@
     <font>
       <name>Font_MultiplexSeasonLabel</name>
       <filename>aeon_settings.ttf</filename>
-      <size>31</size>
+      <size>27</size>
     </font>		
 
     <font>
       <name>Font_MultiplexPlot</name>
       <filename>aeon_player.ttf</filename>
       <size>21</size>
-	  <linespacing>1.36</linespacing>	  
+	  <linespacing>1.26</linespacing>	  
     </font>
 	
     <font>

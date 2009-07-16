@@ -917,10 +917,10 @@
 
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>560</width>
-                    <height>340</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>345</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.Plot</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -928,10 +928,10 @@
                 </control>
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>560</width>
-                    <height>340</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>345</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>listitem.PlotOutline</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -940,10 +940,10 @@
 
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>560</width>
-                    <height>302</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>307</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.Plot</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -951,10 +951,10 @@
                 </control>
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>560</width>
-                    <height>302</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>307</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.PlotOutline</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -1087,21 +1087,21 @@
                         <animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
                     </control>
                     <control type="image">
-                        <posx>217</posx>
-                        <posy>332</posy>
-                        <align>center</align>
+                        <posx>686</posx>
+                        <posy>343</posy>
                         <width>142</width>
                         <height>30</height>
+                        <align>center</align>
                         <texture>list/progress_back.png</texture>
                         <visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
                         <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                     </control>
                     <control type="label">
-                        <posx>0</posx>
-                        <posy>339</posy>
+                        <posx>588</posx>
+                        <posy>350</posy>
+                        <width>336</width>
+                        <height>30</height>
                         <align>center</align>
-                        <width>575</width>
-                        <height>280</height>
                         <font>trailer</font>
                         <label>Press Down to see trailer</label>
                         <visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
@@ -1109,21 +1109,21 @@
                         <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                     </control>
                     <control type="image">
-                        <posx>229</posx>
-                        <posy>332</posy>
-                        <align>center</align>
-                        <width>120</width>
+                        <posx>686</posx>
+                        <posy>343</posy>
+                        <width>142</width>
                         <height>30</height>
+                        <align>center</align>
                         <texture>list/progress_back.png</texture>
                         <visible>Player.Playing</visible>
                         <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                     </control>
                     <control type="label">
-                        <posx>0</posx>
-                        <posy>339</posy>
+                        <posx>588</posx>
+                        <posy>350</posy>
+                        <width>336</width>
+                        <height>30</height>
                         <align>center</align>
-                        <width>575</width>
-                        <height>280</height>
                         <font>trailer</font>
                         <label>Press Down to stop</label>
                         <visible>Player.Playing</visible>
@@ -1300,10 +1300,10 @@
 
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>620</width>
-                    <height>340</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>345</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.Plot</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -1311,10 +1311,10 @@
                 </control>
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>620</width>
-                    <height>340</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>345</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.PlotOutline</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -1323,10 +1323,10 @@
 
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>560</width>
-                    <height>302</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>307</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.Plot</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -1334,10 +1334,10 @@
                 </control>
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>560</width>
-                    <height>302</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>307</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.PlotOutline</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -1421,21 +1421,21 @@
                         <animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
                     </control>
                     <control type="image">
-                        <posx>240</posx>
-                        <posy>330</posy>
-                        <align>center</align>
+                        <posx>-219</posx>
+                        <posy>340</posy>
                         <width>142</width>
                         <height>30</height>
+                        <align>center</align>
                         <texture>list/progress_back.png</texture>
                         <visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
                         <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                     </control>
                     <control type="label">
-                        <posx>0</posx>
-                        <posy>337</posy>
-                        <align>center</align>
-                        <width>620</width>
+                        <posx>-285</posx>
+                        <posy>347</posy>
+                        <width>272</width>
                         <height>280</height>
+                        <align>center</align>
                         <font>trailer</font>
                         <label>Press Down to see trailer</label>
                         <visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
@@ -1443,20 +1443,20 @@
                         <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                     </control>
                     <control type="image">
-                        <posx>250</posx>
-                        <posy>330</posy>
+                        <posx>-219</posx>
+                        <posy>340</posy>
                         <align>center</align>
-                        <width>120</width>
+                        <width>142</width>
                         <height>30</height>
                         <texture>list/progress_back.png</texture>
                         <visible>Player.Playing</visible>
                         <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                     </control>
                     <control type="label">
-                        <posx>0</posx>
-                        <posy>337</posy>
+                        <posx>-285</posx>
+                        <posy>347</posy>
                         <align>center</align>
-                        <width>620</width>
+                        <width>272</width>
                         <height>280</height>
                         <font>trailer</font>
                         <label>Press Down to stop</label>
@@ -1608,10 +1608,10 @@
 
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>535</width>
-                    <height>340</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>345</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.Plot</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -1619,10 +1619,10 @@
                 </control>			
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>535</width>
-                    <height>340</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>345</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.PlotOutline</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -1631,10 +1631,10 @@
                 
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>535</width>
-                    <height>302</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>307</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.Plot</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -1642,10 +1642,10 @@
                 </control>
                 <control type="textbox">
                     <posx>0</posx>
-                    <posy>70</posy>
+                    <posy>65</posy>
                     <width>535</width>
-                    <height>302</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <height>307</height>
+                    <font>Font_MultiplexPlot</font>
                     <info>ListItem.PlotOutline</info>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -2138,7 +2138,7 @@
                 <posx>416</posx>
                 <posy>44</posy>
                 <width>455</width>
-                <height>341</height>
+                <height>350</height>
                 <font>Font_MultiplexPlot</font>
                 <info>ListItem.Plot</info>
                 <textcolor>d0FFFFFF</textcolor>
@@ -2149,7 +2149,7 @@
                 <posx>416</posx>
                 <posy>44</posy>
                 <width>455</width>
-                <height>341</height>
+                <height>350</height>
                 <font>Font_MultiplexPlot</font>
                 <info>ListItem.PlotOutline</info>
                 <textcolor>d0FFFFFF</textcolor>
@@ -2162,7 +2162,7 @@
                 <posx>416</posx>
                 <posy>44</posy>
                 <width>520</width>
-                <height>341</height>
+                <height>350</height>
                 <font>Font_MultiplexPlot</font>
                 <info>ListItem.Plot</info>
                 <textcolor>d0FFFFFF</textcolor>
@@ -2173,7 +2173,7 @@
                 <posx>416</posx>
                 <posy>44</posy>
                 <width>520</width>
-                <height>341</height>
+                <height>350</height>
                 <font>Font_MultiplexPlot</font>
                 <info>ListItem.PlotOutline</info>
                 <textcolor>d0FFFFFF</textcolor>
@@ -2186,8 +2186,8 @@
                 <posx>105</posx>
                 <posy>207</posy>
                 <width>455</width>
-                <height>182</height>
-                <font>Font_MultiplexPlotSmall</font>
+                <height>188</height>
+                <font>Font_MultiplexPlot</font>
                 <info>ListItem.Plot</info>
                 <textcolor>d0FFFFFF</textcolor>
                 <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -2197,8 +2197,8 @@
                 <posx>105</posx>
                 <posy>207</posy>
                 <width>455</width>
-                <height>182</height>
-                <font>Font_MultiplexPlotSmall</font>
+                <height>188</height>
+                <font>Font_MultiplexPlot</font>
                 <info>ListItem.PlotOutline</info>
                 <textcolor>d0FFFFFF</textcolor>
                 <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -2273,21 +2273,21 @@
                     <animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
                 </control>
                 <control type="image">
-                    <posx>175</posx>
-                    <posy>335</posy>
-                    <align>center</align>
+                    <posx>578</posx>
+                    <posy>346</posy>
                     <width>142</width>
                     <height>30</height>
+                    <align>center</align>
                     <texture>list/progress_back.png</texture>
                     <visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
                     <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>342</posy>
-                    <align>center</align>
-                    <width>490</width>
+                    <posx>518</posx>
+                    <posy>353</posy>
+                    <width>261</width>
                     <height>30</height>
+                    <align>center</align>
                     <font>trailer</font>
                     <label>Press Down to see trailer</label>
                     <visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
@@ -2295,21 +2295,21 @@
                     <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                 </control>
                 <control type="image">
-                    <posx>187</posx>
-                    <posy>335</posy>
-                    <align>center</align>
-                    <width>120</width>
+                    <posx>578</posx>
+                    <posy>346</posy>
+                    <width>142</width>
                     <height>30</height>
+                    <align>center</align>
                     <texture>list/progress_back.png</texture>
                     <visible>Player.Playing</visible>
                     <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>342</posy>
-                    <align>center</align>
-                    <width>490</width>
+                    <posx>518</posx>
+                    <posy>353</posy>
+                    <width>261</width>
                     <height>30</height>
+                    <align>center</align>
                     <font>trailer</font>
                     <label>Press Down to stop</label>
                     <visible>Player.Playing</visible>
@@ -2358,8 +2358,8 @@
                     <animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
                 </control>
                 <control type="image">
-                    <posx>205</posx>
-                    <posy>335</posy>
+                    <posx>605</posx>
+                    <posy>342</posy>
                     <align>center</align>
                     <width>142</width>
                     <height>30</height>
@@ -2368,10 +2368,10 @@
                     <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>342</posy>
+                    <posx>553</posx>
+                    <posy>350</posy>
+                    <width>245</width>
                     <align>center</align>
-                    <width>550</width>
                     <height>30</height>
                     <font>trailer</font>
                     <label>Press Down to see trailer</label>
@@ -2380,20 +2380,20 @@
                     <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                 </control>
                 <control type="image">
-                    <posx>217</posx>
-                    <posy>335</posy>
+                    <posx>605</posx>
+                    <posy>342</posy>
                     <align>center</align>
-                    <width>120</width>
+                    <width>142</width>
                     <height>30</height>
                     <texture>list/progress_back.png</texture>
                     <visible>Player.Playing</visible>
                     <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>342</posy>
+                    <posx>553</posx>
+                    <posy>350</posy>
+                    <width>245</width>
                     <align>center</align>
-                    <width>550</width>
                     <height>30</height>
                     <font>trailer</font>
                     <label>Press Down to stop</label>
@@ -2865,7 +2865,7 @@
                 <posy>180</posy>
                 <width>535</width>
                 <height>320</height>
-                <font>Font_MultiplexPlotSmall</font>
+                <font>Font_MultiplexPlot</font>
                 <info>ListItem.Plot</info>
                 <textcolor>d0FFFFFF</textcolor>
                 <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -2876,7 +2876,7 @@
                 <posy>180</posy>
                 <width>535</width>
                 <height>320</height>
-                <font>Font_MultiplexPlotSmall</font>
+                <font>Font_MultiplexPlot</font>
                 <info>ListItem.PlotOutline</info>
                 <textcolor>d0FFFFFF</textcolor>
                 <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -2888,7 +2888,7 @@
                 <posy>180</posy>
                 <width>535</width>
                 <height>320</height>
-                <font>Font_MultiplexPlotSmall</font>
+                <font>Font_MultiplexPlot</font>
                 <info>Container.ShowPlot</info>
                 <textcolor>d0FFFFFF</textcolor>
                 <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -3277,7 +3277,7 @@
                 <posy>214</posy>
                 <width>375</width>
                 <height>225</height>
-                <font>Font_MultiplexPlotSmall</font>
+                <font>Font_MultiplexPlot</font>
                 <info>ListItem.Plot</info>
                 <textcolor>d0FFFFFF</textcolor>
                 <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -3288,7 +3288,7 @@
                 <posy>214</posy>
                 <width>375</width>
                 <height>225</height>
-                <font>Font_MultiplexPlotSmall</font>
+                <font>Font_MultiplexPlot</font>
                 <info>ListItem.PlotOutline</info>
                 <textcolor>d0FFFFFF</textcolor>
                 <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -3300,7 +3300,7 @@
                 <posy>214</posy>
                 <width>375</width>
                 <height>225</height>
-                <font>Font_MultiplexPlotSmall</font>
+                <font>Font_MultiplexPlot</font>
                 <info>Container.ShowPlot</info>
                 <textcolor>d0FFFFFF</textcolor>
                 <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -3662,7 +3662,7 @@
                     <posy>90</posy>
                     <width>620</width>
                     <height>240</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <font>Font_MultiplexPlot</font>
                     <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -3835,7 +3835,7 @@
                     <posy>85</posy>
                     <width>620</width>
                     <height>260</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <font>Font_MultiplexPlot</font>
                     <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -4111,7 +4111,7 @@
                     <posy>140</posy>
                     <width>450</width>
                     <height>200</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <font>Font_MultiplexPlot</font>
                     <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
@@ -4238,75 +4238,12 @@
                     <posy>140</posy>
                     <width>450</width>
                     <height>200</height>
-                    <font>Font_MultiplexPlotSmall</font>
+                    <font>Font_MultiplexPlot</font>
                     <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
                 </control>
 			</control>
-
-
-<!--            <control type="group">
-                <posx>-40</posx>
-                <posy>100</posy>
-                <visible>Container.Content(albums)</visible>
-                <control type="group">
-                    <posy>22</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31438]:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[ListItem.Genre]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>
-                </control>
-                <control type="group">
-                    <posy>22</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel3BigThumb</include>				
-                        <label>$LOCALIZE[31436]:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue3BigThumb</include>				
-                        <label fallback="31425">$INFO[ListItem.Year]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>			
-                </control>
-                <control type="group">
-                    <posy>22</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel2BigThumb</include>				
-                        <label>Label:</label>
-                    </control>
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue2BigThumb</include>				
-                        <label fallback="31425">$INFO[ListItem.Property(Label)]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                    </control>
-                </control>
-                <control type="textbox">
-                    <posx>15</posx>
-                    <posy>180</posy>
-                    <width>535</width>
-                    <height>280</height>
-                    <font>Font_MultiplexPlotSmall</font>
-                    <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
-                    <textcolor>d0FFFFFF</textcolor>
-                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-                </control>
-            </control>	 -->
-
 
 <!-- Fanart -->
             <control type="group">
