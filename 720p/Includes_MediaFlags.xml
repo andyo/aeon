@@ -356,7 +356,7 @@
         <control type="group">
             <posx>830</posx>
             <control type="image">
-                <include>Furniture_ShowcaseMediaFlagsVars</include>
+            <include>Furniture_ListMediaFlagsVars</include>
                 <texture>flags/source/defaultsource.png</texture>
                 <visible>!Control.IsVisible(82) + !Skin.HasSetting(nodefaultflags)</visible>
             </control>
