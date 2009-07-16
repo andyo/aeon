@@ -634,14 +634,14 @@
 <!-- END FULLSCREEN LINES -->
 
         <control type="group">
-            <visible>!Skin.HasSetting(fullscreenmultiplex)</visible>
+            <visible>Control.IsVisible(50) + !Skin.HasSetting(fullscreenmultiplex)</visible>
             <control type="image">
                 <posx>108</posx>
                 <posy>102</posy>
                 <width>39</width>
                 <height>540</height>
                 <texture>list/listpanel_detailwide.png</texture>
-                <visible>Control.IsVisible(50) + [[[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Container.Content(songs)] | [Window.IsActive(25) + Skin.HasSetting(videotv)  + Container.Content(episodes)]]</visible>
+                <visible>[[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Container.Content(songs)] | [Window.IsActive(25) + Skin.HasSetting(videotv)  + Container.Content(episodes)]</visible>
             </control>
             <control type="image">
                 <posx>722</posx>
@@ -649,7 +649,7 @@
                 <width>44</width>
                 <height>540</height>
                 <texture>list/listpanel_detailwide.png</texture>
-                <visible>Control.IsVisible(50) + [[Window.IsActive(25) + Container.Content(movies) + !Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502)] + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]]</visible>
+                <visible>[Window.IsActive(25) + Container.Content(movies) + !Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502)] + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]</visible>
             </control>
             <control type="image">
                 <posx>669</posx>
@@ -657,19 +657,19 @@
                 <width>100</width>
                 <height>547</height>
                 <texture>list/listpanel_detailwide.png</texture>
-                <visible>[Control.IsVisible(50) | Window.IsActive(2)] + [Window.IsActive(25) + Container.Content(movies) + Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(tvshows)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]</visible>			
+                <visible>Window.IsActive(2)] + [Window.IsActive(25) + Container.Content(movies) + Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(tvshows)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]</visible>			
             </control>
         </control>
 
         <control type="group">
-            <visible>Skin.HasSetting(fullscreenmultiplex)</visible>
+            <visible>Control.IsVisible(50) + Skin.HasSetting(fullscreenmultiplex)</visible>
             <control type="image">
                 <posx>42</posx>
                 <posy>84</posy>
                 <width>39</width>
                 <height>560</height>
                 <texture>list/listpanel_detailwide.png</texture>
-                <visible>Control.IsVisible(50) + [[[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Container.Content(songs)] | [Window.IsActive(25) + Skin.HasSetting(videotv)  + Container.Content(episodes)]]</visible>
+                <visible>[[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Container.Content(songs)] | [Window.IsActive(25) + Skin.HasSetting(videotv)  + Container.Content(episodes)]</visible>
             </control>
             <control type="image">
                 <posx>722</posx>
@@ -677,7 +677,7 @@
                 <width>44</width>
                 <height>560</height>
                 <texture>list/listpanel_detailwide.png</texture>
-                <visible>Control.IsVisible(50) + [[Window.IsActive(25) + Skin.HasSetting(videomovies) + !Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502)] + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]]</visible>
+                <visible>[Window.IsActive(25) + Skin.HasSetting(videomovies) + !Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502)] + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]</visible>
             </control>
             <control type="image">
                 <posx>669</posx>
@@ -685,7 +685,7 @@
                 <width>100</width>
                 <height>547</height>
                 <texture>list/listpanel_detailwide.png</texture>
-                <visible>[Control.IsVisible(50) | Window.IsActive(2)] + [Window.IsActive(25) + Skin.HasSetting(videomovies) + Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(tvshows)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]</visible>			
+                <visible>Window.IsActive(2)] + [Window.IsActive(25) + Skin.HasSetting(videomovies) + Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(tvshows)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]</visible>			
             </control>
 
 <!-- TV FULLSCREEN BANNER-->
@@ -710,7 +710,7 @@
                 <scrollout>true</scrollout>
                 <pauseatend>3000</pauseatend>
                 <scroll>true</scroll>
-                <visible>Container.Content(episodes) + !stringcompare(ListItem.Season,0)</visible>
+                <visible>Control.IsVisible(50) + Container.Content(episodes) + !stringcompare(ListItem.Season,0)</visible>
             </control>
             <control type="label">
                 <posx>10</posx>
@@ -723,7 +723,7 @@
                 <scrollout>true</scrollout>
                 <pauseatend>3000</pauseatend>
                 <scroll>true</scroll>
-                <visible>Container.Content(episodes) + stringcompare(ListItem.Season,0)</visible>
+                <visible>Control.IsVisible(50) + Container.Content(episodes) + stringcompare(ListItem.Season,0)</visible>
             </control>
 
         </control>
