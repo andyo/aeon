@@ -32,7 +32,7 @@
 			<focusedcolor>d0ffffff</focusedcolor>
 			<disabledcolor>3cFFFFFF</disabledcolor>
 			<textoffsetx>0</textoffsetx>
-			<texturefocus>showcase/showcase_menubutton_vertical_focus.png</texturefocus>
+			<texturefocus>common/menubutton_vertical_focus.png</texturefocus>
 			<align>left</align>
 			<font>Font_MediaWindowMenu</font>
 		</include>
@@ -45,8 +45,8 @@
 			<focusedcolor>d0ffffff</focusedcolor>
 			<disabledcolor>3cFFFFFF</disabledcolor>
 			<textoffsetx>0</textoffsetx>
-			<texturefocus>showcase/verticalmenu_menubutton_focus.png</texturefocus>
-			<texturenofocus>showcase/verticalmenu_menubutton_nofocus.png</texturenofocus>
+			<texturefocus>common/submenu_menubutton_focus.png</texturefocus>
+			<texturenofocus>common/submenu_menubutton_nofocus.png</texturenofocus>
 			<align>left</align>
 			<font>Font_MediaWindowMenu</font>
 		</include>
@@ -59,8 +59,8 @@
 			<focusedcolor>d0ffffff</focusedcolor>
 			<disabledcolor>3cFFFFFF</disabledcolor>
 			<textoffsetx>0</textoffsetx>
-			<texturefocus>showcase/showcase_menubutton_vertical_focus.png</texturefocus>
-			<alttexturefocus>showcase/showcase_menubutton_vertical_focus.png</alttexturefocus>
+			<texturefocus>common/menubutton_vertical_focus.png</texturefocus>
+			<alttexturefocus>common/menubutton_vertical_focus.png</alttexturefocus>
 			<align>left</align>
 			<font>Font_MediaWindowMenu</font>
 		</include>
@@ -69,7 +69,7 @@
 			<width>195</width>
 			<height>25</height>
 			<font>Font_MediaWindowMenu</font>
-			<texturefocus>showcase/showcase_menubutton_vertical_focus.png</texturefocus>
+			<texturefocus>common/menubutton_vertical_focus.png</texturefocus>
 			<textcolor>FF939597</textcolor>
 			<focusedcolor>d0ffffff</focusedcolor>
 			<pulseonselect>false</pulseonselect>
@@ -120,7 +120,7 @@
 					<posy>0</posy>
 					<width>170</width>
 					<height>720</height>
-					<texture>showcase/showcase_menupanel_vertical2.png</texture>
+					<texture>common/menupanel_vertical2.png</texture>
 				</control>
 				
 				<control type="grouplist" id="7013">
@@ -155,7 +155,7 @@
 						<posy>0</posy>
 						<width>170</width>
 						<height>720</height>
-						<texture>showcase/showcase_menupanel_vertical2.png</texture>
+						<texture>common/menupanel_vertical2.png</texture>
 					</control>
 					
 					<control type="label">
@@ -307,7 +307,7 @@
 						<posy>0</posy>
 						<width>170</width>
 						<height>720</height>
-						<texture>showcase/showcase_menupanel_vertical2.png</texture>
+						<texture>common/menupanel_vertical2.png</texture>
 					</control>
 					
 					<control type="label">
@@ -555,7 +555,7 @@
 						<posy>0</posy>
 						<width>170</width>
 						<height>720</height>
-						<texture>showcase/showcase_menupanel_vertical2.png</texture>
+						<texture>common/menupanel_vertical2.png</texture>
 					</control>
 					
 					<control type="label">
@@ -1048,6 +1048,7 @@
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(fullscreenmultiplex)</onclick>
+				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(fullscreenmultiplex)</selected>
 				<visible>Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)</visible>
 			</control>
@@ -1369,7 +1370,7 @@
 					<posy>0</posy>
 					<width>215</width>
 					<height>720</height>
-					<texture>showcase/showcase_menupanel_vertical2.png</texture>
+					<texture>common/menupanel_vertical2.png</texture>
 					<include>Animation_MediaMenuSlideVertical</include>
 					<visible>Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(51) | Control.IsVisible(57) | Control.IsVisible(53)</visible>
 				</control>
