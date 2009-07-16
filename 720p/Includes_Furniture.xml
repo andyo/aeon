@@ -717,10 +717,10 @@
 		<texture>list/lite/List_floor_front_fullscreen.png</texture>		
 	</include>
 	<include name="ListFloorBackNightFullscreen">
-		<texture>list/list_floor_back_fullscreen.png</texture>	
+		<texture>list/list_floor_back.png</texture>	
 	</include>
 	<include name="ListFloorBackLightFullscreen">
-		<texture>list/lite/List_floor_back_fullscreen.png</texture>		
+		<texture>list/lite/List_floor_back.png</texture>		
 	</include>
 
 	<include name="ListSpotNight">
@@ -744,8 +744,8 @@
 			<posy>315</posy>
 			<width>1280</width>
 			<height>405</height>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ShowcaseFloorBackLight</include>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ShowcaseFloorBackNight</include>			
+			<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseFloorBackLight</include>
+			<include condition="Skin.HasSetting(darkshowcase)">ShowcaseFloorBackNight</include>			
 			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)</visible>
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
@@ -777,7 +777,7 @@
 			<include>Animation_HideMultiplex</include>
 		</control>
         
-		<control type="image">
+<!--		<control type="image">
 			<posx>0</posx>
 			<posy>315</posy>
 			<width>1280</width>
@@ -790,7 +790,7 @@
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
-		</control>
+		</control>  -->
 		
 		<control type="image">
 			<posx>144</posx>
@@ -824,10 +824,8 @@
 			<posy>583</posy>
 			<width>933</width>
 			<height>137</height>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ListSpotLight</include>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ListSpotNight</include>
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ListSpotLightFullscreen</include>
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">LIstSpotNightFullscreen</include>			
+			<include condition="!Skin.HasSetting(darkshowcase)">ListSpotLight</include>
+			<include condition="Skin.HasSetting(darkshowcase)">ListSpotNight</include>
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
@@ -843,7 +841,7 @@
 			<width>1280</width>
 			<height>267</height>
             <texture>showcase/showcase_floorshadow.png</texture>
-			<visible>!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
 		</control>
 
 		<control type="image">
@@ -852,26 +850,9 @@
 			<width>1280</width>
 			<height>267</height>
 			<texture>showcase/lite/showcase_floorshadow.png</texture>
-			<visible>!Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<visible>!Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
 		</control>
 
-		<control type="image">
-			<posx>0</posx>
-			<posy>436</posy>
-			<width>1280</width>
-			<height>267</height>
-            <texture>showcase/showcase_floorshadow.png</texture>
-			<visible>Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
-		</control>
-
-		<control type="image">
-			<posx>0</posx>
-			<posy>436</posy>
-			<width>1280</width>
-			<height>267</height>
-			<texture>showcase/lite/showcase_floorshadow_png</texture>
-			<visible>Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
-		</control>
 	</include>
     
     <include name="Furniture_vignette">
@@ -881,7 +862,7 @@
 			<width>640</width>
 			<height>720</height>
             <texture>showcase/showcase_vignette.png</texture>
-			<visible>!Skin.HasSetting(fullscreenmultiplex) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
+			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
 				<effect type="slide" start="-464,0" end="0,0" time="400" easing="inout" tween="cubic" />
@@ -906,56 +887,7 @@
 			<width>640</width>
 			<height>720</height>
 			<texture flipx="true">showcase/showcase_vignette.png</texture>
-			<visible>!Skin.HasSetting(fullscreenmultiplex) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
-			<animation type="Visible">
-				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
-				<effect type="slide" start="464,0" end="0,0" time="400" easing="inout" tween="cubic" />
-			</animation>
-			<animation type="Hidden">
-				<effect type="fade" start="100" end="0" time="400" easing="inout" tween="cubic" />
-				<effect type="slide" start="0,0" end="464,0" time="400" easing="inout" tween="cubic" />
-			</animation>
-			<animation type="WindowOpen">
-				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
-				<effect type="slide" start="464,0" end="0,0" time="400" easing="inout" tween="cubic" />
-			</animation>
-			<animation type="WindowClose">
-				<effect type="fade" start="100" end="0" time="400" easing="inout" tween="cubic" />
-				<effect type="slide" start="0,0" end="464,0" time="400" easing="inout" tween="cubic" />
-			</animation>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>30</posy>
-			<width>640</width>
-			<height>720</height>
-            <texture>showcase/showcase_vignette.png</texture>
-			<visible>Skin.HasSetting(fullscreenmultiplex) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
-			<animation type="Visible">
-				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
-				<effect type="slide" start="-464,0" end="0,0" time="400" easing="inout" tween="cubic" />
-			</animation>
-			<animation type="Hidden">
-				<effect type="fade" start="100" end="0" time="400" easing="inout" tween="cubic" />
-				<effect type="slide" start="0,0" end="-464,0" time="400" easing="inout" tween="cubic" />
-			</animation>
-			<animation type="WindowOpen">
-				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
-				<effect type="slide" start="-464,0" end="0,0" time="400" easing="inout" tween="cubic" />
-			</animation>
-			<animation type="WindowClose">
-				<effect type="fade" start="100" end="0" time="400" easing="inout" tween="cubic" />
-				<effect type="slide" start="0,0" end="-464,0" time="400" easing="inout" tween="cubic" />
-			</animation>
-		</control>
-
-		<control type="image">
-			<posx>640</posx>
-			<posy>30</posy>
-			<width>640</width>
-			<height>720</height>
-			<texture flipx="true">showcase/showcase_vignette.png</texture>
-			<visible>Skin.HasSetting(fullscreenmultiplex) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
+			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
 				<effect type="slide" start="464,0" end="0,0" time="400" easing="inout" tween="cubic" />
@@ -1170,7 +1102,9 @@
 		<control type="group">
 			<animation effect="fade" delay="1500" start="0" end="100" time="400">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-			<animation effect="slide" time="1000" start="0,300" end="0,0" tween="cubic" easing="out">WindowOpen</animation>			
+            <animation effect="slide" time="1000" start="0,300" end="0,0" tween="cubic" easing="out">WindowOpen</animation>	            
+            <animation effect="slide" start="25,0" end="25,0" time="0" condition="Skin.HasSetting(fullscreenmultiplex)">Conditional</animation>
+		
 			<visible>Control.IsVisible(50) + Player.HasAudio</visible>
 			<control type="image">
 				<posx>870</posx>
