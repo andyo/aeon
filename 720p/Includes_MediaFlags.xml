@@ -322,7 +322,7 @@
             <height>13</height>
             <font>Font_MultiplexInfoLabel</font>
             <textcolor>FFFFFFFF</textcolor>		
-            <label>AUDIO CHANNELS: /$INFO[listitem.audiochannels,flags/sound/,.png]</label>
+            <label>AUDIO CHANNELS: /$INFO[ListItem.audiochannels,flags/sound/,.png]</label>
         </control>
         <control type="label">
             <posx>550</posx>
@@ -331,7 +331,7 @@
             <height>13</height>
             <font>Font_MultiplexInfoLabel</font>
             <textcolor>FFFFFFFF</textcolor>		
-            <label>AUDIO CODEC: /$INFO[listitem.audiocodec,flags/sound/,.png]</label>
+            <label>AUDIO CODEC: /$INFO[ListItem.audiocodec,flags/sound/,.png]</label>
         </control>
         <control type="label">
             <posx>850</posx>
