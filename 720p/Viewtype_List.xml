@@ -41,10 +41,9 @@
 		<height>41</height>
 		<font>Font_List</font>
 		<aligny>center</aligny>
-		<animation effect="slide" start="60,0" end="60,0" time="0" condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | [Window.IsActive(25) + Skin.HasSetting(videotv)]]">Conditional</animation>			
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes) | Container.Content(songs)">Conditional</animation>			
 		<animation effect="slide" start="0,10" end="0,10" time="0" condition="Window.IsActive(1) | Window.IsActive(20) | Window.IsActive(24) | [[Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Container.Content(movies)] | [Window.IsActive(2) + IsEmpty(ListItem.PictureDateTime)] | [Container.Content(seasons) + !IsEmpty(ListItem.Episode)] | [Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]]">Conditional</animation>				
 		<animation effect="slide" start="0,20" end="0,20" time="0" condition="[Window.IsActive(25) + Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes) | Container.Content(tvshows)]] | [Container.Content(seasons) + IsEmpty(ListItem.Episode)] | [Container.Content(episodes) + IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]">Conditional</animation>			
-		<animation effect="slide" start="-70,0" end="-70,0" time="0" condition="Skin.HasSetting(fullscreenmultiplex) + [Container.Content(tvshows) | Skin.HasSetting(music)]">Conditional</animation>
     </include>
 	
 	<include name="ListLabel_MainSmall">
@@ -55,18 +54,17 @@
 		<height>39</height>
 		<font>Font_ListSmall</font>
 		<aligny>center</aligny>
-		<animation effect="slide" start="60,0" end="60,0" time="0" condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | [Window.IsActive(25) + Skin.HasSetting(videotv)]]">Conditional</animation>		
-		<animation effect="slide" start="-70,0" end="-70,0" time="0" condition="Skin.HasSetting(fullscreenmultiplex) + [Container.Content(tvshows) | Skin.HasSetting(music)]">Conditional</animation>
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes) | Container.Content(songs)">Conditional</animation>			
 	</include>	
 	
 	<include name="ListLabel_MainMusic">
-		<posx>105</posx>
+		<posx>45</posx>
 		<posy>0</posy>
 		<width>480</width>
 		<height>41</height>
 		<font>Font_List</font>
 		<aligny>center</aligny>		
-		<animation effect="slide" start="-70,0" end="-70,0" time="0" condition="Skin.HasSetting(fullscreenmultiplex) + !Container.Content(songs)">Conditional</animation>
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(songs)">Conditional</animation>			
 	</include>	
 
 	<include name="ListLabel_Sub">
@@ -78,31 +76,30 @@
 		<font>Font_ListSub</font>
 		<align>left</align>
 		<aligny>center</aligny>
-		<animation effect="slide" start="45,0" end="45,0" time="0" condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)]">Conditional</animation>			
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(songs)">Conditional</animation>			
 	</include>
 	
 	<include name="ListLabel_SubMusic">
-		<posx>105</posx>
+		<posx>45</posx>
 		<posy>20</posy>
 		<width>470</width>
 		<height>41</height>
 		<font>Font_ListSub</font>
 		<align>left</align>
 		<aligny>center</aligny>
-		<animation effect="slide" start="-70,0" end="-70,0" time="0" condition="Skin.HasSetting(fullscreenmultiplex) + !Container.Content(songs)">Conditional</animation>
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(songs)">Conditional</animation>			
 	</include>
 
 	<include name="ListLabel_SubTV">
-		<posx>105</posx>
+		<posx>45</posx>
 		<posy>20</posy>
 		<width>480</width>
 		<height>40</height>
 		<font>Font_ListSub</font>
 		<align>left</align>
 		<aligny>center</aligny>
-		<animation effect="slide" start="0,10" end="0,10" time="0" condition="Container.Content(seasons)">Conditional</animation>			
-		<animation effect="slide" start="0,-10" end="0,-10" time="0" condition="Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]">Conditional</animation>		
-		<animation effect="slide" start="-70,0" end="-70,0" time="0" condition="Skin.HasSetting(fullscreenmultiplex) + ![Container.Content(episodes) | Container.Content(seasons)]">Conditional</animation>
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes)">Conditional</animation>			
+		<animation effect="slide" start="60,-10" end="60,-10" time="0" condition="Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]">Conditional</animation>		
 	</include>	
 	
 	<include name="ListLabel_Main_Playlist">
@@ -240,7 +237,6 @@
 		<aligny>center</aligny>
 		<include>listobjects</include>
 		<visible>Control.IsVisible(50)</visible>
-		<animation effect="slide" start="60,0" end="60,0" time="0" condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | [Window.IsActive(25) + Skin.HasSetting(videotv)]]">Conditional</animation>		
 		<animation effect="slide" start="-67,0" end="-67,0" time="0" condition="Skin.HasSetting(fullscreenmultiplex)">Conditional</animation>
 	</include>
 	
@@ -2198,13 +2194,13 @@
                     <label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
                     <visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
                 </control>
-<!--                <control type="label">
+                <control type="label">
                     <include>ListLabel_SubTV</include>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Plot]</label>
                     <visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
                     <animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
-                </control> -->
+                </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
                     <include>subcolornofocus</include>	
@@ -2366,14 +2362,14 @@
                     <include>Animation_ButtonFocusFade</include>						
                     <visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
                 </control>
-<!--                <control type="label">
+                <control type="label">
                     <include>ListLabel_SubTV</include>
                     <include>subcolorfocus</include>	
                     <label>$INFO[ListItem.Plot]</label>
                     <include>Animation_ButtonFocusFade</include>						
                     <visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
                     <animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
-                </control> -->
+                </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
                     <include>subcolorfocus</include>	
