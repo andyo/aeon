@@ -499,6 +499,11 @@
 			<onclick>Skin.ToggleSetting(tvposterview)</onclick>
 			<selected>Skin.HasSetting(tvposterview)</selected>
 		</control>		
+		<control type="button" id="906">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>Movie Folder Localtion</label>
+			<onclick>Skin.SetPath(moviefolder)</onclick>
+		</control>		
 	</control>
 	<include>Furniture_SettingsFrontPanel</include>
 	

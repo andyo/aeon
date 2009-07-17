@@ -32,27 +32,6 @@
 		<onup>110</onup>
 	</include>	
 	
-<!--  <include name="MultiplexMoviesGroupVars">
-		<posx>-83</posx>
-		<posy>380</posy>
-		<width>1446</width>
-		<height>350</height>			
-	</include>
-	
-	<include name="MultiplexMusicGroupVars">
-		<posx>-245</posx>
-		<posy>387</posy>
-		<width>1770</width>
-		<height>350</height>			
-	</include>
-
-	<include name="MultiplexTVShowsGroupVars">
-		<posx>-83</posx>
-		<posy>380</posy>
-		<width>1446</width>
-		<height>350</height>			
-	</include>  -->
-
 <!-- Movie Multiplex Variables: Main thumbs -->
 	
     <include name="MultiplexMoviesThumbDimensions">
@@ -757,8 +736,8 @@
                 <control type="label">
                     <posx>320</posx>
                     <posy>0</posy>
-                    <width>640</width>
-                    <align>center</align>
+                    <width>900</width>
+                    <align>left</align>
                     <font>Font_MultiplexTVLabel</font>
                     <shadowcolor>ff000000</shadowcolor>
                     <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
@@ -805,58 +784,6 @@
                         <scroll>true</scroll>
                     </control>
                 </control>
-
-<!--                <control type="group">
-                    <posy>122</posy>
-                    <visible>![Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>	
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31436]:</label>
-                    </control>
-                    
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[ListItem.Year]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                      </control>			
-                </control>
-
-                <control type="group">
-                    <posy>172</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31709]:</label>
-                    </control>
-                    
-                    <control type="fadelabel">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[ListItem.Duration]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                      </control>			
-                </control>
-
-                <control type="group">
-                    <posy>222</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31438]:</label>
-                    </control>
-                    
-                    <control type="fadelabel">
-                        <label fallback="31425">$INFO[ListItem.Genre]</label>
-                        <scrollspeed>30</scrollspeed>
-                        <scrollout>true</scrollout>
-                        <pauseatend>3000</pauseatend>
-                        <scroll>true</scroll>
-                        <include>MultiplexInfoValue</include>				
-                    </control>		
-                </control> -->
 
                 <control type="group">
                     <posy>380</posy>
@@ -982,6 +909,7 @@
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
                         <texture>$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+                        <visible>!substring(ListItem.Path,stack)</visible>	
                     </control>
                     <control type="largeimage">
                         <posx>1</posx>
@@ -990,8 +918,8 @@
                         <height>188</height>
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
-                        <texture>$INFO[ListItem.Path,extrathumbs/thumb1.jpg]</texture>
-                        <visible>substring($INFO[ListItem.Path],STACK,)</visible>	
+                        <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
+                        <visible>substring(ListItem.Path,stack)</visible>	
                     </control>
 
                     <!-- DEBUG DAGTA -->
@@ -1002,7 +930,7 @@
                         <height>13</height>
                         <font>Font_MultiplexInfoLabel</font>
                         <textcolor>FFFFFFFF</textcolor>		
-                        <label>$INFO[Listitem.FolderName,,extrathumbs/thumb1.jpg]</label>
+                        <label>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg][CR]$INFO[ListItem.Path]</label>
                         <visible>Skin.HasSetting(debug)</visible>
                     </control>
                 
@@ -1023,6 +951,17 @@
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
                         <texture>$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+                        <visible>!substring(ListItem.Path,stack)</visible>	
+                    </control>				
+                    <control type="largeimage">
+                        <posx>1</posx>
+                        <posy>207</posy>
+                        <width>336</width>
+                        <height>188</height>
+                        <aspectratio>scale</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb2.jpg]</texture>
+                        <visible>substring(ListItem.Path,stack)</visible>	
                     </control>				
                     <control type="image">
                         <posx>931</posx>
@@ -1041,6 +980,17 @@
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
                         <texture>$INFO[ListItem.Path,,extrathumbs/thumb3.jpg]</texture>
+                        <visible>!substring(ListItem.Path,stack)</visible>	
+                    </control>
+                    <control type="largeimage">
+                        <posx>932</posx>
+                        <posy>1</posy>
+                        <width>336</width>
+                        <height>188</height>
+                        <aspectratio>scale</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb3.jpg]</texture>
+                        <visible>substring(ListItem.Path,stack)</visible>	
                     </control>
                     
                     <control type="image">
@@ -1060,6 +1010,17 @@
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
                         <texture>$INFO[ListItem.Path,,extrathumbs/thumb4.jpg]</texture>
+                        <visible>!substring(ListItem.Path,stack)</visible>	
+                    </control>				
+                    <control type="largeimage">
+                        <posx>932</posx>
+                        <posy>207</posy>
+                        <width>336</width>
+                        <height>188</height>
+                        <aspectratio>scale</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb4.jpg]</texture>
+                        <visible>substring(ListItem.Path,stack)</visible>	
                     </control>				
                 </control>
 
@@ -1375,8 +1336,18 @@
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
                         <texture>$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+                        <visible>!substring(ListItem.Path,stack)</visible>	
                     </control>
-                    
+                    <control type="largeimage">
+                        <posx>938</posx>
+                        <posy>7</posy>
+                        <width>336</width>
+                        <height>188</height>
+                        <aspectratio>scale</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
+                        <visible>substring(ListItem.Path,stack)</visible>	
+                    </control>
                     <control type="image">
                         <posx>937</posx>
                         <posy>212</posy>
@@ -1393,6 +1364,17 @@
                         <height>188</height>
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
+                        <texture>$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+                        <visible>!substring(ListItem.Path,stack)</visible>	
+                    </control>				
+                    <control type="largeimage">
+                        <posx>938</posx>
+                        <posy>213</posy>
+                        <width>336</width>
+                        <height>188</height>
+                        <aspectratio>scale</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
                         <texture>$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
                     </control>				
                 </control>
@@ -10349,6 +10331,8 @@
                 <onright>52</onright>
                 <onup>7000</onup>
                 <ondown>52</ondown>
+                <onclick>52</onclick>
+                <onclick>52</onclick>
             </control>
             <control type="button" id="112">
                 <visible>[Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview) + Container.Content(episodes)]</visible>
