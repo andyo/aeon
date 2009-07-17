@@ -734,7 +734,7 @@
                 <posx>0</posx>
                 <posy>0</posy>
                 <control type="label">
-                    <posx>320</posx>
+                    <posx>10</posx>
                     <posy>0</posy>
                     <width>900</width>
                     <align>left</align>
