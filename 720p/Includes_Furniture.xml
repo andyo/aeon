@@ -698,29 +698,10 @@
 
 
 	<include name="ListFloorBackNight">
-		<texture>list/list_floor_back.png</texture>	
+		<texture>list/list_floor.png</texture>	
 	</include>
 	<include name="ListFloorBackLight">
-		<texture>list/lite/List_floor_back.png</texture>		
-	</include>
-    <include name="ListFloorFrontNight">
-		<texture>list/list_floor_front.png</texture>	
-	</include>
-	<include name="ListFloorFrontLight">
-		<texture>list/lite/list_floor_front.png</texture>		
-	</include>
-
-	<include name="ListFloorFrontNightFullscreen">
-		<texture>list/list_floor_front_fullscreen.png</texture>	
-	</include>
-	<include name="ListFloorFrontLightFullscreen">
-		<texture>list/lite/List_floor_front_fullscreen.png</texture>		
-	</include>
-	<include name="ListFloorBackNightFullscreen">
-		<texture>list/list_floor_back.png</texture>	
-	</include>
-	<include name="ListFloorBackLightFullscreen">
-		<texture>list/lite/List_floor_back.png</texture>		
+		<texture>list/lite/list_floor_back.png</texture>		
 	</include>
 
 	<include name="ListSpotNight">
@@ -728,12 +709,6 @@
 	</include>
 	<include name="ListSpotLight">
 	    <texture>list/lite/list_spot.png</texture>
-	</include>	
-	<include name="ListSpotNightFullscreen">
-	    <texture>list/list_spot_fullscreen.png</texture>
-	</include>
-	<include name="ListSpotLightFullscreen">
-	    <texture>list/lite/list_spot_fullscreen.png</texture>
 	</include>	
 
 
@@ -746,7 +721,19 @@
 			<height>405</height>
 			<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseFloorBackLight</include>
 			<include condition="Skin.HasSetting(darkshowcase)">ShowcaseFloorBackNight</include>			
-			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)</visible>
+			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)</visible>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideShowcase</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>315</posy>
+			<width>1280</width>
+			<height>405</height>
+			<include condition="!Skin.HasSetting(darkshowcase)">ListFloorBackLight</include>
+			<include condition="Skin.HasSetting(darkshowcase)">ListFloorBackNight</include>			
+			<visible>Control.IsVisible(50)</visible>
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
@@ -767,10 +754,8 @@
 			<posy>315</posy>
 			<width>1280</width>
 			<height>405</height>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontLight</include>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontNight</include>			
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontLightFullscreen</include>
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontNightFullscreen</include>	
+			<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontLight</include>
+			<include condition="Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontNight</include>			
 			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)</visible>
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
@@ -790,7 +775,7 @@
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
-		</control>  -->
+		</control> 
 		
 		<control type="image">
 			<posx>144</posx>
@@ -805,7 +790,7 @@
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
 			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)</visible>
-		</control>
+		</control> -->
 	
 <!--		<control type="image">
 			<posx>0</posx>

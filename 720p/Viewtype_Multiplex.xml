@@ -337,7 +337,7 @@
     <include name="MultiplexMainLabelPoster">
 		<include>MultiplexLabelVars</include>
         <posx>340</posx>
-        <posy>683</posy>
+        <posy>695</posy>
         <width>600</width>
         <font>Font_ShowcaseMainLabel</font>
         <include condition="!Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelLightShade</include>
@@ -10495,7 +10495,7 @@
                     <texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">defaultvideo.png</texture>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <info>ListItem.Icon</info>
-                    <visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000) + ![Container.Content(genres) | Skin.HasSetting(moviegenre_on)]</visible>
+                    <visible>[!Container.Content(genres) + !Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(8000)] | [Container.Content(genres) + !Skin.HasSetting(moviegenre_on)]</visible>
                 </control>				
                 <include>genre_Multiplex_ref_21</include><!-- <<<<<< Add this -->
                 <control type="image">
@@ -11182,25 +11182,42 @@
                     <label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
                     <include condition="!Skin.HasSetting(tvposterview)">MultiplexMainLabel</include>
                     <include condition="Skin.HasSetting(tvposterview)">MultiplexMainLabelPoster</include>
-                    <visible>[Container.Content(seasons) + [Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(tvshows)] + [Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]]</visible>
+                    <visible>!Skin.HasSetting(tvposterview) + [[Container.Content(seasons) + [Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(tvshows)] + [Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]]]</visible>
+                </control>			
+                <control type="label">
+                    <label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
+                    <include condition="!Skin.HasSetting(tvposterview)">MultiplexMainLabel</include>
+                    <include condition="Skin.HasSetting(tvposterview)">MultiplexMainLabelPoster</include>
+                    <visible>Skin.HasSetting(tvposterview) + [Container.Content(tvshows)] + [Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]]</visible>
+                </control>			
+                <control type="label">
+                    <label>[UPPERCASE]$INFO[ListItem.TVShowTitle] - SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
+                    <include condition="!Skin.HasSetting(tvposterview)">MultiplexMainLabel</include>
+                    <include condition="Skin.HasSetting(tvposterview)">MultiplexMainLabelPoster</include>
+                    <visible>Skin.HasSetting(tvposterview) + [Container.Content(seasons) + !stringcompare(ListItem.Season,0) + [Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]]</visible>
+                </control>			
+                <control type="label">
+                    <label>[UPPERCASE]$INFO[ListItem.TVShowTitle] - SPECIALS[/UPPERCASE]</label>
+                    <include condition="!Skin.HasSetting(tvposterview)">MultiplexMainLabel</include>
+                    <include condition="Skin.HasSetting(tvposterview)">MultiplexMainLabelPoster</include>
+                    <visible>Skin.HasSetting(tvposterview) + [Container.Content(seasons) + stringcompare(ListItem.Season,0) + [Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]]</visible>
                 </control>			
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
-                    <include condition="!Skin.HasSetting(tvposterview)">MultiplexMainLabel</include>
-                    <include condition="Skin.HasSetting(tvposterview)">MultiplexMainLabelPoster</include>
+                    <include>MultiplexMainLabel</include>
                     <visible>Container.Content(episodes)</visible>
                 </control>			
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <include condition="!Skin.HasSetting(tvposterview)">MultiplexDetailLabel</include>
                     <include condition="Skin.HasSetting(tvposterview)">MultiplexDetailLabelPoster</include>
-                    <visible>Container.Content(tvshows) + [Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]</visible>
+                    <visible>!Skin.HasSetting(tvposterview) + Container.Content(tvshows) + [Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]</visible>
                 </control>
                 <control type="label" id="72">
                     <label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
                     <include condition="!Skin.HasSetting(tvposterview)">MultiplexDetailLabel</include>
                     <include condition="Skin.HasSetting(tvposterview)">MultiplexDetailLabelPoster</include>
-                    <visible>[Container.Content(seasons) + [Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(episodes) + [Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfotrigger)]]</visible>
+                    <visible>!Skin.HasSetting(tvposterview) + [[Container.Content(seasons) + [Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(episodes) + [Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfotrigger)]]]</visible>
                 </control>
 
                 
