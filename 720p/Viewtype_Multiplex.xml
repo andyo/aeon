@@ -1374,8 +1374,8 @@
                         <height>188</height>
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
-                        <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
-                        <texture>$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+                        <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb2.jpg]</texture>
+                        <visible>substring(ListItem.Path,stack)</visible>	
                     </control>				
                 </control>
 
@@ -1657,7 +1657,20 @@
                         <fadetime>400</fadetime>
                         <timeperimage>4000</timeperimage>					
                         <imagepath background="true">$INFO[ListItem.Path,,extrathumbs]</imagepath>
+                        <visible>!substring(ListItem.Path,stack)</visible>
+                        </control>			
+                    <control type="multiimage">
+                        <posx>1</posx>
+                        <posy>1</posy>
+                        <width>710</width>
+                        <height>399</height>
+                        <aspectratio>scale</aspectratio>
+                        <fadetime>400</fadetime>
+                        <timeperimage>4000</timeperimage>					
+                        <imagepath background="true">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs]</imagepath>
+                        <visible>substring(ListItem.Path,stack)</visible>	
                     </control>			
+
                 </control>
 
                 <!-- IMAGES FOR MULTI-IMAGE VIEW -->
@@ -2209,8 +2222,18 @@
                     <aspectratio>scale</aspectratio>
                     <fadetime>400</fadetime>
                     <texture>$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+                    <visible>!substring(ListItem.Path,stack)</visible>	
                 </control>
-                
+                <control type="largeimage">
+                    <posx>1</posx>
+                    <posy>1</posy>
+                    <width>261</width>
+                    <height>161</height>
+                    <aspectratio>scale</aspectratio>
+                    <fadetime>400</fadetime>
+                    <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
+                    <visible>substring(ListItem.Path,stack)</visible>	
+                </control>
                 <control type="image">
                     <posx>0</posx>
                     <posy>171</posy>
@@ -2228,6 +2251,17 @@
                     <aspectratio>scale</aspectratio>
                     <fadetime>400</fadetime>
                     <texture>$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+                    <visible>!substring(ListItem.Path,stack)</visible>	
+                </control>				
+                <control type="largeimage">
+                    <posx>1</posx>
+                    <posy>172</posy>
+                    <width>261</width>
+                    <height>161</height>
+                    <aspectratio>scale</aspectratio>
+                    <fadetime>400</fadetime>
+                    <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb2.jpg]</texture>
+                    <visible>substring(ListItem.Path,stack)</visible>	
                 </control>				
             </control>
 
@@ -2408,6 +2442,18 @@
                     <fadetime>400</fadetime>
                     <timeperimage>4000</timeperimage>					
                     <imagepath background="true">$INFO[ListItem.Path,,extrathumbs]</imagepath>
+                    <visible>!substring(ListItem.Path,stack)</visible>	
+                </control>			
+                <control type="multiimage">
+                    <posx>1</posx>
+                    <posy>1</posy>
+                    <width>593</width>
+                    <height>333</height>
+                    <aspectratio>scale</aspectratio>
+                    <fadetime>400</fadetime>
+                    <timeperimage>4000</timeperimage>					
+                    <imagepath background="true">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs]</imagepath>
+                    <visible>substring(ListItem.Path,stack)</visible>	
                 </control>			
             </control>
 
