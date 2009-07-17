@@ -501,7 +501,7 @@
 		</control>		
 		<control type="button" id="906">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>Movie Folder Localtion</label>
+			<label>$LOCALIZE[31973]</label>
 			<onclick>Skin.SetPath(moviefolder)</onclick>
 		</control>		
 	</control>

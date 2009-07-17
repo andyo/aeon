@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
 <!--Date of translation: 07/11/2009-->
 <!--$Revision$-->
@@ -448,4 +448,5 @@
   <string id="31970">תצוגה נוכחית</string>
   <string id="31971">אפשרויות תצוגה</string>
   <string id="31972">תפריט אנכי</string>
+	<string id="31973">MOVIE FOLDER LOCATION</string>
 </strings>
