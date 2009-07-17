@@ -504,6 +504,18 @@
 			<label>$LOCALIZE[31973]</label>
 			<onclick>Skin.SetPath(moviefolder)</onclick>
 		</control>		
+		<control type="radiobutton" id="907">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>$LOCALIZE[31974]: $LOCALIZE[31010]</label>
+			<onclick>Skin.ToggleSetting(dynamicflowmusic)</onclick>
+			<selected>Skin.HasSetting(dynamicflowmusic)</selected>
+		</control>		
+		<control type="radiobutton" id="908">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>$LOCALIZE[31974]: $LOCALIZE[31014]</label>
+			<onclick>Skin.ToggleSetting(dynamicflowtv)</onclick>
+			<selected>Skin.HasSetting(dynamicflowtv)</selected>
+		</control>		
 	</control>
 	<include>Furniture_SettingsFrontPanel</include>
 	
