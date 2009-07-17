@@ -516,7 +516,21 @@
 			<onclick>Skin.ToggleSetting(dynamicflowtv)</onclick>
 			<selected>Skin.HasSetting(dynamicflowtv)</selected>
 		</control>		
+
 	</control>
+
+        <control type="label">
+            <posx>1180</posx>
+            <posy>414</posy>
+            <width>500</width>
+            <height>49</height>
+            <aligny>center</aligny>
+            <align>right</align>
+            <font>Font_SettingsOptions</font>
+            <label>$INFO[Skin.String(moviefolder)]</label>                
+		<visible>Control.HasFocus(15) | ControlGroup(21).HasFocus</visible>
+        </control>
+
 	<include>Furniture_SettingsFrontPanel</include>
 	
 	<!--<include>Background_ContextBlack</include>-->
