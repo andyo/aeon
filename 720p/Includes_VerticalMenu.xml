@@ -1317,31 +1317,39 @@
 				<onclick>XBMC.ReloadSkin</onclick>
 				<visible>Skin.HasSetting(debug)</visible>
 			</control>
-			<control type="button" id="30300">
+            <control type="radiobutton" id="30300">
+				<include>VerticalMenu_RadioButton</include>
+                <label>Debug Flags</label>
+				<onclick>Skin.ToggleSetting(debugflags)</onclick>
+				<selected>Skin.HasSetting(debugflags)</selected>
+				<visible>Skin.HasSetting(debug)</visible>
+            </control>
+			<control type="radiobutton" id="30301">
+				<include>VerticalMenu_RadioButton</include>
 				<label>31608</label>
 				<onclick>Skin.ToggleSetting(debuginfo)</onclick>
-				<include>VerticalMenu_Button</include>
+				<selected>!Skin.HasSetting(debuginfo)</selected>
 				<visible>Skin.HasSetting(debug)</visible>
 			</control>
 		</include>
 
 
 		<include name="VerticalMenu_PosterThumbButtons">
-			<control type="radiobutton" id="30301">
+			<control type="radiobutton" id="30302">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(listvideosquare)</onclick>
 				<selected>!Skin.HasSetting(listvideosquare)</selected>
 				<visible>Control.IsVisible(50) + Window.IsActive(24)</visible>
 			</control>
-			<control type="radiobutton" id="30302">
+			<control type="radiobutton" id="30303">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(listgamessquare)</onclick>
 				<selected>!Skin.HasSetting(listgamessquare)</selected>
 				<visible>Control.IsVisible(50) + Window.IsActive(35)</visible>
 			</control>
-			<control type="radiobutton" id="30303">
+			<control type="radiobutton" id="30304">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(tvposterview)</onclick>
@@ -1349,6 +1357,9 @@
 				<visible>Skin.HasSetting(videotv)</visible>
 			</control>
 		</include>
+
+
+
 
 	<!--#################################################### Vertical - Menu #####################################################-->
 	<!--##########################################################################################################################-->
@@ -1498,15 +1509,15 @@
 						<label>$LOCALIZE[31971]</label>
 					</control>
 					
-					<include>VerticalMenu_FlattenFlowButton</include>
-					<include>VerticalMenu_PosterThumbButtons</include>
 					<include condition="!Skin.HasSetting(nomultiplexstylebuttons)">VerticalMenu_MultiplexStyleButtons</include>
+                    <include>VerticalMenu_MultiplexShadeButtons</include>
 					<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">VerticalMenu_MultiplexInfoButtons</include>
+					<include>VerticalMenu_PosterThumbButtons</include>
+					<include>VerticalMenu_FlattenFlowButton</include>
 					<include>VerticalMenu_ListButtons</include>
-					<include>VerticalMenu_PanelDensityButton</include>
 					<include>VerticalMenu_LightNightButtons</include>
                     <include>VerticalMenu_LightDarkWindows</include>
-                    <include>VerticalMenu_MultiplexShadeButtons</include>
+					<include>VerticalMenu_PanelDensityButton</include>
                     <include>VerticalMenu_FullscreenButton</include>
 <!--					<include>VerticalMenu_DVDCaseButtons</include> -->
 					<include condition="!Skin.HasSetting(nomediaflagsbutton)">VerticalMenu_FlagsButton</include>
@@ -1529,6 +1540,12 @@
 					<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_FilesButtons</include>
 
 					<include condition="!Skin.HasSetting(nomenusettings)">VerticalMenu_SetupButtons</include>
+
+					<control type="label" id="30502">
+						<include>VerticalMenu_GroupTitle</include>
+						<label>DEBUG</label>
+                        <visible>Skin.HasSetting(debug)</visible>
+					</control>
  					<include condition="Skin.HasSetting(debug)">VerticalMenu_MediaDebugButtons</include>
 
 

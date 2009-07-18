@@ -305,7 +305,7 @@
 		<include>Animation_CommonFade</include>
 <!-- DEBUG DAGTA -->
 	<control type="group">
-            <visible>Skin.HasSetting(debug)</visible>
+            <visible>Skin.HasSetting(debugflags)</visible>
             <control type="label">
             <posx>550</posx>
             <posy>8</posy>
