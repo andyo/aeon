@@ -721,7 +721,7 @@
 				<onclick>XBMC.ReloadSkin</onclick>
 				<visible>Window.IsActive(25) + [Control.IsVisible(52) | Control.IsVisible(54)] + Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfooff)</visible>
 			</control>
-			<control type="button" id="3216">
+			<control type="button" id="30216">
 				<include>VerticalMenu_Button</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
 				<onclick>Skin.SetBool(multiplextvshowsinfotrigger)</onclick>
