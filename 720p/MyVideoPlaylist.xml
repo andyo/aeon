@@ -22,17 +22,17 @@
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
 		
-		<include>Furniture_Time</include>	
 		<include>Furniture_MediaPanel</include>
 		<include>Objects_ShowcaseMenuPanel</include>
 
+		<include>Viewtype_Showcase</include>
+		<include>Viewtype_List</include>
 		<include>Viewtype_Wall</include>
+		<include>Furniture_Time</include>	
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
 		
 
-		<include>Viewtype_Showcase</include>
-		<include>Viewtype_List</include>
 		
         <include>HorizontalVideoPlayListMenu</include>		
         <include>VerticalMenu</include>		

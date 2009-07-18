@@ -12,12 +12,12 @@
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
 		<include>Conditions_HiddenByInfoPages</include>
-		<include>Furniture_Time</include>
 		<include>Furniture_MediaPanel</include>
 		<include>Objects_ShowcaseMenuPanel</include>
 
 		<include>Viewtype_List</include>
 		<include>Viewtype_Showcase</include>
+		<include>Furniture_Time</include>
 
         <include>HorizontalMusicPlayListMenu</include>		
         <include>VerticalMenu</include>		

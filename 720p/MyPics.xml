@@ -70,7 +70,6 @@
 	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
-		<include>Furniture_Time</include>
 		<include>Furniture_MediaPanel</include>
 
 		<include>Viewtype_Wall</include>		
@@ -81,6 +80,7 @@
 		<include>Objects_ShowcaseMenuPanel</include>
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
+		<include>Furniture_Time</include>
 		
         <include>HorizontalPicsMenu</include>		
         <include>VerticalMenu</include>		

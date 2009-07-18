@@ -16,17 +16,17 @@
         <include>Furniture_FloorBack</include>
         <include>Furniture_shadow</include>
 		
-		<include>Furniture_Time</include>	
 		<include>Furniture_MediaPanel</include>
 		<include>Objects_ShowcaseMenuPanel</include>
 
 		<include>Viewtype_Wall</include>
+		<include>Viewtype_Showcase</include>
+		<include>Viewtype_List</include>
+		<include>Furniture_Time</include>	
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
 
 
-		<include>Viewtype_Showcase</include>
-		<include>Viewtype_List</include>
 
         <include>HorizontalScriptsMenu</include>		
         <include>VerticalMenu</include>		
