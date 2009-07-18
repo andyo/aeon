@@ -111,6 +111,7 @@
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(MyMusic,return)</onclick>
 				<visible>!Skin.HasSetting(nomusic)</visible>
 				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenumusic)] | !Skin.HasSetting(onetouch)</visible>
@@ -129,6 +130,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(MyPrograms)</onclick>
 				<visible>!Skin.HasSetting(nogames)</visible>
 				<visible>!Skin.HasSetting(launcherforgames)</visible>
@@ -140,6 +142,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(1,plugin://programs/Launcher/)</onclick>
 				<visible>!Skin.HasSetting(nogames)</visible>
 				<visible>Skin.HasSetting(launcherforgames)</visible>
@@ -151,6 +154,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(MyPictures)</onclick>
 				<visible>!Skin.HasSetting(nopictures)</visible>
 			</item>
@@ -161,6 +165,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
 				<onclick>Skin.Reset(music)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(MyVideoLibrary,movietitles,return)</onclick>
 				<visible>!Skin.HasSetting(nomovies)</visible>
 				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenumovies)] | !Skin.HasSetting(onetouch)</visible>
@@ -173,6 +178,7 @@
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(music)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowtitles,return)</onclick>
 				<visible>!Skin.HasSetting(notvshows)</visible>
 				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenutv)] | !Skin.HasSetting(onetouch)</visible>
@@ -184,6 +190,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
 				<visible>!Skin.HasSetting(novideos)</visible>
 			</item>
@@ -194,6 +201,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
 				<onclick>Skin.Reset(music)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(favourites)</onclick>
 				<visible>!Skin.HasSetting(nofavourites)</visible>
 				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenfavourites)] | !Skin.HasSetting(onetouch)</visible>
@@ -213,6 +221,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>Skin.Reset(settingsfade)</onclick>
 				<onclick>XBMC.ActivateWindow(4)</onclick>
 				<visible>!Skin.HasSetting(nosettings)</visible>
@@ -225,6 +234,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(20)</onclick>
 				<visible>Skin.HasSetting(scripts)</visible>
 			</item>
@@ -236,6 +246,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.PlayDVD</onclick>
 				<visible>System.HasMediadvd</visible>
 			</item>
@@ -254,6 +265,7 @@
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>XBMC.ActivateWindow(605)</onclick>
 				<visible>Skin.HasSetting(assistant)</visible>
 			</item>

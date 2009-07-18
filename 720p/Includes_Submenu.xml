@@ -152,36 +152,43 @@
 				<control type="button" id="41">
 					<include>Submenu_Button</include>
 					<label>31927</label>
+                    <onclick>Skin.SetBool(music)</onclick>
 					<onclick>XBMC.ActivateWindow(MyMusicLibrary,artists,return)</onclick>
 				</control>
 				<control type="button" id="42">
 					<include>Submenu_Button</include>
 					<label>31928</label>
+                    <onclick>Skin.SetBool(music)</onclick>
 					<onclick>XBMC.ActivateWindow(MyMusicLibrary,albums,return)</onclick>
 				</control>
 				<control type="button" id="43">
 					<include>Submenu_Button</include>
 					<label>31922</label>
+                    <onclick>Skin.SetBool(music)</onclick>
 					<onclick>XBMC.ActivateWindow(MyMusicLibrary,genres,return)</onclick>
 				</control>
 				<control type="button" id="44">
 					<include>Submenu_Button</include>
 					<label>31929</label>
+                    <onclick>Skin.SetBool(music)</onclick>
 					<onclick>XBMC.ActivateWindow(MyMusicLibrary,playlists,return)</onclick>
 				</control>
 				<control type="button" id="45">
 					<include>Submenu_Button</include>
 					<label>31930</label>
+                    <onclick>Skin.SetBool(music)</onclick>
 					<onclick>XBMC.ActivateWindow(MyMusicLibrary,top100,return)</onclick>
 				</control>
 				<control type="button" id="46">
 					<include>Submenu_Button</include>
 					<label>31931</label>
 					<onclick>XBMC.ActivateWindow(MyMusicLibrary,musicvideos,return)</onclick>
+                    <onclick>Skin.SetBool(music)</onclick>
 				</control>
 				<control type="button" id="47">
 					<include>Submenu_Button</include>
 					<label>31932</label>
+                    <onclick>Skin.SetBool(music)</onclick>
 					<onclick>XBMC.ActivateWindow(MyMusicFiles)</onclick>
 				</control>
 			</control>			
