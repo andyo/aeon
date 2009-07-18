@@ -15,7 +15,7 @@
 
 	<control type="largeimage" id="102">
 		<include>FullscreenDimensions</include>
-        <visible>[!Control.IsVisible(103) + Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550) | | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+        <visible>[!Control.IsVisible(103) + Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[listitem.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
@@ -38,6 +38,7 @@
 	</control>
 
 <!-- DEBUG INFO -->
+
     <control type="label">
         <posx>700</posx>
         <posy>05</posy>
@@ -47,8 +48,7 @@
         <textcolor>FFFFFFFF</textcolor>		
         <label>** $INFO[container.property(fanart_image)]</label>
         <visible>Skin.HasSetting(debug)</visible>
-	</control>
-    
+	</control>    
 <!-- <<<<< ADD this -->
 	</control>
 	 
