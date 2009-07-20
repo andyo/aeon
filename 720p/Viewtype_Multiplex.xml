@@ -2890,7 +2890,7 @@
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[listitem.property(fanart_image)]</texture>
-                    <visible>!Skin.HasSetting(multiplextvbigthumb) | !Container.Content(episodes)</visible>					
+                    <visible>Skin.HasSetting(multiplextvfanart) | !Container.Content(episodes)</visible>					
                     <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="largeimage">
@@ -2901,7 +2901,7 @@
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[Fanart.Image]</texture>
-                    <visible>!Skin.HasSetting(multiplextvbigthumb) | !Container.Content(episodes)</visible>
+                    <visible>Skin.HasSetting(multiplextvfanart) | !Container.Content(episodes)</visible>
                     <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="image">
@@ -3302,7 +3302,7 @@
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[listitem.property(fanart_image)]</texture>
-                    <visible>!Skin.HasSetting(multiplextvbigthumb) | !Container.Content(episodes)</visible>					
+                    <visible>Skin.HasSetting(multiplextvfanart) | !Container.Content(episodes)</visible>					
                     <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="largeimage">
@@ -3313,7 +3313,7 @@
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[Fanart.Image]</texture>
-                    <visible>!Skin.HasSetting(multiplextvbigthumb) | !Container.Content(episodes)</visible>
+                    <visible>Skin.HasSetting(multiplextvfanart) | !Container.Content(episodes)</visible>
                     <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="image">

@@ -497,8 +497,6 @@
 							<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + !Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(fullscreenmultiplex)</visible>
 						</control>
 
-
-
 						<control type="button" id="30029">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texturefocus>viewselect/vertical/vs_icon_multiplex_art_window_focus.png</texturefocus>
@@ -526,7 +524,6 @@
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Skin.SetBool(multiplextvfanart)</onclick>
 							<onclick>Skin.Reset(multiplextvbigthumb)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
 							<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(54) + !Skin.HasSetting(multiplextvfanart) + Skin.HasSetting(fullscreenmultiplex)</visible>
 						</control>
 						<control type="button" id="30032">
@@ -895,7 +892,7 @@
 				<label>$LOCALIZE[31047]: $LOCALIZE[31064]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(multiplextvbigthumb)</visible>
+				<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + Skin.HasSetting(multiplextvfanart)</visible>
 			</control>		
 		</include>
 		
