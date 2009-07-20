@@ -301,276 +301,294 @@
 	</include>
 
 	<include name="Furniture_ListMediaFlags">
-		<!-- <visible>[Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)]</visible> -->
-		<include>Animation_CommonFade</include>
-<!-- DEBUG DAGTA -->
-	<control type="group">
-            <visible>Skin.HasSetting(debugflags)</visible>
-            <control type="label">
-            <posx>550</posx>
-            <posy>8</posy>
-            <width>430</width>
-            <height>13</height>
-            <font>Font_MultiplexInfoLabel</font>
-            <textcolor>FFFFFFFF</textcolor>		
-            <label>SOURCE TAG: /$INFO[listitem.filename,,]</label>
-        </control>
-        <control type="label">
-            <posx>550</posx>
-            <posy>23</posy>
-            <width>430</width>
-            <height>13</height>
-            <font>Font_MultiplexInfoLabel</font>
-            <textcolor>FFFFFFFF</textcolor>		
-            <label>AUDIO CHANNELS: /$INFO[ListItem.audiochannels,flags/sound/,.png]</label>
-        </control>
-        <control type="label">
-            <posx>550</posx>
-            <posy>38</posy>
-            <width>430</width>
-            <height>13</height>
-            <font>Font_MultiplexInfoLabel</font>
-            <textcolor>FFFFFFFF</textcolor>		
-            <label>AUDIO CODEC: /$INFO[ListItem.audiocodec,flags/sound/,.png]</label>
-        </control>
-        <control type="label">
-            <posx>850</posx>
-            <posy>23</posy>
-            <width>400</width>
-            <height>13</height>
-            <font>Font_MultiplexInfoLabel</font>
-            <textcolor>FFFFFFFF</textcolor>		
-            <label>STUDIO TAG: /$INFO[listitem.studio,flags/studio/,.png]</label>
-        </control>
-        <control type="label">
-            <posx>850</posx>
-            <posy>38</posy>
-            <width>400</width>
-            <height>13</height>
-            <font>Font_MultiplexInfoLabel</font>
-            <textcolor>FFFFFFFF</textcolor>		
-            <label>VIDEO CODEC TAG: $INFO[listitem.VideoCodec,flags/codec/,.png]</label>
-        </control>
-    </control>
-
-        <control type="group">
-            <posx>830</posx>
-            <control type="image">
-            <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/source/defaultsource.png</texture>
-                <visible>!Control.IsVisible(82) + !Skin.HasSetting(nodefaultflags)</visible>
-            </control>
-            <control type="image" id="82">
-            <include>Furniture_ListMediaFlagsVars</include>
-                <texture>$INFO[ListItem.VideoCodec,flags/codec/,.png]</texture>
-                <visible>!substring(listitem.filename,dvd) + !substring(listitem.filename,bluray) + !substring(listitem.filename,hdtv) + !substring(listitem.filename,blu-ray) + !substring(listitem.filename,bdrip) + !substring(listitem.filename,hddvd) + !substring(listitem.filename,.iso,Right) + !substring(listitem.filename,.ifo,Right)</visible>
-            </control>				
-            <control type="image" id="82">
-            <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/source/hddvd.png</texture>
-                <visible>substring(listitem.filename,hddvd)</visible>
-            </control>
-            <control type="image" id="82">
-            <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/source/bluray.png</texture>
-                <visible>substring(listitem.filename,bluray)</visible>
-            </control>
-            <control type="image" id="82">
-            <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/source/dvd.png</texture>
-                <visible>substring(listitem.filename,sddvd)</visible>
-            </control>
-            <control type="image" id="82">
-            <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/source/hdtv.png</texture>
-                <visible>substring(listitem.filename,hdtv)</visible>
-            </control>
-            <control type="image" id="82">
-            <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/source/divx.png</texture>
-                <visible>substring(listitem.filename,divx)</visible>
-            </control>				
-        </control>
-
-        <control type="group">
-            <posx>913</posx>
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/US/TV-G_Certificate_US.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-G)</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/US/TV-PG_Certificate_US.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-PG)</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/US/TV-14_Certificate_US.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-14)]</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/US/TV-MA_Certificate_US.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-MA)]</visible>
-            </control>				
-            <!-- UK Certification -->
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/uk/BBFC_U_Certificate_UK.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:U)</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/uk/BBFC_PG_Certificate_UK.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:PG)</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/uk/BBFC_12_Certificate_UK.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:12) + !substring(listitem.mpaa,UK:12A)</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/uk/BBFC_12A_Certificate_UK.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:12A)</visible>
-            </control>
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/uk/BBFC_15_Certificate_UK.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:15)</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/uk/BBFC_18_Certificate_UK.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:18)</visible>
-            </control>				
-
-            <!-- US Certification -->
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/us/MPAA_G_Certificate_US.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:G) | substring(listitem.mpaa,USA:G) | substring(listitem.mpaa,Rated G)]</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/us/MPAA_PG_Certificate_US.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:PG) | substring(listitem.mpaa,USA:PG) | [substring(listitem.mpaa,Rated PG) + !substring(listitem.mpaa,Rated PG-13)]]</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/us/MPAA_PG-13_Certificate_US.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:PG-13) | substring(listitem.mpaa,USA:PG-13) | substring(listitem.mpaa,Rated PG-13)]</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/us/MPAA_R_Certificate_US.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:R) | substring(listitem.mpaa,USA:R) | substring(listitem.mpaa,Rated R)]</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/us/MPAA_NC-17_Certificate_US.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:NC-17) | substring(listitem.mpaa,USA:NC-17) | substring(listitem.mpaa,Rated NC-17)]</visible>
-            </control>				
-
-            <!-- Germany Certification -->
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/de/FSK-0.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:0) | substring(listitem.mpaa,o.A)</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/de/FSK-6.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:6) | substring(listitem.mpaa,ab 6)</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/de/FSK-12.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:12) | substring(listitem.mpaa,ab 12)</visible>
-            </control>
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/de/FSK-16.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:16) | substring(listitem.mpaa,ab 16)</visible>
-            </control>				
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/rating/de/FSK-18.png</texture>
-                <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:18) | substring(listitem.mpaa,ab 18)</visible>
-            </control>				
-        </control>				
-
 		<control type="group">
-			<posx>994</posx>
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/studios/default.png</texture>
-                <visible>!Control.IsVisible(81) + !Skin.HasSetting(nodefaultflags)</visible>
-            </control>
-            <control type="image" id="81">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>$INFO[listitem.studio,flags/studios/,.png]</texture>
+			<visible>[[Control.IsVisible(50) | Control.IsVisible(550)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(61) | Control.HasFocus(94)]]</visible>
+		<include>Animation_CommonFade</include>
+            <control type="group">
+                <posx>830</posx>
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/source/defaultsource.png</texture>
+                    <visible>!Control.IsVisible(82) + !Skin.HasSetting(nodefaultflags)</visible>
+                </control>
+                <control type="image" id="82">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.VideoCodec,flags/codec/,.png]</texture>
+                    <visible>!substring(listitem.filename,dvd) + !substring(listitem.filename,bluray) + !substring(listitem.filename,hdtv) + !substring(listitem.filename,blu-ray) + !substring(listitem.filename,bdrip) + !substring(listitem.filename,hddvd) + !substring(listitem.filename,.iso,Right) + !substring(listitem.filename,.ifo,Right)</visible>
+                </control>				
+                <control type="image" id="82">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/source/hddvd.png</texture>
+                    <visible>substring(listitem.filename,hddvd)</visible>
+                </control>
+                <control type="image" id="82">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/source/bluray.png</texture>
+                    <visible>substring(listitem.filename,bluray)</visible>
+                </control>
+                <control type="image" id="82">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/source/dvd.png</texture>
+                    <visible>substring(listitem.filename,sddvd)</visible>
+                </control>
+                <control type="image" id="82">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/source/hdtv.png</texture>
+                    <visible>substring(listitem.filename,hdtv)</visible>
+                </control>
+                <control type="image" id="82">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/source/divx.png</texture>
+                    <visible>substring(listitem.filename,divx)</visible>
+                </control>				
             </control>
 
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/studios/default.png</texture>
-                <visible>!Control.IsVisible(81) + !Skin.HasSetting(nodefaultflags)</visible>
+            <control type="group">
+                <posx>913</posx>
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
+                </control>
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.AudioCodec,flags/sound/,.png]</texture>
+                </control>			
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/defaultsound.png</texture>
+                    <visible>!Control.IsVisible(188) + !Skin.HasSetting(nodefaultflags)</visible>
+                </control>					
             </control>				
-            <control type="image" id="81">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture fallback="flags/source/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
-                <visible>IsEmpty(ListItem.VideoResolution) + Container.Content(episodes) </visible>
+
+            <control type="group">
+                <posx>994</posx>
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/defaultscreen.png</texture>
+                    <visible>!Control.IsVisible(187) + !Skin.HasSetting(nodefaultflags)</visible>
+                </control>
+                <control type="image" id="187">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.VideoResolution,flags/screen/,p.png]</texture>
+                </control>
             </control>
-            <control type="image" id="81">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture fallback="flags/source/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
-                <visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,480) | substring(ListItem.VideoResolution,540)]</visible>
-            </control>
-            <control type="image" id="81">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture fallback="flags/source/hdtv.png">$INFO[ListItem.studio,flags/studios/,_hd.png]</texture>
-                <visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,720) | substring(ListItem.VideoResolution,1080)]</visible>
-            </control>
-        </control>
 
 
-        <control type="group">
-            <posx>1077</posx>
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
-            </control>
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>$INFO[ListItem.AudioCodec,flags/sound/,.png]</texture>
-            </control>			
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/defaultsound.png</texture>
-                <visible>!Control.IsVisible(188) + !Skin.HasSetting(nodefaultflags)</visible>
-            </control>					
-                
-        </control>
+            <control type="group">
+                <posx>1077</posx>
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/studios/default.png</texture>
+                    <visible>!Control.IsVisible(81) + !Skin.HasSetting(nodefaultflags)</visible>
+                </control>
+                <control type="image" id="81">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>$INFO[listitem.studio,flags/studios/,.png]</texture>
+                </control>
+                <control type="image" id="81">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.Property(Label),flags/recordlabels/,.png]</texture>
+                </control>
+                <control type="image" id="81">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.Property(AlbumLabel),flags/recordlabels/,.png]</texture>
+                </control>
 
-        <control type="group">
-            <posx>1160</posx>
-            <control type="image">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>flags/defaultscreen.png</texture>
-                <visible>!Control.IsVisible(187) + !Skin.HasSetting(nodefaultflags)</visible>
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/studios/default.png</texture>
+                    <visible>!Control.IsVisible(81) + !Skin.HasSetting(nodefaultflags)</visible>
+                </control>				
+                <control type="image" id="81">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture fallback="flags/source/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
+                    <visible>IsEmpty(ListItem.VideoResolution) + Container.Content(episodes) </visible>
+                </control>
+                <control type="image" id="81">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture fallback="flags/source/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
+                    <visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,480) | substring(ListItem.VideoResolution,540)]</visible>
+                </control>
+                <control type="image" id="81">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture fallback="flags/source/hdtv.png">$INFO[ListItem.studio,flags/studios/,_hd.png]</texture>
+                    <visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,720) | substring(ListItem.VideoResolution,1080)]</visible>
+                </control>
             </control>
-            <control type="image" id="187">
-                <include>Furniture_ListMediaFlagsVars</include>
-                <texture>$INFO[ListItem.VideoResolution,flags/screen/,p.png]</texture>
+
+            <control type="group">
+                <posx>1160</posx>
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/US/TV-G_Certificate_US.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-G)</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/US/TV-PG_Certificate_US.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-PG)</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/US/TV-14_Certificate_US.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-14)]</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/US/TV-MA_Certificate_US.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-MA)]</visible>
+                </control>				
+                <!-- UK Certification -->
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/uk/BBFC_U_Certificate_UK.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:U)</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/uk/BBFC_PG_Certificate_UK.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:PG)</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/uk/BBFC_12_Certificate_UK.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:12) + !substring(listitem.mpaa,UK:12A)</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/uk/BBFC_12A_Certificate_UK.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:12A)</visible>
+                </control>
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/uk/BBFC_15_Certificate_UK.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:15)</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/uk/BBFC_18_Certificate_UK.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:18)</visible>
+                </control>				
+
+                <!-- US Certification -->
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/us/MPAA_G_Certificate_US.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:G) | substring(listitem.mpaa,USA:G) | substring(listitem.mpaa,Rated G)]</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/us/MPAA_PG_Certificate_US.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:PG) | substring(listitem.mpaa,USA:PG) | [substring(listitem.mpaa,Rated PG) + !substring(listitem.mpaa,Rated PG-13)]]</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/us/MPAA_PG-13_Certificate_US.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:PG-13) | substring(listitem.mpaa,USA:PG-13) | substring(listitem.mpaa,Rated PG-13)]</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/us/MPAA_R_Certificate_US.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:R) | substring(listitem.mpaa,USA:R) | substring(listitem.mpaa,Rated R)]</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/us/MPAA_NC-17_Certificate_US.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:NC-17) | substring(listitem.mpaa,USA:NC-17) | substring(listitem.mpaa,Rated NC-17)]</visible>
+                </control>				
+
+                <!-- Germany Certification -->
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/de/FSK-0.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:0) | substring(listitem.mpaa,o.A)</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/de/FSK-6.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:6) | substring(listitem.mpaa,ab 6)</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/de/FSK-12.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:12) | substring(listitem.mpaa,ab 12)</visible>
+                </control>
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/de/FSK-16.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:16) | substring(listitem.mpaa,ab 16)</visible>
+                </control>				
+                <control type="image">
+                    <include>Furniture_ListMediaFlagsVars</include>
+                    <texture>flags/rating/de/FSK-18.png</texture>
+                    <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:18) | substring(listitem.mpaa,ab 18)</visible>
+                </control>				
             </control>
         </control>
 	</include>
 	
 	<include name="Furniture_Multiplex_Showscase_MoviesMediaFlags">
+    <!-- DEBUG DAGTA -->
+        <control type="group">
+                <visible>Skin.HasSetting(debugflags)</visible>
+                <control type="label">
+                <posx>550</posx>
+                <posy>8</posy>
+                <width>430</width>
+                <height>13</height>
+                <font>Font_MultiplexInfoLabel</font>
+                <textcolor>FFFFFFFF</textcolor>		
+                <label>SOURCE TAG: /$INFO[listitem.filename,,]</label>
+            </control>
+            <control type="label">
+                <posx>550</posx>
+                <posy>23</posy>
+                <width>430</width>
+                <height>13</height>
+                <font>Font_MultiplexInfoLabel</font>
+                <textcolor>FFFFFFFF</textcolor>		
+                <label>AUDIO CHANNELS: /$INFO[ListItem.audiochannels,flags/sound/,.png]</label>
+            </control>
+            <control type="label">
+                <posx>550</posx>
+                <posy>38</posy>
+                <width>430</width>
+                <height>13</height>
+                <font>Font_MultiplexInfoLabel</font>
+                <textcolor>FFFFFFFF</textcolor>		
+                <label>AUDIO CODEC: /$INFO[ListItem.audiocodec,flags/sound/,.png]</label>
+            </control>
+            <control type="label">
+                <posx>850</posx>
+                <posy>23</posy>
+                <width>400</width>
+                <height>13</height>
+                <font>Font_MultiplexInfoLabel</font>
+                <textcolor>FFFFFFFF</textcolor>		
+                <label>STUDIO TAG: /$INFO[listitem.studio,flags/studio/,.png]</label>
+            </control>
+            <control type="label">
+                <posx>850</posx>
+                <posy>38</posy>
+                <width>400</width>
+                <height>13</height>
+                <font>Font_MultiplexInfoLabel</font>
+                <textcolor>FFFFFFFF</textcolor>		
+                <label>LABEL TAG: /$INFO[ListItem.Property(Label),flags/recordlabels/,.png]</label>
+            </control>
+            <control type="label">
+                <posx>850</posx>
+                <posy>53</posy>
+                <width>400</width>
+                <height>13</height>
+                <font>Font_MultiplexInfoLabel</font>
+                <textcolor>FFFFFFFF</textcolor>		
+                <label>VIDEO CODEC TAG: $INFO[listitem.VideoCodec,flags/codec/,.png]</label>
+            </control>
+        </control>
+
 		<control type="group">
-			<visible>[Window.IsActive(25) + Control.IsVisible(52) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
+			<visible>[[Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
 			<include>Animation_CommonFade</include>
 			<control type="image">
 				<posx>0</posx>
@@ -592,10 +610,58 @@
 			</control>	
 		</control>
 		<control type="group">
-			<visible>[Window.IsActive(25) + Control.IsVisible(52) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
+			<visible>[[Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
 			<include>Animation_CommonFade</include>
 			<control type="group">
 				<posx>10</posx>
+				<control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars_stars</include>
+                    <info>ListItem.StarRating</info>
+					<visible>!Skin.HasSetting(noimdbflag) + !Skin.HasSetting(movieratingtext)</visible>
+				</control>
+				<control type="label">
+					<include>Furniture_ShowcaseMediaFlagsVars_stars_text</include>
+                    <label>$INFO[ListItem.Rating]</label>
+					<visible>!Skin.HasSetting(noimdbflag) + Skin.HasSetting(movieratingtext)</visible>
+				</control>
+            </control>				
+
+			<control type="group">
+				<posx>120</posx>
+				<control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>flags/studios/default.png</texture>
+					<visible>!Control.IsVisible(81) + !Skin.HasSetting(nodefaultflags)</visible>
+				</control>
+				<control type="image" id="81">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>$INFO[listitem.studio,flags/studios/,.png]</texture>
+					<visible>!Container.Content(episodes)</visible>
+				</control>
+				<control type="image" id="81">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture fallback="flags/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
+					<visible>Container.Content(episodes) + IsEmpty(ListItem.VideoResolution)</visible>
+				</control>
+				<control type="image" id="81">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture fallback="flags/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
+					<visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,480) | substring(ListItem.VideoResolution,540)]</visible>
+				</control>
+				<control type="image" id="81">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture fallback="flags/hdtv.png">$INFO[ListItem.studio,flags/studios/,_hd.png]</texture>
+					<visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,720) | substring(ListItem.VideoResolution,1080)]</visible>
+				</control>
+                <control type="image" id="81">
+                    <include>Furniture_ShowcaseMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.Property(Label),flags/recordlabels/,.png]</texture>
+                </control>
+
+			</control>
+
+			<control type="group">
+				<posx>230</posx>
                 <!-- UK Certification -->
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
@@ -681,23 +747,54 @@
                     <texture>flags/rating/de/FSK-18.png</texture>
                     <visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:18) | substring(listitem.mpaa,ab 18)</visible>
 				</control>				
-            </control>				
 
-			<control type="group">
-				<posx>120</posx>
+                <control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>flags/rating/US/TV-G_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-G)</visible>
+				</control>				
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>flags/studios/default.png</texture>
-					<visible>!Control.IsVisible(81) + !Skin.HasSetting(nodefaultflags)</visible>
-				</control>
-				<control type="image" id="81">
+					<texture>flags/rating/US/TV-PG_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-PG)</visible>
+				</control>				
+				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>$INFO[listitem.studio,flags/studios/,.png]</texture>
-				</control>
+					<texture>flags/rating/US/TV-14_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-14)]</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>flags/rating/US/TV-MA_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-MA)]</visible>
+				</control>				
 			</control>
 
 			<control type="group">
-				<posx>230</posx>
+				<posx>940</posx>
+				<control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>flags/screen/defaultscreen.png</texture>
+					<visible>!Control.IsVisible(83) + !Skin.HasSetting(nodefaultflags)</visible>
+				</control>
+				<control type="image" id="83">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>$INFO[ListItem.VideoResolution,flags/screen/,p.png]</texture>
+				</control>				
+			</control>
+			<control type="group">
+				<posx>1050</posx>		
+				<control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
+				</control>
+				<control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>$INFO[ListItem.AudioCodec,flags/sound/,.png]</texture>
+				</control>	
+            </control>
+			<control type="group">
+				<posx>1160</posx>
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
 					<texture>flags/source/defaultsource.png</texture>
@@ -733,174 +830,9 @@
 					<texture>flags/source/divx.png</texture>
 					<visible>substring(listitem.filename,divx)</visible>
 				</control>				
-			</control>
-
-			<control type="group">
-				<posx>940</posx>
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>flags/screen/defaultscreen.png</texture>
-					<visible>!Control.IsVisible(83) + !Skin.HasSetting(nodefaultflags)</visible>
-				</control>
-				<control type="image" id="83">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>$INFO[ListItem.VideoResolution,flags/screen/,p.png]</texture>
-				</control>				
-			</control>
-			<control type="group">
-				<posx>1050</posx>		
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
-				</control>
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>$INFO[ListItem.AudioCodec,flags/sound/,.png]</texture>
-				</control>	
-            </control>
-			<control type="group">
-				<posx>1160</posx>
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars_stars</include>
-                    <info>ListItem.StarRating</info>
-					<visible>!Skin.HasSetting(noimdbflag) + !Skin.HasSetting(movieratingtext)</visible>
-				</control>
-				<control type="label">
-					<include>Furniture_ShowcaseMediaFlagsVars_stars_text</include>
-                    <label>$INFO[ListItem.Rating]</label>
-					<visible>!Skin.HasSetting(noimdbflag) + Skin.HasSetting(movieratingtext)</visible>
-				</control>
-
+    
             </control>
 		</control>
 	</include>
 	
-    <include name="Furniture_Multiplex_Showscase_TVShowsMediaFlags">
-		<control type="group">
-			<visible>[Window.IsActive(25) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
-			<include>Animation_CommonFade</include>
-			<control type="image">
-				<posx>0</posx>
-				<posy>569</posy>
-				<width>298</width>
-				<height>151</height>
-				<texture>showcase/flagshade.png</texture>
-				<include>Animation_HideShowcase</include>
-				<visible>!Skin.HasSetting(darkshowcase)</visible>
-			</control>
-			<control type="image">
-				<posx>982</posx>
-				<posy>569</posy>
-				<width>298</width>
-				<height>151</height>
-				<texture flipx="true">showcase/flagshade.png</texture>
-				<include>Animation_HideShowcase</include>
-				<visible>!Skin.HasSetting(darkshowcase)</visible>				
-			</control>	
-		</control>
-		<control type="group">
-			<visible>[Window.IsActive(25) + [Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
-			<include>Animation_CommonFade</include>
-			<control type="group">
-				<posx>10</posx>
-                <control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>flags/rating/US/TV-G_Certificate_US.png</texture>
-					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-G)</visible>
-				</control>				
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>flags/rating/US/TV-PG_Certificate_US.png</texture>
-					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-PG)</visible>
-				</control>				
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>flags/rating/US/TV-14_Certificate_US.png</texture>
-					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-14)]</visible>
-				</control>				
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>flags/rating/US/TV-MA_Certificate_US.png</texture>
-					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-MA)]</visible>
-				</control>				
-            </control>				
-
-			<control type="group">
-				<posx>120</posx>
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>flags/studios/default.png</texture>
-					<visible>!Control.IsVisible(81) + !Skin.HasSetting(nodefaultflags)</visible>
-				</control>				
-				<control type="image" id="81">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture fallback="flags/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
-					<visible>IsEmpty(ListItem.VideoResolution)</visible>
-				</control>
-				<control type="image" id="81">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture fallback="flags/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
-					<visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,480) | substring(ListItem.VideoResolution,540)]</visible>
-				</control>
-				<control type="image" id="81">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture fallback="flags/hdtv.png">$INFO[ListItem.studio,flags/studios/,_hd.png]</texture>
-					<visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,720) | substring(ListItem.VideoResolution,1080)]</visible>
-				</control>
-            </control>
-
-			<control type="group">
-				<posx>230</posx>
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>flags/defaultsource.png</texture>
-					<visible>!Control.IsVisible(82) + !Skin.HasSetting(nodefaultflags)</visible>
-				</control>				
-				<control type="image" id="82">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-				<texture>$INFO[ListItem.VideoCodec,flags/codec/,.png]</texture>
-				</control>		
-			</control>
-
-            <control type="group">
-				<posx>940</posx>
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
-				</control>
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>$INFO[ListItem.AudioCodec,flags/sound/,.png]</texture>
-				</control>			
-				<control type="image">
-                    <include>Furniture_ShowcaseMediaFlagsVars</include>
-                    <texture>flags/defaultsound.png</texture>
-                    <visible>!Control.IsVisible(188) + !Skin.HasSetting(nodefaultflags)</visible>
-                </control>					
-					
-            </control>
-
-            <control type="group">
-                <posx>1050</posx>
-                <control type="image">
-                    <include>Furniture_ShowcaseMediaFlagsVars</include>
-                    <texture>flags/defaultscreen.png</texture>
-                    <visible>!Control.IsVisible(187) + !Skin.HasSetting(nodefaultflags)</visible>
-                </control>
-                <control type="image" id="187">
-                    <include>Furniture_ShowcaseMediaFlagsVars</include>
-                    <texture>$INFO[ListItem.VideoResolution,flags/screen/,p.png]</texture>
-                </control>
-            </control>
-			<control type="group">
-				<posx>1160</posx>
-				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars_stars</include>
-                    <info>ListItem.StarRating</info>
-					<visible>!Skin.HasSetting(noimdbflag)</visible>
-				</control>				
-            </control>
-            
-        </control>
-    </include>
 </includes>
