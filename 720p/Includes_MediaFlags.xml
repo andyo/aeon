@@ -254,7 +254,7 @@
 		<control type="image" id="92">
 			<include>Furniture_MovieInfoFlagSound</include>
 			<texture>flags/info/dd71.png</texture>
-			<visible>[substring(listitem.audiochannels,8) + substring(listitem.audiocodec,ac-3)] | [substring(listitem.audiochannels,8) + substring(listitem.audiocodec,ac3)}</visible>
+			<visible>[substring(listitem.audiochannels,8) + substring(listitem.audiocodec,ac-3)] | [substring(listitem.audiochannels,8) + substring(listitem.audiocodec,ac3)]</visible>
 		</control>
 
 		<control type="image" id="92">
@@ -565,7 +565,7 @@
                 <height>13</height>
                 <font>Font_MultiplexInfoLabel</font>
                 <textcolor>FFFFFFFF</textcolor>		
-                <label>STUDIO TAG: /$INFO[listitem.studio,flags/studio/,.png]</label>
+                <label>STUDIO TAG: /$INFO[listitem.studio,flags/studios/,.png]</label>
             </control>
             <control type="label">
                 <posx>850</posx>
