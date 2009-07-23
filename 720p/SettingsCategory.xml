@@ -3,17 +3,13 @@
 	<allowoverlay>no</allowoverlay>
 	<controls>
 
-    <control type="multiimage">
-        <include>FullscreenDimensions</include>
-        <timeperimage>20000</timeperimage>
-        <randomize>true</randomize>
-        <fadetime>1000</fadetime>
-        <include>Animation_BackgroundFade</include>
-        <aspectratio scalediffuse="false">scale</aspectratio>
-        <imagepath>backdrops/default_settings</imagepath>
-        <info>Skin.String(CustomSettings)</info>
-		<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
-		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>		
+	<control type="multiimage">
+		<include>FullscreenDimensions</include>
+        <include>BackgroundVarsGlobal</include>
+		<imagepath>backdrops/default_settings</imagepath>
+		<info>Skin.String(CustomSettings)</info>
+		<animation effect="fade" start="0" end="100" time="200" condition="![Window.Previous(4) | Window.Previous(Home)]">WindowOpen</animation>
+		<animation effect="fade" start="100" end="0" time="200" condition="![Window.Next(4) | Window.Next(Home)]">WindowClose</animation>		
 	</control>
 
 	<control type="group">

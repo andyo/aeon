@@ -44,6 +44,7 @@
 
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
+            <include>BackgroundVarsGlobal</include>
 			<info>Skin.String(CustomWeatherFolder)</info>
 			<visible>Skin.String(CustomWeatherFolder)</visible>
 			<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
