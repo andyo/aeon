@@ -315,6 +315,16 @@
 				<onclick>Skin.Reset(CustomTVFolder)</onclick>
 				<onclick>Skin.Reset(CustomVideo)</onclick>
 				<onclick>Skin.Reset(CustomVideoFolder)</onclick>					
+				<onclick>Skin.Reset(CustomSettings)</onclick>					
+				<onclick>Skin.Reset(CustomSettingsFolder)</onclick>					
+				<onclick>Skin.Reset(Customfavourites)</onclick>					
+				<onclick>Skin.Reset(CustomfavouritesFolder)</onclick>					
+				<onclick>Skin.Reset(CustomScripts)</onclick>
+				<onclick>Skin.Reset(CustomScriptsFolder)</onclick>					
+				<onclick>Skin.Reset(CustomSignOut)</onclick>
+				<onclick>Skin.Reset(CustomSignOutFolder)</onclick>					
+				<onclick>Skin.Reset(CustomPlayDVD)</onclick>
+				<onclick>Skin.Reset(CustomPlayDVDFolder)</onclick>					
 			</control>
 
 			<include>Furniture_SettingsFrontPanel</include>
