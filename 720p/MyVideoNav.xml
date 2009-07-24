@@ -60,7 +60,7 @@
         <include>Furniture_Multiplex_Showscase_MoviesMediaFlags</include>
 <!--        <include>Furniture_Multiplex_Showscase_TVShowsMediaFlags</include> -->
         <include>Furniture_ListMediaFlags</include>
-        <include>HorizontalMovieMenu</include>		
+<!--        <include>HorizontalMovieMenu</include>		-->
         <include>VerticalMenu</include>		
 
 	</control>

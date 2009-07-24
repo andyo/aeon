@@ -34,7 +34,7 @@
 		
 
 		
-        <include>HorizontalVideoPlayListMenu</include>		
+<!--        <include>HorizontalVideoPlayListMenu</include>		-->
         <include>VerticalMenu</include>		
 
 	</control>

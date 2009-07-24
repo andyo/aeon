@@ -19,7 +19,7 @@
 		<include>Viewtype_Showcase</include>
 		<include>Furniture_Time</include>
 
-        <include>HorizontalMusicPlayListMenu</include>		
+<!--        <include>HorizontalMusicPlayListMenu</include>		-->
         <include>VerticalMenu</include>		
 	</control>
 

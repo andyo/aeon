@@ -28,7 +28,7 @@
 
 
 
-        <include>HorizontalScriptsMenu</include>		
+<!--        <include>HorizontalScriptsMenu</include>		-->
         <include>VerticalMenu</include>		
 	</control>
 

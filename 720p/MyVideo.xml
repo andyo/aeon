@@ -37,7 +37,7 @@
 		<include>Furniture_WallRSS</include>		
 		
 
-        <include>HorizontalVideoMenu</include>		
+<!--        <include>HorizontalVideoMenu</include>		-->
         <include>VerticalMenu</include>		
 
 	</control>

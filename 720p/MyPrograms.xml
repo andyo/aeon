@@ -25,7 +25,7 @@
 		
 
 		
-        <include>HorizontalProgramsMenu</include>		
+<!--        <include>HorizontalProgramsMenu</include>		-->
         <include>VerticalMenu</include>		
 	</control>
 

@@ -82,8 +82,8 @@
 		<include>Furniture_WallRSS</include>		
 		<include>Furniture_Time</include>
 		
-        <include>HorizontalPicsMenu</include>		
-        <include>VerticalMenu</include>		
+<!--        <include>HorizontalPicsMenu</include> -->
+    <include>VerticalMenu</include>		
 	</control>
 
 	<include>Furniture_DarkGradient</include>	

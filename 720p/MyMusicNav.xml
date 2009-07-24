@@ -90,7 +90,7 @@
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
 		
-        <include>HorizontalMusicMenu</include>		
+<!--        <include>HorizontalMusicMenu</include>		-->
         <include>VerticalMenu</include>		
 
 <!--    <include condition="Skin.HasSetting(videotv)">Furniture_Multiplex_Showscase_MusicMediaFlags</include>  -->

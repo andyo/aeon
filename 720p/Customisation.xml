@@ -461,52 +461,46 @@
 		<visible>Control.HasFocus(15) | ControlGroup(21).HasFocus</visible>
 		<control type="radiobutton" id="900">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>$LOCALIZE[31961] $LOCALIZE[31969]</label>
-			<onclick>Skin.ToggleSetting(fullscreenmultiplex)</onclick>
-			<selected>Skin.HasSetting(fullscreenmultiplex)</selected>
-		</control>		
-		<control type="radiobutton" id="901">
-			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>$LOCALIZE[31962] $LOCALIZE[31969]</label>
 			<onclick>Skin.ToggleSetting(tvpreview)</onclick>
 			<selected>Skin.HasSetting(tvpreview)</selected>
 		</control>		
-		<control type="radiobutton" id="902">
+		<control type="radiobutton" id="901">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>$LOCALIZE[31963] $LOCALIZE[31969]</label>
 			<onclick>Skin.ToggleSetting(movietrailers)</onclick>
 			<selected>Skin.HasSetting(movietrailers)</selected>
 		</control>		
-		<control type="radiobutton" id="903">
+		<control type="radiobutton" id="902">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>$LOCALIZE[31964] $LOCALIZE[31969]</label>
 			<onclick>Skin.ToggleSetting(nocertflag)</onclick>
 			<selected>!Skin.HasSetting(nocertflag)</selected>
 		</control>		
-		<control type="radiobutton" id="904">
+		<control type="radiobutton" id="903">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>$LOCALIZE[31965] $LOCALIZE[31969]</label>
 			<onclick>Skin.ToggleSetting(noimdbflag)</onclick>
 			<selected>!Skin.HasSetting(noimdbflag)</selected>
 		</control>		
-		<control type="radiobutton" id="905">
+		<control type="radiobutton" id="904">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>$LOCALIZE[31966] $LOCALIZE[31969]</label>
 			<onclick>Skin.ToggleSetting(tvposterview)</onclick>
 			<selected>Skin.HasSetting(tvposterview)</selected>
 		</control>		
-		<control type="button" id="906">
+		<control type="button" id="905">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>$LOCALIZE[31973]</label>
 			<onclick>Skin.SetPath(moviefolder)</onclick>
 		</control>		
-		<control type="radiobutton" id="907">
+		<control type="radiobutton" id="906">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>$LOCALIZE[31974]: $LOCALIZE[31010]</label>
 			<onclick>Skin.ToggleSetting(dynamicflowmusic)</onclick>
 			<selected>Skin.HasSetting(dynamicflowmusic)</selected>
 		</control>		
-		<control type="radiobutton" id="908">
+		<control type="radiobutton" id="907">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>$LOCALIZE[31974]: $LOCALIZE[31014]</label>
 			<onclick>Skin.ToggleSetting(dynamicflowtv)</onclick>
