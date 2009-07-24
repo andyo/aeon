@@ -2774,8 +2774,6 @@
                 <include>Animation_HideShowcase</include>
 				<include>Animation_CommonFade</include>
             </control>
-
-			<include condition="Skin.HasSetting(videomovies)">Furniture_ShowcaseMediaFlags</include>
 			
             <control type="group">
 				<visible>Control.IsVisible(57)</visible>

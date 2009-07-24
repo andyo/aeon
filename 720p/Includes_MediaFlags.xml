@@ -527,7 +527,7 @@
         </control>
 	</include>
 	
-	<include name="Furniture_Multiplex_Showscase_MoviesMediaFlags">
+	<include name="Furniture_Multiplex_Showscase_MediaFlags">
     <!-- DEBUG DAGTA -->
         <control type="group">
                 <visible>Skin.HasSetting(debugflags)</visible>

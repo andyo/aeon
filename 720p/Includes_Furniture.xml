@@ -1088,7 +1088,7 @@
 			<animation effect="fade" delay="1500" start="0" end="100" time="400">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
             <animation effect="slide" time="1000" start="0,300" end="0,0" tween="cubic" easing="out">WindowOpen</animation>	            
-            <animation effect="slide" start="25,0" end="25,0" time="0" condition="Skin.HasSetting(fullscreenmultiplex)">Conditional</animation>
+            <animation effect="slide" start="25,0" end="25,0" time="0" condition="Skin.HasSetting(FullscreenMusicMultiplex)">Conditional</animation>
 		
 			<visible>Control.IsVisible(50) + Player.HasAudio</visible>
 			<control type="image">

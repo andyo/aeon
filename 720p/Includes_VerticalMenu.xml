@@ -1079,55 +1079,63 @@
 				<onclick>Skin.ToggleSetting(FullscreenMusicMultiplex)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenMusicMultiplex)</selected>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + Skin.HasSetting(music) + </visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + Skin.HasSetting(music)</visible>
+			</control>
+			<control type="radiobutton" id="30276">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31968]</label>
+				<onclick>Skin.ToggleSetting(FullscreenCommonMultiplex)</onclick>
+				<onclick>XBMC.ReloadSkin</onclick>
+				<selected>Skin.HasSetting(FullscreenCommonMultiplex)</selected>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + !Skin.HasSetting(music) +!Skin.HasSetting(videotv) + !Skin.HasSetting(videomovies)</visible>
 			</control>
 		</include>
 
 
 		<include name="VerticalMenu_ListButtons">
-			<control type="radiobutton" id="30276">
+			<control type="radiobutton" id="30277">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(movieslistfull)</onclick>
 				<selected>Skin.HasSetting(movieslistfull)</selected>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(50)</visible>
 			</control>
-			<control type="radiobutton" id="30277">
+			<control type="radiobutton" id="30278">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(tvshowslistfull)</onclick>
 				<selected>Skin.HasSetting(tvshowslistfull)</selected>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(tvshows)</visible>
 			</control>
-			<control type="radiobutton" id="30278">
+			<control type="radiobutton" id="30279">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(tvseasonslistfull)</onclick>
 				<selected>Skin.HasSetting(tvseasonslistfull)</selected>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(seasons)]</visible>
 			</control>
-			<control type="radiobutton" id="30279">
+			<control type="radiobutton" id="30280">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(tvepisodeslistfull)</onclick>
 				<selected>Skin.HasSetting(tvepisodeslistfull)</selected>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(episodes)</visible>
 			</control>
-			<control type="radiobutton" id="30280">
+			<control type="radiobutton" id="30281">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musicalbumslistfull)</onclick>
 				<selected>Skin.HasSetting(musicalbumslistfull)</selected>
 				<visible>Control.IsVisible(50) + Container.Content(albums) + !Window.IsActive(MyMusic)</visible>
 			</control>
-			<control type="radiobutton" id="30281">
+			<control type="radiobutton" id="30282">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musicsongslistfull)</onclick>
 				<selected>Skin.HasSetting(musicsongslistfull)</selected>
 				<visible>Control.IsVisible(50) + Container.Content(songs) + !Window.IsActive(MyMusic)</visible>
 			</control>
-<!--			<control type="radiobutton" id="30282">
+<!--			<control type="radiobutton" id="30283">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musiclistfull)</onclick>
@@ -1141,7 +1149,7 @@
 		
 		<include name="VerticalMenu_DVDCaseButtons">
 			<!-- DvD Cover An/Aus >>>>>-->
-			<control type="radiobutton" id="30283">
+			<control type="radiobutton" id="30284">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31951]</label>
 				<onclick>Skin.ToggleSetting(nomoviedvdcase)</onclick>
@@ -1150,7 +1158,7 @@
 				<visible>Container.Content(movies) + [Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)]</visible>
 			</control>
 					
-			<control type="radiobutton" id="30284">
+			<control type="radiobutton" id="30285">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31951]</label>
 				<onclick>Skin.ToggleSetting(notvdvdcase)</onclick>
@@ -1159,7 +1167,7 @@
 				<visible>Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes)</visible>
 			</control>
 					
-			<control type="radiobutton" id="302285">
+			<control type="radiobutton" id="302286">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31951]</label>
 				<onclick>Skin.ToggleSetting(noseasondvdcase)</onclick>
@@ -1168,7 +1176,7 @@
 				<visible>Container.Content(seasons)</visible>
 			</control>
 					
-			<control type="radiobutton" id="30286">
+			<control type="radiobutton" id="30287">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31951]</label>
 				<onclick>Skin.ToggleSetting(noepisodedvdcase)</onclick>
@@ -1177,7 +1185,7 @@
 				<visible>Container.Content(episodes)</visible>
 			</control>
 			
-			<!--<control type="togglebutton" id="30287">
+			<!--<control type="togglebutton" id="30288">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31952]</label>
 				<onclick>Skin.ToggleSetting(musicdvdcase)</onclick>
@@ -1189,7 +1197,7 @@
 		
 
 		<include name="VerticalMenu_FanartButtons">
-			<control type="radiobutton" id="30288">
+			<control type="radiobutton" id="30289">
 				<include>VerticalMenu_RadioButton</include>				
 				<label>$LOCALIZE[31064]</label>
 				<onclick>Skin.ToggleSetting(nomoviefanart)</onclick>
@@ -1197,7 +1205,7 @@
 				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies)</visible>
 			</control>
 					
-			<control type="radiobutton" id="30289">
+			<control type="radiobutton" id="30290">
 				<include>VerticalMenu_RadioButton</include>				
 				<label>$LOCALIZE[31064]</label>
 				<onclick>Skin.ToggleSetting(notvfanart)</onclick>
@@ -1205,7 +1213,7 @@
 				<visible>Window.IsActive(25) + Skin.HasSetting(videotv)</visible>
 			</control>
 			
-			<control type="radiobutton" id="30290">
+			<control type="radiobutton" id="30291">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31064]</label>
 				<onclick>Skin.ToggleSetting(nomusicfanart)</onclick>
@@ -1216,13 +1224,13 @@
 		
 
 		<include name="VerticalMenu_FilesButtons">
-			<control type="button" id="30291">
+			<control type="button" id="30292">
 				<label>31057</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReplaceWindow(MyVideoFiles)</onclick>
 				<visible>Window.IsActive(25)</visible>
 			</control>
-			<control type="button" id="30292">
+			<control type="button" id="30293">
 				<label>31057</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReplaceWindow(MyMusicFiles)</onclick>
@@ -1232,13 +1240,13 @@
 
 
 		<include name="VerticalMenu_LibraryButtons">
-			<control type="button" id="30293">
+			<control type="button" id="30294">
 				<label>31068</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReplaceWindow(MyVideoLibrary)</onclick>
 				<visible>Window.IsActive(MyVideos)</visible>
 			</control>
-			<control type="button" id="30294">
+			<control type="button" id="30295">
 				<label>31068</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReplaceWindow(MyMusicLibrary)</onclick>
@@ -1283,7 +1291,7 @@
 		
 
 		<include name="VerticalMenu_OverlayButton">
-			<control type="radiobutton" id="30295">
+			<control type="radiobutton" id="30296">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31066]</label>
 				<onclick>Skin.ToggleSetting(nooverlays)</onclick>
@@ -1294,19 +1302,19 @@
 		
 
 		<include name="VerticalMenu_SetupButtons">
-			<control type="button" id="30296">
+			<control type="button" id="30297">
 				<label>31016</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ActivateWindow(MusicSettings)</onclick>
 				<visible>Window.IsActive(502) | Window.IsActive(500) | Window.IsActive(501) + !Skin.HasSetting(nomenusettings)  </visible>
 			</control>
-			<control type="button" id="30297">
+			<control type="button" id="30298">
 				<label>31016</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ActivateWindow(VideosSettings)</onclick>
 				<visible>Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28) + !Skin.HasSetting(nomenusettings)</visible>			
 			</control>
-			<control type="button" id="30298">
+			<control type="button" id="30299">
 				<label>31016</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ActivateWindow(ProgramsSettings)</onclick>
@@ -1316,23 +1324,23 @@
 		
 
 		<include name="VerticalMenu_PlaylistButtons">
-			<control type="togglebutton" id="30299">
+			<control type="togglebutton" id="30300">
 				<label>ORDER: NORMAL</label>
 				<altlabel>ORDER: RANDOM</altlabel>
 				<include>VerticalMenu_ToggleButton</include>
 				<visible>Window.IsActive(500)</visible>
 			</control>
-			<control type="button" id="30300">
+			<control type="button" id="30301">
 				<label>REPEAT</label>
 				<include>VerticalMenu_Button</include>
 				<visible>Window.IsActive(500)</visible>
 			</control>
-			<control type="button" id="30301">
+			<control type="button" id="30302">
 				<label>190</label>
 				<include>VerticalMenu_Button</include>
 				<visible>Window.IsActive(500)</visible>
 			</control>
-			<control type="button" id="30302">
+			<control type="button" id="30303">
 				<label>192</label>
 				<include>VerticalMenu_Button</include>
 				<visible>Window.IsActive(500)</visible>
@@ -1340,20 +1348,20 @@
 		</include>
 		
 		<include name="VerticalMenu_MediaDebugButtons">
-			<control type="button" id="30303">
+			<control type="button" id="30304">
 				<label>31607</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<visible>Skin.HasSetting(debug)</visible>
 			</control>
-            <control type="radiobutton" id="30304">
+            <control type="radiobutton" id="30305">
 				<include>VerticalMenu_RadioButton</include>
                 <label>Debug Flags</label>
 				<onclick>Skin.ToggleSetting(debugflags)</onclick>
 				<selected>Skin.HasSetting(debugflags)</selected>
 				<visible>Skin.HasSetting(debug)</visible>
             </control>
-			<control type="radiobutton" id="30305">
+			<control type="radiobutton" id="30306">
 				<include>VerticalMenu_RadioButton</include>
 				<label>31608</label>
 				<onclick>Skin.ToggleSetting(debuginfo)</onclick>
@@ -1364,21 +1372,21 @@
 
 
 		<include name="VerticalMenu_PosterThumbButtons">
-			<control type="radiobutton" id="30306">
+			<control type="radiobutton" id="30307">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(listvideosquare)</onclick>
 				<selected>!Skin.HasSetting(listvideosquare)</selected>
 				<visible>Control.IsVisible(50) + Window.IsActive(24)</visible>
 			</control>
-			<control type="radiobutton" id="30307">
+			<control type="radiobutton" id="30308">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(listgamessquare)</onclick>
 				<selected>!Skin.HasSetting(listgamessquare)</selected>
 				<visible>Control.IsVisible(50) + Window.IsActive(35)</visible>
 			</control>
-			<control type="radiobutton" id="30308">
+			<control type="radiobutton" id="30309">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(tvposterview)</onclick>

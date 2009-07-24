@@ -57,7 +57,7 @@
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
 		
-        <include>Furniture_Multiplex_Showscase_MoviesMediaFlags</include>
+        <include>Furniture_Multiplex_Showscase_MediaFlags</include>
 <!--        <include>Furniture_Multiplex_Showscase_TVShowsMediaFlags</include> -->
         <include>Furniture_ListMediaFlags</include>
 <!--        <include>HorizontalMovieMenu</include>		-->
