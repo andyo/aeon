@@ -509,17 +509,28 @@
 
 	</control>
 
-        <control type="label">
-            <posx>1180</posx>
-            <posy>414</posy>
-            <width>500</width>
-            <height>49</height>
-            <aligny>center</aligny>
-            <align>right</align>
-            <font>Font_SettingsOptions</font>
-            <label>$INFO[Skin.String(moviefolder)]</label>                
-		<visible>Control.HasFocus(15) | ControlGroup(21).HasFocus</visible>
-        </control>
+    <control type="label">
+        <posx>1180</posx>
+        <posy>365</posy>
+        <width>500</width>
+        <height>49</height>
+        <aligny>center</aligny>
+        <align>right</align>
+        <font>Font_SettingsOptions</font>
+        <label>$INFO[Skin.String(moviefolder)]</label>                
+        <visible>Control.HasFocus(15) | ControlGroup(21).HasFocus</visible>
+    </control>
+    
+    <control type="label">
+        <posx>110</posx>
+        <posy>635</posy>
+        <width>500</width>
+        <height>49</height>
+        <aligny>center</aligny>
+        <align>right</align>
+        <font>Font_SettingsOptions</font>
+        <label>VER: 1.1</label>                
+    </control>
 
 	<include>Furniture_SettingsFrontPanel</include>
 	
