@@ -29,7 +29,8 @@
 	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
-		<include>Furniture_MediaPanel</include>
+        <include>Furniture_FloorBack</include>
+        <include>Furniture_shadow</include>
 		<include>Objects_ShowcaseMenuPanel</include>
 
 		<include>Viewtype_Wall</include>
