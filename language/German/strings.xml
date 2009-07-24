@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
 <!-- $Revision: 204$ -->
 <!--  strings 31000 thru 31999 reserved for skins  -->
+<!--added translations by azido -->
 
  <strings>
 	<string id="31000">0.9 (STARK)</string> <!-- DO NOT CHANGE -->
@@ -54,21 +55,21 @@
 	<string id="31055">STAPEL: EIN</string> 
 	<string id="31056">STAPEL: AUS</string>
 	<string id="31057">DATEIEN</string>
-	<string id="31058">GESEHENE FILME: EIN</string>
-	<string id="31059">GESEHENE FILME: AUS</string>
+	<string id="31058">GESEHENE AUSBLEN.</string>
+	<string id="31059">POSTER VERWENDEN</string>
 	<string id="31060">LAYOUT: FLACH</string>
 	<string id="31061">LAYOUT: FLUSS</string>
 	<string id="31062">STAFFEL</string>
 	<string id="31063">EPISODE</string>
-	<string id="31064">FANART: AUS</string>
+	<string id="31064">FANART ANZEIGEN</string>
 	<string id="31065">FANART: EIN</string>
-	<string id="31066">HINTERGRUND: EIN</string>
-	<string id="31067">HINTERGRUND: AUS</string>
+	<string id="31066">'GESEHEN' ZEIGEN</string>
+	<string id="31067">HINTERGRUND</string>
 	<string id="31068">BIBLIOTHEK: EIN</string>
-	<string id="31069">MARKIERUNG: EIN</string>
-	<string id="31070">MARKIERUNG: AUS</string>
-	<string id="31071">COVERBILD: EINZELN</string>
-	<string id="31072">COVERBILD: MULTI</string>
+	<string id="31069">MEDIEN-MARKIERUNG</string>
+	<string id="31070">INFO-ANZEIGE</string>
+	<string id="31071">COVER: EINZELN</string>
+	<string id="31072">ERWEITERTE</string>
 	<string id="31073">GITTER: STANDARD</string>
 	<string id="31074">GITTER: MAX</string>
   
@@ -391,7 +392,7 @@
 
 	<string id="31750">WALL</string>
 	<string id="31751">SHOWCASE</string>
-	<string id="31752">LIST</string>
+	<string id="31752">LISTE</string>
 	<string id="31753">PANEL</string>	
 	<string id="31754">AUSWAHL</string>	
 	<string id="31755">HOCH/RUNTER/RECHTS/LINKS ANSICHT WÄHLEN[CR]KLICKEN ZUM ABBRUCH</string>	
@@ -431,27 +432,27 @@
 	<string id="31904">(BETA)TESTS</string>
 	<string id="31905">AEONPROJECT WEBSITE</string>
 	<string id="31906">DANKE AN</string>
-	<string id="31907">ALLE IM XBMC FORUMS</string>
+	<string id="31907">ALLE IM XBMC FORUM</string>
 	<string id="31908">...UND AN DICH</string>
 	<string id="31909">AEON WILL RETURN IN</string>
 	<string id="31910">WETTER HINTERGRÜNDE</string>
 
 <!-- ShowMix -->
-	<string id="31042">FLOOR: LIGHT</string>
-	<string id="31043">FLOOR: NIGHT</string>
-	<string id="31044">ART</string>
-	<string id="31045">THUMB</string>
-	<string id="31046">PLOT</string>
-	<string id="31047">STYLE</string>
-	<string id="31048">TRIGGER</string>
+
+	<string id="31042">BODEN: HELL</string>
+	<string id="31043">BODEN: DUNKEL</string>
+	<string id="31044">FANART</string>
+	<string id="31045">DIASCHAU</string>
+	<string id="31046">4 BILDER+PLOT</string>
+	<string id="31047">STIL</string>
+	<string id="31048">MANUELL</string>
 	<string id="31049">AUTO</string>
 
-
 	<string id="31951">FAVORITEN</string>  <!-- FAVOURITES -->
-	<string id="31952">FENSTER</string>
+	<string id="31952">INFO-FENSTER</string>
 	<string id="31953">HELL</string>
 	<string id="31954">DUNKEL</string>
-	<string id="31955">SCHATTIERUNG</string>
+	<string id="31955">FARBTON</string>
 	<string id="31956">GRÜN</string>
 	<string id="31957">GRAU</string>
 	<string id="31958">SCHWARZ</string>
@@ -460,14 +461,14 @@
 	<string id="31961">VOLLBILD MULTIPLEX</string>
 	<string id="31962">EPISODEN-VORSCHAU</string>
 	<string id="31963">FILM TRAILER</string>
-	<string id="31964">ALTERSFREIGABE-MARKIERUNG</string>
+	<string id="31964">ALTERSFREIGABE-TEXT AUSBLENDEN (AN=NUR GRAFIK VERWENDEN)</string>
 	<string id="31965">IMDB MARKIERUNG</string>
 	<string id="31966">TV POSTER ANSICHT</string>
 	<string id="31969">AN/AUS</string>
-	<string id="31967">VERSCHIEDENES</string>
-	<string id="31968">VOLLBILD</string>
+	<string id="31967">SONSTIGE OPTIONEN</string>
+	<string id="31968">VOLLBILD NUTZEN</string>
 	<string id="31970">AKTUELL</string>
-	<string id="31971">ANSICHTS-OPTIONEN</string>
+	<string id="31971">BESTIMME DAS AUSSEHEN:</string>
 	<string id="31972">VERTIKALES MENÜ</string>
 	<string id="31973">POSITION DES ORDNERS MIT FILMEN (FÜR 'EXTRATHUMBS')</string>
 	<string id="31974">DYNAMISCHER FLUSS</string>
