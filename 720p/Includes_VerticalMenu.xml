@@ -337,7 +337,7 @@
 						<control type="image">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texture>viewselect/vertical/vs_icon_multiplex_poster_window.png</texture>
-							<visible>Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexposter) + !Skin.HasSetting(fullscreenmultiplex)</visible>
+							<visible>Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexposter) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 						</control>
 						<control type="image">
 							<include>VerticalMenu_ViewChangeImage</include>
@@ -352,7 +352,7 @@
 						<control type="image">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texture>viewselect/vertical/vs_icon_multiplex_art_window.png</texture>
-							<visible>Skin.HasSetting(videotv) + Skin.HasSetting(multiplextvfanart) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+							<visible>Skin.HasSetting(videotv) + !Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 						</control>
 
 						<control type="image">
@@ -383,7 +383,7 @@
 						<control type="image">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texture>viewselect/vertical/vs_icon_multiplex_art_fullscreen.png</texture>
-							<visible>Skin.HasSetting(videotv) + Skin.HasSetting(multiplextvfanart) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+							<visible>Skin.HasSetting(videotv) + !Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 						</control>
 					</control>
 						
@@ -505,7 +505,7 @@
 							<onclick>Skin.SetBool(multiplextvfanart)</onclick>
 							<onclick>Skin.Reset(multiplextvbigthumb)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(54) + !Skin.HasSetting(multiplextvfanart) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+							<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(54) + Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 						</control>
 						<control type="button" id="30030">
 							<include>VerticalMenu_ViewChangeImage</include>
@@ -524,7 +524,7 @@
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Skin.SetBool(multiplextvfanart)</onclick>
 							<onclick>Skin.Reset(multiplextvbigthumb)</onclick>
-							<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(54) + !Skin.HasSetting(multiplextvfanart) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+							<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(54) + Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 						</control>
 						<control type="button" id="30032">
 							<include>VerticalMenu_ViewChangeImage</include>
@@ -885,14 +885,14 @@
 				<label>$LOCALIZE[31047]: $LOCALIZE[31063]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + Skin.HasSetting(multiplextvbigthumb)</visible>
+				<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(54) + Skin.HasSetting(multiplextvbigthumb)</visible>
 			</control>		
 			<control type="button" id="30246">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31047]: $LOCALIZE[31064]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(54)] + Skin.HasSetting(multiplextvfanart)</visible>
+				<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(54) + !Skin.HasSetting(multiplextvbigthumb)</visible>
 			</control>		
 		</include>
 		
