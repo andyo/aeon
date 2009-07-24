@@ -893,7 +893,6 @@
 	</include>
 	
 <!-- Home Now Playing panel -->
-
 	<include name="Furniture_HomeNowPlayingObjects">
 		<control type="image">
 			<posx>18</posx>
@@ -983,102 +982,117 @@
 		</control>	
 	</include>
 
-	<include name="Furniture_HomeNowPlaying">
-		<control type="image">
-			<posx>0</posx>
-			<posy>240</posy>
-			<width>1280</width>
-			<height>630</height>
-			<texture>home/nowplaying_shadow.png</texture>
-			<visible>Player.HasAudio</visible>
-			<include>Animation_VisibleChange200</include>
-			<include>Conditions_HiddenByAeonAssistant</include>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="fade" start="0" end="100" delay="500" time="400" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="200" />
-			</animation>
-			<animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-150" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-		</control>
+	<include name="Furniture_HomeNowPlaying">  
 
 		<control type="group">
-			<posx>0</posx>
-			<posy>0</posy>
-			<height>720</height>
-			<width>1280</width>
-			<visible>!Skin.HasSetting(lowerrss) + system.getbool(lookandfeel.enablerssfeeds)]</visible>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="slide" start="-800,0" end="0,0" delay="500" time="200" easing="out" tween="quadratic" />
-				<effect type="fade" start="0" end="100" delay="500" time="200" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="slide" start="0,0" end="-800,0" time="200" easing="in" tween="quadratic" />
-				<effect type="fade" start="100" end="0" time="200" />
-			</animation>
-			<animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-150" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-			<include>Animation_VisibleChange200</include>
-			<include>Furniture_HomeNowPlayingObjects</include>
-			<include>Furniture_HomeNowPlayingInfo</include>
-		</control>
-		
+            <visible>Skin.HasSetting(homevis) + Player.HasVideo</visible>
+            <control type="image">
+                <include>FullscreenDimensions</include>
+                <texture>common/black.png</texture>
+            </control>				
+            <control type="videowindow">
+                <include>FullscreenDimensions</include>
+            </control> 
+        </control> 
+
 		<control type="group">
-			<posx>0</posx>
-			<posy>-30</posy>
-			<height>720</height>
-			<width>1280</width>
-			<visible>Skin.HasSetting(lowerrss) + system.getbool(lookandfeel.enablerssfeeds)</visible>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="slide" start="-800,0" end="0,0" delay="500" time="200" easing="out" tween="quadratic" />
-				<effect type="fade" start="0" end="100" delay="500" time="200" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="200" />
-			</animation>
-			<animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-120" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-			<animation effect="slide" time="200" start="0,0" end="0,30" condition="ControlGroup(940).HasFocus() | ControlGroup(941).HasFocus() | ControlGroup(942).HasFocus()">Conditional</animation>			
-			<include>Animation_VisibleChange200</include>
-			<include>Furniture_HomeNowPlayingObjects</include>
-			<include>Furniture_HomeNowPlayingInfo</include>	
-		</control>
-		
-		<control type="group">
-			<posx>0</posx>
-			<posy>-15</posy>
-			<height>720</height>
-			<width>1280</width>
-			<visible>Skin.HasSetting(lowerrss) + !system.getbool(lookandfeel.enablerssfeeds)</visible>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="slide" start="-800,0" end="0,0" delay="500" time="200" easing="out" tween="quadratic" />
-				<effect type="fade" start="0" end="100" delay="500" time="200" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="200" />
-			</animation>
-			<animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-125" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-			<include>Animation_VisibleChange200</include>
-			<include>Furniture_HomeNowPlayingObjects</include>
-			<include>Furniture_HomeNowPlayingInfo</include>			
-		</control>
-		
-		<control type="group">
-			<posx>0</posx>
-			<posy>-15</posy>
-			<height>720</height>
-			<width>1280</width>
-			<visible>![Skin.HasSetting(lowerrss) | system.getbool(lookandfeel.enablerssfeeds)]</visible>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="slide" start="-800,0" end="0,0" delay="500" time="200" easing="out" tween="quadratic" />
-				<effect type="fade" start="0" end="100" delay="500" time="200" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="200" />
-			</animation>
-			<animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-150" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-			<animation effect="slide" time="200" start="0,0" end="0,20" condition="ControlGroup(940).HasFocus() | ControlGroup(941).HasFocus() | ControlGroup(942).HasFocus()">Conditional</animation>			
-			<include>Animation_VisibleChange200</include>
-			<include>Furniture_HomeNowPlayingObjects</include>
-			<include>Furniture_HomeNowPlayingInfo</include>			
+            <visible>Skin.HasSetting(homevis) + Player.HasAudio</visible>
+            <control type="image">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>1280</width>
+                <height>630</height>
+                <texture>home/nowplaying_shadow.png</texture>
+                <visible>Player.HasAudio</visible>
+                <include>Animation_VisibleChange200</include>
+                <include>Conditions_HiddenByAeonAssistant</include>
+                <animation type="WindowOpen" reversible="false">
+                    <effect type="fade" start="0" end="100" delay="500" time="400" />
+                </animation>
+                <animation type="WindowClose" reversible="false">
+                    <effect type="fade" start="100" end="0" time="200" />
+                </animation>
+                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-150" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            </control>
+
+            <control type="group">
+                <posx>0</posx>
+                <posy>0</posy>
+                <height>720</height>
+                <width>1280</width>
+                <visible>!Skin.HasSetting(lowerrss) + system.getbool(lookandfeel.enablerssfeeds)]</visible>
+                <animation type="WindowOpen" reversible="false">
+                    <effect type="slide" start="-800,0" end="0,0" delay="500" time="200" easing="out" tween="quadratic" />
+                    <effect type="fade" start="0" end="100" delay="500" time="200" />
+                </animation>
+                <animation type="WindowClose" reversible="false">
+                    <effect type="slide" start="0,0" end="-800,0" time="200" easing="in" tween="quadratic" />
+                    <effect type="fade" start="100" end="0" time="200" />
+                </animation>
+                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-150" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                <include>Animation_VisibleChange200</include>
+                <include>Furniture_HomeNowPlayingObjects</include>
+                <include>Furniture_HomeNowPlayingInfo</include>
+            </control>
+            
+            <control type="group">
+                <posx>0</posx>
+                <posy>-30</posy>
+                <height>720</height>
+                <width>1280</width>
+                <visible>Skin.HasSetting(lowerrss) + system.getbool(lookandfeel.enablerssfeeds)</visible>
+                <animation type="WindowOpen" reversible="false">
+                    <effect type="slide" start="-800,0" end="0,0" delay="500" time="200" easing="out" tween="quadratic" />
+                    <effect type="fade" start="0" end="100" delay="500" time="200" />
+                </animation>
+                <animation type="WindowClose" reversible="false">
+                    <effect type="fade" start="100" end="0" time="200" />
+                </animation>
+                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-120" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                <animation effect="slide" time="200" start="0,0" end="0,30" condition="ControlGroup(940).HasFocus() | ControlGroup(941).HasFocus() | ControlGroup(942).HasFocus()">Conditional</animation>			
+                <include>Animation_VisibleChange200</include>
+                <include>Furniture_HomeNowPlayingObjects</include>
+                <include>Furniture_HomeNowPlayingInfo</include>	
+            </control>
+            
+            <control type="group">
+                <posx>0</posx>
+                <posy>-15</posy>
+                <height>720</height>
+                <width>1280</width>
+                <visible>Skin.HasSetting(lowerrss) + !system.getbool(lookandfeel.enablerssfeeds)</visible>
+                <animation type="WindowOpen" reversible="false">
+                    <effect type="slide" start="-800,0" end="0,0" delay="500" time="200" easing="out" tween="quadratic" />
+                    <effect type="fade" start="0" end="100" delay="500" time="200" />
+                </animation>
+                <animation type="WindowClose" reversible="false">
+                    <effect type="fade" start="100" end="0" time="200" />
+                </animation>
+                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-125" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                <include>Animation_VisibleChange200</include>
+                <include>Furniture_HomeNowPlayingObjects</include>
+                <include>Furniture_HomeNowPlayingInfo</include>			
+            </control>
+            
+            <control type="group">
+                <posx>0</posx>
+                <posy>-15</posy>
+                <height>720</height>
+                <width>1280</width>
+                <visible>![Skin.HasSetting(lowerrss) | system.getbool(lookandfeel.enablerssfeeds)]</visible>
+                <animation type="WindowOpen" reversible="false">
+                    <effect type="slide" start="-800,0" end="0,0" delay="500" time="200" easing="out" tween="quadratic" />
+                    <effect type="fade" start="0" end="100" delay="500" time="200" />
+                </animation>
+                <animation type="WindowClose" reversible="false">
+                    <effect type="fade" start="100" end="0" time="200" />
+                </animation>
+                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-150" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                <animation effect="slide" time="200" start="0,0" end="0,20" condition="ControlGroup(940).HasFocus() | ControlGroup(941).HasFocus() | ControlGroup(942).HasFocus()">Conditional</animation>			
+                <include>Animation_VisibleChange200</include>
+                <include>Furniture_HomeNowPlayingObjects</include>
+                <include>Furniture_HomeNowPlayingInfo</include>			
+            </control>		
 		</control>		
 
 	</include>
