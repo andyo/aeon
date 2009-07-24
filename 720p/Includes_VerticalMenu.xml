@@ -571,7 +571,7 @@
 						<control type="image">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texture>viewselect/vertical/vs_icon_multiplex_green_focus.png</texture>
-							<visible>Skin.HasSetting(shadegreen)</visible>
+							<visible>!Skin.HasSetting(shadegrey) + !Skin.HasSetting(shadeblack)</visible>
 						</control>
 						<control type="image">
 							<include>VerticalMenu_ViewChangeImage</include>
