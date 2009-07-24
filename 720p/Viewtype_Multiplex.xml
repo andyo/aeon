@@ -9702,7 +9702,7 @@
 					<effect type="slide" start="0" end="-577" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
-                    <visible>!Skin.HasSetting(dynamicflowtv) | [Skin.HasSetting(dynamicflowtv) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6))]]</visible>
+                    <visible>!Skin.HasSetting(dynamicflowtv) | [Skin.HasSetting(dynamicflowtv) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6)]]</visible>
                     <control type="image">
                         <include>MultiplexTVShowsThumb</include>
                         <info>ListItem(-3).Thumb</info>
