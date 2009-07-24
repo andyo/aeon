@@ -378,6 +378,14 @@
   <string id="31910">VÄDERBAKGRUNDER</string>
 
 <!-- ShowMix -->
+	<string id="31042">FLOOR: LIGHT</string>
+	<string id="31043">FLOOR: NIGHT</string>
+	<string id="31044">ART</string>
+	<string id="31045">THUMB</string>
+	<string id="31046">PLOT</string>
+	<string id="31047">STYLE</string>
+	<string id="31048">TRIGGER</string>
+	<string id="31049">AUTO</string>
 
 	<string id="31951">FAVS</string>  <!-- FAVOURITES -->
 	<string id="31952">WINDOW</string>
