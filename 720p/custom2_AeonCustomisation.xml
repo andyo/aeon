@@ -308,28 +308,7 @@
 				<texturenofocus>-</texturenofocus>
 				<pulseonselect>true</pulseonselect>
 				<include>Animation_CommonFadeFocus</include>
-				<onclick>Skin.Reset(CustomMusic)</onclick>
-				<onclick>Skin.Reset(CustomMusicFolder)</onclick>
-				<onclick>Skin.Reset(CustomGames)</onclick>
-				<onclick>Skin.Reset(CustomGamesFolder)</onclick>					
-				<onclick>Skin.Reset(CustomPictures)</onclick>
-				<onclick>Skin.Reset(CustomPicturesFolder)</onclick>					
-				<onclick>Skin.Reset(CustomMovies)</onclick>
-				<onclick>Skin.Reset(CustomMoviesFolder)</onclick>					
-				<onclick>Skin.Reset(CustomTV)</onclick>
-				<onclick>Skin.Reset(CustomTVFolder)</onclick>
-				<onclick>Skin.Reset(CustomVideo)</onclick>
-				<onclick>Skin.Reset(CustomVideoFolder)</onclick>					
-				<onclick>Skin.Reset(CustomSettings)</onclick>					
-				<onclick>Skin.Reset(CustomSettingsFolder)</onclick>					
-				<onclick>Skin.Reset(Customfavourites)</onclick>					
-				<onclick>Skin.Reset(CustomfavouritesFolder)</onclick>					
-				<onclick>Skin.Reset(CustomScripts)</onclick>
-				<onclick>Skin.Reset(CustomScriptsFolder)</onclick>					
-				<onclick>Skin.Reset(CustomSignOut)</onclick>
-				<onclick>Skin.Reset(CustomSignOutFolder)</onclick>					
-				<onclick>Skin.Reset(CustomPlayDVD)</onclick>
-				<onclick>Skin.Reset(CustomPlayDVDFolder)</onclick>					
+				<onclick>Skin.ResetSettings</onclick>
 			</control>
 
 			<include>Furniture_SettingsFrontPanel</include>
