@@ -94,7 +94,7 @@
         <include>VerticalMenu</include>		
 
 <!--    <include condition="Skin.HasSetting(videotv)">Furniture_Multiplex_Showscase_MusicMediaFlags</include>  -->
-        <include>Furniture_Multiplex_Showscase_MoviesMediaFlags</include>
+        <include>Furniture_Multiplex_Showscase_MediaFlags</include>
 <!--        <include>Furniture_Multiplex_Showscase_TVShowsMediaFlags</include> -->
         <include>Furniture_ListMediaFlags</include>
 	
