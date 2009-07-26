@@ -309,6 +309,7 @@
 				<pulseonselect>true</pulseonselect>
 				<include>Animation_CommonFadeFocus</include>
 				<onclick>Skin.ResetSettings</onclick>
+                <onclick>XBMC.ReloadSkin</onclick>
 			</control>
 
 			<include>Furniture_SettingsFrontPanel</include>
