@@ -89,7 +89,7 @@
 		<posx>0</posx>
 		<posy>0</posy>
 		<width>936</width>
-		<height>49</height>
+		<height>39</height>
 		<font>Font_SettingsOptions</font>
 		<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
 		<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
@@ -106,7 +106,7 @@
 		<posx>0</posx>
 		<posy>0</posy>
 		<width>936</width>
-		<height>49</height>
+		<height>39</height>
 		<font>Font_SettingsOptions</font>
 		<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
 		<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
@@ -128,7 +128,7 @@
 		<posx>0</posx>
 		<posy>0</posy>
 		<width>936</width>
-		<height>49</height>
+		<height>39</height>
 		<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
 		<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
 		<textcolor>FFbbbbbb</textcolor>
