@@ -5,7 +5,11 @@
 		<control type="multiimage">
 			<description>Settings Backdrop</description>
 			<include>FullscreenDimensions</include>
-            <include>BackgroundVarsGlobal</include>
+            <timeperimage>20000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>1000</fadetime>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <include>Animation_BackgroundFade</include>
 			<imagepath>backdrops/default_settings</imagepath>
 			<info>Skin.String(CustomSettings)</info>
 			<animation effect="fade" start="0" end="100" time="200" condition="Window.Previous(Home) | Skin.HasSetting(bmtransit)">WindowOpen</animation>
@@ -102,8 +106,9 @@
 						
 						<include>VirtualMainMenu</include>
 						<include>VirtualMainMenuOptions</include>
-						
 					</control>
+
+                    <include>homeCustomisesubmenu</include><!-- <<<<< HOME MOD -->	
 
 					<control type="image">
 						<posx>0</posx>

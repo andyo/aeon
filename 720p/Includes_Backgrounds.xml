@@ -182,9 +182,9 @@
 		<info>Skin.String(CustomWeather)</info>		
 	</include>	
 
-	<include name="BackgroundVarsWeather2">
+<!--	<include name="BackgroundVarsWeather2">
 		<thumb>\backdrops\weather\$INFO[Weather.FanartCode]</thumb>		
-	</include>	
+	</include>	-->
 
 	<include name="MediaBackdropsMovies">
 		<control type="multiimage">

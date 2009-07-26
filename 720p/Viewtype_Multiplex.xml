@@ -5174,11 +5174,11 @@
 
 		<control type="button" id="975">
 			<texture>-</texture>
-			<visible>![Skin.HasSetting(flattenmultiplex) | Container.Content(episodes)]]</visible>
+			<visible>![Skin.HasSetting(flattenmultiplex) | Container.Content(episodes)]</visible>
 			<animation effect="fade" start="100" end="0" time="800">Hidden</animation>
 		</control>
         
-        <control type="group" id="9000">
+        <control type="group" id="9001">
             <posy>430</posy>
             <camera x="640" y="540" />
             <animation effect="fade" time="500">WindowOpen</animation>

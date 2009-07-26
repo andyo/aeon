@@ -957,7 +957,7 @@
 				<visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
 			</control>
 			<control type="button" id="15">
-				<description>Multiplex</description>
+				<description>Multiplex Tweaks</description>
 				<posy>290</posy>
 				<label>31246</label>
 				<include>Objects_SettingsSectionMenuButton</include>
@@ -969,7 +969,7 @@
 				<visible allowhiddenfocus="true">![Control.HasFocus(15) | ControlGroup(21).HasFocus]</visible>
 			</control>
 			<control type="button">
-				<description>Multiplex</description>
+				<description>Multiplex Tweaks</description>
 				<posy>290</posy>
 				<label>31246</label>
 				<include>Objects_SettingsSectionMenuButtonFocused</include>
@@ -981,7 +981,7 @@
 				<visible>Control.HasFocus(15) | ControlGroup(21).HasFocus</visible>
 			</control>
 			<control type="label">
-				<description>Multiplex Unfocused</description>
+				<description>Multiplex Tweaks Unfocused</description>
 				<posy>322</posy>
 				<label>31247</label>
 				<textcolor>FFf5f5f5</textcolor>
@@ -989,7 +989,7 @@
 				<visible>![Control.HasFocus(15) | ControlGroup(21).HasFocus]</visible>
 			</control>
 			<control type="label">
-				<description>Multiplex Focused</description>
+				<description>Multiplex Tweaks Focused</description>
 				<posy>322</posy>
 				<label>31247</label>
 				<textcolor>FF262728</textcolor>

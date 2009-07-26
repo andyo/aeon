@@ -467,7 +467,42 @@
 	<string id="31932">FICHIERS</string>
 	<string id="31933">SÉRIES</string>
 
+<!-- Home mod 31850 to 31899 -->
+
+	<string id="31850">PLUGINS</string>
+	<string id="31851">WEEKEND</string>
+	<string id="31852">36 HOURS</string>
+	<string id="31853">4 DAYS</string>
+	<string id="31854">PARTY</string>
+	<string id="31855">ALARM</string>
+	<string id="31856">TIMER</string>
+	<string id="31857">New Item</string>
+	<string id="31858">Sub</string>
+	<string id="31859">Animated weather icons</string>
+	<string id="31860">CLEAR</string>
+	<string id="31861">10 DAYS</string>
+	<string id="31862">ALARM Off</string>
+	<string id="31863">-</string>
+	<string id="31864">-</string>
+	<string id="31865">Extras</string>
+	<string id="31866">-</string>
+	<string id="31867">MAIN MENU</string>
+	<string id="31868">LOCK</string>
+	<string id="31869">Weather Backdrop by Current Weather Conditions</string>
+	<string id="31870">-</string>
+	<string id="31871">-</string>
+	<string id="31872">-</string>
+	<string id="31873">Next 10 Days</string>
+	<string id="31874">Next 36 Hours</string>
+	<string id="31875">THIS WEEKEND</string>
+	<string id="31876">SUB MENU</string>
+	<string id="31877">Exit</string>
+	<string id="31878">TOTALS</string>
+	<string id="31879">RECENTLY ADDED</string>
+	<string id="31880">CONFIGURE MENU'S</string>
+
 <!-- ShowMix -->
+
 	<string id="31042">FLOOR: LIGHT</string>
 	<string id="31043">FLOOR: NIGHT</string>
 	<string id="31044">ART</string>
@@ -502,4 +537,14 @@
 	<string id="31973">MOVIE FOLDER LOCATION</string>
 	<string id="31974">DYNAMIC FLOW</string>
 
+<!-- customisation strings added by azido -->
+
+	<string id="31975">UNLOCK ALL VIEWS FOR TV SHOWS</string>
+	<string id="31976">USE LEGACY 'DARK' MULTIPLEX</string>
+	<string id="31977">MOVIE GENRE ICONS ON/OFF</string>
+	<string id="31978">MOVIE GENRE FALLBACK ICON ON/OFF</string>
+	<string id="31979">MOVIE GENRE FANART IMAGE ON/OFF</string>
+	<string id="31980">MUSIC GENRE ICONS ON/OFF</string>
+	<string id="31981">MUSIC GENRE FANART IMAGE ON/OFF</string>
+	
 </strings>

@@ -1405,7 +1405,7 @@
 		
 			<!-- Movies/TvShows VideoNav Menu-->
 			<control type="group">
-				<visible>!Skin.HasSetting(noverticalmenu)</visible>
+<!--				<visible>!Skin.HasSetting(noverticalmenu)</visible>-->
 				
 				<!-- Second Columns -->
 				<include>VerticalMenu_SecondColumnViewChange</include>
