@@ -926,7 +926,7 @@
 	</control>
 	<control type="list" id="20">
 		<posx>520</posx>
-		<posy>207</posy>
+		<posy>473</posy>
 		<height>180</height>
 		<width>460</width>
 		<onleft>18</onleft>
