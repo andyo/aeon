@@ -41,12 +41,12 @@
 
     <control type="label">
         <posx>700</posx>
-        <posy>05</posy>
+        <posy>50</posy>
         <width>900</width>
         <height>13</height>
         <font>Font_MultiplexInfoLabel</font>
         <textcolor>FFFFFFFF</textcolor>		
-        <label>** $INFO[container.property(fanart_image)]</label>
+        <label>** $INFO[ListItem.Path,,fanart.jpg]</label>
         <visible>Skin.HasSetting(debug)</visible>
 	</control>    
 <!-- <<<<< ADD this -->
