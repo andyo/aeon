@@ -3855,7 +3855,7 @@
                     <height>349</height>
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
-                    <texture>$INFO[Fanart.Image]</texture>
+                    <texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
                     <visible>!Skin.HasSetting(multiplexmusicbigthumb) | Container.Content(albums)</visible>
                     <include>Animation_VisibleChange200</include>
                 </control>
@@ -4258,7 +4258,7 @@
                     <height>349</height>
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
-                    <texture>$INFO[Fanart.Image]</texture>
+                    <texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
                     <visible>!Skin.HasSetting(multiplexmusicbigthumb) | Container.Content(albums)</visible>
                     <include>Animation_VisibleChange200</include>
                 </control>
@@ -11047,7 +11047,7 @@
 
 <!-- POPUP FLOOR TEXT -->
             <control type="group">
-                <visible>[[Skin.HasSetting(videomovies) + !Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + Skin.HasSetting(FullscreenMusicMultiplex)]]</visible>
+                <visible>[[Skin.HasSetting(videomovies) + !Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + !Skin.HasSetting(FullscreenMusicMultiplex)]]</visible>
                 <include>Animation_HideMultiplex</include>
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
@@ -11125,12 +11125,12 @@
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>Container.Content(movies) + !IsEmpty(ListItem.Genre) + [Skin.HasSetting(multiplexinfoauto) | Skin.HasSetting(multiplexinfoon)]</visible>
+                    <visible>Container.Content(movies) + !IsEmpty(ListItem.Genre) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)]</visible>
                 </control>
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Duration] / $INFO[ListItem.Year][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>Container.Content(movies) + [Skin.HasSetting(multiplexinfoauto) | Skin.HasSetting(multiplexinfoon)]</visible>
+                    <visible>Container.Content(movies) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)]</visible>
                 </control>
                 
                 <!-- TV Shows -->
@@ -11175,7 +11175,6 @@
                     <include condition="Skin.HasSetting(tvposterview)">MultiplexDetailLabelPoster</include>
                     <visible>!Skin.HasSetting(tvposterview) + [[Container.Content(seasons) + [Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(episodes) + [Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfotrigger)]]]</visible>
                 </control>
-
                 
                 <control type="label" id="72">
                     <label>RUN TIME: $INFO[VideoPlayer.Duration] (FINISH TIME: $INFO[Player.FinishTime])</label>
@@ -11183,7 +11182,7 @@
                     <visible>VideoPlayer.Content(episodes) + !Container.Content(movies)</visible>
                 </control>
 
-
+                <!-- Music -->
                 <control type="label" id="72">
                     <label>$INFO[ListItem.Album,, -] $INFO[ListItem.Artist]</label>
                     <include>MultiplexDetailLabel</include>
