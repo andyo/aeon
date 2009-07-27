@@ -654,8 +654,12 @@
 					<visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,720) | substring(ListItem.VideoResolution,1080)]</visible>
 				</control>
                 <control type="image" id="81">
-                    <include>Furniture_ShowcaseMediaFlagsVars</include>
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
                     <texture>$INFO[ListItem.Property(Label),flags/recordlabels/,.png]</texture>
+                </control>
+                <control type="image" id="81">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.Property(AlbumLabel),flags/recordlabels/,.png]</texture>
                 </control>
 
 			</control>
