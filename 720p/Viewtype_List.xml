@@ -98,6 +98,7 @@
 		<font>Font_ListSub</font>
 		<align>left</align>
 		<aligny>center</aligny>
+        <wrapmultiline>true</wrapmultiline>
 		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes)">Conditional</animation>			
 		<animation effect="slide" start="60,-10" end="60,-10" time="0" condition="Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]">Conditional</animation>		
 	</include>	
@@ -687,6 +688,35 @@
                 <visible>Window.IsActive(2)] + [Window.IsActive(25) + Skin.HasSetting(videomovies) + Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(tvshows)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]</visible>			
             </control>
 
+<!-- MUSIC FULLSCREEN BANNER-->
+            <control type="group">
+                <visible>Container.Content(songs)</visible>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>00</posy>
+                    <width>1000</width>
+                    <font>Font_MultiplexTVLabel</font>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>[UPPERCASE]$INFO[listitem.album][/UPPERCASE]</label>
+                    <scrollspeed>20</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>50</posy>
+                    <width>1000</width>
+                    <font>Font_MultiplexSeasonLabel</font>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>[UPPERCASE]$INFO[listitem.artist][/UPPERCASE]</label>
+                    <scrollspeed>30</scrollspeed>
+                    <scrollout>true</scrollout>
+                    <pauseatend>3000</pauseatend>
+                    <scroll>true</scroll>
+                </control>
+            </control>
+
 <!-- TV FULLSCREEN BANNER-->
             <control type="label">
                 <include>ListLabel_MainBannerBottomTV</include>
@@ -724,8 +754,8 @@
                 <scroll>true</scroll>
                 <visible>Control.IsVisible(50) + Container.Content(episodes) + stringcompare(ListItem.Season,0)</visible>
             </control>
-
         </control>
+
     
         <control type="list" id="50">
             <viewtype label="31752">list</viewtype>
@@ -1620,7 +1650,7 @@
                 <control type="label">
                     <include>ListLabel_MainSmall</include>
                     <include>listcolornofocus</include>
-                    <label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
+                    <label>$INFO[ListItem.Title]</label>
                     <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
                 </control>					
                 <control type="label">
@@ -1696,7 +1726,7 @@
                     <include>ListLabel_MainSmall</include>
                     <include>listcolornofocus</include>
                     <include>Animation_ButtonFocusFade_fix</include>						
-                    <label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
+                    <label>$INFO[ListItem.Title]</label>
                     <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
                 </control>					
                 <control type="label">
