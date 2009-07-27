@@ -223,20 +223,10 @@
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(52)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>![Control.IsVisible(52) | Control.IsVisible(54)] + Window.IsActive(25)</visible>
+							<visible>![Control.IsVisible(52) | Control.IsVisible(54)] + [Window.IsActive(25) | Window.IsActive(502)] </visible>
 						</control>
-						
+												
 						<control type="button" id="30001">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vs_icon_multiplex_focus.png</texturefocus>
-      						<texturenofocus>viewselect/vs_icon_multiplex.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Container.SetViewMode(51)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>!Control.IsVisible(51) + Window.IsActive(502)</visible>
-						</control>
-						
-						<control type="button" id="30002">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texturefocus>viewselect/vs_icon_stripshow_focus.png</texturefocus>
       						<texturenofocus>viewselect/vs_icon_stripshow.png</texturenofocus>
@@ -246,7 +236,7 @@
 							<visible>!Control.IsVisible(51) + Window.IsActive(2)</visible>
 						</control>
 						
-						<control type="button" id="30003">
+						<control type="button" id="30002">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texturefocus>viewselect/vs_icon_showcase_focus.png</texturefocus>
       						<texturenofocus>viewselect/vs_icon_showcase.png</texturenofocus>
@@ -256,7 +246,7 @@
 							<visible>!Control.IsVisible(57)</visible>
 						</control>
 						
-						<!--<control type="button" id="30004">
+						<!--<control type="button" id="30003">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texturefocus>viewselect/vs_icon_panel_focus.png</texturefocus>
       						<texturenofocus>viewselect/vs_icon_panel.png</texturenofocus>
@@ -264,7 +254,7 @@
 							<visible>false</visible>
 						</control>-->
 						
-						<control type="button" id="30005">
+						<control type="button" id="30004">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texturefocus>viewselect/vs_icon_list_focus.png</texturefocus>
       						<texturenofocus>viewselect/vs_icon_list.png</texturenofocus>
@@ -274,7 +264,7 @@
 							<visible>!Control.IsVisible(50)</visible>
 						</control>
 						
-						<!--<control type="button" id="30006">
+						<!--<control type="button" id="30005">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texturefocus>viewselect/vs_icon_list2_focus.png</texturefocus>
       						<texturenofocus>viewselect/vs_icon_list2.png</texturenofocus>
@@ -282,7 +272,7 @@
 							<onclick>XBMC.ReloadSkin</onclick>
 						</control>-->
 						
-						<control type="button" id="30007">
+						<control type="button" id="30006">
 							<include>VerticalMenu_ViewChangeImage</include>
 							<texturefocus>viewselect/vs_icon_wall_focus.png</texturefocus>
       						<texturenofocus>viewselect/vs_icon_wall.png</texturenofocus>
