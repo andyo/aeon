@@ -672,7 +672,7 @@
 				<onclick>Skin.SetBool(multiplexinfoauto)</onclick>
 				<onclick>Skin.Reset(multiplexinfooff)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfooff)</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfooff)</visible>
 			</control>
 			<control type="button" id="30212">
 				<include>VerticalMenu_Button</include>				
@@ -680,7 +680,7 @@
 				<onclick>Skin.SetBool(multiplexinfotrigger)</onclick>
 				<onclick>Skin.Reset(multiplexinfoauto)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Skin.HasSetting(videomovies) + Control.IsVisible(52) + ![Skin.HasSetting(multiplexinfotrigger) | Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfoon)]</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(52) + ![Skin.HasSetting(multiplexinfotrigger) | Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfoon)]</visible>
 			</control>
 			<control type="button" id="30213">
 				<include>VerticalMenu_Button</include>				
@@ -688,7 +688,7 @@
 				<onclick>Skin.SetBool(multiplexinfoon)</onclick>
 				<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfotrigger)</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfotrigger)</visible>
 			</control>	
 			<control type="button" id="30214">
 				<include>VerticalMenu_Button</include>				
@@ -696,10 +696,9 @@
 				<onclick>Skin.SetBool(multiplexinfooff)</onclick>
 				<onclick>Skin.Reset(multiplexinfoon)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfoon)</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfoon)</visible>
 			</control>
 	
-
 			<control type="button" id="30215">
 				<include>VerticalMenu_Button</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
@@ -831,7 +830,8 @@
                 <onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
                 <onclick>XBMC.ReloadSkin</onclick>
                 <visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(52) + Skin.HasSetting(multiplexmusicinfoon)</visible>
-            </control>		
+            </control>
+
 		</include>
 		
 
@@ -1037,7 +1037,7 @@
 				<onclick>Skin.ToggleSetting(FullscreenMovieMultiplex)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenMovieMultiplex)</selected>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + Skin.HasSetting(videomovies)</visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + Skin.HasSetting(videomovies) + !Container.Content(files)</visible>
 			</control>
 			<control type="radiobutton" id="30272">
 				<include>VerticalMenu_RadioButton</include>
@@ -1077,7 +1077,7 @@
 				<onclick>Skin.ToggleSetting(FullscreenCommonMultiplex)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenCommonMultiplex)</selected>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + ![Skin.HasSetting(music) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | ![Skin.HasSetting(videomovies) + Container.Content(plugins)]]</visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + ![Skin.HasSetting(music) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)] | Skin.HasSetting(videofiles)</visible>
 			</control>
 		</include>
 
