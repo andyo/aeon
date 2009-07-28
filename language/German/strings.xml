@@ -105,10 +105,10 @@
 	<string id="31095">SELECT ZUM KOPPELN DER RSS FEEDS</string>
 	<string id="31096">SELECT ZUM ENTKOPPELN DER RSS FEEDS</string>
 	<string id="31097">EINSTELLUNGEN LÖSCHEN</string>
-	<string id="31098">ALLE(!) SKIN-EINSTELLUNGEN ZUR†CKSETZEN/L…SCHEN</string>
-	<string id="31099">LINKS/RECHTS FÜR STANDARD-TASTE</string>
-	<string id="31100">ACHTUNG: AUSWAHL KANN NICHT RÜCKGÄNGIG GEMACHT WERDEN</string>
-	<string id="31101">LINKS/RECHTS/HOCH/RUNTER ZUM ABBRUCH, SELECT ZUM BESTÄTIGEN</string>
+	<string id="31098">ALLE(!) SKIN-EINSTELLUNGEN ZURÜCKSETZEN/LÖSCHEN</string>
+	<string id="31099">Alle vorgenommenen Änderungen auf dieser Seite zurücksetzen? [CR]LINKS/RECHTS FÜR STANDARD-TASTE</string>
+	<string id="31100">ACHTUNG: KANN NICHT RÜCKGÄNGIG GEMACHT WERDEN!</string>
+	<string id="31101">HIERMIT WERDEN ALLE VORGENOMMENEN JUSTIERUNGEN, DIE DEN SKIN BETREFFEN, GELÖSCHT.[CR]LINKS/RECHTS/HOCH/RUNTER ZUM ABBRUCH, SELECT ZUM BESTÄTIGEN</string>
 	<string id="31102">AUSWÄHLEN</string>
 	<string id="31103">HINTERGRUND ART</string>
 	<string id="31104">AN/ABWÄHLEN DES</string>
@@ -127,7 +127,7 @@
 	<string id="31120">HINTERGRÜNDE</string>
 	<string id="31121">AEON PERSONALISIEREN</string>
 	<string id="31122">MENÜBEREICHE</string>
-	<string id="31123">AUS/ABWÄHLEN</string>
+	<string id="31123">AUS-/ABWÄHLEN</string>
 	<string id="31124">AUSSTATTUNG</string> 
 	<string id="31125">ZEIT UND RSS FEEDS</string>
 	<string id="31126">LÖSCHEN</string> 
@@ -169,11 +169,11 @@
 <!--  Button / Shutdown Menu  --> 
 
 	<string id="31200">EINSTELLUNGEN</string> 
-	<string id="31201">ANPASSEN</string>
+	<string id="31201">AEON ANPASSEN</string>
 	<string id="31202">INFORMATIONEN</string> 
 	<string id="31203">MEDIENVISUALISIERUNG: AUS</string>
 	<string id="31204">MEDIENVISUALISIERUNG: EIN</string> 
-	<string id="31205">GERADE LÄUFT</string>
+	<string id="31205">ZUR WIEDERGABELISTE</string>
 	<string id="31206">AUSSCHALT-TIMER</string> 
 	<string id="31207">NEUSTART</string> 
 	<string id="31208">AUSSCHALTEN</string>
@@ -220,9 +220,9 @@
 	<string id="31250">MULTIPLEX: LAYOUT (FANART, PLOT, POSTER, BILDERSCHAU)</string>
 	<string id="31251">MULTIPLEX: INFO-ANZEIGE (AUTO, MANUELL, AN, AUS)</string>
 	<string id="31252">FARBVERLAUFS-EFFEKT IM HAUPTMENÜ BENUTZEN</string>
-	<string id="31253">VERKNÜPFE DEN SPIELE-BEREICH MIT 'LAUNCHER' PLUGIN</string>
+	<string id="31253">VERKNÜPFE DEN SPIELE-BEREICH MIT EINEM 'LAUNCHER' PLUGIN</string>
 	<string id="31258">ZEIGE BEWERTUNGEN (IMDB, ETC.) AUF DER FILMINFO-SEITE</string>	
-        <string id="31259">FÜR FEHLENDE MEDIENKENNZEICHEN STANDARD-ICONS (?) ANZEIGEN</string>
+	<string id="31259">FÜR FEHLENDE MEDIENKENNZEICHEN STANDARD-ICONS (?) ANZEIGEN</string>
 	<string id="31260">ZEIT-PANEL ANZEIGEN</string>
 	<string id="31261">WETTER POP-UP AUF HAUPTSEITE ANZEIGEN</string>
 	<string id="31262">FANART FÜR MUSIK BENUTZEN</string>
@@ -384,8 +384,8 @@
 	<string id="31607">AKTUALISIEREN</string>
 	<string id="31608">INFO AN/AUS</string>
 	<string id="31609">DIE BIBLIOTHEK IST BISHER NOCH OHNE INHALT</string>
-	<string id="31610">BEFÜLLE SIE ZUERST MIT VIDEO-DATEIEN, BEVOR DU DIESE ANSICHT AUSWÄHLST</string>
-	<string id="31611">BEFÜLLE SIE ZUERST MIT MUSIK-DATEIEN, BEVOR DU DIESE ANSICHT AUSWÄHLST</string>
+	<string id="31610">BEFÜLLE SIE MIT VIDEO-DATEIEN, BEVOR DU DIESE ANSICHT AUSWÄHLST</string>
+	<string id="31611">BEFÜLLE SIE MIT MUSIK-DATEIEN, BEVOR DU DIESE ANSICHT AUSWÄHLST</string>
 
 <!-- Welcome screen / Aeon Tour -->
 <!-- ENSURE LOWER/UPPER CASE IS OBEYED --> 
@@ -503,36 +503,36 @@
 <!-- Home mod 31850 to 31899 -->
 
 	<string id="31850">PLUGINS</string>
-	<string id="31851">WEEKEND</string>
-	<string id="31852">36 HOURS</string>
-	<string id="31853">4 DAYS</string>
+	<string id="31851">WOCHENENDE</string>
+	<string id="31852">36 STUNDEN</string>
+	<string id="31853">4 TAGE</string>
 	<string id="31854">PARTY</string>
-	<string id="31855">ALARM</string>
+	<string id="31855">ERINNERUNG</string>
 	<string id="31856">TIMER</string>
-	<string id="31857">New Item</string>
-	<string id="31858">Sub</string>
+	<string id="31857">Neuer Eintrag</string>
+	<string id="31858">ZUSATZ</string>
 	<string id="31859">ANIMIERTE WETTERSYMBOLE BENUTZEN</string>
-	<string id="31860">CLEAR</string>
-	<string id="31861">10 DAYS</string>
-	<string id="31862">ALARM Off</string>
+	<string id="31860">ENTFERNEN</string>
+	<string id="31861">10 TAGE</string>
+	<string id="31862">ERINNERUNG Aus</string>
 	<string id="31863">-</string>
 	<string id="31864">-</string>
 	<string id="31865">Extras</string>
 	<string id="31866">-</string>
-	<string id="31867">MAIN MENU</string>
-	<string id="31868">LOCK</string>
-	<string id="31869">Weather Backdrop by Current Weather Conditions</string>
+	<string id="31867">HAUPTMENÜ-POSITIONEN</string>
+	<string id="31868">FIXIEREN</string>
+	<string id="31869">WETTER-BILDHINTERGRUND DEN AKTUELLEN WETTERBEDINGUNGEN ANPASSEN</string>
 	<string id="31870">-</string>
 	<string id="31871">-</string>
 	<string id="31872">-</string>
-	<string id="31873">Next 10 Days</string>
-	<string id="31874">Next 36 Hours</string>
-	<string id="31875">THIS WEEKEND</string>
-	<string id="31876">SUB MENU</string>
-	<string id="31877">Exit</string>
-	<string id="31878">TOTALS</string>
-	<string id="31879">RECENTLY ADDED</string>
-	<string id="31880">CONFIGURE MENU'S</string>
+	<string id="31873">Die nächsten 10 Tage</string>
+	<string id="31874">Die nächsten 36 Stunden</string>
+	<string id="31875">DIESES WOCHENENDE</string>
+	<string id="31876">UNTERMENÜ</string>
+	<string id="31877">Verlassen</string>
+	<string id="31878">GESAMTSTATISTIK</string>
+	<string id="31879">NEU:</string>
+	<string id="31880">KONFIGURATION DER HAUPTMENÜ-ZUSATZEINTRÄGE</string>
 
 <!-- ShowMix -->
 
@@ -563,13 +563,13 @@
 
 <!-- customisation strings added by azido -->
 
-    <string id="31975">F†R TV-SERIEN ALLE ANSICHTEN FREISCHALTEN</string>
-    <string id="31976">BENUTZE DIE URSPR†NGLICHE (DUNKLE) MULTIPLEX ANSICHT</string>
-    <string id="31977">GRAFISCHE SYMBOLE F†R FILM-GENRES BENUTZEN</string>
-    <string id="31978">STANDARDSYMBOL VERWENDEN, FALLS FILM-GENRE SYMBOL NICHT VERF†GBAR IST</string>
-    <string id="31979">IN FILM-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
-    <string id="31980">GRAFISCHE SYMBOLE F†R MUSIK-GENRES BENUTZEN</string>
-    <string id="31981">IN MUSIK-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
-    <string id="31982">WETTER/TAGESZEITABH€NGIGEN HINTERGRUND F†R DIE WETTERANZEIGE BENUTZEN</string>
+	<string id="31975">FÜR TV-SERIEN ALLE ANSICHTEN FREISCHALTEN</string>
+	<string id="31976">BENUTZE DIE URSPRÜNGLICHE (DUNKLE) MULTIPLEX ANSICHT</string>
+	<string id="31977">GRAFISCHE SYMBOLE FÜR FILM-GENRES BENUTZEN</string>
+	<string id="31978">STANDARDSYMBOL VERWENDEN, FALLS FILM-GENRE SYMBOL NICHT VERFÜGBAR IST</string>
+	<string id="31979">IN FILM-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
+	<string id="31980">GRAFISCHE SYMBOLE FÜR MUSIK-GENRES BENUTZEN</string>
+	<string id="31981">IN MUSIK-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
+	<string id="31982">WETTER/TAGESZEITABHÄNGIGEN HINTERGRUND FÜR DIE WETTERANZEIGE BENUTZEN</string>
 
 </strings>

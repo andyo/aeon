@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
-<!--Date of translation: 07/11/2009-->
+<!--Date of translation: 07/27/2009-->
 <!--$Revision$-->
 <!--Based on english strings version 204-->
 <strings>
@@ -94,7 +94,7 @@
   <string id="31095">בחר לחיבור הזנה לתפריט הראשי</string>
   <string id="31096">בחר לניתוק הזנה מהתפריט הראשי</string>
   <string id="31097">איפוס הגדרות</string>
-  <string id="31098">נקה הגדרות דף הבית</string>
+  <string id="31098">אפס את כל ההגדרות</string>
   <string id="31099">הזז ימינה\שמאלה להפעלת הכפתור</string>
   <string id="31100">הזהרה: תהליך זה הוא בלתי הפיך</string>
   <string id="31101">הזז לכל מקום לביטול, בחר להמשך</string>
@@ -179,16 +179,16 @@
   <string id="31243">בטל הכל</string>
   <string id="31244">תפריטים</string>
   <string id="31245">אפשרויות עיון</string>
-  <string id="31246">שינויים</string>
+  <string id="31246">שינוים</string>
   <string id="31247">הגדרות המוד</string>
   <string id="31249">שינוי דגלי מדיה</string>
   <string id="31250">פריסת MULTIPLEX (רקע, עלילה, פוסטר, מצגת צלמיות)</string>
   <string id="31251">שינוי מידע MULTIPLEX (מופעל, מכובה, אוטו', לחיצה)</string>
   <string id="31252">אפקט GRADIENT לתפריט דף הבית</string>
   <string id="31253"> קשר את קיצור המשחקים לתוסף ה"LAUNCHER"</string>
-  <string id="31254">תחזית ל- 4 ימים -</string>
-  <string id="31255">תחזית ל- 36 שעות -</string>
-  <string id="31256">תחזית לסוף שבוע -</string>
+  <string id="31254">- תחזית ל- 4 ימים </string>
+  <string id="31255">- תחזית ל- 36 שעות </string>
+  <string id="31256">- תחזית לסוף שבוע </string>
   <string id="31258">הראה דירוגים בדף מידע הסרט</string>
   <string id="31259">סמלי ברירת מחדל לדגלי מדיה (כבה למקומות ריקים)</string>
   <string id="31260">הראה שעון</string>
@@ -243,7 +243,7 @@
   <string id="31331">פרוקסי וחיפושים</string>
   <string id="31332">ממשק HTTP</string>
   <string id="31333">קבוצת עבודה והזדהות</string>
-  <string id="31334">לקוח ושיטופים</string>
+  <string id="31334">לקוח ושיתופים</string>
   <string id="31335">פורטים ותזמונים</string>
   <string id="31336">לוגים ופסקי זמן</string>
   <string id="31337">קלט ועיקובים</string>
@@ -396,6 +396,37 @@
   <string id="31819">עבור על ההגדרות המורחבות של חווית ה AEON</string>
   <string id="31820">כל אחד בשלו</string>
   <string id="31821">ה XBMC תומך בריבוי משתמשים, ומאפשר למשתמשים לשמור[CR]הגדרות, הזנות RSS, הגדרות תצוגה והגדרות ספריות המדיה במיקומים ניפרדים</string>
+  <string id="31850">תוספים</string>
+  <string id="31851">סוף שבוע</string>
+  <string id="31852">36 שעות</string>
+  <string id="31853">4 ימים</string>
+  <string id="31854">מסיבה</string>
+  <string id="31855">שעון מעורר</string>
+  <string id="31856">טיימר</string>
+  <string id="31857">פריט חדש</string>
+  <string id="31858">תת-תפריט</string>
+  <string id="31859">הנפשת איקון מזג האויר</string>
+  <string id="31860">נקה</string>
+  <string id="31861">10 ימים</string>
+  <string id="31862">שעון מעורר מכובה</string>
+  <string id="31863">-</string>
+  <string id="31864">-</string>
+  <string id="31865">תוספות</string>
+  <string id="31866">-</string>
+  <string id="31867">תפריט ראשי</string>
+  <string id="31868">נעילה</string>
+  <string id="31869">רקע מזג האויר לפי מזג האויר הנוכחי</string>
+  <string id="31870">-</string>
+  <string id="31871">-</string>
+  <string id="31872">-</string>
+  <string id="31873">10 ימים הבאים</string>
+  <string id="31874">36 שעות הבאות</string>
+  <string id="31875">בסוף השבוע הזה</string>
+  <string id="31876">תת-תפריט</string>
+  <string id="31877">יציאה</string>
+  <string id="31878">סה"כ</string>
+  <string id="31879">נוספו לאחרונה</string>
+  <string id="31880">הגדר תפריטים</string>
   <string id="31900">מרקמים</string>
   <string id="31901">טפט ברירת מחדל</string>
   <string id="31902">איקונים ברירת מחדל מכילים אלמנטים של</string>
@@ -426,43 +457,6 @@
   <string id="31936">רצועות</string>
   <string id="31937">עונות</string>
   <string id="31938">פרקים</string>
-
-
-<!-- Home mod 31850 to 31899 -->
-
-	<string id="31850">PLUGINS</string>
-	<string id="31851">WEEKEND</string>
-	<string id="31852">36 HOURS</string>
-	<string id="31853">4 DAYS</string>
-	<string id="31854">PARTY</string>
-	<string id="31855">ALARM</string>
-	<string id="31856">TIMER</string>
-	<string id="31857">New Item</string>
-	<string id="31858">Sub</string>
-	<string id="31859">Animated weather icons</string>
-	<string id="31860">CLEAR</string>
-	<string id="31861">10 DAYS</string>
-	<string id="31862">ALARM Off</string>
-	<string id="31863">-</string>
-	<string id="31864">-</string>
-	<string id="31865">Extras</string>
-	<string id="31866">-</string>
-	<string id="31867">MAIN MENU</string>
-	<string id="31868">LOCK</string>
-	<string id="31869">Weather Backdrop by Current Weather Conditions</string>
-	<string id="31870">-</string>
-	<string id="31871">-</string>
-	<string id="31872">-</string>
-	<string id="31873">Next 10 Days</string>
-	<string id="31874">Next 36 Hours</string>
-	<string id="31875">THIS WEEKEND</string>
-	<string id="31876">SUB MENU</string>
-	<string id="31877">Exit</string>
-	<string id="31878">TOTALS</string>
-	<string id="31879">RECENTLY ADDED</string>
-	<string id="31880">CONFIGURE MENU'S</string>
-
-<!-- ShowMix -->
   <string id="31951">מועדפים</string>
   <string id="31952">חלון</string>
   <string id="31953">אור</string>
@@ -485,17 +479,13 @@
   <string id="31970">תצוגה נוכחית</string>
   <string id="31971">אפשרויות תצוגה</string>
   <string id="31972">תפריט אנכי</string>
-	<string id="31973">MOVIE FOLDER LOCATION</string>
-	<string id="31974">DYNAMIC FLOW</string>
-
-<!-- customisation strings added by azido -->
-
-	<string id="31975">UNLOCK ALL VIEWS FOR TV SHOWS</string>
-	<string id="31976">USE LEGACY 'DARK' MULTIPLEX</string>
-	<string id="31977">MOVIE GENRE ICONS ON/OFF</string>
-	<string id="31978">MOVIE GENRE FALLBACK ICON ON/OFF</string>
-	<string id="31979">MOVIE GENRE FANART IMAGE ON/OFF</string>
-	<string id="31980">MUSIC GENRE ICONS ON/OFF</string>
-	<string id="31981">MUSIC GENRE FANART IMAGE ON/OFF</string>
-	
+  <string id="31973">מיקום ספריית הסרטים</string>
+  <string id="31974">זרימה דינמית</string>
+  <string id="31975">אפשר את כל התצוגות לסדרות</string>
+  <string id="31976">השתמש ב MULTIPLEX "כהה" ישן</string>
+  <string id="31977">איקון ז'אנר סרטים מופעל/מכובה</string>
+  <string id="31978">איקון גיבוי ז'אנר סרטים מופעל/מכובה</string>
+  <string id="31979">רקע ז'אנר סרטים מופעל/מכובה</string>
+  <string id="31980">איקון ז'אנר מוסיקה מופעל/מכובה</string>
+  <string id="31981">רקע ז'אנר מוסיקה מופעל/מכובה</string>
 </strings>
