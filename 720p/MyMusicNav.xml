@@ -46,7 +46,7 @@
         <height>13</height>
         <font>Font_MultiplexInfoLabel</font>
         <textcolor>FFFFFFFF</textcolor>		
-        <label>** $INFO[ListItem.Path,,fanart.jpg]</label>
+        <label>** $INFO[Container.FolderName]</label>
         <visible>Skin.HasSetting(debug)</visible>
 	</control>    
 <!-- <<<<< ADD this -->
@@ -82,7 +82,7 @@
         <include>Furniture_shadow</include>
 		<include>Viewtype_Multiplex</include>
 		<include>ListFade</include>
-		<include>Objects_ShowcaseMenuPanel</include>
+		<!--<include>Objects_ShowcaseMenuPanel</include>-->
 		<include>Viewtype_Wall</include>
 		<include>Viewtype_Showcase</include>
 		<include>Viewtype_List</include>
@@ -101,7 +101,7 @@
 	</control>
 
 	<include>Furniture_DarkGradient</include>	
-	<include>ViewChange</include>
+	<!--<include>ViewChange</include>-->
 	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	

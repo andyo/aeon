@@ -17,7 +17,7 @@
         <include>Furniture_shadow</include>
 		
 		<include>Furniture_MediaPanel</include>
-		<include>Objects_ShowcaseMenuPanel</include>
+		<!--<include>Objects_ShowcaseMenuPanel</include>-->
 
 		<include>Viewtype_Wall</include>
 		<include>Viewtype_Showcase</include>
@@ -33,7 +33,7 @@
 	</control>
 
 	<include>Furniture_DarkGradient</include>	
-	<include>ViewChange</include>
+	<!--<include>ViewChange</include>-->
 	<!--<include>Background_ContextBlack</include>-->
 	<include>Furniture_Debug</include>
 </controls>

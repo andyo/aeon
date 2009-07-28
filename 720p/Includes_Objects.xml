@@ -1188,7 +1188,6 @@
 			<height>57</height>
 			<texture>showcase/showcase_menupanel.png</texture>
 			<include>Animation_MediaMenuSlide</include>
-			<visible>Skin.HasSetting(noverticalmenu)</visible>
 		</control>
 	</include>
 	

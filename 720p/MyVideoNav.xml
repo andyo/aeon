@@ -49,7 +49,7 @@
 		<include condition="!Skin.HasSetting(oldmultiplex)">Viewtype_Multiplex</include>
 		<include condition="Skin.HasSetting(oldmultiplex)">Viewtype_MultiplexOld</include>
 <!--		<include>ListFade</include> -->
-		<include>Objects_ShowcaseMenuPanel</include>
+		<!--<include>Objects_ShowcaseMenuPanel</include>-->
 		<include>Viewtype_Wall</include>
 		<include>Viewtype_Showcase</include>
 		<include>Viewtype_List</include>
@@ -67,7 +67,7 @@
 
 	
 	<include>Furniture_DarkGradient</include>
-	<include>ViewChange</include>
+	<!--<include>ViewChange</include>-->
 	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	

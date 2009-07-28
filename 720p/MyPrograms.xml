@@ -17,7 +17,7 @@
         <include>Furniture_FloorBack</include>
         <include>Furniture_shadow</include>
 
-		<include>Objects_ShowcaseMenuPanel</include>
+		<!--<include>Objects_ShowcaseMenuPanel</include>-->
 
 		<include>Viewtype_Wall</include>
 		<include>Viewtype_Showcase</include>
@@ -32,7 +32,7 @@
 	</control>
 
 	<include>Furniture_DarkGradient</include>	
-	<include>ViewChange</include>	
+	<!--<include>ViewChange</include>-->	
 	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	

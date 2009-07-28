@@ -77,7 +77,7 @@
 		<include>Viewtype_Showcase</include>
 		<include>Viewtype_List</include>		
 
-		<include>Objects_ShowcaseMenuPanel</include>
+		<!--<include>Objects_ShowcaseMenuPanel</include>-->
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
 		<include>Furniture_Time</include>
@@ -87,7 +87,7 @@
 	</control>
 
 	<include>Furniture_DarkGradient</include>	
-	<include>ViewChange</include>	
+	<!--<include>ViewChange</include>-->	
 	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	
