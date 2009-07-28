@@ -2320,7 +2320,7 @@
 
 	<!-- OnUp -->
 	<control type="button" id="324">
-		<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)</visible>
+		<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)+Skin.HasSetting(CustomMenuanimation)</visible>
 		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
 		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
 		<include>homesubmenu_but</include>
@@ -2336,18 +2336,18 @@
 		<onfocus>Skin.SetBool(submenu)</onfocus>
 	</control>
 	<control type="button" id="324">
-		<visible>Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)</visible>
-		<include>homesubmenu_but</include>
-		<onfocus>SetFocus(300)</onfocus>
-		<onfocus>Skin.Reset(lowermainmenu)</onfocus>
-	</control>
-	<control type="button" id="324">
-		<visible>Control.IsVisible(8001)+Container(300).HasFocus(1)</visible>
+		<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)</visible>
 		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
 		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>Skin.SetBool(submenu)</onfocus>
+	</control>
+	<control type="button" id="324">
+		<visible>Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(lowermainmenu)</onfocus>
 	</control>
 	<!-- OnUp end -->
 	<!-- Ondown -->
@@ -2438,7 +2438,7 @@
 		<visible>!Skin.HasSetting(CustomMenuSub)</visible>
 		<control type="image">
 			<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
-			<posx>293   </posx>
+			<posx>293</posx>
 			<posy>60</posy>
 			<width>695</width>
 			<height>33</height>
@@ -2479,7 +2479,7 @@
 					<width>127</width>
 					<posx>90</posx>
 					<include>SubMenu_Label</include>
-					<include>Animation_ButtonFocusFade</include>
+<!--					<include>Animation_ButtonFocusFade</include>-->
 				</control>
 			</focusedlayout>
 			<content>
@@ -3392,6 +3392,7 @@
 					<description>Aeon Settings Button</description>
 					<label>31230</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+                    <onclick>Skin.SetBool(bmtransit)</onclick>				
 					<onclick>XBMC.ActivateWindow(604)</onclick>
 					<visible>!Skin.HasSetting(sub_Aeon_Settings)</visible>
 					<visible>Container(300).HasFocus(9)</visible>
@@ -3419,7 +3420,8 @@
 		<posy>450</posy>
 		<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)|Container(300).HasFocus(1)</visible>			
 		<visible>!Control.IsVisible(87)</visible>
-		<animation effect="slide" start="0" end="0,-125" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<animation effect="slide" start="0" end="0,-125" time="350" easing="inout" tween="cubic" condition="!Skin.HasSetting(highertime)+Skin.HasSetting(lowermainmenu)">Conditional</animation>
+        <animation effect="slide" start="0,20" end="0,-105" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(highertime)+Skin.HasSetting(lowermainmenu)">Conditional</animation>
 		<animation effect="slide" start="0" end="300,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
 
 		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
@@ -3908,7 +3910,6 @@
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
 				<label fallback="-">$INFO[Container(8001).ListItem.Label2]</label>
-				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(6)</visible>
 			</control>
 			<control type="textbox">
@@ -3919,7 +3920,6 @@
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
 				<label fallback="-1">$INFO[Window.Property(LatestEpisode.1.Plot)]</label>
-				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(1)</visible>
 			</control>
@@ -3931,7 +3931,6 @@
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
 				<label fallback="-1">$INFO[Window.Property(LatestEpisode.2.Plot)]</label>
-				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(2)</visible>
 			</control>
@@ -3943,7 +3942,6 @@
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
 				<label fallback="-1">$INFO[Window.Property(LatestEpisode.3.Plot)]</label>
-				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(3)</visible>
 			</control>
@@ -3955,7 +3953,6 @@
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
 				<label fallback="-1">$INFO[Window.Property(LatestEpisode.4.Plot)]</label>
-				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(4)</visible>
 			</control>
@@ -3967,7 +3964,6 @@
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
 				<label fallback="-1">$INFO[Window.Property(LatestEpisode.5.Plot)]</label>
-				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(5)</visible>
 			</control>
