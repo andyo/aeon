@@ -653,15 +653,6 @@
 					<texture fallback="flags/hdtv.png">$INFO[ListItem.studio,flags/studios/,_hd.png]</texture>
 					<visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,720) | substring(ListItem.VideoResolution,1080)]</visible>
 				</control>
-                <control type="image" id="81">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-                    <texture>$INFO[ListItem.Property(Label),flags/recordlabels/,.png]</texture>
-                </control>
-                <control type="image" id="81">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-                    <texture>$INFO[ListItem.Property(AlbumLabel),flags/recordlabels/,.png]</texture>
-                </control>
-
 			</control>
 
 			<control type="group">
@@ -834,6 +825,14 @@
 					<texture>flags/source/divx.png</texture>
 					<visible>substring(listitem.filename,divx)</visible>
 				</control>				
+                <control type="image" id="81">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.Property(Label),flags/recordlabels/,.png]</texture>
+                </control>
+                <control type="image" id="81">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+                    <texture>$INFO[ListItem.Property(AlbumLabel),flags/recordlabels/,.png]</texture>
+                </control>
     
             </control>
 		</control>
