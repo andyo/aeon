@@ -3,6 +3,15 @@
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<controls>
+    <control type="image" id="109">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>0</width>
+		<height>0</height>
+		<texture>-</texture>
+		<visible>[Skin.HasSetting(videomovies) + !Skin.HasSetting(nomultiplexpopup) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)] + [Control.HasFocus(52) | Control.HasFocus(54) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]] | [Skin.HasSetting(videotv) + !Skin.HasSetting(nomultiplextvpopup) + [[Container.Content(tvshows) + ![Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]] | [Container.Content(seasons) + ![Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(episodes) + ![Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfotrigger)]]] + [Control.HasFocus(52) |Control.HasFocus(54)  | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]]</visible>
+		<animation effect="fade" start="0" end="100" time="500" delay="1500">Visible</animation>
+	</control>
 
 	<control type="multiimage">
 		<include>BackgroundVarsGlobal</include>
