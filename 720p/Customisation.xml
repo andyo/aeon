@@ -530,7 +530,7 @@
         <aligny>center</aligny>
         <align>right</align>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.2</label>                
+        <label>VER: 1.3</label>                
     </control>
 
 	<include>Furniture_SettingsFrontPanel</include>
