@@ -223,7 +223,7 @@
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(52)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>![Control.IsVisible(52) | Control.IsVisible(54)] + [Window.IsActive(25) | Window.IsActive(502)] </visible>
+							<visible>![Control.IsVisible(52) | Control.IsVisible(54)]</visible>
 						</control>
 												
 						<control type="button" id="30001">
@@ -1045,7 +1045,7 @@
 				<onclick>Skin.ToggleSetting(FullscreenTVShowsMultiplex)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenTVShowsMultiplex)</selected>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes)]</visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + Skin.HasSetting(videotv) + Container.Content(tvshows)</visible>
 			</control>
 			<control type="radiobutton" id="30273">
 				<include>VerticalMenu_RadioButton</include>
@@ -1077,7 +1077,7 @@
 				<onclick>Skin.ToggleSetting(FullscreenCommonMultiplex)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenCommonMultiplex)</selected>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + !Skin.HasSetting(music) +!Skin.HasSetting(videotv) + !Skin.HasSetting(videomovies)</visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + ![Skin.HasSetting(music) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)]</visible>
 			</control>
 		</include>
 
@@ -1380,6 +1380,7 @@
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(tvposterview)</onclick>
+                <onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(tvposterview)</selected>
 				<visible>Skin.HasSetting(videotv)</visible>
 			</control>
