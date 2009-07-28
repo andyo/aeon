@@ -26,7 +26,10 @@
         <include>Furniture_FloorBack</include>
         <include>Furniture_shadow</include>
 
-		<include>Furniture_MediaPanel</include>
+<!--		<include>Furniture_MediaPanel</include>-->
+		<include condition="!Skin.HasSetting(oldmultiplex)">Viewtype_Multiplex</include>
+		<include condition="Skin.HasSetting(oldmultiplex)">Viewtype_MultiplexOld</include>
+
 		<include>Objects_ShowcaseMenuPanel</include>
 
 		<include>Viewtype_Wall</include>
