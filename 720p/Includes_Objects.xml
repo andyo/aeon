@@ -773,6 +773,7 @@
                         <visible>!Skin.HasSetting(Weather_ani)</visible>					
                     </control>
                     <control type="multiimage">
+                        <posx>79</posx>
                         <include>Objects_WeatherIcon</include>
                         <imagepath>icon\$INFO[Window(Weather).Property(Weekend.1.FanartCode)]</imagepath>
                         <timeperimage>75</timeperimage>
@@ -814,6 +815,7 @@
                         <visible>!Skin.HasSetting(Weather_ani)</visible>					
                     </control>
                     <control type="multiimage">
+                        <posx>79</posx>
                         <include>Objects_WeatherIcon</include>
                         <imagepath>icon\$INFO[Window(Weather).Property(Weekend.2.FanartCode)]</imagepath>
                         <timeperimage>75</timeperimage>
@@ -855,6 +857,7 @@
                         <visible>!Skin.HasSetting(Weather_ani)</visible>					
                     </control>
                     <control type="multiimage">
+                        <posx>79</posx>
                         <include>Objects_WeatherIcon</include>
                         <imagepath>icon\$INFO[Window(Weather).Property(Weekend.3.FanartCode)]</imagepath>
                         <timeperimage>75</timeperimage>
@@ -900,6 +903,7 @@
                         <visible>!Skin.HasSetting(Weather_ani)</visible>					
                     </control>
                     <control type="multiimage">
+                        <posx>79</posx>
                         <include>Objects_WeatherIcon</include>
                         <imagepath>icon\$INFO[Window(Weather).Property(36Hour.1.FanartCode)]</imagepath>
                         <timeperimage>75</timeperimage>
@@ -941,6 +945,7 @@
                         <visible>!Skin.HasSetting(Weather_ani)</visible>					
                     </control>
                     <control type="multiimage">
+                        <posx>79</posx>
                         <include>Objects_WeatherIcon</include>
                         <imagepath>icon\$INFO[Window(Weather).Property(36Hour.2.FanartCode)]</imagepath>
                         <timeperimage>75</timeperimage>
@@ -982,6 +987,7 @@
                         <visible>!Skin.HasSetting(Weather_ani)</visible>					
                     </control>
                     <control type="multiimage">
+                        <posx>79</posx>
                         <include>Objects_WeatherIcon</include>
                         <imagepath>icon\$INFO[Window(Weather).Property(36Hour.3.FanartCode)]</imagepath>
                         <timeperimage>75</timeperimage>
