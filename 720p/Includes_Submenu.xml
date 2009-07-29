@@ -600,14 +600,14 @@
 			</item>
 			<item id="33">
 				<description>Music Videos on</description>
-				<label>157</label>
+				<label>20389</label>
 				<onclick>Skin.SetBool(sub_music_Videos)</onclick>
 				<visible>!Skin.HasSetting(sub_music_Videos)</visible>
 				<visible>Container(301).HasFocus(1)</visible>
 			</item>
 			<item id="33">
 				<description>Music Videos off</description>
-				<label2>157</label2>
+				<label2>20389</label2>
 				<onclick>Skin.Reset(sub_music_Videos)</onclick>
 				<visible>Skin.HasSetting(sub_music_Videos)</visible>
 				<visible>Container(301).HasFocus(1)</visible>
@@ -1915,7 +1915,7 @@
 				</item>
 				<item id="33">
 					<description>Music Videos</description>
-					<label>157</label>
+					<label>20389</label>
                     <onclick>Skin.SetBool(music)</onclick>
                     <onclick>Skin.Reset(videomovies)</onclick>
                     <onclick>Skin.Reset(videotv)</onclick>
