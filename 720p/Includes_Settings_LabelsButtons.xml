@@ -1012,7 +1012,7 @@
 			<control type="button">
 				<description>Custom Menus's</description>
 				<posy>348</posy>
-				<label>32480</label>
+				<label>31248</label>
 				<include>Objects_SettingsSectionMenuButtonFocused</include>
 				<onclick>SetFocus(951)</onclick>
 				<onleft>951</onleft>
