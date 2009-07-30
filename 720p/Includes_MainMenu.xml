@@ -92,35 +92,6 @@
 				<onclick>XBMC.ActivateWindow(MyMusic,return)</onclick>
 				<visible>!Skin.HasSetting(nomusic)</visible>
 			</item>
-			<item id="2">
-				<description>Extras</description>
-				<label>31865</label>
-				<include>BackgroundVars_extras</include>					
-				<onclick>Skin.Reset(videomovies)</onclick>
-				<onclick>Skin.Reset(videofiles)</onclick>
-				<onclick>Skin.Reset(videotv)</onclick>
-                <onclick>Skin.Reset(videogenres)</onclick>
-                <onclick>Skin.Reset(music)</onclick>
-                <onclick>Skin.Reset(musicgenres)</onclick>
-				<onclick>SetFocus(324)</onclick>
-				<visible>!Skin.HasSetting(lowermainmenu)</visible>
-				<visible>!Skin.HasSetting(no_extras)</visible>
-			</item>
-			<item id="2">
-				<description>Extras</description>
-				<label>31865</label>
-				<include>BackgroundVars_extras</include>
-				<onclick>Skin.Reset(videomovies)</onclick>
-				<onclick>Skin.Reset(videofiles)</onclick>
-				<onclick>Skin.Reset(videotv)</onclick>
-                <onclick>Skin.Reset(videogenres)</onclick>
-                <onclick>Skin.Reset(music)</onclick>
-                <onclick>Skin.Reset(musicgenres)</onclick>
-				<onclick>SetFocus(322)</onclick>
-				<visible>Skin.HasSetting(lowermainmenu)</visible>
-				<visible>!Skin.HasSetting(no_extras)</visible>
-			</item>
-
 			<item id="5">
 				<label>31012</label>
 				<include>BackgroundVarsPictures</include>				
@@ -180,6 +151,34 @@
 				<onclick>xbmc.activatewindow(2600)</onclick>
 				<visible>System.HasNetwork</visible>
 				<visible>Skin.HasSetting(weather)</visible>
+			</item>
+			<item id="11">
+				<description>Extras</description>
+				<label>31865</label>
+				<include>BackgroundVars_extras</include>					
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videofiles)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
+				<onclick>SetFocus(324)</onclick>
+				<visible>!Skin.HasSetting(lowermainmenu)</visible>
+				<visible>!Skin.HasSetting(no_extras)</visible>
+			</item>
+			<item id="11">
+				<description>Extras</description>
+				<label>31865</label>
+				<include>BackgroundVars_extras</include>
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videofiles)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
+				<onclick>SetFocus(322)</onclick>
+				<visible>Skin.HasSetting(lowermainmenu)</visible>
+				<visible>!Skin.HasSetting(no_extras)</visible>
 			</item>
 		<!-- Add Items -->
 			<item id="30">

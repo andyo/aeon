@@ -122,7 +122,7 @@
 		<width>840</width>
 		<height>40</height>
 		<defaultcontrol>300</defaultcontrol>
-		<visible>Container(301).HasFocus(9) | Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1)| Container(301).HasFocus(2)</visible>
+		<visible>Container(301).HasFocus(9) | Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1)| Container(301).HasFocus(11)</visible>
 		<control type="group">
 			<posx>328</posx>
 			<posy>-21</posy>
@@ -775,14 +775,14 @@
 				<visible>Container(301).HasFocus(1)</visible>
 			</item>
 		<!-- Music (1) end -->
-		<!-- Extras (2) -->
+		<!-- Extras (11) -->
 			<item id="51">
 				<description>Extras sub Programs on</description>
 				<label>0</label>
 				<onclick>Skin.SetBool(sub_extras_Programs)</onclick>
 				<visible>Skin.HasSetting(no_programs)</visible>
 				<visible>!Skin.HasSetting(sub_extras_Programs)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="51">
 				<description>Extras sub Programs off</description>
@@ -790,13 +790,13 @@
 				<onclick>Skin.Reset(sub_extras_Programs)</onclick>
 				<visible>Skin.HasSetting(no_programs)</visible>
 				<visible>Skin.HasSetting(sub_extras_Programs)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="52">
 				<description>Extras sub scripts on</description>
 				<label>247</label>
 				<onclick>Skin.SetBool(sub_extras_scripts)</onclick>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 				<visible>!Skin.HasSetting(sub_extras_scripts)</visible>
 			</item>
 			<item id="52">
@@ -804,7 +804,7 @@
 				<label2>247</label2>
 				<onclick>Skin.Reset(sub_extras_scripts)</onclick>
 				<visible>Skin.HasSetting(sub_extras_scripts)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="53">
 				<description>Extras sub Settings on</description>
@@ -812,7 +812,7 @@
 				<onclick>Skin.SetBool(sub_extras_settings)</onclick>
 				<visible>Skin.HasSetting(nosettings)</visible>
 				<visible>!Skin.HasSetting(sub_extras_settings)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="53">
 				<description>Extras sub Settings off</description>
@@ -820,21 +820,21 @@
 				<onclick>Skin.Reset(sub_extras_settings)</onclick>
 				<visible>Skin.HasSetting(nosettings)</visible>
 				<visible>Skin.HasSetting(sub_extras_settings)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="54">
 				<description>favourite on</description>
 				<label>1036</label>
 				<onclick>Skin.SetBool(sub_extras_favourites)</onclick>
 				<visible>!Skin.HasSetting(sub_extras_favourites)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="54">
 				<description>favourite off</description>
 				<label2>1036</label2>
 				<onclick>Skin.Reset(sub_extras_favourites)</onclick>
 				<visible>Skin.HasSetting(sub_extras_favourites)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="56">
 				<description>Shutdown</description>				
@@ -842,7 +842,7 @@
 				<onclick>Skin.SetBool(sub_extras_shutdown)</onclick>
 				<visible>!Skin.HasSetting(shutdown)</visible>
 				<visible>!Skin.HasSetting(sub_extras_shutdown)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="56">
 				<description>Shutdown</description>				
@@ -850,7 +850,7 @@
 				<onclick>Skin.Reset(sub_extras_shutdown)</onclick>
 				<visible>!Skin.HasSetting(shutdown)</visible>
 				<visible>Skin.HasSetting(sub_extras_shutdown)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="57">
 				<description>Logout on</description>
@@ -860,7 +860,7 @@
 				<visible>!Skin.HasSetting(signout)</visible>
 				<visible>!Skin.HasSetting(shutdown)</visible>
 				<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="57">
 				<description>Logout off</description>
@@ -870,21 +870,21 @@
 				<visible>!Skin.HasSetting(signout)</visible>
 				<visible>!Skin.HasSetting(shutdown)</visible>
 				<visible>Skin.HasSetting(sub_Shutdown_Logout)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="55">
 				<description>AlarmClock setup</description>
 <!--***-->			<label fallback="ALARM">31855</label>
 				<onclick>Skin.SetBool(sub_extras_AlarmClock)</onclick>
 				<visible>!Skin.HasSetting(sub_extras_AlarmClock)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="55">
 				<description>AlarmClock setup</description>
 <!--***-->			<label2 fallback="ALARM">31855</label2>
 				<onclick>Skin.Reset(sub_extras_AlarmClock)</onclick>
 				<visible>Skin.HasSetting(sub_extras_AlarmClock)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="245">
 				<description>Extras_Sub 1 on</description>
@@ -892,7 +892,7 @@
 				<onclick>Skin.SetBool(no_Extras_Sub_1)</onclick>
 				<visible>!Skin.HasSetting(no_Extras_Sub_1)</visible>
 				<visible>Skin.HasSetting(Extras_Sub_1)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="245">
 				<description>Extras_Sub 1 off</description>
@@ -900,7 +900,7 @@
 				<onclick>Skin.Reset(no_Extras_Sub_1)</onclick>
 				<visible>Skin.HasSetting(no_Extras_Sub_1)</visible>
 				<visible>Skin.HasSetting(Extras_Sub_1)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="246">
 				<description>Extras_Sub 2 on</description>
@@ -908,7 +908,7 @@
 				<onclick>Skin.SetBool(no_Extras_Sub_2)</onclick>
 				<visible>!Skin.HasSetting(no_Extras_Sub_2)</visible>
 				<visible>Skin.HasSetting(Extras_Sub_2)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="246">
 				<description>Extras_Sub 2 off</description>
@@ -916,7 +916,7 @@
 				<onclick>Skin.Reset(no_Extras_Sub_2)</onclick>
 				<visible>Skin.HasSetting(no_Extras_Sub_2)</visible>
 				<visible>Skin.HasSetting(Extras_Sub_2)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="247">
 				<description>Extras_Sub 3 on</description>
@@ -924,7 +924,7 @@
 				<onclick>Skin.SetBool(no_Extras_Sub_3)</onclick>
 				<visible>!Skin.HasSetting(no_Extras_Sub_3)</visible>
 				<visible>Skin.HasSetting(Extras_Sub_3)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="247">
 				<description>Extras_Sub 3 off</description>
@@ -932,7 +932,7 @@
 				<onclick>Skin.Reset(no_Extras_Sub_3)</onclick>
 				<visible>Skin.HasSetting(no_Extras_Sub_3)</visible>
 				<visible>Skin.HasSetting(Extras_Sub_3)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="248">
 				<description>Extras_Sub 4 on</description>
@@ -940,7 +940,7 @@
 				<onclick>Skin.SetBool(no_Extras_Sub_4)</onclick>
 				<visible>!Skin.HasSetting(no_Extras_Sub_4)</visible>
 				<visible>Skin.HasSetting(Extras_Sub_4)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
 			<item id="248">
 				<description>Extras_Sub 4 off</description>
@@ -948,9 +948,9 @@
 				<onclick>Skin.Reset(no_Extras_Sub_4)</onclick>
 				<visible>Skin.HasSetting(no_Extras_Sub_4)</visible>
 				<visible>Skin.HasSetting(Extras_Sub_4)</visible>
-				<visible>Container(301).HasFocus(2)</visible>
+				<visible>Container(301).HasFocus(11)</visible>
 			</item>
-		<!-- extras (2) End -->
+		<!-- extras (11) End -->
 		<!-- Shutdown (22) -->
 			<item id="61">
 				<description>Shutdown Timer on</description>
@@ -1211,7 +1211,7 @@
 			<colordiffuse>FFFFFFFF</colordiffuse>
 		</control>
 		<control type="label" id="2345">
-			<visible>Container(301).HasFocus(9) |Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1)| Container(301).HasFocus(2)</visible>
+			<visible>Container(301).HasFocus(9) |Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1)| Container(301).HasFocus(11)</visible>
 			<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
 			<posx>25</posx>
 			<posy>-1</posy>
@@ -1339,7 +1339,7 @@
 	<control type="button" id="324">
 		<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)+Skin.HasSetting(CustomMenuanimation)</visible>
 		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(11)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(8001)</onfocus>
 		<!--onfocus>Skin.SetBool(submenu)</onfocus-->
@@ -1347,7 +1347,7 @@
 	<control type="button" id="324">
 		<visible>!Control.IsVisible(8001)</visible>
 		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(11)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>Skin.SetBool(submenu)</onfocus>
@@ -1355,7 +1355,7 @@
 	<control type="button" id="324">
 		<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)</visible>
 		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(11)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>Skin.SetBool(submenu)</onfocus>
@@ -1370,7 +1370,7 @@
 	<!-- Ondown -->
 	<control type="button" id="322">
 		<visible>Control.IsVisible(330)+Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(11)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>Skin.SetBool(submenu)</onfocus>
@@ -2070,7 +2070,7 @@
 				</item>
 				<!-- Music (1) end -->
 				
-			<!-- extras (2) -->
+			<!-- extras (11) -->
 				<item id="51">
 					<description>Programs</description>
 					<label>0</label>
@@ -2084,7 +2084,7 @@
 					<onclick>xbmc.activatewindow(Programs)</onclick>
 					<visible>Skin.HasSetting(no_programs)</visible>
 					<visible>!Skin.HasSetting(sub_extras_Programs)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>	
 				<item id="52">
 					<description>scripts</description>
@@ -2099,7 +2099,7 @@
 					<onclick>xbmc.activatewindow(20)</onclick>
 					<visible>!Skin.HasSetting(scripts)</visible>
 					<visible>!Skin.HasSetting(sub_extras_scripts)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 				<item id="53">
 					<description>Settings</description>
@@ -2116,7 +2116,7 @@
 					<visible>Skin.HasSetting(nosettings)</visible>
 					<visible>!Skin.HasSetting(kiosk)</visible>
 					<visible>!Skin.HasSetting(sub_extras_settings)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 				<item id="56">
 					<description>Shutdown</description>				
@@ -2131,7 +2131,7 @@
 					<onclick>XBMC.Shutdown()</onclick>
 					<visible>!Skin.HasSetting(shutdown)</visible>
 					<visible>!Skin.HasSetting(sub_extras_shutdown)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 				<item id="57">
 					<description>Logout Button</description>
@@ -2148,7 +2148,7 @@
 					<visible>!Skin.HasSetting(signout)</visible>
 					<visible>!Skin.HasSetting(shutdown)</visible>
 					<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 				<item id="54">
 					<description>favourites</description>
@@ -2160,7 +2160,7 @@
                     <onclick>Skin.Reset(musicgenres)</onclick>
 					<onclick>xbmc.activatewindow(134)</onclick>
 					<visible>!Skin.HasSetting(sub_extras_favourites)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 
 				<item id="55">
@@ -2175,7 +2175,7 @@
 					<onclick>AlarmClock(Alarm,Notification(Alarm,$INFO[Skin.String(AlarmString)]),)</onclick>
 					<visible>!Skin.HasSetting(sub_extras_AlarmClock)</visible>
 					<visible>!System.HasAlarm(Alarm)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 				<item id="55">
 					<description>AlarmClock off</description>
@@ -2188,7 +2188,7 @@
 					<onclick>CancelAlarm(Alarm)</onclick>
 					<visible>!Skin.HasSetting(sub_extras_AlarmClock)</visible>
 					<visible>System.HasAlarm(Alarm)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 
 				<item id="245">
@@ -2202,7 +2202,7 @@
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>$INFO[Skin.String(Extras_Sub_1path)]</onclick>
 					<visible>Skin.HasSetting(Extras_Sub_1)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 				<item id="246">
 					<description>Extras_Sub 2</description>
@@ -2215,7 +2215,7 @@
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>$INFO[Skin.String(Extras_Sub_2path)]</onclick>
 					<visible>Skin.HasSetting(Extras_Sub_2)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 				<item id="247">
 					<description>Extras_Sub 3</description>
@@ -2228,7 +2228,7 @@
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>$INFO[Skin.String(Extras_Sub_3path)]</onclick>
 					<visible>Skin.HasSetting(Extras_Sub_3)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
 				<item id="248">
 					<description>Extras_Sub 4</description>
@@ -2241,21 +2241,21 @@
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>$INFO[Skin.String(Extras_Sub_4path)]</onclick>
 					<visible>Skin.HasSetting(Extras_Sub_4)</visible>
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 				</item>
-			<!-- extras (2) End -->
+			<!-- extras (11) End -->
 
 
 			<!-- Programs (3) scripts --
 				<item id="258">
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 					<visible>Skin.HasSetting(gamescript1)</visible>
 					<description>scripts</description>
 					<label>$INFO[Skin.String(gamescript1name)]</label>
 					<onclick>XBMC.RunScript($INFO[Skin.String(gamescript1path)])</onclick>
 				</item>
 				<item id="257">
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 					<visible>Skin.HasSetting(gamescript2)</visible>
 					<description>scripts</description>
 					<label>$INFO[Skin.String(gamescript2name)]</label>
@@ -2264,7 +2264,7 @@
 			!-- Programs (3) scripts --
 			!-- Programs (3) Plugin --
 				<item id="256">
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 					<visible>Skin.HasSetting(gamesplugin1)</visible>
 					<description>plugin1</description>
 					<label>$INFO[Skin.String(gamesplugin1name)]</label>
@@ -2272,7 +2272,7 @@
 					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin1path)]/)</onclick>
 				</item>
 				<item id="255">
-					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Container(300).HasFocus(11)</visible>
 					<visible>Skin.HasSetting(gamesplugin2)</visible>
 					<description>plugin2</description>
 					<label>$INFO[Skin.String(gamesplugin2name)]</label>
@@ -2936,7 +2936,7 @@
 				<textcolor>c0FFFFFF</textcolor>
 				<label fallback="-1">$INFO[Window.Property(LatestEpisode.2.Plot)]</label>
 				<visible>Container(300).HasFocus(7)</visible>
-				<visible>Container(8001).HasFocus(2)</visible>
+				<visible>Container(8001).HasFocus(11)</visible>
 			</control>
 			<control type="textbox">
 				<font>Font_MultiplexPlotSmall</font>
