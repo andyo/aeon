@@ -7,8 +7,6 @@
     <align>center</align>
     <aligny>center</aligny>
     <font>Font_Submenu</font>
-    <textcolor>5fFFFFFF</textcolor>
-    <focusedcolor>FFFFFFFF</focusedcolor>
 	<info>ListItem.Label</info>
 </include>
 
@@ -122,7 +120,7 @@
 		<width>840</width>
 		<height>40</height>
 		<defaultcontrol>300</defaultcontrol>
-		<visible>Container(301).HasFocus(9) | Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1)| Container(301).HasFocus(11)</visible>
+		<visible>Container(301).HasFocus(9) | Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1) | Container(301).HasFocus(11)</visible>
 		<control type="group">
 			<posx>328</posx>
 			<posy>-21</posy>
@@ -1211,7 +1209,7 @@
 			<colordiffuse>FFFFFFFF</colordiffuse>
 		</control>
 		<control type="label" id="2345">
-			<visible>Container(301).HasFocus(9) |Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1)| Container(301).HasFocus(11)</visible>
+			<visible>Container(301).HasFocus(9) | Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1) | Container(301).HasFocus(11)</visible>
 			<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
 			<posx>25</posx>
 			<posy>-1</posy>
@@ -1339,7 +1337,7 @@
 	<control type="button" id="324">
 		<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)+Skin.HasSetting(CustomMenuanimation)</visible>
 		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(11)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1) | Container(300).HasFocus(11)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(8001)</onfocus>
 		<!--onfocus>Skin.SetBool(submenu)</onfocus-->
@@ -1347,7 +1345,7 @@
 	<control type="button" id="324">
 		<visible>!Control.IsVisible(8001)</visible>
 		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(11)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1) | Container(300).HasFocus(11)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>Skin.SetBool(submenu)</onfocus>
@@ -1355,7 +1353,7 @@
 	<control type="button" id="324">
 		<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)</visible>
 		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(11)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1) | Container(300).HasFocus(11)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>Skin.SetBool(submenu)</onfocus>
@@ -1370,7 +1368,7 @@
 	<!-- Ondown -->
 	<control type="button" id="322">
 		<visible>Control.IsVisible(330)+Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(11)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(9) | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1) | Container(300).HasFocus(11)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>Skin.SetBool(submenu)</onfocus>
@@ -1484,6 +1482,7 @@
 					<width>127</width>
 					<posx>90</posx>
 					<include>SubMenu_Label</include>
+                    <textcolor>5fFFFFFF</textcolor>
 				</control>
 			</itemlayout>
 			<focusedlayout width="129" height="33">
@@ -1491,12 +1490,25 @@
 					<width>127</width>
 					<posx>90</posx>
 					<include>SubMenu_Label</include>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <animation effect="fade" start="0" end="50" time="200">Focus</animation>
+                    <animation effect="fade" start="0" end="0" time="200">Unfocus</animation>
 				</control>
 				<control type="label">
 					<width>127</width>
 					<posx>90</posx>
 					<include>SubMenu_Label</include>
-					<include>Animation_ButtonFocusFade</include>
+                    <textcolor>5FFFFFFF</textcolor>
+                    <animation effect="fade" start="100" end="0" time="200">Focus</animation>
+                    <animation effect="fade" start="0" end="100" time="100">Unfocus</animation>
+				</control>
+				<control type="label">
+					<width>127</width>
+					<posx>90</posx>
+					<include>SubMenu_Label</include>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <animation effect="fade" start="50" end="50" time="200">Focus</animation>
+                    <animation effect="fade" start="50" end="0" time="100">Unfocus</animation>
 				</control>
 			</focusedlayout>
 			<content>

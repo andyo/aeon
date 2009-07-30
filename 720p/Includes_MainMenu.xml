@@ -479,14 +479,6 @@
 				<onclick>SetFocus(92)</onclick>
 				<visible>!Skin.HasSetting(nomusic)</visible>
 			</item>
-			<item id="2">
-				<description>Extras</description>
-				<label>31865</label>
-				<include>BackgroundVars_extras</include>				
-				<onclick>Skin.SetString(custom,Custom_extras)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>!Skin.HasSetting(no_extras)</visible>
-			</item>
 			<item id="5">
 				<label>31012</label>
 				<include>BackgroundVarsPictures</include>						
@@ -517,6 +509,14 @@
 				<onclick>Skin.SetString(custom,CustomVideos)</onclick>
 				<onclick>SetFocus(92)</onclick>
 				<visible>!Skin.HasSetting(novideos)</visible>
+			</item>
+			<item id="11">
+				<description>Extras</description>
+				<label>31865</label>
+				<include>BackgroundVars_extras</include>				
+				<onclick>Skin.SetString(custom,Custom_extras)</onclick>
+				<onclick>SetFocus(92)</onclick>
+				<visible>!Skin.HasSetting(no_extras)</visible>
 			</item>
 			<item id="24">
 				<label>31020</label>
@@ -745,20 +745,6 @@
 				<onclick>Skin.Reset(nomusic)</onclick>
 				<visible>Skin.HasSetting(nomusic)</visible>
 			</item>
-			<item id="2">
-				<description>Extras on</description>
-				<label>31865</label>
-				<include>BackgroundVars_extras</include>				
-				<onclick>Skin.SetBool(no_extras)</onclick>
-				<visible>!Skin.HasSetting(no_extras)</visible>
-			</item>
-			<item id="2">
-				<description>Extras off</description>
-				<label2>31865</label2>
-				<include>BackgroundVars_extras</include>					
-				<onclick>Skin.Reset(no_extras)</onclick>
-				<visible>Skin.HasSetting(no_extras)</visible>
-			</item>
 			<item id="5">
 				<label>31012</label>
 				<include>BackgroundVarsPictures</include>					
@@ -847,6 +833,20 @@
 				<visible>System.HasNetwork</visible>
 				<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
 				<visible>!Skin.HasSetting(weather)</visible>
+			</item>
+			<item id="11">
+				<description>Extras on</description>
+				<label>31865</label>
+				<include>BackgroundVars_extras</include>				
+				<onclick>Skin.SetBool(no_extras)</onclick>
+				<visible>!Skin.HasSetting(no_extras)</visible>
+			</item>
+			<item id="11">
+				<description>Extras off</description>
+				<label2>31865</label2>
+				<include>BackgroundVars_extras</include>					
+				<onclick>Skin.Reset(no_extras)</onclick>
+				<visible>Skin.HasSetting(no_extras)</visible>
 			</item>
 			<item id="3">
 				<description>Programs On</description>
