@@ -208,6 +208,8 @@
 	<string id="31245">AUSWAHL DER SCHALTER</string>
 	<string id="31246">MOD-SPEZIFISCH</string>
 	<string id="31247">ZUSATZEINSTELLUNGEN</string>
+	<string id="31248">CONFIGURE MENU'S</string>
+	<string id="31249">Add Remove Item's</string>
 
 	<string id="31254">- 4 TAGE VORHERSAGE</string>
 	<string id="31255">- 36 STUNDEN VORHERSAGE</string>
@@ -313,19 +315,19 @@
 	<string id="31408">IMDB</string>
 	<string id="31409">TRAILER</string>
 	<string id="31410">LADEN</string>
-	<string id="31411">ANSEHEN</string>
+	<string id="31411">START</string>
 	<string id="31412">FANART</string>
 	<string id="31413">STIMMUNG</string>
 	<string id="31414">Handlungsdetails nicht verfügbar</string>
 	<string id="31415">Biografie nicht verfügbar</string>
 	<string id="31416">STILE</string>
-	<string id="31417">FREIGABE</string>
+	<string id="31417">BEWERTUNG</string>
 	<string id="31418">COVER</string>
 	<string id="31419">AKTUALISIEREN</string>
 	<string id="31420">WEITER</string>
 	<string id="31421">ABSPIELEN</string>
 	<string id="31422">NOTIZEN</string>
-	<string id="31423">ETIKETT</string>
+	<string id="31423">LABEL</string>
 	<string id="31424">Keine Album-Kritik vorhanden</string>
 	<string id="31425">Keine Angabe</string>
 	<string id="31426">TITEL</string>
@@ -559,7 +561,7 @@
 	<string id="31971">BESTIMME DAS AUSSEHEN:</string>
 	<string id="31972">UNBENUTZTER SCHALTER (VORHER: VERTIKALES MENÜ)</string>
 	<string id="31973">POSITION DES ORDNERS MIT FILMEN (FÜR 'EXTRATHUMBS')</string>
-	<string id="31974">DYNAMISCHE FLUSS-ANSICHT </string>
+	<string id="31974">DYNAMISCHE FLUSS-ANSICHT</string>
 
 <!-- customisation strings added by azido -->
 

@@ -198,12 +198,13 @@
 	<string id="31243">DISABLE ALL</string>
 	<string id="31244">MENUS</string>
 	<string id="31245">BROWSING LAYOUT</string>
-	<string id="31246">TWEAKS</string>
+	<string id="31246">SHOWMIX</string>
 	<string id="31247">MODS SETTINGS</string>
+	<string id="31246">SHOWMIX</string>
+	<string id="31247">MODS SETTINGS</string>
+	<string id="31248">CONFIGURE MENU'S</string>
+	<string id="31249">Add Remove Item's</string>
 
-	<string id="31254">- 4 DAY FORECAST</string>
-	<string id="31255">- 36 HOUR FORECAST</string>
-	<string id="31256">- WEEKEND FORECAST</string>
 
   
 <!-- Aeon Advanced options -->
@@ -524,7 +525,6 @@
 	<string id="31877">Exit</string>
 	<string id="31878">TOTALS</string>
 	<string id="31879">RECENTLY ADDED</string>
-	<string id="31880">CONFIGURE MENU'S</string>
 
 <!-- ShowMix -->
 
@@ -560,7 +560,7 @@
 	<string id="31971">VIEWTYPE OPTIONS</string>
 	<string id="31972">VERTICAL MENU</string>
 	<string id="31973">MOVIE FOLDER LOCATION</string>
-	<string id="31974">DYNAMIC FLOW</string>
+	<string id="31974">DYNAMIC COVERFLOW</string>
 
 <!-- customisation strings added by azido -->
 
