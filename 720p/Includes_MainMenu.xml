@@ -110,6 +110,12 @@
 				<description>Extras</description>
 				<label>31865</label>
 				<include>BackgroundVars_extras</include>
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videofiles)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(videogenres)</onclick>
+                <onclick>Skin.Reset(music)</onclick>
+                <onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>SetFocus(322)</onclick>
 				<visible>Skin.HasSetting(lowermainmenu)</visible>
 				<visible>!Skin.HasSetting(no_extras)</visible>

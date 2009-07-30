@@ -64,6 +64,17 @@
         <include>VerticalMenu</include>		
 
 	</control>
+<!-- DEBUG INFO -->
+    <control type="label">
+        <posx>700</posx>
+        <posy>50</posy>
+        <width>900</width>
+        <height>13</height>
+        <font>Font_MultiplexInfoLabel</font>
+        <textcolor>FFFFFFFF</textcolor>		
+        <label>** $INFO[Container.content()]</label>
+        <visible>Skin.HasSetting(debug)</visible>
+	</control>    
 
 	
 	<include>Furniture_DarkGradient</include>

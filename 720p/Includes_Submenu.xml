@@ -1496,7 +1496,7 @@
 					<width>127</width>
 					<posx>90</posx>
 					<include>SubMenu_Label</include>
-<!--					<include>Animation_ButtonFocusFade</include>-->
+					<include>Animation_ButtonFocusFade</include>
 				</control>
 			</focusedlayout>
 			<content>
@@ -1523,24 +1523,11 @@
 					<visible>Container(300).HasFocus(10)</visible>
 				</item>
 				<item id="4">
-<!--***-->				<label fallback="4 DAYS">31853</label>
-					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+<!--***-->				<label fallback="10 DAYS">31861</label>
 					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
-					<onclick>Skin.SetBool(weatherpopupweek)</onclick>
-					<visible>Container(300).HasFocus(10)</visible>
-				</item>
-				<item id="5">
-<!--***-->				<label fallback="36 HOURS">31852</label>
-					<onclick>Skin.SetBool(weatherpopup36hour)</onclick>
-					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
-					<onclick>Skin.Reset(weatherpopupweek)</onclick>
-					<visible>Container(300).HasFocus(10)</visible>
-				</item>
-				<item id="6">
-<!--***-->				<label fallback="WEEKEND">31851</label>
-					<onclick>Skin.SetBool(weatherpopupweekend)</onclick>
 					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
 					<onclick>Skin.Reset(weatherpopupweek)</onclick>
+                    <onclick>xbmc.activatewindow(2600)</onclick>
 					<visible>Container(300).HasFocus(10)</visible>
 				</item>
 			<!-- weather (10) end -->
