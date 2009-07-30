@@ -41,7 +41,7 @@
 		<height>41</height>
 		<font>Font_List</font>
 		<aligny>center</aligny>
-		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes) | Container.Content(songs)">Conditional</animation>			
+		<animation effect="slide" start="60,-7" end="60,-7" time="0" condition="Container.Content(episodes) | Container.Content(songs)">Conditional</animation>			
 		<animation effect="slide" start="0,10" end="0,10" time="0" condition="Window.IsActive(1) | Window.IsActive(20) | Window.IsActive(24) | [[Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Container.Content(movies)] | [Window.IsActive(2) + IsEmpty(ListItem.PictureDateTime)] | [Container.Content(seasons) + !IsEmpty(ListItem.Episode)] | [Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]]">Conditional</animation>				
 		<animation effect="slide" start="0,20" end="0,20" time="0" condition="[Window.IsActive(25) + Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes) | Container.Content(tvshows)]] | [Container.Content(seasons) + IsEmpty(ListItem.Episode)] | [Container.Content(episodes) + IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]">Conditional</animation>			
     </include>
@@ -92,15 +92,15 @@
 
 	<include name="ListLabel_SubTV">
 		<posx>45</posx>
-		<posy>20</posy>
-		<width>480</width>
-		<height>40</height>
+		<posy>27</posy>
+		<height>34</height>
 		<font>Font_ListSub</font>
 		<align>left</align>
-		<aligny>center</aligny>
         <wrapmultiline>true</wrapmultiline>
-		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes)">Conditional</animation>			
-		<animation effect="slide" start="60,-10" end="60,-10" time="0" condition="Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]">Conditional</animation>		
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="!Skin.HasSetting(FullscreenTVEpisodesMultiplex) + Container.Content(episodes)">Conditional</animation>			
+		<animation effect="slide" start="60,-6" end="60,-4" time="0" condition="Skin.HasSetting(FullscreenTVEpisodesMultiplex) + Container.Content(episodes)">Conditional</animation>			
+		<animation effect="slide" start="60,-10" end="60,-10" time="0" condition="!Skin.HasSetting(FullscreenTVEpisodesMultiplex) + Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]">Conditional</animation>		
+		<animation effect="slide" start="60,-16" end="60,-14" time="0" condition="Skin.HasSetting(FullscreenTVEpisodesMultiplex) + Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]">Conditional</animation>		
 	</include>	
 	
 	<include name="ListLabel_Main_Playlist">
@@ -1340,10 +1340,10 @@
                 </control>
             </focusedlayout>
 
-            <itemlayout condition="[Window.IsActive(25) + Container.Content(tvshows) + Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(seasons) + Skin.HasSetting(tvseasonslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)]" height="77">
+            <itemlayout condition="[Window.IsActive(25) + Container.Content(tvshows) + Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(seasons) + Skin.HasSetting(tvseasonslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)]" height="90">
                 <control type="image">
                     <posx>12</posx>
-                    <posy>76</posy>
+                    <posy>89</posy>
                     <height>1</height>
                     <width>739</width>
                     <texture>list/listpanel_line.png</texture>
@@ -1368,25 +1368,29 @@
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
                     <visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
                     <visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
                 </control>
-                <control type="label">
+                <control type="textbox" id="1">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Plot]</label>
                     <visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
-                    <animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
+                    <animation effect="slide" start="0,22" end="0,22" time="0" condition="true">Conditional</animation>						
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Genre]</label>
                     <visible>!IsEmpty(ListItem.Genre) + Container.Content(tvshows)</visible>
@@ -1426,10 +1430,10 @@
                     <info>ListItem.Overlay</info>
                 </control>
             </itemlayout>
-            <focusedlayout condition="[Window.IsActive(25) + Container.Content(tvshows) + Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(seasons) + Skin.HasSetting(tvseasonslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)]" height="77">
+            <focusedlayout condition="[Window.IsActive(25) + Container.Content(tvshows) + Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(seasons) + Skin.HasSetting(tvseasonslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)]" height="90">
                 <control type="image">
                     <posx>12</posx>
-                    <posy>76</posy>
+                    <posy>89</posy>
                     <height>1</height>
                     <width>739</width>
                     <texture>list/listpanel_line.png</texture>
@@ -1438,7 +1442,7 @@
                     <posx>8</posx>
                     <posy>-5</posy>
                     <width>743</width>
-                    <height>87</height>
+                    <height>100</height>
                     <texture>list/listpanel_selectbar.png</texture>
                     <include>Animation_ButtonFocusFade</include>
                     <visible>Control.IsVisible(50) | Window.IsActive(106) | Window.IsActive(129) | Window.IsActive(126) | Window.IsActive(601) | Window.IsActive(602) | Window.IsActive(111) | Window.IsActive(2003)</visible>
@@ -1459,6 +1463,7 @@
                 </control>	
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
                     <include>Animation_ButtonFocusFade_fix</include>						
@@ -1466,6 +1471,7 @@
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
                     <include>Animation_ButtonFocusFade_fix</include>						
@@ -1473,6 +1479,7 @@
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Genre]</label>
                     <include>Animation_ButtonFocusFade_fix</include>						
@@ -1534,6 +1541,7 @@
                 </control>	
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolorfocus</include>	
                     <label>$INFO[ListItem.Episode,, $LOCALIZE[31938]]</label>
                     <include>Animation_ButtonFocusFade</include>						
@@ -1541,21 +1549,25 @@
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolorfocus</include>	
                     <label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
                     <include>Animation_ButtonFocusFade</include>						
                     <visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
                 </control>
-                <control type="label">
+                <control type="textbox" id="2">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolorfocus</include>	
                     <label>$INFO[ListItem.Plot]</label>
                     <include>Animation_ButtonFocusFade</include>						
+                    <autoscroll delay="3000" time="2000" repeat="10000">Control.HasFocus(50)</autoscroll>
                     <visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
-                    <animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
+                    <animation effect="slide" start="0,22" end="0,22" time="0" condition="true">Conditional</animation>						
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>490</width>
                     <include>subcolorfocus</include>	
                     <label>$INFO[ListItem.Genre]</label>
                     <include>Animation_ButtonFocusFade</include>						
@@ -2213,18 +2225,21 @@
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
                     <visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
                     <visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
                 </control>
-                <control type="label">
+                <control type="textbox" id="3">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Plot]</label>
                     <visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
@@ -2232,6 +2247,7 @@
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Genre]</label>
                     <visible>!IsEmpty(ListItem.Genre) + Container.Content(tvshows)</visible>
@@ -2292,7 +2308,7 @@
                     <include>ListLabel_Main</include>
                     <include>listcolornofocus</include>
                     <info>ListItem.Title</info>
-                    <include>Animation_ButtonFocusFade_fix</include>						
+                    <include>Animation_ButtonFocusFade_fix</include>
                     <visible>!IsEmpty(ListItem.Title)</visible>
                 </control>	
                 <control type="label">
@@ -2304,6 +2320,7 @@
                 </control>	
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
                     <include>Animation_ButtonFocusFade_fix</include>						
@@ -2311,6 +2328,7 @@
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
                     <include>Animation_ButtonFocusFade_fix</include>						
@@ -2318,6 +2336,7 @@
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolornofocus</include>	
                     <label>$INFO[ListItem.Genre]</label>
                     <include>Animation_ButtonFocusFade_fix</include>						
@@ -2379,6 +2398,7 @@
                 </control>	
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolorfocus</include>	
                     <label>$INFO[ListItem.Episode,, $LOCALIZE[31938]]</label>
                     <include>Animation_ButtonFocusFade</include>						
@@ -2386,21 +2406,25 @@
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolorfocus</include>	
                     <label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
                     <include>Animation_ButtonFocusFade</include>						
                     <visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
                 </control>
-                <control type="label">
+                <control type="textbox" id="4">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolorfocus</include>	
                     <label>$INFO[ListItem.Plot]</label>
+                    <autoscroll delay="3000" time="2000" repeat="10000">Control.HasFocus(50)</autoscroll>
                     <include>Animation_ButtonFocusFade</include>						
                     <visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
                     <animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
                 </control>
                 <control type="label">
                     <include>ListLabel_SubTV</include>
+                    <width>550</width>
                     <include>subcolorfocus</include>	
                     <label>$INFO[ListItem.Genre]</label>
                     <include>Animation_ButtonFocusFade</include>						
