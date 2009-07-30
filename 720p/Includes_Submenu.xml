@@ -215,73 +215,73 @@
 			<content>
 			<!-- TV (7) -->
 			<item id="10">
+   				<description>By Genre on</description>
+				<label>135</label>
+				<onclick>Skin.SetBool(sub_tv_Genre)</onclick>
+				<visible>!Skin.HasSetting(sub_tv_Genre)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="10">
+   				<description>By Genre off</description>
+				<label2>135</label2>
+				<onclick>Skin.Reset(sub_tv_Genre)</onclick>
+				<visible>Skin.HasSetting(sub_tv_Genre)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="11">
 				<description>Files on</description>
 				<label>744</label>
 				<onclick>Skin.SetBool(sub_tv_file)</onclick>
 				<visible>!Skin.HasSetting(sub_tv_file)</visible>
 				<visible>Container(301).HasFocus(7)</visible>
 			</item>
-			<item id="10">
+			<item id="11">
 				<description>Files off</description>
 				<label2>744</label2>
 				<onclick>Skin.Reset(sub_tv_file)</onclick>
 				<visible>Container(301).HasFocus(7)</visible>
 				<visible>Skin.HasSetting(sub_tv_file)</visible>
 			</item>
-			<item id="11">
-      				<description>By Genre on</description>
-				<label>135</label>
-				<onclick>Skin.SetBool(sub_tv_Genre)</onclick>
-				<visible>!Skin.HasSetting(sub_tv_Genre)</visible>
+			<item id="12">
+				<description>Recently Added on</description>
+				<label>31920</label>
+				<onclick>Skin.SetBool(sub_tv_recently)</onclick>
+				<visible>!Skin.HasSetting(sub_tv_recently)</visible>
 				<visible>Container(301).HasFocus(7)</visible>
-	            	</item>
-			<item id="11">
-      				<description>By Genre off</description>
-				<label2>135</label2>
-				<onclick>Skin.Reset(sub_tv_Genre)</onclick>
-				<visible>Skin.HasSetting(sub_tv_Genre)</visible>
+           	</item>
+			<item id="12">
+				<description>Recently Added off</description>
+				<label2>31920</label2>
+				<onclick>Skin.Reset(sub_tv_recently)</onclick>
+				<visible>Skin.HasSetting(sub_tv_recently)</visible>
 				<visible>Container(301).HasFocus(7)</visible>
-	            	</item>
-	       	    	<item id="12">
+           	</item>
+            <item id="13">
 				<description>By Year on</description>
 				<label>345</label>
 				<onclick>Skin.SetBool(sub_tv_year)</onclick>
 				<visible>!Skin.HasSetting(sub_tv_year)</visible>
 				<visible>Container(301).HasFocus(7)</visible>
         	    	</item>
-	       	    	<item id="12">
+            <item id="13">
 				<description>By Year off</description>
 				<label2>345</label2>
 				<onclick>Skin.Reset(sub_tv_year)</onclick>
 				<visible>Skin.HasSetting(sub_tv_year)</visible>
 				<visible>Container(301).HasFocus(7)</visible>
         	    	</item>
-			<item id="13">
+			<item id="14">
 				<description>By Actor on</description>
 				<label>344</label>
 				<onclick>Skin.SetBool(sub_tv_Actor)</onclick>
 				<visible>!Skin.HasSetting(sub_tv_Actor)</visible>
 				<visible>Container(301).HasFocus(7)</visible>
 			</item>
-			<item id="13">
+			<item id="14">
 				<description>By Actor off</description>
 				<label2>344</label2>
 				<onclick>Skin.Reset(sub_tv_Actor)</onclick>
 				<visible>Skin.HasSetting(sub_tv_Actor)</visible>
-				<visible>Container(301).HasFocus(7)</visible>
-			</item>
-			<item id="14">
-				<description>Recently Added on</description>
-				<label>31920</label>
-				<onclick>Skin.SetBool(sub_tv_recently)</onclick>
-				<visible>!Skin.HasSetting(sub_tv_recently)</visible>
-				<visible>Container(301).HasFocus(7)</visible>
-			</item>
-			<item id="14">
-				<description>Recently Added off</description>
-				<label2>31920</label2>
-				<onclick>Skin.Reset(sub_tv_recently)</onclick>
-				<visible>Skin.HasSetting(sub_tv_recently)</visible>
 				<visible>Container(301).HasFocus(7)</visible>
 			</item>
 			<item id="15">
@@ -365,101 +365,101 @@
 		<!-- TV (7) end -->
 		<!-- Movies (6) -->
 			<item id="20">
-				<description>files on</description>
-				<label>744</label>
-				<onclick>Skin.SetBool(sub_movies_files)</onclick>
-				<visible>!Skin.HasSetting(sub_movies_files)</visible>
-				<visible>Container(301).HasFocus(6)</visible>
-			</item>
-			<item id="20">
-				<description>files off</description>
-				<label2>744</label2>
-				<onclick>Skin.Reset(sub_movies_files)</onclick>
-				<visible>Skin.HasSetting(sub_movies_files)</visible>
-				<visible>Container(301).HasFocus(6)</visible>
-			</item>
-			<item id="21">
 				<description>By Genre on</description>
 				<label>135</label>
 				<onclick>Skin.SetBool(sub_movies_Genre)</onclick>
 				<visible>!Skin.HasSetting(sub_movies_Genre)</visible>
 				<visible>Container(301).HasFocus(6)</visible>
 			</item>
-			<item id="21">
+			<item id="20">
 				<description>By Genre off</description>
 				<label2>135</label2>
 				<onclick>Skin.Reset(sub_movies_Genre)</onclick>
 				<visible>Skin.HasSetting(sub_movies_Genre)</visible>
 				<visible>Container(301).HasFocus(6)</visible>
 			</item>
+			<item id="21">
+				<description>files on</description>
+				<label>744</label>
+				<onclick>Skin.SetBool(sub_movies_files)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_files)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="21">
+				<description>files off</description>
+				<label2>744</label2>
+				<onclick>Skin.Reset(sub_movies_files)</onclick>
+				<visible>Skin.HasSetting(sub_movies_files)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
 			<item id="22">
-				<description>By Year on</description>
-				<label>345</label>
-				<onclick>Skin.SetBool(sub_movies_Year)</onclick>
-				<visible>Container(301).HasFocus(6)</visible>
-				<visible>!Skin.HasSetting(sub_movies_Year)</visible>
-			</item>
-			<item id="22">
-				<description>By Year off</description>
-				<label2>345</label2>
-				<onclick>Skin.Reset(sub_movies_Year)</onclick>
-				<visible>Skin.HasSetting(sub_movies_Year)</visible>
-				<visible>Container(301).HasFocus(6)</visible>
-			</item>
-			<item id="23">
-				<description>By Actor on</description>
-				<label>344</label>
-				<onclick>Skin.SetBool(sub_movies_Actor)</onclick>
-				<visible>!Skin.HasSetting(sub_movies_Actor)</visible>
-				<visible>Container(301).HasFocus(6)</visible>
-			</item>
-			<item id="23">
-				<description>By Actor off</description>
-				<label2>344</label2>
-				<onclick>Skin.Reset(sub_movies_Actor)</onclick>
-				<visible>Skin.HasSetting(sub_movies_Actor)</visible>
-				<visible>Container(301).HasFocus(6)</visible>
-			</item>
-			<item id="24">
-				<description>By Director on</description>
-				<label>20339</label>
-				<onclick>Skin.SetBool(sub_movies_Director)</onclick>
-				<visible>!Skin.HasSetting(sub_movies_Director)</visible>
-				<visible>Container(301).HasFocus(6)</visible>
-			</item>
-			<item id="24">
-				<description>By Director off</description>
-				<label2>20339</label2>
-				<onclick>Skin.Reset(sub_movies_Director)</onclick>
-				<visible>Skin.HasSetting(sub_movies_Director)</visible>
-				<visible>Container(301).HasFocus(6)</visible>
-			</item>
-			<item id="25">
-				<description>By Studio on</description>
-				<label>20388</label>
-				<onclick>Skin.SetBool(sub_movies_Studio)</onclick>
-				<visible>!Skin.HasSetting(sub_movies_Studio)</visible>
-				<visible>Container(301).HasFocus(6)</visible>
-			</item>
-			<item id="25">
-				<description>By Studio off</description>
-				<label2>20388</label2>
-				<onclick>Skin.Reset(sub_movies_Studio)</onclick>
-				<visible>Skin.HasSetting(sub_movies_Studio)</visible>
-				<visible>Container(301).HasFocus(6)</visible>
-			</item>
-			<item id="26">
 				<description>Recently Added on</description>
 				<label>31920</label>
 				<onclick>Skin.SetBool(sub_movies_recently)</onclick>
 				<visible>!Skin.HasSetting(sub_movies_recently)</visible>
 				<visible>Container(301).HasFocus(6)</visible>
 			</item>
-			<item id="26">
+			<item id="22">
 				<description>Recently Added off</description>
 				<label2>31920</label2>
 				<onclick>Skin.Reset(sub_movies_recently)</onclick>
 				<visible>Skin.HasSetting(sub_movies_recently)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="23">
+				<description>By Year on</description>
+				<label>345</label>
+				<onclick>Skin.SetBool(sub_movies_Year)</onclick>
+				<visible>Container(301).HasFocus(6)</visible>
+				<visible>!Skin.HasSetting(sub_movies_Year)</visible>
+			</item>
+			<item id="23">
+				<description>By Year off</description>
+				<label2>345</label2>
+				<onclick>Skin.Reset(sub_movies_Year)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Year)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="24">
+				<description>By Actor on</description>
+				<label>344</label>
+				<onclick>Skin.SetBool(sub_movies_Actor)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_Actor)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="24">
+				<description>By Actor off</description>
+				<label2>344</label2>
+				<onclick>Skin.Reset(sub_movies_Actor)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Actor)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="25">
+				<description>By Director on</description>
+				<label>20339</label>
+				<onclick>Skin.SetBool(sub_movies_Director)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_Director)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="25">
+				<description>By Director off</description>
+				<label2>20339</label2>
+				<onclick>Skin.Reset(sub_movies_Director)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Director)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="26">
+				<description>By Studio on</description>
+				<label>20388</label>
+				<onclick>Skin.SetBool(sub_movies_Studio)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_Studio)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="26">
+				<description>By Studio off</description>
+				<label2>20388</label2>
+				<onclick>Skin.Reset(sub_movies_Studio)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Studio)</visible>
 				<visible>Container(301).HasFocus(6)</visible>
 			</item>
 			<item id="27">
@@ -1533,6 +1533,20 @@
 			<!-- weather (10) end -->
 			<!-- TV (7) -->
 				<item id="10">
+                    <description>By Genre</description>
+					<label>135</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+                    <onclick>Skin.SetBool(videogenres)</onclick>
+                    <onclick>Skin.SetBool(videotv)</onclick>
+                    <onclick>Skin.Reset(videomovies)</onclick>
+                    <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(favourites)</onclick>
+                    <onclick>Skin.Reset(musicgenres)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowgenres,return)</onclick>
+					<visible>!Skin.HasSetting(sub_tv_Genre)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="11">
 					<description>Video Files</description>
 					<label>744</label>
 					<onclick>Skin.Reset(submenu)</onclick>
@@ -1546,21 +1560,21 @@
 					<visible>!Skin.HasSetting(sub_tv_file)</visible>
 					<visible>Container(300).HasFocus(7)</visible>
 				</item>
-				<item id="11">
-              				<description>By Genre</description>
-					<label>135</label>
+				<item id="12">
+					<description>Recently Added</description>
+					<label>31920</label>
 					<onclick>Skin.Reset(submenu)</onclick>
-                    <onclick>Skin.SetBool(videogenres)</onclick>
                     <onclick>Skin.SetBool(videotv)</onclick>
                     <onclick>Skin.Reset(videomovies)</onclick>
                     <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(videogenres)</onclick>
                     <onclick>Skin.Reset(favourites)</onclick>
                     <onclick>Skin.Reset(musicgenres)</onclick>
-					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowgenres,return)</onclick>
-					<visible>!Skin.HasSetting(sub_tv_Genre)</visible>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedepisodes,return)</onclick>
+					<visible>!Skin.HasSetting(sub_tv_Recently)</visible>
 					<visible>Container(300).HasFocus(7)</visible>
-		            	</item>
-	        	    	<item id="12">
+                </item>
+                <item id="13">
 					<description>By Year</description>
 					<label>345</label>
 					<onclick>Skin.Reset(submenu)</onclick>
@@ -1574,7 +1588,7 @@
 					<visible>!Skin.HasSetting(sub_tv_year)</visible>
 					<visible>Container(300).HasFocus(7)</visible>
         		    	</item>
-				<item id="13">
+				<item id="14">
 					<description>By Actor</description>
 					<label>344</label>
 					<onclick>Skin.Reset(submenu)</onclick>
@@ -1586,20 +1600,6 @@
                     <onclick>Skin.Reset(musicgenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowactors,return)</onclick>
 					<visible>!Skin.HasSetting(sub_tv_Actor)</visible>
-					<visible>Container(300).HasFocus(7)</visible>
-				</item>
-				<item id="14">
-					<description>Recently Added</description>
-					<label>31920</label>
-					<onclick>Skin.Reset(submenu)</onclick>
-                    <onclick>Skin.SetBool(videotv)</onclick>
-                    <onclick>Skin.Reset(videomovies)</onclick>
-                    <onclick>Skin.Reset(music)</onclick>
-                    <onclick>Skin.Reset(videogenres)</onclick>
-                    <onclick>Skin.Reset(favourites)</onclick>
-                    <onclick>Skin.Reset(musicgenres)</onclick>
-					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedepisodes,return)</onclick>
-					<visible>!Skin.HasSetting(sub_tv_Recently)</visible>
 					<visible>Container(300).HasFocus(7)</visible>
 				</item>
 				<item id="15">
@@ -1675,20 +1675,6 @@
 				<!-- TV (7) end -->
 				<!-- Movies (6) -->
 				<item id="20">
-					<description>Video Files</description>
-					<label>744</label>
-					<onclick>Skin.Reset(submenu)</onclick>
-                    <onclick>Skin.Reset(videotv)</onclick>
-                    <onclick>Skin.Reset(videomovies)</onclick>
-                    <onclick>Skin.Reset(music)</onclick>
-                    <onclick>Skin.Reset(videogenres)</onclick>
-                    <onclick>Skin.Reset(favourites)</onclick>
-                    <onclick>Skin.Reset(musicgenres)</onclick>
-					<onclick>XBMC.ActivateWindow(24)</onclick>
-					<visible>!Skin.HasSetting(sub_movies_files)</visible>
-					<visible>Container(300).HasFocus(6)</visible>
-				</item>
-				<item id="21">
 					<description>By Genre</description>
 					<label>135</label>
 					<onclick>Skin.Reset(submenu)</onclick>
@@ -1702,7 +1688,35 @@
 					<visible>!Skin.HasSetting(sub_movies_Genre)</visible>
 					<visible>Container(300).HasFocus(6)</visible>
 				</item>
+				<item id="21">
+					<description>Video Files</description>
+					<label>744</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+                    <onclick>Skin.Reset(videotv)</onclick>
+                    <onclick>Skin.Reset(videomovies)</onclick>
+                    <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(videogenres)</onclick>
+                    <onclick>Skin.Reset(favourites)</onclick>
+                    <onclick>Skin.Reset(musicgenres)</onclick>
+					<onclick>XBMC.ActivateWindow(24)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_files)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
 				<item id="22">
+					<description>Recently Added</description>
+					<label>31920</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+                    <onclick>Skin.SetBool(videomovies)</onclick>
+                    <onclick>Skin.Reset(videotv)</onclick>
+                    <onclick>Skin.Reset(music)</onclick>
+                    <onclick>Skin.Reset(videogenres)</onclick>
+                    <onclick>Skin.Reset(favourites)</onclick>
+                    <onclick>Skin.Reset(musicgenres)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedmovies,return)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_recently)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="23">
 					<description>By Year</description>
 					<label>345</label>
 					<onclick>Skin.Reset(submenu)</onclick>
@@ -1716,7 +1730,7 @@
 					<visible>!Skin.HasSetting(sub_movies_Year)</visible>
 					<visible>Container(300).HasFocus(6)</visible>
 				</item>
-				<item id="23">
+				<item id="24">
 					<description>By Actor</description>
 					<label>344</label>
 					<onclick>Skin.Reset(submenu)</onclick>
@@ -1730,7 +1744,7 @@
 					<visible>!Skin.HasSetting(sub_movies_Actor)</visible>
 					<visible>Container(300).HasFocus(6)</visible>
 				</item>
-				<item id="24">
+				<item id="25">
 					<description>By Director</description>
 					<label>20339</label>
 					<onclick>Skin.Reset(submenu)</onclick>
@@ -1744,7 +1758,7 @@
 					<visible>!Skin.HasSetting(sub_movies_Director)</visible>
 					<visible>Container(300).HasFocus(6)</visible>
 				</item>
-				<item id="25">
+				<item id="26">
 					<description>By Studio</description>
 					<label>20388</label>
 					<onclick>Skin.Reset(submenu)</onclick>
@@ -1756,20 +1770,6 @@
                     <onclick>Skin.Reset(musicgenres)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviestudios,return)</onclick>
 					<visible>!Skin.HasSetting(sub_movies_Studio)</visible>
-					<visible>Container(300).HasFocus(6)</visible>
-				</item>
-				<item id="26">
-					<description>Recently Added</description>
-					<label>31920</label>
-					<onclick>Skin.Reset(submenu)</onclick>
-                    <onclick>Skin.SetBool(videomovies)</onclick>
-                    <onclick>Skin.Reset(videotv)</onclick>
-                    <onclick>Skin.Reset(music)</onclick>
-                    <onclick>Skin.Reset(videogenres)</onclick>
-                    <onclick>Skin.Reset(favourites)</onclick>
-                    <onclick>Skin.Reset(musicgenres)</onclick>
-					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedmovies,return)</onclick>
-					<visible>!Skin.HasSetting(sub_movies_recently)</visible>
 					<visible>Container(300).HasFocus(6)</visible>
 				</item>
 				<item id="27">
