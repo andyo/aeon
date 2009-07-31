@@ -928,19 +928,6 @@
                         <texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
                         <visible>substring(ListItem.Path,stack)</visible>	
                     </control>
-
-                    <!-- DEBUG DAGTA -->
-                    <control type="label">
-                        <posx>100</posx>
-                        <posy>-5</posy>
-                        <width>900</width>
-                        <height>13</height>
-                        <font>Font_MultiplexInfoLabel</font>
-                        <textcolor>FFFFFFFF</textcolor>		
-                        <label>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg][CR]$INFO[ListItem.Path]</label>
-                        <visible>Skin.HasSetting(debug)</visible>
-                    </control>
-                
                     <control type="image">
                         <posx>0</posx>
                         <posy>206</posy>
@@ -1613,7 +1600,7 @@
                         <timeperimage>4000</timeperimage>					
                         <imagepath background="true">$INFO[ListItem.Path,,extrathumbs]</imagepath>
                         <visible>!substring(ListItem.Path,stack)</visible>
-                        </control>			
+                    </control>			
                     <control type="multiimage">
                         <posx>1</posx>
                         <posy>1</posy>
@@ -1625,7 +1612,6 @@
                         <imagepath background="true">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs]</imagepath>
                         <visible>substring(ListItem.Path,stack)</visible>	
                     </control>			
-
                 </control>
 
                 <!-- IMAGES FOR MULTI-IMAGE VIEW -->
@@ -1744,8 +1730,7 @@
                     <textcolor>FFFFFFFF</textcolor>
                     <label>$INFO[ListItem.CastAndRole]</label>
                 </control>
-            </control>
-            
+            </control>            
         </control>				
 
 
@@ -10723,7 +10708,7 @@
                     <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
                     <visible>[Container.Content(movies) + [Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)]] | [Container.Content(files) + Window.IsActive(24)]</visible>
-                </control>			
+                </control>
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
@@ -10731,9 +10716,14 @@
                 </control>
 
                 <control type="label" id="72">
+                    <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+                    <include>MultiplexMainLabel</include>
+                    <visible>!Control.IsVisible(109) + Container.Content(movies) + !IsEmpty(ListItem.Genre) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)]</visible>
+                </control>
+                <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>Container.Content(movies) + !IsEmpty(ListItem.Genre) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)]</visible>
+                    <visible>Control.IsVisible(109) + Container.Content(movies) + !IsEmpty(ListItem.Genre) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)]</visible>
                 </control>
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Duration] / $INFO[ListItem.Year][/UPPERCASE]</label>
@@ -10809,7 +10799,7 @@
 
             </control>
         </control>
-						
+				
         <control type="group">
             <include>MultiplexVisible</include>
         </control>
