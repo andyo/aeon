@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
-<!--Date of translation: 07/27/2009-->
+<!--Date of translation: 07/31/2009-->
 <!--$Revision$-->
 <!--Based on english strings version 204-->
 <strings>
@@ -179,15 +179,15 @@
   <string id="31243">בטל הכל</string>
   <string id="31244">תפריטים</string>
   <string id="31245">אפשרויות עיון</string>
-  <string id="31246">שינוים</string>
+  <string id="31246">SHOWMIX</string>
   <string id="31247">הגדרות המוד</string>
-	<string id="31248">CONFIGURE MENU'S</string>
-	<string id="31254">Add Remove Item's</string>
+  <string id="31248">הגדר תפריטים</string>
   <string id="31249">שינוי דגלי מדיה</string>
   <string id="31250">פריסת MULTIPLEX (רקע, עלילה, פוסטר, מצגת צלמיות)</string>
   <string id="31251">שינוי מידע MULTIPLEX (מופעל, מכובה, אוטו', לחיצה)</string>
   <string id="31252">אפקט GRADIENT לתפריט דף הבית</string>
   <string id="31253"> קשר את קיצור המשחקים לתוסף ה"LAUNCHER"</string>
+  <string id="31254">הוסף/הסר פריטים</string>
   <string id="31258">הראה דירוגים בדף מידע הסרט</string>
   <string id="31259">סמלי ברירת מחדל לדגלי מדיה (כבה למקומות ריקים)</string>
   <string id="31260">הראה שעון</string>
@@ -425,7 +425,6 @@
   <string id="31877">יציאה</string>
   <string id="31878">סה"כ</string>
   <string id="31879">נוספו לאחרונה</string>
-  <string id="31880">הגדר תפריטים</string>
   <string id="31900">מרקמים</string>
   <string id="31901">טפט ברירת מחדל</string>
   <string id="31902">איקונים ברירת מחדל מכילים אלמנטים של</string>
@@ -479,7 +478,7 @@
   <string id="31971">אפשרויות תצוגה</string>
   <string id="31972">תפריט אנכי</string>
   <string id="31973">מיקום ספריית הסרטים</string>
-	<string id="31974">DYNAMIC COVERFLOW</string>
+  <string id="31974">דינמי COVERFLOW</string>
   <string id="31975">אפשר את כל התצוגות לסדרות</string>
   <string id="31976">השתמש ב MULTIPLEX "כהה" ישן</string>
   <string id="31977">איקון ז'אנר סרטים מופעל/מכובה</string>
