@@ -1077,7 +1077,7 @@
 				<onclick>Skin.ToggleSetting(FullscreenCommonMultiplex)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenCommonMultiplex)</selected>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + ![Skin.HasSetting(music) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)] | Skin.HasSetting(videofiles)</visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(50)] + ![Skin.HasSetting(music) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Window.IsActive(28)] | Skin.HasSetting(videofiles)</visible>
 			</control>
 		</include>
 

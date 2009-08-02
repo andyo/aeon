@@ -41,7 +41,7 @@
 		</control>		
 		<control type="button" id="9">
 			<include>Objects_OSDButton</include>
-			<onclick>XBMC.ActivateWindow(124)</onclick>		
+			<onclick>XBMC.ActivateWindow(28)</onclick>		
 		</control>
 		<control type="button" id="10">
 			<include>Objects_OSDButton</include>

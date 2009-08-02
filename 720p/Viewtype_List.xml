@@ -42,7 +42,7 @@
 		<font>Font_List</font>
 		<aligny>center</aligny>
 		<animation effect="slide" start="60,-7" end="60,-7" time="0" condition="Container.Content(episodes) | Container.Content(songs)">Conditional</animation>			
-		<animation effect="slide" start="0,10" end="0,10" time="0" condition="Window.IsActive(1) | Window.IsActive(20) | Window.IsActive(24) | [[Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Container.Content(movies)] | [Window.IsActive(2) + IsEmpty(ListItem.PictureDateTime)] | [Container.Content(seasons) + !IsEmpty(ListItem.Episode)] | [Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]]">Conditional</animation>				
+		<animation effect="slide" start="0,10" end="0,10" time="0" condition="Window.IsActive(1) | Window.IsActive(20) | Window.IsActive(28) | Window.IsActive(24) | [[Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Container.Content(movies)] | [Window.IsActive(2) + IsEmpty(ListItem.PictureDateTime)] | [Container.Content(seasons) + !IsEmpty(ListItem.Episode)] | [Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]]">Conditional</animation>				
 		<animation effect="slide" start="0,20" end="0,20" time="0" condition="[Window.IsActive(25) + Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes) | Container.Content(tvshows)]] | [Container.Content(seasons) + IsEmpty(ListItem.Episode)] | [Container.Content(episodes) + IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]">Conditional</animation>			
     </include>
 	
@@ -288,13 +288,13 @@
 	
 	<include name="Viewtype_List">
         <control type="group">
-            <include condition="Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(20) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)">Furniture_vignette</include>
+            <include condition="Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(20) | Window.IsActive(28) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)">Furniture_vignette</include>
 			<visible>Control.IsVisible(50)</visible>
             <include>Animation_HideShowcase</include>
         </control>
 
         <control type="group">
-            <include condition="Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(20) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)">Furniture_MediaPanel</include>
+            <include condition="Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(20) | Window.IsActive(28) | Window.IsActive(28) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)">Furniture_MediaPanel</include>
 			<visible>Control.IsVisible(50)</visible>
         </control>
 	
@@ -306,7 +306,7 @@
                 <width>1180</width>
                 <height>653</height>
                 <texture>list/listpanel_mask_square_window.png</texture>
-                <visible>Control.IsVisible(50) + [[![Skin.HasSetting(music) | Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)] + !Skin.HasSetting(FullscreenCommonMultiplex)] | [Skin.HasSetting(videomovies) + !Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(tvshows) + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + !Skin.HasSetting(FullscreenMusicMultiplex)]] + [[Window.IsActive(1) + Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview) + Container.Content(episodes)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + !Skin.HasSetting(tvposterview)] | Window.IsActive(20) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
+                <visible>Control.IsVisible(50) + [[![Skin.HasSetting(music) | Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)] + !Skin.HasSetting(FullscreenCommonMultiplex)] | [Skin.HasSetting(videomovies) + !Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(tvshows) + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + !Skin.HasSetting(FullscreenMusicMultiplex)]] + [[Window.IsActive(1) + Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview) + Container.Content(episodes)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + !Skin.HasSetting(tvposterview)] | Window.IsActive(20) | Window.IsActive(28) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
                 <include>Animation_CommonFade</include>
             </control>			
             <control type="image">
@@ -324,14 +324,14 @@
             <width>1280</width>
             <height>720</height>
               <texture>list/listpanel_mask_fullscreen.png</texture>
-            <visible>Control.IsVisible(50) + [[![Skin.HasSetting(music) | Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)] + Skin.HasSetting(FullscreenCommonMultiplex)] | [Skin.HasSetting(videomovies) + Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(tvshows) + Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + Skin.HasSetting(FullscreenMusicMultiplex)]] + [Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(20) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible> 
+            <visible>Control.IsVisible(50) + [[![Skin.HasSetting(music) | Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)] + Skin.HasSetting(FullscreenCommonMultiplex)] | [Skin.HasSetting(videomovies) + Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(tvshows) + Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + Skin.HasSetting(FullscreenMusicMultiplex)]] + [Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(20) | Window.IsActive(28) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible> 
                 <include>Animation_CommonFade</include>
             </control>			
         </control>			
 
 <!-- POPUP WINDOW BACKGROUND -- SQARE -->
         <control type="group">
-            <visible>Control.IsVisible(50) + [[![Skin.HasSetting(music) | Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)] + !Skin.HasSetting(FullscreenCommonMultiplex)] | [Skin.HasSetting(videomovies) + !Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(tvshows) + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + !Skin.HasSetting(FullscreenMusicMultiplex)]] + [[Window.IsActive(1) + Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview) + Container.Content(episodes)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + !Skin.HasSetting(tvposterview)] | Window.IsActive(20) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible> 
+            <visible>Control.IsVisible(50) + [[![Skin.HasSetting(music) | Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)] + !Skin.HasSetting(FullscreenCommonMultiplex)] | [Skin.HasSetting(videomovies) + !Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(tvshows) + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + !Skin.HasSetting(FullscreenMusicMultiplex)]] + [[Window.IsActive(1) + Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview) + Container.Content(episodes)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + !Skin.HasSetting(tvposterview)] | Window.IsActive(20) | Window.IsActive(28) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible> 
             <control type="group">
                 <visible>Skin.HasSetting(darkwindow)</visible> 
                 <control type="image">
@@ -537,7 +537,7 @@
 
 <!-- FULLSCREEN BACKGROUND -->
         <control type="group">
-            <visible>Control.IsVisible(50) + [[![Skin.HasSetting(music) | Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)] + Skin.HasSetting(FullscreenCommonMultiplex)] | [Skin.HasSetting(videomovies) + Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(tvshows) + Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + Skin.HasSetting(FullscreenMusicMultiplex)]] + [Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(20) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible> 
+            <visible>Control.IsVisible(50) + [[![Skin.HasSetting(music) | Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)] + Skin.HasSetting(FullscreenCommonMultiplex)] | [Skin.HasSetting(videomovies) + Skin.HasSetting(FullscreenMovieMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(tvshows) + Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Skin.HasSetting(music) + Skin.HasSetting(FullscreenMusicMultiplex)]] + [Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(20) | Window.IsActive(28) | Window.IsActive(2) | Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible> 
             <control type="group">
                 <visible>Skin.HasSetting(darkwindow)</visible> 
                 <control type="image">
