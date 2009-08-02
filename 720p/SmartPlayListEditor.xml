@@ -10,20 +10,18 @@
 			<width>1280</width>
 			<height>720</height>
 			<texture>common/black.png</texture>
-			<colordiffuse>d7FFFFFF</colordiffuse>
+			<colordiffuse>e7FFFFFF</colordiffuse>
 			<include>Animation_CommonFade</include>
 		</control>
-
+<control type="group">
+			<visible>!Window.IsVisible(smartplaylistrule)</visible>
 		<control type="image">
 			<description>Panel</description>
 			<posx>200</posx>
 			<posy>40</posy>
 			<width>875</width>
 			<height>481</height>
-			<!--
-			<texture>dialogs/smartlist_edit.png</texture>
--->
-			<texture>dialogs/select_back.png</texture>
+			<texture>dialogs/smartlist_edit.png</texture> 
 		</control>
 		<!-- EDIT SMART PLAYLIST -->
 		<control type="label">
@@ -61,7 +59,7 @@
             	<textoffsetx>20</textoffsetx>
             	<aligny>center</aligny>
             	<reverse>yes</reverse>			
-				<onright>13</onright>
+				<onright>22</onright>
 				<onleft>22</onleft>
 				<onup>18</onup>
 				<ondown>12</ondown>			
@@ -87,7 +85,7 @@
 				<label>-</label>
 				<onup>22</onup>
 				<onleft>12</onleft>
-				<onright>9000</onright>
+				<onright>12</onright>
 				<ondown>10</ondown>
 	            <font>Font_ContextMenuButton</font>
     	        <textcolor>FF939597</textcolor>
@@ -115,7 +113,8 @@
 				<font>Font_ListSmall</font>
 				<label>21434</label>
 			</control>
-	
+			
+
 			<control type="list" id="10">
 				<description>Rules List Control</description>
 				<posx>210</posx>
@@ -136,13 +135,10 @@
             		</control>
             		<control type="label">
             			<include>ListLabel_MainSmall</include>
-                		<include>listcolornofocus</include>
+
+            			<include>listcolorfocus</include>
+
                 		<info>ListItem.Label</info>
-            		</control>
-            		<control type="label">
-            			<include>ListLabel_DetailFull</include>
-                		<include>detailcolornofocus</include>
-                		<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
             		</control>
         		</itemlayout>
 
@@ -154,20 +150,25 @@
         	        	<width>739</width>
             	    	<texture>list/listpanel_line.png</texture>
                 	</control>
+                	
 	                <control type="image">
     	            	<posx>8</posx>
         	            <posy>-5</posy>
             	        <width>743</width>
                 	    <height>50</height>
                     	<texture>list/listpanel_selectbar.png</texture>
+                    	<visible>Control.HasFocus(10) | Control.HasFocus(14) | Control.HasFocus(15) | Control.HasFocus(13)</visible>
     	            </control>
+    	            
         	        <control type="label">
             	    	<include>ListLabel_MainSmall</include>
-                	    <include>listcolorfocus</include>
+						<include>listcolorfocus</include> 
                     	<info>ListItem.Label</info>
  	               </control>
     	        </focusedlayout>
 			</control>
+
+
 
 			<!-- ITEMS MUST MATCH ... -->	
 			<control type="spincontrolex" id="16">
@@ -193,8 +194,8 @@
             	<textoffsetx>20</textoffsetx>
             	<aligny>center</aligny>
             	<reverse>yes</reverse>			
-				<onright>16</onright>
-				<onleft>9000</onleft>
+				<onright>9001</onright>
+				<onleft>16</onleft>
 				<onup>10</onup>
 				<ondown>17</ondown>
 			</control>	
@@ -279,7 +280,7 @@
 			<!-- ADD -->
 			<control type="button" id="13">
 	        	<description>Button: Add</description>
-                <posy>90</posy>
+                <posy>195</posy>
                 <posx>900</posx>
                 <width>156</width>
                 <height>41</height>
@@ -301,7 +302,7 @@
 			<!--REMOVE-->
 			<control type="button" id="14">
 				<description>Remove Rule Button</description>
-				<posy>131</posy>	
+				<posy>236</posy>	
 				<posx>900</posx>	
 	            <width>156</width>
                 <height>41</height>
@@ -323,7 +324,7 @@
 			<control type="button" id="15">
 				<description>Edit Rule Button</description>
 				<posx>900</posx>
-				<posy>172</posy>
+				<posy>277</posy>
 				<height>41</height>
 				<width>156</width>
                 <font>Font_SetContentMenu</font>
@@ -387,6 +388,7 @@
 				<onright>21</onright>
 				<ondown>21</ondown>
 			</control>			
+		</control>
 		</control>
 	</controls>
 </window>
