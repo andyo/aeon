@@ -1123,15 +1123,15 @@
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musicsongslistfull)</onclick>
 				<selected>Skin.HasSetting(musicsongslistfull)</selected>
-				<visible>Control.IsVisible(50) + [Container.Content(songs) + !Window.IsActive(MyMusic)</visible>
+				<visible>Control.IsVisible(50) + Container.Content(songs) + !Window.IsActive(MyMusic)</visible>
 			</control>
-			<control type="radiobutton" id="30283">
+<!--			<control type="radiobutton" id="30283">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musiclistfull)</onclick>
 				<selected>Skin.HasSetting(musiclistfull)</selected>
 				<visible>Control.IsVisible(50)</visible>
-			</control>
+			</control>-->
 
         </include>
 
