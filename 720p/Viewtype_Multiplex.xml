@@ -372,6 +372,7 @@
 		<width>1090</width>
 		<height>300</height>	
 	</include>		
+
 	<include name="MultiplexTVPosterVarsWrap">
 		<posx>100</posx>
 		<posy>490</posy>
@@ -10272,9 +10273,8 @@
         <control type="wraplist" id="52">
             <viewtype label="Multiplex">list</viewtype>
             <include condition="Skin.HasSetting(music)">MultiplexMusicVarsWrap</include>
-            <include condition="!Skin.HasSetting(music) | !Skin.HasSetting(videotv) | [Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">MultiplexMovieVarsWrap</include>
-            <include condition="Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview)">MultiplexTVPosterVarsWrap</include>
-            <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">MultiplexTVVarsWrap</include>			
+            <include condition="![Skin.HasSetting(music) | Skin.HasSetting(videotv)] | [Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)] | [Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview)]">MultiplexMovieVarsWrap</include>
+            <include condition="Skin.HasSetting(videotv) + !Skin.HasSetting(tvposterview)">MultiplexTVVarsWrap</include>			
             <onleft>52</onleft>
             <onright>52</onright>
            <include condition="[![Skin.HasSetting(videotv) | Skin.HasSetting(music)] + !Skin.HasSetting(multiplexinfotrigger)] | [Skin.HasSetting(videotv) + ![Skin.HasSetting(multiplextvshowsinfotrigger) | Skin.HasSetting(multiplextvseasonsinfotrigger) | Skin.HasSetting(multiplextvepisodesinfotrigger)]] | [Skin.HasSetting(music) + !Skin.HasSetting(multiplexmusicinfotrigger)]">MultiplexInfoAutoUp</include>
