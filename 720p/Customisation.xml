@@ -1517,7 +1517,7 @@
         <aligny>center</aligny>
         <align>right</align>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.4  (GIT-005)</label>                
+        <label>VER: 1.43  (GIT-008)</label>                
     </control>
 
 	<include>Furniture_SettingsFrontPanel</include>
