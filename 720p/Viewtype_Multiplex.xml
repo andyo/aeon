@@ -10282,7 +10282,7 @@
             <ondown>600</ondown>
             <pagecontrol>60</pagecontrol>
             <orientation>horizontal</orientation>
-            <include condition="!Skin.HasSetting(music) | !Skin.HasSetting(videotv) | Skin.HasSetting(videogenres) | [Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview)]">MultiplexFocusMovies</include>
+            <include condition="![Skin.HasSetting(music) | Skin.HasSetting(videotv)] | Skin.HasSetting(videogenres) | [Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview)]">MultiplexFocusMovies</include>
             <include condition="Skin.HasSetting(videotv)">MultiplexFocusTV</include>
             <include condition="Skin.HasSetting(music)">MultiplexFocusMusic</include>
             <scrolltime>250</scrolltime>
