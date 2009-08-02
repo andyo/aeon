@@ -54,7 +54,7 @@
 		<height>39</height>
 		<font>Font_ListSmall</font>
 		<aligny>center</aligny>
-		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes) | Container.Content(songs)">Conditional</animation>			
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes) | Container.Content(songs) | Window.IsActive(500)">Conditional</animation>			
 	</include>	
 	
 	<include name="ListLabel_MainMusic">
