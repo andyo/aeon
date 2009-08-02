@@ -1,0 +1,13 @@
+# .gitignore for Aeon 
+
+# generated files 
+thumbs.db
+Thumbs.db 
+
+# fonts 
+/fonts
+
+#XBMCTex
+XBMCTex720.bat
+XBMCTex768.bat
+XBMCTex.exe

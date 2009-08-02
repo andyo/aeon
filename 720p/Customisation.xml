@@ -1510,14 +1510,14 @@
     </control>
     
     <control type="label">
-        <posx>110</posx>
+        <posx>190</posx>
         <posy>635</posy>
         <width>500</width>
         <height>49</height>
         <aligny>center</aligny>
         <align>right</align>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.32</label>                
+        <label>VER: 1.4  (GIT-005)</label>                
     </control>
 
 	<include>Furniture_SettingsFrontPanel</include>
