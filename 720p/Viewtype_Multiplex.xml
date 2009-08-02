@@ -7369,7 +7369,7 @@
                 <animation effect="rotatey" center="-80" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="-80" start="0" end="55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="-500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="-500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="-80" start="0" end="55" time="800" tween="cubic" easing="inout" />
@@ -7411,7 +7411,7 @@
                 <animation effect="rotatey" center="-20" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="-20" start="0" end="55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="-500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="-500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="-20" start="0" end="55" time="800" tween="cubic" easing="inout" />
@@ -7453,7 +7453,7 @@
                 <animation effect="rotatey" center="40" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="40" start="0" end="55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="-500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="-500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="40" start="0" end="55" time="800" tween="cubic" easing="inout" />
@@ -7495,7 +7495,7 @@
                 <animation effect="rotatey" center="100" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="100" start="0" end="55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="-500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="-500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="100" start="0" end="55" time="800" tween="cubic" easing="inout" />
@@ -7537,7 +7537,7 @@
                 <animation effect="rotatey" center="160" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="160" start="0" end="55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0" end="-500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0" end="-500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="160" start="0" end="55" time="800" tween="cubic" easing="inout" />
@@ -7579,7 +7579,7 @@
                 <animation effect="rotatey" center="220" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="220" start="0" end="55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="-320,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="-320,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="220" start="0" end="55" time="800" tween="cubic" easing="inout" />
@@ -7621,7 +7621,7 @@
                 <animation effect="rotatey" center="280" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="280" start="0" end="55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="-260,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="-260,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="280" start="0" end="55" time="800" tween="cubic" easing="inout" />
@@ -7663,7 +7663,7 @@
                 <animation effect="rotatey" center="340" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="340" start="0" end="55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="-200,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="-200,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="340" start="0" end="55" time="800" tween="cubic" easing="inout" />
@@ -7705,7 +7705,7 @@
                 <animation effect="rotatey" center="400" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="400" start="0" end="55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="-140,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="-140,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="400" start="0" end="55" time="800" tween="cubic" easing="inout" />
@@ -7747,7 +7747,7 @@
                 <animation effect="rotatey" center="1370" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1370" start="0" end="-55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1370" start="0" end="-55" time="800" tween="cubic" easing="inout" />
@@ -7789,7 +7789,7 @@
                 <animation effect="rotatey" center="1310" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1310" start="0" end="-55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1310" start="0" end="-55" time="800" tween="cubic" easing="inout" />
@@ -7831,7 +7831,7 @@
                 <animation effect="rotatey" center="1250" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1250" start="0" end="-55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1250" start="0" end="-55" time="800" tween="cubic" easing="inout" />
@@ -7873,7 +7873,7 @@
                 <animation effect="rotatey" center="1190" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1190" start="0" end="-55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1190" start="0" end="-55" time="800" tween="cubic" easing="inout" />
@@ -7915,7 +7915,7 @@
                 <animation effect="rotatey" center="1130" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1130" start="0" end="-55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="500,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="500,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1130" start="0" end="-55" time="800" tween="cubic" easing="inout" />
@@ -7957,7 +7957,7 @@
                 <animation effect="rotatey" center="1070" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1070" start="0" end="-55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="320,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="320,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1070" start="0" end="-55" time="800" tween="cubic" easing="inout" />
@@ -7999,7 +7999,7 @@
                 <animation effect="rotatey" center="1010" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="1010" start="0" end="-55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="260,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="260,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="1010" start="0" end="-55" time="800" tween="cubic" easing="inout" />
@@ -8041,7 +8041,7 @@
                 <animation effect="rotatey" center="950" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="950" start="0" end="-55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="200,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="200,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="950" start="0" end="-55" time="800" tween="cubic" easing="inout" />
@@ -8083,7 +8083,7 @@
                 <animation effect="rotatey" center="890" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
 					<effect type="rotatey" center="890" start="0" end="-55" time="800" tween="cubic" easing="inout" />
-					<effect type="slide" start="0,0" end="140,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="140,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <animation type="Conditional" condition="[Skin.HasSetting(flattenmultiplex) + ![Skin.HasSetting(videotv) | Skin.HasSetting(music)]] | [Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + Skin.HasSetting(videogenres)]">
 					<effect type="rotatey" center="890" start="0" end="-55" time="800" tween="cubic" easing="inout" />
@@ -8123,7 +8123,7 @@
             <control type="group">
                 <posx>505</posx>
                 <animation type="Conditional" condition="Skin.HasSetting(flattenmultiplex) + Skin.HasSetting(videotv) + !Skin.HasSetting(videogenres)">
-					<effect type="slide" start="0,0" end="0,-28" time="800" tween="cubic" easing="inout" />
+					<effect type="slide" start="0,0" end="0,0" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
                     <control type="image">
