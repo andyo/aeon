@@ -827,6 +827,12 @@
                     <visible>Container.Content(albums) + !IsEmpty(ListItem.Label2)</visible>
                 </control>					
                 <control type="label">
+                    <include>ListLabel_MainSmall</include>
+                    <include>listcolornofocus</include>
+                    <info>ListItem.Label</info>
+                    <visible>Window.IsActive(502) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists)</visible>
+                </control>
+                <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
                     <label>[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
@@ -919,6 +925,13 @@
                     <include>Animation_ButtonFocusFade_fix</include>						
                     <visible>Container.Content(albums) + !IsEmpty(ListItem.Label2)</visible>
                 </control>					
+                <control type="label">
+                    <include>ListLabel_MainSmall</include>
+                    <include>listcolorfocus</include>
+                    <info>ListItem.Label</info>
+                    <include>Animation_ButtonFocusFade_fix</include>						
+                    <visible>Window.IsActive(502) + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists)</visible>
+                </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
