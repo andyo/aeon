@@ -1191,6 +1191,7 @@
 				<include>VerticalMenu_RadioButton</include>				
 				<label>$LOCALIZE[31064]</label>
 				<onclick>Skin.ToggleSetting(nomoviefanart)</onclick>
+                <onclick>Skin.SetBool(nocurtains)</onclick>
 				<selected>!Skin.HasSetting(nomoviefanart)</selected>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies)</visible>
 			</control>
@@ -1199,6 +1200,7 @@
 				<include>VerticalMenu_RadioButton</include>				
 				<label>$LOCALIZE[31064]</label>
 				<onclick>Skin.ToggleSetting(notvfanart)</onclick>
+                <onclick>Skin.SetBool(nocurtains)</onclick>
 				<selected>!Skin.HasSetting(notvfanart)</selected>
 				<visible>Window.IsActive(25) + Skin.HasSetting(videotv)</visible>
 			</control>
@@ -1207,6 +1209,7 @@
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31064]</label>
 				<onclick>Skin.ToggleSetting(nomusicfanart)</onclick>
+                <onclick>Skin.SetBool(nocurtains)</onclick>
 				<selected>!Skin.HasSetting(nomusicfanart)</selected>
 				<visible>[Window.IsActive(501) + Control.IsVisible(57)] | [Window.IsActive(502) + [Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(51)]]</visible>
 			</control>
