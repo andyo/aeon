@@ -81,14 +81,7 @@
 			<onclick>Skin.ToggleSetting(unlockTVviews)</onclick>
 			<selected>Skin.HasSetting(unlockTVviews)</selected>
 		</control>
-		
-		<control type="radiobutton" id="407">
-			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>31976</label>
-			<onclick>Skin.ToggleSetting(oldmultiplex)</onclick>
-			<selected>Skin.HasSetting(oldmultiplex)</selected>
-		</control>		
-	</control>
+</control>
 
     <control type="grouplist" id="11">
 		<include>Objects_SettingsControlAreaVars</include>
@@ -1517,7 +1510,7 @@
         <aligny>center</aligny>
         <align>right</align>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.44  (GIT-010)</label>                
+        <label>VER: 1.45  (GIT-011)</label>                
     </control>
 
 	<include>Furniture_SettingsFrontPanel</include>

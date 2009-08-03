@@ -784,7 +784,7 @@
 		<include condition="Skin.HasSetting(videotv)">OldMultiplexBaseTV</include>
 		<include condition="Skin.HasSetting(videomovies)">OldMultiplexBaseMovies</include>	
 		
-		<include condition="Skin.HasSetting(videomovies)">Furniture_MultiplexMediaFlags</include>
+<!--		<include condition="Skin.HasSetting(videomovies)">Furniture_MultiplexMediaFlags</include> -->
 	
 		<control type="wraplist" id="52">
 			<viewtype label="31757">wrap</viewtype>

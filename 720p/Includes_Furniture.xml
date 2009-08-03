@@ -98,7 +98,7 @@
 	<include name="Furniture_Time">
 		<control type="group">
 			<include>Furniture_TimeGroupVars</include>
-			<visible>!Skin.HasSetting(highertime) + Window.IsActive(Home) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(57) + !Control.IsVisible(50) + !Control.IsVisible(53) + !Skin.HasSetting(notime)</visible>
+			<visible>!Skin.HasSetting(highertime) + Window.IsActive(Home) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(59) + !Control.IsVisible(57) + !Control.IsVisible(50) + !Control.IsVisible(53) + !Skin.HasSetting(notime)</visible>
 	     	<animation effect="slide" start="0,0" end="0,225" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<include>Animation_OpenCloseZoom</include>
 			<include>Furniture_TimePanel</include>
@@ -106,15 +106,15 @@
 		
 		<control type="group">
 			<include>Furniture_TimeGroupHighVars</include>
-			<visible>[[Skin.HasSetting(highertime) + Window.IsActive(Home)] | [Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(57)]] + !Skin.HasSetting(notime)</visible>
-			<animation effect="slide" start="0,0" end="0,-27" time="200" condition="[Control.IsVisible(52) + !Control.HasFocus(52) + !Control.HasFocus(71) + !Control.HasFocus(60) + !Control.HasFocus(110) + !ControlGroup(7000).HasFocus()] | [Control.IsVisible(50) + !Control.HasFocus(50) + !Control.HasFocus(71) + !Control.HasFocus(61) + !ControlGroup(7000).HasFocus()] | [Control.IsVisible(53) + !Control.HasFocus(53) + !Control.HasFocus(71)] | [Control.IsVisible(57) + ![Control.HasFocus(57) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60) + !ControlGroup(7000).HasFocus()]]">Conditional</animation>
+			<visible>[[Skin.HasSetting(highertime) + Window.IsActive(Home)] | [Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(59) | Control.IsVisible(57)]] + !Skin.HasSetting(notime)</visible>
+<!--			<animation effect="slide" start="0,0" end="0,-27" time="200" condition="[Control.IsVisible(52) + !Control.HasFocus(52) + !Control.HasFocus(71) + !Control.HasFocus(60) + !Control.HasFocus(110) + !ControlGroup(7000).HasFocus()] | [Control.IsVisible(50) + !Control.HasFocus(50) + !Control.HasFocus(71) + !Control.HasFocus(61) + !ControlGroup(7000).HasFocus()] | [Control.IsVisible(53) + !Control.HasFocus(53) + !Control.HasFocus(71)] | [Control.IsVisible(57) + ![Control.HasFocus(57) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60) + !ControlGroup(7000).HasFocus()]]">Conditional</animation>-->
 			<include>Animation_CommonFade</include>
 			<include>Furniture_TimePanelHigh</include>
 		</control>		
 		
 		<control type="group">
 			<include>Furniture_TimeGroupWindowVars</include>
-			<visible>!Window.IsActive(Home) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(57) + !Control.IsVisible(50) + !Control.IsVisible(53) + !Skin.HasSetting(notime)</visible>
+			<visible>!Window.IsActive(Home) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(59) + !Control.IsVisible(57) + !Control.IsVisible(50) + !Control.IsVisible(53) + !Skin.HasSetting(notime)</visible>
 			<include>Animation_CommonFade</include>
 			<include>Furniture_TimePanel</include>
 		</control>
@@ -659,6 +659,14 @@
 		<height>718</height>
 	</include>
 
+	<include name="OldShowcaseFloorNight">
+		<texture>showcase/showcase_floor.png</texture>	
+	</include>
+	<include name="OldShowcaseFloorLight">
+		<texture>showcase/lite/showcase_floor.png</texture>		
+	</include>
+
+
 	<include name="ShowcaseFloorBackNight">
 		<texture>showcase/showcase_floor_back.png</texture>	
 	</include>
@@ -721,7 +729,19 @@
 			<height>405</height>
 			<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseFloorBackLight</include>
 			<include condition="Skin.HasSetting(darkshowcase)">ShowcaseFloorBackNight</include>			
-			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)</visible>
+			<visible>Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54)</visible>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideShowcase</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>315</posy>
+			<width>1280</width>
+			<height>405</height>
+			<include condition="!Skin.HasSetting(darkshowcase)">OldShowcaseFloorLight</include>
+			<include condition="Skin.HasSetting(darkshowcase)">OldShowcaseFloorNight</include>			
+			<visible>Control.IsVisible(52)</visible>
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
@@ -756,7 +776,7 @@
 			<height>405</height>
 			<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontLight</include>
 			<include condition="Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontNight</include>			
-			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)</visible>
+			<visible>Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54)</visible>
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
@@ -789,7 +809,7 @@
 			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
-			<visible>Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)</visible>
+			<visible>Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54)</visible>
 		</control> -->
 	
 <!--		<control type="image">
@@ -826,7 +846,7 @@
 			<width>1280</width>
 			<height>267</height>
             <texture>showcase/showcase_floorshadow.png</texture>
-			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(59) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
 		</control>
 
 		<control type="image">
@@ -835,7 +855,7 @@
 			<width>1280</width>
 			<height>267</height>
 			<texture>showcase/lite/showcase_floorshadow.png</texture>
-			<visible>!Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<visible>!Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(59) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
 		</control>
 
 	</include>
@@ -847,7 +867,7 @@
 			<width>640</width>
 			<height>720</height>
             <texture>showcase/showcase_vignette.png</texture>
-			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
+			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(59) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
 				<effect type="slide" start="-464,0" end="0,0" time="400" easing="inout" tween="cubic" />
@@ -872,7 +892,7 @@
 			<width>640</width>
 			<height>720</height>
 			<texture flipx="true">showcase/showcase_vignette.png</texture>
-			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
+			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(59) | Control.IsVisible(54)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
 				<effect type="slide" start="464,0" end="0,0" time="400" easing="inout" tween="cubic" />
@@ -1154,7 +1174,7 @@
 			<width>1280</width>
 			<height>48</height>
 			<texture>showcase/showcase_gradient.png</texture>
-			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)]</visible>
+			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54)]</visible>
 			<include>Animation_CommonFade</include>
 		</control>		
 	</include>
