@@ -46,14 +46,6 @@
 
 <!-- Media Window options -->
   
-	<string id="31042">BODEN: HELL</string>
-	<string id="31043">BODEN: DUNKEL</string>
-	<string id="31044">FANART</string>
-	<string id="31045">DIASCHAU</string>
-	<string id="31046">4 BILDER+PLOT</string>
-	<string id="31047">STIL</string>
-	<string id="31048">MANUELL</string>
-	<string id="31049">AUTO</string>
 	<string id="31050">ANSICHT:</string> 
 	<string id="31051">ZUFALL</string>
 	<string id="31052">DICK</string> 
@@ -208,8 +200,8 @@
 	<string id="31245">AUSWAHL DER SCHALTER</string>
 	<string id="31246">MOD-SPEZIFISCH</string>
 	<string id="31247">ZUSATZEINSTELLUNGEN</string>
-	<string id="31248">CONFIGURE MENU'S</string>
-	<string id="31254">Add Remove Item's</string>
+	<string id="31248">UNTERMENÜS</string>
+	<string id="31254">ZUSÄTZE VERWALTEN</string>
 
   
 <!-- Aeon Advanced options -->
@@ -517,7 +509,7 @@
 	<string id="31864">-</string>
 	<string id="31865">Extras</string>
 	<string id="31866">-</string>
-	<string id="31867">HAUPTMENÜ-POSITIONEN</string>
+	<string id="31867">HAUPTMENÜ</string>
 	<string id="31868">FIXIEREN</string>
 	<string id="31869">WETTER-BILDHINTERGRUND DEN AKTUELLEN WETTERBEDINGUNGEN ANPASSEN</string>
 	<string id="31870">-</string>
@@ -530,10 +522,17 @@
 	<string id="31877">Verlassen</string>
 	<string id="31878">GESAMTSTATISTIK</string>
 	<string id="31879">NEU:</string>
-	<string id="31880">KONFIGURATION DER HAUPTMENÜ-ZUSATZEINTRÄGE</string>
 
 <!-- ShowMix -->
 
+	<string id="31042">BODEN: HELL</string>
+	<string id="31043">BODEN: DUNKEL</string>
+	<string id="31044">FANART</string>
+	<string id="31045">DIASCHAU</string>
+	<string id="31046">4 BILDER+PLOT</string>
+	<string id="31047">STIL</string>
+	<string id="31048">MANUELL</string>
+	<string id="31049">AUTO</string>
 	<string id="31951">FAVORITEN</string>  <!-- FAVOURITES -->
 	<string id="31952">INFO-FENSTER</string>
 	<string id="31953">HELL</string>
@@ -568,6 +567,5 @@
 	<string id="31979">IN FILM-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
 	<string id="31980">GRAFISCHE SYMBOLE FÜR MUSIK-GENRES BENUTZEN</string>
 	<string id="31981">IN MUSIK-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
-	<string id="31982">WETTER/TAGESZEITABHÄNGIGEN HINTERGRUND FÜR DIE WETTERANZEIGE BENUTZEN</string>
 
 </strings>
