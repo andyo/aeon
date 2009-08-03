@@ -1024,7 +1024,7 @@
 			<control type="label">
 				<description>Custom Menus's Unfocused</description>
 				<posy>380</posy>
-				<label>31249</label>
+				<label>31254</label>
 				<textcolor>FFf5f5f5</textcolor>
 				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 				<visible>![Control.HasFocus(16) | ControlGroup(22).HasFocus]</visible>
@@ -1032,7 +1032,7 @@
 			<control type="label">
 				<description>Custom Menus's Focused</description>
 				<posy>380</posy>
-				<label>31249</label>
+				<label>31254</label>
 				<textcolor>FF262728</textcolor>
 				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 				<visible>Control.HasFocus(16) | ControlGroup(22).HasFocus</visible>
