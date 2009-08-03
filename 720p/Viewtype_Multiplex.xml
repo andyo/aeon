@@ -436,20 +436,6 @@
 	
 
 <!--  Multiplex Info Window -->
-	<include name="MultiplexPlotWidth">
-		<width>275</width>	
-	</include>
-	
-	<include name="MultiplexNoPlotWidth">
-		<width>210</width>	
-	</include>
-
-	<include name="WindowMultiplexTVWidth">
-		<width>400</width>	
-	</include>		
-	<include name="FSMultiplexTVWidth">
-		<width>200</width>	
-	</include>		
 
 	<include name="MultiplexBannerMain">
         <posx>10</posx>
@@ -476,17 +462,23 @@
         <scroll>true</scroll>
 	</include>
 
-	<include name="MultiplexInfoLabel">
+	<include name="MultiplexInfoLabel_Left">
         <posx>0</posx>
         <posy>0</posy>
-        <width>370</width>
+        <width>150</width>
         <height>13</height>
+        <align>left</align>
         <font>Font_MultiplexInfoLabel</font>	
         <textcolor>ABFFFFFF</textcolor>
-        <scrollspeed>30</scrollspeed>
-        <scrollout>true</scrollout>
-        <pauseatend>3000</pauseatend>
-        <scroll>true</scroll>
+	</include>
+	<include name="MultiplexInfoLabel_Right">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>150</width>
+        <height>13</height>
+        <align>right</align>
+        <font>Font_MultiplexInfoLabel</font>	
+        <textcolor>ABFFFFFF</textcolor>
 	</include>
 
 	<include name="MultiplexInfoValueVars">
@@ -739,7 +731,7 @@
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31402]:</label>
                     </control>
                     <control type="fadelabel">
@@ -752,7 +744,7 @@
                     <posy>22</posy>
                     <posx>285</posx>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31401]:</label>
                     </control>
                     <control type="fadelabel">
@@ -765,7 +757,7 @@
                     <posy>380</posy>
                     <visible>Skin.HasSetting(noimdbflag) + !Skin.HasSetting(movieratingtext)</visible>						
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31408]:</label>
                     </control>
                     <control type="image">
@@ -782,7 +774,7 @@
                     <posy>380</posy>
                     <visible>Skin.HasSetting(noimdbflag) + Skin.HasSetting(movieratingtext)</visible>						
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31408]:</label>
                     </control>
                     <control type="label">
@@ -1065,7 +1057,7 @@
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31402]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1078,7 +1070,7 @@
                     <posy>22</posy>
                     <posx>315</posx>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31401]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1091,7 +1083,7 @@
                     <posy>380</posy>
                     <visible>Skin.HasSetting(noimdbflag) + !Skin.HasSetting(movieratingtext)</visible>						
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31408]:</label>
                     </control>
                     <control type="image">
@@ -1108,7 +1100,7 @@
                     <posy>380</posy>
                     <visible>Skin.HasSetting(noimdbflag) + Skin.HasSetting(movieratingtext)</visible>						
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31408]:</label>
                     </control>
                     <control type="label">
@@ -1344,7 +1336,7 @@
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31402]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1357,7 +1349,7 @@
                     <posx>285</posx>
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31401]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1370,7 +1362,7 @@
                     <posy>380</posy>
                     <visible>Skin.HasSetting(noimdbflag) + !Skin.HasSetting(movieratingtext)</visible>						
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31408]:</label>
                     </control>
                     <control type="image">
@@ -1387,7 +1379,7 @@
                     <posy>380</posy>
                     <visible>Skin.HasSetting(noimdbflag) + Skin.HasSetting(movieratingtext)</visible>						
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31408]:</label>
                     </control>
                     <control type="label">
@@ -1821,7 +1813,7 @@
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31402]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1833,7 +1825,7 @@
                 <control type="group">
                     <posy>72</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31401]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1845,7 +1837,7 @@
                 <control type="group">
                     <posy>122</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31436]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1857,7 +1849,7 @@
                 <control type="group">
                     <posy>172</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31709]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1869,7 +1861,7 @@
                 <control type="group">
                     <posy>222</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31438]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1881,7 +1873,7 @@
                 <control type="group">
                     <posy>272</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31417]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1893,7 +1885,7 @@
                 <control type="group">
                     <posy>322</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31408]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1912,7 +1904,7 @@
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31402]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1924,7 +1916,7 @@
                 <control type="group">
                     <posy>72</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31401]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1936,7 +1928,7 @@
                 <control type="group">
                     <posy>122</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31436]:</label>
                     </control>
                     <control type="fadelabel">
@@ -1950,7 +1942,7 @@
                     <posx>240</posx>
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31709]:</label>
                     </control>
                     <control type="label">
@@ -1963,7 +1955,7 @@
                     <posx>240</posx>
                     <posy>72</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31417]:</label>
                     </control>
                     <control type="label">
@@ -1976,7 +1968,7 @@
                     <posx>240</posx>
                     <posy>122</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31408]:</label>
                     </control>
                     <control type="label">
@@ -2526,6 +2518,15 @@
                     <width>561</width>
                     <height>2</height>
                     <texture flipy="true">multiplex/hort_line.png</texture>
+                    <visible>Container.Content(tvshows)</visible>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>151</posy>
+                    <width>561</width>
+                    <height>2</height>
+                    <texture flipy="true">multiplex/hort_line.png</texture>
+                    <visible>Container.Content(seasons)</visible>
                 </control>
             </control>				
 
@@ -2652,7 +2653,7 @@
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31438]:</label>
                     </control>
                     <control type="label">
@@ -2665,7 +2666,7 @@
                     <posx>320</posx>
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31407]:</label>
                     </control>
                     <control type="label">
@@ -2678,7 +2679,7 @@
                     <posx>450</posx>
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31406]:</label>
                     </control>
                     <control type="fadelabel">
@@ -2694,8 +2695,9 @@
                 <visible>Container.Content(seasons)</visible>
                 <control type="group">
                     <control type="label">
+                        <posx>65</posx>
                         <posy>22</posy>
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Right</include>
                         <label>$LOCALIZE[31403]:</label>
                     </control>
                     <control type="fadelabel">
@@ -2708,9 +2710,9 @@
                 
                 <control type="group">
                     <control type="label">
-                        <posx>200</posx>
+                        <posx>270</posx>
                         <posy>22</posy>
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Right</include>
                         <label>$LOCALIZE[31439]:</label>
                     </control>
                     <control type="label">
@@ -2723,9 +2725,9 @@
 
                 <control type="group">
                     <control type="label">
-                        <posx>400</posx>
+                        <posx>485</posx>
                         <posy>22</posy>
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Right</include>
                         <label>$LOCALIZE[31440]:</label>
                     </control>
                     <control type="label">
@@ -2744,7 +2746,7 @@
                 <control type="group">
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31402]:</label>
                     </control>
                     <control type="label">
@@ -2757,7 +2759,7 @@
                     <posx>220</posx>
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31401]:</label>
                     </control>
                     <control type="label">
@@ -2770,7 +2772,7 @@
                     <posx>440</posx>
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31407]:</label>
                     </control>
                     <control type="fadelabel">
@@ -3199,53 +3201,11 @@
             <control type="group">
                 <posx>105</posx>
                 <posy>30</posy>
-                <visible>Container.Content(episodes)</visible>
-                <control type="group">
-                    <posy>22</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31402]:</label>
-                    </control>
-                    <control type="label">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[ListItem.Director]</label>
-                    </control>			
-                </control>
-                
-                <control type="group">
-                    <posy>72</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31401]:</label>
-                    </control>
-                    <control type="label">
-                        <include>MultiplexInfoValue_270</include>				
-                        <label fallback="31425">$INFO[ListItem.Writer]</label>
-                    </control>			
-                </control>
-
-                <control type="group">
-                    <posx>305</posx>
-                    <posy>72</posy>
-                    <control type="label">
-                        <include>MultiplexInfoLabel</include>
-                        <label>$LOCALIZE[31407]:</label>
-                    </control>
-                    <control type="label">
-                        <include>MultiplexInfoValue</include>				
-                        <label fallback="31425">$INFO[listitem.Date]</label>
-                    </control>			
-                </control>
-            </control>
-            
-            <control type="group">
-                <posx>105</posx>
-                <posy>30</posy>
                 <visible>Container.Content(tvshows)</visible>
 <!--                <control type="group">
                     <posy>22</posy>
                     <control type="label">
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Left</include>
                         <label>$LOCALIZE[31438]:</label>
                     </control>
                     <control type="label">
@@ -3256,9 +3216,9 @@
                 
                 <control type="group">
                     <control type="label">
-                    <posx>0</posx>
+                    <posx>70</posx>
                     <posy>22</posy>
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Right</include>
                         <label>$LOCALIZE[31406]:</label>
                     </control>
                     <control type="fadelabel">
@@ -3271,9 +3231,9 @@
 
                 <control type="group">
                     <control type="label">
-                        <posx>185</posx>
+                        <posx>265</posx>
                         <posy>22</posy>
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Right</include>
                         <label>$LOCALIZE[31407]:</label>
                     </control>
                     <control type="label">
@@ -3291,8 +3251,9 @@
                 <visible>Container.Content(seasons)</visible>
                 <control type="group">
                     <control type="label">
+                    <posx>70</posx>
                     <posy>22</posy>
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Right</include>
                         <label>$LOCALIZE[31403]:</label>
                     </control>
                     <control type="label">
@@ -3305,9 +3266,9 @@
                 
                 <control type="group">
                     <control type="label">
-                        <posx>135</posx>
+                        <posx>205</posx>
                         <posy>22</posy>
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Right</include>
                         <label>$LOCALIZE[31439]:</label>
                     </control>
                     <control type="label">
@@ -3320,9 +3281,9 @@
 
                 <control type="group">
                     <control type="label">
-                        <posx>255</posx>
+                        <posx>345</posx>
                         <posy>22</posy>
-                        <include>MultiplexInfoLabel</include>
+                        <include>MultiplexInfoLabel_Right</include>
                         <label>$LOCALIZE[31440]:</label>
                     </control>
                     <control type="label">
@@ -3333,7 +3294,49 @@
                     </control>			
                 </control>
             </control>				
-            
+
+            <control type="group">
+                <posx>105</posx>
+                <posy>30</posy>
+                <visible>Container.Content(episodes)</visible>
+                <control type="group">
+                    <posy>22</posy>
+                    <control type="label">
+                        <include>MultiplexInfoLabel_Left</include>
+                        <label>$LOCALIZE[31402]:</label>
+                    </control>
+                    <control type="label">
+                        <include>MultiplexInfoValue</include>				
+                        <label fallback="31425">$INFO[ListItem.Director]</label>
+                    </control>			
+                </control>
+                
+                <control type="group">
+                    <posy>72</posy>
+                    <control type="label">
+                        <include>MultiplexInfoLabel_Left</include>
+                        <label>$LOCALIZE[31401]:</label>
+                    </control>
+                    <control type="label">
+                        <include>MultiplexInfoValue_270</include>				
+                        <label fallback="31425">$INFO[ListItem.Writer]</label>
+                    </control>			
+                </control>
+
+                <control type="group">
+                    <posx>275</posx>
+                    <posy>72</posy>
+                    <control type="label">
+                        <include>MultiplexInfoLabel_Left</include>
+                        <label>$LOCALIZE[31407]:</label>
+                    </control>
+                    <control type="label">
+                        <include>MultiplexInfoValue</include>				
+                        <label fallback="31425">$INFO[listitem.Date]</label>
+                    </control>			
+                </control>
+            </control>
+
 
 <!-- TV SHOWS & SEASONS NORMAL VIEW PLOT TEXT -->
             <control type="textbox">
