@@ -1522,7 +1522,7 @@
         <aligny>center</aligny>
         <align>right</align>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.48  (GIT-018)</label>                
+        <label>VER: 1.49  (GIT-019)</label>                
     </control>
 
 	<include>Furniture_SettingsFrontPanel</include>
