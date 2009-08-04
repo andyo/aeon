@@ -505,15 +505,15 @@
 	<string id="31860">ENTFERNEN</string>
 	<string id="31861">10 TAGE</string>
 	<string id="31862">ERINNERUNG Aus</string>
-	<string id="31863">-</string>
-	<string id="31864">-</string>
+	<string id="31863">Newest deviantart</string>
+	<string id="31864">Open Playlists</string>
 	<string id="31865">Extras</string>
 	<string id="31866">-</string>
 	<string id="31867">HAUPTMENÜ</string>
 	<string id="31868">FIXIEREN</string>
 	<string id="31869">WETTER-BILDHINTERGRUND DEN AKTUELLEN WETTERBEDINGUNGEN ANPASSEN</string>
 	<string id="31870">-</string>
-	<string id="31871">-</string>
+	<string id="31871">Random quote</string>
 	<string id="31872">-</string>
 	<string id="31873">Die nächsten 10 Tage</string>
 	<string id="31874">Die nächsten 36 Stunden</string>
@@ -522,6 +522,11 @@
 	<string id="31877">Verlassen</string>
 	<string id="31878">GESAMTSTATISTIK</string>
 	<string id="31879">NEU:</string>
+<!--  Shutdown Submenu  --> 
+	<string id="31211">REBOOT</string> 
+	<string id="31212">SUSPEND</string> 
+	<string id="31213">HIBERNATE</string>
+	<string id="31214">OFF TIMER</string>
 
 <!-- ShowMix -->
 

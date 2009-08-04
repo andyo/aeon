@@ -25,7 +25,6 @@
 <include file="Viewtype_Wall.xml" />
 
 <include file="Includes_genre.xml" /><!-- <<<<<< Add this -->
-<include file="Includes_RecentlyAdded.xml" />
 <include file="Includes_VerticalMenu.xml" />
 <!-- <include file="Includes_HorizontalMenu.xml" /> -->
 <include file="Includes_Filemanager.xml" />

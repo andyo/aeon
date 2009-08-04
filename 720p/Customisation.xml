@@ -170,6 +170,24 @@
             <onclick>Skin.ToggleSetting(CustomWeatherConditions)</onclick>
 			<selected>Skin.HasSetting(CustomWeatherConditions)</selected>
 		</control>		
+		<control type="radiobutton" id="512">
+            <include>Objects_SettingsDefaultRadioButton</include>
+            <label>$LOCALIZE[31871]</label>
+            <onclick>Skin.ToggleSetting(Random_quote)</onclick>
+            <selected>Skin.HasSetting(Random_quote)</selected>
+		</control>		
+		<control type="radiobutton" id="513">
+            <include>Objects_SettingsDefaultRadioButton</include>
+            <label>$LOCALIZE[31863]</label>
+            <onclick>Skin.ToggleSetting(Newest_Picture_on)</onclick>
+            <selected>Skin.HasSetting(Newest_Picture_on)</selected>
+		</control>		
+		<control type="radiobutton" id="514">
+            <include>Objects_SettingsDefaultRadioButton</include>
+            <label>$LOCALIZE[31864]</label>
+            <onclick>Skin.ToggleSetting(open_playlists)</onclick>
+            <selected>Skin.HasSetting(open_playlists)</selected>
+		</control>		
 	</control>
 	
 	<control type="grouplist" id="12">
@@ -532,8 +550,15 @@
         </control>
 
         <control type="button" id="951">
+            <visible>!Skin.HasSetting(open_playlists)</visible>
             <include>homesubmenu_but</include>
-            <onfocus>XBMC.RunScript(special://skin/extras/favourites.py)</onfocus>
+            <onfocus>XBMC.RunScript(special://skin/extras/favourites.py,playlists=play)</onfocus>
+            <onfocus>SetFocus(952)</onfocus>
+        </control>
+            <control type="button" id="951">
+            <visible>Skin.HasSetting(open_playlists)</visible>
+            <include>homesubmenu_but</include>
+            <onfocus>XBMC.RunScript(special://skin/extras/favourites.py,playlists=window)</onfocus>
             <onfocus>SetFocus(952)</onfocus>
         </control>
 
@@ -551,12 +576,12 @@
             <focusposition>0</focusposition>
             <scrolltime>200</scrolltime>
             <animation effect="fade" start="100" end="0" time="200" condition="controlgroup.HasFocus(22)">Conditional</animation>
-            <itemlayout width="170" height="40">
+            <itemlayout width="150" height="40">
                 <control type="label">
                     <posy>0</posy>
-                    <posx>85</posx>
+                    <posx>75</posx>
                     <height>40</height>
-                    <width>170</width>
+                    <width>150</width>
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_SettingsSectionMenuButton</font>
@@ -564,19 +589,19 @@
                     <info>ListItem.Label</info>
                 </control>
             </itemlayout>
-            <focusedlayout width="170" height="40">
+            <focusedlayout width="150" height="40">
                <control type="image">
                     <posx>0</posx>
                     <posy>0</posy>
-                    <width>170</width>
+                    <width>150</width>
                     <height>40</height>
                     <texture>settings/settings_leftmenufocus.png</texture>
                 </control>
                 <control type="label">
                     <posy>0</posy>
-                    <posx>85</posx>
+                    <posx>75</posx>
                     <height>40</height>
-                    <width>170</width>
+                    <width>150</width>
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_SettingsSectionMenuButton</font>
@@ -610,11 +635,11 @@
                     <label fallback="extras Sub">$LOCALIZE[31865] $LOCALIZE[31858]</label>
                     <onclick>SetFocus(953)</onclick>
                 </item>
-    <!--			<item id="4">
-                    <description>Settings</description>
-                    <label>31016</label>
-                    <onclick>SetFocus(953)</onclick>
-                </item> -->
+                <item id="7">
+                    <description>Favourites</description>
+                    <label>$LOCALIZE[1036]</label>
+                    <onclick>xbmc.activatewindow(134)</onclick>
+                </item>
             </content>
         </control>
 
@@ -692,13 +717,6 @@
                 </control>
             </focusedlayout>
             <content>
-            <!-- favourites
-                <item id="99">
-                    <label>[B]Open $LOCALIZE[1036][/B]</label>
-                    <onclick>xbmc.activatewindow(134)</onclick>
-                    <visible>Container(952).HasFocus(1)|Container(952).HasFocus(2)|Container(952).HasFocus(3)|Container(952).HasFocus(5)|Container(952).HasFocus(6)</visible>
-                </item -->
-            <!-- Main Menu -->
                 <item id="1">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,mainmenu_1path)</onclick>
@@ -1228,6 +1246,7 @@
                     <visible>Container(952).HasFocus(6)</visible>
                 </item>
             <!-- Extras Sub End -->
+
             </content>
         </control>
         <control type="list" id="954">
@@ -1510,7 +1529,7 @@
         <aligny>center</aligny>
         <align>right</align>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.45  (GIT-011)</label>                
+        <label>VER: 1.46  (GIT-015)</label>                
     </control>
 
 	<include>Furniture_SettingsFrontPanel</include>

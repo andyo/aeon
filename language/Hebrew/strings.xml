@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
 <!--Date of translation: 07/31/2009-->
 <!--$Revision$-->
@@ -408,15 +408,15 @@
   <string id="31860">נקה</string>
   <string id="31861">10 ימים</string>
   <string id="31862">שעון מעורר מכובה</string>
-  <string id="31863">-</string>
-  <string id="31864">-</string>
+  <string id="31863">Newest deviantart</string>
+  <string id="31864">Open Playlists</string>
   <string id="31865">תוספות</string>
   <string id="31866">-</string>
   <string id="31867">תפריט ראשי</string>
   <string id="31868">נעילה</string>
   <string id="31869">רקע מזג האויר לפי מזג האויר הנוכחי</string>
   <string id="31870">-</string>
-  <string id="31871">-</string>
+  <string id="31871">Random quote</string>
   <string id="31872">-</string>
   <string id="31873">10 ימים הבאים</string>
   <string id="31874">36 שעות הבאות</string>
@@ -425,6 +425,12 @@
   <string id="31877">יציאה</string>
   <string id="31878">סה"כ</string>
   <string id="31879">נוספו לאחרונה</string>
+  <!--  Shutdown Submenu  --> 
+	<string id="31211">REBOOT</string> 
+	<string id="31212">SUSPEND</string> 
+	<string id="31213">HIBERNATE</string>
+	<string id="31214">OFF TIMER</string>
+
   <string id="31900">מרקמים</string>
   <string id="31901">טפט ברירת מחדל</string>
   <string id="31902">איקונים ברירת מחדל מכילים אלמנטים של</string>

@@ -97,7 +97,7 @@
 				<width>721</width>
 				<height>40</height>
 				<textcolor>FFFFFFFF</textcolor>
-				<selectedcolor>9b3cd2fd</selectedcolor>				
+				<selectedcolor>FFFFFFFF</selectedcolor>				
 				<aligny>center</aligny>
 				<font>Font_OSDOptions</font>				
 				<info>ListItem.Label</info>

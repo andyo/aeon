@@ -227,7 +227,6 @@
 	</include>		
 	
 	<include name="Background_Wallpaper">
-
 		<control type="visualisation">
 			<include>FullscreenDimensions</include>
 			<visible>Skin.HasSetting(homevis) + Player.HasMedia</visible>
@@ -273,7 +272,77 @@
 			<visible>!Skin.String(CustomWeatherFolder)</visible>
 			<visible>System.Date(09-23,12-21)</visible>
 		</control>
-
 	</include>
 	
+<!-- Add Menu Item -->
+    <include name="BackgroundVars_extras">
+		<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_extras)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_scripts/default.png</imagepath>
+		<info>Skin.String(Custom_extras)</info>		
+	</include>
+
+	<include name="BackgroundVars_mainmenu_1">
+		<icon>special://skin/media/backdrops/default_assistant/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_1)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_assistant/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_1)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_2">
+		<icon>special://skin/media/backdrops/default_games/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_2)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_2)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_3">
+		<icon>special://skin/media/backdrops/default_movies/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_3)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_3)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_4">
+		<icon>special://skin/media/backdrops/default_music/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_4)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_music/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_4)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_5">
+		<icon>special://skin/media/backdrops/default_pictures/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_5)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_pictures/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_5)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_6">
+		<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_6)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_scripts/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_6)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_7">
+		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_7)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_settings/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_7)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_8">
+		<icon>special://skin/media/backdrops/default_tvshows/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_8)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_tvshows/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_8)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_9">
+		<icon>special://skin/media/backdrops/default_assistant/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_9)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_assistant/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_9)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_10">
+		<icon>special://skin/media/backdrops/default_games/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_10)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_11)</info>		
+	</include>	
+<!-- Add Menu item End -->
+
+    
 </includes>

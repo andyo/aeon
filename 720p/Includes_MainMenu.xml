@@ -152,7 +152,7 @@
 				<visible>System.HasNetwork</visible>
 				<visible>Skin.HasSetting(weather)</visible>
 			</item>
-			<item id="11">
+			<item id="2">
 				<description>Extras</description>
 				<label>31865</label>
 				<include>BackgroundVars_extras</include>					
@@ -166,7 +166,7 @@
 				<visible>!Skin.HasSetting(lowermainmenu)</visible>
 				<visible>!Skin.HasSetting(no_extras)</visible>
 			</item>
-			<item id="11">
+			<item id="2">
 				<description>Extras</description>
 				<label>31865</label>
 				<include>BackgroundVars_extras</include>
@@ -510,7 +510,7 @@
 				<onclick>SetFocus(92)</onclick>
 				<visible>!Skin.HasSetting(novideos)</visible>
 			</item>
-			<item id="11">
+			<item id="2">
 				<description>Extras</description>
 				<label>31865</label>
 				<include>BackgroundVars_extras</include>				
@@ -834,14 +834,14 @@
 				<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
 				<visible>!Skin.HasSetting(weather)</visible>
 			</item>
-			<item id="11">
+			<item id="2">
 				<description>Extras on</description>
 				<label>31865</label>
 				<include>BackgroundVars_extras</include>				
 				<onclick>Skin.SetBool(no_extras)</onclick>
 				<visible>!Skin.HasSetting(no_extras)</visible>
 			</item>
-			<item id="11">
+			<item id="2">
 				<description>Extras off</description>
 				<label2>31865</label2>
 				<include>BackgroundVars_extras</include>					
