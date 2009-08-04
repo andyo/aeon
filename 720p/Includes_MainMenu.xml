@@ -84,7 +84,8 @@
 				<label>31010</label>
 				<include>BackgroundVarsMusic</include>
 				<onclick>Skin.SetBool(music)</onclick>
-				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
@@ -95,7 +96,8 @@
 			<item id="5">
 				<label>31012</label>
 				<include>BackgroundVarsPictures</include>				
-				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
@@ -110,6 +112,7 @@
 				<include>Movie_Link</include>
 				<onclick>Skin.SetBool(videomovies)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -122,8 +125,9 @@
 				<label>31014</label>
 				<include>BackgroundVarsTV</include>
 				<include>TV_Link</include>
-				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.SetBool(videotv)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
+                <onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -136,6 +140,7 @@
 				<label>31015</label>
 				<include>BackgroundVarsVideo</include>				
 				<onclick>Skin.SetBool(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -158,6 +163,7 @@
 				<include>BackgroundVars_extras</include>					
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -172,6 +178,7 @@
 				<include>BackgroundVars_extras</include>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -186,6 +193,7 @@
 				<include>BackgroundVars_mainmenu_1</include>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
@@ -201,6 +209,7 @@
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
                 <onclick>Skin.Reset(musicgenres)</onclick>
@@ -215,6 +224,7 @@
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
                 <onclick>Skin.Reset(musicgenres)</onclick>
@@ -229,6 +239,7 @@
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
                 <onclick>Skin.Reset(musicgenres)</onclick>
@@ -243,6 +254,7 @@
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
                 <onclick>Skin.Reset(musicgenres)</onclick>
@@ -257,6 +269,7 @@
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
                 <onclick>Skin.Reset(musicgenres)</onclick>
@@ -270,6 +283,7 @@
 				<include>BackgroundVars_mainmenu_7</include>
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -284,6 +298,7 @@
 				<include>BackgroundVars_mainmenu_8</include>
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -298,6 +313,7 @@
 				<include>BackgroundVars_mainmenu_9</include>
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -312,6 +328,7 @@
 				<include>BackgroundVars_mainmenu_10</include>
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -327,6 +344,7 @@
 				<include>BackgroundVarsGames</include>					
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -339,6 +357,7 @@
 				<include>BackgroundVarsSettings</include>				
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -352,6 +371,7 @@
 				<include>BackgroundVarsScripts</include>					
 				<label>31020</label>
 				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
@@ -365,6 +385,7 @@
 				<include>BackgroundVarsPlayDVD</include>					
 				<label>31018</label>
 				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
@@ -379,6 +400,7 @@
 				<label>31607</label>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -391,6 +413,7 @@
 				<include>BackgroundVarsAssistant</include>					
 				<label>31021</label>
 				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
@@ -405,6 +428,7 @@
 				<label>31209</label>
 				<onclick>Skin.Reset(videofiles)</onclick>
 				<onclick>Skin.Reset(videomovies)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
@@ -419,6 +443,7 @@
 				<label>31019</label>
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>Skin.Reset(videofiles)</onclick>
+                <onclick>Skin.Reset(recenttv)</onclick>
 				<onclick>Skin.Reset(videotv)</onclick>
                 <onclick>Skin.Reset(videogenres)</onclick>
                 <onclick>Skin.Reset(music)</onclick>
