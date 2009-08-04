@@ -11048,12 +11048,12 @@
                 <control type="label">
                     <label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>![Control.IsVisible(109) | Control.HasFocus(113)] + !Container.Content(tvshows) + !stringcompare(ListItem.Season,0)</visible>
+                    <visible>![Control.IsVisible(109) | Control.HasFocus(113)] + Skin.HasSetting(videotv) + !Container.Content(tvshows) + !stringcompare(ListItem.Season,0)</visible>
                 </control>			
                 <control type="label">
                     <label>[UPPERCASE]SPECIALS[/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>![Control.IsVisible(109) | Control.HasFocus(113)] + !Container.Content(tvshows) + stringcompare(ListItem.Season,0)</visible>
+                    <visible>![Control.IsVisible(109) | Control.HasFocus(113)] + Skin.HasSetting(videotv) + !Container.Content(tvshows) + stringcompare(ListItem.Season,0)</visible>
                 </control>			
 
                 <control type="label" id="72">
