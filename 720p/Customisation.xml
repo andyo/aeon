@@ -74,13 +74,6 @@
 			<onclick>Skin.ToggleSetting(debug)</onclick>
 			<selected>Skin.HasSetting(debug)</selected>
 		</control>
-		
-		<control type="radiobutton" id="406">
-			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>31975</label>
-			<onclick>Skin.ToggleSetting(unlockTVviews)</onclick>
-			<selected>Skin.HasSetting(unlockTVviews)</selected>
-		</control>
 </control>
 
     <control type="grouplist" id="11">
