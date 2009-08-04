@@ -669,12 +669,21 @@
             </control>
             <control type="label">
                 <posx>850</posx>
-                <posy>53</posy>
+                <posy>68</posy>
                 <width>400</width>
                 <height>13</height>
                 <font>Font_MultiplexInfoLabel</font>
                 <textcolor>FFFFFFFF</textcolor>		
                 <label>VIDEO CODEC TAG: $INFO[listitem.VideoCodec,flags/codec/,.png]</label>
+            </control>
+            <control type="label">
+                <posx>850</posx>
+                <posy>68</posy>
+                <width>400</width>
+                <height>13</height>
+                <font>Font_MultiplexInfoLabel</font>
+                <textcolor>FFFFFFFF</textcolor>		
+                <label>FILM CERT: $INFO[listitem.mpaa/,,.png]</label>
             </control>
         </control>
 

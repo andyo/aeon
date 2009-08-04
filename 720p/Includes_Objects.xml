@@ -1904,7 +1904,7 @@
                 <aligny>center</aligny>
                 <font>Font_WeatherTitle</font>
                 <textcolor>c0FFFFFF</textcolor>
-                <label>31871</label>
+                <label>31982</label>
             </control>
             <control type="label">
                 <posx>10</posx>

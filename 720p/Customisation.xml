@@ -165,7 +165,7 @@
 		</control>		
 		<control type="radiobutton" id="512">
             <include>Objects_SettingsDefaultRadioButton</include>
-            <label>$LOCALIZE[31871]</label>
+            <label>$LOCALIZE[31983]</label>
             <onclick>Skin.ToggleSetting(Random_quote)</onclick>
             <selected>Skin.HasSetting(Random_quote)</selected>
 		</control>		
@@ -1522,7 +1522,7 @@
         <aligny>center</aligny>
         <align>right</align>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.491  (GIT-021)</label>                
+        <label>VER: 1.49  (GIT-023)</label>                
     </control>
 
 	<include>Furniture_SettingsFrontPanel</include>
