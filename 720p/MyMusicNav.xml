@@ -15,7 +15,7 @@
 
 	<control type="largeimage" id="102">
 		<include>FullscreenDimensions</include>
-        <visible>[!Control.IsVisible(103) + Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+        <visible>[!Control.IsVisible(103) + Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[listitem.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
@@ -23,7 +23,7 @@
 
 	<control type="largeimage" id="103">
 		<include>FullscreenDimensions</include>
-        <visible>[Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+        <visible>[Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[container.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
@@ -31,7 +31,7 @@
     
 	<control type="largeimage" id="104">
 		<include>FullscreenDimensions</include>
-        <visible>[Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(54)] + !Skin.HasSetting(nomusicfanart)</visible>
+        <visible>[Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54)] + !Skin.HasSetting(nomusicfanart)</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
 		<include>Animation_FanartFade</include>
@@ -66,7 +66,7 @@
 		<width>0</width>
 		<height>0</height>
 		<texture>-</texture>
-		<visible>Skin.HasSetting(music) + !Skin.HasSetting(nomultiplexmusicpopup) + ![Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfotrigger)] + [Control.HasFocus(52) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container(52).OnNext + !Container(52).OnPrevious]</visible>
+		<visible>Skin.HasSetting(music) + !Skin.HasSetting(nomultiplexmusicpopup) + ![Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfotrigger)] + [Control.HasFocus(59) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container(59).OnNext + !Container(59).OnPrevious]</visible>
 		<animation effect="fade" start="0" end="100" time="150" delay="1500">Visible</animation>
 	</control>
 
