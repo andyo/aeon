@@ -10952,7 +10952,7 @@
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>
+                    <visible>[!Skin.HasSetting(tvposterview) + Container.Content(seasons)]</visible>
                 </control>
 
 
