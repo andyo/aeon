@@ -10931,8 +10931,6 @@
                     <include>MultiplexDetailLabel</include>
                     <visible>[Container.Content(tvshows)] + !IsEmpty(ListItem.Genre)</visible>
                 </control>
-
-
                 <control type="label">
                     <label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
@@ -10943,7 +10941,6 @@
                     <include>MultiplexMainLabel</include>
                     <visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes) + stringcompare(ListItem.Season,0)] | [Container.Content(seasons) + Skin.HasSetting(tvposterview) + stringcompare(ListItem.Season,0)]</visible>
                 </control>			
-
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
@@ -10954,8 +10951,6 @@
                     <include>MultiplexMainLabel</include>
                     <visible>[!Skin.HasSetting(tvposterview) + Container.Content(seasons)]</visible>
                 </control>
-
-
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
@@ -10966,8 +10961,6 @@
                     <include>MultiplexMainLabel</include>
                     <visible>[Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes)</visible>
                 </control>			
-
-
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.TVShowTitle] - SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
@@ -10980,14 +10973,34 @@
                 </control>			
 
                 <control type="label" id="72">
+                    <label>$INFO[listitem.tracknumber]. $INFO[listitem.title]</label>
+                    <include>MultiplexMainLabel</include>
+                    <visible>Container.Content(songs)</visible>
+                </control>
+	                <control type="label" id="72">
                     <label>$INFO[ListItem.Album,, -] $INFO[ListItem.Artist]</label>
                     <include>MultiplexDetailLabel</include>
                     <visible>Container.Content(songs)</visible>
                 </control>
                 <control type="label" id="72">
-                    <info>ListItem.Label2</info>
+                    <label>$INFO[ListItem.Artist]</label>
+                    <include>MultiplexMainLabel</include>
+                    <visible>Container.Content(artists)</visible>
+                </control>
+                <control type="label" id="72">
+                    <label>$INFO[ListItem.Album]</label>
+                    <include>MultiplexMainLabel</include>
+                    <visible>Container.Content(albums)</visible>
+                </control>
+                <control type="label" id="72">
+                    <label>$INFO[ListItem.Artist]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>Window.IsActive(1) | Container.Content(albums) | Window.IsActive(501)</visible>
+                    <visible>Container.Content(albums)</visible>
+                </control>
+                <control type="label" id="72">
+                    <info>ListItem.Label2</info>
+                    <include>MultiplexMainLabel</include>
+                    <visible>Window.IsActive(1) | Window.IsActive(501) + ![Container.Content(albums) | Container.Content(songs)]</visible>
                 </control>
 
                 <control type="label" id="72">
@@ -11076,6 +11089,11 @@
                 <!-- Music -->
 
                 <control type="label" id="72">
+                    <label>$INFO[ListItem.Artist]</label>
+                    <include>MultiplexMainLabel</include>
+                    <visible>!Control.IsVisible(109) + Container.Content(artists)</visible>
+                </control>
+                <control type="label" id="72">
                     <label>$INFO[ListItem.Album]</label>
                     <include>MultiplexMainLabel</include>
                     <visible>!Control.IsVisible(109) + Container.Content(albums)</visible>
@@ -11089,12 +11107,12 @@
                 <control type="label" id="72">
                     <label>$INFO[listitem.tracknumber]. $INFO[listitem.title]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>Container.Content(songs)</visible>
+                    <visible>!Control.IsVisible(109) + Container.Content(songs)</visible>
                 </control>
                 <control type="label" id="72">
                     <label>$INFO[ListItem.Album,, -] $INFO[ListItem.Artist]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>Container.Content(songs)</visible>
+                    <visible>!Control.IsVisible(109) + Container.Content(songs)</visible>
                 </control>
 
                 <control type="label">
