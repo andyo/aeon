@@ -3515,7 +3515,7 @@
 
 <!-- VIDEO -->
             <control type="group">
-                <posx>508</posx>
+                <posx>512</posx>
                 <posy>50</posy>
                 <visible>Skin.HasSetting(tvpreview) + Container.Content(episodes)</visible>	
                 <control type="image">
@@ -10819,7 +10819,7 @@
 			
         <control type="group" id="600">
             <control type="button" id="601">
-                <visible>Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !Player.Playing + ![Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplexinfooff)]</visible>
+                <visible>Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !Player.Playing + !Skin.HasSetting(multiplexinfooff)</visible>
                 <onleft>59</onleft>
                 <onright>59</onright>
                 <onup>7000</onup>
@@ -10828,7 +10828,7 @@
             </control>
 
             <control type="button" id="602">
-                <visible>Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview) + !Player.Playing + ![Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplexinfooff)]</visible>
+                <visible>Container.Content(episodes) + Skin.HasSetting(tvpreview) + !Player.Playing + !Skin.HasSetting(multiplextvepisodesinfooff)</visible>
                 <onleft>59</onleft>
                 <onright>59</onright>
                 <onup>7000</onup>
@@ -10837,7 +10837,7 @@
             </control>
 
             <control type="button" id="603">
-            <visible>![Skin.HasSetting(movietrailers) | Skin.HasSetting(tvpreview) + Player.Playing]</visible>
+            <visible>![Skin.HasSetting(movietrailers) | Skin.HasSetting(tvpreview) | Player.Playing] | [Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvepisodesinfooff)]</visible>
             <onfocus>SetFocus(60)</onfocus>
             </control>
         </control>
