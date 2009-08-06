@@ -46,7 +46,7 @@
         <height>13</height>
         <font>Font_MultiplexInfoLabel</font>
         <textcolor>FFFFFFFF</textcolor>		
-        <label>** $INFO[Container.FolderName]</label>
+        <label>** $INFO[container.folderpath]</label>
         <visible>Skin.HasSetting(debug)</visible>
 	</control>    
 <!-- <<<<< ADD this -->
