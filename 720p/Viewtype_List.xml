@@ -1803,7 +1803,7 @@
                     <include>ListLabel_MainSmall</include>
                     <include>listcolorfocus</include>
                     <include>Animation_ButtonFocusFade</include>						
-                    <label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
+                    <label>$INFO[ListItem.Title]</label>
                     <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
                 </control>					
                 <control type="label">
