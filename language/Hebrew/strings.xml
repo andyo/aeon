@@ -416,7 +416,7 @@
   <string id="31868">נעילה</string>
   <string id="31869">רקע מזג האויר לפי מזג האויר הנוכחי</string>
   <string id="31870">-</string>
-  <string id="31871">Random quote</string>
+  <string id="31871">RANDOM QUOTE</string>
   <string id="31872">-</string>
   <string id="31873">10 ימים הבאים</string>
   <string id="31874">36 שעות הבאות</string>
@@ -425,6 +425,7 @@
   <string id="31877">יציאה</string>
   <string id="31878">סה"כ</string>
   <string id="31879">נוספו לאחרונה</string>
+  <string id="31880">10 ימים</string>
   <!--  Shutdown Submenu  --> 
 	<string id="31211">REBOOT</string> 
 	<string id="31212">SUSPEND</string> 
@@ -492,4 +493,7 @@
   <string id="31979">רקע ז'אנר סרטים מופעל/מכובה</string>
   <string id="31980">איקון ז'אנר מוסיקה מופעל/מכובה</string>
   <string id="31981">רקע ז'אנר מוסיקה מופעל/מכובה</string>
+  <string id="31982">SHOWMIX UPDATES</string>
+  <string id="31983">ENABLE SHOWMIX RSS FEED</string>
+  <string id="31984">-</string>
 </strings>

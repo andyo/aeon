@@ -56,8 +56,9 @@
 	<include condition="!Skin.HasSetting(Recently_added)">Recently_added</include>
     <include condition="Skin.HasSetting(Random_quote)">Randomly_quote</include>
     <include condition="Skin.HasSetting(Newest_Picture_on)">Newest_Picture</include>
-	<include>Objects_WeatherPopup2</include>
-	<include>Furniture_Time</include>
+    <include condition="!StringCompare(Weather.Plugin,weather.com plus)">Objects_WeatherPopup</include>
+    <include condition="StringCompare(Weather.Plugin,weather.com plus)">Widget_Weather</include>
+    <include>Furniture_Time</include>
 	<include>Furniture_HomeRSS</include>
 	<control type="group">
 		<posx>0</posx>

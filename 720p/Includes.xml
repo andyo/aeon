@@ -24,6 +24,7 @@
 <include file="Viewtype_List.xml" />
 <include file="Viewtype_Wall.xml" />
 
+<include file="Includes_Widget_Weather.xml" />
 <include file="Includes_genre.xml" /><!-- <<<<<< Add this -->
 <include file="Includes_VerticalMenu.xml" />
 <!-- <include file="Includes_HorizontalMenu.xml" /> -->

@@ -37,7 +37,7 @@
 	</include>
 	
 	<include name="Conditions_Weather">
-		<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>	
+		<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)] | Window.IsVisible(2600)</visible>	
 	</include>
 	
 	<include name="Conditions_WallLeftSmall">

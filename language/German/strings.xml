@@ -513,7 +513,7 @@
 	<string id="31868">FIXIEREN</string>
 	<string id="31869">WETTER-BILDHINTERGRUND DEN AKTUELLEN WETTERBEDINGUNGEN ANPASSEN</string>
 	<string id="31870">-</string>
-	<string id="31871">Random quote</string>
+    <string id="31871">RANDOM QUOTE</string>
 	<string id="31872">-</string>
 	<string id="31873">Die nächsten 10 Tage</string>
 	<string id="31874">Die nächsten 36 Stunden</string>
@@ -522,6 +522,7 @@
 	<string id="31877">Verlassen</string>
 	<string id="31878">GESAMTSTATISTIK</string>
 	<string id="31879">NEU:</string>
+	<string id="31880">7 TAGE</string>
 <!--  Shutdown Submenu  --> 
 	<string id="31211">REBOOT</string> 
 	<string id="31212">SUSPEND</string> 
@@ -529,6 +530,8 @@
 	<string id="31214">OFF TIMER</string>
 
 <!-- ShowMix -->
+	<string id="31982">SHOWMIX UPDATES</string>
+	<string id="31983">ENABLE SHOWMIX RSS FEED</string>
 
 	<string id="31042">BODEN: HELL</string>
 	<string id="31043">BODEN: DUNKEL</string>
@@ -562,6 +565,7 @@
 	<string id="31972">UNBENUTZTER SCHALTER (VORHER: VERTIKALES MENÜ)</string>
 	<string id="31973">POSITION DES ORDNERS MIT FILMEN (FÜR 'EXTRATHUMBS')</string>
 	<string id="31974">DYNAMISCHE FLUSS-ANSICHT</string>
+	<string id="31984">-</string>
 
 <!-- customisation strings added by azido -->
 

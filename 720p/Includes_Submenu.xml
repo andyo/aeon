@@ -1405,7 +1405,7 @@
         </animation>
         <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
         <control type="group" id="330">
-            <visible>[[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(2) | Container(300).HasFocus(1) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(22)]</visible>
+            <visible>[[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(2) | Container(300).HasFocus(9) | Container(300).HasFocus(1) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(22)]</visible>
             <visible>!Skin.HasSetting(CustomMenuSub)</visible>
             <control type="image">
                 <visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
@@ -1471,30 +1471,37 @@
                 <!-- weather (10) -->
                     <item id="1">
     <!--***-->				<label fallback="4 Days">31853</label>
-                        <onclick>Skin.Reset(weatherpopup36hour)</onclick>
-                        <onclick>Skin.Reset(weatherpopupweekend)</onclick>
-                        <onclick>Skin.SetBool(weatherpopupweek)</onclick>
+                        <onclick>Skin.Reset(WeatherWidget36Hour)</onclick>
+                        <onclick>Skin.Reset(WeatherWidgetWeekend)</onclick>
+                        <onclick>Skin.Reset(WeatherWidget7Day)</onclick>
                         <visible>Container(300).HasFocus(10)</visible>
                     </item>
                     <item id="2">
     <!--***-->				<label fallback="36 HOURS">31852</label>
-                        <onclick>Skin.SetBool(weatherpopup36hour)</onclick>
-                        <onclick>Skin.Reset(weatherpopupweekend)</onclick>
-                        <onclick>Skin.Reset(weatherpopupweek)</onclick>
+                        <onclick>Skin.SetBool(WeatherWidget36Hour)</onclick>
+                        <onclick>Skin.Reset(WeatherWidgetWeekend)</onclick>
+                        <onclick>Skin.Reset(WeatherWidget7Day)</onclick>
                         <visible>Container(300).HasFocus(10)</visible>
                     </item>
                     <item id="3">
     <!--***-->				<label fallback="WEEKEND">31851</label>
-                        <onclick>Skin.SetBool(weatherpopupweekend)</onclick>
-                        <onclick>Skin.Reset(weatherpopup36hour)</onclick>
-                        <onclick>Skin.Reset(weatherpopupweek)</onclick>
+                        <onclick>Skin.SetBool(WeatherWidgetWeekend)</onclick>
+                        <onclick>Skin.Reset(WeatherWidget36Hour)</onclick>
+                        <onclick>Skin.Reset(WeatherWidget7Day)</onclick>
                         <visible>Container(300).HasFocus(10)</visible>
                     </item>
                     <item id="4">
+    <!--***-->				<label fallback="7 DAYS">31880</label>
+                        <onclick>Skin.SetBool(WeatherWidget7Day)</onclick>
+                        <onclick>Skin.Reset(WeatherWidgetWeekend)</onclick>
+                        <onclick>Skin.Reset(WeatherWidget36Hour)</onclick>
+                        <visible>Container(300).HasFocus(10)</visible>
+                    </item>
+                    <item id="5">
     <!--***-->				<label fallback="10 DAYS">31861</label>
-                        <onclick>Skin.Reset(weatherpopupweekend)</onclick>
-                        <onclick>Skin.Reset(weatherpopup36hour)</onclick>
-                        <onclick>Skin.Reset(weatherpopupweek)</onclick>
+                        <onclick>Skin.Reset(WeatherWidgetWeekend)</onclick>
+                        <onclick>Skin.Reset(WeatherWidget36Hour)</onclick>
+                        <onclick>Skin.Reset(WeatherWidget7Day)</onclick>
                         <onclick>xbmc.activatewindow(2600)</onclick>
                         <visible>Container(300).HasFocus(10)</visible>
                     </item>

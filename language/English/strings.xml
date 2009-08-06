@@ -201,7 +201,7 @@
 	<string id="31246">SHOWMIX</string>
 	<string id="31247">MODS SETTINGS</string>
 	<string id="31248">CONFIGURE MENU'S</string>
-	<string id="31254">Add Remove Item's</string>
+	<string id="31229">Add Remove Item's</string>
 
 
   
@@ -514,7 +514,7 @@
 	<string id="31868">LOCK</string>
 	<string id="31869">Weather Backdrop by Current Weather Conditions</string>
 	<string id="31870">-</string>
-	<string id="31871">Random quote</string>
+    <string id="31871">RANDOM QUOTE</string>
 	<string id="31872">-</string>
 	<string id="31873">Next 10 Days</string>
 	<string id="31874">Next 36 Hours</string>
@@ -523,6 +523,7 @@
 	<string id="31877">Exit</string>
 	<string id="31878">TOTALS</string>
 	<string id="31879">RECENTLY ADDED</string>
+	<string id="31880">7 Days</string>
 <!--  Shutdown Submenu  --> 
 	<string id="31211">REBOOT</string> 
 	<string id="31212">SUSPEND</string> 
@@ -530,6 +531,8 @@
 	<string id="31214">OFF TIMER</string>
 
 <!-- ShowMix -->
+	<string id="31982">SHOWMIX UPDATES</string>
+	<string id="31983">ENABLE SHOWMIX RSS FEED</string>
 
 	<string id="31042">FLOOR: LIGHT</string>
 	<string id="31043">FLOOR: NIGHT</string>
@@ -573,6 +576,6 @@
 	<string id="31978">MOVIE GENRE FALLBACK ICON ON/OFF</string>
 	<string id="31979">MOVIE GENRE FANART IMAGE ON/OFF</string>
 	<string id="31980">MUSIC GENRE ICONS ON/OFF</string>
-	<string id="31981">MUSIC GENRE FANART IMAGE ON/OFF</string>
+	<string id="31984">-</string>
 	
 </strings>

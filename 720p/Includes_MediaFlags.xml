@@ -882,7 +882,7 @@
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
 					<texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
-                    <animation effect="fade" start="50" end="50" time="0" condition="Control.HasFocus(54) | Control.HasFocus(59)" pulse="true">Conditional</animation>
+                    <animation effect="fade" start="50" end="50" time="0" condition="Control.HasFocus(54) | Control.HasFocus(57) | Control.HasFocus(59)" pulse="true">Conditional</animation>
 				</control>
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>

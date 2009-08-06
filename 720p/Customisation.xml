@@ -17,6 +17,14 @@
 		<label>31230</label>
 		<include>Objects_SettingsSectionTitle</include>
 	</control>
+    <control type="label">
+        <posx>57</posx>
+        <posy>650</posy>
+        <width>500</width>
+        <height>49</height>
+        <font>Font_SettingsOptions</font>
+        <label>VER: 1.50  (GIT-027)</label>                
+    </control>
 	
 	<control type="label">
 		<description>sectiontitle</description>
@@ -90,78 +98,80 @@
 			<onclick>Skin.ToggleSetting(noweatherpopup)</onclick>
 			<selected>!Skin.HasSetting(noweatherpopup)</selected>
 		</control>
-
 		<control type="radiobutton" id="501">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>-- $LOCALIZE[31859]</label>
+            <onclick>Skin.ToggleSetting(Weather_ani)</onclick>
+			<selected>Skin.HasSetting(Weather_ani)</selected>
+            <visible>!Skin.HasSetting(noweatherpopup)</visible>
+		</control>		
+		<control type="radiobutton" id="502">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>-- $LOCALIZE[31869]</label>
+            <onclick>Skin.ToggleSetting(CustomWeatherConditions)</onclick>
+			<selected>Skin.HasSetting(CustomWeatherConditions)</selected>
+            <visible>!Skin.HasSetting(noweatherpopup)</visible>
+		</control>		
+
+		<control type="radiobutton" id="503">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>31295</label>
 			<onclick>Skin.ToggleSetting(bighome)</onclick>
 			<selected>Skin.HasSetting(bighome)</selected>
 		</control>	
 
-		<control type="radiobutton" id="502">
+		<control type="radiobutton" id="504">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>31253</label>
 			<onclick>Skin.ToggleSetting(launcherforgames)</onclick>
 			<selected>Skin.HasSetting(launcherforgames)</selected>
 		</control>
 		
-		<control type="radiobutton" id="503">
+		<control type="radiobutton" id="505">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>31252</label>
 			<onclick>Skin.ToggleSetting(nohomegradient)</onclick>
 			<selected>!Skin.HasSetting(nohomegradient)</selected>
 		</control>		
 
-		<control type="radiobutton" id="504">
+		<control type="radiobutton" id="506">
 			<include>Objects_SettingsDefaultRadioButton</include>
             <label>$LOCALIZE[1034]</label>
             <onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
 			<selected>!Skin.HasSetting(CustomMenuSub)</selected>
 		</control>		
-		<control type="radiobutton" id="505">
+		<control type="radiobutton" id="507">
 			<include>Objects_SettingsDefaultRadioButton</include>
             <label>$LOCALIZE[31867] $LOCALIZE[31868]</label>
             <onclick>Skin.ToggleSetting(CustomMenuanimation)</onclick>
 			<selected>Skin.HasSetting(CustomMenuanimation)</selected>
 		</control>		
 
-		<control type="radiobutton" id="506">
+		<control type="radiobutton" id="508">
 			<include>Objects_SettingsDefaultRadioButton</include>
             <label>$LOCALIZE[14022] $LOCALIZE[31878]</label>
 			<onclick>Skin.ToggleSetting(Library_info)</onclick>
 			<selected>!Skin.HasSetting(Library_info)</selected>
 		</control>		
-		<control type="radiobutton" id="507">
+		<control type="radiobutton" id="509">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>$LOCALIZE[31879]</label>
 			<onclick>Skin.ToggleSetting(Recently_added)</onclick>
 			<selected>!Skin.HasSetting(Recently_added)</selected>
 		</control>		
-		<control type="radiobutton" id="508">
+		<control type="radiobutton" id="510">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label> -- $LOCALIZE[342] $LOCALIZE[207]</label>
 			<onclick>Skin.ToggleSetting(recently_added_Plot)</onclick>
 			<selected>!Skin.HasSetting(recently_added_Plot)</selected>
             <visible>!Skin.HasSetting(Recently_added)</visible>
 		</control>		
-		<control type="radiobutton" id="509">
+		<control type="radiobutton" id="511">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label> -- $LOCALIZE[20364] $LOCALIZE[207]</label>
 			<onclick>Skin.ToggleSetting(recently_added_Plot_tv)</onclick>
 			<selected>!Skin.HasSetting(recently_added_Plot_tv)</selected>
             <visible>!Skin.HasSetting(Recently_added)</visible>
-		</control>		
-		<control type="radiobutton" id="510">
-			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>$LOCALIZE[31859]</label>
-            <onclick>Skin.ToggleSetting(Weather_ani)</onclick>
-			<selected>Skin.HasSetting(Weather_ani)</selected>
-		</control>		
-		<control type="radiobutton" id="511">
-			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>$LOCALIZE[31869]</label>
-            <onclick>Skin.ToggleSetting(CustomWeatherConditions)</onclick>
-			<selected>Skin.HasSetting(CustomWeatherConditions)</selected>
 		</control>		
 		<control type="radiobutton" id="512">
             <include>Objects_SettingsDefaultRadioButton</include>
@@ -1514,17 +1524,6 @@
         <visible>Control.HasFocus(15) | ControlGroup(21).HasFocus</visible>
     </control>
     
-    <control type="label">
-        <posx>190</posx>
-        <posy>635</posy>
-        <width>500</width>
-        <height>49</height>
-        <aligny>center</aligny>
-        <align>right</align>
-        <font>Font_SettingsOptions</font>
-        <label>VER: 1.49  (GIT-023)</label>                
-    </control>
-
 	<include>Furniture_SettingsFrontPanel</include>
 	
 	<!--<include>Background_ContextBlack</include>-->

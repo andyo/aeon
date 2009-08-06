@@ -2533,6 +2533,23 @@
       <size>18</size>
     </font>
 	
+    <!-- Widgets -->
+    <font>
+        <name>Font_WidgetLarge</name>Font_WeatherTempSmallHigh
+        <filename>aeon_title.ttf</filename>
+        <size>50</size>
+    </font>  
+    <font>
+        <name>Font_WidgetMedium</name>Font_WeatherPrecip
+        <filename>aeon_title.ttf</filename>
+        <size>45</size>
+    </font>  
+    <font>
+        <name>Font_WidgetSmall</name>Font_WeatherTempSmallLow
+        <filename>aeon_title.ttf</filename>
+        <size>40</size>
+    </font>  
+    
   </fontset>
   
 </fonts>
