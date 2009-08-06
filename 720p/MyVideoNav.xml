@@ -73,7 +73,7 @@
         <height>13</height>
         <font>Font_MultiplexInfoLabel</font>
         <textcolor>FFFFFFFF</textcolor>		
-        <label>** $INFO[ListItem.Property(Fanart_Image)]</label>
+        <label>** $INFO[ListItem.Path,,fanart.jpg]</label>
         <visible>Skin.HasSetting(debug)</visible>
 	</control>    
 

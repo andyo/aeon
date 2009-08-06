@@ -206,6 +206,13 @@
 			<info>Fanart.Image</info>
 			<visible>!Skin.HasSetting(notvfanart) + [Container.Content(seasons) | Container.Content(episodes)]</visible>
 		</control>
+		<control type="largeimage" id="104">
+			<include>FullscreenDimensions</include>
+			<visible>!Skin.HasSetting(notvfanart) + Container.Content(episodes)</visible>
+			<fadetime>400</fadetime>
+			<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
+			<include>Animation_FanartFade</include>
+		</control>
 	</include>
 
 	<include name="MediaBackdropsMultiplex">
