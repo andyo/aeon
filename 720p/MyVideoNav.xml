@@ -26,13 +26,20 @@
 		<visible>[Skin.HasSetting(genre_fanart_onoff)+Container.Content(genres)]</visible>
 	</control>
 
-	<control type="largeimage" id="102">
-		<include>FullscreenDimensions</include>
+    <control type="largeimage">
+        <include>FullscreenDimensions</include>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+        <texture>$INFO[Fanart.Image]</texture>
         <visible>[Control.IsVisible(50) | Control.IsVisible(56) | Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54) | Control.IsVisible(52)] + [[Container.Content(movies) + !Skin.HasSetting(nomoviefanart)] | [Container.Content(tvshows) + !Skin.HasSetting(notvfanart)]]</visible>
-		<fadetime>400</fadetime>
-        <info>ListItem.Property(Fanart_Image)</info>
-		<include>Animation_FanartFade</include>
-	</control>
+    <include>Animation_FanartFade</include>
+    </control>
+    <control type="largeimage">
+        <include>FullscreenDimensions</include>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+        <texture>$INFO[ListItem.Property(Fanart_Image)]</texture>
+        <visible>[Control.IsVisible(50) | Control.IsVisible(56) | Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54) | Control.IsVisible(52)] + [[Container.Content(movies) + !Skin.HasSetting(nomoviefanart)] | [[Container.Content(tvshows) | Container.Content(Seaons) | Container.Content(Episodes)] + !Skin.HasSetting(notvfanart)]]</visible>
+        <include>Animation_FanartFade</include>
+    </control>
 	
 	<include condition="Skin.HasSetting(videotv)">MediaBackdropsTVFanart</include>
 	<include>MediaBackdropsMultiplex</include>	
