@@ -23,7 +23,7 @@
         <width>500</width>
         <height>49</height>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.50  (GIT-027)</label>                
+        <label>VER: 1.50  (GIT-030)</label>                
     </control>
 	
 	<control type="label">
