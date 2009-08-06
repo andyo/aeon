@@ -439,6 +439,7 @@
                 <control type="image">
                     <include>Furniture_ListMediaFlagsVars</include>
                     <texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
+                    <animation effect="fade" start="50" end="50" time="0" condition="Control.HasFocus(50)" pulse="true">Conditional</animation>
                 </control>
                 <control type="image">
                     <include>Furniture_ListMediaFlagsVars</include>
