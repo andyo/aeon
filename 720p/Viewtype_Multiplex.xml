@@ -3706,7 +3706,7 @@
                     <width>647</width>
                     <height>2</height>
                     <texture flipy="true">multiplex/hort_line.png</texture>
-                    <visible>Container.Content(albums) | Container.Content(artists)</visible>
+                    <visible>Container.Content(albums) | Container.Content(artists) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                     </control>
                 <control type="image">
                     <posx>0</posx>
@@ -3873,7 +3873,7 @@
 
 <!-- Album Info -->
             <control type="group">
-                <visible>Container.Content(albums) | Container.Content(songs)</visible>
+                <visible>Container.Content(albums) | Container.Content(songs) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 <control type="label">
                     <posx>10</posx>
                     <posy>20</posy>
@@ -3903,7 +3903,7 @@
 			<control type="group">
 				<posx>-65</posx>
 				<posy>110</posy>
-                <visible>Container.Content(albums) | Container.Content(songs)</visible>
+                <visible>Container.Content(albums) | Container.Content(songs) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 <control type="label">
                     <posy>0</posy>
                     <height>13</height>
@@ -3929,7 +3929,7 @@
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>abFFFFFF</textcolor>
                     <label>$LOCALIZE[31928]:</label>
-                    <visible>Container.Content(albums)</visible>
+                    <visible>Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 </control>
                 <control type="label">
                     <posx>150</posx>
@@ -3939,7 +3939,7 @@
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>FFFFFFFF</textcolor>
                     <label>$INFO[Container(59).NumItems]</label>
-                    <visible>Container.Content(albums)</visible>
+                    <visible>Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 </control>			
 
                 <control type="label">
@@ -3996,7 +3996,7 @@
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>abFFFFFF</textcolor>
                     <label>$LOCALIZE[176]:</label>
-                    <visible>Container.Content(albums)</visible>
+                    <visible>Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 </control>
                 <control type="label">
                     <posx>400</posx>
@@ -4010,7 +4010,7 @@
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
-                    <visible>Container.Content(albums)</visible>
+                    <visible>Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 </control>			
 		
                 <control type="label">
@@ -4020,7 +4020,7 @@
                     <font>Font_MultiplexInfoLabel</font>	
                     <textcolor>abFFFFFF</textcolor>
                     <label>$LOCALIZE[175]:</label>
-                    <visible>Container.Content(albums)</visible>
+                    <visible>Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 </control>
                 <control type="label">
                     <posy>60</posy>
@@ -4033,7 +4033,7 @@
                     <scrollout>true</scrollout>
                     <pauseatend>3000</pauseatend>
                     <scroll>true</scroll>
-                    <visible>Container.Content(albums)</visible>
+                    <visible>Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 </control>			
 
                 <control type="textbox">
@@ -4045,7 +4045,7 @@
                     <label fallback="31424">$INFO[ListItem.Property(Description)]</label>
                     <textcolor>d0FFFFFF</textcolor>
                     <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-                    <visible>Container.Content(albums)</visible>
+                    <visible>Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 </control>
 			</control>
 
@@ -4093,7 +4093,8 @@
                     <visible>!Skin.HasSetting(multiplexmusicbigthumb)</visible>
                     <include>Animation_VisibleChange200</include>
                 </control>
-                <control type="image">
+
+<!--                <control type="image">
                     <posx>1</posx>
                     <posy>1</posy>
                     <width>620</width>
@@ -4101,9 +4102,9 @@
                     <fadetime>400</fadetime>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[listitem.thumb]</texture>
-                    <visible>Skin.HasSetting(multiplexmusicbigthumb) + Container.Content(albums)</visible>
+                    <visible>Skin.HasSetting(multiplexmusicbigthumb) + Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                     <include>Animation_VisibleChange200</include>
-                </control>
+                </control> -->
             </control>
         </control>
 
@@ -10990,12 +10991,12 @@
                 <control type="label" id="72">
                     <label>$INFO[ListItem.Album]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>Container.Content(albums)</visible>
+                    <visible>Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
                 </control>
                 <control type="label" id="72">
                     <label>$INFO[ListItem.Artist]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>Container.Content(albums)</visible>
+                    <visible>Container.Content(albums) | [substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
                 <control type="label" id="72">
                     <info>ListItem.Label2</info>
@@ -11021,7 +11022,7 @@
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + [!Container.Content(movies) | Window.IsActive(24)]</visible>					
+                    <visible>![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) |substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)] + [!Container.Content(movies) | Window.IsActive(24)]</visible>					
                 </control>
 
                 <!-- Movie Text -->
@@ -11096,12 +11097,12 @@
                 <control type="label" id="72">
                     <label>$INFO[ListItem.Album]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>!Control.IsVisible(109) + Container.Content(albums)</visible>
+                    <visible>!Control.IsVisible(109) + [Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
                 <control type="label" id="72">
                     <label>$INFO[ListItem.Artist]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>!Control.IsVisible(109) + Container.Content(albums)</visible>
+                    <visible>!Control.IsVisible(109) + [Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
 
                 <control type="label" id="72">

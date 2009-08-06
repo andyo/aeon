@@ -37,18 +37,6 @@
 		<include>Animation_FanartFade</include>
 	</control>
 
-<!-- DEBUG INFO -->
-
-    <control type="label">
-        <posx>700</posx>
-        <posy>50</posy>
-        <width>900</width>
-        <height>13</height>
-        <font>Font_MultiplexInfoLabel</font>
-        <textcolor>FFFFFFFF</textcolor>		
-        <label>** $INFO[container.folderpath]</label>
-        <visible>Skin.HasSetting(debug)</visible>
-	</control>    
 <!-- <<<<< ADD this -->
 	</control>
 	 
@@ -104,6 +92,18 @@
 	<!--<include>ViewChange</include>-->
 	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
+<!-- DEBUG INFO -->
+
+    <control type="label">
+        <posx>700</posx>
+        <posy>50</posy>
+        <width>900</width>
+        <height>13</height>
+        <font>Font_MultiplexInfoLabel</font>
+        <textcolor>FFFFFFFF</textcolor>		
+        <label>** $INFO[container.folderpath]</label>
+        <visible>Skin.HasSetting(debug)</visible>
+	</control>    
 	
 	</controls>
 </window>

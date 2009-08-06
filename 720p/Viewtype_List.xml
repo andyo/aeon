@@ -812,19 +812,19 @@
                     <include>ListLabel_MainSmall</include>
                     <include>listcolornofocus</include>
                     <label>$INFO[ListItem.Label] - $INFO[ListItem.Label2]</label>
-                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
+                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
                     <label>[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
-                    <visible>Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)])</visible>
+                    <visible>Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)])</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
                     <label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-                    <visible>![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + ![substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)]</visible>
+                    <visible>![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + ![substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_Track</include>
@@ -903,21 +903,21 @@
                     <include>listcolornofocus</include>
                     <label>$INFO[ListItem.Label] - $INFO[ListItem.Label2]</label>
                     <include>Animation_ButtonFocusFade_fix</include>						
-                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
+                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
                     <include>Animation_ButtonFocusFade_fix</include>						
                     <label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>				
-                    <visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)])</visible>
+                    <visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)])</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
                     <include>Animation_ButtonFocusFade_fix</include>						
                     <label fallback="-">[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>				
-                    <visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + ![substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)])</visible>
+                    <visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + ![substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)])</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_Track</include>
@@ -968,21 +968,21 @@
                     <include>listcolorfocus</include>
                     <label>$INFO[ListItem.Label] - $INFO[ListItem.Label2]</label>
                     <include>Animation_ButtonFocusFade</include>						
-                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
+                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolorfocus</include>
                     <include>Animation_ButtonFocusFade</include>						
                     <label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>				
-                    <visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)]</visible>
+                    <visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolorfocus</include>
                     <include>Animation_ButtonFocusFade</include>						
                     <label fallback="-">[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>				
-                    <visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + ![substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)]</visible>
+                    <visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + ![substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_Track</include>
@@ -1682,19 +1682,19 @@
                     <include>ListLabel_MainSmall</include>
                     <include>listcolornofocus</include>
                     <label>$INFO[ListItem.Label] - $INFO[ListItem.Label2]</label>
-                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2]) | [[substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
+                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2]) | [[substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
                     <label>[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
-                    <visible>Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)]</visible>
+                    <visible>Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
                     <label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-                    <visible>![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + ![substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)]</visible>
+                    <visible>![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + ![substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall2</include>
@@ -1775,21 +1775,21 @@
                     <include>listcolornofocus</include>
                     <label>$INFO[ListItem.Label] - $INFO[ListItem.Label2]</label>
                     <include>Animation_ButtonFocusFade_fix</include>						
-                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
+                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
                     <include>Animation_ButtonFocusFade_fix</include>						
                     <label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>				
-                    <visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)]</visible>
+                    <visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolornofocus</include>
                     <include>Animation_ButtonFocusFade_fix</include>						
                     <label fallback="-">[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>				
-                    <visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows) | [substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)]]</visible>
+                    <visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows) | [substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall2</include>
@@ -1839,21 +1839,21 @@
                     <include>listcolorfocus</include>
                     <label>$INFO[ListItem.Label] - $INFO[ListItem.Label2]</label>
                     <include>Animation_ButtonFocusFade</include>						
-                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
+                    <visible>[Container.Content(albums) + !IsEmpty(ListItem.Label2)] | [[substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)] + !IsEmpty(ListItem.Label2)]</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolorfocus</include>
                     <include>Animation_ButtonFocusFade</include>						
                     <label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>				
-                    <visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)]</visible>
+                    <visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums) | [substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall</include>
                     <include>detailcolorfocus</include>
                     <include>Animation_ButtonFocusFade</include>						
                     <label fallback="-">[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>				
-                    <visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows) | [substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right)]]</visible>
+                    <visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows) | [substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_DetailSmall2</include>
