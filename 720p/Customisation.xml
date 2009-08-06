@@ -23,7 +23,7 @@
         <width>500</width>
         <height>49</height>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.51  (GIT-034)</label>                
+        <label>VER: 1.52  (GIT-038)</label>                
     </control>
 	
 	<control type="label">
@@ -176,8 +176,8 @@
 		<control type="radiobutton" id="512">
             <include>Objects_SettingsDefaultRadioButton</include>
             <label>$LOCALIZE[31983]</label>
-            <onclick>Skin.ToggleSetting(Random_quote)</onclick>
-            <selected>Skin.HasSetting(Random_quote)</selected>
+            <onclick>Skin.ToggleSetting(Custom_widget_set)</onclick>
+            <selected>Skin.HasSetting(Custom_widget_set)</selected>
 		</control>		
 		<control type="radiobutton" id="513">
             <include>Objects_SettingsDefaultRadioButton</include>
@@ -539,7 +539,7 @@
                 <width>800</width>
                 <font>Font_ListObjects</font>
                 <textcolor>ffFFFFFF</textcolor>
-                <info>Container(954).ListItem.Label</info>
+                <info>Container(955).ListItem.Label</info>
             </control>
             <control type="label">
                 <posy>20</posy>
@@ -548,7 +548,7 @@
                 <width>800</width>
                 <font>Font_ListObjects</font>
                 <textcolor>ffFFFFFF</textcolor>
-                <info>Container(954).ListItem.Label2</info>
+                <info>Container(955).ListItem.Label2</info>
             </control>
         </control>
 
@@ -564,27 +564,33 @@
             <onfocus>XBMC.RunScript(special://skin/extras/favourites.py,playlists=window)</onfocus>
             <onfocus>SetFocus(952)</onfocus>
         </control>
+			<control type="button" id="952">
+			<include>homesubmenu_but</include>
+			<onfocus>XBMC.RunScript(special://skin/extras/widget.py)</onfocus>
+			<onfocus>SetFocus(953)</onfocus>
+		</control>
 
-        <control type="list" id="952">
+
+        <control type="list" id="953">
             <posx>0</posx>
             <posy>15</posy>
             <height>40</height>
-            <width>936</width>
-            <onleft>952</onleft>
-            <onright>952</onright>
+            <width>950</width>
+            <onleft>953</onleft>
+            <onright>953</onright>
             <onup>16</onup>
-            <ondown>953</ondown>
+            <ondown>954</ondown>
             <viewtype>list</viewtype>
             <orientation>horizontal</orientation>
             <focusposition>0</focusposition>
             <scrolltime>200</scrolltime>
-            <animation effect="fade" start="100" end="0" time="200" condition="controlgroup.HasFocus(22)">Conditional</animation>
-            <itemlayout width="150" height="40">
+            <animation effect="fade" start="100" end="0" time="1000" condition="controlgroup.HasFocus(22)">Conditional</animation>
+            <itemlayout width="135" height="40">
                 <control type="label">
                     <posy>0</posy>
-                    <posx>75</posx>
+                    <posx>68</posx>
                     <height>40</height>
-                    <width>150</width>
+                    <width>135</width>
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_SettingsSectionMenuButton</font>
@@ -592,19 +598,19 @@
                     <info>ListItem.Label</info>
                 </control>
             </itemlayout>
-            <focusedlayout width="150" height="40">
+            <focusedlayout width="135" height="40">
                <control type="image">
                     <posx>0</posx>
                     <posy>0</posy>
-                    <width>150</width>
+                    <width>135</width>
                     <height>40</height>
                     <texture>settings/settings_leftmenufocus.png</texture>
                 </control>
                 <control type="label">
                     <posy>0</posy>
-                    <posx>75</posx>
+                    <posx>68</posx>
                     <height>40</height>
-                    <width>150</width>
+                    <width>135</width>
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_SettingsSectionMenuButton</font>
@@ -616,48 +622,53 @@
                 <item id="1">
                     <description>Main Menu</description>
     <!--***-->			<label fallback="Main Menu">31867</label>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                 </item>
                 <item id="2">
                     <description>TVShows</description>
                     <label fallback="TVShows Sub">$LOCALIZE[31014] $LOCALIZE[31858]</label>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                 </item>
                 <item id="3">
                     <description>Movies</description>
                     <label fallback="Movies Sub">$LOCALIZE[342] $LOCALIZE[31858]</label>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                 </item>
                 <item id="5">
                     <description>Music</description>
                     <label fallback="Music Sub">$LOCALIZE[31010] $LOCALIZE[31858]</label>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                 </item>
                 <item id="6">
                     <description>Extras</description>
                     <label fallback="extras Sub">$LOCALIZE[31865] $LOCALIZE[31858]</label>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                 </item>
                 <item id="7">
                     <description>Favourites</description>
                     <label>$LOCALIZE[1036]</label>
                     <onclick>xbmc.activatewindow(134)</onclick>
                 </item>
-            </content>
+					<item id="8">
+					<description>widget</description>
+					<label>widget</label>
+					<onclick>SetFocus(954)</onclick>
+				</item>
+           </content>
         </control>
 
-        <control type="list" id="953">
+        <control type="list" id="954">
             <posx>-10</posx>
             <posy>70</posy>
             <height>507</height>
             <width>936</width>
-            <onleft>952</onleft>
-            <onright>952</onright>
-            <onup>953</onup>
-            <ondown>953</ondown>
+            <onleft>953</onleft>
+            <onright>953</onright>
+            <onup>954</onup>
+            <ondown>954</ondown>
             <viewtype>list</viewtype>
             <scrolltime>200</scrolltime>
-            <animation effect="fade" start="0" end="100" time="200" condition="control.HasFocus(952)|control.HasFocus(953)">Conditional</animation>
+            <animation effect="fade" start="0" end="100" time="200" condition="control.HasFocus(953)|control.HasFocus(954)">Conditional</animation>
             
             <itemlayout height="39">
                 <control type="image">
@@ -694,7 +705,7 @@
                     <texture>settings/settings_radiobuttonofffocus.png</texture>
                     <animation effect="fade" start="0" end="100" time="200">Focus</animation>
                     <animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
-                    <visible>!control.HasFocus(952)</visible>
+                    <visible>!control.HasFocus(953)</visible>
                 </control>
                 <control type="label">
                     <posy>0</posy>
@@ -716,7 +727,7 @@
                     <aligny>center</aligny>
                     <font>Font_SettingsOptions</font>
                     <info>ListItem.Label</info>
-                    <visible>control.HasFocus(952)</visible>
+                    <visible>control.HasFocus(953)</visible>
                 </control>
             </focusedlayout>
             <content>
@@ -725,9 +736,9 @@
                     <onclick>Skin.SetString(custom_path,mainmenu_1path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_1name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_1)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(mainmenu_1)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="1">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_1name)]</label>
@@ -737,17 +748,17 @@
                     <onclick>Skin.Reset(no_mainmenu_1)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_1)</onclick>
                     <visible>Skin.HasSetting(mainmenu_1)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="2">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,mainmenu_2path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_2name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_2)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>Skin.HasSetting(mainmenu_1)</visible>
                     <visible>!Skin.HasSetting(mainmenu_2)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="2">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_2name)]</label>
@@ -757,17 +768,17 @@
                     <onclick>Skin.Reset(no_mainmenu_2)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_2)</onclick>
                     <visible>Skin.HasSetting(mainmenu_2)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="3">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,mainmenu_3path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_3name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_3)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(mainmenu_3)</visible>
                     <visible>Skin.HasSetting(mainmenu_1)+Skin.HasSetting(mainmenu_2)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="3">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_3name)]</label>
@@ -777,17 +788,17 @@
                     <onclick>Skin.Reset(no_mainmenu_3)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_3)</onclick>
                     <visible>Skin.HasSetting(mainmenu_3)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="4">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,mainmenu_4path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_4name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_4)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(mainmenu_4)</visible>
                     <visible>Skin.HasSetting(mainmenu_1)+Skin.HasSetting(mainmenu_2)+Skin.HasSetting(mainmenu_3)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="4">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_4name)]</label>
@@ -797,17 +808,17 @@
                     <onclick>Skin.Reset(no_mainmenu_4)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_4)</onclick>
                     <visible>Skin.HasSetting(mainmenu_4)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="5">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,mainmenu_5path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_5name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_5)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(mainmenu_5)</visible>
                     <visible>Skin.HasSetting(mainmenu_1)+Skin.HasSetting(mainmenu_2)+Skin.HasSetting(mainmenu_3)+Skin.HasSetting(mainmenu_4)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="5">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_5name)]</label>
@@ -817,7 +828,7 @@
                     <onclick>Skin.Reset(no_mainmenu_5)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_5)</onclick>
                     <visible>Skin.HasSetting(mainmenu_5)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
 
                 <item id="6">
@@ -825,10 +836,10 @@
                     <onclick>Skin.SetString(custom_path,mainmenu_6path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_6name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_6)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(mainmenu_6)</visible>
                     <visible>Skin.HasSetting(mainmenu_1)+Skin.HasSetting(mainmenu_2)+Skin.HasSetting(mainmenu_3)+Skin.HasSetting(mainmenu_4)+Skin.HasSetting(mainmenu_5)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="6">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_6name)]</label>
@@ -838,18 +849,18 @@
                     <onclick>Skin.Reset(no_mainmenu_6)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_6)</onclick>
                     <visible>Skin.HasSetting(mainmenu_6)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="7">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,mainmenu_7path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_7name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_7)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(mainmenu_7)</visible>
                     <visible>Skin.HasSetting(mainmenu_1)+Skin.HasSetting(mainmenu_2)+Skin.HasSetting(mainmenu_3)+Skin.HasSetting(mainmenu_4)+Skin.HasSetting(mainmenu_5)</visible>
                     <visible>Skin.HasSetting(mainmenu_6)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="7">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_7name)]</label>
@@ -859,18 +870,18 @@
                     <onclick>Skin.Reset(no_mainmenu_7)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_7)</onclick>
                     <visible>Skin.HasSetting(mainmenu_7)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="8">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,mainmenu_8path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_8name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_8)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(mainmenu_8)</visible>
                     <visible>Skin.HasSetting(mainmenu_1)+Skin.HasSetting(mainmenu_2)+Skin.HasSetting(mainmenu_3)+Skin.HasSetting(mainmenu_4)+Skin.HasSetting(mainmenu_5)</visible>
                     <visible>Skin.HasSetting(mainmenu_6)+Skin.HasSetting(mainmenu_7)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="8">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_8name)]</label>
@@ -880,18 +891,18 @@
                     <onclick>Skin.Reset(no_mainmenu_38)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_8)</onclick>
                     <visible>Skin.HasSetting(mainmenu_8)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="9">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,mainmenu_9path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_9name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_9)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(mainmenu_9)</visible>
                     <visible>Skin.HasSetting(mainmenu_1)+Skin.HasSetting(mainmenu_2)+Skin.HasSetting(mainmenu_3)+Skin.HasSetting(mainmenu_4)+Skin.HasSetting(mainmenu_5)</visible>
                     <visible>Skin.HasSetting(mainmenu_6)+Skin.HasSetting(mainmenu_7)+Skin.HasSetting(mainmenu_8)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="9">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_9name)]</label>
@@ -901,18 +912,18 @@
                     <onclick>Skin.Reset(no_mainmenu_9)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_9)</onclick>
                     <visible>Skin.HasSetting(mainmenu_9)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="10">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,mainmenu_10path)</onclick>
                     <onclick>Skin.SetString(custom_name,mainmenu_10name)</onclick>
                     <onclick>Skin.SetString(custom_done,mainmenu_10)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(mainmenu_10)</visible>
                     <visible>Skin.HasSetting(mainmenu_1)+Skin.HasSetting(mainmenu_2)+Skin.HasSetting(mainmenu_3)+Skin.HasSetting(mainmenu_4)+Skin.HasSetting(mainmenu_5)</visible>
                     <visible>Skin.HasSetting(mainmenu_6)+Skin.HasSetting(mainmenu_7)+Skin.HasSetting(mainmenu_8)+Skin.HasSetting(mainmenu_9)</visible>
-                    <visible>Container(952).HasFocus(1)</visible>
+                    <visible>Container(953).HasFocus(1)</visible>
                 </item>
                 <item id="10">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(mainmenu_10name)]</label>
@@ -922,7 +933,7 @@
                     <onclick>Skin.Reset(no_mainmenu_10)</onclick>
                     <onclick>Skin.Reset(Custom_mainmenu_10)</onclick>
                     <visible>Skin.HasSetting(mainmenu_510)</visible>
-                    <visible>Container(952).HasFocus(10)</visible>
+                    <visible>Container(953).HasFocus(10)</visible>
                 </item>
             <!-- Main Menu End -->
             <!-- TVShows Sub -->
@@ -931,9 +942,9 @@
                     <onclick>Skin.SetString(custom_path,TVShows_Sub_1path)</onclick>
                     <onclick>Skin.SetString(custom_name,TVShows_Sub_1name)</onclick>
                     <onclick>Skin.SetString(custom_done,TVShows_Sub_1)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(TVShows_Sub_1)</visible>
-                    <visible>Container(952).HasFocus(2)</visible>
+                    <visible>Container(953).HasFocus(2)</visible>
                 </item>
                 <item id="21">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(TVShows_Sub_1name)]</label>
@@ -943,17 +954,17 @@
                     <onclick>Skin.Reset(no_TVShows_Sub_1)</onclick>
                     <onclick>Skin.Reset(Custom_TVShows_Sub_1)</onclick>
                     <visible>Skin.HasSetting(TVShows_Sub_1)</visible>
-                    <visible>Container(952).HasFocus(2)</visible>
+                    <visible>Container(953).HasFocus(2)</visible>
                 </item>
                 <item id="22">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,TVShows_Sub_2path)</onclick>
                     <onclick>Skin.SetString(custom_name,TVShows_Sub_2name)</onclick>
                     <onclick>Skin.SetString(custom_done,TVShows_Sub_2)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>Skin.HasSetting(TVShows_Sub_1)</visible>
                     <visible>!Skin.HasSetting(TVShows_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(2)</visible>
+                    <visible>Container(953).HasFocus(2)</visible>
                 </item>
                 <item id="22">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(TVShows_Sub_2name)]</label>
@@ -963,17 +974,17 @@
                     <onclick>Skin.Reset(no_TVShows_Sub_2)</onclick>
                     <onclick>Skin.Reset(Custom_TVShows_Sub_2)</onclick>
                     <visible>Skin.HasSetting(TVShows_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(2)</visible>
+                    <visible>Container(953).HasFocus(2)</visible>
                 </item>
                 <item id="23">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,TVShows_Sub_3path)</onclick>
                     <onclick>Skin.SetString(custom_name,TVShows_Sub_3name)</onclick>
                     <onclick>Skin.SetString(custom_done,TVShows_Sub_3)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(TVShows_Sub_3)</visible>
                     <visible>Skin.HasSetting(TVShows_Sub_1)+Skin.HasSetting(TVShows_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(2)</visible>
+                    <visible>Container(953).HasFocus(2)</visible>
                 </item>
                 <item id="23">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(TVShows_Sub_3name)]</label>
@@ -983,17 +994,17 @@
                     <onclick>Skin.Reset(no_TVShows_Sub_3)</onclick>
                     <onclick>Skin.Reset(Custom_TVShows_Sub_3)</onclick>
                     <visible>Skin.HasSetting(TVShows_Sub_3)</visible>
-                    <visible>Container(952).HasFocus(2)</visible>
+                    <visible>Container(953).HasFocus(2)</visible>
                 </item>
                 <item id="24">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,TVShows_Sub_4path)</onclick>
                     <onclick>Skin.SetString(custom_name,TVShows_Sub_4name)</onclick>
                     <onclick>Skin.SetString(custom_done,TVShows_Sub_4)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(TVShows_Sub_4)</visible>
                     <visible>Skin.HasSetting(TVShows_Sub_1)+Skin.HasSetting(TVShows_Sub_2)+Skin.HasSetting(TVShows_Sub_3)</visible>
-                    <visible>Container(952).HasFocus(2)</visible>
+                    <visible>Container(953).HasFocus(2)</visible>
                 </item>
                 <item id="24">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(TVShows_Sub_4name)]</label>
@@ -1003,7 +1014,7 @@
                     <onclick>Skin.Reset(no_TVShows_Sub_4)</onclick>
                     <onclick>Skin.Reset(Custom_TVShows_Sub_4)</onclick>
                     <visible>Skin.HasSetting(TVShows_Sub_4)</visible>
-                    <visible>Container(952).HasFocus(2)</visible>
+                    <visible>Container(953).HasFocus(2)</visible>
                 </item>
             <!-- TVShows Sub End -->
             <!-- Movies Sub -->
@@ -1012,9 +1023,9 @@
                     <onclick>Skin.SetString(custom_path,Movies_Sub_1path)</onclick>
                     <onclick>Skin.SetString(custom_name,Movies_Sub_1name)</onclick>
                     <onclick>Skin.SetString(custom_done,Movies_Sub_1)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(Movies_Sub_1)</visible>
-                    <visible>Container(952).HasFocus(3)</visible>
+                    <visible>Container(953).HasFocus(3)</visible>
                 </item>
                 <item id="25">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Movies_Sub_1name)]</label>
@@ -1024,17 +1035,17 @@
                     <onclick>Skin.Reset(no_Movies_Sub_1)</onclick>
                     <onclick>Skin.Reset(Custom_Movies_Sub_1)</onclick>
                     <visible>Skin.HasSetting(Movies_Sub_1)</visible>
-                    <visible>Container(952).HasFocus(3)</visible>
+                    <visible>Container(953).HasFocus(3)</visible>
                 </item>
                 <item id="26">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,Movies_Sub_2path)</onclick>
                     <onclick>Skin.SetString(custom_name,Movies_Sub_2name)</onclick>
                     <onclick>Skin.SetString(custom_done,Movies_Sub_2)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>Skin.HasSetting(Movies_Sub_1)</visible>
                     <visible>!Skin.HasSetting(Movies_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(3)</visible>
+                    <visible>Container(953).HasFocus(3)</visible>
                 </item>
                 <item id="26">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Movies_Sub_2name)]</label>
@@ -1044,17 +1055,17 @@
                     <onclick>Skin.Reset(no_Movies_Sub_2)</onclick>
                     <onclick>Skin.Reset(Custom_Movies_Sub_2)</onclick>
                     <visible>Skin.HasSetting(Movies_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(3)</visible>
+                    <visible>Container(953).HasFocus(3)</visible>
                 </item>
                 <item id="27">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,Movies_Sub_3path)</onclick>
                     <onclick>Skin.SetString(custom_name,Movies_Sub_3name)</onclick>
                     <onclick>Skin.SetString(custom_done,Movies_Sub_3)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(Movies_Sub_3)</visible>
                     <visible>Skin.HasSetting(Movies_Sub_1)+Skin.HasSetting(Movies_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(3)</visible>
+                    <visible>Container(953).HasFocus(3)</visible>
                 </item>
                 <item id="27">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Movies_Sub_3name)]</label>
@@ -1064,17 +1075,17 @@
                     <onclick>Skin.Reset(no_Movies_Sub_3)</onclick>
                     <onclick>Skin.Reset(Custom_Movies_Sub_3)</onclick>
                     <visible>Skin.HasSetting(Movies_Sub_3)</visible>
-                    <visible>Container(952).HasFocus(3)</visible>
+                    <visible>Container(953).HasFocus(3)</visible>
                 </item>
                 <item id="28">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,Movies_Sub_4path)</onclick>
                     <onclick>Skin.SetString(custom_name,Movies_Sub_4name)</onclick>
                     <onclick>Skin.SetString(custom_done,Movies_Sub_4)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(Movies_Sub_4)</visible>
                     <visible>Skin.HasSetting(Movies_Sub_1)+Skin.HasSetting(Movies_Sub_2)+Skin.HasSetting(Movies_Sub_3)</visible>
-                    <visible>Container(952).HasFocus(3)</visible>
+                    <visible>Container(953).HasFocus(3)</visible>
                 </item>
                 <item id="28">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Movies_Sub_4name)]</label>
@@ -1084,7 +1095,7 @@
                     <onclick>Skin.Reset(no_Movies_Sub_4)</onclick>
                     <onclick>Skin.Reset(Custom_Movies_Sub_4)</onclick>
                     <visible>Skin.HasSetting(Movies_Sub_4)</visible>
-                    <visible>Container(952).HasFocus(3)</visible>
+                    <visible>Container(953).HasFocus(3)</visible>
                 </item>
             <!-- Movies Sub End -->
             <!-- Music Sub -->
@@ -1093,9 +1104,9 @@
                     <onclick>Skin.SetString(custom_path,Music_Sub_1path)</onclick>
                     <onclick>Skin.SetString(custom_name,Music_Sub_1name)</onclick>
                     <onclick>Skin.SetString(custom_done,Music_Sub_1)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(Music_Sub_1)</visible>
-                    <visible>Container(952).HasFocus(5)</visible>
+                    <visible>Container(953).HasFocus(5)</visible>
                 </item>
                 <item id="31">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Music_Sub_1name)]</label>
@@ -1105,17 +1116,17 @@
                     <onclick>Skin.Reset(no_Music_Sub_1)</onclick>
                     <onclick>Skin.Reset(Custom_Music_Sub_1)</onclick>
                     <visible>Skin.HasSetting(Music_Sub_1)</visible>
-                    <visible>Container(952).HasFocus(5)</visible>
+                    <visible>Container(953).HasFocus(5)</visible>
                 </item>
                 <item id="32">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,Music_Sub_2path)</onclick>
                     <onclick>Skin.SetString(custom_name,Music_Sub_2name)</onclick>
                     <onclick>Skin.SetString(custom_done,Music_Sub_2)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>Skin.HasSetting(Music_Sub_1)</visible>
                     <visible>!Skin.HasSetting(Music_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(5)</visible>
+                    <visible>Container(953).HasFocus(5)</visible>
                 </item>
                 <item id="32">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Music_Sub_2name)]</label>
@@ -1125,17 +1136,17 @@
                     <onclick>Skin.Reset(no_Music_Sub_2)</onclick>
                     <onclick>Skin.Reset(Custom_Music_Sub_2)</onclick>
                     <visible>Skin.HasSetting(Music_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(5)</visible>
+                    <visible>Container(953).HasFocus(5)</visible>
                 </item>
                 <item id="33">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,Music_Sub_3path)</onclick>
                     <onclick>Skin.SetString(custom_name,Music_Sub_3name)</onclick>
                     <onclick>Skin.SetString(custom_done,Music_Sub_3)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(Music_Sub_3)</visible>
                     <visible>Skin.HasSetting(Music_Sub_1)+Skin.HasSetting(Music_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(5)</visible>
+                    <visible>Container(953).HasFocus(5)</visible>
                 </item>
                 <item id="33">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Music_Sub_3name)]</label>
@@ -1145,17 +1156,17 @@
                     <onclick>Skin.Reset(no_Music_Sub_3)</onclick>
                     <onclick>Skin.Reset(Custom_Music_Sub_3)</onclick>
                     <visible>Skin.HasSetting(Music_Sub_3)</visible>
-                    <visible>Container(952).HasFocus(5)</visible>
+                    <visible>Container(953).HasFocus(5)</visible>
                 </item>
                 <item id="34">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,Music_Sub_4path)</onclick>
                     <onclick>Skin.SetString(custom_name,Music_Sub_4name)</onclick>
                     <onclick>Skin.SetString(custom_done,Music_Sub_4)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(Music_Sub_4)</visible>
                     <visible>Skin.HasSetting(Music_Sub_1)+Skin.HasSetting(Music_Sub_2)+Skin.HasSetting(Music_Sub_3)</visible>
-                    <visible>Container(952).HasFocus(5)</visible>
+                    <visible>Container(953).HasFocus(5)</visible>
                 </item>
                 <item id="34">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Music_Sub_4name)]</label>
@@ -1165,7 +1176,7 @@
                     <onclick>Skin.Reset(no_Music_Sub_4)</onclick>
                     <onclick>Skin.Reset(Custom_Music_Sub_4)</onclick>
                     <visible>Skin.HasSetting(Music_Sub_4)</visible>
-                    <visible>Container(952).HasFocus(5)</visible>
+                    <visible>Container(953).HasFocus(5)</visible>
                 </item>
             <!-- Music Sub End -->
             <!-- Extras Sub -->
@@ -1174,9 +1185,9 @@
                     <onclick>Skin.SetString(custom_path,Extras_Sub_1path)</onclick>
                     <onclick>Skin.SetString(custom_name,Extras_Sub_1name)</onclick>
                     <onclick>Skin.SetString(custom_done,Extras_Sub_1)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(Extras_Sub_1)</visible>
-                    <visible>Container(952).HasFocus(6)</visible>
+                    <visible>Container(953).HasFocus(6)</visible>
                 </item>
                 <item id="35">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Extras_Sub_1name)]</label>
@@ -1186,17 +1197,17 @@
                     <onclick>Skin.Reset(no_Extras_Sub_1)</onclick>
                     <onclick>Skin.Reset(Custom_Extras_Sub_1)</onclick>
                     <visible>Skin.HasSetting(Extras_Sub_1)</visible>
-                    <visible>Container(952).HasFocus(6)</visible>
+                    <visible>Container(953).HasFocus(6)</visible>
                 </item>
                 <item id="36">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,Extras_Sub_2path)</onclick>
                     <onclick>Skin.SetString(custom_name,Extras_Sub_2name)</onclick>
                     <onclick>Skin.SetString(custom_done,Extras_Sub_2)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>Skin.HasSetting(Extras_Sub_1)</visible>
                     <visible>!Skin.HasSetting(Extras_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(6)</visible>
+                    <visible>Container(953).HasFocus(6)</visible>
                 </item>
                 <item id="36">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Extras_Sub_2name)]</label>
@@ -1206,17 +1217,17 @@
                     <onclick>Skin.Reset(no_Extras_Sub_2)</onclick>
                     <onclick>Skin.Reset(Custom_Extras_Sub_2)</onclick>
                     <visible>Skin.HasSetting(Extras_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(6)</visible>
+                    <visible>Container(953).HasFocus(6)</visible>
                 </item>
                 <item id="37">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,Extras_Sub_3path)</onclick>
                     <onclick>Skin.SetString(custom_name,Extras_Sub_3name)</onclick>
                     <onclick>Skin.SetString(custom_done,Extras_Sub_3)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(Extras_Sub_3)</visible>
                     <visible>Skin.HasSetting(Extras_Sub_1)+Skin.HasSetting(Extras_Sub_2)</visible>
-                    <visible>Container(952).HasFocus(6)</visible>
+                    <visible>Container(953).HasFocus(6)</visible>
                 </item>
                 <item id="37">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Extras_Sub_3name)]</label>
@@ -1226,17 +1237,17 @@
                     <onclick>Skin.Reset(no_Extras_Sub_3)</onclick>
                     <onclick>Skin.Reset(Custom_Extras_Sub_3)</onclick>
                     <visible>Skin.HasSetting(Extras_Sub_3)</visible>
-                    <visible>Container(952).HasFocus(6)</visible>
+                    <visible>Container(953).HasFocus(6)</visible>
                 </item>
                 <item id="38">
     <!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
                     <onclick>Skin.SetString(custom_path,Extras_Sub_4path)</onclick>
                     <onclick>Skin.SetString(custom_name,Extras_Sub_4name)</onclick>
                     <onclick>Skin.SetString(custom_done,Extras_Sub_4)</onclick>
-                    <onclick>SetFocus(954)</onclick>
+                    <onclick>SetFocus(955)</onclick>
                     <visible>!Skin.HasSetting(Extras_Sub_4)</visible>
                     <visible>Skin.HasSetting(Extras_Sub_1)+Skin.HasSetting(Extras_Sub_2)+Skin.HasSetting(Extras_Sub_3)</visible>
-                    <visible>Container(952).HasFocus(6)</visible>
+                    <visible>Container(953).HasFocus(6)</visible>
                 </item>
                 <item id="38">
                     <label>[B]$LOCALIZE[31860]:[/B] $INFO[Skin.String(Extras_Sub_4name)]</label>
@@ -1246,25 +1257,187 @@
                     <onclick>Skin.Reset(no_Extras_Sub_4)</onclick>
                     <onclick>Skin.Reset(Custom_Extras_Sub_4)</onclick>
                     <visible>Skin.HasSetting(Extras_Sub_4)</visible>
-                    <visible>Container(952).HasFocus(6)</visible>
+                    <visible>Container(953).HasFocus(6)</visible>
                 </item>
             <!-- Extras Sub End -->
+			<!-- Extras widget -->
+				<item id="101">
+					<label>$INFO[Window(4).Property(widget.1.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.1.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_1)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_1)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.1.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="101">
+					<label>$INFO[Window(4).Property(widget.1.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.1.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_1)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.1.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="102">
+					<label>$INFO[Window(4).Property(widget.2.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.2.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_2)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_2)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.2.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="102">
+					<label>$INFO[Window(4).Property(widget.2.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.2.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_2)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.2.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="103">
+					<label>$INFO[Window(4).Property(widget.3.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.3.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_3)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_3)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.3.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="103">
+					<label>$INFO[Window(4).Property(widget.3.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.3.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_3)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.3.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="104">
+					<label>$INFO[Window(4).Property(widget.4.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.4.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_4)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_4)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.4.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="104">
+					<label>$INFO[Window(4).Property(widget.4.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.4.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_4)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.4.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="105">
+					<label>$INFO[Window(4).Property(widget.5.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.5.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_5)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_5)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.5.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="105">
+					<label>$INFO[Window(4).Property(widget.5.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.5.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_5)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.5.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="106">
+					<label>$INFO[Window(4).Property(widget.6.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.6.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_6)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_6)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.6.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="106">
+					<label>$INFO[Window(4).Property(widget.6.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.6.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_6)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.6.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="107">
+					<label>$INFO[Window(4).Property(widget.7.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.7.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_7)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_7)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.7.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="107">
+					<label>$INFO[Window(4).Property(widget.7.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.7.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_7)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.7.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="108">
+					<label>$INFO[Window(4).Property(widget.8.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.8.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_8)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_8)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.8.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="108">
+					<label>$INFO[Window(4).Property(widget.8.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.8.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_8)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.8.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="109">
+					<label>$INFO[Window(4).Property(widget.9.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.9.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_9)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_9)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.9.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="109">
+					<label>$INFO[Window(4).Property(widget.9.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.9.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_9)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.9.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="110">
+					<label>$INFO[Window(4).Property(widget.10.name)]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.10.name)])</onclick>
+					<include>Custom_widget_reset</include>
+					<onclick>Skin.ToggleSetting(Custom_widget_10)</onclick>
+					<visible>!Skin.HasSetting(Custom_widget_10)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.10.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<item id="110">
+					<label>$INFO[Window(4).Property(widget.10.name)]: $LOCALIZE[31077]</label>
+					<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.10.name)])</onclick>
+					<visible>Skin.HasSetting(Custom_widget_10)</visible>
+					<visible>!IsEmpty(Window(4).Property(widget.10.name))</visible>
+					<visible>Container(953).HasFocus(8)</visible>
+				</item>
+				<!-- Extras widget End -->
 
             </content>
         </control>
-        <control type="list" id="954">
+        <control type="list" id="955">
             <posx>-10</posx>
             <posy>70</posy>
             <height>507</height>
             <width>936</width>
-            <onleft>953</onleft>
-            <onright>953</onright>
-            <onup>954</onup>
-            <ondown>954</ondown>
+            <onleft>954</onleft>
+            <onright>954</onright>
+            <onup>955</onup>
+            <ondown>955</ondown>
             <viewtype>list</viewtype>
             <scrolltime>200</scrolltime>
             <animation effect="fade" start="0" end="100" time="200">Focus</animation>
-            <animation effect="fade" start="100" end="0" time="200" condition="Control.HasFocus(16)|control.HasFocus(952)|control.HasFocus(953)">Conditional</animation>
+            <animation effect="fade" start="100" end="0" time="200" condition="Control.HasFocus(16)|control.HasFocus(953)|control.HasFocus(954)">Conditional</animation>
 
             <itemlayout height="39">
                 <control type="image">
@@ -1301,7 +1474,7 @@
                     <texture>settings/settings_radiobuttonofffocus.png</texture>
                     <animation effect="fade" start="0" end="100" time="200">Focus</animation>
                     <animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
-                    <visible>!control.HasFocus(952)</visible>
+                    <visible>!control.HasFocus(953)</visible>
                 </control>
                 <control type="label">
                     <posy>0</posy>
@@ -1323,7 +1496,7 @@
                     <aligny>center</aligny>
                     <font>Font_SettingsOptions</font>
                     <info>ListItem.Label</info>
-                    <visible>control.HasFocus(952)</visible>
+                    <visible>control.HasFocus(953)</visible>
                 </control>
             </focusedlayout>
             <content>
@@ -1333,7 +1506,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.1.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.1.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.1.name))</visible>
                 </item>
                 <item id="2">
@@ -1342,7 +1515,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.2.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.2.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.2.name))</visible>
                 </item>
                 <item id="3">
@@ -1351,7 +1524,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.3.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.3.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.3.name))</visible>
                 </item>
                 <item id="4">
@@ -1360,7 +1533,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.4.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.4.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.4.name))</visible>
                 </item>
                 <item id="5">
@@ -1369,7 +1542,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.5.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.5.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.5.name))</visible>
                 </item>
                 <item id="6">
@@ -1378,7 +1551,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.6.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.6.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.6.name))</visible>
                 </item>
                 <item id="7">
@@ -1387,7 +1560,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.7.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.7.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.7.name))</visible>
                 </item>
                 <item id="8">
@@ -1396,7 +1569,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.8.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.8.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.8.name))</visible>
                 </item>
                 <item id="9">
@@ -1405,7 +1578,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.9.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.9.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.9.name))</visible>
                 </item>
                 <item id="10">
@@ -1414,7 +1587,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.10.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.10.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.10.name))</visible>
                 </item>
                 <item id="11">
@@ -1423,7 +1596,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.11.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.11.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.11.name))</visible>
                 </item>
                 <item id="12">
@@ -1432,7 +1605,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.12.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.12.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.12.name))</visible>
                 </item>
                 <item id="13">
@@ -1441,7 +1614,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.13.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.13.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.13.name))</visible>
                 </item>
                 <item id="14">
@@ -1450,7 +1623,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.14.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.14.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.14.name))</visible>
                 </item>
                 <item id="15">
@@ -1459,7 +1632,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.15.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.15.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.15.name))</visible>
                 </item>
                 <item id="16">
@@ -1468,7 +1641,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.16.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.16.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.16.name))</visible>
                 </item>
                 <item id="17">
@@ -1477,7 +1650,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.17.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.17.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.17.name))</visible>
                 </item>
                 <item id="18">
@@ -1486,7 +1659,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.18.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.18.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.18.name))</visible>
                 </item>
                 <item id="19">
@@ -1495,7 +1668,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.19.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.19.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.19.name))</visible>
                 </item>
                 <item id="20">
@@ -1504,7 +1677,7 @@
                     <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.20.path)])</onclick>
                     <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.20.name)])</onclick>
                     <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-                    <onclick>SetFocus(953)</onclick>
+                    <onclick>SetFocus(954)</onclick>
                     <visible>!IsEmpty(Window(4).Property(favourite.20.name))</visible>
                 </item>
             </content>

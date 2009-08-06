@@ -1,0 +1,5 @@
+ShowMix Updates
+http://github.com/feeds/andyblac/commits/aeon/master
+&lt;pre&gt;m (.*?)&lt;/pre&gt;
+<title>(.*?)<
+0

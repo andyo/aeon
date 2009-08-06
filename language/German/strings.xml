@@ -530,8 +530,8 @@
 	<string id="31214">OFF TIMER</string>
 
 <!-- ShowMix -->
-	<string id="31982">SHOWMIX UPDATES</string>
-	<string id="31983">ENABLE SHOWMIX RSS FEED</string>
+	<string id="31982">-</string>
+	<string id="31983">RSS FEED WIDGET</string>
 
 	<string id="31042">BODEN: HELL</string>
 	<string id="31043">BODEN: DUNKEL</string>

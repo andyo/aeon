@@ -1192,7 +1192,7 @@
 <!-- Randomly quote -->
     <include name="Randomly_quote">
         <control type="group">
-            <visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)+StringCompare(Window.Property(Fun.quote_got),yes)</visible>
+            <visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)+StringCompare(Window.Property(Fun.ExGot),yes)</visible>
             <posx>1340</posx>
             <posy>440</posy>
             <animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
@@ -1227,7 +1227,7 @@
                 <aligny>center</aligny>
                 <font>Font_WeatherTitle</font>
                 <textcolor>c0FFFFFF</textcolor>
-                <label>31982</label>
+                <label>$INFO[Window.Property(Fun.ExName)]</label>
             </control>
             <control type="label">
                 <posx>10</posx>
@@ -1238,7 +1238,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>a9ffffff</textcolor>
-                <label>[I]$INFO[Window.Property(Fun.quoted)][/I]</label>
+                <label>[I]$INFO[Window.Property(Fun.ExTitle)][/I]</label>
             </control>
             <control type="textbox">
                 <posx>10</posx>
@@ -1248,7 +1248,7 @@
                 <font>Font_ListObjects</font>
                 <textcolor>aaffffff</textcolor>
                 <autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
-                <label>$INFO[Window.Property(Fun.quote)]</label>
+                <label>$INFO[Window.Property(Fun.ExContent)]</label>
             </control>
         </control>
     </include>
