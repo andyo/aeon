@@ -54,7 +54,7 @@
 		<height>39</height>
 		<font>Font_ListSmall</font>
 		<aligny>center</aligny>
-		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes) | Container.Content(songs) | Window.IsActive(500)">Conditional</animation>			
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes) | Container.Content(songs) | Window.IsActive(500) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)">Conditional</animation>			
 	</include>	
 	
 	<include name="ListLabel_MainMusic">
@@ -794,13 +794,13 @@
                     <include>ListLabel_Track</include>
                     <include>listcolornofocus</include>
                     <label>$INFO[ListItem.TrackNumber]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
+                    <visible>Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_MainSmall</include>
                     <include>listcolornofocus</include>
                     <label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)] + !IsEmpty(ListItem.Artist)</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_MainSmall</include>
@@ -882,14 +882,14 @@
                     <include>listcolornofocus</include>
                     <include>Animation_ButtonFocusFade_fix</include>						
                     <label>$INFO[ListItem.TrackNumber]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_MainSmall</include>
                     <include>listcolornofocus</include>
                     <include>Animation_ButtonFocusFade_fix</include>						
                     <label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)] + !IsEmpty(ListItem.Artist)</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_MainSmall</include>
@@ -947,14 +947,14 @@
                     <include>listcolorfocus</include>
                     <include>Animation_ButtonFocusFade</include>						
                     <label>$INFO[ListItem.TrackNumber]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_MainSmall</include>
                     <include>listcolorfocus</include>
                     <include>Animation_ButtonFocusFade</include>						
                     <label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)] + !IsEmpty(ListItem.Artist)</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_MainSmall</include>
@@ -1652,19 +1652,13 @@
                     <include>ListLabel_Track</include>
                     <include>listcolornofocus</include>
                     <label>$INFO[ListItem.TrackNumber]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)]</visible>
                 </control>
-                <control type="label">
-                    <include>ListLabel_Track</include>
-                    <include>listcolornofocus</include>
-                    <label>$INFO[ListItem.Episode]</label>
-                    <visible>Container.Content(episodes)</visible>
-                </control>					
                 <control type="label">
                     <include>ListLabel_MainSmall</include>
                     <include>listcolornofocus</include>
                     <label>$INFO[ListItem.Title]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)] + !IsEmpty(ListItem.Artist)</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_MainSmall</include>
@@ -1702,6 +1696,12 @@
                     <label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
                     <visible>Container.Content(tvshows)</visible>
                 </control>
+                <control type="label">
+                    <include>ListLabel_Track</include>
+                    <include>listcolornofocus</include>
+                    <label>$INFO[ListItem.Episode]</label>
+                    <visible>Container.Content(episodes)</visible>
+                </control>					
                 <control type="image">
                     <include>WatchedOverlayFS</include>
                     <include>detailcolornofocus</include>
@@ -1736,19 +1736,19 @@
                     <visible>Control.IsVisible(50) | Window.IsActive(106) | Window.IsActive(129) | Window.IsActive(126) | Window.IsActive(601) | Window.IsActive(602) | Window.IsActive(111) | Window.IsActive(2003)</visible>
                 </control>
                 <control type="label">
-                    <include>ListLabel_MainSmall</include>
-                    <include>listcolornofocus</include>
-                    <include>Animation_ButtonFocusFade_fix</include>						
-                    <label>$INFO[ListItem.Title]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
-                </control>					
-                <control type="label">
                     <include>ListLabel_Track</include>
                     <include>listcolornofocus</include>
                     <include>Animation_ButtonFocusFade_fix</include>						
                     <label>$INFO[ListItem.TrackNumber]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)]</visible>
                 </control>
+                <control type="label">
+                    <include>ListLabel_MainSmall</include>
+                    <include>listcolornofocus</include>
+                    <include>Animation_ButtonFocusFade_fix</include>						
+                    <label>$INFO[ListItem.Title]</label>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)] + !IsEmpty(ListItem.Artist)</visible>
+                </control>					
                 <control type="label">
                     <include>ListLabel_Track</include>
                     <include>listcolornofocus</include>
@@ -1804,14 +1804,14 @@
                     <include>listcolorfocus</include>
                     <include>Animation_ButtonFocusFade</include>						
                     <label>$INFO[ListItem.Title]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)] + !IsEmpty(ListItem.Artist)</visible>
                 </control>					
                 <control type="label">
                     <include>ListLabel_Track</include>
                     <include>listcolorfocus</include>
                     <include>Animation_ButtonFocusFade</include>						
                     <label>$INFO[ListItem.TrackNumber]</label>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)]</visible>
                 </control>
                 <control type="label">
                     <include>ListLabel_Track</include>
