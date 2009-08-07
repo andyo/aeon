@@ -10920,7 +10920,7 @@
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>[Container.Content(movies) + !Window.IsActive(24)] | Container.Content(tvshows) | [!Container.Content(movies) | Window.IsActive(24)] | [!Container.Content(movies) + Window.IsActive(25)]</visible>
+                    <visible>[Container.Content(movies) + !Window.IsActive(24)] | Container.Content(tvshows) | [!Container.Content(movies) | Window.IsActive(24)] | [!Container.Content(movies) + !Container.Content(seasons) !Container.Content(episodes) + Window.IsActive(25)]</visible>
                 </control>
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
@@ -10930,7 +10930,7 @@
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>[Container.Content(tvshows)] + !IsEmpty(ListItem.Genre)</visible>
+                    <visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Genre)</visible>
                 </control>
                 <control type="label">
                     <label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
@@ -10950,7 +10950,7 @@
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>[!Skin.HasSetting(tvposterview) + Container.Content(seasons)]</visible>
+                    <visible>[!Skin.HasSetting(tvposterview) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
                 </control>
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
@@ -11029,7 +11029,7 @@
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>![Control.IsVisible(109) | Control.HasFocus(112)] + Container.Content(movies) + !IsEmpty(ListItem.Genre) | [Container.Content(files) + Window.IsActive(24)] | [!Container.Content(movies) + Window.IsActive(25)]</visible>
+                    <visible>![Control.IsVisible(109) | Control.HasFocus(112)] + Container.Content(movies) + !IsEmpty(ListItem.Genre) | [Container.Content(files) + Window.IsActive(24)] | [!Container.Content(movies) + !Container.Content(seasons) + !Container.Content(episodes) + Window.IsActive(25)]</visible>
                 </control>
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
@@ -11056,18 +11056,18 @@
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(tvshows)</visible>
+                    <visible>![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
                 </control>
 
                 <control type="label">
                     <label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>![Control.IsVisible(109) | Control.HasFocus(113)] + Skin.HasSetting(videotv) + !Container.Content(tvshows) + !stringcompare(ListItem.Season,0)</visible>
+                    <visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(seasons) + !stringcompare(ListItem.Season,0) + Skin.HasSetting(tvposterview)]] | [![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(episodes) + !stringcompare(ListItem.Season,0)]]</visible>
                 </control>			
                 <control type="label">
                     <label>[UPPERCASE]SPECIALS[/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
-                    <visible>![Control.IsVisible(109) | Control.HasFocus(113)] + Skin.HasSetting(videotv) + !Container.Content(tvshows) + stringcompare(ListItem.Season,0)</visible>
+                    <visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(seasons) + stringcompare(ListItem.Season,0) + Skin.HasSetting(tvposterview)]] | [![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(episodes) + stringcompare(ListItem.Season,0)]]</visible>
                 </control>			
 
                 <control type="label" id="72">
