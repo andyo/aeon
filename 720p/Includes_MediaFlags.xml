@@ -363,7 +363,7 @@
 		<control type="image" id="92">
 			<include>Furniture_MovieInfoFlagSound</include>
 			<texture>flags/info/dolby20.png</texture>
-			<visible>substring(listitem.audiochannels,2) + substring(listitem.audiocodec,ac-3)</visible>
+			<visible>[substring(listitem.audiochannels,2) + substring(listitem.audiocodec,ac-3)] | [substring(listitem.audiochannels,2) + substring(listitem.audiocodec,ac3)]</visible>
 		</control>
 
 		<control type="image" id="92">
