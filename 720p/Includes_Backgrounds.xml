@@ -21,7 +21,7 @@
 		<fadetime>1000</fadetime>
         <aspectratio scalediffuse="false">scale</aspectratio>
 		<include>Animation_BackgroundFade</include>
-		<visible>![Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(59)] | [[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(59)] + Skin.HasSetting(nocurtains)]</visible>
+		<visible>![Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(59)] | [[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(59)] + Skin.HasSetting(nocurtains)]</visible>
 	</include>
 	
 	<include name="BackgroundVarsMultiplex">
@@ -29,7 +29,7 @@
 		<timeperimage>20000</timeperimage>
 		<randomize>true</randomize>
 		<fadetime>1000</fadetime>
-		<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(59) | [Control.IsVisible(50) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Skin.HasSetting(nocurtains)</visible>		
+		<visible>[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(59) | [Control.IsVisible(50) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Skin.HasSetting(nocurtains)</visible>		
 		<include>Animation_BackgroundFade</include>
 	</include>	
 	
