@@ -156,6 +156,17 @@
 				<onclick>SetFocus(324)</onclick>
 				<visible>System.HasNetwork</visible>
 				<visible>Skin.HasSetting(weather)</visible>
+				<visible>StringCompare(Weather.Plugin,weather.com plus)</visible>
+			</item>
+			<item id="10">
+				<description>Weather</description>
+				<label>31017</label>
+				<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include>
+				<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include>
+				<onclick>xbmc.activatewindow(2600)</onclick>
+				<visible>System.HasNetwork</visible>
+				<visible>Skin.HasSetting(weather)</visible>
+				<visible>!StringCompare(Weather.Plugin,weather.com plus)</visible>
 			</item>
 			<item id="2">
 				<description>Extras</description>
