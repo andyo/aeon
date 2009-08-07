@@ -573,10 +573,10 @@
 <!-- customisation strings added by azido -->
 
 	<string id="31975">UNLOCK ALL VIEWS FOR TV SHOWS</string>
-	<string id="31976">USE LEGACY 'DARK' MULTIPLEX</string>
+	<string id="31976">-X</string>
 	<string id="31977">MOVIE GENRE ICONS ON/OFF</string>
 	<string id="31978">MOVIE GENRE FALLBACK ICON ON/OFF</string>
 	<string id="31979">MOVIE GENRE FANART IMAGE ON/OFF</string>
 	<string id="31980">MUSIC GENRE ICONS ON/OFF</string>
-	
+	<string id="31981">MUSIC GENRE FANART IMAGE ON/OFF</string>	
 </strings>
