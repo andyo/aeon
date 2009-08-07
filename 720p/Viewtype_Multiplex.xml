@@ -10878,7 +10878,7 @@
 			
         <control type="group" id="600">
             <control type="button" id="601">
-                <visible>Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !Player.Playing + !Skin.HasSetting(multiplexinfooff)</visible>
+                <visible>Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !Player.Playing + !Skin.HasSetting(multiplexinfooff) + !IsEmpty(ListItem.Trailer)</visible>
                 <onleft>59</onleft>
                 <onright>59</onright>
                 <onup>7000</onup>
@@ -10896,7 +10896,7 @@
             </control>
 
             <control type="button" id="603">
-            <visible>![Skin.HasSetting(movietrailers) | Skin.HasSetting(tvpreview) | Player.Playing] | [Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvepisodesinfooff)]</visible>
+            <visible>IsEmpty(ListItem.Trailer) | ![Skin.HasSetting(movietrailers) | Skin.HasSetting(tvpreview) | Player.Playing] | [[Container.Content(movies) + Skin.HasSetting(multiplexinfooff)] | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfooff)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfooff)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfooff)]]</visible>
             <onfocus>SetFocus(60)</onfocus>
             </control>
         </control>
