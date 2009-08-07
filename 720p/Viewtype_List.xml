@@ -2541,22 +2541,42 @@
                     <visible>[Window.IsActive(1) + !Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + !Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(musicvideos)]</visible>
                 </control>
                 
-                <control type="largeimage">
+                <control type="image">
+                    <width>305</width>
+                    <height>450</height>			
+                    <aspectratio scalediffuse="false">keep</aspectratio>			
+                    <texture diffuse="list/list_movieicon_mask.png">$INFO[ListItem.Icon]</texture>
+                    <visible>Control.IsVisible(102) + Container.Content(tvshows) + Skin.HasSetting(tvposterview)</visible>
+                </control>
+                <control type="image">
+                    <width>305</width>
+                    <height>450</height>			
+                    <aspectratio scalediffuse="false">stretch</aspectratio>			
+                    <texture diffuse="list/list_movieicon_mask.png">$INFO[ListItem.Icon]</texture>
+                    <bordertexture border="-20">list/list_movieicon_frame.png</bordertexture>
+                    <visible>[Container.Content(tvshows) + Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + Skin.HasSetting(tvposterview)]</visible>
+                </control>
+               <control type="largeimage">
                     <width>305</width>
                     <height>450</height>			
                     <texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
                     <animation effect="fade" start="0" end="100" time="000">VisibleChange</animation>
                     <visible>Control.IsVisible(102) + Container.Content(tvshows) + Skin.HasSetting(tvposterview)</visible>
                 </control>			
-
+                <control type="largeimage">
+                    <width>305</width>
+                    <height>450</height>
+                    <fadetime>400</fadetime>			
+                    <texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,Season0]$INFO[ListItem.Season,,.tbn]</texture>
+                    <visible>Container.Content(seasons) + Skin.HasSetting(tvposterview)</visible>				
+                </control>
                 <control type="largeimage">
                     <width>305</width>
                     <height>450</height>
                     <fadetime>400</fadetime>			
                     <texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
-                    <visible>[Container.Content(tvshows) + Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + Skin.HasSetting(tvposterview)]</visible>				
-                </control> 
-
+                    <visible>Container.Content(tvshows) + Skin.HasSetting(tvposterview)</visible>				
+                </control>
                 <control type="image">
                     <width>305</width>
                     <height>450</height>
@@ -2594,32 +2614,29 @@
                     <fadetime>400</fadetime>
                     <aspectratio scalediffuse="false">stretch</aspectratio>			
                     <texture diffuse="list/list_musicicon_mask.png">$INFO[ListItem.Icon]</texture>
-                    <bordertexture border="-30">list/list_musicicon_frame.png</bordertexture>
-                    <visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)</visible>
+                    <bordertexture border="-34">list/list_musicicon_frame.png</bordertexture>
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] |[Container.Content(tvshows) + !Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>
                 </control>
-                
                 <control type="largeimage">
                     <width>346</width>
                     <height>346</height>
                     <fadetime>400</fadetime>			
-                    <texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
-                    <visible>[Container.Content(tvshows) + !Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>				
-                </control> 
-
-                <control type="image">
-                    <width>346</width>
-                    <height>346</height>
-                    <fadetime>400</fadetime>			
-                    <texture>list/list_musicicon_glass.png</texture>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] | [Window.IsActive(1) + Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + Skin.HasSetting(listvideosquare)] | [Container.Content(tvshows) + !Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>				
+                    <texture diffuse="list/list_musicicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
+                    <visible>[Container.Content(tvshows) + !Skin.HasSetting(tvposterview)]</visible>				
                 </control>
-                
+                <control type="largeimage">
+                    <width>346</width>
+                    <height>346</height>
+                    <fadetime>400</fadetime>			
+                    <texture diffuse="list/list_musicicon_mask.png">$INFO[listitem.path,,Season0]$INFO[ListItem.Season,,.tbn]</texture>
+                    <visible>[Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>				
+                </control>
                 <control type="image">
                     <width>346</width>
                     <height>346</height>
                     <fadetime>400</fadetime>			
                     <texture>list/list_musicicon_glass.png</texture>
-                    <visible>Window.IsActive(2) | Container.Content(episodes)</visible>				
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Container.Content(episodes)] | [Window.IsActive(1) + Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + Skin.HasSetting(listvideosquare)] | [Container.Content(tvshows) + !Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>
                 </control>
             </control>
 
@@ -2638,22 +2655,43 @@
                     <bordertexture border="-20">list/list_movieicon_frame.png</bordertexture>
                     <visible>[Window.IsActive(1) + !Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + !Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows) + !Container.Content(musicvideos)]</visible>
                 </control>
-                
-                <control type="largeimage">
+
+                <control type="image">
+                    <width>305</width>
+                    <height>450</height>			
+                    <aspectratio scalediffuse="false">keep</aspectratio>			
+                    <texture diffuse="list/list_movieicon_mask.png">$INFO[ListItem.Icon]</texture>
+                    <visible>Control.IsVisible(102) + Container.Content(tvshows) + Skin.HasSetting(tvposterview)</visible>
+                </control>
+                <control type="image">
+                    <width>305</width>
+                    <height>450</height>			
+                    <aspectratio scalediffuse="false">stretch</aspectratio>			
+                    <texture diffuse="list/list_movieicon_mask.png">$INFO[ListItem.Icon]</texture>
+                    <bordertexture border="-20">list/list_movieicon_frame.png</bordertexture>
+                    <visible>[Container.Content(tvshows) + Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + Skin.HasSetting(tvposterview)]</visible>
+                </control>
+               <control type="largeimage">
                     <width>305</width>
                     <height>450</height>			
                     <texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
                     <animation effect="fade" start="0" end="100" time="000">VisibleChange</animation>
                     <visible>Control.IsVisible(102) + Container.Content(tvshows) + Skin.HasSetting(tvposterview)</visible>
                 </control>			
-
+                <control type="largeimage">
+                    <width>305</width>
+                    <height>450</height>
+                    <fadetime>400</fadetime>			
+                    <texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,Season0]$INFO[ListItem.Season,,.tbn]</texture>
+                    <visible>Container.Content(seasons) + Skin.HasSetting(tvposterview)</visible>				
+                </control>
                 <control type="largeimage">
                     <width>305</width>
                     <height>450</height>
                     <fadetime>400</fadetime>			
                     <texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
-                    <visible>[Container.Content(tvshows) + Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + Skin.HasSetting(tvposterview)]</visible>				
-                </control> 
+                    <visible>Container.Content(tvshows) + Skin.HasSetting(tvposterview)</visible>				
+                </control>
 
                 <control type="image">
                     <width>305</width>
@@ -2697,30 +2735,29 @@
                     <visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] |[Container.Content(tvshows) + !Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>
                 </control>
                 
-<!--                <control type="largeimage">
+                <control type="largeimage">
                     <width>346</width>
                     <height>346</height>
                     <fadetime>400</fadetime>			
-                    <texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
-                    <visible>[Container.Content(tvshows) + !Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>				
-                </control> -->
+                    <texture diffuse="list/list_musicicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
+                    <visible>[Container.Content(tvshows) + !Skin.HasSetting(tvposterview)]</visible>				
+                </control>
+                <control type="largeimage">
+                    <width>346</width>
+                    <height>346</height>
+                    <fadetime>400</fadetime>			
+                    <texture diffuse="list/list_musicicon_mask.png">$INFO[listitem.path,,Season0]$INFO[ListItem.Season,,.tbn]</texture>
+                    <visible>[Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>				
+                </control>
 
                 <control type="image">
                     <width>346</width>
                     <height>346</height>
                     <fadetime>400</fadetime>			
                     <texture>list/list_musicicon_glass.png</texture>
-                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] | [Window.IsActive(1) + Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + Skin.HasSetting(listvideosquare)] | [Container.Content(tvshows) + !Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>				
+                    <visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Container.Content(episodes)] | [Window.IsActive(1) + Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + Skin.HasSetting(listvideosquare)] | [Container.Content(tvshows) + !Skin.HasSetting(tvposterview)] | [Container.Content(seasons) + !Skin.HasSetting(tvposterview)]</visible>
                 </control>
-                
-                <control type="image">
-                    <width>346</width>
-                    <height>346</height>
-                    <fadetime>400</fadetime>			
-                    <texture>list/list_musicicon_glass.png</texture>
-                    <visible>Window.IsActive(2) | Container.Content(episodes)</visible>				
-                </control>
-            </control>
+			</control>
 
 		</control>
 
