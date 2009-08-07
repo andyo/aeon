@@ -11,8 +11,8 @@
 	<string id="31005">ELEMENTE</string>
 	<string id="31006">JETZT LÄUFT:</string>
 	<string id="31007">PAUSIERT</string>
-	<string id="31008">TEMP</string>
-	<string id="31009">EINHEITEN</string>
+	<string id="31008">TEMPERATUR</string>
+	<string id="31009">EINHEIT</string>
   
 <!-- Main Menu -->
   
@@ -41,7 +41,7 @@
 	<string id="31037">MUSIK</string>
 	<string id="31038">WIEDERGABELISTE</string>
 	<string id="31039">EDITOR</string>
-	<string id="31040">SIE HÖREN:</string>
+	<string id="31040">DU HÖRST:</string>
 	<string id="31041">VON:</string>
 
 <!-- Media Window options -->
@@ -201,7 +201,7 @@
 	<string id="31246">MOD-SPEZIFISCH</string>
 	<string id="31247">ZUSATZEINSTELLUNGEN</string>
 	<string id="31248">UNTERMENÜS</string>
-	<string id="31254">ZUSÄTZE VERWALTEN</string>
+	<string id="31254">SUBMENÜS VERWALTEN</string>
 
   
 <!-- Aeon Advanced options -->
@@ -309,7 +309,7 @@
 	<string id="31414">Handlungsdetails nicht verfügbar</string>
 	<string id="31415">Biografie nicht verfügbar</string>
 	<string id="31416">STILE</string>
-	<string id="31417">BEWERTUNG</string>
+	<string id="31417">FSK-FREIGABE</string>
 	<string id="31418">COVER</string>
 	<string id="31419">AKTUALISIEREN</string>
 	<string id="31420">WEITER</string>
@@ -405,7 +405,7 @@
 	<string id="31706">VOR</string>
 	<string id="31707">LAUTSTÄKE</string>
 	<string id="31708">POSITION</string>
-	<string id="31709">ABGELAUFENE ZEIT</string>
+	<string id="31709">LAUFZEIT</string>
 	<string id="31710">GESAMT ZEIT</string>
 	<string id="31711">BOOKMARKS VERFÜGBAR</string>
 	<string id="31712">HOCH/RUNTER: MENÜ/BOOKMARKS[CR]LINKS/RECHTS: MENÜ OPTIONEN</string>
@@ -459,7 +459,7 @@
 	<string id="31900">TEXTUREN</string>
 	<string id="31901">STANDARD HINTERGRÜNDE</string>
 	<string id="31902">STANDARD ICONS ENTHALTEN ELEMENTE VON</string>
-	<string id="31903">LOCALISATION</string>
+	<string id="31903">LOKALISIERUNG</string>
 	<string id="31904">(BETA)TESTS</string>
 	<string id="31905">AEONPROJECT WEBSITE</string>
 	<string id="31906">DANKE AN</string>
@@ -500,20 +500,20 @@
 	<string id="31855">ERINNERUNG</string>
 	<string id="31856">TIMER</string>
 	<string id="31857">Neuer Eintrag</string>
-	<string id="31858">ZUSATZ</string>
+	<string id="31858"> </string>
 	<string id="31859">ANIMIERTE WETTERSYMBOLE BENUTZEN</string>
 	<string id="31860">ENTFERNEN</string>
 	<string id="31861">10 TAGE</string>
 	<string id="31862">ERINNERUNG Aus</string>
-	<string id="31863">Newest deviantart</string>
-	<string id="31864">Open Playlists</string>
+	<string id="31863">Neu bei deviantart</string>
+	<string id="31864">Wiedergabelisten bei Auswahl öffnen, anstatt sie abzuspielen</string>
 	<string id="31865">Extras</string>
 	<string id="31866">-</string>
 	<string id="31867">HAUPTMENÜ</string>
 	<string id="31868">FIXIEREN</string>
 	<string id="31869">WETTER-BILDHINTERGRUND DEN AKTUELLEN WETTERBEDINGUNGEN ANPASSEN</string>
 	<string id="31870">-</string>
-    <string id="31871">RANDOM QUOTE</string>
+	<string id="31871">RANDOM QUOTE</string>
 	<string id="31872">-</string>
 	<string id="31873">Die nächsten 10 Tage</string>
 	<string id="31874">Die nächsten 36 Stunden</string>
@@ -524,14 +524,14 @@
 	<string id="31879">NEU:</string>
 	<string id="31880">7 TAGE</string>
 <!--  Shutdown Submenu  --> 
-	<string id="31211">REBOOT</string> 
+	<string id="31211">NEUSTART</string> 
 	<string id="31212">SUSPEND</string> 
 	<string id="31213">HIBERNATE</string>
-	<string id="31214">OFF TIMER</string>
+	<string id="31214">AUSSCHALT-TIMER</string>
 
 <!-- ShowMix -->
 	<string id="31982">-</string>
-	<string id="31983">RSS FEED WIDGET</string>
+	<string id="31983">RSS FEED WIDGET ANZEIGEN (IM EXTRAS-BILDSCHIRM)</string>
 
 	<string id="31042">BODEN: HELL</string>
 	<string id="31043">BODEN: DUNKEL</string>
