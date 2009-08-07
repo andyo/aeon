@@ -1,17 +1,18 @@
-import xbmc
-from xbmcgui import Window, DialogProgress
+import xbmc, re, sys, os, time
+from xbmcgui import Window
 from urllib import quote_plus, unquote_plus, urlopen, urlretrieve
-import re, sys, os, time, htmlentitydefs
+from htmlentitydefs import name2codepoint as n2cp
 
 # Current Working Directory
 CWD = os.getcwd()
 if CWD[-1] == ';': CWD = CWD[0:-1]
 if CWD[-1] != '//': CWD = CWD + '//'
 
-#picture save temp
-IMAGE_TEMP =  CWD + 'temp_pic.png'
-#extras scrapers folder
-EXTRAS_FILE =  CWD + 'scrapers//'
+#picture temp folder
+IMAGE_TEMP =  CWD + 'temp//temp_'
+
+#scrapers folder
+EXTRAS_FILE_ADDRESS =  CWD + 'scrapers//'
 
 class Main:
     # grab the home window
@@ -24,8 +25,8 @@ class Main:
             self.WINDOW.clearProperty( "LatestMovie.%d.Title" % ( count + 1, ) )
             self.WINDOW.clearProperty( "LatestEpisode.%d.ShowTitle" % ( count + 1, ) )
             self.WINDOW.clearProperty( "LatestSong.%d.Title" % ( count + 1, ) )
-            self.WINDOW.clearProperty( "Fun.quote_got" )
-            self.WINDOW.clearProperty( "Fun.picture_got" )
+            self.WINDOW.clearProperty( "PictureWidget.Got" )
+            self.WINDOW.clearProperty( "ExtrasWidget.Got" )
 
     def _get_media( self, path, file ):
         # set default values
@@ -53,17 +54,28 @@ class Main:
         self.ALBUMS = params.get( "albums", "" ) == "True"
         self.UNPLAYED = params.get( "unplayed", "" ) == "True"
         self.RECENTADDED = params.get( "recentadded", "" ) == "true"
+        self.PLAY_TRAILER = params.get( "trailer", "" ) == "True"
+        self.ALARM = int( params.get( "alarm", "0" ) )
         self.TOTALS = params.get( "totals", "" ) == "true"
-        self.EXTRAS_CONTENT = params.get( "extrapopup", "" )
-        self.PICTURE = params.get( "picture", "" ) == "true"
+        self.WIDGET_EXTRAS = params.get( "extra", "" )
+        self.WIDGET_PICTURE = params.get( "picture", "" )
+
+    def _set_alarm( self ):
+        # only run if user/skinner preference
+        if ( not self.ALARM ): return
+        # set the alarms command
+        command = "XBMC.RunScript(%s,limit=%d&partial=%s&albums=%s&unplayed=%s&totals=%s&trailer=%s&alarm=%d)" % ( os.path.join( os.getcwd(), __file__ ), self.LIMIT, str( not self.RECENT ), str( self.ALBUMS ), str( self.UNPLAYED ), str( self.TOTALS ), str( self.PLAY_TRAILER ), self.ALARM, )
+        xbmc.executebuiltin( "AlarmClock(LatestAdded,%s,%d,true)" % ( command, self.ALARM, ) )
 
     def __init__( self ):
         # parse argv for any preferences
         self._parse_argv()
         # clear properties
         self._clear_properties()
+        # set any alarm
+        self._set_alarm()
+        # format our records start and end
         if ( self.RECENTADDED ) or ( self.TOTALS ):
-            # format our records start and end
             xbmc.executehttpapi( "SetResponseFormat()" )
             xbmc.executehttpapi( "SetResponseFormat(OpenRecord,%s)" % ( "<record>", ) )
             xbmc.executehttpapi( "SetResponseFormat(CloseRecord,%s)" % ( "</record>", ) )
@@ -74,10 +86,11 @@ class Main:
             self._fetch_music_info()
         if ( self.TOTALS ):
             self._fetch_totals()
-        if ( self.EXTRAS_CONTENT ):
-            self.get_extra_content(self.EXTRAS_CONTENT)
-        if ( self.PICTURE ):
-            self.get_picture()
+        if ( self.WIDGET_EXTRAS ):
+            self.get_widget( self.WIDGET_EXTRAS,'ExtrasWidget' )
+        if ( self.WIDGET_PICTURE ):
+            self.get_widget( self.WIDGET_PICTURE,'PictureWidget' )
+
 
     def _fetch_movie_info( self ):
         # set our unplayed query
@@ -105,7 +118,8 @@ class Main:
             self.WINDOW.setProperty( "LatestMovie.%d.RunningTime" % ( count + 1, ), fields[ 12 ] )
             # get cache names of path to use for thumbnail/fanart and play path
             thumb_cache, fanart_cache, play_path = self._get_media( fields[ 24 ], fields[ 23 ] )
-            self.WINDOW.setProperty( "LatestMovie.%d.Path" % ( count + 1, ), play_path )
+            self.WINDOW.setProperty( "LatestMovie.%d.Path" % ( count + 1, ), ( play_path, fields[ 20 ], )[ fields[ 20 ] != "" and self.PLAY_TRAILER ] )
+            self.WINDOW.setProperty( "LatestMovie.%d.Trailer" % ( count + 1, ), fields[ 20 ] )
             self.WINDOW.setProperty( "LatestMovie.%d.Fanart" % ( count + 1, ), "special://profile/Thumbnails/Video/%s/%s" % ( "Fanart", fanart_cache, ) )
             # initial thumb path
             thumb = "special://profile/Thumbnails/Video/%s/%s" % ( thumb_cache[ 0 ], thumb_cache, )
@@ -216,107 +230,115 @@ class Main:
         self.WINDOW.setProperty( "Album.Count" , album_fields [0] )
         self.WINDOW.setProperty( "Album.ArtistCount" , album_fields [1] )
 
- 
-    def get_extra_content(self, scraper):
-        #open extras scraper file
-        SET_LINES = open(EXTRAS_FILE + scraper + '.txt','r').readlines()
-        #open URL
-        URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
-        #find content
-        CONTENT = re.findall(SET_LINES [ 2 ].strip(), URL_FILE, re.DOTALL)
-        #find title
-        TITLE = re.findall(SET_LINES [ 3 ].strip(), URL_FILE, re.DOTALL)
-        #find NAME
-        NAME_EX = SET_LINES [ 0 ].strip()
-        #ITEM NUBER
-        ITEM_NUBER = int( SET_LINES [ 4 ].strip() )
-        if CONTENT: 
-            CONTENT_EX = htmlentitydecode( CONTENT[ ITEM_NUBER ] )
-            CONTENT_EX = remove_html_tags( CONTENT_EX ) 
-        else: 
-            CONTENT_EX = 'not available'
-        if TITLE: 
-            TITLE_EX = TITLE [ ITEM_NUBER ] 
-        else: 
-            TITLE_EX = 'No Title'
-        if NAME_EX == False: NAME_EX = 'No Name'
-        # set properties
-        self.WINDOW.setProperty( "Fun.ExGot" , 'yes' )
-        self.WINDOW.setProperty( "Fun.ExName" , NAME_EX )
-        self.WINDOW.setProperty( "Fun.ExContent" , CONTENT_EX.strip() )
-        self.WINDOW.setProperty( "Fun.ExTitle" , TITLE_EX.strip() )
+    def get_widget(self, WIDGET, WIDGET_FOR):
+        #open extras WIDGET file
+        FILE_ADDRESS = EXTRAS_FILE_ADDRESS + WIDGET + '.txt'
+        # Check to see if file exists
+        if (os.path.isfile( FILE_ADDRESS ) == False):
+            self.set_Property(WIDGET_FOR,'yes', 'Can\'t Find Widget',WIDGET)
+        else:
+        #Else Open WIDGET
+            SET_LINES = open(FILE_ADDRESS, 'r').readlines()
+            #scraper title/name (WIDGET_FOR.Title)
+            WIDGET_TITLE = SET_LINES [ 0 ].strip()
+            #Read URL
+            URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
+            #find PICTURE (WIDGET_FOR.Picture)
+            if '[|*|]' in SET_LINES [ 2 ]:
+                PICTURE_ADDRESS, SITE_ADDRESS = SET_LINES [ 2 ].split('[|*|]')
+            elif SET_LINES [ 2 ].strip():
+                PICTURE_ADDRESS = SET_LINES [ 2 ].strip()
+                SITE_ADDRESS =''
+            else:
+                PICTURE_ADDRESS = ''
+                PICTURE_URL_LIST  = ''
+            if PICTURE_ADDRESS:
+                PICTURE_URL_LIST = re.findall(PICTURE_ADDRESS.rstrip(), URL_FILE, re.DOTALL)
+            #find Content Title (WIDGET_FOR.ContentTitle) 
+            CONTENT_TITLE_LIST = re.findall( SET_LINES [ 3 ].rstrip() , URL_FILE, re.DOTALL)
+            #find Content (WIDGET_FOR.Content)
+            CONTENT_LIST = re.findall(SET_LINES [ 4 ].rstrip(), URL_FILE, re.DOTALL)
+            #find PubDate/time (WIDGET_FOR.PubDate)
+            PUBDATE_LIST = re.findall(SET_LINES [ 5 ].rstrip(), URL_FILE, re.DOTALL)
+            #ITEM NUBER
+            ITEM_NUBER = int( SET_LINES [ 6 ].strip() )
+            #check
+            if WIDGET_TITLE == False: WIDGET_TITLE = 'No Name'
+            if CONTENT_TITLE_LIST: CONTENT_TITLE_SP = CONTENT_TITLE_LIST [ ITEM_NUBER ]
+            if CONTENT_LIST: CONTENT_SP = CONTENT_LIST [ ITEM_NUBER ]
+            if PUBDATE_LIST: PUBDATE_SP = PUBDATE_LIST [ ITEM_NUBER ]
+            #see if there is a picture to download
+            if PICTURE_URL_LIST:
+                PICTURE = SITE_ADDRESS.rstrip() + PICTURE_URL_LIST [ ITEM_NUBER ]
+                PICTURE_SP = IMAGE_TEMP + WIDGET_FOR + '.png'
+                urlretrieve( PICTURE, PICTURE_SP)
+                # set properties
+                for i in range(1, 5):
+                    time.sleep(2)
+                    if (os.path.isfile( IMAGE_TEMP + WIDGET_FOR + '.png' )):
+                        self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE, CONTENT_TITLE_SP, PICTURE_SP, CONTENT_SP, PUBDATE_SP )
+                        break
+            else:
+                # set properties
+                self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE, CONTENT_TITLE_SP, '', CONTENT_SP, PUBDATE_SP )
 
- 
-    def get_picture(self): 
-        base_url = 'http://backend.deviantart.com/rss.xml?q=&type=deviation' 
-        content = urlopen(base_url).read() 
-        m = re.search('<media:thumbnail url="(.*?)" height', content) 
-        n = re.search('media:credit role="author" scheme="urn:ebu">(.*?)<', content) 
-        if m: 
-            picture = m.group(1)
-            DownloaderClass(picture, IMAGE_TEMP)
-            if n: 
-                pictureby = n.group(1) 
-            else: 
-                pictureby = ''
-        else: 
-            picture = ''
-            pictureby = 'no pictureby available'
-        for i in range(1, 5):
-            time.sleep(2)
-            if (os.path.isfile( IMAGE_TEMP )):
-                self.WINDOW.setProperty( "Fun.picture_got" , 'yes' )
-                self.WINDOW.setProperty( "Fun.picture" , IMAGE_TEMP )
-                self.WINDOW.setProperty( "Fun.pictureby" , pictureby )
-                i = 5
+    def set_Property(self, WIDGET_FOR, spGot = 'yes', spTitle = 'Can\'t Find Widget', spContentTitle = '', spPicture = '', spContent = '', spPubDate = ''):
+        self.WINDOW.setProperty( WIDGET_FOR + '.Got' , spGot )
+        self.WINDOW.setProperty( WIDGET_FOR + '.Title' , spTitle )
+        self.WINDOW.setProperty( WIDGET_FOR + '.ContentTitle' , self.Clean_text( spContentTitle ) )
+        self.WINDOW.setProperty( WIDGET_FOR + '.Picture' , spPicture )
+        self.WINDOW.setProperty( WIDGET_FOR + '.Content' , self.Clean_text( spContent ) )
+        self.WINDOW.setProperty( WIDGET_FOR + '.PubDate' , self.Clean_text( spPubDate ) )
 
-def DownloaderClass(url,dest):
-    #dp = DialogProgress()
-    #dp.create("Extras","Downloading Image",url)
-    urlretrieve(url,dest,lambda nb, bs, fs, url=url: _pbhook(nb,bs,fs,url))
- 
-def _pbhook(numblocks, blocksize, filesize, url=None):
-    try:
-        percent = min((numblocks*blocksize*100)/filesize, 100)
-        print percent
-        #dp.update(percent)
-    except:
-        percent = 100
-        #dp.update(percent)
-    #if dp.iscanceled(): 
-        #print "DOWNLOAD CANCELLED" # need to get this part working
-        #dp.close()
-        
-def htmlentitydecode(s):
-    # code from http://snipplr.com/view.php?codeview&id=15261
-    # First convert alpha entities (such as &eacute;)
-    # (Inspired from http://mail.python.org/pipermail/python-list/2007-June/443813.html)
-    def entity2char(m):
-        entity = m.group(1)
-        if entity in htmlentitydefs.name2codepoint:
-            return unichr(htmlentitydefs.name2codepoint[entity])
-        return u" "  # Unknown entity: We replace with a space.
-    t = re.sub(u'&(%s);' % u'|'.join(htmlentitydefs.name2codepoint), entity2char, s)
-  
-    # Then convert numerical entities (such as &#233;)
-    t = re.sub(u'&#(\d+);', lambda x: unichr(int(x.group(1))), t)
-   
-    # Then convert hexa entities (such as &#x00E9;)
-    return re.sub(u'&#x(\w+);', lambda x: unichr(int(x.group(1),16)), t)
+    def Clean_text(self,  data):
+        data = htmldecode2( data )
+        data = decodeEntities( data )
+        data = remove_html_tags( data )
+        #data = remove_extra_spaces( data )
+        data = remove_extra_lines( data )
+        return data
+
+def htmldecode2(text):
+    """Decode HTML entities in the given text."""
+    #http://evaisse.com/post/52749338/python-html-entities-decode-cgi-unescape
+    if type(text) is unicode:
+        uchr = unichr
+    else:
+        uchr = lambda value: value > 255 and unichr(value) or chr(value)
+    def entitydecode(match, uchr=uchr):
+        entity = match.group(1)
+        if entity.startswith('#x'):
+            return uchr(int(entity[2:], 16))
+        elif entity.startswith('#'):
+            return uchr(int(entity[1:]))
+        elif entity in n2cp:
+            return uchr(n2cp[entity])
+        else:
+            return match.group(0)
+    charrefpat = re.compile(r'&(#(\d+|x[\da-fA-F]+)|[\w.:-]+);?')
+    return charrefpat.sub(entitydecode, text)
+
+def remove_extra_spaces(data):
+    p = re.compile(r'\s+')
+    return p.sub(' ', data)
+
+def remove_extra_lines(data):
+    p = re.compile(r'\n+')
+    return p.sub('\n', data)
+
+def remove_html_tags(data):
+    p = re.compile(r'<[^<]*?/?>')
+    return p.sub(' ', data)
 
 def decodeEntities(data):
     data = data or ''
+    data = data.replace('&#160;', ' ')
     data = data.replace('&lt;', '<')
     data = data.replace('&gt;', '>')
     data = data.replace('&quot;', '"')
     data = data.replace('&apos;', "'")
     data = data.replace('&amp;', '&')
-    return data
-
-	
-def remove_html_tags(data):
-    p = re.compile(r'<[^<]*?/?>')
-    return p.sub(' ', data)
+    return data	
 
 if ( __name__ == "__main__" ):
     Main()

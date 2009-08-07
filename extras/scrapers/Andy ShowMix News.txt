@@ -1,0 +1,7 @@
+Andy ShowMix News
+http://github.com/feeds/andyblac/commits/aeon/master
+
+    <updated>(.*?)<
+    <title>(.*?)<
+
+0
