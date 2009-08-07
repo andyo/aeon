@@ -23,7 +23,7 @@
         <width>500</width>
         <height>49</height>
         <font>Font_SettingsOptions</font>
-        <label>VER: 1.56  (GIT-070)</label>                
+        <label>VER: 1.56  (GIT-071)</label>                
     </control>
 	
 	<control type="label">
@@ -488,19 +488,19 @@
 		</control>		
 		<control type="radiobutton" id="905">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>$LOCALIZE[31973]: $LOCALIZE[31010]</label>
+			<label>$LOCALIZE[31974]: $LOCALIZE[31010]</label>
 			<onclick>Skin.ToggleSetting(dynamicflowmusic)</onclick>
 			<selected>Skin.HasSetting(dynamicflowmusic)</selected>
 		</control>		
 		<control type="radiobutton" id="906">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>$LOCALIZE[31973]: $LOCALIZE[31985]</label>
+			<label>$LOCALIZE[31974]: $LOCALIZE[31985]</label>
 			<onclick>Skin.ToggleSetting(dynamicflowtv)</onclick>
 			<selected>Skin.HasSetting(dynamicflowtv)</selected>
 		</control>		
 		<control type="radiobutton" id="907">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>$LOCALIZE[31973]: $LOCALIZE[31984]</label>
+			<label>$LOCALIZE[31974]: $LOCALIZE[31984]</label>
 			<onclick>Skin.ToggleSetting(dynamicflowmovie)</onclick>
 			<selected>Skin.HasSetting(dynamicflowmovie)</selected>
 		</control>		
