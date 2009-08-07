@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
-<!--Date of translation: 07/31/2009-->
+<!--Date of translation: 08/06/2009-->
 <!--$Revision$-->
 <!--Based on english strings version 204-->
 <strings>
@@ -158,11 +158,16 @@
   <string id="31208">כיבוי</string>
   <string id="31209">התנתק</string>
   <string id="31210">הוצא דיסק</string>
+  <string id="31211">הפעל מחדש</string>
+  <string id="31212">השהייה</string>
+  <string id="31213">הרדמה</string>
+  <string id="31214">טיימר כיבוי</string>
   <string id="31220">התיקייה מכילה:</string>
   <string id="31221">הכנס נתיב או עיין למציאת קבצי מדיה</string>
   <string id="31222">בחר שם לשיתוף זה</string>
   <string id="31223">רשימה</string>
   <string id="31224">אריח</string>
+  <string id="31229">הוסף / הסר פריטים</string>
   <string id="31230">AEON</string>
   <string id="31231">אפשרויות</string>
   <string id="31232">כללי</string>
@@ -187,7 +192,6 @@
   <string id="31251">שינוי מידע MULTIPLEX (מופעל, מכובה, אוטו', לחיצה)</string>
   <string id="31252">אפקט GRADIENT לתפריט דף הבית</string>
   <string id="31253"> קשר את קיצור המשחקים לתוסף ה"LAUNCHER"</string>
-  <string id="31254">הוסף/הסר פריטים</string>
   <string id="31258">הראה דירוגים בדף מידע הסרט</string>
   <string id="31259">סמלי ברירת מחדל לדגלי מדיה (כבה למקומות ריקים)</string>
   <string id="31260">הראה שעון</string>
@@ -408,15 +412,15 @@
   <string id="31860">נקה</string>
   <string id="31861">10 ימים</string>
   <string id="31862">שעון מעורר מכובה</string>
-  <string id="31863">Newest deviantart</string>
-  <string id="31864">Open Playlists</string>
+  <string id="31863">עידכוני DEVIANTART</string>
+  <string id="31864">פתח רשימות ניגון</string>
   <string id="31865">תוספות</string>
   <string id="31866">-</string>
   <string id="31867">תפריט ראשי</string>
   <string id="31868">נעילה</string>
   <string id="31869">רקע מזג האויר לפי מזג האויר הנוכחי</string>
   <string id="31870">-</string>
-  <string id="31871">RANDOM QUOTE</string>
+  <string id="31871">ציטוט אקראי</string>
   <string id="31872">-</string>
   <string id="31873">10 ימים הבאים</string>
   <string id="31874">36 שעות הבאות</string>
@@ -426,12 +430,6 @@
   <string id="31878">סה"כ</string>
   <string id="31879">נוספו לאחרונה</string>
   <string id="31880">7 ימים</string>
-  <!--  Shutdown Submenu  --> 
-	<string id="31211">REBOOT</string> 
-	<string id="31212">SUSPEND</string> 
-	<string id="31213">HIBERNATE</string>
-	<string id="31214">OFF TIMER</string>
-
   <string id="31900">מרקמים</string>
   <string id="31901">טפט ברירת מחדל</string>
   <string id="31902">איקונים ברירת מחדל מכילים אלמנטים של</string>
@@ -485,15 +483,15 @@
   <string id="31971">אפשרויות תצוגה</string>
   <string id="31972">תפריט אנכי</string>
   <string id="31973">מיקום ספריית הסרטים</string>
-  <string id="31974">דינמי COVERFLOW</string>
+  <string id="31974">זרימה דינמית</string>
   <string id="31975">אפשר את כל התצוגות לסדרות</string>
   <string id="31976">השתמש ב MULTIPLEX "כהה" ישן</string>
   <string id="31977">איקון ז'אנר סרטים מופעל/מכובה</string>
   <string id="31978">איקון גיבוי ז'אנר סרטים מופעל/מכובה</string>
   <string id="31979">רקע ז'אנר סרטים מופעל/מכובה</string>
   <string id="31980">איקון ז'אנר מוסיקה מופעל/מכובה</string>
-  <string id="31981">רקע ז'אנר מוסיקה מופעל/מכובה</string>
-  <string id="31982">-</string>
-  <string id="31983">RSS FEED WIDGET</string>
-  <string id="31984">-</string>
+  <string id="31982">SHOWMIX עידכוני</string>
+  <string id="31983">הפעל עידכוני RSS של SHOWMIX</string>
+	<string id="31984">POSTER</string>
+	<string id="31985">WIDE</string>
 </strings>
