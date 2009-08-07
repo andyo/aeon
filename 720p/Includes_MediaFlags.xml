@@ -689,7 +689,7 @@
         </control>
 
 		<control type="group">
-			<visible>[[Control.IsVisible(59) | Control.IsVisible(54)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
+			<visible>[Control.IsVisible(59) | Control.IsVisible(54) | Control.IsVisible(57)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(60) | Control.HasFocus(94)]</visible>
 			<include>Animation_CommonFade</include>
 			<control type="image">
 				<posx>0</posx>
@@ -711,7 +711,7 @@
 			</control>	
 		</control>
 		<control type="group">
-			<visible>[[Control.IsVisible(59) | Control.IsVisible(54)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(60) | Control.HasFocus(94)]] | [Window.IsActive(25) + Control.IsVisible(57) + !Skin.HasSetting(nomediaflags) + Container.Content(movies) + ![Control.HasFocus(60) | Control.HasFocus(94)]]</visible>
+			<visible>[Control.IsVisible(59) | Control.IsVisible(54) | Control.IsVisible(57)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(60) | Control.HasFocus(94)]</visible>
 			<include>Animation_CommonFade</include>
 			<control type="group">
 				<posx>10</posx>

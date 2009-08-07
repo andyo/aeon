@@ -531,8 +531,10 @@
 	<string id="31214">OFF TIMER</string>
 
 <!-- ShowMix -->
-	<string id="31982">SHOWMIX UPDATES</string>
+	<string id="31982">-</string>
 	<string id="31983">RSS FEED WIDGET</string>
+	<string id="31984">POSTER</string>
+	<string id="31985">WIDE</string>
 
 	<string id="31042">FLOOR: LIGHT</string>
 	<string id="31043">FLOOR: NIGHT</string>
@@ -576,6 +578,5 @@
 	<string id="31978">MOVIE GENRE FALLBACK ICON ON/OFF</string>
 	<string id="31979">MOVIE GENRE FANART IMAGE ON/OFF</string>
 	<string id="31980">MUSIC GENRE ICONS ON/OFF</string>
-	<string id="31984">-</string>
 	
 </strings>

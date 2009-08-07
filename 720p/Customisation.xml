@@ -512,9 +512,15 @@
 		</control>		
 		<control type="radiobutton" id="906">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>$LOCALIZE[31974]: $LOCALIZE[31014]</label>
+			<label>$LOCALIZE[31974]: $LOCALIZE[31985]</label>
 			<onclick>Skin.ToggleSetting(dynamicflowtv)</onclick>
 			<selected>Skin.HasSetting(dynamicflowtv)</selected>
+		</control>		
+		<control type="radiobutton" id="907">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>$LOCALIZE[31974]: $LOCALIZE[31984]</label>
+			<onclick>Skin.ToggleSetting(dynamicflowmovie)</onclick>
+			<selected>Skin.HasSetting(dynamicflowmovie)</selected>
 		</control>		
 	</control>
 <!-- TWEAKS END -->

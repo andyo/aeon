@@ -5935,6 +5935,7 @@
                 <animation effect="fade" start="60" end="0" time="250" reversible="false">Hidden</animation>
                 <animation effect="rotatey" center="-80" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17) | stringcompare(Container.NumItems,18) | stringcompare(Container.NumItems,19) | stringcompare(Container.NumItems,20)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -5969,6 +5970,7 @@
                 <posx>105</posx>
                 <animation effect="rotatey" center="-20" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17) | stringcompare(Container.NumItems,18))]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6003,6 +6005,7 @@
                 <posx>165</posx>
                 <animation effect="rotatey" center="40" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6037,6 +6040,7 @@
                 <posx>225</posx>
                 <animation effect="rotatey" center="100" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6071,6 +6075,7 @@
                 <posx>285</posx>
                 <animation effect="rotatey" center="160" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6105,6 +6110,7 @@
                 <posx>345</posx>
                 <animation effect="rotatey" center="220" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6139,6 +6145,7 @@
                 <posx>405</posx>
                 <animation effect="rotatey" center="280" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6173,6 +6180,7 @@
                 <posx>465</posx>
                 <animation effect="rotatey" center="340" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6207,6 +6215,7 @@
                 <posx>525</posx>
                 <animation effect="rotatey" center="400" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6240,6 +6249,7 @@
             
             <!-- image off screen to stop lag of fading new item -->
             <control type="group">
+                <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17) | stringcompare(Container.NumItems,18) | stringcompare(Container.NumItems,19)]]</visible>
                 <posx>1385</posx>
                 <control type="image">
                     <include>MultiplexMoviesThumbMain</include>
@@ -6256,6 +6266,7 @@
                 <animation effect="fade" start="0" end="100" delay="0" time="250" reversible="false">Visible</animation>
                 <animation effect="rotatey" center="1430" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6290,6 +6301,7 @@
                 <posx>965</posx>
                 <animation effect="rotatey" center="1370" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6324,6 +6336,7 @@
                 <posx>905</posx>
                 <animation effect="rotatey" center="1310" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6358,6 +6371,7 @@
                 <posx>845</posx>
                 <animation effect="rotatey" center="1250" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6392,6 +6406,7 @@
                 <posx>785</posx>
                 <animation effect="rotatey" center="1190" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6426,6 +6441,7 @@
                 <posx>725</posx>
                 <animation effect="rotatey" center="1130" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6460,6 +6476,7 @@
                 <posx>665</posx>
                 <animation effect="rotatey" center="1070" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6494,6 +6511,7 @@
                 <posx>605</posx>
                 <animation effect="rotatey" center="1010" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6528,6 +6546,7 @@
                 <posx>545</posx>
                 <animation effect="rotatey" center="950" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6603,6 +6622,7 @@
                     <visible>Container.OnNext</visible>
                     <animation effect="rotatey" center="400" start="0" end="-55" time="250" reversible="false" tween="quadratic" easing="out">Hidden</animation>
                     <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2)]]</visible>
                         <control type="image">
                             <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6648,6 +6668,7 @@
                 <animation effect="fade" start="45" end="0" time="250" reversible="false">Hidden</animation>
                 <animation effect="rotatey" center="1370" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17) | stringcompare(Container.NumItems,18) | stringcompare(Container.NumItems,19)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6682,6 +6703,7 @@
                 <posx>905</posx>
                 <animation effect="rotatey" center="1310" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6716,6 +6738,7 @@
                 <posx>845</posx>
                 <animation effect="rotatey" center="1250" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6750,6 +6773,7 @@
                 <posx>785</posx>
                 <animation effect="rotatey" center="1190" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6784,6 +6808,7 @@
                 <posx>725</posx>
                 <animation effect="rotatey" center="1130" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6818,6 +6843,7 @@
                 <posx>665</posx>
                 <animation effect="rotatey" center="1070" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6852,6 +6878,7 @@
                 <posx>605</posx>
                 <animation effect="rotatey" center="1010" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6886,6 +6913,7 @@
                 <posx>545</posx>
                 <animation effect="rotatey" center="950" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6920,6 +6948,7 @@
                 <posx>485</posx>
                 <animation effect="rotatey" center="890" start="55" end="55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -6954,6 +6983,7 @@
             <!-- image off screen to stop lag of fading new item -->
             <control type="group">
                 <posx>-500</posx>
+                <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17) | stringcompare(Container.NumItems,18) | stringcompare(Container.NumItems,19) | stringcompare(Container.NumItems,20)]]</visible>
                 <control type="image">
                     <include>MultiplexMoviesThumbMain</include>
                     <info>ListItem(-10).Thumb</info>
@@ -6969,6 +6999,7 @@
                 <animation effect="fade" start="0" end="60" time="250" reversible="false">Visible</animation>
                 <animation effect="rotatey" center="-140" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17) | stringcompare(Container.NumItems,18)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7003,6 +7034,7 @@
                 <posx>45</posx> -->
                 <animation effect="rotatey" center="-80" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7037,6 +7069,7 @@
                 <posx>105</posx>
                 <animation effect="rotatey" center="-20" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7071,6 +7104,7 @@
                 <posx>165</posx>
                 <animation effect="rotatey" center="40" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7105,6 +7139,7 @@
                 <posx>225</posx>
                 <animation effect="rotatey" center="100" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7139,6 +7174,7 @@
                 <posx>285</posx>
                 <animation effect="rotatey" center="160" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7173,6 +7209,7 @@
                 <posx>345</posx>
                 <animation effect="rotatey" center="220" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7207,6 +7244,7 @@
                 <posx>405</posx>
                 <animation effect="rotatey" center="280" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7241,6 +7279,7 @@
                 <posx>465</posx>
                 <animation effect="rotatey" center="340" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7317,6 +7356,7 @@
                     <visible>Container.OnPrevious</visible>
                     <animation effect="rotatey" center="890" start="0" end="55" time="250" reversible="false" tween="quadratic" easing="out">Hidden</animation>
                     <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1)]]</visible>
                         <control type="image">
                             <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7374,6 +7414,7 @@
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17) | stringcompare(Container.NumItems,18)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7416,6 +7457,7 @@
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7458,6 +7500,7 @@
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7500,6 +7543,7 @@
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7542,6 +7586,7 @@
 					<effect type="slide" start="0" end="-500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7584,6 +7629,7 @@
 					<effect type="slide" start="0" end="-320" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7626,6 +7672,7 @@
 					<effect type="slide" start="0" end="-260" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7668,6 +7715,7 @@
 					<effect type="slide" start="0" end="-200" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7710,7 +7758,8 @@
 					<effect type="slide" start="0" end="-140" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
-                    <control type="image">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2)]]</visible>
+					<control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
                     </control>
@@ -7752,6 +7801,7 @@
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7794,6 +7844,7 @@
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7836,6 +7887,7 @@
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7878,6 +7930,7 @@
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7920,6 +7973,7 @@
 					<effect type="slide" start="0" end="500" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -7962,6 +8016,7 @@
 					<effect type="slide" start="0" end="320" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -8004,6 +8059,7 @@
 					<effect type="slide" start="0" end="260" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -8046,6 +8102,7 @@
 					<effect type="slide" start="0" end="200" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
@@ -8088,6 +8145,7 @@
 					<effect type="slide" start="0" end="140" time="800" tween="cubic" easing="inout" />
 				</animation>
                 <control type="group">
+                    <visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1)]]</visible>
                     <control type="image">
                         <include>MultiplexMoviesThumb</include>
 						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)] | [[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
