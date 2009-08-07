@@ -3,6 +3,7 @@
 # generated files 
 thumbs.db
 Thumbs.db 
+/extras/temp_pic.png
 
 # fonts 
 /fonts
@@ -11,3 +12,5 @@ Thumbs.db
 XBMCTex720.bat
 XBMCTex768.bat
 XBMCTex.exe
+
+
