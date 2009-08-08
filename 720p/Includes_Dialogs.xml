@@ -2,7 +2,7 @@
 
 	<include name="Dialogs_Group">
 		<posx>386</posx>
-		<posy>600</posy>
+		<posy>300</posy>
 		<width>509</width>
 		<height>91</height>	
 	</include>
