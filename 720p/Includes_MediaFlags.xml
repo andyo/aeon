@@ -21,6 +21,15 @@
 		<colordiffuse>FFe1e1e1</colordiffuse>	
         <textcolor>FFe1e1e1</textcolor>
 	</include>
+	<include name="ShowcaseMediaFlagLightShadeSoundChannel">
+		<colordiffuse>90000000</colordiffuse>	
+        <textcolor>90000000</textcolor>
+	</include>
+	
+	<include name="ShowcaseMediaFlagNightShadeSoundChannel">
+		<colordiffuse>90e9e9e9</colordiffuse>	
+        <textcolor>90e9e9e9</textcolor>
+	</include>
     
 	<include name="ListMediaFlagNightShade">
 		<colordiffuse>99000000</colordiffuse>	
@@ -28,9 +37,20 @@
 	</include>
 
 	<include name="Furniture_ShowcaseMediaFlagsVars">
-		<posy>647</posy>
-		<width>110</width>
-		<height>72</height>
+		<posy>655</posy>
+		<width>90</width>
+		<height>61</height>
+		<include>Animation_CommonFade</include>
+		<include>Animation_HideShowcase</include>
+		<include>Animation_HideMultiplex</include>
+		<visible>Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(54)</visible>
+		<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagLightShade</include>
+		<include condition="Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagNightShade</include>
+	</include>
+	<include name="Furniture_ShowcaseMediaFlagsVarsSoundChannel">
+		<posy>663</posy>
+		<width>70</width>
+		<height>44</height>
 		<include>Animation_CommonFade</include>
 		<include>Animation_HideShowcase</include>
 		<include>Animation_HideMultiplex</include>
@@ -345,13 +365,13 @@
 		<control type="image" id="92">
 			<include>Furniture_MovieInfoFlagSound</include>
 			<texture>flags/info/dd51.png</texture>
-			<visible>[substring(listitem.audiochannels,6) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3)]</visible>
+			<visible>substring(listitem.audiochannels,6) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3) | substring(listitem.audiocodec,adpcm]</visible>
 		</control>
 
 		<control type="image" id="92">
 			<include>Furniture_MovieInfoFlagSound</include>
 			<texture>flags/info/dd71.png</texture>
-			<visible>[substring(listitem.audiochannels,8) + substring(listitem.audiocodec,ac-3)] | [substring(listitem.audiochannels,8) + substring(listitem.audiocodec,ac3)]</visible>
+			<visible>substring(listitem.audiochannels,8) + [substring(listitem.audiocodec,ac-3) + substring(listitem.audiocodec,ac3) | substring(listitem.audiocodec,adpcm]</visible>
 		</control>
 
 		<control type="image" id="92">
@@ -375,13 +395,19 @@
 		<control type="image" id="92">
 			<include>Furniture_MovieInfoFlagSound</include>
 			<texture>flags/info/dolby20.png</texture>
-			<visible>substring(listitem.audiochannels,2) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3)]</visible>
+			<visible>substring(listitem.audiochannels,2) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3) | substring(listitem.audiocodec,adpcm)]</visible>
 		</control>
 
 		<control type="image" id="92">
 			<include>Furniture_MovieInfoFlagSound</include>
 			<texture>flags/info/dolbypro.png</texture>
-			<visible>substring(listitem.audiochannels,3) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3)]</visible>
+			<visible>substring(listitem.audiochannels,3) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3) | substring(listitem.audiocodec,adpcm]</visible>
+		</control>
+
+		<control type="image" id="92">
+			<include>Furniture_MovieInfoFlagSound</include>
+			<texture>flags/info/aac20.png</texture>
+			<visible>substring(listitem.audiochannels,2) + substring(listitem.audiocodec,aac)</visible>
 		</control>
 
 		<control type="image" id="92">
@@ -644,7 +670,7 @@
         <control type="group">
                 <visible>Skin.HasSetting(debugflags)</visible>
                 <control type="label">
-                <posx>550</posx>
+                <posx>150</posx>
                 <posy>8</posy>
                 <width>430</width>
                 <height>13</height>
@@ -653,7 +679,7 @@
                 <label>SOURCE TAG: /$INFO[listitem.filename,,]</label>
             </control>
             <control type="label">
-                <posx>550</posx>
+                <posx>150</posx>
                 <posy>23</posy>
                 <width>430</width>
                 <height>13</height>
@@ -662,7 +688,7 @@
                 <label>AUDIO CHANNELS: /$INFO[ListItem.audiochannels,flags/sound/,.png]</label>
             </control>
             <control type="label">
-                <posx>550</posx>
+                <posx>150</posx>
                 <posy>38</posy>
                 <width>430</width>
                 <height>13</height>
@@ -671,7 +697,7 @@
                 <label>AUDIO CODEC: /$INFO[ListItem.audiocodec,flags/sound/,.png]</label>
             </control>
             <control type="label">
-                <posx>850</posx>
+                <posx>450</posx>
                 <posy>23</posy>
                 <width>400</width>
                 <height>13</height>
@@ -680,7 +706,7 @@
                 <label>STUDIO TAG: /$INFO[listitem.studio,flags/studios/,.png]</label>
             </control>
             <control type="label">
-                <posx>850</posx>
+                <posx>450</posx>
                 <posy>38</posy>
                 <width>400</width>
                 <height>13</height>
@@ -689,8 +715,8 @@
                 <label>LABEL TAG: /$INFO[ListItem.Property(Label),flags/recordlabels/,.png]</label>
             </control>
             <control type="label">
-                <posx>850</posx>
-                <posy>68</posy>
+                <posx>450</posx>
+                <posy>53</posy>
                 <width>400</width>
                 <height>13</height>
                 <font>Font_MultiplexInfoLabel</font>
@@ -698,13 +724,22 @@
                 <label>VIDEO CODEC TAG: $INFO[listitem.VideoCodec,flags/codec/,.png]</label>
             </control>
             <control type="label">
-                <posx>850</posx>
+                <posx>150</posx>
                 <posy>68</posy>
                 <width>400</width>
                 <height>13</height>
                 <font>Font_MultiplexInfoLabel</font>
                 <textcolor>FFFFFFFF</textcolor>		
-                <label>FILM CERT: $INFO[listitem.mpaa/,,.png]</label>
+                <label>FILM CERT: $INFO[listitem.mpaa,,.png]</label>
+            </control>
+            <control type="label">
+                <posx>450</posx>
+                <posy>68</posy>
+                <width>400</width>
+                <height>13</height>
+                <font>Font_MultiplexInfoLabel</font>
+                <textcolor>FFFFFFFF</textcolor>		
+                <label>RES: $INFO[ListItem.VideoAspect,,.png]</label>
             </control>
         </control>
 
@@ -748,7 +783,7 @@
             </control>				
 
 			<control type="group">
-				<posx>120</posx>
+				<posx>130</posx>
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
 					<texture>flags/studios/default.png</texture>
@@ -777,7 +812,7 @@
 			</control>
 
 			<control type="group">
-				<posx>230</posx>
+				<posx>220</posx>
                 <!-- UK Certification -->
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
@@ -887,7 +922,21 @@
 			</control>
 
 			<control type="group">
-				<posx>940</posx>
+				<posx>320</posx>
+				<posy>5</posy>		
+				<control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>flags/screen/defaultscreen.png</texture>
+					<visible>!Control.IsVisible(84) + !Skin.HasSetting(nodefaultflags)</visible>
+				</control>
+				<control type="image" id="84">
+					<include>Furniture_ShowcaseMediaFlagsVarsSoundChannel</include>
+					<texture>$INFO[ListItem.VideoAspect,flags/screen/aspect_,.png]</texture>
+				</control>				
+			</control>
+
+			<control type="group">
+				<posx>920</posx>
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
 					<texture>flags/screen/defaultscreen.png</texture>
@@ -898,20 +947,23 @@
 					<texture>$INFO[ListItem.VideoResolution,flags/screen/,p.png]</texture>
 				</control>				
 			</control>
-			<control type="group">
-				<posx>1050</posx>		
+111111
 				<control type="image">
-					<include>Furniture_ShowcaseMediaFlagsVars</include>
-					<texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
-                    <animation effect="fade" start="30" end="30" time="0" condition="Control.HasFocus(54) | Control.HasFocus(57) | Control.HasFocus(59)" pulse="true">Conditional</animation>
-				</control>
-				<control type="image">
+				<posx>1020</posx>		
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
 					<texture>$INFO[ListItem.AudioCodec,flags/sound/,.png]</texture>
+					<visible>!Skin.HasSetting(nodefaultflags)</visible>
 				</control>	
-            </control>
+				<control type="image">
+				<posx>1100</posx>		
+					<include>Furniture_ShowcaseMediaFlagsVarsSoundChannel</include>
+					<texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
+<!--                    <animation effect="fade" start="30" end="30" time="0" condition="Control.HasFocus(54) | Control.HasFocus(57) | Control.HasFocus(59)" pulse="true">Conditional</animation> -->
+					<visible>!Skin.HasSetting(nodefaultflags)</visible>
+				</control>
+
 			<control type="group">
-				<posx>1160</posx>
+				<posx>1180</posx>
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
 					<texture>flags/source/defaultsource.png</texture>
@@ -947,11 +999,11 @@
 					<texture>flags/source/divx.png</texture>
 					<visible>substring(listitem.filename,divx)</visible>
 				</control>				
-                <control type="image" id="81">
+                <control type="image" id="82">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
                     <texture>$INFO[ListItem.Property(Label),flags/recordlabels/,.png]</texture>
                 </control>
-                <control type="image" id="81">
+                <control type="image" id="82">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
                     <texture>$INFO[ListItem.Property(AlbumLabel),flags/recordlabels/,.png]</texture>
                 </control>
