@@ -270,7 +270,6 @@
 	<include name="MultiplexLabelVars">
         <align>center</align>
         <aligny>center</aligny>
-		<include>Animation_CommonFade</include>
 		<include>Animation_HideMultiplex</include>
 		<visible>![Control.HasFocus(60) | Control.HasFocus(94)]</visible>
 	</include>
@@ -10978,8 +10977,9 @@
                 <control type="label">
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                     <include>MultiplexMainLabel</include>
-                    <visible>[Container.Content(movies) + !Window.IsActive(24)] | Container.Content(tvshows) | [!Container.Content(movies) | Window.IsActive(24)] | [!Container.Content(movies) + !Container.Content(seasons) + !Container.Content(episodes) + Window.IsActive(25)]</visible>
+                    <visible>[!Container.Content(seasons) + !Container.Content(episodes)]</visible>
                 </control>
+
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <include>MultiplexDetailLabel</include>
