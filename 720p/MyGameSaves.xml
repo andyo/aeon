@@ -1,6 +1,7 @@
 <window id="35">
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<views>550,50</views>
 	<controls>
 
 	<control type="multiimage">

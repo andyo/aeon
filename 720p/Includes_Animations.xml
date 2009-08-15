@@ -1,7 +1,5 @@
 <includes>
-
 <!-- Common -->
-
 	<include name="Animation_CommonFade">
 		<animation effect="fade" time="200">Visible</animation>
 		<animation effect="fade" time="200">Hidden</animation>
@@ -89,10 +87,7 @@
 	</include>
 	
 	<!-- Home page -->
-	
-
 <!-- Dialogs -->
-
 	<include name="Animation_DialogPopup">
 		<animation type="WindowOpen" reversible="false">
 			<effect type="zoom" start="80" end="100" center="640,360" delay="200" easing="out" tween="back" time="300" />
@@ -129,7 +124,6 @@
 			<effect type="zoom" start="130" end="80" center="640,360" easing="in" tween="back" time="300" />
 			<effect type="fade" start="100" end="0" time="300" />
 		</animation>
-
 		<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(keyboardzoom)">
 			<effect type="zoom" start="80" end="100" center="640,360" delay="200" easing="out" tween="back" time="300" />
 			<effect type="fade" delay="200" start="0" end="100" time="300" />
@@ -149,31 +143,37 @@
 	</include>	
 	
 	<!-- Media windows -->
-
 	<include name="Animation_ViewChangeFade">
 		<animation effect="fade" start="100" end="0" time="400" condition="Window.IsActive(603)">Conditional</animation>	
 	</include>
 	
- 		<include name="Animation_MediaMenuSlideVertical">
-            <animation type="Conditional" condition="[[Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(59)] + [[Control.HasFocus(52) | Control.HasFocus(54) | Control.HasFocus(59)] | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(197) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113)]] | [Control.IsVisible(50) + [Control.HasFocus(50) | Control.HasFocus(61)]] | [Control.IsVisible(51) + [Control.HasFocus(51) | Control.HasFocus(195) | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604)]] | [Control.IsVisible(58) + Control.HasFocus(58)] | [Control.IsVisible(57) + [Control.HasFocus(57) | Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604)]] | [Control.IsVisible(53) + [Control.HasFocus(53) | Control.HasFocus(71) | Control.HasFocus(85)]] | [Control.IsVisible(59) + Control.HasFocus(59)] | [Control.IsVisible(20) | Control.IsVisible(21)] + [Control.HasFocus(20) | Control.HasFocus(21)]">
-				<effect type="slide" end="-150,0" time="400" easing="in" tween="cubic" />
-				<effect type="fade" start="100" end="0" time="400" />
-			</animation>
-		</include>
-		
-		<include name="Animation_ViewMenuSlideVertical">
-			<animation effect="slide" start="-300,0" end="0,0" tween="cubic" easing="out" delay="400" time="500">WindowOpen</animation>
-			<animation type="WindowClose">
-				<effect type="slide" start="0,0" end="-300,0" time="300" />
-				<effect type="fade" start="100" end="0" time="400" />
-			</animation>
+	<include name="Animation_MediaMenuSlide">
+		<animation type="Conditional" condition="[Control.IsVisible(54) + [Control.HasFocus(54) | Control.HasFocus(2505)]] | [Control.IsVisible(52) + [Control.HasFocus(52) | Control.HasFocus(60) | Control.HasFocus(197) | Control.HasFocus(110)]] | [Control.IsVisible(552) + [Control.HasFocus(552) | Control.HasFocus(60) | Control.HasFocus(197) | Control.HasFocus(110)]] | [Control.IsVisible(50) + [Control.HasFocus(50) | Control.HasFocus(61)]] | [Control.IsVisible(550) + [Control.HasFocus(550) | Control.HasFocus(61)]] | [Control.IsVisible(551) + [Control.HasFocus(551) | Control.HasFocus(61)]] | [Control.IsVisible(51) + [Control.HasFocus(51) | Control.HasFocus(195) | Control.HasFocus(60)]] | [Control.IsVisible(58) + Control.HasFocus(58)] | [Control.IsVisible(57) + [Control.HasFocus(57) | Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60)]] | [Control.IsVisible(53) + [Control.HasFocus(53) | Control.HasFocus(71) | Control.HasFocus(85)]] | [Control.IsVisible(59) + Control.HasFocus(59)]">
+			<effect type="slide" end="0,-57" time="400" easing="in" tween="cubic" />
+			<effect type="fade" start="100" end="0" time="400" />
+		</animation>
+	</include>
 
-			<animation effect="slide" start="-300,0" end="0,0" tween="cubic" easing="out" delay="400" time="500">Visible</animation>
-			<animation type="Hidden">
-				<effect type="slide" start="0,0" end="-300,0" time="300" />
-				<effect type="fade" start="100" end="0" time="400" />
-			</animation>
-		</include>
+	<include name="Animation_MediaMenuSlideVertical">
+		<animation type="Conditional" condition="[[Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(551)] + [[Control.HasFocus(52) | Control.HasFocus(552) | Control.HasFocus(551)] | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(197) | Control.HasFocus(110) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113)]] | [[Control.IsVisible(50) | Control.IsVisible(550)] + [Control.HasFocus(50) | Control.HasFocus(550) | Control.HasFocus(61)]] | [Control.IsVisible(51) + [Control.HasFocus(51) | Control.HasFocus(195) | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604)]] | [Control.IsVisible(58) + Control.HasFocus(58)] | [Control.IsVisible(57) + [Control.HasFocus(57) | Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604)]] | [Control.IsVisible(53) + [Control.HasFocus(53) | Control.HasFocus(71) | Control.HasFocus(85)]] | [Control.IsVisible(551) + Control.HasFocus(551)] | [Control.IsVisible(20) | Control.IsVisible(21)] + [Control.HasFocus(20) | Control.HasFocus(21)]">
+			<effect type="slide" end="-150,0" time="400" easing="in" tween="cubic" />
+			<effect type="fade" start="100" end="0" time="400" />
+		</animation>
+	</include>
+	
+	<include name="Animation_ViewMenuSlideVertical">
+		<animation effect="slide" start="-300,0" end="0,0" tween="cubic" easing="out" delay="400" time="500">WindowOpen</animation>
+		<animation type="WindowClose">
+			<effect type="slide" start="0,0" end="-300,0" time="300" />
+			<effect type="fade" start="100" end="0" time="400" />
+		</animation>
+
+		<animation effect="slide" start="-300,0" end="0,0" tween="cubic" easing="out" delay="400" time="500">Visible</animation>
+		<animation type="Hidden">
+			<effect type="slide" start="0,0" end="-300,0" time="300" />
+			<effect type="fade" start="100" end="0" time="400" />
+		</animation>
+	</include>
 
 	<include name="Animation_WindowRSS">
 		<animation type="visible" reversible="false">
@@ -220,15 +220,15 @@
 </include>
 
 <include name="Animation_BackgroundFade">
-    <animation effect="fade" time="500" condition="![Window.Previous(4) + Container(300).HasFocus(9)] + ![[Window.Previous(12) | Window.Previous(13) | Window.Previous(14) | Window.Previous(15) | Window.Previous(16) | Window.Previous(17) | Window.Previous(18) | Window.Previous(19) | Window.Previous(34)] + Container(300).HasFocus(9)] + !Window.Previous(2600)">WindowOpen</animation>
-    <animation effect="fade" time="200" condition="![Window.Next(4) + Container(300).HasFocus(9)] + ![[Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(34)] + ControlGroup(943).HasFocus()] + !Window.Next(2600)">WindowClose</animation>
-    <animation effect="fade" time="800">Visible</animation>
-    <animation effect="fade" delay = "300" time="800" condition="![Window.IsActive(2001) | Window.IsActive(2003)]">Hidden</animation>
+	<animation effect="fade" time="500" condition="![Window.Previous(4) + Container(300).HasFocus(9)] + ![[Window.Previous(12) | Window.Previous(13) | Window.Previous(14) | Window.Previous(15) | Window.Previous(16) | Window.Previous(17) | Window.Previous(18) | Window.Previous(19) | Window.Previous(34)] + Container(300).HasFocus(9)] + !Window.Previous(2600)">WindowOpen</animation>
+	<animation effect="fade" time="200" condition="![Window.Next(4) + Container(300).HasFocus(9)] + ![[Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(34)] + ControlGroup(943).HasFocus()] + !Window.Next(2600)">WindowClose</animation>
+	<animation effect="fade" time="800">Visible</animation>
+	<animation effect="fade" delay = "300" time="800" condition="![Window.IsActive(2001) | Window.IsActive(2003)]">Hidden</animation>
 </include>
 
 <include name="Animation_WelcomeFade">
-    <animation effect="fade" time="2000">WindowOpen</animation>
-    <animation effect="fade" time="2000">WindowClose</animation>
+	<animation effect="fade" time="2000">WindowOpen</animation>
+	<animation effect="fade" time="2000">WindowClose</animation>
 </include>
 
 <include name="Animation_WindowBackgroundFade">
@@ -242,8 +242,6 @@
 	<animation effect="fade" start="0" delay="4000" end="100" time="400">WindowOpen</animation>
 	<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 </include>
-
-
 
 <include name="Animation_HideShowcase">
 	<animation type="Conditional" reversible="true" condition="Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)">
@@ -264,7 +262,6 @@
 </include>
 
 <!-- Settings and Assistant -->
-
 <include name="Animation_SettingsInternalPanel">
 	<animation effect="fade" time="125">Visible</animation>
 	<animation effect="fade" time="125">Hidden</animation>
@@ -280,10 +277,10 @@
 </include>
 
 <include name="Animation_TutorialFade">
-    <animation effect="fade" time="200">WindowOpen</animation>
-    <animation effect="fade" time="200">WindowClose</animation>
-    <animation effect="fade" time="200">Visible</animation>
-    <animation effect="fade" time="200">Hidden</animation>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<animation effect="fade" time="200">Visible</animation>
+	<animation effect="fade" time="200">Hidden</animation>
 </include>
 
 <include name="Animation_MultiplexFocusZoom">

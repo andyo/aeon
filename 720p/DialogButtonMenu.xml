@@ -144,7 +144,15 @@
 				<description>Shutdown</description>
 				<label>31208</label>
 				<include>Objects_ContextMenuButton</include>
-				<onclick>Shutdown</onclick>
+				<onclick>Skin.Reset(music)</onclick>
+				<onclick>Skin.Reset(recenttv)</onclick>
+				<onclick>Skin.Reset(videomovies)</onclick>
+				<onclick>Skin.Reset(videotv)</onclick>
+				<onclick>Skin.Reset(videogenres)</onclick>
+				<onclick>Skin.Reset(favourites)</onclick>
+				<onclick>Skin.Reset(musicgenres)</onclick>
+				<onclick>Skin.Reset(submenu)</onclick>
+				<onclick>XBMC.Shutdown()</onclick>
 			</control>				
 
 		</control>

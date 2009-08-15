@@ -319,13 +319,13 @@
 
 	<!-- stendec Time mod -->
  		<control type="label">
-    			<posx>20</posx>
-    			<posy>37</posy>
-    			<width>87</width>
-    			<height>25</height>
-	    		<font>Font_OSDTime</font>
-    			<textcolor>60ffffff</textcolor>
-    			<label>$LOCALIZE[555]</label>
+				<posx>20</posx>
+				<posy>37</posy>
+				<width>87</width>
+				<height>25</height>
+				<font>Font_OSDTime</font>
+				<textcolor>60ffffff</textcolor>
+				<label>$LOCALIZE[555]</label>
 	  	</control>
  		<control type="label">
 			<posx>20</posx>

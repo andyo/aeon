@@ -9,8 +9,8 @@
 	<controls>
 
 	<control type="group">
-        <visible>!VideoPlayer.IsFullscreen</visible>
-        <include>Dialogs_Group</include>
+		<visible>!VideoPlayer.IsFullscreen</visible>
+		<include>Dialogs_Group</include>
 		<include>Dialogs_Tablet</include>
 
 		<control type="progress" id="404">

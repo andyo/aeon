@@ -1,5 +1,4 @@
 <includes>
-
 <include file="Defaults.xml" />
 <include file="Includes_Animations.xml" />
 <include file="Includes_Backgrounds.xml" />
@@ -8,26 +7,23 @@
 <include file="Includes_Objects.xml" />
 <include file="Includes_Furniture.xml" />
 <include file="Includes_Colours.xml" />
-<include file="Includes_MainMenu.xml" />
+<include file="Includes_Menu.xml" />
 <include file="Includes_Reset.xml" />
 <include file="Includes_Assistant_LabelsButtons.xml" />
 <include file="Includes_Settings_LabelsButtons.xml" />
 <include file="Includes_Settings_Presets.xml" />
 <include file="Includes_Settings_Welcome.xml" />
 <include file="Includes_MediaFlags.xml" />
-<!-- <include file="Includes_ViewSelect.xml" /> -->
-<include file="Includes_Submenu.xml" />
 <include file="Viewtype_Showcase.xml" />
 <include file="Viewtype_StripShow.xml" />
 <include file="Viewtype_Multiplex.xml" />
-<include file="Viewtype_MultiplexOld.xml" />
+<!--<include file="Viewtype_MultiplexOld.xml" /> -->
 <include file="Viewtype_List.xml" />
 <include file="Viewtype_Wall.xml" />
 
 <include file="Includes_Widget_Weather.xml" />
-<include file="Includes_genre.xml" /><!-- <<<<<< Add this -->
+<include file="Includes_genre.xml" />
 <include file="Includes_VerticalMenu.xml" />
-<!-- <include file="Includes_HorizontalMenu.xml" /> -->
 <include file="Includes_Filemanager.xml" />
 
 <!-- Text colours ================================== -->
@@ -115,7 +111,7 @@
 		<font>objects</font>
 		<textcolor>59FFFFFF</textcolor>
 		<include>common-fade-quick</include>
-		<visible>!Control.IsVisible(51) + !Control.IsVisible(57) + !Control.IsVisible(58) + !Control.IsVisible(53)</visible>
+		<visible>!Control.IsVisible(51) + !Control.IsVisible(57) + !Control.IsVisible(552) + !Control.IsVisible(551) + !Control.IsVisible(58) + !Control.IsVisible(53)</visible>
 	</control>
 </include>
 

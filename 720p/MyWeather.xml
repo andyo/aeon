@@ -14,8 +14,8 @@
 
 	<include>Furniture_Time</include>
 	<!--include>Furniture_WindowRSS</include-->
-    <include condition="!StringCompare(Weather.Plugin,weather.com plus)">Objects_WeatherPopup</include>
-    <include condition="StringCompare(Weather.Plugin,weather.com plus)">Widget_Weather</include>
+	<include condition="!StringCompare(Weather.Plugin,weather.com plus)">Objects_WeatherPopup</include>
+	<include condition="StringCompare(Weather.Plugin,weather.com plus)">Widget_Weather</include>
 	<control type="button" id="50">
 		<description>invisible button to trigger view options</description>
 		<texturefocus>-</texturefocus>
@@ -28,15 +28,15 @@
 	</control>
 	<control type="group" id="9000">
 		<animation type="focus">
-		    	<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 			<effect type="fade" start="0" end="100" time="300" />
 		</animation>
 		<animation type="Conditional" condition="Control.HasFocus(50)">
-		    	<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 			<effect type="fade" start="100" end="0" time="200" />
 		</animation>
 		<include>common-fade-quick</include>
-		<animation effect="slide" start="0,0" end="0,200" time="200" tween="cubic" easing="inout" condition="!Skin.HasSetting(weatherpopupweek)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,100" time="200" tween="cubic" easing="inout" condition="!Skin.HasSetting(weatherpopupweek)">Conditional</animation>
 		<control type="group">
 			<posx>502</posx>
 			<include condition="StringCompare(Weather.Plugin,weather.com plus)">Objects_Weather_Plugin</include>
@@ -60,7 +60,6 @@
 				<texture>dialogs/context_middle.png</texture>
 			</control>
 			<control type="image">
-				<visible>!StringCompare(Weather.Plugin,weather.com plus)</visible>
 				<description>background bottom image</description>
 				<posx>0</posx>
 				<posy>176</posy>

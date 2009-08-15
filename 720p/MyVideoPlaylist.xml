@@ -1,6 +1,7 @@
 <window id="28">
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<views>550,50,552,551,57,53</views>
 	<controls>
 
 	<control type="multiimage">
@@ -10,7 +11,7 @@
 
 	<control type="largeimage">
 		<include>FullscreenDimensions</include>
-        <visible>Control.IsVisible(57) + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomoviefanart)</visible>
+		<visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(52) | Control.IsVisible(53)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomoviefanart)</visible>
 		<include>Animation_FanartFade</include>
 		<fadetime>400</fadetime>		
 		<texture>$INFO[listitem.property(fanart_image)]</texture>
@@ -21,8 +22,8 @@
 	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
-        <include>Furniture_FloorBack</include>
-        <include>Furniture_shadow</include>
+		<include>Furniture_FloorBack</include>
+		<include>Furniture_shadow</include>
 		
 		<include>Furniture_MediaPanel</include>
 		<!--<include>Objects_ShowcaseMenuPanel</include>-->
@@ -36,8 +37,8 @@
 		
 
 		
-<!--        <include>HorizontalVideoPlayListMenu</include>		-->
-        <include>VerticalMenu</include>		
+<!--		<include>HorizontalVideoPlayListMenu</include>		-->
+		<include>VerticalMenu</include>		
 
 	</control>
 

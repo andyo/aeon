@@ -1,6 +1,7 @@
 <window id="501">
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<views>550,50,57,53</views>
 	<controls>
 	
 	<control type="multiimage">
@@ -8,29 +9,28 @@
 		<include>BackgroundVarsMusic</include>
 	</control>
 	
-	<control type="largeimage" id="102">
-		<include>FullscreenDimensions</include>
-        <visible>!Control.IsVisible(103) + Control.IsVisible(57) + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
-		<fadetime>400</fadetime>
-		<texture>$INFO[listitem.property(fanart_image)]</texture>
-		<include>Animation_FanartFade</include>
-	</control>
-
-	<control type="largeimage" id="103">
-		<include>FullscreenDimensions</include>
-        <visible>Control.IsVisible(57) + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
-		<fadetime>400</fadetime>
-		<texture>$INFO[container.property(fanart_image)]</texture>
-		<include>Animation_FanartFade</include>
-	</control>	
+		<control type="largeimage" id="102">
+			<include>FullscreenDimensions</include>
+			<visible>!Control.IsVisible(103) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+			<fadetime>400</fadetime>
+			<texture>$INFO[listitem.property(fanart_image)]</texture>
+			<include>Animation_FanartFade</include>
+		</control>
+		<control type="largeimage" id="103">
+			<include>FullscreenDimensions</include>
+			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+			<fadetime>400</fadetime>
+			<texture>$INFO[container.property(fanart_image)]</texture>
+			<include>Animation_FanartFade</include>
+		</control>
 
 	<include>Furniture_WallBackground</include>
 	
 	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
-        <include>Furniture_FloorBack</include>
-        <include>Furniture_shadow</include>
+		<include>Furniture_FloorBack</include>
+		<include>Furniture_shadow</include>
 		<!--<include>Objects_ShowcaseMenuPanel</include>-->
 
 		<include>Viewtype_Wall</include>
@@ -41,8 +41,8 @@
 		<include>Furniture_WallRSS</include>		
 	
 
-<!--        <include>HorizontalMusicSongsMenu</include>		-->
-        <include>VerticalMenu</include>		
+<!--		<include>HorizontalMusicSongsMenu</include>		-->
+		<include>VerticalMenu</include>		
 	</control>
 
 	<include>Furniture_DarkGradient</include>	

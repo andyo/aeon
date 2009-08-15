@@ -485,7 +485,7 @@
   <string id="31973">מיקום ספריית הסרטים</string>
   <string id="31974">זרימה דינמית</string>
   <string id="31975">אפשר את כל התצוגות לסדרות</string>
-  <string id="31976">השתמש ב MULTIPLEX "כהה" ישן</string>
+  <string id="31976">MUSIC GRAPHIC VISUALISER</string>
   <string id="31977">איקון ז'אנר סרטים מופעל/מכובה</string>
   <string id="31978">איקון גיבוי ז'אנר סרטים מופעל/מכובה</string>
   <string id="31979">רקע ז'אנר סרטים מופעל/מכובה</string>
@@ -494,4 +494,10 @@
   <string id="31983">הפעל עידכוני RSS של SHOWMIX</string>
 	<string id="31984">POSTER</string>
 	<string id="31985">WIDE</string>
+	<string id="31986">ADD AND REMOVE FAVORITES/WIDGETS TO HOME MENU</string>	
+	<string id="31987">NOTE: WHEN DONE CHANGES, XBMC WILL QUIT</string>	
+	<string id="31988">XBMC will quit automatically when leaving this menu</string>	
+	<string id="31989">ADD NEW MENU</string>	
+	<string id="31990">VIEW & RENAME</string>	
+	<string id="31988">CHANGE</string>	
 </strings>

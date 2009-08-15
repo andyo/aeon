@@ -1,4 +1,4 @@
-<includes>
+	<includes>
 <!-- Showcase -->
 	<include name="movie_ShowcaseThumbDimensions_mod">
 		<posx>49</posx>
@@ -32,7 +32,7 @@
 		<control type="image">
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-	        	<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
+				<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
 		</control>
 	</include>
 	<include name="music_genre_Showcase_default_mod">
@@ -321,8 +321,8 @@
 
 	<include name="movie_genre_Showcase_image_ref_mod">
 		<include>movie_ShowcaseThumbDimensions_ref_mod</include>
-        	<colordiffuse>d0FFFFFF</colordiffuse>
-        	<aspectratio scalediffuse="false">scale</aspectratio>
+			<colordiffuse>d0FFFFFF</colordiffuse>
+			<aspectratio scalediffuse="false">scale</aspectratio>
 		<visible>Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
 	</include>
 	<include name="music_genre_Showcase_image_ref_mod">
@@ -518,21 +518,21 @@
 <include name="genre_Showcase_ref_20">
 	<control type="image">
 		<posx>49</posx>
-        	<posy>260</posy>
-        	<width>173</width>
-       		<height>254</height>
+			<posy>260</posy>
+			<width>173</width>
+	   		<height>254</height>
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
-        	<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
 		<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
 		<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
 		<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>
 	</control>
 	<control type="image">
 		<posx>49</posx>
-        	<posy>260</posy>
-        	<width>173</width>
-       		<height>254</height>
+			<posy>260</posy>
+			<width>173</width>
+	   		<height>254</height>
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
 		<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
@@ -545,12 +545,12 @@
 <include name="genre_Showcase_ref_21">
 	<control type="image">
 		<posx>49</posx>
-        	<posy>260</posy>
-        	<width>173</width>
-       		<height>254</height>
+			<posy>260</posy>
+			<width>173</width>
+	   		<height>254</height>
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
-        	<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
 		<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
 	</control>
 </include>
@@ -576,7 +576,7 @@
 		<control type="image">
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 			<include>movie_genre_Multiplex_image_mod</include>
-	        	<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
+				<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
 		</control>
 	</include>
 	<include name="music_genre_Multiplex_default_mod">
@@ -586,7 +586,7 @@
 			<texture diffuse="thumbs/cdcover_mask.png">defaultAlbumCover.png</texture>
 		</control>
 	</include>
-    
+	
 	<include name="genre_Multiplex_-11">
 		<include condition="Window.IsActive(25)">movie_genre_Multiplex_default_mod</include>
 		<include condition="Window.IsActive(502)">music_genre_Multiplex_default_mod</include>
@@ -754,7 +754,7 @@
 			<include>music_genre_Multiplex_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
 		</control>
-    </include>
+	</include>
 	<include name="genre_Multiplex_1">
 		<include condition="Window.IsActive(25)">movie_genre_Multiplex_default_mod</include>
 		<include condition="Window.IsActive(502)">music_genre_Multiplex_default_mod</include>
@@ -913,61 +913,61 @@
 	<include name="genre_Multiplex_20">
 		<control type="image">
 			<include>MultiplexIconDimensionsWrap</include>
-            <aspectratio scalediffuse="false">stretch</aspectratio>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
 			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)+Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
-            <include>Animation_MultiplexFocusZoom</include>					
+			<include>Animation_MultiplexFocusZoom</include>					
 		</control>
 		<control type="image">
 			<include>MultiplexIconDimensionsWrap</include>
-            <aspectratio scalediffuse="false">stretch</aspectratio>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
 			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
-            <include>Animation_MultiplexFocusZoom</include>					
+			<include>Animation_MultiplexFocusZoom</include>					
 		</control>
-        <control type="image">
-            <include>MultiplexIconDimensionsWrap</include>
-            <bordertexture border="-17">multiplex/multiplex_border.png</bordertexture>
-            <texture>common/blank.png</texture>
-            <include>Animation_MultiplexFocusZoom</include>					
+		<control type="image">
+			<include>MultiplexIconDimensionsWrap</include>
+			<bordertexture border="-17">multiplex/multiplex_border.png</bordertexture>
+			<texture>common/blank.png</texture>
+			<include>Animation_MultiplexFocusZoom</include>					
 			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
-        </control>
-        <control type="image">
-            <include>MultiplexIconDimensionsWrap</include>
-            <texture>multiplex/multiplex_glass.png</texture>
-            <aspectratio scalediffuse="false">stretch</aspectratio>
-            <include>Animation_MultiplexFocusZoom</include>						
+		</control>
+		<control type="image">
+			<include>MultiplexIconDimensionsWrap</include>
+			<texture>multiplex/multiplex_glass.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<include>Animation_MultiplexFocusZoom</include>						
 			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
-        </control>				
+		</control>				
 	</include>
 
 	<include name="genre_Multiplex_21">
 		<control type="image">
 			<include>MultiplexIconDimensionsWrap</include>
-            <aspectratio scalediffuse="false">stretch</aspectratio>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
 			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 		</control>
 		<control type="image">
 			<include>MultiplexIconDimensionsWrap</include>
-            <aspectratio scalediffuse="false">stretch</aspectratio>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
 			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
 		</control>
-        <control type="image">
-            <include>MultiplexIconDimensionsWrap</include>
-            <bordertexture border="-17">multiplex/multiplex_border.png</bordertexture>
-            <texture>common/blank.png</texture>
+		<control type="image">
+			<include>MultiplexIconDimensionsWrap</include>
+			<bordertexture border="-17">multiplex/multiplex_border.png</bordertexture>
+			<texture>common/blank.png</texture>
 			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
-        </control>
-        <control type="image">
-            <include>MultiplexIconDimensionsWrap</include>
-            <texture>multiplex/multiplex_glass.png</texture>
-            <aspectratio scalediffuse="false">stretch</aspectratio>
+		</control>
+		<control type="image">
+			<include>MultiplexIconDimensionsWrap</include>
+			<texture>multiplex/multiplex_glass.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
-        </control>				
+		</control>				
 	</include>
 
 	<include name="genre_Multiplex_22">
@@ -991,8 +991,8 @@
 <!-- Multiplex reflection -->
 	<include name="movie_genre_Multiplex_image_ref_mod">
 		<include>MultiplexMoviesThumbReflectionDimensions</include>
-        	<colordiffuse>d0FFFFFF</colordiffuse>
-        	<aspectratio scalediffuse="false">stretch</aspectratio>
+			<colordiffuse>d0FFFFFF</colordiffuse>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
 		<visible>Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
 	</include>
 	<include name="music_genre_Multiplex_image_ref_mod">
@@ -1283,26 +1283,26 @@
 
 <include name="genre_Multiplex_ref_20">
 	<control type="image">
-        <include>MultiplexIconDimensionsWrapReflect</include>
+		<include>MultiplexIconDimensionsWrapReflect</include>
 		<aspectratio scalediffuse="false">stretch</aspectratio>
-        <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+		<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
 		<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
-        <include>Animation_MultiplexFocusZoom</include>					
+		<include>Animation_MultiplexFocusZoom</include>					
 	</control>
 	<control type="image">
-        <include>MultiplexIconDimensionsWrapReflect</include>
+		<include>MultiplexIconDimensionsWrapReflect</include>
 		<aspectratio scalediffuse="false">stretch</aspectratio>
 		<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
 		<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)+Container.Content(genres)+Skin.HasSetting(moviegenre_on)</visible>
-        <include>Animation_MultiplexFocusZoom</include>					
+		<include>Animation_MultiplexFocusZoom</include>					
 	</control>
 </include>
 
 <include name="genre_Multiplex_ref_21">
 	<control type="image">
-        <include>MultiplexIconDimensionsWrapReflect</include>
+		<include>MultiplexIconDimensionsWrapReflect</include>
 		<aspectratio scalediffuse="false">stretch</aspectratio>
-        <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+		<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
 		<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + Container.Content(genres) + Skin.HasSetting(moviegenre_on)</visible>
 	</control>
 </include>
@@ -1350,7 +1350,7 @@
 <!-- List -->
 	<include name="mod_moviegenre_list1">
 
-        	<control type="image">
+			<control type="image">
 			<visible>Container.Content(genres)+!Window.IsActive(502)+Skin.HasSetting(moviegenre_on)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 			<width>346</width>
@@ -1372,7 +1372,7 @@
 
 	</include>
 	<include name="mod_moviegenre_list2">
-        	<control type="image">
+			<control type="image">
 			<visible>Container.Content(genres)+!Window.IsActive(502)+Skin.HasSetting(moviegenre_on)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 			<posy>513</posy>
@@ -1395,9 +1395,6 @@
 
 
 <!-- music genre  -->
-
-
-
 <!-- Multiplex End -->
 	<include name="mod_musicgenre_Multiplex1">
 		<control type="image">
@@ -1428,10 +1425,17 @@
 
 <!-- List -->
 	<include name="mod_musicgenre_list1">
-
+		<control type="image">
+			<width>346</width>
+			<height>346</height>
+			<fadetime>400</fadetime>
+			<aspectratio scalediffuse="false">stretch</aspectratio>			
+			<texture diffuse="list/list_musicicon_mask.png">$INFO[ListItem.Icon]</texture>
+			<bordertexture border="-30">list/list_musicicon_frame.png</bordertexture>
+			<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
+		</control>
 		<control type="image">
 			<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
-			<posy>165</posy>			
 			<width>346</width>
 			<height>346</height>
 			<fadetime>400</fadetime>
@@ -1439,10 +1443,9 @@
 			<texture diffuse="list/list_musicicon_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
 			<bordertexture border="-32">list/list_musicicon_frame.png</bordertexture>
 		</control>
-
 	</include>
-	<include name="mod_musicgenre_list2">
 
+	<include name="mod_musicgenre_list2">
 		<control type="image">
 			<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
 			<posy>513</posy>

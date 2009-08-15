@@ -1,6 +1,7 @@
 <window id="20">
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<views>550,50,57,53</views>
 	<controls>
 	
 	<control type="multiimage">
@@ -13,8 +14,8 @@
 	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
-        <include>Furniture_FloorBack</include>
-        <include>Furniture_shadow</include>
+		<include>Furniture_FloorBack</include>
+		<include>Furniture_shadow</include>
 		
 		<include>Furniture_MediaPanel</include>
 		<!--<include>Objects_ShowcaseMenuPanel</include>-->
@@ -25,15 +26,10 @@
 		<include>Furniture_Time</include>	
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
-
-
-
-<!--        <include>HorizontalScriptsMenu</include>		-->
-        <include>VerticalMenu</include>		
+		<include>VerticalMenu</include>		
 	</control>
 
 	<include>Furniture_DarkGradient</include>	
-	<!--<include>ViewChange</include>-->
 	<!--<include>Background_ContextBlack</include>-->
 	<include>Furniture_Debug</include>
 </controls>

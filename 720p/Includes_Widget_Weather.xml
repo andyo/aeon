@@ -26,11 +26,11 @@
 	</include>
 	<include name="Widget_WeatherCurrentInfo">
         <posx>20</posx>
-        <posy>75</posy>
-        <width>150</width>
+        <posy>102</posy>
+        <width>175</width>
         <height>220</height>
         <align>left</align>
-        <aligny>center</aligny>
+        <aligny>top</aligny>
         <font>Font_WeatherLabel</font>
         <textcolor>c0FFFFFF</textcolor>					
 	</include>
@@ -43,13 +43,30 @@
 		<font>Font_WeatherTemp</font>
 		<textcolor>FFFFFFFF</textcolor>
 	</include>
+	<include name="Widget_WeatherTempWideHigh">
+		<posy>65</posy>
+		<width>96</width>
+		<height>89</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_WeatherTemp</font>
+		<textcolor>high</textcolor>
+	</include>
+	<include name="Widget_WeatherTempWideLow">
+		<posy>65</posy>
+		<width>96</width>
+		<height>89</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_WeatherTemp</font>
+		<textcolor>low</textcolor>
+	</include>
 	<include name="Widget_WeatherIconWide">
 		<posy>169</posy>
 		<height>108</height>
         <aspectratio>keep</aspectratio>
         <include>Widget_WeatherBackWide</include>
 	</include>		
-
 	<include name="Widget_WeatherBackNarrow">
         <posx>0</posx>
 		<posy>0</posy>
@@ -61,7 +78,7 @@
 		<width>105</width>
         <include>Widget_WeatherTitleWide</include>
 	</include>
-	<include name="Widget_WeatherSubtitleNarrow">
+	<include name="Widget_WeatherSubitleNarrow">
         <posy>40</posy>
         <font>Font_WeatherLabel</font>
         <include>Widget_WeatherTitleNarrow</include>
@@ -76,21 +93,21 @@
 		<posx>0</posx>
 		<posy>195</posy>
 		<width>125</width>
-		<height>30</height>
+		<height>40</height>
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>Font_WidgetLarge</font>
-		<textcolor>FFFFFFFF</textcolor>
+		<textcolor>high</textcolor>
 	</include>
 	<include name="Widget_WeatherTempLowNarrow">
 		<posx>0</posx>
 		<posy>240</posy>
 		<width>125</width>
-		<height>30</height>
+		<height>40</height>
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>Font_WidgetSmall</font>
-		<textcolor>C0FFFFFF</textcolor>
+		<textcolor>low</textcolor>
 	</include>
 	
 	<include name="Widget_Weather4DayGroup">
@@ -103,22 +120,21 @@
         <include>Conditions_Weather</include>				
         <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 	</include>		
-	<include name="Widget_Weather10DayGroup">
-        <width>220</width>
-        <include>Conditions_Weather</include>				
-        <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-	</include>		
-	<include name="Widget_Weather10DayGroup2">
-        <width>200</width>
-        <include>Conditions_Weather</include>				
-        <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-	</include>		
 	<include name="Widget_WeatherWeekendGroup">
         <width>290</width>
-        <include>Conditions_Weather</include>				
+        <include>Conditions_Weather</include>
         <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 	</include>		
-
+	<include name="Widget_Weather10DayGroup">
+		<width>220</width>
+		<include>Conditions_Weather</include>				
+		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+	</include>		
+	<include name="Widget_Weather10DayGroup2">
+		<width>200</width>
+		<include>Conditions_Weather</include>				
+		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+	</include>		
 
     <!-- Weather widget main group -->
     <include name="Widget_Weather">
@@ -131,13 +147,13 @@
 			<animation effect="slide" start="0,0" end="25,0" time="0" condition="Skin.HasSetting(WeatherWidget7Day)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="25,20" time="0" condition="Window.IsVisible(2600)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="52,0" time="0" condition="Skin.HasSetting(WeatherWidget36Hour) | Skin.HasSetting(WeatherWidgetWeekend)">Conditional</animation>
-            <animation effect="slide" start="0,-20" end="0,-20" time="0" condition="!Skin.HasSetting(highertime)">Conditional</animation>
+			<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="!Skin.HasSetting(highertime)">Conditional</animation>
 			<animation effect="zoom" start="100" end="90" time="200" center="640,80" condition="Player.HasAudio + Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 			<!-- Current conditions-->
             <control type="group">
-				<animation effect="fade" start="0" end="100" delay="1500" time="400">Visible</animation>
+				<animation effect="fade" start="0" end="100" delay="500" time="400">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
                 <include>Conditions_Weather</include>				
 				<control type="image">
@@ -145,28 +161,36 @@
                     <texture>widgets/widget_weather_background_wide.png</texture>	
 					<include>Widget_WeatherBackWide</include>
 				</control>
+				<control type="image">
+                    <posx>-10</posx>
+                    <posy>-10</posy>
+                    <width>48</width>
+                    <height>48</height>
+                    <colordiffuse>$INFO[Window(Weather).Property(Alerts.Color)]</colordiffuse>
+                    <texture>widgets/weather_alert.png</texture>
+                    <visible>!IsEmpty(Window(Weather).Property(Alerts))</visible>
+				</control>
                 <control type="image">
                     <posy>78</posy>
 					<width>283</width>
 					<height>216</height>
                     <colordiffuse>60FFFFFF</colordiffuse>
-                    <texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>	
+					<texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
 					<include>Widget_WeatherIconWide</include>
-                    <visible>!Skin.HasSetting(Weather_ani)</visible>
-				</control>
+					<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 <control type="multiimage">
-                    <description>Weather image</description>
-                    <posy>78</posy>
+                    <posy>70</posy>
 					<width>283</width>
 					<height>216</height>
                     <colordiffuse>60FFFFFF</colordiffuse>
-                    <imagepath>icon/$INFO[Weather.FanartCode]/</imagepath>
-                    <timeperimage>175</timeperimage>
-                    <randomize>false</randomize>
-                    <fadetime>0</fadetime>
+					<imagepath>icon/$INFO[Weather.FanartCode]/</imagepath>
+					<timeperimage>175</timeperimage>
+					<randomize>false</randomize>
+					<fadetime>0</fadetime>
 					<include>Widget_WeatherIconWide</include>
-                    <visible>Skin.HasSetting(Weather_ani)</visible>
-                </control>
+					<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
 				<control type="label">
 					<width>263</width>
                     <include>Widget_WeatherTitleWide</include>
@@ -177,18 +201,6 @@
                     <include>Widget_WeatherSubtitleWide</include>
 					<label>$INFO[Window(Weather).Property(Updated)]</label>
 				</control>	
-                <control type="label">
-                    <visible>Skin.HasSetting(debug)</visible>				
-                    <posx>10</posx>
-                    <posy>75</posy>
-                    <width>280</width>
-                    <height>20</height>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <font>Font_WeatherLabel</font>
-                    <textcolor>ffFFFFFF</textcolor>					
-                    <label>Fanart code: $INFO[Weather.FanartCode]</label>
-                </control>
 				<control type="label">
                     <include>Widget_WeatherCurrentInfo</include>
 					<label>$LOCALIZE[31008][CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]$LOCALIZE[404]</label>
@@ -198,17 +210,18 @@
 					<align>right</align>
 					<textcolor>FFFFFFFF</textcolor>					
                     <include>Widget_WeatherCurrentInfo</include>
-					<label>$INFO[Window(Weather).Property(Current.Temperature)][CR]$INFO[Window(Weather).Property(Current.FeelsLike)][CR]$INFO[Window(Weather).Property(Current.Humidity)][CR]$INFO[Window(Weather).Property(Current.UVIndex)][CR]$INFO[Window(Weather).Property(Current.DewPoint)][CR]$INFO[Window(Weather).Property(Current.Wind)]</label>
+					<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][CR]$INFO[Window(Weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][CR]$INFO[Window(Weather).Property(Current.Humidity)][CR]$INFO[Window(Weather).Property(Current.UVIndex)][CR]$INFO[Window(Weather).Property(Current.DewPoint)]$INFO[System.TemperatureUnits][CR]$INFO[Window(Weather).Property(Current.Wind)]</label>
 				</control>						
 			</control>
             <!-- 4 day -->
             <control type="grouplist">
                 <posx>312</posx>
                 <orientation>horizontal</orientation>
-                <visible>!Skin.HasSetting(WeatherWidget36Hour) + !Skin.HasSetting(WeatherWidgetWeekend) + !Skin.HasSetting(WeatherWidget7Day) + !Window.IsVisible(2600) + !IsEmpty(Window(Weather).Property(Day3.Title)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
+                <!--Container(945).HasFocus(40)-->
+				<visible>!Skin.HasSetting(WeatherWidget36Hour) + !Skin.HasSetting(WeatherWidgetWeekend) + !Skin.HasSetting(WeatherWidget7Day) + !Window.IsVisible(2600) + !IsEmpty(Window(Weather).Property(Day3.Title)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
                 <control type="group">
                     <include>Widget_Weather4DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="550" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackWide</include>
                     </control>
@@ -218,43 +231,31 @@
                     </control>
                     <control type="label">
                         <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideHigh</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Day0.HighTemp)]</label>
                     </control>
                     <control type="label">
                         <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideLow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Day0.LowTemp)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Day0.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                        <label>dir: icon\$INFO[Window(Weather).Property(Day0.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Day0.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconWide</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <include>Widget_Weather4DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="600" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackWide</include>
                     </control>
@@ -264,43 +265,31 @@
                     </control>
                     <control type="label">
                         <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideHigh</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Day1.HighTemp)]</label>
                     </control>
                     <control type="label">
                         <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideLow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Day1.LowTemp)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Day1.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Day1.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Day1.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconWide</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <include>Widget_Weather4DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="650" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackWide</include>
                     </control>
@@ -310,43 +299,31 @@
                     </control>
                     <control type="label">
                         <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideHigh</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Day2.HighTemp)]</label>
                     </control>
                     <control type="label">
                         <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideLow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Day2.LowTemp)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Day2.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                        <include>Widget_WeatherIconWide</include>
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Day2.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Day2.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconWide</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <include>Widget_Weather4DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="700" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackWide</include>
                     </control>
@@ -356,50 +333,37 @@
                     </control>
                     <control type="label">
                         <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideHigh</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Day3.HighTemp)]</label>
                     </control>
                     <control type="label">
                         <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideLow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Day3.LowTemp)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Day3.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Day3.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Day3.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconWide</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
             </control>
-
             <!-- Weekend -->
             <control type="grouplist">
                 <posx>312</posx>
                 <orientation>horizontal</orientation>
-                <visible>Skin.HasSetting(WeatherWidgetWeekend) + !IsEmpty(Window(Weather).Property(Weekend.3.OutlookIcon)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
+				<visible>Skin.HasSetting(WeatherWidgetWeekend) + !IsEmpty(Window(Weather).Property(Weekend.3.OutlookIcon)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
                 <control type="group">
                     <include>Widget_WeatherWeekendGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="550" time="400">Visible</animation>				
                     <control type="image">
                         <width>266</width>
                         <include>Widget_WeatherBackWide</include>
@@ -412,47 +376,34 @@
                     <control type="label">
                         <posx>0</posx>
                         <width>130</width>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideHigh</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Weekend.1.HighTemperature)]</label>
                     </control>
                     <control type="label">
                         <posx>135</posx>
                         <width>130</width>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideLow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Weekend.1.LowTemperature)]</label>
                     </control>
                     <control type="image">
                         <width>266</width>
                         <texture>$INFO[Window(Weather).Property(Weekend.1.OutlookIcon)]</texture>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
+   						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
                     <control type="multiimage">
                         <width>266</width>
-                        <imagepath>icon\$INFO[Window(Weather).Property(Weekend.1.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <imagepath>\icon\$INFO[Window(Weather).Property(Weekend.1.FanartCode)]</imagepath>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <width>266</width>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Weekend.1.FanartCode)]</label>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
                     </control>
                 </control>
                 <control type="group">
                     <include>Widget_WeatherWeekendGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="600" time="400">Visible</animation>				
                     <control type="image">
                         <width>266</width>
                         <include>Widget_WeatherBackWide</include>
@@ -465,47 +416,34 @@
                     <control type="label">
                         <posx>0</posx>
                         <width>130</width>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideHigh</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Weekend.2.HighTemperature)]</label>
                     </control>
                     <control type="label">
                         <posx>135</posx>
                         <width>130</width>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideLow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Weekend.2.LowTemperature)]</label>
                     </control>
                     <control type="image">
                         <width>266</width>
                         <texture>$INFO[Window(Weather).Property(Weekend.2.OutlookIcon)]</texture>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
+   						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
                     <control type="multiimage">
                         <width>266</width>
-                        <imagepath>icon\$INFO[Window(Weather).Property(Weekend.2.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <imagepath>\icon\$INFO[Window(Weather).Property(Weekend.2.FanartCode)]</imagepath>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <width>266</width>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Weekend.2.FanartCode)]</label>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
                     </control>
                 </control>
                 <control type="group">
                     <include>Widget_WeatherWeekendGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="650" time="400">Visible</animation>				
                     <control type="image">
                         <width>266</width>
                         <include>Widget_WeatherBackWide</include>
@@ -518,42 +456,29 @@
                     <control type="label">
                         <posx>0</posx>
                         <width>130</width>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideHigh</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Weekend.3.HighTemperature)]</label>
                     </control>
                     <control type="label">
                         <posx>135</posx>
                         <width>130</width>
-                        <include>Widget_WeatherTempWide</include>
+                        <include>Widget_WeatherTempWideLow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Weekend.3.LowTemperature)]</label>
                     </control>
                     <control type="image">
                         <width>266</width>
                         <texture>$INFO[Window(Weather).Property(Weekend.3.OutlookIcon)]</texture>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
+   						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
                     <control type="multiimage">
                         <width>266</width>
-                        <imagepath>icon\$INFO[Window(Weather).Property(Weekend.3.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <imagepath>\icon\$INFO[Window(Weather).Property(Weekend.3.FanartCode)]</imagepath>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <width>266</width>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Weekend.3.FanartCode)]</label>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
                     </control>
                 </control>
             </control>
@@ -562,10 +487,10 @@
             <control type="grouplist">
                 <posx>312</posx>
                 <orientation>horizontal</orientation>
-                <visible>Skin.HasSetting(WeatherWidget36Hour) + !IsEmpty(Window(Weather).Property(36Hour.3.Heading)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
+				<visible>Skin.HasSetting(WeatherWidget36Hour) + !IsEmpty(Window(Weather).Property(36Hour.3.Heading)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
                 <control type="group">
                     <include>Widget_WeatherWeekendGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="550" time="400">Visible</animation>				
                     <control type="image">
                         <width>266</width>
                         <include>Widget_WeatherBackWide</include>
@@ -592,34 +517,21 @@
                         <width>266</width>
                         <texture>$INFO[Window(Weather).Property(36Hour.1.OutlookIcon)]</texture>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
                     </control>
                     <control type="multiimage">
                         <width>266</width>
-                        <imagepath>icon\$INFO[Window(Weather).Property(36Hour.1.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <imagepath>\icon\$INFO[Window(Weather).Property(36Hour.1.FanartCode)]</imagepath>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <width>266</width>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(36Hour.1.FanartCode)]</label>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
                     </control>
                 </control>
                 <control type="group">
                     <include>Widget_WeatherWeekendGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="600" time="400">Visible</animation>				
                     <control type="image">
                         <width>266</width>
                         <include>Widget_WeatherBackWide</include>
@@ -646,34 +558,21 @@
                         <width>266</width>
                         <texture>$INFO[Window(Weather).Property(36Hour.2.OutlookIcon)]</texture>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
                     </control>
                     <control type="multiimage">
                         <width>266</width>
-                        <imagepath>icon\$INFO[Window(Weather).Property(36Hour.2.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <imagepath>\icon\$INFO[Window(Weather).Property(36Hour.2.FanartCode)]</imagepath>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <width>266</width>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(36Hour.2.FanartCode)]</label>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
                     </control>
                 </control>
                 <control type="group">
                     <include>Widget_WeatherWeekendGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="650" time="400">Visible</animation>				
                     <control type="image">
                         <width>266</width>
                         <include>Widget_WeatherBackWide</include>
@@ -700,29 +599,16 @@
                         <width>266</width>
                         <texture>$INFO[Window(Weather).Property(36Hour.3.OutlookIcon)]</texture>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
                     </control>
                     <control type="multiimage">
                         <width>266</width>
-                        <imagepath>icon\$INFO[Window(Weather).Property(36Hour.3.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
+                        <imagepath>\icon\$INFO[Window(Weather).Property(36Hour.3.FanartCode)]</imagepath>				
                         <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>40</posy>
-                        <width>266</width>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(36Hour.3.FanartCode)]</label>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
                     </control>
                 </control>
             </control>
@@ -731,10 +617,10 @@
             <control type="grouplist">
                 <posx>294</posx>
                 <orientation>horizontal</orientation>
-                <visible>Skin.HasSetting(WeatherWidget7Day) + !IsEmpty(Window(Weather).Property(Daily.7.Date)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
+				<visible>Skin.HasSetting(WeatherWidget7Day) + !IsEmpty(Window(Weather).Property(Daily.7.Date)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
                 <control type="group">
                     <include>Widget_Weather7DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="550" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackNarrow</include>
                     </control>
@@ -743,7 +629,7 @@
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.1.ShortDay)]</label>
                     </control>
                     <control type="label">
-                        <include>Widget_WeatherSubtitleNarrow</include>
+                        <include>Widget_WeatherSubitleNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.1.Date)]</label>
                     </control>
                     <control type="label">
@@ -755,35 +641,23 @@
                         <include>Widget_WeatherTempLowNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.1.LowTemperature)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.1.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.1.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconNarrow</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Daily.1.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconNarrow</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <include>Widget_Weather7DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1650" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="600" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackNarrow</include>
                     </control>
@@ -792,7 +666,7 @@
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.2.ShortDay)]</label>
                     </control>
                     <control type="label">
-                        <include>Widget_WeatherSubtitleNarrow</include>
+                        <include>Widget_WeatherSubitleNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.2.Date)]</label>
                     </control>
                     <control type="label">
@@ -804,34 +678,23 @@
                         <include>Widget_WeatherTempLowNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.2.LowTemperature)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</texture>				
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.2.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.2.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconNarrow</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Daily.2.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconNarrow</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <include>Widget_Weather7DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="650" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackNarrow</include>
                     </control>
@@ -840,7 +703,7 @@
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.3.ShortDay)]</label>
                     </control>
                     <control type="label">
-                        <include>Widget_WeatherSubtitleNarrow</include>
+                        <include>Widget_WeatherSubitleNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.3.Date)]</label>
                     </control>
                     <control type="label">
@@ -852,35 +715,23 @@
                         <include>Widget_WeatherTempLowNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.3.LowTemperature)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.3.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.3.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.3.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.3.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconNarrow</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Daily.3.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconNarrow</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <include>Widget_Weather7DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1750" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="700" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackNarrow</include>
                     </control>
@@ -889,7 +740,7 @@
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.4.ShortDay)]</label>
                     </control>
                     <control type="label">
-                        <include>Widget_WeatherSubtitleNarrow</include>
+                        <include>Widget_WeatherSubitleNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.4.Date)]</label>
                     </control>
                     <control type="label">
@@ -901,35 +752,23 @@
                         <include>Widget_WeatherTempLowNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.4.LowTemperature)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.4.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.4.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconNarrow</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Daily.4.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconNarrow</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <include>Widget_Weather7DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="750" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackNarrow</include>
                     </control>
@@ -938,7 +777,7 @@
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.5.ShortDay)]</label>
                     </control>
                     <control type="label">
-                        <include>Widget_WeatherSubtitleNarrow</include>
+                        <include>Widget_WeatherSubitleNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.5.Date)]</label>
                     </control>
                     <control type="label">
@@ -950,35 +789,23 @@
                         <include>Widget_WeatherTempLowNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.5.LowTemperature)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.5.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.5.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.5.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.5.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconNarrow</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Daily.5.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconNarrow</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <include>Widget_Weather7DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1850" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="800" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackNarrow</include>
                     </control>
@@ -987,7 +814,7 @@
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.6.ShortDay)]</label>
                     </control>
                     <control type="label">
-                        <include>Widget_WeatherSubtitleNarrow</include>
+                        <include>Widget_WeatherSubitleNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.6.Date)]</label>
                     </control>
                     <control type="label">
@@ -999,35 +826,23 @@
                         <include>Widget_WeatherTempLowNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.6.LowTemperature)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.6.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.6.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.6.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.6.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconNarrow</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Daily.6.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconNarrow</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <include>Widget_Weather7DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
+                    <animation effect="fade" start="0" end="100" delay="850" time="400">Visible</animation>				
                     <control type="image">
                         <include>Widget_WeatherBackNarrow</include>
                     </control>
@@ -1036,7 +851,7 @@
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.7.ShortDay)]</label>
                     </control>
                     <control type="label">
-                        <include>Widget_WeatherSubtitleNarrow</include>
+                        <include>Widget_WeatherSubitleNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.7.Date)]</label>
                     </control>
                     <control type="label">
@@ -1048,547 +863,565 @@
                         <include>Widget_WeatherTempLowNarrow</include>
                         <label fallback="-">$INFO[Window(Weather).Property(Daily.7.LowTemperature)]</label>
                     </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconNarrow</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.7.FanartCode)]</label>
-                    </control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>
+						<include>Widget_WeatherIconNarrow</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>
+					</control>
+					<control type="multiimage">
+						<imagepath>\icon\$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
+						<include>Widget_WeatherIconNarrow</include>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>
+					</control>
                 </control>
             </control>
 
-        <!-- 10 days (week) -->
-            <control type="grouplist">
-                <posx>312</posx>
-                <orientation>horizontal</orientation>
-                <visible>Window.IsVisible(2600) + !IsEmpty(Window(Weather).Property(Daily.10.Date)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup</include>
+		<!-- 10 days (week) -->
+			<control type="grouplist">
+				<posx>312</posx>
+				<orientation>horizontal</orientation>
+				<visible>Window.IsVisible(2600) + !IsEmpty(Window(Weather).Property(Daily.10.Date)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
+				<control type="group">
+					<include>Widget_Weather10DayGroup</include>
+					<animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.1.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.1.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.1.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.1.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.1.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.1.FanartCode)]</label>
+					</control>
+				</control>
+				<control type="group">
+					<include>Widget_Weather10DayGroup</include>
+					<animation effect="fade" start="0" end="100" delay="1650" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.2.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.2.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.2.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.2.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</texture>				
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.2.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.2.FanartCode)]</label>
+					</control>
+				</control>
+				<control type="group">
+					<include>Widget_Weather10DayGroup</include>
+					<animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.3.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.3.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.3.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.3.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.3.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.3.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.3.FanartCode)]</label>
+					</control>
+				</control>
+				<control type="group">
+					<include>Widget_Weather10DayGroup</include>
+					<animation effect="fade" start="0" end="100" delay="1750" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.4.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.4.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.4.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.4.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.4.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.4.FanartCode)]</label>
+					</control>
+				</control>
+			</control>
+			<control type="grouplist">
+				<posx>-40</posx>
+				<posy>300</posy>
+				<orientation>horizontal</orientation>
+				<visible>Window.IsVisible(2600) + !IsEmpty(Window(Weather).Property(Daily.10.Date)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
+				<control type="group">
+					<include>Widget_Weather10DayGroup2</include>
+					<animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.5.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.5.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.5.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.5.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.5.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.5.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.5.FanartCode)]</label>
+					</control>
+				</control>
+				<control type="group">
+					<include>Widget_Weather10DayGroup2</include>
+					<animation effect="fade" start="0" end="100" delay="1850" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.6.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.6.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.6.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.6.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.6.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.6.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.6.FanartCode)]</label>
+					</control>
+				</control>
+				<control type="group">
+					<include>Widget_Weather10DayGroup2</include>
+					<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.7.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.7.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.7.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.7.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.7.FanartCode)]</label>
+					</control>
+				</control>
+				<control type="group">
+					<include>Widget_Weather10DayGroup2</include>
+					<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.8.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.8.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.8.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.8.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.8.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.8.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.8.FanartCode)]</label>
+					</control>
+				</control>
+				<control type="group">
+					<include>Widget_Weather10DayGroup2</include>
+					<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.9.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.9.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.9.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.9.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.9.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.9.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.9.FanartCode)]</label>
+					</control>
+				</control>
+				<control type="group">
+					<include>Widget_Weather10DayGroup2</include>
+					<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
+					<control type="image">
+						<include>Widget_WeatherBackWide</include>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherTitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.10.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<include>Widget_WeatherSubtitleWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.10.Date)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.10.HighTemperature)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Widget_WeatherTempWide</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Daily.10.LowTemperature)]</label>
+					</control>
+					<control type="image">
+						<texture>$INFO[Window(Weather).Property(Daily.10.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<imagepath>icon\$INFO[Window(Weather).Property(Daily.10.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+					<control type="label">
+						<visible>Skin.HasSetting(debug)</visible>				
+						<posy>60</posy>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_WeatherLabel</font>
+						<textcolor>ffFFFFFF</textcolor>					
+						<include>Widget_WeatherIconWide</include>
+						<visible>Skin.HasSetting(Weather_ani)</visible>	
+						<label>dir: icon\$INFO[Window(Weather).Property(Daily.10.FanartCode)]</label>
+					</control>
+				</control>
+			</control>
+            <!-- Alerts -->
+<!--            <control type="group">
+                <posx>310</posx>
+                <visible>[!IsEmpty(Window(Weather).Property(Alerts)) + IsEmpty(Window(Home).Property(WeatherOverride))] | StringCompare(Window(Home).Property(WeatherOverride),alerts)</visible>
+				<control type="image">
+                    <include>Conditions_Weather</include>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>900</width>
+                    <height>287</height>
+                    <texture border="20">widgets/widget_weather_background_alert.png</texture>	
+                    <animation effect="fade" start="0" end="100" delay="550" time="400">Visible</animation>				
+                    <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				</control>
+                <control type="textbox">
+                    <include>Conditions_Weather</include>
+                    <posx>10</posx>
+                    <posy>10</posy>
+                    <width>880</width>
+                    <height>267</height>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <pagecontrol>-</pagecontrol>
+                    <scrolltime>200</scrolltime>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                    <spinheight>-5</spinheight>
+                    <info>Window(Weather).Property(Alerts)</info>
+                    <autoscroll time="2000" delay="10000" repeat="15000">VisibleChange</autoscroll>
                     <animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.1.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.1.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.1.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.1.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.1.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.1.FanartCode)]</label>
-                    </control>
+                    <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
                 </control>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1650" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.2.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.2.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.2.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.2.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</texture>				
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.2.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.2.FanartCode)]</label>
-                    </control>
-                </control>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.3.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.3.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.3.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.3.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.3.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.3.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.3.FanartCode)]</label>
-                    </control>
-                </control>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup</include>
-                    <animation effect="fade" start="0" end="100" delay="1750" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.4.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.4.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.4.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.4.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.4.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.4.FanartCode)]</label>
-                    </control>
-                </control>
-            </control>
-            <control type="grouplist">
-                <posx>-40</posx>
-                <posy>300</posy>
-                <orientation>horizontal</orientation>
-                <visible>Window.IsVisible(2600) + !IsEmpty(Window(Weather).Property(Daily.10.Date)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup2</include>
-                    <animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.5.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.5.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.5.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.5.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.5.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.5.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.5.FanartCode)]</label>
-                    </control>
-                </control>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup2</include>
-                    <animation effect="fade" start="0" end="100" delay="1850" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.6.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.6.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.6.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.6.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.6.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.6.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.6.FanartCode)]</label>
-                    </control>
-                </control>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup2</include>
-                    <animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.7.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.7.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.7.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.7.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.7.FanartCode)]</label>
-                    </control>
-                </control>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup2</include>
-                    <animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.8.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.8.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.8.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.8.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.8.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.8.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.8.FanartCode)]</label>
-                    </control>
-                </control>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup2</include>
-                    <animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.9.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.9.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.9.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.9.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.9.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.9.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.9.FanartCode)]</label>
-                    </control>
-                </control>
-                <control type="group">
-                    <include>Widget_Weather10DayGroup2</include>
-                    <animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>				
-                    <control type="image">
-                        <include>Widget_WeatherBackWide</include>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherTitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.10.ShortDay)]</label>
-                    </control>
-                    <control type="label">
-                        <include>Widget_WeatherSubtitleWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.10.Date)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.10.HighTemperature)]</label>
-                    </control>
-                    <control type="label">
-                        <posx>99</posx>
-                        <include>Widget_WeatherTempWide</include>
-                        <label fallback="-">$INFO[Window(Weather).Property(Daily.10.LowTemperature)]</label>
-                    </control>
-                    <control type="image">
-                        <texture>$INFO[Window(Weather).Property(Daily.10.OutlookIcon)]</texture>				
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>!Skin.HasSetting(Weather_ani)</visible>					
-                    </control>
-                    <control type="multiimage">
-                        <imagepath>icon\$INFO[Window(Weather).Property(Daily.10.FanartCode)]</imagepath>
-                        <timeperimage>75</timeperimage>
-                        <randomize>false</randomize>
-                        <fadetime>0</fadetime>
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>					
-                    </control>				
-                    <control type="label">
-                        <visible>Skin.HasSetting(debug)</visible>				
-                        <posy>60</posy>
-                        <height>20</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>Font_WeatherLabel</font>
-                        <textcolor>ffFFFFFF</textcolor>					
-                        <include>Widget_WeatherIconWide</include>
-                        <visible>Skin.HasSetting(Weather_ani)</visible>	
-                        <label>dir: icon\$INFO[Window(Weather).Property(Daily.10.FanartCode)]</label>
-                    </control>
-                </control>
-            </control>
-		</control>
+            </control>-->
+        </control>
     </include>
-
-
 </includes>

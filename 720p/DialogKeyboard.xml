@@ -1,6 +1,7 @@
 <window id="103">
 	<defaultcontrol>305</defaultcontrol>
 	<include>Animation_KeyboardPopup</include>	
+	<zorder>5</zorder>
 	<controls>
 
 	<control type="label" id="311">

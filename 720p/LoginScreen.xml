@@ -85,7 +85,7 @@
 				<info>ListItem.Icon</info>
 				<animation center="132,132" effect="zoom" start="100" end="110" time="600" tween="cubic" easing="out">Focus</animation>				
 			</control>				
- 		</focusedlayout>
+		</focusedlayout>
 	</control>
 	<control type="label">
 		<posx>0</posx>

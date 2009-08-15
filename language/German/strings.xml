@@ -573,11 +573,17 @@
 <!-- customisation strings added by azido -->
 
 	<string id="31975">FÜR TV-SERIEN ALLE ANSICHTEN FREISCHALTEN</string>
-	<string id="31976">BENUTZE DIE URSPRÜNGLICHE (DUNKLE) MULTIPLEX ANSICHT</string>
+	<string id="31976">MUSIC GRAPHIC VISUALISER</string>
 	<string id="31977">GRAFISCHE SYMBOLE FÜR FILM-GENRES BENUTZEN</string>
 	<string id="31978">STANDARDSYMBOL VERWENDEN, FALLS FILM-GENRE SYMBOL NICHT VERFÜGBAR IST</string>
 	<string id="31979">IN FILM-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
 	<string id="31980">GRAFISCHE SYMBOLE FÜR MUSIK-GENRES BENUTZEN</string>
 	<string id="31981">IN MUSIK-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
+	<string id="31986">ADD AND REMOVE FAVORITES/WIDGETS TO HOME MENU</string>	
+	<string id="31987">NOTE: WHEN DONE CHANGES, XBMC WILL QUIT</string>	
+	<string id="31988">XBMC will quit automatically when leaving this menu</string>	
+	<string id="31989">ADD NEW MENU</string>	
+	<string id="31990">VIEW & RENAME</string>	
+	<string id="31991">CHANGE</string>	
 
 </strings>

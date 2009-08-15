@@ -1,6 +1,7 @@
 <window id="503">
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<views>550,50</views>
 	<controls>
 
 	<control type="multiimage">
@@ -12,104 +13,89 @@
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
 		<include>Furniture_Time</include>
-        <include>Furniture_FloorBack</include>
-        <include>Furniture_shadow</include>
+		<include>Furniture_FloorBack</include>
+		<include>Furniture_shadow</include>
 		<include>Objects_ShowcaseMenuPanel</include>
 
-        <include>Furniture_vignette</include>
-        <include>Furniture_MediaPanel</include>
-
-
+		<include>Furniture_vignette</include>
+		<include>Furniture_MediaPanel</include>
 		<control type="group">
-	
 			<control type="image">
 				<include>Objects_MediaLogo</include>
 				<texture>windows/logo_music.png</texture>
 			</control>	
-	
 			<control type="label">
 				<include>Objects_MediaLabel</include>
 				<label>EDITOR</label>
 			</control>
-
 			<control type="grouplist" id="7000">
 				<include>Animation_MediaMenuSlide</include>
 				<include>Objects_MediaMenuGroup</include>
-
 				<control type="button" id="6">
 					<label>21385</label>
 					<include>Objects_MediaMenuButton</include>
 				</control>
-
 				<control type="button" id="7">
 					<label>190</label>
 					<include>Objects_MediaMenuButton</include>
 				</control>
-
 				<control type="button" id="8">
 					<label>192</label>
 					<include>Objects_MediaMenuButton</include>
 				</control>
-				
 				<include>Objects_MediaDebugButtons</include>				
 			</control>
-
 		</control>
 
 		<control type="group">
-            <control type="image">
-                <posx>40</posx>
-                <posy>130</posy>
-                <width>559</width>
-                <height>530</height>
-                <texture>list/listpanel_black.png</texture>
-            </control>
-            
-            <control type="image">
-                <posx>40</posx>
-                <posy>130</posy>
-                <width>559</width>
-                <height>530</height>
-                <texture>list/listpanel_back_noreflect.png</texture>
-            </control>	
-            <control type="image">
-                <posx>675</posx>
-                <posy>130</posy>
-                <width>559</width>
-                <height>530</height>
-                <texture>list/listpanel_black.png</texture>
-            </control>
-            
-            <control type="image">
-                <posx>675</posx>
-                <posy>130</posy>
-                <width>559</width>
-                <height>530</height>
-                <texture>list/listpanel_back_noreflect.png</texture>
-            </control>	
-
-            <control type="label">
-                <posx>60</posx>
-                <posy>145</posy>
-                <width>900</width>
-                <height>13</height>
-                <font>Font_FileBrowserHeading</font>
-                <textcolor>FFFFFFFF</textcolor>		
-                <label>$INFO[Container.FolderName]</label>
-                <visible>Skin.HasSetting(debug)</visible>
-            </control>    
-            <control type="label">
-                <posx>700</posx>
-                <posy>145</posy>
-                <width>900</width>
-                <height>13</height>
-                <font>Font_FileBrowserHeading</font>
-                <textcolor>FFFFFFFF</textcolor>		
-                <label>PLAYLIST</label>
-                <visible>Skin.HasSetting(debug)</visible>
-            </control>    
-    
-
+			<control type="image">
+				<posx>40</posx>
+				<posy>130</posy>
+				<width>559</width>
+				<height>530</height>
+				<texture>list/listpanel_black.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>130</posy>
+				<width>559</width>
+				<height>530</height>
+				<texture>list/listpanel_back_noreflect.png</texture>
+			</control>	
+			<control type="image">
+				<posx>675</posx>
+				<posy>130</posy>
+				<width>559</width>
+				<height>530</height>
+				<texture>list/listpanel_black.png</texture>
+			</control>
+			<control type="image">
+				<posx>675</posx>
+				<posy>130</posy>
+				<width>559</width>
+				<height>530</height>
+				<texture>list/listpanel_back_noreflect.png</texture>
+			</control>	
+			<control type="label">
+				<posx>60</posx>
+				<posy>145</posy>
+				<width>900</width>
+				<height>13</height>
+				<font>Font_FileBrowserHeading</font>
+				<textcolor>FFFFFFFF</textcolor>		
+				<label>$INFO[Container.FolderName]</label>
+				<visible>Skin.HasSetting(debug)</visible>
+			</control>	
+			<control type="label">
+				<posx>700</posx>
+				<posy>145</posy>
+				<width>900</width>
+				<height>13</height>
+				<font>Font_FileBrowserHeading</font>
+				<textcolor>FFFFFFFF</textcolor>		
+				<label>PLAYLIST</label>
+				<visible>Skin.HasSetting(debug)</visible>
+			</control>	
 			<control type="list" id="50">
 				<viewtype label="List">list</viewtype>
 				<posx>0</posx>
@@ -170,45 +156,45 @@
 			</control>
 
 			<control type="scrollbar" id="61">
-			  <description>My first scroll bar control</description>
-			  <posx>540</posx>
-			  <posy>195</posy>
-			  <width>67</width>
-			  <height>392</height>
-			  <texturesliderbackground>windows/scrollbarback_playlist.png</texturesliderbackground>
-			  <texturesliderbar>-</texturesliderbar>
-			  <texturesliderbarfocus>-</texturesliderbarfocus>
-			  <textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
-			  <textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
-			  <pulseonselect></pulseonselect>
-			  <orientation>vertical</orientation>
-			  <showonepage>true</showonepage>
-			  <onup>61</onup>
-			  <ondown>61</ondown>
-			  <onleft>50</onleft>
-			  <onright>62</onright>
-			  <include>Animation_CommonFade</include>
+				<description>My first scroll bar control</description>
+				<posx>540</posx>
+				<posy>195</posy>
+				<width>67</width>
+				<height>392</height>
+				<texturesliderbackground>windows/scrollbarback_playlist.png</texturesliderbackground>
+				<texturesliderbar>-</texturesliderbar>
+				<texturesliderbarfocus>-</texturesliderbarfocus>
+				<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+				<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+				<pulseonselect></pulseonselect>
+				<orientation>vertical</orientation>
+				<showonepage>true</showonepage>
+				<onup>61</onup>
+				<ondown>61</ondown>
+				<onleft>50</onleft>
+				<onright>62</onright>
+				<include>Animation_CommonFade</include>
 			</control>
 			
 			<control type="scrollbar" id="62">
-			  <description>My first scroll bar control</description>
-			  <posx>673</posx>
-			  <posy>195</posy>
-			  <width>67</width>
-			  <height>392</height>
-			  <texturesliderbackground>windows/scrollbarback_playlist.png</texturesliderbackground>
-			  <texturesliderbar>-</texturesliderbar>
-			  <texturesliderbarfocus>-</texturesliderbarfocus>
-			  <textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
-			  <textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
-			  <pulseonselect></pulseonselect>
-			  <orientation>vertical</orientation>
-			  <showonepage>true</showonepage>
-			  <onup>62</onup>
-			  <ondown>62</ondown>
-			  <onleft>61</onleft>
-			  <onright>100</onright>
-			  <include>Animation_CommonFade</include>
+				<description>My first scroll bar control</description>
+				<posx>673</posx>
+				<posy>195</posy>
+				<width>67</width>
+				<height>392</height>
+				<texturesliderbackground>windows/scrollbarback_playlist.png</texturesliderbackground>
+				<texturesliderbar>-</texturesliderbar>
+				<texturesliderbarfocus>-</texturesliderbarfocus>
+				<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+				<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+				<pulseonselect></pulseonselect>
+				<orientation>vertical</orientation>
+				<showonepage>true</showonepage>
+				<onup>62</onup>
+				<ondown>62</ondown>
+				<onleft>61</onleft>
+				<onright>100</onright>
+				<include>Animation_CommonFade</include>
 			</control>		
 			
 			<control type="list" id="100">

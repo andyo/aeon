@@ -16,7 +16,7 @@
 			<texture>dialogs/scan_backg.png</texture>		
 		</control>	
 	</include>
-    
+	
 	<include name="Dialogs_Tablet_Audio_Offset">
 		<control type="image">
 			<posx>0</posx>

@@ -545,7 +545,7 @@
 	<string id="31048">TRIGGER</string>
 	<string id="31049">AUTO</string>
 
-	<string id="31951">FAVS</string>  <!-- FAVOURITES -->
+	<string id="31951">FAVORITES</string>  <!-- FAVOURITES -->
 	<string id="31952">WINDOW</string>
 	<string id="31953">LIGHT</string>
 	<string id="31954">NIGHT</string>
@@ -573,10 +573,16 @@
 <!-- customisation strings added by azido -->
 
 	<string id="31975">UNLOCK ALL VIEWS FOR TV SHOWS</string>
-	<string id="31976">-X</string>
+	<string id="31976">MUSIC GRAPHIC VISUALISER</string>
 	<string id="31977">MOVIE GENRE ICONS ON/OFF</string>
 	<string id="31978">MOVIE GENRE FALLBACK ICON ON/OFF</string>
 	<string id="31979">MOVIE GENRE FANART IMAGE ON/OFF</string>
 	<string id="31980">MUSIC GENRE ICONS ON/OFF</string>
 	<string id="31981">MUSIC GENRE FANART IMAGE ON/OFF</string>	
+	<string id="31986">ADD AND REMOVE FAVORITES/WIDGETS TO HOME MENU</string>	
+	<string id="31987">NOTE: WHEN DONE CHANGES, XBMC WILL QUIT</string>	
+	<string id="31988">XBMC will quit automatically when leaving this menu</string>	
+	<string id="31989">ADD AND REMOVE</string>	
+	<string id="31990">VIEW & RENAME</string>	
+	<string id="31991">CHANGE</string>	
 </strings>

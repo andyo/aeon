@@ -1,40 +1,31 @@
 <window id="1">
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<views>550,50,57,53</views>
 	<controls>
 
 	<control type="multiimage">
 		<include>BackgroundVarsGlobal</include>
 		<include>BackgroundVarsGames</include>
 	</control>
-
 	<include>Furniture_WallBackground</include>
-	
 	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
-		
-        <include>Furniture_FloorBack</include>
-        <include>Furniture_shadow</include>
-
+		<include>Furniture_FloorBack</include>
+		<include>Furniture_shadow</include>
 		<!--<include>Objects_ShowcaseMenuPanel</include>-->
-
 		<include>Viewtype_Wall</include>
 		<include>Viewtype_Showcase</include>
 		<include>Viewtype_List</include>
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
-		
-
-		
-<!--        <include>HorizontalProgramsMenu</include>		-->
-        <include>VerticalMenu</include>		
+<!--		<include>HorizontalProgramsMenu</include>		-->
+		<include>VerticalMenu</include>		
 	</control>
-
 	<include>Furniture_DarkGradient</include>	
 	<!--<include>ViewChange</include>-->	
 	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
-	
 	</controls>
 </window>
