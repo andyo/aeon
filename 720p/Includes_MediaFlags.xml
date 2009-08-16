@@ -1,41 +1,17 @@
 <includes>
 
-	<include name="Furniture_EpisodeMediaFlagsVars">
-		<posy>655</posy>
-		<width>110</width>
-		<height>72</height>
-		<include>Animation_CommonFade</include>
-		<include>Animation_HideShowcase</include>
-		<include>Animation_HideMultiplex</include>
-		<visible>Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552)</visible>
-		<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagLightShade</include>
-		<include condition="Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagNightShade</include>
-	</include>
-
 	<include name="ShowcaseMediaFlagLightShade">
 		<colordiffuse>74000000</colordiffuse>	
 		<textcolor>74000000</textcolor>
 	</include>
-	
 	<include name="ShowcaseMediaFlagNightShade">
 		<colordiffuse>FFe1e1e1</colordiffuse>	
 		<textcolor>FFe1e1e1</textcolor>
 	</include>
-	<include name="ShowcaseMediaFlagLightShadeSoundChannel">
-		<colordiffuse>90000000</colordiffuse>	
-		<textcolor>90000000</textcolor>
-	</include>
-	
-	<include name="ShowcaseMediaFlagNightShadeSoundChannel">
-		<colordiffuse>90e9e9e9</colordiffuse>	
-		<textcolor>90e9e9e9</textcolor>
-	</include>
-	
 	<include name="ListMediaFlagNightShade">
 		<colordiffuse>99000000</colordiffuse>	
 		<textcolor>99000000</textcolor>
 	</include>
-
 	<include name="Furniture_ShowcaseMediaFlagsVars">
 		<posy>655</posy>
 		<width>90</width>
@@ -503,7 +479,7 @@
 				<posx>913</posx>
 				<control type="image">
 					<include>Furniture_ListMediaFlagsVars</include>
-					<texture>flags/source/defaultsound.png</texture>
+					<texture>flags/sound/defaultsound.png</texture>
 					<visible>!Control.IsVisible(82) + !Skin.HasSetting(nodefaultflags)</visible>
 				</control>
 				<control type="image" id="82">
@@ -511,18 +487,11 @@
 					<texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
 					<animation effect="fade" start="50" end="50" time="0" condition="Control.HasFocus(50)" pulse="true">Conditional</animation>
 					<colordiffuse>FFe1e1e1</colordiffuse>	
-					<visible>!Control.IsVisible(82) + !Skin.HasSetting(nodefaultflags)</visible>
 				</control>
 				<control type="image" id="82">
 					<include>Furniture_ListMediaFlagsVars</include>
 					<texture>$INFO[ListItem.AudioCodec,flags/sound/,.png]</texture>
-					<visible>!Control.IsVisible(82) + !Skin.HasSetting(nodefaultflags)</visible>
 				</control>			
-				<control type="image" id="82">
-					<include>Furniture_ListMediaFlagsVars</include>
-					<texture>flags/defaultsound.png</texture>
-					<visible>!Control.IsVisible(82) + !Skin.HasSetting(nodefaultflags)</visible>
-				</control>					
 			</control>				
 
 			<control type="group">
@@ -549,6 +518,7 @@
 				<control type="image" id="85">
 					<include>Furniture_ListMediaFlagsVars</include>
 					<texture>$INFO[listitem.studio,flags/studios/,.png]</texture>
+					<visible>!Container.Content(episodes) </visible>
 				</control>
 				<control type="image" id="85">
 					<include>Furniture_ListMediaFlagsVars</include>
@@ -561,12 +531,7 @@
 				<control type="image" id="85">
 					<include>Furniture_ListMediaFlagsVars</include>
 					<texture fallback="flags/source/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
-					<visible>IsEmpty(ListItem.VideoResolution) + Container.Content(episodes) </visible>
-				</control>
-				<control type="image" id="85">
-					<include>Furniture_ListMediaFlagsVars</include>
-					<texture fallback="flags/source/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
-					<visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,480) | substring(ListItem.VideoResolution,540)]</visible>
+					<visible>Container.Content(episodes) + ![substring(ListItem.VideoResolution,720) | substring(ListItem.VideoResolution,1080)]</visible>
 				</control>
 				<control type="image" id="85">
 					<include>Furniture_ListMediaFlagsVars</include>
