@@ -7,7 +7,6 @@
 <include file="Includes_Objects.xml" />
 <include file="Includes_Furniture.xml" />
 <include file="Includes_Colours.xml" />
-<include file="Includes_Menu.xml" />
 <include file="Includes_Reset.xml" />
 <include file="Includes_Assistant_LabelsButtons.xml" />
 <include file="Includes_Settings_LabelsButtons.xml" />

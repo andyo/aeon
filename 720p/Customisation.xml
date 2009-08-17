@@ -21,7 +21,7 @@
 			<width>500</width>
 			<height>49</height>
 			<font>Font_SettingsOptions</font>
-			<label>VER: 1.60  (GIT-134)</label>				
+			<label>VER: 1.61  (GIT-140)</label>				
 		</control>
 
 		<control type="label">
@@ -189,20 +189,6 @@
 				<label>31286</label>
 				<onclick>Skin.ToggleSetting(albumratingtext)</onclick>
 				<selected>Skin.HasSetting(albumratingtext)</selected>
-				<visible>Container(5).HasFocus(3)</visible>
-			</control>
-			<control type="radiobutton" id="606">
-				<include>Objects_SettingsDefaultRadioButton</include>
-				<label>31297</label>
-				<onclick>Skin.ToggleSetting(singlemusiclisticon)</onclick>
-				<selected>Skin.HasSetting(singlemusiclisticon)</selected>
-				<visible>Container(5).HasFocus(3)</visible>
-			</control>
-			<control type="radiobutton" id="607">
-				<include>Objects_SettingsDefaultRadioButton</include>
-				<label>31298</label>
-				<onclick>Skin.ToggleSetting(singlemovielisticon)</onclick>
-				<selected>Skin.HasSetting(singlemovielisticon)</selected>
 				<visible>Container(5).HasFocus(3)</visible>
 			</control>
 			<control type="radiobutton" id="608">

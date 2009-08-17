@@ -227,7 +227,7 @@
 	<control type="group">
 		<description>31086</description>
 		<include>Labels_MainLabelGroup</include>
-		<visible>Container(7).HasFocus(2) + !Control.HasFocus(301)</visible>
+		<visible>Container(7).HasFocus(2) + ![Control.HasFocus(301) | Control.HasFocus(345)]</visible>
 		<control type="label">
 			<include>Labels_MainLabelBigVars</include>
 			<label>31087</label>
@@ -278,7 +278,7 @@
 		<control type="label">
 			<include>Labels_MainLabelSmallVars</include>
 			<label>31091</label>
-			<visible>Container(7).HasFocus(3) + !Control.HasFocus(30)</visible>
+			<visible>Container(7).HasFocus(3) + ![Control.HasFocus(30) | Control.HasFocus(31) | Control.HasFocus(32)]</visible>
 		</control>
 		<control type="label">
 			<include>Labels_MainLabelSmallVars</include>
@@ -318,7 +318,7 @@
 		<control type="label">
 			<include>Labels_MainLabelSmallVars</include>
 			<label>31107</label>
-			<visible>Container(7).HasFocus(5) + !Control.HasFocus(60)</visible>
+			<visible>Container(7).HasFocus(5) + ![Control.HasFocus(60) | Control.HasFocus(61) | Control.HasFocus(62)]</visible>
 		</control>
 		<control type="label">
 			<include>Labels_MainLabelSmallVars</include>

@@ -221,7 +221,7 @@
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(551)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>!Control.IsVisible(551) + !Container.Content(episodes)</visible>
+							<visible>!Control.IsVisible(551) + ![Container.Content(episodes) | Window.IsActive(2)]</visible>
 						</control>
 						<control type="button" id="30001">
 							<include>VerticalMenu_ViewChangeImage</include>
@@ -240,7 +240,7 @@
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(52)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>!Control.IsVisible(52)</visible>
+							<visible>!Control.IsVisible(52) + !Window.IsActive(2)</visible>
 						</control>
 												
 						<control type="button" id="30003">
@@ -1218,10 +1218,10 @@
 				<include>VerticalMenu_RadioButton</include>		
 				<label>$LOCALIZE[31067]</label>
 				<onclick>Skin.ToggleSetting(nocurtains)</onclick>
-				<onclick>Skin.SetBool(notvfanart)</onclick>
+<!--				<onclick>Skin.SetBool(notvfanart)</onclick>
 				<onclick>Skin.SetBool(nomoviefanart)</onclick>
 				<onclick>Skin.SetBool(nomusicfanart)</onclick>
-				<onclick>Skin.SetBool(nopicturefanart)</onclick>
+				<onclick>Skin.SetBool(nopicturefanart)</onclick>-->
 				<selected>Skin.HasSetting(nocurtains)</selected>
 				<visible>!Window.IsActive(500) + Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(57) | Control.IsVisible(551) | [[Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
 			</control>

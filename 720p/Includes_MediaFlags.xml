@@ -922,7 +922,21 @@
 			</control>
 
 			<control type="group">
-				<posx>920</posx>
+				<posx>860</posx>
+				<control type="image">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>flags/screen/defaultscreen.png</texture>
+					<visible>!Control.IsVisible(86) + !Skin.HasSetting(nodefaultflags)</visible>
+				</control>
+				<control type="image" id="86">
+					<include>Furniture_ShowcaseMediaFlagsVars</include>
+					<texture>flags/screen/cc.png</texture>
+					<visible>!IsEmpty(ListItem.SubtitleLanguage)</visible>
+				</control>				
+			</control>
+
+			<control type="group">
+				<posx>930</posx>
 				<control type="image">
 					<include>Furniture_ShowcaseMediaFlagsVars</include>
 					<texture>flags/screen/defaultscreen.png</texture>

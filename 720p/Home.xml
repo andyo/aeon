@@ -56,7 +56,7 @@
     </control>
 <!-- Windowopen end-->
 	<include>Furniture_HomeNowPlaying</include>
-	<include condition="!Skin.HasSetting(Library_info)">Widget_Totals</include>
+	<include condition="!Skin.HasSetting(Library_info)">Furniture_Library</include>
 	<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded</include>
 	<include>Widget_Extras</include>
 	<include>Widget_Picture</include>

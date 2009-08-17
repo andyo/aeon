@@ -229,8 +229,10 @@ class Main:
         # set properties
         self.WINDOW.setProperty( "Movie.Count" , movies_fields [0] )
         self.WINDOW.setProperty( "Movie.Played" , movies_fields [1] )
+        self.WINDOW.setProperty( "Movie.UnPlayed" , str( int( movies_fields[0]) - int( movies_fields[1])))
         self.WINDOW.setProperty( "Episodes.Count" , episodes_fields [1] )
         self.WINDOW.setProperty( "Episodes.Played" , episodes_fields [2] )
+        self.WINDOW.setProperty( "Episodes.UnPlayed" , str( int( episodes_fields[1]) - int( episodes_fields[2])))
         self.WINDOW.setProperty( "TVShows.Count" , episodes_fields [0] )
         self.WINDOW.setProperty( "Songs.Count" , songs_fields [0] )
         self.WINDOW.setProperty( "Songs.ArtistCount" , songs_fields [1] )
