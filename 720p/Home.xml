@@ -331,7 +331,7 @@
 						<onclick>Skin.Reset(settingsfade)</onclick>
 						<onclick>$INFO[Skin.String(mainmenu_6path)]</onclick>
 						<visible>!Skin.HasSetting(no_mainmenu_6)</visible>
-						<visible>Skin.HasSetting(mainmenu_96)</visible>
+						<visible>Skin.HasSetting(mainmenu_6)</visible>
 					</item>
 					<item id="36">
 						<label>$INFO[Skin.String(mainmenu_7name)]</label>
