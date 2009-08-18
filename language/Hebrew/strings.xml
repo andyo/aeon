@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
-<!--Date of translation: 08/06/2009-->
+<!--Date of translation: 08/17/2009-->
 <!--$Revision$-->
 <!--Based on english strings version 204-->
 <strings>
@@ -415,7 +415,7 @@
   <string id="31863">עידכוני DEVIANTART</string>
   <string id="31864">פתח רשימות ניגון</string>
   <string id="31865">תוספות</string>
-  <string id="31866">-</string>
+  <string id="31866">Album Review</string>
   <string id="31867">תפריט ראשי</string>
   <string id="31868">נעילה</string>
   <string id="31869">רקע מזג האויר לפי מזג האויר הנוכחי</string>
@@ -460,6 +460,7 @@
   <string id="31936">רצועות</string>
   <string id="31937">עונות</string>
   <string id="31938">פרקים</string>
+	<string id="31939">SONGS</string>
   <string id="31951">מועדפים</string>
   <string id="31952">חלון</string>
   <string id="31953">אור</string>
@@ -485,19 +486,20 @@
   <string id="31973">מיקום ספריית הסרטים</string>
   <string id="31974">זרימה דינמית</string>
   <string id="31975">אפשר את כל התצוגות לסדרות</string>
-  <string id="31976">MUSIC GRAPHIC VISUALISER</string>
+  <string id="31976">ויזואלזציה גראפית של מוסיקה</string>
   <string id="31977">איקון ז'אנר סרטים מופעל/מכובה</string>
   <string id="31978">איקון גיבוי ז'אנר סרטים מופעל/מכובה</string>
   <string id="31979">רקע ז'אנר סרטים מופעל/מכובה</string>
   <string id="31980">איקון ז'אנר מוסיקה מופעל/מכובה</string>
-  <string id="31982">SHOWMIX עידכוני</string>
-  <string id="31983">הפעל עידכוני RSS של SHOWMIX</string>
-	<string id="31984">POSTER</string>
-	<string id="31985">WIDE</string>
-	<string id="31986">ADD AND REMOVE FAVORITES/WIDGETS TO HOME MENU</string>	
-	<string id="31987">NOTE: WHEN DONE CHANGES, XBMC WILL QUIT</string>	
-	<string id="31988">XBMC will quit automatically when leaving this menu</string>	
-	<string id="31989">ADD NEW MENU</string>	
-	<string id="31990">VIEW & RENAME</string>	
-	<string id="31988">CHANGE</string>	
+  <string id="31981">רקע ז'אנר מוסיקה מופעל/מכובה</string>
+  <string id="31982">-</string>
+  <string id="31983">ווידג'ט עידכוני RSS</string>
+  <string id="31984">פוסטר</string>
+  <string id="31985">רחב</string>
+  <string id="31986">הוסף והסר מועדפים/ווידג'טים לתפריט הבית</string>
+  <string id="31987">הארה: בסיום השינויים, XBMC ייסגר</string>
+  <string id="31988">XBMC ייסגר אוטומטית אחרי היציאה מתפריט זה</string>
+  <string id="31989">הוסף תפריט חדש</string>
+  <string id="31990">צפה ושנה שם</string>
+  <string id="31991">שנה</string>
 </strings>

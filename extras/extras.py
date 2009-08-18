@@ -1,7 +1,9 @@
-import xbmc, re, sys, os, time
-from xbmcgui import Window
+import xbmc, re, sys, os, time, random
+from xbmcgui import Window, ListItem
 from urllib import quote_plus, unquote_plus, urlopen, urlretrieve
 from htmlentitydefs import name2codepoint as n2cp
+
+__VER__ = '0.9.3.4'
 
 # Current Working Directory
 CWD = os.getcwd()
@@ -50,11 +52,12 @@ class Main:
             params = {}
         # set our preferences
         self.LIMIT = int( params.get( "limit", "5" ) )
-        self.RECENT = not params.get( "partial", "" ) == "True"
-        self.ALBUMS = params.get( "albums", "" ) == "True"
-        self.UNPLAYED = params.get( "unplayed", "" ) == "True"
+        self.RECENT = not params.get( "partial", "" ) == "true"
+        self.RANDOM_ORDER = params.get( "random", "" ) == "true"
+        self.ALBUMID = params.get( "albumid", "" )
+        self.UNPLAYED = params.get( "unplayed", "" ) == "true"
         self.RECENTADDED = params.get( "recentadded", "" ) == "true"
-        self.PLAY_TRAILER = params.get( "trailer", "" ) == "True"
+        self.PLAY_TRAILER = params.get( "trailer", "" ) == "true"
         self.ALARM = int( params.get( "alarm", "0" ) )
         self.TOTALS = params.get( "totals", "" ) == "true"
         self.WIDGET_EXTRAS = params.get( "extra", "" )
@@ -72,30 +75,28 @@ class Main:
     def __init__( self ):
         # parse argv for any preferences
         self._parse_argv()
-        # clear properties
-        self._clear_properties()
-        # set any alarm
-        self._set_alarm()
-        # format our records start and end
-        if ( self.RECENTADDED ) or ( self.TOTALS ):
-            xbmc.executehttpapi( "SetResponseFormat()" )
-            xbmc.executehttpapi( "SetResponseFormat(OpenRecord,%s)" % ( "<record>", ) )
-            xbmc.executehttpapi( "SetResponseFormat(CloseRecord,%s)" % ( "</record>", ) )
-        # fetch media info
-        if ( self.RECENTADDED ):
-            self._fetch_movie_info()
-            self._fetch_tvshow_info()
-            self._fetch_music_info()
-        if ( self.TOTALS ):
-            self._fetch_totals()
-        if ( self.WIDGET_EXTRAS ):
-            self.get_widget( self.WIDGET_EXTRAS,'ExtrasWidget' )
-        if ( self.WIDGET_PICTURE ):
-            self.get_widget( self.WIDGET_PICTURE,'PictureWidget' )
-        if ( self.WIDGET_CustomMenu1 ):
-            self.get_widget( self.WIDGET_CustomMenu1,'CustomMenu1' )
-        if ( self.WIDGET_CustomMenu2 ):
-            self.get_widget( self.WIDGET_CustomMenu2,'CustomMenu2' )
+        if ( self.ALBUMID ):
+            self._Play_Album( self.ALBUMID )
+        else:
+            # clear properties
+            self._clear_properties()
+            # set any alarm
+            self._set_alarm()
+            # format our records start and end
+            if ( self.RECENTADDED ) or ( self.TOTALS ) or ( self.RANDOM_ORDER ):
+                xbmc.executehttpapi( "SetResponseFormat()" )
+                xbmc.executehttpapi( "SetResponseFormat(OpenRecord,%s)" % ( "<record>", ) )
+                xbmc.executehttpapi( "SetResponseFormat(CloseRecord,%s)" % ( "</record>", ) )
+            # fetch media info
+            if ( self.RECENTADDED ) or ( self.RANDOM_ORDER ):
+                self._fetch_movie_info()
+                self._fetch_tvshow_info()
+                self._fetch_music_info()
+            if ( self.TOTALS ): self._fetch_totals()
+            if ( self.WIDGET_EXTRAS ): self.get_widget( self.WIDGET_EXTRAS,'ExtrasWidget' )
+            if ( self.WIDGET_PICTURE ): self.get_widget( self.WIDGET_PICTURE,'PictureWidget' )
+            if ( self.WIDGET_CustomMenu1 ): self.get_widget( self.WIDGET_CustomMenu1,'CustomMenu1' )
+            if ( self.WIDGET_CustomMenu2 ): self.get_widget( self.WIDGET_CustomMenu2,'CustomMenu2' )
 
 
 
@@ -103,7 +104,10 @@ class Main:
         # set our unplayed query
         unplayed = ( "", "where playCount isnull ", )[ self.UNPLAYED ]
         # sql statement
-        if ( self.RECENT ):
+        if ( self.RANDOM_ORDER ):
+            # random order
+            sql_movies = "select * from movieview %sorder by RANDOM() limit %d" % ( unplayed, self.LIMIT, )
+        elif ( self.RECENT ):
             # recently added
             sql_movies = "select * from movieview %sorder by idMovie desc limit %d" % ( unplayed, self.LIMIT, )
         else:
@@ -139,7 +143,10 @@ class Main:
         # set our unplayed query
         unplayed = ( "", "where playCount isnull ", )[ self.UNPLAYED ]
         # sql statement
-        if ( self.RECENT ):
+        if ( self.RANDOM_ORDER ):
+            # random order
+            sql_episodes = "select * from episodeview %sorder by RANDOM() limit %d" % ( unplayed, self.LIMIT, )
+        elif ( self.RECENT ):
             # recently added
             sql_episodes = "select * from episodeview %sorder by idepisode desc limit %d" % ( unplayed, self.LIMIT, )
         else:
@@ -171,49 +178,52 @@ class Main:
 
     def _fetch_music_info( self ):
         # sql statement
-        if ( self.ALBUMS ):
-            sql_music = "select DISTINCT idAlbum from albumview order by idAlbum desc limit %d" % ( 1, )
-            # query the database for recently added albums
-            music_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( sql_music ), )
-            # separate the records
-            albums = re.findall( "<record>(.+?)</record>", music_xml, re.DOTALL )
-            # set our unplayed query
-            unplayed = ( "(idAlbum = %s)", "(idAlbum = %s and lastplayed isnull)", )[ self.UNPLAYED ]
-            # sql statement
-            sql_music = "select songview.* from songview where %s limit 1" % ( unplayed, )
-            # clear our xml data
-            music_xml = ""
-            # enumerate thru albums and fetch info
-            for album in albums:
-                # query the database and add result to our string
-                music_xml += xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( sql_music % ( album.replace( "<field>", "" ).replace( "</field>", "" ), ) ), )
+        if ( self.RANDOM_ORDER ):
+            sql_music = "select * from albumview order by RANDOM() limit %d" % ( self.LIMIT, )
         else:
-            # set our unplayed query
-            unplayed = ( "", "where lastplayed isnull ", )[ self.UNPLAYED ]
-            # sql statement
-            sql_music = "select * from songview %sorder by idSong desc limit %d" % ( unplayed, 1, )
-            # query the database
-            music_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( sql_music ), )
+            sql_music = "select * from albumview order by idAlbum desc limit %d" % ( self.LIMIT, )
+        # query the database for recently added albums
+        music_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( sql_music ), )
         # separate the records
         items = re.findall( "<record>(.+?)</record>", music_xml, re.DOTALL )
         # enumerate thru our records and set our properties
         for count, item in enumerate( items ):
             # separate individual fields
             fields = re.findall( "<field>(.*?)</field>", item, re.DOTALL )
+            #print item
             # set properties
-            self.WINDOW.setProperty( "LatestSong.%d.Title" % ( count + 1, ), fields[ 3 ] )
-            self.WINDOW.setProperty( "LatestSong.%d.Year" % ( count + 1, ), fields[ 6 ] )
-            self.WINDOW.setProperty( "LatestSong.%d.Artist" % ( count + 1, ), fields[ 24 ] )
-            self.WINDOW.setProperty( "LatestSong.%d.Album" % ( count + 1, ), fields[ 21 ] )
-            path = fields[ 22 ]
-            # don't add song for albums list TODO: figure out how toplay albums
-            ##if ( not self.ALBUMS ):
-            path += fields[ 8 ]
+            self.WINDOW.setProperty( "LatestSong.%d.Genre" % ( count + 1, ), fields[ 7 ] )
+            self.WINDOW.setProperty( "LatestSong.%d.Year" % ( count + 1, ), fields[ 8 ] )
+            self.WINDOW.setProperty( "LatestSong.%d.Artist" % ( count + 1, ), fields[ 6 ] )
+            self.WINDOW.setProperty( "LatestSong.%d.Album" % ( count + 1, ), fields[ 1 ] )
+            self.WINDOW.setProperty( "LatestSong.%d.Review" % ( count + 1, ), fields[ 14 ] )
+            # Album Path  (ID)
+            path = 'XBMC.RunScript(' + CWD + 'extras.py,albumid=' + fields[ 0 ] + ')'
             self.WINDOW.setProperty( "LatestSong.%d.Path" % ( count + 1, ), path )
             # get cache name of path to use for fanart
-            cache_name = xbmc.getCacheThumbName( fields[ 24 ] )
+            cache_name = xbmc.getCacheThumbName( fields[ 6 ] )
             self.WINDOW.setProperty( "LatestSong.%d.Fanart" % ( count + 1, ), "special://profile/Thumbnails/Music/%s/%s" % ( "Fanart", cache_name, ) )
-            self.WINDOW.setProperty( "LatestSong.%d.Thumb" % ( count + 1, ), fields[ 27 ] )
+            self.WINDOW.setProperty( "LatestSong.%d.Thumb" % ( count + 1, ), fields[ 9 ] )
+
+    def _Play_Album( self, ID ):
+        playlist=xbmc.PlayList(0)
+        playlist.clear()
+        # sql statements
+        sql_song = "select * from songview where idAlbum='%s' order by iTrack " % ( ID )
+        # query the databases
+        songs_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( sql_song ), )
+        # separate the records
+        songs = re.findall( "<record>(.+?)</record>", songs_xml, re.DOTALL )
+        # enumerate thru our records and set our properties
+        for count, movie in enumerate( songs ):
+            # separate individual fields
+            fields = re.findall( "<field>(.*?)</field>", movie, re.DOTALL )
+            # set album name
+            path = fields[ 22 ] + fields[ 8 ]
+            listitem = ListItem( fields[ 7 ] )
+            xbmc.PlayList(0).add (path, listitem )
+        xbmc.Player().play(playlist)
+        xbmc.executebuiltin('XBMC.ActivateWindow(10500)')
 
     def _fetch_totals( self ):
         # query the database
@@ -229,10 +239,8 @@ class Main:
         # set properties
         self.WINDOW.setProperty( "Movie.Count" , movies_fields [0] )
         self.WINDOW.setProperty( "Movie.Played" , movies_fields [1] )
-        self.WINDOW.setProperty( "Movie.UnPlayed" , str( int( movies_fields[0]) - int( movies_fields[1])))
         self.WINDOW.setProperty( "Episodes.Count" , episodes_fields [1] )
         self.WINDOW.setProperty( "Episodes.Played" , episodes_fields [2] )
-        self.WINDOW.setProperty( "Episodes.UnPlayed" , str( int( episodes_fields[1]) - int( episodes_fields[2])))
         self.WINDOW.setProperty( "TVShows.Count" , episodes_fields [0] )
         self.WINDOW.setProperty( "Songs.Count" , songs_fields [0] )
         self.WINDOW.setProperty( "Songs.ArtistCount" , songs_fields [1] )
@@ -247,49 +255,56 @@ class Main:
             self.set_Property(WIDGET_FOR,'yes', 'Can\'t Find Widget',WIDGET)
         else:
         #Else Open WIDGET
-            SET_LINES_READ = open( FILE_ADDRESS, 'r')
-            SET_LINES = SET_LINES_READ.read()
-            SET_LINES_READ.close()
-            #scraper title/name (WIDGET_FOR.Title)
-            WIDGET_TITLE_XML = decodeEntities( re.findall( "<Title>(.*?)</Title>", SET_LINES, re.DOTALL ) [0] )
-            WIDGET_URL_XML = decodeEntities( re.findall( "<URL>(.*?)</URL>", SET_LINES, re.DOTALL ) [0] )
-            WIDGET_CONTENT_TITLE_XML = decodeEntities( re.findall( "<ContentTitle>(.*?)</ContentTitle>", SET_LINES, re.DOTALL ) [0] )
-            WIDGET_PICTURE_ADDRESS_XML = decodeEntities( re.findall( "<Image>(.*?)</Image>", SET_LINES, re.DOTALL ) [0] )
-            WIDGET_SITE_ADDRESS_XML = decodeEntities( re.findall( "<Image:URL>(.*?)</Image:URL>", SET_LINES, re.DOTALL ) [0] )
-            WIDGET_CONTENT_XML = decodeEntities( re.findall( "<Content>(.*?)</Content>", SET_LINES, re.DOTALL ) [0] )
-            WIDGET_PUBDATE_XML = decodeEntities( re.findall( "<PubDate>(.*?)</PubDate>", SET_LINES, re.DOTALL ) [0] )
-            WIDGET_ITEM_NUBER_XML =  int( re.findall( "<Item>(.*?)</Item>", SET_LINES, re.DOTALL ) [0] )
-            #Read URL
-            WIDGET_URL = urlopen( WIDGET_URL_XML ).read()
-            # PICTURE (WIDGET_FOR.Picture)
-            if (WIDGET_PICTURE_ADDRESS_XML): PICTURE_URL_LIST = re.findall(WIDGET_PICTURE_ADDRESS_XML, WIDGET_URL, re.DOTALL)
-            # Content Title (WIDGET_FOR.ContentTitle) 
-            CONTENT_TITLE_LIST = re.findall( WIDGET_CONTENT_TITLE_XML , WIDGET_URL, re.DOTALL)
-            # Content (WIDGET_FOR.Content)
-            CONTENT_LIST = re.findall( WIDGET_CONTENT_XML, WIDGET_URL, re.DOTALL)
-            # PubDate/time (WIDGET_FOR.PubDate)
-            PUBDATE_LIST = re.findall(WIDGET_PUBDATE_XML, WIDGET_URL, re.DOTALL)
-            #check
-            if WIDGET_TITLE_XML == False: WIDGET_TITLE_XML = 'No Name'
-            if CONTENT_TITLE_LIST: CONTENT_TITLE_SP = CONTENT_TITLE_LIST [ WIDGET_ITEM_NUBER_XML ]
-            if CONTENT_LIST: CONTENT_SP = CONTENT_LIST [ WIDGET_ITEM_NUBER_XML ]
-            if PUBDATE_LIST: PUBDATE_SP = PUBDATE_LIST [ WIDGET_ITEM_NUBER_XML ]
-            #see if there is a picture to download
-            if (WIDGET_PICTURE_ADDRESS_XML):
-                PICTURE = WIDGET_SITE_ADDRESS_XML + PICTURE_URL_LIST [ WIDGET_ITEM_NUBER_XML ]
-                PICTURE_SP = IMAGE_TEMP + WIDGET_FOR + '.png'
-                downloaded = urlretrieve( PICTURE, PICTURE_SP)
-                if downloaded:
+            SET_LINES = self.read_widget( FILE_ADDRESS )
+            try:
+            #if SET_LINES:
+                #scraper title/name (WIDGET_FOR.Title)
+                WIDGET_TITLE_XML = self.findall_widget( 'Title', SET_LINES )
+                WIDGET_URL_XML = self.findall_widget( 'URL', SET_LINES )
+                WIDGET_CONTENT_TITLE_XML = self.findall_widget( 'ContentTitle', SET_LINES )
+                WIDGET_PICTURE_ADDRESS_XML = self.findall_widget( 'Image', SET_LINES )
+                WIDGET_SITE_ADDRESS_XML = self.findall_widget( 'Image:URL', SET_LINES )
+                WIDGET_CONTENT_XML = self.findall_widget( 'Content', SET_LINES )
+                WIDGET_PUBDATE_XML = self.findall_widget( 'PubDate', SET_LINES )
+                try:
+                    WIDGET_ITEM_NUBER_XML = int( re.findall( "<Item>(.*?)</Item>", fromfile, re.DOTALL ) [0] )
+                except:
+                    WIDGET_ITEM_NUBER_XML = int( 0 )
+                WIDGET_RANDOM_XML = self.findall_widget( 'Random', SET_LINES )
+                #Read URL
+                WIDGET_URL = urlopen( WIDGET_URL_XML ).read()
+                # PICTURE (WIDGET_FOR.Picture)
+                if (WIDGET_PICTURE_ADDRESS_XML): PICTURE_URL_LIST = re.findall(WIDGET_PICTURE_ADDRESS_XML, WIDGET_URL, re.DOTALL)
+                # Content Title (WIDGET_FOR.ContentTitle) 
+                CONTENT_TITLE_LIST = re.findall( WIDGET_CONTENT_TITLE_XML , WIDGET_URL, re.DOTALL)
+                # Content (WIDGET_FOR.Content)
+                CONTENT_LIST = re.findall( WIDGET_CONTENT_XML, WIDGET_URL, re.DOTALL)
+                # PubDate/time (WIDGET_FOR.PubDate)
+                PUBDATE_LIST = re.findall(WIDGET_PUBDATE_XML, WIDGET_URL, re.DOTALL)
+                #check
+                if WIDGET_RANDOM_XML == 'yes':
+                    WIDGET_ITEM_NUBER_XML = random.randrange(WIDGET_ITEM_NUBER_XML, len (CONTENT_TITLE_LIST )-1, 1)
+                if WIDGET_TITLE_XML == False: WIDGET_TITLE_XML = 'No Name'
+                if CONTENT_TITLE_LIST: CONTENT_TITLE_SP = CONTENT_TITLE_LIST [ WIDGET_ITEM_NUBER_XML ]
+                if CONTENT_LIST: CONTENT_SP = CONTENT_LIST [ WIDGET_ITEM_NUBER_XML ]
+                if PUBDATE_LIST: PUBDATE_SP = PUBDATE_LIST [ WIDGET_ITEM_NUBER_XML ]
+                #see if there is a picture to download
+                if (WIDGET_PICTURE_ADDRESS_XML):
+                    PICTURE = WIDGET_SITE_ADDRESS_XML + PICTURE_URL_LIST [ WIDGET_ITEM_NUBER_XML ]
+                    PICTURE_SP = IMAGE_TEMP + WIDGET_FOR + '.png'
+                    downloaded = urlretrieve( PICTURE, PICTURE_SP)
+                    if downloaded:
+                        # set properties
+                        for i in range(1, 5):
+                            time.sleep(2)
+                            if (os.path.isfile( IMAGE_TEMP + WIDGET_FOR + '.png' )):
+                                self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE_XML, CONTENT_TITLE_SP, PICTURE_SP, CONTENT_SP, PUBDATE_SP )
+                                break
+                else:
                     # set properties
-                    for i in range(1, 5):
-                        time.sleep(2)
-                        if (os.path.isfile( IMAGE_TEMP + WIDGET_FOR + '.png' )):
-                            self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE_XML, CONTENT_TITLE_SP, PICTURE_SP, CONTENT_SP, PUBDATE_SP )
-                            break
-            else:
-                # set properties
-                self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE_XML, CONTENT_TITLE_SP, '', CONTENT_SP, PUBDATE_SP )
-
+                    self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE_XML, CONTENT_TITLE_SP, '', CONTENT_SP, PUBDATE_SP )
+            except:
+                print 'get_widget ' + __VER__ + ' Err -- ' + SET_LINES
 
 
     def set_Property(self, WIDGET_FOR, spGot = 'yes', spTitle = 'Can\'t Find Widget', spContentTitle = '', spPicture = '', spContent = '', spPubDate = ''):
@@ -299,6 +314,20 @@ class Main:
         self.WINDOW.setProperty( WIDGET_FOR + '.Picture' , spPicture )
         self.WINDOW.setProperty( WIDGET_FOR + '.Content' , self.Clean_text( spContent ) )
         self.WINDOW.setProperty( WIDGET_FOR + '.Got' , spGot )
+
+
+    def read_widget(self, file_address):
+        read = open( file_address, 'r')
+        widget_lines = read.read()
+        read.close()
+        return widget_lines
+
+    def findall_widget(self, type, fromfile):
+        try:
+            read = decodeEntities( re.findall( "<" + type + ">(.*?)</" + type + ">", fromfile, re.DOTALL ) [0] )
+        except:
+            read = ''
+        return read
 
     def Clean_text(self,  data):
         data = htmldecode2( data )

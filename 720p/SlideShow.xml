@@ -9,7 +9,7 @@
 		<width>740</width>
 		<height>65</height>
 		<texture>Black.png</texture>
-		<include>common-fade</include>
+		<include>common-fade-quick</include>
 		<visible>Player.ShowCodec</visible>
 	</control>
 
