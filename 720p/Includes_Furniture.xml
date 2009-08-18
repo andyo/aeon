@@ -1202,7 +1202,7 @@
 			<font>Font_Time</font>
 			<include>Colour_WhiteAlpha80</include>
 			<visible>!Skin.HasSetting(bighome)</visible>
-			<label>ALBUMS: $INFO[Window.Property(Music.AlbumsCount)]   |   SONGS: $INFO[Window.Property(Music.SongsCount)]   |   ARTISTS: $INFO[Window.Property(Music.ArtistsCount)]</label>
+			<label>ALBUMS: $INFO[Window.Property(Album.Count)]   |   SONGS: $INFO[Window.Property(Songs.Count)]   |   ARTISTS: $INFO[Window.Property(Songs.ArtistCount)]</label>
 			<visible>Container(300).HasFocus(1)</visible>
 		</control>
 		<control type="label" id="71">
@@ -1212,7 +1212,7 @@
 			<font>Font_BigTime</font>
 			<include>Colour_WhiteAlpha80</include>
 			<visible>Skin.HasSetting(bighome)</visible>
-			<label>ALBUMS: $INFO[Window.Property(Music.AlbumsCount)]   |   SONGS: $INFO[Window.Property(Music.SongsCount)]   |   ARTISTS: $INFO[Window.Property(Music.ArtistsCount)]</label>
+			<label>ALBUMS: $INFO[Window.Property(Album.Count)]   |   SONGS: $INFO[Window.Property(Songs.Count)]   |   ARTISTS: $INFO[Window.Property(Songs.ArtistCount)]</label>
 			<visible>Container(300).HasFocus(1)</visible>
 		</control>
 	</include>
