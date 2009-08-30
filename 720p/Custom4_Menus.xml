@@ -157,12 +157,12 @@
 					<label2>31989</label2>
 					<onclick>SetFocus(972)</onclick>
 				</item>
-				<item id="6">
+<!--				<item id="6">
 					<description>Extras</description>
 					<label fallback="extras Sub">$LOCALIZE[31865] $LOCALIZE[31858]</label>
 					<label2>31989</label2>
 					<onclick>SetFocus(972)</onclick>
-				</item>
+				</item> -->
 				<item id="7">
 					<description>Favourites</description>
 					<label>$LOCALIZE[1036]</label>
@@ -696,7 +696,6 @@
 					<visible>Skin.HasSetting(Music_Sub_4)</visible>
 					<visible>Container(971).HasFocus(5)</visible>
 				</item>
-
 <!--				<item id="35">
 					<label>[B]$LOCALIZE[31857][/B]</label>
 					<onclick>Skin.SetString(custom_path,Extras_Sub_1path)</onclick>
