@@ -28,7 +28,132 @@
 				<include>Animation_SettingsInternalPanel</include>
 			</control>
 		
-			<include>Settings_XBMCSettingsButtons</include>
+<!--			<control type="button" id="6">
+				<onfocus>SetFocus(8)</onfocus>
+				<onfocus>Skin.Reset(bmtransit)</onfocus>
+			</control> -->
+
+			<control type="list" id="6">
+				<posx>42</posx>
+				<posy>67</posy>
+				<height>650</height>
+				<width>250</width>
+				<onup>6</onup>
+				<ondown>6</ondown>
+				<onfocus>Skin.Reset(bmtransit)</onfocus>
+				<viewtype>list</viewtype>
+				<orientation>vertical</orientation>
+				<focusposition>0</focusposition>
+				<scrolltime>200</scrolltime>
+				<include>Animation_CommonFade</include>
+				<visible>true</visible>
+				<itemlayout width="216" height="54">
+					<control type="label">
+						<posx>30</posx>
+						<posy>3</posy>
+						<include>Objects_SettingsSectionMenuButton</include>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>30</posx>
+						<posy>28</posy>
+						<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+						<info>ListItem.Label2</info>
+					</control>
+				</itemlayout>
+				<focusedlayout width="216" height="54">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>216</width>
+						<height>54</height>
+						<texture>settings/settings_leftmenufocus.png</texture>
+					</control>
+					<control type="label">
+						<posx>30</posx>
+						<posy>3</posy>
+						<include>Objects_SettingsSectionMenuButtonFocused</include>
+						<textcolor>FF262728</textcolor>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>30</posx>
+						<posy>28</posy>
+						<align>left</align>
+						<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+						<textcolor>FF262728</textcolor>
+						<info>ListItem.Label2</info>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<description>My Videos</description>
+						<label>31140</label>
+						<label2>31141</label2>
+						<onclick>ActivateWindow(MyVideosSettings)</onclick>
+					</item>
+					<item id="2">
+						<description>My Music</description>
+						<label>31142</label>
+						<label2>31143</label2>
+						<onclick>ActivateWindow(MyMusicSettings)</onclick>
+					</item>
+					<item id="3">
+						<description>My Programs</description>
+						<label>31144</label>
+						<label2>31145</label2>
+						<onclick>ActivateWindow(MyProgramsSettings)</onclick>
+					</item>
+					<item id="4">
+						<description>My Pictures</description>
+						<label>31146</label>
+						<label2>31147</label2>
+						<onclick>ActivateWindow(MyPicturesSettings)</onclick>
+					</item>
+					<item id="5">
+						<description>My Weather</description>
+						<label>31148</label>
+						<label2>31149</label2>
+						<onclick>ActivateWindow(MyWeatherSettings)</onclick>
+					</item>
+					<item id="6">
+						<description>My Network</description>
+						<label>31150</label>
+						<label2>31151</label2>
+						<onclick>ActivateWindow(NetworkSettings)</onclick>
+					</item>
+					<item id="7">
+						<description>System</description>
+						<label>31152</label>
+						<label2>31153</label2>
+						<onclick>ActivateWindow(SystemSettings)</onclick>
+					</item>
+					<item id="8">
+						<description>Appearance</description>
+						<label>31154</label>
+						<label2>31155</label2>
+						<onclick>ActivateWindow(AppearanceSettings)</onclick>
+					</item>
+					<item id="9">
+						<description>Customise</description>
+						<label>31156</label>
+						<label2>31157</label2>
+						<onclick>ActivateWindow(604)</onclick>
+					</item>
+					<item id="11">
+						<description>Advanced</description>
+						<label>$LOCALIZE[31158]</label>
+						<label2>$LOCALIZE[31159]</label2>
+						<onclick>XBMC.ActivateWindow(56)</onclick>
+					</item>
+					<item id="10">
+						<description>Profile Settings</description>
+						<label>31160</label>
+						<onclick>XBMC.ActivateWindow(34)</onclick>
+						<label2>31161</label2>
+					</item>
+				</content>
+			</control>
 
 			<control type="group">
 				<posx>332</posx>
@@ -38,56 +163,194 @@
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_movies</imagepath>
-					<visible>Container(8).HasFocus(1)</visible>
+					<visible>Container(6).HasFocus(1)</visible>
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_music</imagepath>
-					<visible>Container(8).HasFocus(2)</visible>
+					<visible>Container(6).HasFocus(2)</visible>
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_apps</imagepath>
-					<visible>Container(8).HasFocus(3)</visible>
+					<visible>Container(6).HasFocus(3)</visible>
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_pictures</imagepath>
-					<visible>Container(8).HasFocus(4)</visible>
+					<visible>Container(6).HasFocus(4)</visible>
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_weather</imagepath>
-					<visible>Container(8).HasFocus(5)</visible>
+					<visible>Container(6).HasFocus(5)</visible>
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_network</imagepath>
-					<visible>Container(8).HasFocus(6)</visible>
+					<visible>Container(6).HasFocus(6)</visible>
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_system</imagepath>
-					<visible>Container(8).HasFocus(7)</visible>
+					<visible>Container(6).HasFocus(7)</visible>
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_appearance</imagepath>
-					<visible>Container(8).HasFocus(8)</visible>
+					<visible>Container(6).HasFocus(8)</visible>
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_aeon</imagepath>
-					<visible>Container(8).HasFocus(9)</visible>
+					<visible>Container(6).HasFocus(9)</visible>
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_profiles</imagepath>
-					<visible>Container(8).HasFocus(10)</visible>
+					<visible>Container(6).HasFocus(10)</visible>
 				</control>
 			</control>
 
-			<include>Labels_AeonMainLabels</include>
+			<control type="group">
+				<description>Settings Labels - Tier 1: Movies</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(1)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31800</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31801</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Settings Labels - Tier 1: Music</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(2)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31802</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31803</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Settings Labels - Tier 1: Apps</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(3)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31804</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31805</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Settings Labels - Tier 1: Pictures</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(4)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31806</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31807</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Settings Labels - Tier 1: Weather</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(5)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31808</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31809</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Settings Labels - Tier 1: Network</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(6)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31812</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31813</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Settings Labels - Tier 1: System</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(7)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31816</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31817</label>
+				</control>
+			</control>
+
+			<control type="group">
+				<description>Settings Labels - Tier 1: Appearance</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(8)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31814</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31815</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Settings Labels - Tier 1: Customisation Options</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(9)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31810</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31811</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Settings Labels - Tier 1: Profile Settings</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(10)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31820</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31821</label>
+				</control>
+			</control>
 			
 			<control type="image">
 				<description>background image</description>

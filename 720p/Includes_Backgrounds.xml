@@ -27,7 +27,7 @@
 		<fadetime>1000</fadetime>
 		<aspectratio scalediffuse="false">scale</aspectratio>
 		<include>Animation_BackgroundFade</include>
-		<visible>![Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(57) | Control.IsVisible(551)] | [[Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(57) | Control.IsVisible(551)] + Skin.HasSetting(nocurtains)]</visible>
+		<visible>![Control.IsVisible(52) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552)] | [[Control.IsVisible(52) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + Skin.HasSetting(nocurtains)]</visible>
 	</include>
 	
 	<include name="BackgroundVarsMultiplex">
@@ -35,7 +35,7 @@
 		<timeperimage>20000</timeperimage>
 		<randomize>true</randomize>
 		<fadetime>1000</fadetime>
-		<visible>[Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(57) | Control.IsVisible(551) | [[Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Skin.HasSetting(nocurtains)</visible>		
+		<visible>[Control.IsVisible(52) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | [[Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Skin.HasSetting(nocurtains)</visible>		
 		<include>Animation_BackgroundFade</include>
 	</include>	
 	
@@ -198,14 +198,18 @@
 		<info>Skin.String(CustomWeather)</info>		
 	</include>	
 
-<!--	<include name="BackgroundVarsWeather2">
-		<thumb>\backdrops\weather\$INFO[Weather.FanartCode]</thumb>		
-	</include>	-->
-
 	<include name="MediaBackdropsMovies">
 		<control type="multiimage">
 			<include>BackgroundVarsGlobal</include>
 			<include>BackgroundVarsMovies</include>
+			<visible>Skin.HasSetting(nocurtains)</visible>
+		</control>
+	</include>
+	<include name="MediaBackdropsTV">
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<include>BackgroundVarsTV</include>
+			<visible>Skin.HasSetting(nocurtains)</visible>
 		</control>
 	</include>
 
@@ -214,15 +218,7 @@
 			<include>FullscreenDimensions</include>
 			<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>Skin.HasSetting(genre_fanart_onoff) + Container.Content(genres)+substring(Container().ListItem.Label,,Left)</visible>
-		</control>
-		<control type="multiimage">
-			<include>FullscreenDimensions</include>
-			<include>BackgroundVarsMovieGenres</include>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<fadetime>600</fadetime>
-			<include>Animation_BackgroundFade</include>
-			<visible>Skin.HasSetting(genre_fanart_onoff) + Container.Content(genres)</visible>
+			<visible>!Skin.HasSetting(nogenrefanart) + Container.Content(genres) + substring(Container().ListItem.Label,,Left)</visible>
 		</control>
 	</include>
 	<include name="MediaBackdropsTVGenres">
@@ -230,52 +226,55 @@
 			<include>FullscreenDimensions</include>
 			<imagepath>special://skin/media/backdrops/default_tvshows/default.png</imagepath>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>Skin.HasSetting(genre_fanart_onoff) + Container.Content(genres)+substring(Container().ListItem.Label,,Left)</visible>
-		</control>
-		<control type="multiimage">
-			<include>FullscreenDimensions</include>
-			<include>BackgroundVarsTVGenres</include>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<fadetime>600</fadetime>
-			<include>Animation_BackgroundFade</include>
-			<visible>Skin.HasSetting(genre_fanart_onoff) + Container.Content(genres)</visible>
+			<visible>!Skin.HasSetting(nogenrefanart) + Container.Content(genres) + substring(Container().ListItem.Label,,Left)</visible>
 		</control>
 	</include>
+
+	<include name="MediaBackdropsGenres">
+		<include condition="Skin.HasSetting(videomovies)">MediaBackdropsMovieGenres</include>
+		<include condition="Skin.HasSetting(videotv)">MediaBackdropsTVGenres</include>
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<include condition="Skin.HasSetting(videomovies)">BackgroundVarsMovieGenres</include>
+			<include condition="Skin.HasSetting(videotv)">BackgroundVarsTVGenres</include>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>400</fadetime>
+			<include>Animation_BackgroundFade</include>
+			<visible>!Skin.HasSetting(nogenrefanart) + Container.Content(genres)</visible>
+		</control>
+	</include>
+
 	<include name="MediaBackdropsMusicGenres">
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
 			<imagepath>special://skin/media/backdrops/default_music/default.png</imagepath>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>Skin.HasSetting(genre_fanart_onoff) + Container.Content(genres)+substring(Container().ListItem.Label,,Left)</visible>
+			<visible>!Skin.HasSetting(nogenrefanart) + Container.Content(genres)+substring(Container().ListItem.Label,,Left)</visible>
 		</control>
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
-			<include>BackgroundVarsTVGenres</include>
+			<include>BackgroundVarsMusicGenres</include>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<fadetime>600</fadetime>
+			<fadetime>400</fadetime>
 			<include>Animation_BackgroundFade</include>
-			<visible>Skin.HasSetting(genre_fanart_onoff) + Container.Content(genres)</visible>
+			<visible>!Skin.HasSetting(nogenrefanart) + Container.Content(genres)</visible>
 		</control>
 	</include>
 	
-	<include name="MediaBackdropsTV">
-		<control type="multiimage">
-			<include>BackgroundVarsGlobal</include>
-			<include>BackgroundVarsTV</include>
-		</control>
-	</include>
 
-	<include name="MediaBackdropsTVFanart">
+	<include name="MediaBackdropsFanart">
 		<control type="largeimage">
 			<include>FullscreenDimensions</include>
-			<info>Fanart.Image</info>
-			<visible>!Skin.HasSetting(notvfanart) + [Container.Content(seasons) | Container.Content(episodes)]</visible>
+			<info>listitem.property(fanart_image)</info>
+			<visible>[!Skin.HasSetting(notvfanart) | !Skin.HasSetting(nomoviefanart)] + Skin.HasSetting(nocurtains)</visible>
+			<fadetime>400</fadetime>
+			<include>Animation_FanartFade</include>
 		</control>
 		<control type="largeimage" id="104">
 			<include>FullscreenDimensions</include>
-			<visible>!Skin.HasSetting(notvfanart) + Container.Content(episodes)</visible>
 			<fadetime>400</fadetime>
 			<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
+			<visible>!Skin.HasSetting(notvfanart) + Skin.HasSetting(nocurtains) + [Container.Content(episodes) | Container.Content(songs)]</visible>
 			<include>Animation_FanartFade</include>
 		</control>
 	</include>
@@ -366,7 +365,7 @@
 		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
 		<info>Skin.String(Custom_mainmenu_2)</info>		
 	</include>
-	<include name="BackgroundVars_mainmenu_3">
+<!--	<include name="BackgroundVars_mainmenu_3">
 		<icon>special://skin/media/backdrops/default_movies/default.png</icon>
 		<thumb>$INFO[Skin.String(Custom_mainmenu_3)]</thumb>
 		<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
@@ -413,7 +412,7 @@
 		<thumb>$INFO[Skin.String(Custom_mainmenu_10)]</thumb>
 		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
 		<info>Skin.String(Custom_mainmenu_11)</info>		
-	</include>	
+	</include>	-->
 <!-- Add Menu item End -->
 
 	

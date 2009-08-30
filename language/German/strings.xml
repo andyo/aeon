@@ -179,6 +179,7 @@
 	<string id="31222">EINEN NAMEN FÜR DIESE FREIGABE WÄHLEN</string>
 	<string id="31223">LISTE</string>
 	<string id="31224">KACHEL</string>
+	<string id="31229">EINTRÄGE BEARBEITEN</string>
 
 <!-- Aeon Advanced Menu labels -->
   
@@ -406,7 +407,7 @@
 	<string id="31707">LAUTSTÄKE</string>
 	<string id="31708">POSITION</string>
 	<string id="31709">LAUFZEIT</string>
-	<string id="31710">GESAMT ZEIT</string>
+	<string id="31710">ENDET UM</string>
 	<string id="31711">BOOKMARKS VERFÜGBAR</string>
 	<string id="31712">HOCH/RUNTER: MENÜ/BOOKMARKS[CR]LINKS/RECHTS: MENÜ OPTIONEN</string>
 	<string id="31713">OBJEKTE IN WIEDERGABELISTE</string>
@@ -465,7 +466,7 @@
 	<string id="31906">DANKE AN</string>
 	<string id="31907">ALLE IM XBMC FORUM</string>
 	<string id="31908">...UND AN DICH</string>
-	<string id="31909">AEON WILL RETURN IN</string>
+	<string id="31909">AEON KEHRT ZURÜCK IN</string>
 	<string id="31910">WETTER HINTERGRÜNDE</string>
 
 <!-- Submenu / Objects -->
@@ -509,12 +510,12 @@
 	<string id="31863">Neu bei deviantart</string>
 	<string id="31864">Wiedergabelisten bei Auswahl öffnen, anstatt sie abzuspielen</string>
 	<string id="31865">Extras</string>
-	<string id="31866">Album Review</string>
+	<string id="31866">Album-Kritik</string>
 	<string id="31867">HAUPTMENÜ</string>
 	<string id="31868">FIXIEREN</string>
 	<string id="31869">WETTER-BILDHINTERGRUND DEN AKTUELLEN WETTERBEDINGUNGEN ANPASSEN</string>
 	<string id="31870">-</string>
-	<string id="31871">RANDOM QUOTE</string>
+	<string id="31871">ZUFALLSAUSWAHL</string>
 	<string id="31872">-</string>
 	<string id="31873">Die nächsten 10 Tage</string>
 	<string id="31874">Die nächsten 36 Stunden</string>
@@ -574,17 +575,21 @@
 <!-- customisation strings added by azido -->
 
 	<string id="31975">FÜR TV-SERIEN ALLE ANSICHTEN FREISCHALTEN</string>
-	<string id="31976">MUSIC GRAPHIC VISUALISER</string>
-	<string id="31977">GRAFISCHE SYMBOLE FÜR FILM-GENRES BENUTZEN</string>
-	<string id="31978">STANDARDSYMBOL VERWENDEN, FALLS FILM-GENRE SYMBOL NICHT VERFÜGBAR IST</string>
-	<string id="31979">IN FILM-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
-	<string id="31980">GRAFISCHE SYMBOLE FÜR MUSIK-GENRES BENUTZEN</string>
-	<string id="31981">IN MUSIK-GENRE AUSWAHL FANART-HINTERGRUNDBILD BENUTZEN</string>
-	<string id="31986">ADD AND REMOVE FAVORITES/WIDGETS TO HOME MENU</string>	
-	<string id="31987">NOTE: WHEN DONE CHANGES, XBMC WILL QUIT</string>	
-	<string id="31988">XBMC will quit automatically when leaving this menu</string>	
-	<string id="31989">ADD NEW MENU</string>	
-	<string id="31990">VIEW & RENAME</string>	
-	<string id="31991">CHANGE</string>	
+	<string id="31976">MUSIK-VISUALISIERUNG</string>
+	<string id="31977">-</string>
+	<string id="31978">-</string>
+	<string id="31979">GENRE ARTWORK (FANART) FOR MOVIES</string>
+	<string id="31980">GENRE ARTWORK (FANART) FOR MUSIC</string>
+	<string id="31981">-</string>	
+	<string id="31986">FAVORITEN/WIDGETS IM HAUPTFENSTER HINZUFÜGEN/ENTFERNEN</string>	
+	<string id="31987">HINWEIS: BEIM VERLASSEN DIESES FENSTERS WIRD XBMC BEENDET!</string>	
+	<string id="31988">XBMC wird beendet, sobald du dieses Menü verlässt!</string>	
+	<string id="31989">NEUES MENÜ HINZUFÜGEN</string>	
+	<string id="31990">ZEIGEN &amp; UMBENENNEN</string>	
+	<string id="31991">ÄNDERN</string>	
+<!--	<string id="31992">AUDIO: DEUTSCH</string> -->
+	<string id="31992">- WIDGET</string>
+	<string id="31993">EIN &amp; AUSSCHALTEN</string>
+	<string id="31994">ZUFÄLLIGE UNGESEHENE ALBEN, FILME &amp; EPISODEN</string>
 
 </strings>

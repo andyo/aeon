@@ -204,21 +204,10 @@
 		</control>
 	</include> -->
 
-<!-- Animation -->
-	<include name="animation_Window_ocvh">
-		<animation effect="fade" start="0" end="100" delay="1000" time="500">WindowOpen</animation>
-		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-		<animation effect="fade" start="0" end="100" delay="500" time="800">Visible</animation>
-		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-	</include>
-<!-- Animation End-->
-
 <!-- Widget Recent Added -->
 	<include name="Widget_RecentAdded">
 		<control type="group">
-			<visible>!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)</visible>
-			<visible>[Container(300).HasFocus(6)+!IsEmpty(Window.Property(LatestEpisode.1.ShowTitle))] | [Container(300).HasFocus(7)+!IsEmpty(Window.Property(LatestMovie.1.Title))] | [Container(300).HasFocus(1)+!IsEmpty(Window.Property(LatestSong.1.Album))]</visible>
-			<visible>!Control.IsVisible(87)</visible>
+			<visible>[!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)] + [Container(300).HasFocus(6)+!IsEmpty(Window.Property(LatestEpisode.1.ShowTitle))] | [Container(300).HasFocus(7)+!IsEmpty(Window.Property(LatestMovie.1.Title))] | [Container(300).HasFocus(1)+!IsEmpty(Window.Property(LatestSong.1.Album))] + !Control.IsVisible(87)</visible>
 			<posx>1400</posx>
 			<posy>460</posy>
 			<include>widget_animation</include>
@@ -252,7 +241,7 @@
 				<aligny>center</aligny>
 				<font>Font_WeatherTitle</font>
 				<textcolor>c0FFFFFF</textcolor>
-				<label>Random pick</label>
+				<label>31871</label>
 			<include>animation_Window_ocvh</include>
 		</control>
 			<control type="image">
@@ -354,9 +343,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)</visible>
-			<visible>Container(300).HasFocus(1) | Container(300).HasFocus(6) | Container(300).HasFocus(7)</visible>
-			<visible>!Control.IsVisible(87)</visible>
+			<visible>[!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)] + [Container(300).HasFocus(1) | Container(300).HasFocus(6) | Container(300).HasFocus(7)] + !Control.IsVisible(87)</visible>
 			<animation effect="slide" start="0,20" end="0,20" time="0" condition="Skin.HasSetting(highertime)">Conditional</animation>
 			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<include>animation_Window_ocvh</include>
@@ -390,7 +377,7 @@
 					<posy>0</posy>
 					<control type="group">
 						<posx>159</posx>
-						<animation effect="slide" start="0,0" end="150,50" time="1" condition="Container(300).HasFocus(7)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="150,40" time="1" condition="Container(300).HasFocus(7)">Conditional</animation>
 						<control type="image">
 							<visible>Container(300).HasFocus(6)</visible>
 							<texture flipy="true">home/nowplaying_info.png</texture>
@@ -406,14 +393,14 @@
 							<aspectratio aligny="top" alignx="left">scale</aspectratio>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<posx>0</posx>
-							<posy>10</posy>
+							<posy>20</posy>
 							<width>324</width>
 							<height>180</height>
 						</control>
 						<control type="image">
 							<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)</visible>
 							<texture flipy="true">home/nowplaying_info_Line.png</texture>
-							<animation effect="slide" start="0,0" end="0,-50" time="1" condition="Container(300).HasFocus(7)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,-40" time="1" condition="Container(300).HasFocus(7)">Conditional</animation>
 							<posx>5</posx>
 							<posy>235</posy>
 							<width>324</width>
@@ -457,7 +444,7 @@
 							<control type="textbox">
 								<font>Font_HomeNowPlayingAlbum</font>
 								<posx>5</posx>
-								<posy>0</posy>
+								<posy>-10</posy>
 								<width>450</width>
 								<height>150</height>
 								<textcolor>c0FFFFFF</textcolor>
@@ -468,7 +455,7 @@
 							<control type="textbox">
 								<font>Font_HomeNowPlayingAlbum</font>
 								<posx>5</posx>
-								<posy>0</posy>
+								<posy>-10</posy>
 								<width>450</width>
 								<height>150</height>
 								<textcolor>c0FFFFFF</textcolor>
@@ -479,7 +466,7 @@
 							<control type="textbox">
 								<font>Font_HomeNowPlayingAlbum</font>
 								<posx>5</posx>
-								<posy>0</posy>
+								<posy>-10</posy>
 								<width>450</width>
 								<height>150</height>
 								<textcolor>c0FFFFFF</textcolor>
@@ -490,7 +477,7 @@
 							<control type="textbox">
 								<font>Font_HomeNowPlayingAlbum</font>
 								<posx>5</posx>
-								<posy>0</posy>
+								<posy>-10</posy>
 								<width>450</width>
 								<height>150</height>
 								<textcolor>c0FFFFFF</textcolor>
@@ -501,7 +488,7 @@
 							<control type="textbox">
 								<font>Font_HomeNowPlayingAlbum</font>
 								<posx>5</posx>
-								<posy>0</posy>
+								<posy>-10</posy>
 								<width>450</width>
 								<height>150</height>
 								<textcolor>c0FFFFFF</textcolor>
@@ -1245,25 +1232,25 @@
 
 <!-- extras.py set up -->
 	<include name="Widget_Extras_py">
-		<onfocus>setProperty(extra_extras,&extra=$INFO[Skin.String(extra_widget_set)])</onfocus>
+		<onfocus>setProperty(extra_extras,&amp;extra=$INFO[Skin.String(extra_widget_set)])</onfocus>
 	</include>
 	<include name="Widget_Picture_py">
-		<onfocus>setProperty(Picture_extras,&picture=$INFO[Skin.String(Pictures_widget_set)])</onfocus>
+		<onfocus>setProperty(Picture_extras,&amp;picture=$INFO[Skin.String(Pictures_widget_set)])</onfocus>
 	</include>
 	<include name="Widget_Totals_py">
-		<onfocus>setProperty(totals_extras,&totals=true)</onfocus>
+		<onfocus>setProperty(totals_extras,&amp;totals=true)</onfocus>
 	</include>
 	<include name="Widget_RecentAdded_py">
-		<onfocus>setProperty(recentadded_extras,&recentadded=true)</onfocus>
+		<onfocus>setProperty(recentadded_extras,&amp;recentadded=true)</onfocus>
 	</include>
 	<include name="Widget_CustomMenu1_py">
-		<onfocus>setProperty(CustomMenu1_extras,&CustomMenu1=$INFO[Skin.String(CustomMenu1_widget_set)])</onfocus>
+		<onfocus>setProperty(CustomMenu1_extras,&amp;CustomMenu1=$INFO[Skin.String(CustomMenu1_widget_set)])</onfocus>
 	</include>
 	<include name="Widget_CustomMenu2_py">
-		<onfocus>setProperty(CustomMenu2_extras,&CustomMenu2=$INFO[Skin.String(CustomMenu2_widget_set)])</onfocus>
+		<onfocus>setProperty(CustomMenu2_extras,&amp;CustomMenu2=$INFO[Skin.String(CustomMenu2_widget_set)])</onfocus>
 	</include>
 	<include name="Widget_random_order_py">
-		<onfocus>setProperty(random_order,&random=true)</onfocus>
+		<onfocus>setProperty(random_order,&amp;random=true)</onfocus>
 	</include>
 <!-- extras.py set up end -->
 
@@ -1509,7 +1496,7 @@
 			<font>Font_BigTime</font>
 			<include>Colour_WhiteAlpha80</include>
 			<visible>Skin.HasSetting(bighome)</visible>
-			<label>$LOCALIZE[31014]S: $INFO[Window.Property(TVShows.Count)]   |   $LOCALIZE[31938]: $INFO[Window.Property(Episodes.Count)]   |   $LOCALIZE[31440]: $INFO[Window.Property(Episodes.UnPlayed)]</label>
+			<label>$LOCALIZE[31014]: $INFO[Window.Property(TVShows.Count)]   |   $LOCALIZE[31938]: $INFO[Window.Property(Episodes.Count)]   |   $LOCALIZE[31440]: $INFO[Window.Property(Episodes.UnPlayed)]</label>
 			<visible>Container(300).HasFocus(7)</visible>
 		</control>
 		<control type="label" id="71">
@@ -1622,9 +1609,9 @@
 	</include>
 	<include name="Furniture_TimePanel">
 		<control type="image">
-			<posx>40</posx>
+			<posx>0</posx>
 			<posy>0</posy>
-			<width>451</width>
+			<width>487</width>
 			<height>27</height>
 			<texture>common/timepanel_mid.png</texture>
 			<animation type="Conditional" condition="Skin.HasSetting(bighome)">
@@ -1640,7 +1627,7 @@
 			<align>right</align>
 			<include>Colour_WhiteAlpha80</include>
 			<visible>!Skin.HasSetting(bighome)</visible>
-			<label>[COLOR FFe5e5e5][UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
+			<label>[COLOR FFe5e5e5]$INFO[Weather.Temperature]  |  [UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
 		</control>
 		<control type="label" id="70">
 			<posx>370</posx>
@@ -1650,12 +1637,12 @@
 			<align>right</align>
 			<include>Colour_WhiteAlpha80</include>
 			<visible>Skin.HasSetting(bighome)</visible>
-			<label>[COLOR FFe5e5e5][UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
+			<label>[COLOR FFe5e5e5]$INFO[Weather.Temperature]  |  [UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
 		</control>		
 	</include>
 	<include name="Furniture_TimePanelHigh">
 		<control type="image">
-			<posx>40</posx>
+			<posx>0</posx>
 			<posy>0</posy>
 			<width>451</width>
 			<height>27</height>
@@ -1673,7 +1660,7 @@
 			<align>right</align>
 			<include>Colour_WhiteAlpha80</include>
 			<visible>!Skin.HasSetting(bighome)</visible>			
-			<label>[COLOR FFe5e5e5][UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
+			<label>[COLOR FFe5e5e5]$INFO[Weather.Temperature]  |  [UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
 		</control>
 		<control type="label" id="70">
 			<posx>370</posx>
@@ -1683,27 +1670,27 @@
 			<align>right</align>
 			<include>Colour_WhiteAlpha80</include>
 			<visible>Skin.HasSetting(bighome)</visible>
-			<label>[COLOR FFe5e5e5][UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
+			<label>[COLOR FFe5e5e5]$INFO[Weather.Temperature]  |  [UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
 		</control>			
 	</include>
 	<include name="Furniture_Time">
 		<control type="group">
 			<include>Furniture_TimeGroupVars</include>
-			<visible>!Skin.HasSetting(highertime) + Window.IsActive(Home) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(552) + !Control.IsVisible(551) + !Control.IsVisible(57) + !Control.IsVisible(50) + !Control.IsVisible(550) + !Control.IsVisible(53) + !Skin.HasSetting(notime)</visible>
+			<visible>!Skin.HasSetting(highertime) + Window.IsActive(Home) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(551) + !Control.IsVisible(552) + !Control.IsVisible(553) + !Control.IsVisible(57) + !Control.IsVisible(50) + !Control.IsVisible(550) + !Control.IsVisible(53) + !Skin.HasSetting(notime)</visible>
 		 	<animation effect="slide" start="0,0" end="0,225" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<include>Animation_OpenCloseZoom</include>
 			<include>Furniture_TimePanel</include>
 		</control>
 		<control type="group">
 			<include>Furniture_TimeGroupHighVars</include>
-			<visible>[[Skin.HasSetting(highertime) + Window.IsActive(Home)] | [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(551) | Control.IsVisible(57)]] + !Skin.HasSetting(notime)</visible>
+			<visible>[[Skin.HasSetting(highertime) + Window.IsActive(Home)] | [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553) | Control.IsVisible(57)]] + !Skin.HasSetting(notime)</visible>
 <!--			<animation effect="slide" start="0,0" end="0,-27" time="200" condition="[Control.IsVisible(52) + !Control.HasFocus(52) + !Control.HasFocus(71) + !Control.HasFocus(60) + !Control.HasFocus(110) + !ControlGroup(7000).HasFocus()] | [[Control.IsVisible(50) | Control.IsVisible(550)] + ![Control.HasFocus(50) | Control.HasFocus(550)] + !Control.HasFocus(71) + !Control.HasFocus(61) + !ControlGroup(7000).HasFocus()] | [Control.IsVisible(53) + !Control.HasFocus(53) + !Control.HasFocus(71)] | [Control.IsVisible(57) + ![Control.HasFocus(57) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60) + !ControlGroup(7000).HasFocus()]]">Conditional</animation>-->
 			<include>Animation_CommonFade</include>
 			<include>Furniture_TimePanelHigh</include>
 		</control>		
 		<control type="group">
 			<include>Furniture_TimeGroupWindowVars</include>
-			<visible>!Window.IsActive(Home) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(552) + !Control.IsVisible(551) + !Control.IsVisible(57) + ![Control.IsVisible(50) | Control.IsVisible(550)] + !Control.IsVisible(53) + !Skin.HasSetting(notime)</visible>
+			<visible>!Window.IsActive(Home) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(551) + !Control.IsVisible(552) + !Control.IsVisible(553) + !Control.IsVisible(57) + ![Control.IsVisible(50) | Control.IsVisible(550)] + !Control.IsVisible(53) + !Skin.HasSetting(notime)</visible>
 			<include>Animation_CommonFade</include>
 			<include>Furniture_TimePanel</include>
 		</control>
@@ -1740,7 +1727,7 @@
 				<font>Font_VirtualRSS</font>
 				<align>right</align>
 				<textcolor>d0ffffff</textcolor>
-				<label>[COLOR FFe5e5e5][UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
+				<label>[COLOR FFe5e5e5]$INFO[Weather.Temperature]  |  [UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
 			</control>
 		</control>
 		<control type="group">
@@ -1764,7 +1751,7 @@
 				<font>Font_VirtualRSS</font>
 				<align>right</align>
 				<textcolor>d0ffffff</textcolor>
-				<label>[COLOR FFe5e5e5][UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
+				<label>[COLOR FFe5e5e5]$INFO[Weather.Temperature]  |  [UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label>
 			</control>
 		</control>
 	</include>
@@ -2298,8 +2285,6 @@
 		<texture>list/lite/list_spot.png</texture>
 	</include>	
 
-
-
 	<include name="Furniture_FloorBack">
 		<control type="image">
 			<posx>0</posx>
@@ -2308,20 +2293,7 @@
 			<height>405</height>
 			<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseFloorBackLight</include>
 			<include condition="Skin.HasSetting(darkshowcase)">ShowcaseFloorBackNight</include>			
-			<visible>Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552)</visible>
-			<include>Animation_CommonFade</include>
-			<include>Animation_HideShowcase</include>
-			<include>Animation_HideMultiplex</include>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>315</posy>
-			<width>1280</width>
-			<height>405</height>
-			<include condition="!Skin.HasSetting(darkshowcase)">OldShowcaseFloorLight</include>
-			<include condition="Skin.HasSetting(darkshowcase)">OldShowcaseFloorNight</include>			
-			<visible>Control.IsVisible(52)</visible>
-			<include>Animation_CommonFade</include>
+			<visible>Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)</visible>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
 		</control>
@@ -2333,7 +2305,6 @@
 			<include condition="!Skin.HasSetting(darkshowcase)">ListFloorBackLight</include>
 			<include condition="Skin.HasSetting(darkshowcase)">ListFloorBackNight</include>			
 			<visible>[Control.IsVisible(50) | Control.IsVisible(550)]</visible>
-			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
 		</control>
@@ -2341,13 +2312,6 @@
 
 
 	<include name="Furniture_MediaPanel">
-<!--		<control type="image">
-			<include>FullscreenDimensions</include>
-			<texture>list/list_filter.png</texture>
-			<colordiffuse>d0FFFFFF</colordiffuse>
-			<visible>[Control.IsVisible(50) | Control.IsVisible(550)]</visible>
-		</control> -->
-		
 		<control type="image">
 			<posx>0</posx>
 			<posy>315</posy>
@@ -2355,54 +2319,10 @@
 			<height>405</height>
 			<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontLight</include>
 			<include condition="Skin.HasSetting(darkshowcase)">ShowcaseFloorFrontNight</include>			
-			<visible>Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552)</visible>
-			<include>Animation_CommonFade</include>
+			<visible>Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)</visible>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
 		</control>
-		
-<!--		<control type="image">
-			<posx>0</posx>
-			<posy>315</posy>
-			<width>1280</width>
-			<height>405</height>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ListFloorFrontLight</include>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ListFloorFrontNight</include>			
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ListFloorFrontLightFullscreen</include>
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ListFloorFrontNightFullscreen</include>	
-			<visible>[Control.IsVisible(50) | Control.IsVisible(550)]</visible>
-			<include>Animation_CommonFade</include>
-			<include>Animation_HideShowcase</include>
-			<include>Animation_HideMultiplex</include>
-		</control> 
-		
-		<control type="image">
-			<posx>144</posx>
-			<posy>583</posy>
-			<width>993</width>
-			<height>137</height>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ShowcaseSpotLight</include>
-			<include condition="!Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ShowcaseSpotNight</include>
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + !Skin.HasSetting(darkshowcase)">ShowcaseSpotLightFullscreen</include>
-			<include condition="Skin.HasSetting(fullscreenmultiplex) + Skin.HasSetting(darkshowcase)">ShowcaseSpotNightFullscreen</include>			
-			<include>Animation_CommonFade</include>
-			<include>Animation_HideShowcase</include>
-			<include>Animation_HideMultiplex</include>
-			<visible>Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552)</visible>
-		</control> -->
-	
-<!--		<control type="image">
-			<posx>0</posx>
-			<posy>315</posy>
-			<width>1280</width>
-			<height>405</height>
-			<texture>list/list_floor.png</texture>
-			<visible>[Control.IsVisible(50) | Control.IsVisible(550)]</visible>
-			<include>Animation_CommonFade</include>
-			<include>Animation_HideShowcase</include>
-			<include>Animation_HideMultiplex</include>				
-		</control>		-->
-
 		<control type="image">
 			<posx>350</posx>
 			<posy>583</posy>
@@ -2410,12 +2330,10 @@
 			<height>137</height>
 			<include condition="!Skin.HasSetting(darkshowcase)">ListSpotLight</include>
 			<include condition="Skin.HasSetting(darkshowcase)">ListSpotNight</include>
-			<include>Animation_CommonFade</include>
 			<include>Animation_HideShowcase</include>
 			<include>Animation_HideMultiplex</include>
 			<visible>[Control.IsVisible(50) | Control.IsVisible(550)]</visible>
 		</control>
-
 	</include>
 
 	<include name="Furniture_shadow">
@@ -2425,18 +2343,20 @@
 			<width>1280</width>
 			<height>267</height>
 			<texture>showcase/showcase_floorshadow.png</texture>
-			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<include>Animation_HideShowcase</include>
+			<include>Animation_HideMultiplex</include>
 		</control>
-
 		<control type="image">
 			<posx>0</posx>
 			<posy>406</posy>
 			<width>1280</width>
 			<height>267</height>
 			<texture>showcase/lite/showcase_floorshadow.png</texture>
-			<visible>!Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<visible>!Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<include>Animation_HideShowcase</include>
+			<include>Animation_HideMultiplex</include>
 		</control>
-
 	</include>
 	
 	<include name="Furniture_vignette">
@@ -2446,7 +2366,7 @@
 			<width>640</width>
 			<height>720</height>
 			<texture>showcase/showcase_vignette.png</texture>
-			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
+			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
 				<effect type="slide" start="-464,0" end="0,0" time="400" easing="inout" tween="cubic" />
@@ -2471,7 +2391,7 @@
 			<width>640</width>
 			<height>720</height>
 			<texture flipx="true">showcase/showcase_vignette.png</texture>
-			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
+			<visible>[Control.IsVisible(57) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
 				<effect type="slide" start="464,0" end="0,0" time="400" easing="inout" tween="cubic" />
@@ -2752,7 +2672,7 @@
 			<width>1280</width>
 			<height>48</height>
 			<texture>showcase/showcase_gradient.png</texture>
-			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552)]</visible>
+			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)]</visible>
 			<include>Animation_CommonFade</include>
 		</control>		
 	</include>
@@ -2851,6 +2771,271 @@
 		<include>Animation_TutorialFade</include>				
 	</include>
 
+<!-- Weather Backdrop by Current Weather Conditions -->
+	<include name="BackgroundVarsWeather2">
+		<thumb>\backdrops\weather\$INFO[Weather.FanartCode]</thumb>
+		<imagepath background="true">\backdrops\weather\$INFO[Weather.FanartCode]</imagepath>
+	</include>
+<!-- End -->	
+
+<!-------- Weather Start -------->
+	<include name="Objects_WeatherPopup">
+		<control type="group">
+			<posx>0</posx>
+			<posy>40</posy>
+			<width>1280</width>
+			<height>287</height>
+			<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="!Skin.HasSetting(highertime)">Conditional</animation>
+			<animation effect="zoom" start="100" end="90" time="200" center="640,80" condition="Player.HasAudio + Skin.HasSetting(lowermainmenu)+!Window.IsVisible(2600)">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<control type="group">
+				<posx>67</posx>
+				<animation effect="fade" start="0" end="100" delay="1500" time="400">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>
+				<control type="multiimage">
+					<description>Weather image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>283</width>
+					<height>287</height>
+					<imagepath diffuse="home/home_weather_big_mask.png">icon/$INFO[Weather.FanartCode]/</imagepath>
+					<timeperimage>175</timeperimage>
+					<randomize>false</randomize>
+					<fadetime>0</fadetime>
+					<colordiffuse>88FFFFFF</colordiffuse>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<visible>Skin.HasSetting(Weather_ani)</visible>
+				</control>
+				<control type="image">
+					<description>Weather image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>283</width>
+					<height>287</height>
+					<texture diffuse="home/home_weather_big_mask.png">$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+					<colordiffuse>88FFFFFF</colordiffuse>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<visible>!Skin.HasSetting(Weather_ani)</visible>
+				</control>
+				<control type="image">
+					<posy>0</posy>
+					<width>283</width>
+					<height>287</height>
+					<texture>home/home_weather_big.png</texture>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>0</posy>
+					<width>263</width>
+					<height>63</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_WeatherTitle</font>
+					<textcolor>c0FFFFFF</textcolor>
+					<scroll>false</scroll>
+					<label>$INFO[Window(Weather).Property(Location)]</label>
+				</control>
+				<control type="label">
+					<visible>Skin.HasSetting(debug)</visible>				
+					<posx>10</posx>
+					<posy>75</posy>
+					<width>280</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_WeatherLabel</font>
+					<textcolor>ffFFFFFF</textcolor>					
+					<label>Fanart code: $INFO[Weather.FanartCode]</label>
+				</control>
+				<control type="label">
+					<visible>Skin.HasSetting(debug)</visible>				
+					<posx>10</posx>
+					<posy>95</posy>
+					<width>280</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_WeatherLabel</font>
+					<textcolor>ffFFFFFF</textcolor>					
+					<label>dir: $INFO[Skin.String(CustomWeather)]</label>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<posy>67</posy>
+					<width>141</width>
+					<height>220</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_WeatherLabel</font>
+					<textcolor>c0FFFFFF</textcolor>					
+					<label>$LOCALIZE[31008][CR]$LOCALIZE[31009][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405]</label>
+				</control>
+				<control type="label">
+					<posx>263</posx>
+					<posy>67</posy>
+					<width>141</width>
+					<height>220</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>Font_WeatherLabel</font>
+					<textcolor>FFFFFFFF</textcolor>					
+					<label>$INFO[Window(Weather).Property(Current.Temperature)][CR]$INFO[System.TemperatureUnits][CR]$INFO[Window(Weather).Property(Current.Humidity)][CR]$INFO[Window(Weather).Property(Current.UVIndex)][CR]$INFO[Window(Weather).Property(Current.DewPoint)]</label>
+				</control>						
+			</control>
+		<!-- 4 day -->
+			<control type="group">
+						<visible>[[!Window.IsVisible(2600) + Skin.HasSetting(weatherpopupweek)] | [!Window.IsVisible(2600) + !Skin.HasSetting(weatherpopup36hour) + !Skin.HasSetting(weatherpopupweekend) + !Skin.HasSetting(weatherpopupweek)]] | !StringCompare(Weather.Plugin,weather.com plus)</visible>
+				<control type="group">
+					<posx>370</posx>
+					<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+					<animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+					<control type="image">
+						<include>Objects_WeatherBack</include>
+					</control>
+					<control type="label">
+						<include>Objects_WeatherDay</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day0.Title)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Objects_WeatherTemp</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day0.HighTemp)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Objects_WeatherTemp</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day0.LowTemp)]</label>
+					</control>
+					<control type="image">
+						<include>Objects_WeatherIcon</include>
+						<texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>				
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<include>Objects_WeatherIcon</include>
+						<imagepath>icon\$INFO[Window(Weather).Property(Day0.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+				</control>
+				<control type="group">
+					<posx>586</posx>
+					<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+					<animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>	
+					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+					<control type="image">
+						<include>Objects_WeatherBack</include>
+					</control>
+					<control type="label">
+						<include>Objects_WeatherDay</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day1.Title)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Objects_WeatherTemp</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day1.HighTemp)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Objects_WeatherTemp</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day1.LowTemp)]</label>
+					</control>
+					<control type="image">
+						<include>Objects_WeatherIcon</include>
+						<texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>				
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<include>Objects_WeatherIcon</include>
+						<imagepath>icon\$INFO[Window(Weather).Property(Day1.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+				</control>
+				<control type="group">
+					<posx>802</posx>
+					<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>
+					<animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>					
+					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+					<control type="image">
+						<include>Objects_WeatherBack</include>
+					</control>
+					<control type="label">
+						<include>Objects_WeatherDay</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day2.Title)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Objects_WeatherTemp</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day2.HighTemp)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Objects_WeatherTemp</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day2.LowTemp)]</label>
+					</control>
+					<control type="image">
+						<include>Objects_WeatherIcon</include>
+						<texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>				
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<include>Objects_WeatherIcon</include>
+						<imagepath>icon\$INFO[Window(Weather).Property(Day2.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+				</control>
+				<control type="group">
+					<posx>1018</posx>
+					<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>			
+					<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>					
+					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+					<control type="image">
+						<include>Objects_WeatherBack</include>
+					</control>
+					<control type="label">
+						<include>Objects_WeatherDay</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day3.Title)]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<include>Objects_WeatherTemp</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day3.HighTemp)]</label>
+					</control>
+					<control type="label">
+						<posx>99</posx>
+						<include>Objects_WeatherTemp</include>
+						<label fallback="-">$INFO[Window(Weather).Property(Day3.LowTemp)]</label>
+					</control>
+					<control type="image">
+						<include>Objects_WeatherIcon</include>
+						<texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>				
+						<visible>!Skin.HasSetting(Weather_ani)</visible>					
+					</control>
+					<control type="multiimage">
+						<include>Objects_WeatherIcon</include>
+						<imagepath>icon\$INFO[Window(Weather).Property(Day3.FanartCode)]</imagepath>
+						<timeperimage>75</timeperimage>
+						<randomize>false</randomize>
+						<fadetime>0</fadetime>
+						<visible>Skin.HasSetting(Weather_ani)</visible>					
+					</control>				
+				</control>
+			</control>
+		</control>
+	</include>
+<!-------- Weather End -------->
+
 	<include name="Furniture_Debug">
 		<control type="label">
 			<posx>20</posx>
@@ -2859,6 +3044,54 @@
 			<font>Font_Debug</font>
 			<label>$LOCALIZE[31600][CR]$LOCALIZE[31601] $INFO[System.FreeMemory][CR]$LOCALIZE[31602] $INFO[System.BuildDate][CR]$LOCALIZE[31603] $INFO[System.FPS][CR]$LOCALIZE[31604] $INFO[System.CurrentWindow][CR]$LOCALIZE[31605] $INFO[System.CurrentControl][CR]$INFO[System.InternetState][CR]$LOCALIZE[31606] $INFO[Container.Viewmode]</label>
 			<visible>Skin.HasSetting(debug) + !Skin.HasSetting(debuginfo)</visible>
+		</control>
+	</include>
+	
+
+	<include name="ScrollOffsetLabel">
+		<control type="group">
+			<animation effect="fade" start="100" end="100" time="250" condition="Container.Scrolling">Conditional</animation>
+			<animation effect="fade" start="100" end="0" delay="2000" time="800" condition="!Container.Scrolling">Conditional</animation>
+			<animation effect="slide" end="605,500" time="0" condition="[Skin.HasSetting(videomovies) | Skin.HasSetting(tvposterview)] + Control.IsVisible(551)">Conditional</animation>
+			<animation effect="slide" end="605,530" time="0" condition="Skin.HasSetting(videotv) + [Control.IsVisible(552) | Control.IsVisible(551)]">Conditional</animation>
+			<animation effect="slide" end="605,500" time="0" condition="Control.IsVisible(553)">Conditional</animation>
+			<animation effect="slide" end="605,420" time="0" condition="Control.IsVisible(57)">Conditional</animation>
+			<animation effect="slide" end="350,280" time="0" condition="Control.IsVisible(550)">Conditional</animation>
+			<animation effect="slide" end="410,280" time="0" condition="Control.IsVisible(50)">Conditional</animation>
+			<animation effect="slide" end="605,280" time="0" condition="Control.IsVisible(53)">Conditional</animation>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>70</width>
+				<height>70</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<colordiffuse>BF000000</colordiffuse>
+				<texture>common/scroll_letter_background.png</texture>
+				<visible>![Control.IsVisible(50) | Control.IsVisible(550)]</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>70</width>
+				<height>70</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<colordiffuse>6F000000</colordiffuse>
+				<texture>common/scroll_letter_background.png</texture>
+				<visible>Control.IsVisible(50) | Control.IsVisible(550)</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>70</width>
+				<height>70</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.SortLetter]</label>
+				<textcolor>ffffffff</textcolor>
+				<font>Font_MultiplexTVLabel</font>
+			</control>
 		</control>
 	</include>
 	

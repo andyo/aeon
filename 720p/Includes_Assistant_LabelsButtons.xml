@@ -152,7 +152,10 @@
 <!-- Buttons for Home page -->
 	
 		<control type="group">
-			<include>Settings_ButtonGroupDimensionsXBMC</include>
+			<posx>42</posx>
+			<posy>120</posy>
+			<width>217</width>
+			<height>720</height>	
 			<include>Animation_CommonFade</include>
 
 			<include>Assistant_CommonButtons</include>

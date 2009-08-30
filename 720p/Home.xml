@@ -27,7 +27,7 @@
 	<control type="multiimage">
 		<include>BackgroundVarsGlobal</include>
 		<imagepath background="true">$INFO[Container(300).ListItem.Icon]</imagepath>
-		<visible>![control.HasFocus(8001)+Container(300).HasFocus(6)]</visible>
+		<visible>![control.HasFocus(8001)+[Container(300).HasFocus(6) | Container(300).HasFocus(7)]]</visible>
 	</control>
 	<control type="multiimage">
 		<include>BackgroundVarsGlobal</include>
@@ -40,35 +40,35 @@
 		<height>720</height>
 		<visible>Container(300).HasFocus(7) + control.HasFocus(8001)</visible>
 		<control type="image">
-			<texture fallback="backdrops\default_tvshows\default.png" background="true">$INFO[Window.Property(LatestEpisode.1.Fanart)]</texture>
+			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.1.Fanart)]</texture>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<visible>Container(8001).Row(0)</visible>
 			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
 			<animation effect="fade" start="100" end="0" time="600" >Hidden</animation>
 		</control>
 		<control type="image">
-			<texture fallback="backdrops\default_tvshows\default.png" background="true">$INFO[Window.Property(LatestEpisode.2.Fanart)]</texture>
+			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.2.Fanart)]</texture>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<visible>Container(8001).Row(1)</visible>
 			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
 			<animation effect="fade" start="100" end="0" time="600" >Hidden</animation>
 		</control>
 		<control type="image">
-			<texture fallback="backdrops\default_tvshows\default.png" background="true">$INFO[Window.Property(LatestEpisode.3.Fanart)]</texture>
+			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.3.Fanart)]</texture>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<visible>Container(8001).Row(2)</visible>
 			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
 			<animation effect="fade" start="100" end="0" time="600" >Hidden</animation>
 		</control>
 		<control type="image">
-			<texture fallback="backdrops\default_tvshows\default.png" background="true">$INFO[Window.Property(LatestEpisode.4.Fanart)]</texture>
+			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.4.Fanart)]</texture>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<visible>Container(8001).Row(3)</visible>
 			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
 			<animation effect="fade" start="100" end="0" time="600" >Hidden</animation>
 		</control>
 		<control type="image">
-			<texture fallback="backdrops\default_tvshows\default.png" background="true">$INFO[Window.Property(LatestEpisode.5.Fanart)]</texture>
+			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.5.Fanart)]</texture>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<visible>Container(8001).Row(4)</visible>
 			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
@@ -84,7 +84,7 @@
 		<height>13</height>
 		<font>Font_MultiplexInfoLabel</font>
 		<textcolor>FFFFFFFF</textcolor>		
-		<label>** $INFO[Window.Property(LatestEpisode.1.Fanart)]</label>
+		<label>** $INFO[Window.Property(LatestEpisode.1.Fanart)][CR]** $INFO[Window.Property(LatestEpisode.2.Fanart)][CR]** $INFO[Window.Property(LatestEpisode.3.Fanart)][CR]** $INFO[Window.Property(LatestEpisode.4.Fanart)][CR]** $INFO[Window.Property(LatestEpisode.5.Fanart)]</label>
 		<visible>Skin.HasSetting(debug)</visible>
 	</control>	
 <!-- Windowopen -->
@@ -339,7 +339,7 @@
 						<visible>!Skin.HasSetting(no_mainmenu_2)</visible>
 						<visible>Skin.HasSetting(mainmenu_2)</visible>
 					</item>
-					<item id="32">
+<!--					<item id="32">
 						<label>$INFO[Skin.String(mainmenu_3name)]</label>
 						<include>BackgroundVars_mainmenu_3</include>
 						<onclick>Skin.Reset(videofiles)</onclick>
@@ -458,7 +458,7 @@
 						<onclick>$INFO[Skin.String(mainmenu_10path)]</onclick>
 						<visible>!Skin.HasSetting(no_mainmenu_10)</visible>
 						<visible>Skin.HasSetting(mainmenu_10)</visible>
-					</item>		
+					</item>	-->
 				<!-- Add Item End -->
 					<item id="3">
 						<label>0</label>
@@ -519,13 +519,14 @@
 						<description>Refresh</description>
 						<include>BackgroundVarsSettings</include>				
 						<label>31607</label>
-						<onclick>Skin.Reset(videomovies)</onclick>
 						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
+						<onclick>Skin.Reset(videomovies)</onclick>
 						<onclick>Skin.Reset(videotv)</onclick>
+						<onclick>Skin.Reset(recenttv)</onclick>
 						<onclick>Skin.Reset(videogenres)</onclick>
 						<onclick>Skin.Reset(music)</onclick>
 						<onclick>Skin.Reset(musicgenres)</onclick>
+						<onclick>Skin.Reset(settingsfade)</onclick>
 						<onclick>XBMC.ReloadSkin</onclick>
 						<visible>Skin.HasSetting(debug)</visible>
 					</item>
@@ -823,7 +824,7 @@
 						<visible>Skin.HasSetting(TVShows_Sub_3)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
 					</item>
-					<item id="236">
+<!--					<item id="236">
 						<description>TVShows_Sub 4</description>
 						<label>$INFO[Skin.String(TVShows_Sub_4name)]</label>
 						<onclick>Skin.Reset(submenu)</onclick>
@@ -837,7 +838,7 @@
 						<onclick>$INFO[Skin.String(TVShows_Sub_4path)]</onclick>
 						<visible>Skin.HasSetting(TVShows_Sub_4)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
-					</item>
+					</item> -->
 					<!-- TV (7) end -->
 					<!-- Movies (6) -->
 					<item id="20">
@@ -1098,7 +1099,7 @@
 						<visible>Container(300).HasFocus(1)</visible>
 					</item>
 					<item id="34">
-						<description>genres</description>
+						<description>Genres</description>
 						<label>135</label>
 						<onclick>Skin.SetBool(music)</onclick>
 						<onclick>Skin.Reset(recenttv)</onclick>
@@ -1112,7 +1113,7 @@
 						<visible>Container(300).HasFocus(1)</visible>
 					</item>
 					<item id="35">
-						<description>artists</description>
+						<description>Artists</description>
 						<label>133</label>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>Skin.SetBool(music)</onclick>
@@ -1263,7 +1264,6 @@
 						<visible>Container(300).HasFocus(1)</visible>
 					</item>
 					<!-- Music (1) end -->
-					
 					<!-- extras (2) -->
 					<item id="51">
 						<description>Programs</description>
@@ -1390,7 +1390,7 @@
 						<visible>Container(300).HasFocus(2)</visible>
 					</item>
 
-					<item id="245">
+<!--					<item id="245">
 						<description>Extras_Sub 1</description>
 						<label>$INFO[Skin.String(Extras_Sub_1name)]</label>
 						<onclick>Skin.Reset(videotv)</onclick>
@@ -1441,7 +1441,7 @@
 						<onclick>$INFO[Skin.String(Extras_Sub_4path)]</onclick>
 						<visible>Skin.HasSetting(Extras_Sub_4)</visible>
 						<visible>Container(300).HasFocus(2)</visible>
-					</item>
+					</item> -->
 					<!-- extras (2) End -->
 
 					<!-- Shutdown (22) -->

@@ -2,7 +2,7 @@
 	<id>6</id>
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<views>550,50,52,53,57,551,552</views>
+	<views>550,50,52,53,551,552</views>
 	<controls>
 	<control type="image" id="109">
 		<posx>0</posx>
@@ -11,7 +11,6 @@
 		<height>0</height>
 		<texture>-</texture>
 		<visible>[Skin.HasSetting(videomovies) + !Skin.HasSetting(nomultiplexpopup) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)] + [Control.HasFocus(551) | Control.HasFocus(552) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]] | [Skin.HasSetting(videotv) + !Skin.HasSetting(nomultiplextvpopup) + [[Container.Content(tvshows) + ![Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]] | [Container.Content(seasons) + ![Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(episodes) + ![Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfotrigger)]]] + [Control.HasFocus(551) |Control.HasFocus(552)  | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]]</visible>
-		<animation effect="fade" start="0" end="100" time="500" delay="1500">Visible</animation>
 	</control>
 
 	<control type="multiimage">
@@ -35,28 +34,16 @@
 		
 		<include>Furniture_FloorBack</include>
 		<include>Furniture_shadow</include>
-
-<!--	<include>Furniture_MediaPanel</include>-->
-		<include condition="!Skin.HasSetting(oldmultiplex)">Viewtype_Multiplex</include>
-		<include condition="Skin.HasSetting(oldmultiplex)">Viewtype_MultiplexOld</include>
-
-		<!--<include>Objects_ShowcaseMenuPanel</include>-->
-
 		<include>Viewtype_Wall</include>
-		<include>Viewtype_Showcase</include>
+<!--		<include>Viewtype_Showcase</include> -->
 		<include>Viewtype_List</include>
 		<include>Furniture_Time</include>	
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
-		
-
-<!--	<include>HorizontalVideoMenu</include>		-->
 		<include>VerticalMenu</include>		
-
 	</control>
 
 	<include>Furniture_DarkGradient</include>	
-	<!--<include>ViewChange</include>-->
 	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	

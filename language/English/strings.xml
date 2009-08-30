@@ -515,7 +515,7 @@
 	<string id="31868">LOCK</string>
 	<string id="31869">Weather Backdrop by Current Weather Conditions</string>
 	<string id="31870">-</string>
-    <string id="31871">RANDOM QUOTE</string>
+    <string id="31871">RANDOM PICK</string>
 	<string id="31872">-</string>
 	<string id="31873">Next 10 Days</string>
 	<string id="31874">Next 36 Hours</string>
@@ -570,20 +570,24 @@
 	<string id="31972">VERTICAL MENU</string>
 	<string id="31973">MOVIE FOLDER LOCATION</string>
 	<string id="31974">DYNAMIC COVERFLOW</string>
+	<string id="31995">COVERFLOW</string>
 
 <!-- customisation strings added by azido -->
 
 	<string id="31975">UNLOCK ALL VIEWS FOR TV SHOWS</string>
 	<string id="31976">MUSIC GRAPHIC VISUALISER</string>
-	<string id="31977">MOVIE GENRE ICONS ON/OFF</string>
-	<string id="31978">MOVIE GENRE FALLBACK ICON ON/OFF</string>
-	<string id="31979">MOVIE GENRE FANART IMAGE ON/OFF</string>
-	<string id="31980">MUSIC GENRE ICONS ON/OFF</string>
-	<string id="31981">MUSIC GENRE FANART IMAGE ON/OFF</string>	
+	<string id="31977">-</string>
+	<string id="31978">-</string>
+	<string id="31979">GENRE ARTWORK (FANART) FOR MOVIES</string>
+	<string id="31980">GENRE ARTWORK (FANART) FOR MUSIC</string>
+	<string id="31981">-</string>	
 	<string id="31986">ADD AND REMOVE FAVORITES/WIDGETS TO HOME MENU</string>	
 	<string id="31987">NOTE: WHEN DONE CHANGES, XBMC WILL QUIT</string>	
 	<string id="31988">XBMC will quit automatically when leaving this menu</string>	
-	<string id="31989">ADD AND REMOVE</string>	
-	<string id="31990">VIEW & RENAME</string>	
-	<string id="31991">CHANGE</string>	
+	<string id="31989">ADD &amp; REMOVE</string>	
+	<string id="31990">VIEW &amp; RENAME</string>	
+	<string id="31991">CHANGE</string>
+	<string id="31992">WIDGET</string>
+	<string id="31993">ENABLE/DISABLE</string>
+	<string id="31994">Random UnWatched Movies &amp; TV shows</string>
 </strings>

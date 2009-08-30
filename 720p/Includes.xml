@@ -7,21 +7,22 @@
 <include file="Includes_Objects.xml" />
 <include file="Includes_Furniture.xml" />
 <include file="Includes_Colours.xml" />
-<include file="Includes_Reset.xml" />
-<include file="Includes_Assistant_LabelsButtons.xml" />
-<include file="Includes_Settings_LabelsButtons.xml" />
-<include file="Includes_Settings_Presets.xml" />
-<include file="Includes_Settings_Welcome.xml" />
+<!--<include file="Includes_Reset.xml" /> -->
+<!-- <include file="Includes_Assistant_LabelsButtons.xml" /> -->
+<!-- <include file="Includes_Settings_Presets.xml" /> -->
+<!-- <include file="Includes_Settings_Welcome.xml" /> -->
 <include file="Includes_MediaFlags.xml" />
-<include file="Viewtype_Showcase.xml" />
+<!-- <include file="Viewtype_Showcase.xml" /> -->
 <include file="Viewtype_StripShow.xml" />
-<include file="Viewtype_Multiplex.xml" />
-<include file="Viewtype_MultiplexOld.xml" />
+<include file="Viewtype_Multiplex_Music.xml" />
+<include file="Viewtype_Multiplex_Movies.xml" />
+<include file="Viewtype_Multiplex_TVShows.xml" />
+<include file="Viewtype_Multiplex_Info.xml" />
 <include file="Viewtype_List.xml" />
 <include file="Viewtype_Wall.xml" />
 
 <include file="Includes_Widget_Weather.xml" />
-<include file="Includes_genre.xml" />
+<!--<include file="Includes_genre.xml" /> -->
 <include file="Includes_VerticalMenu.xml" />
 <include file="Includes_Filemanager.xml" />
 
