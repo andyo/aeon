@@ -207,6 +207,11 @@
 				</control>
 				<control type="multiimage">
 					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_advanced</imagepath>
+					<visible>Container(6).HasFocus(11)</visible>
+				</control>
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
 					<imagepath>tutorials/tut_profiles</imagepath>
 					<visible>Container(6).HasFocus(10)</visible>
 				</control>
@@ -335,6 +340,20 @@
 				<control type="label">
 					<include>Labels_MainLabelSmallVars</include>
 					<label>31811</label>
+				</control>
+			</control>
+
+			<control type="group">
+				<description>Settings Labels - Tier 1: Advanced Options</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(6).HasFocus(11)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>31822</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>31823</label>
 				</control>
 			</control>
 			
