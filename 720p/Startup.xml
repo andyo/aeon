@@ -7,6 +7,7 @@
 		<posx>35</posx>
 		<posy>235</posy>
 		<font>special15</font>
+		<onfocus>Skin.SetBool(Startup)</onfocus>
 		<onfocus>ReplaceWindow(Home)</onfocus>
 		<texturefocus>-</texturefocus>
 		<texturenofocus>-</texturenofocus>

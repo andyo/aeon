@@ -1,4 +1,5 @@
 <window id="133">
+	<defaultcontrol>1111</defaultcontrol>
 	<zorder>1</zorder>
 	<coordinates>
 	<system>1</system>
@@ -7,6 +8,16 @@
 	</coordinates>
 	<include>Animation_DialogPopup</include>
 	<controls>
+
+	<control type="button" id="1111">
+		<posx>-10</posx>
+		<posy>-10</posy>
+		<height>1</height>
+		<width>1</width>
+		<texturefocus></texturefocus>
+		<texturenofocus></texturenofocus>
+		<onfocus>Skin.SetBool(LibraryUpdated)</onfocus>
+	</control>
 
 	<control type="group">
 		<visible>!VideoPlayer.IsFullscreen</visible>

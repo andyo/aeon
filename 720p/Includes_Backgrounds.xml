@@ -202,14 +202,14 @@
 		<control type="multiimage">
 			<include>BackgroundVarsGlobal</include>
 			<include>BackgroundVarsMovies</include>
-			<visible>Skin.HasSetting(nocurtains)</visible>
+			<visible>[Skin.HasSetting(nomoviefanart) | IsEmpty(listitem.property(fanart_image))] + Skin.HasSetting(nocurtains)</visible>
 		</control>
 	</include>
 	<include name="MediaBackdropsTV">
 		<control type="multiimage">
 			<include>BackgroundVarsGlobal</include>
 			<include>BackgroundVarsTV</include>
-			<visible>Skin.HasSetting(nocurtains)</visible>
+			<visible>[Skin.HasSetting(notvfanart) | IsEmpty(listitem.property(fanart_image))] + Skin.HasSetting(nocurtains)</visible>
 		</control>
 	</include>
 
@@ -265,8 +265,8 @@
 	<include name="MediaBackdropsFanart">
 		<control type="largeimage">
 			<include>FullscreenDimensions</include>
-			<info>listitem.property(fanart_image)</info>
-			<visible>[!Skin.HasSetting(notvfanart) | !Skin.HasSetting(nomoviefanart)] + Skin.HasSetting(nocurtains)</visible>
+			<info fallback="defaultvideo.png">listitem.property(fanart_image)</info>
+			<visible>![Skin.HasSetting(notvfanart) | Skin.HasSetting(nomoviefanart)] + Skin.HasSetting(nocurtains)</visible>
 			<fadetime>400</fadetime>
 			<include>Animation_FanartFade</include>
 		</control>

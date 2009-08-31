@@ -105,9 +105,41 @@
 		<include condition="Skin.HasSetting(CustomMenu2_widget_on)">Widget_CustomMenu2_py</include>
 		<include condition="Skin.HasSetting(Widget_random_order)">Widget_random_order_py</include>
 		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(random_order)]$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
+		<onfocus>Skin.Reset(Startup)</onfocus>
         <onfocus>SetFocus(325)</onfocus>
         <onfocus>SetFocus(300)</onfocus>
         <onfocus>Skin.Reset(submenu)</onfocus>
+		<visible>Skin.HasSetting(Startup)</visible>
+    </control>
+    <control type="button" id="323">
+        <!-- <include>homesubmenu_but</include> -->
+        <onfocus>setProperty(extra_extras,)</onfocus>
+        <onfocus>setProperty(Picture_extras,)</onfocus>
+        <onfocus>setProperty(totals_extras,)</onfocus>
+        <onfocus>setProperty(recentadded_extras,)</onfocus>
+		<onfocus>setProperty(CustomMenu1_extras,)</onfocus>
+		<onfocus>setProperty(CustomMenu2_extras,)</onfocus>
+		<onfocus>setProperty(random_order,)</onfocus>
+		<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded_py</include>
+		<include condition="!Skin.HasSetting(Library_info)">Widget_Totals_py</include>
+		<include condition="Skin.HasSetting(extra_widget_on)">Widget_Extras_py</include>
+		<include condition="Skin.HasSetting(Pictures_widget_on)">Widget_Picture_py</include>
+		<include condition="Skin.HasSetting(CustomMenu1_widget_on)">Widget_CustomMenu1_py</include>
+		<include condition="Skin.HasSetting(CustomMenu2_widget_on)">Widget_CustomMenu2_py</include>
+		<include condition="Skin.HasSetting(Widget_random_order)">Widget_random_order_py</include>
+		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(random_order)]$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
+		<onfocus>Skin.Reset(LibraryUpdated)</onfocus>
+        <onfocus>SetFocus(325)</onfocus>
+        <onfocus>SetFocus(300)</onfocus>
+        <onfocus>Skin.Reset(submenu)</onfocus>
+		<visible>!Skin.HasSetting(Startup) + Skin.HasSetting(LibraryUpdated) + !Window.IsVisible(112) + !Window.IsVisible(133)</visible>
+    </control>
+    <control type="button" id="323">
+		<onfocus>Skin.Reset(LibraryUpdated)</onfocus>
+        <onfocus>SetFocus(325)</onfocus>
+        <onfocus>SetFocus(300)</onfocus>
+        <onfocus>Skin.Reset(submenu)</onfocus>
+		<visible>!Skin.HasSetting(Startup) + [!Skin.HasSetting(LibraryUpdated) | [Skin.HasSetting(LibraryUpdated) + [Window.IsVisible(112) | Window.IsVisible(133)]]]</visible>
     </control>
 <!-- Windowopen end-->
 	<include>Furniture_HomeNowPlaying</include>
@@ -530,7 +562,7 @@
 						<onclick>XBMC.ReloadSkin</onclick>
 						<visible>Skin.HasSetting(debug)</visible>
 					</item>
-					<item id="21">
+<!--					<item id="21">
 						<description>Assistant</description>
 						<include>BackgroundVarsAssistant</include>					
 						<label>31021</label>
@@ -543,7 +575,7 @@
 						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(605)</onclick>
 						<visible>Skin.HasSetting(assistant)</visible>
-					</item>
+					</item> -->
 					<item id="23">
 						<description>Sign out</description>
 						<include>BackgroundVarsSignOut</include>					

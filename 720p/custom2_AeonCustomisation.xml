@@ -424,14 +424,14 @@
 								<onclick>Skin.SetString(custom,CustomPlayDVD)</onclick>
 								<onclick>SetFocus(92)</onclick>
 							</item>
-							<item id="21">
+<!--							<item id="21">
 								<description>Assistant</description>
 								<label>31021</label>
 								<include>BackgroundVarsAssistant</include>					
 								<onclick>Skin.SetString(custom,CustomAssistant)</onclick>
 								<onclick>SetFocus(92)</onclick>
 								<visible>Skin.HasSetting(assistant)</visible>				
-							</item>
+							</item> -->
 							<item id="23">
 								<description>Sign Out</description>
 								<label>31209</label>
@@ -813,7 +813,7 @@
 								<onclick>Skin.SetBool(shutdown)</onclick>
 								<visible>!Skin.HasSetting(shutdown)</visible>
 							</item>
-							<item id="21">
+<!--							<item id="21">
 								<description>Assistant</description>
 								<label>31021</label>
 								<include>BackgroundVarsAssistant</include>					
@@ -826,7 +826,7 @@
 								<include>BackgroundVarsAssistant</include>					
 								<onclick>Skin.SetBool(assistant)</onclick>
 								<visible>!Skin.HasSetting(assistant)</visible>
-							</item>
+							</item> -->
 							<item id="23">
 								<description>Sign Out</description>
 								<label>31209</label>
