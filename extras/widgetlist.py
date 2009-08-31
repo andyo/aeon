@@ -1,9 +1,6 @@
 import xbmc, xbmcgui, os
 from xbmcgui import Window
-
-#__VER__ = '1.00'
-
-
+#Ver 1.0
 # Current Working Directory
 CWD = os.getcwd()
 if CWD[-1] == ';': CWD = CWD[0:-1]
