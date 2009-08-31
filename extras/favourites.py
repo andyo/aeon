@@ -2,7 +2,7 @@ import xbmc, xbmcgui, os, sys
 from xbmcgui import Window
 from xml.dom.minidom import parseString
 
-__VER__ = '1.00'
+#__VER__ = '1.00'
 
 dialog = xbmcgui.DialogProgress()
 

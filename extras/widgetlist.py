@@ -1,7 +1,7 @@
 import xbmc, xbmcgui, os
 from xbmcgui import Window
 
-__VER__ = '1.00'
+#__VER__ = '1.00'
 
 
 # Current Working Directory
