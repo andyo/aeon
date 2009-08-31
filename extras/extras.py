@@ -3,7 +3,7 @@ from xbmcgui import Window, ListItem
 from urllib import quote_plus, unquote_plus, urlopen, urlretrieve
 from htmlentitydefs import name2codepoint as n2cp
 
-__VER__ = '0.9.3.4'
+__VER__ = '1.00'
 
 # Current Working Directory
 CWD = os.getcwd()
