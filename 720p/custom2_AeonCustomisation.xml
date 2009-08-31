@@ -49,38 +49,38 @@
 				<scrolltime>200</scrolltime>
 				<visible>true</visible>
 	<!--			<animation effect="fade" start="100" end="0" time="1000" condition="controlgroup.HasFocus(22)">Conditional</animation> -->
-				<itemlayout width="216" height="58">
+				<itemlayout width="216" height="54">
 					<control type="label">
 						<posx>20</posx>
-						<posy>5</posy>
+						<posy>3</posy>
 						<include>Objects_SettingsSectionMenuButton</include>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
 						<posx>20</posx>
-						<posy>30</posy>
+						<posy>28</posy>
 						<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 						<info>ListItem.Label2</info>
 					</control>
 				</itemlayout>
-				<focusedlayout width="216" height="58">
+				<focusedlayout width="216" height="54">
 					<control type="image">
 						<posx>0</posx>
-						<posy>4</posy>
+						<posy>0</posy>
 						<width>216</width>
-						<height>58</height>
+						<height>54</height>
 						<texture>settings/settings_leftmenufocus.png</texture>
 					</control>
 					<control type="label">
 						<posx>20</posx>
-						<posy>5</posy>
+						<posy>3</posy>
 						<include>Objects_SettingsSectionMenuButtonFocused</include>
 						<textcolor>FF262728</textcolor>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
 						<posx>20</posx>
-						<posy>30</posy>
+						<posy>28</posy>
 						<align>left</align>
 						<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 						<textcolor>FF262728</textcolor>

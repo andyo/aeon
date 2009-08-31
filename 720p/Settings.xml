@@ -144,7 +144,7 @@
 						<description>Advanced</description>
 						<label>$LOCALIZE[31158]</label>
 						<label2>$LOCALIZE[31159]</label2>
-						<onclick>XBMC.ActivateWindow(56)</onclick>
+						<onclick>XBMC.ActivateWindow(603)</onclick>
 					</item>
 					<item id="10">
 						<description>Profile Settings</description>

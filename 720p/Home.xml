@@ -515,7 +515,7 @@
 						<onclick>Skin.Reset(videogenres)</onclick>
 						<onclick>Skin.Reset(music)</onclick>
 						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
+						<onclick>Skin.SetBool(bmtransit)</onclick>
 						<onclick>XBMC.ActivateWindow(4)</onclick>
 						<visible>!Skin.HasSetting(nosettings)</visible>
 					</item>
