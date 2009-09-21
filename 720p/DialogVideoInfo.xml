@@ -93,7 +93,7 @@
 			<texture>$INFO[listitem.path]movie.tbn</texture>
 			<aspectratio>stretch</aspectratio>
 			<fadetime>500</fadetime>
-			<visible>!Skin.HasSetting(videotv)</visible>		
+			<visible>Container.Content(movies)</visible>		
 		</control>
 		<control type="largeimage">
 			<description>Cover image</description>
@@ -107,24 +107,13 @@
 			<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>		
 		</control>
 			
-		<control type="group">
-				<description>background image</description>
-				<posx>486</posx>
-				<posy>0</posy>
-				<width>795</width>
-				<height>720</height>
-			<control type="image">
-				<texture>info/lite/info_rightpaneltop_green.png</texture>
-				<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>
-			</control>	
-			<control type="image">
-				<texture>info/lite/info_rightpaneltop_grey.png</texture>
-				<visible>Skin.HasSetting(shadegrey)</visible>
-			</control>	
-			<control type="image">
-				<texture>info/lite/info_rightpaneltop_black.png</texture>
-				<visible>Skin.HasSetting(shadeblack)</visible>
-			</control>	
+		<control type="image">
+			<description>background image</description>
+			<posx>486</posx>
+			<posy>0</posy>
+			<width>795</width>
+			<height>720</height>
+			<texture>info/info_rightpaneltop.png</texture>
 		</control>	
 
 	<!-- Movie info -->
@@ -892,6 +881,11 @@
 				<include>Furniture_MovieInfoFlagSound</include>
 				<texture>flags/info/dd71.png</texture>
 				<visible>substring(listitem.audiochannels,8) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3) | substring(listitem.audiocodec,adpcm)]</visible>
+			</control>
+			<control type="image" id="9102">
+				<include>Furniture_MovieInfoFlagSound</include>
+				<texture>flags/info/dts20.png</texture>
+				<visible>substring(listitem.audiochannels,2) + [substring(listitem.audiocodec,dts) | substring(listitem.audiocodec,dca)]</visible>
 			</control>
 			<control type="image" id="9102">
 				<include>Furniture_MovieInfoFlagSound</include>

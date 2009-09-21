@@ -16,10 +16,10 @@
 
 	<control type="image">
 		<posx>0</posx>
-		<posy>83</posy>
+		<posy>0</posy>
 		<width>580</width>
-		<height>637</height>
-		<texture>info/musicinfogradient.png</texture>
+		<height>720</height>
+		<texture>info/movieinfogradient.png</texture>
 	</control>
 	
 	<control type="group">

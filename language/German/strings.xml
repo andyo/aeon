@@ -201,7 +201,7 @@
 	<string id="31245">AUSWAHL DER SCHALTER</string>
 	<string id="31246">MOD-SPEZIFISCH</string>
 	<string id="31247">ZUSATZEINSTELLUNGEN</string>
-	<string id="31248">UNTERMENÜS</string>
+	<string id="31248">MENÜS EINRICHTEN</string>
 	<string id="31254">SUBMENÜS VERWALTEN</string>
 
   
@@ -503,10 +503,10 @@
 	<string id="31854">PARTY</string>
 	<string id="31855">ERINNERUNG</string>
 	<string id="31856">TIMER</string>
-	<string id="31857">Neuer Eintrag</string>
+	<string id="31857"> - (SELECT ZUM LÖSCHEN)</string>
 	<string id="31858"> </string>
 	<string id="31859">ANIMIERTE WETTERSYMBOLE BENUTZEN</string>
-	<string id="31860">ENTFERNEN</string>
+	<string id="31860">LEER - (SELECT ZUM HINZUFÜGEN)</string>
 	<string id="31861">10 TAGE</string>
 	<string id="31862">ERINNERUNG Aus</string>
 	<string id="31863">Neu bei deviantart</string>
@@ -583,7 +583,7 @@
 	<string id="31979">GENRE ARTWORK (FANART) FOR MOVIES</string>
 	<string id="31980">GENRE ARTWORK (FANART) FOR MUSIC</string>
 	<string id="31981">-</string>	
-	<string id="31986">FAVORITEN/WIDGETS IM HAUPTFENSTER HINZUFÜGEN/ENTFERNEN</string>	
+	<string id="31986">AN/ABSCHALTEN/HINZUFÜGEN VON MENÜS</string>	
 	<string id="31987">HINWEIS: BEIM VERLASSEN DIESES FENSTERS WIRD XBMC BEENDET!</string>	
 	<string id="31988">XBMC wird beendet, sobald du dieses Menü verlässt!</string>	
 	<string id="31989">NEUES MENÜ HINZUFÜGEN</string>	

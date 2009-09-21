@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
-<!--Date of translation: 08/18/2009-->
+<!--Date of translation: 09/01/2009-->
 <!--$Revision$-->
 <!--Based on english strings version 204-->
 <strings>
@@ -399,8 +399,8 @@
   <string id="31819">עבור על ההגדרות המורחבות של חווית ה AEON</string>
   <string id="31820">כל אחד בשלו</string>
   <string id="31821">ה XBMC תומך בריבוי משתמשים, ומאפשר למשתמשים לשמור[CR]הגדרות, הזנות RSS, הגדרות תצוגה והגדרות ספריות המדיה במיקומים ניפרדים</string>
-	<string id="31822">ENHANCE YOUR SHOWMIX EXPERIENCE</string>
-	<string id="31823">SET YOUR DISPLAY THE WAY YOU WANT IT</string>
+  <string id="31822">תעשיר את חווית ה SHOWMIX שלך</string>
+  <string id="31823">הגדר את התצוגות בדרך שלך</string>
   <string id="31850">תוספים</string>
   <string id="31851">סוף שבוע</string>
   <string id="31852">36 שעות</string>
@@ -408,21 +408,21 @@
   <string id="31854">מסיבה</string>
   <string id="31855">שעון מעורר</string>
   <string id="31856">טיימר</string>
-  <string id="31857">פריט חדש</string>
+  <string id="31857"> - (SELECT TO CLEAR)</string>
   <string id="31858">תת-תפריט</string>
   <string id="31859">הנפשת איקון מזג האויר</string>
-  <string id="31860">נקה</string>
+  <string id="31860">EMPTY - (SELECT TO ADD A FAV)</string>
   <string id="31861">10 ימים</string>
   <string id="31862">שעון מעורר מכובה</string>
   <string id="31863">עידכוני DEVIANTART</string>
   <string id="31864">פתח רשימות ניגון</string>
   <string id="31865">תוספות</string>
-  <string id="31866">Album Review</string>
+  <string id="31866">סקירת אלבום</string>
   <string id="31867">תפריט ראשי</string>
   <string id="31868">נעילה</string>
   <string id="31869">רקע מזג האויר לפי מזג האויר הנוכחי</string>
   <string id="31870">-</string>
-  <string id="31871">RANDOM PICK</string>
+  <string id="31871">בחירה אקראית</string>
   <string id="31872">-</string>
   <string id="31873">10 ימים הבאים</string>
   <string id="31874">36 שעות הבאות</string>
@@ -489,22 +489,23 @@
   <string id="31974">זרימה דינמית</string>
   <string id="31975">אפשר את כל התצוגות לסדרות</string>
   <string id="31976">ויזואלזציה גראפית של מוסיקה</string>
-	<string id="31977">-</string>
-	<string id="31978">-</string>
-	<string id="31979">GENRE ARTWORK (FANART) FOR MOVIES</string>
-	<string id="31980">GENRE ARTWORK (FANART) FOR MUSIC</string>
-	<string id="31981">-</string>	
+  <string id="31977">-</string>
+  <string id="31978">-</string>
+  <string id="31979">גרפיקה לפי הקשר (FANART) לז'אנר סרטים</string>
+  <string id="31980">גרפיקה לפי הקשר (FANART) לז'אנר מוסיקה</string>
+  <string id="31981">-</string>
   <string id="31982">-</string>
   <string id="31983">ווידג'ט עידכוני RSS</string>
   <string id="31984">פוסטר</string>
   <string id="31985">רחב</string>
-  <string id="31986">הוסף והסר מועדפים/ווידג'טים לתפריט הבית</string>
+  <string id="31986">ENABLE/DISABLE SHORTCUTS &amp; ADD CUSTOM ENTRIES</string>
   <string id="31987">הארה: בסיום השינויים, XBMC ייסגר</string>
   <string id="31988">XBMC ייסגר אוטומטית אחרי היציאה מתפריט זה</string>
   <string id="31989">הוסף תפריט חדש</string>
   <string id="31990">צפה ושנה שם</string>
   <string id="31991">שנה</string>
-	<string id="31992">WIDGET</string>
-	<string id="31993">ENABLE/DISABLE</string>
-	<string id="31994">Random UnWatched Movies &amp; TV shows</string>
+  <string id="31992">ווידג'ט</string>
+  <string id="31993">הפעל/בטל</string>
+  <string id="31994">סרטים ופרקים אקראיים, שלא ניצפו</string>
+  <string id="31995">COVERFLOW</string>
 </strings>

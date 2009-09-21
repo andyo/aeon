@@ -111,6 +111,19 @@
 	  <size>16</size>
 	</font>
 
+	<font>
+	  <name>Font_WidgetLabel</name>
+	  <filename>aeon_title.ttf</filename>
+	  <size>18</size>
+	</font>
+
+	<font>
+	  <name>Font_WidgetPlot</name>
+	  <filename>aeon_player.ttf</filename>
+	  <size>20</size>
+	  <linespacing>1.03</linespacing>
+	</font>		
+
 <!-- Media windows -->
 
 	<font>
@@ -159,6 +172,11 @@
 		<name>Font_ListTrack</name>
 		<filename>aeon_title.ttf</filename>
 		<size>47</size>
+	</font>
+	<font>
+		<name>Font_ListTrackTV</name>
+		<filename>aeon_title.ttf</filename>
+		<size>30</size>
 	</font>
 	
 	<font>
@@ -559,6 +577,11 @@
 	  <size>40</size>
 	</font>
 	
+	<font>
+	  <name>Font_DelayOffset</name>
+	  <filename>aeon_rss.ttf</filename>
+	  <size>12</size>
+	</font>
 <!-- Welcome page -->
 
 	<font>

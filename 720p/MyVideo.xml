@@ -2,50 +2,63 @@
 	<id>6</id>
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<views>550,50,52,53,551,552</views>
+	<views>550,50,53,551,552</views>
 	<controls>
-	<control type="image" id="109">
-		<posx>0</posx>
-		<posy>0</posy>
-		<width>0</width>
-		<height>0</height>
-		<texture>-</texture>
-		<visible>[Skin.HasSetting(videomovies) + !Skin.HasSetting(nomultiplexpopup) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)] + [Control.HasFocus(551) | Control.HasFocus(552) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]] | [Skin.HasSetting(videotv) + !Skin.HasSetting(nomultiplextvpopup) + [[Container.Content(tvshows) + ![Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]] | [Container.Content(seasons) + ![Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(episodes) + ![Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfotrigger)]]] + [Control.HasFocus(551) |Control.HasFocus(552)  | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]]</visible>
-	</control>
 
-	<control type="multiimage">
-		<include>BackgroundVarsGlobal</include>
-		<include>BackgroundVarsVideo</include>
-	</control>
+		<control type="image" id="109">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<texture>-</texture>
+			<visible>[[[!Skin.HasSetting(nomultiplexpopup) + Container.Content(movies) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)]] | [!Skin.HasSetting(nomultiplexpopup) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + ![Skin.HasSetting(multiplexcommoninfooff) | Skin.HasSetting(multiplexcommoninfotrigger)]] | [!Skin.HasSetting(nomultiplextvpopup) + [Container.Content(tvshows) + ![Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]] | [Container.Content(seasons) + ![Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(episodes) + ![Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfotrigger)]]]] + [Control.HasFocus(551) | Control.HasFocus(552) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]]</visible>
+			<animation effect="fade" start="0" end="100" time="500" delay="1500">Visible</animation>
+		</control>
 
-	<control type="largeimage">
-		<include>FullscreenDimensions</include>
-		<visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(52) | Control.IsVisible(53)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomoviefanart)</visible>
-		<include>Animation_FanartFade</include>
-		<fadetime>400</fadetime>		
-		<texture>$INFO[listitem.property(fanart_image)]</texture>
-	</control>
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<include>BackgroundVarsVideo</include>
+		</control>
 
-	<include>Furniture_WallBackground</include>
-	
-	<control type="group">
+		<control type="largeimage">
+			<include>FullscreenDimensions</include>
+			<visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(52) | Control.IsVisible(53)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomoviefanart)</visible>
+			<include>Animation_FanartFade</include>
+			<fadetime>400</fadetime>		
+			<texture>$INFO[listitem.property(fanart_image)]</texture>
+		</control>
+
+		<include>Furniture_WallBackground</include>
+		<include>Furniture_WallRSS</include>		
+		
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
-		
-		<include>Furniture_FloorBack</include>
 		<include>Furniture_shadow</include>
-		<include>Viewtype_Wall</include>
-<!--		<include>Viewtype_Showcase</include> -->
-		<include>Viewtype_List</include>
-		<include>Furniture_Time</include>	
-		<include>Furniture_WallTime</include>
-		<include>Furniture_WallRSS</include>		
-		<include>VerticalMenu</include>		
-	</control>
+		<include>Furniture_vignette</include>
+		<include>Furniture_FloorBack</include>
 
-	<include>Furniture_DarkGradient</include>	
-	<!--<include>Background_ContextBlack</include>-->
-	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
-	
+		<include>Viewtype_Multiplex</include>
+		<include>Furniture_Time</include>	
+		<include>Viewtype_Wall</include>
+		<include>Viewtype_List</include>
+		<include>Furniture_Multiplex_MediaFlags</include>
+		<include>Furniture_ListMediaFlags</include>
+		<include>ScrollOffsetLabel</include>
+		<include>VerticalMenu</include>		
+
+	<!-- DEBUG INFO -->
+		<control type="label">
+			<posx>700</posx>
+			<posy>50</posy>
+			<width>900</width>
+			<height>13</height>
+			<font>Font_MultiplexInfoLabel</font>
+			<textcolor>FFFFFFFF</textcolor>		
+			<label>** $INFO[Container.FolderPath]</label>
+			<visible>Skin.HasSetting(debug)</visible>
+		</control>	
+
+		<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
+		
 	</controls>
 </window>

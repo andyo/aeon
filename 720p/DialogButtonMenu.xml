@@ -68,37 +68,32 @@
 				<description>Settings</description>
 				<label>31200</label>
 				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.SetBool(bmtransit)</onclick>
 				<onclick>XBMC.ActivateWindow(4)</onclick>
 			</control>
 			<control type="button" id="802">
 				<description>Customise</description>
 				<label>31201</label>
 				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.SetBool(bmtransit)</onclick>				
 				<onclick>XBMC.ActivateWindow(604)</onclick>
 			</control>
-<!--			<control type="button" id="803">
-				<description>Assistant</description>
-				<label>31202</label>
+			<control type="button" id="803">
+				<description>Advanced</description>
+				<label>31158</label>
 				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.SetBool(bmtransit)</onclick>				
-				<onclick>XBMC.ActivateWindow(605)</onclick>
-			</control> -->
-			<!--File manager -->
+				<onclick>XBMC.ActivateWindow(603)</onclick>
+			</control>
 			<control type="button" id="812">
-				<description>Settings</description>
+				<description>File Manager</description>
 				<label>10003</label>
 				<include>Objects_ContextMenuButton</include>
 				<onclick>XBMC.ActivateWindow(3)</onclick>
 			</control>
-			<control type="button" id="811">
-				<description>favourites</description>
+<!--			<control type="button" id="811">
+				<description>Favourites</description>
 				<label>31951</label>
 				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.SetBool(bmtransit)</onclick>			
 				<onclick>XBMC.ActivateWindow(favourites)</onclick>
-			</control>
+			</control> -->
 			<control type="togglebutton" id="804">
 				<description>Home Visualiser</description>
 				<label>31203</label>
@@ -111,7 +106,6 @@
 				<description>Now Playing</description>
 				<label>31205</label>
 				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.SetBool(bmtransit)</onclick>
 				<onclick>XBMC.ActivateWindow(500)</onclick>
 			</control>
 			<control type="button" id="806">
@@ -144,13 +138,6 @@
 				<description>Shutdown</description>
 				<label>31208</label>
 				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.Reset(music)</onclick>
-				<onclick>Skin.Reset(recenttv)</onclick>
-				<onclick>Skin.Reset(videomovies)</onclick>
-				<onclick>Skin.Reset(videotv)</onclick>
-				<onclick>Skin.Reset(videogenres)</onclick>
-				<onclick>Skin.Reset(favourites)</onclick>
-				<onclick>Skin.Reset(musicgenres)</onclick>
 				<onclick>Skin.Reset(submenu)</onclick>
 				<onclick>XBMC.Shutdown()</onclick>
 			</control>				

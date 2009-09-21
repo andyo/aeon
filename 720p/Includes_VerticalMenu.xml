@@ -25,7 +25,6 @@
 			<focusedcolor>d0ffffff</focusedcolor>
 			<textoffsetx>0</textoffsetx>
 			<texturefocus>common/menubutton_vertical_focus.png</texturefocus>
-			<texturenofocus>common/menubutton_vertical.png</texturenofocus>
 			<align>center</align>
 			<font>Font_MediaWindowTitle</font>
 		</include>
@@ -77,7 +76,7 @@
 		
 		<include name="VerticalMenu_Label">		
 			<posx>70</posx> 
-			<posy>12</posy>
+			<posy>15</posy>
 			<height>25</height>
 			<font>Font_MediaWindowTitle</font>
 			<textcolor>d0FFFFFF</textcolor>
@@ -102,812 +101,714 @@
 			<height>90</height>
 		</include>
 		
-<!--		<include name="VerticalMenu_SecondColumnInfo">
+		<include name="VerticalMenu_SecondColumnViewChange">
 			<control type="group">
-				<visible>ControlGroup(7000).HasFocus(3092)</visible>
+				<visible>ControlGroup(7000).HasFocus(900)</visible>
 				<include>Animation_ViewMenuSlideVertical</include>
 				<include>Animation_MediaMenuSlideVertical</include>
 				
 				<control type="image">
 					<posx>215</posx>
-					<posy>0</posy>
+					<posy>20</posy>
 					<width>170</width>
-					<height>720</height>
+					<height>680</height>
 					<texture>common/menupanel_vertical2.png</texture>
 				</control>
 				
-				<control type="grouplist" id="7013">
+				<control type="label">
 					<posx>225</posx>
-					<posy>60</posy>
-					<itemgap>5</itemgap>
-					<onleft>7000</onleft>
-					<onright>50</onright>
-					<onup>7013</onup>
-					<ondown>7013</ondown>
-					<orientation>vertical</orientation>
-					<scroll>false</scroll>
-					
-					<control type="button"  id="3091">
-						<include>VerticalMenu_Button2</include>
-						<label>Trigger</label>
-						<onclick>SetFocus(7011)</onclick>
+					<posy>550</posy>
+					<width>150</width>
+					<height>20</height>
+					<align>center</align>
+					<font>Font_MediaWindowMenu</font>
+					<textcolor>60FFFFFF</textcolor>
+					<label>$LOCALIZE[31970]:</label>
+				</control>
+				
+				<control type="group">
+					<posx>225</posx>
+					<posy>580</posy>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex.png</texture>
+						<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)]</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex.png</texture>
+						<visible>Control.IsVisible(51) + Window.IsActive(502)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_stripshow.png</texture>
+						<visible>Control.IsVisible(51) + Window.IsActive(2)</visible>
+					</control>
+<!--						<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_showcase_focus.png</texture>
+						<visible>Control.IsVisible(57)</visible>
+					</control> -->
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_list_window.png</texture>
+						<visible>Control.IsVisible(50)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_list_fs.png</texture>
+						<visible>Control.IsVisible(550)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_wall.png</texture>
+						<visible>Control.IsVisible(53)</visible>
 					</control>
 				</control>
-			</control>
-		</include> -->
-		
-		<include name="VerticalMenu_SecondColumnViewChange">
-			<!-- Ansichtenwechsel (zweite Spalte) mit Screenshots -->
-				<control type="group">
-					<visible>ControlGroup(7000).HasFocus(900)</visible>
-					<include>Animation_ViewMenuSlideVertical</include>
-					<include>Animation_MediaMenuSlideVertical</include>
-					
-					<control type="image">
-						<posx>215</posx>
-						<posy>0</posy>
-						<width>170</width>
-						<height>720</height>
-						<texture>common/menupanel_vertical2.png</texture>
-					</control>
-					
-					<control type="label">
-						<posx>225</posx>
-						<posy>550</posy>
-						<width>150</width>
-						<height>20</height>
-						<align>center</align>
-						<font>Font_MediaWindowMenu</font>
-						<textcolor>60FFFFFF</textcolor>
-						<label>$LOCALIZE[31970]:</label>
-					</control>
-					
-					<control type="group">
-						<posx>225</posx>
-						<posy>580</posy>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vs_icon_multiplex_focus.png</texture>
-							<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)]</visible>
-						</control>
-<!--						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vs_icon_multiplex_legacy_focus.png</texture>
-							<visible>Control.IsVisible(52)</visible>
-						</control> -->
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vs_icon_multiplex_focus.png</texture>
-							<visible>Control.IsVisible(51) + Window.IsActive(502)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vs_icon_stripshow_focus.png</texture>
-							<visible>Control.IsVisible(51) + Window.IsActive(2)</visible>
-						</control>
-<!--						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vs_icon_showcase_focus.png</texture>
-							<visible>Control.IsVisible(57)</visible>
-						</control> -->
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vs_icon_list_focus.png</texture>
-							<visible>[Control.IsVisible(50) | Control.IsVisible(550)]</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vs_icon_wall_focus.png</texture>
-							<visible>Control.IsVisible(53)</visible>
-						</control>
-					</control>
-					
-					<control type="grouplist" id="7011">
-						<posx>225</posx>
-						<posy>60</posy>
-						<itemgap>5</itemgap>
-						<onleft>7000</onleft>
-						<onright>50</onright>
-						<onup>7011</onup>
-						<ondown>7011</ondown>
-						<orientation>vertical</orientation>
-						<scroll>true</scroll>
 
-<!-- 30000 - 30020 reserved for ViewModeButtons -->
-						<control type="button" id="30000">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vs_icon_multiplex_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vs_icon_multiplex.png</texturenofocus>
+				<control type="list" id="7011">
+					<posx>215</posx>
+					<posy>60</posy>
+					<height>500</height>
+					<width>250</width>
+					<onleft>7000</onleft>
+					<onright>7011</onright>
+					<onup>7011</onup>
+					<ondown>7011</ondown>
+					<viewtype>list</viewtype>
+					<orientation>vertical</orientation>
+					<focusposition>0</focusposition>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="150" height="110">
+						<control type="image">
+							<posx>10</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>90</height>
+							<info>ListItem.Icon</info>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+					</itemlayout>
+					<focusedlayout width="150" height="110">
+						<control type="image">
+							<posx>-5</posx>
+							<posy>0</posy>
+							<width>170</width>
+							<height>90</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>90</height>
+							<info>ListItem.Icon</info>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="1">
+							<icon>viewselect/vs_icon_multiplex.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(551)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>!Control.IsVisible(551) + Window.IsActive(25) + [[Skin.HasSetting(videotv) + Skin.HasSetting(tvposterview) + !Container.Content(episodes)] | !Skin.HasSetting(videotv)]</visible>
-						</control>
-						<control type="button" id="30001">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vs_icon_multiplex_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vs_icon_multiplex.png</texturenofocus>
+							<visible>!Control.IsVisible(551) + [Window.IsActive(25) | Window.IsActive(24)] + [[[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(tvposterview)] | ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | substring(Container.FolderPath,plugin://video/IPlayer,left)]]</visible>
+						</item>
+						<item id="2">
+							<icon>viewselect/vs_icon_multiplex.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(552)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>!Control.IsVisible(552) + Window.IsActive(25) + [[Skin.HasSetting(videotv) + !Skin.HasSetting(tvposterview)] | Container.Content(episodes)]</visible>
-						</control>
-						<control type="button" id="30002">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vs_icon_multiplex_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vs_icon_multiplex.png</texturenofocus>
+							<visible>!Control.IsVisible(552) + [Window.IsActive(25) | Window.IsActive(24)] + [[[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(tvposterview)] | Container.Content(episodes) | substring(Container.FolderPath,plugin://video/IPlayer,left)]</visible>
+						</item>
+						<item id="3">
+							<icon>viewselect/vs_icon_multiplex.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(553)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
 							<visible>!Control.IsVisible(553) + [Window.IsActive(501) | Window.IsActive(502)]</visible>
-						</control>
-<!--						<control type="button" id="30002">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vs_icon_multiplex_legacy_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vs_icon_multiplex_legacy.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Container.SetViewMode(52)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>!Control.IsVisible(52) + !Window.IsActive(2)</visible>
-						</control> -->
-						<control type="button" id="30003">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vs_icon_stripshow_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vs_icon_stripshow.png</texturenofocus>
+						</item>
+						<item id="4">
+							<icon>viewselect/vs_icon_stripshow.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(51)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
 							<visible>!Control.IsVisible(51) + Window.IsActive(2)</visible>
-						</control>
-<!--						<control type="button" id="30004">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vs_icon_showcase_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vs_icon_showcase.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Container.SetViewMode(57)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>!Control.IsVisible(57)</visible>
-						</control> -->
-						<control type="button" id="30005">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vs_icon_list_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vs_icon_list.png</texturenofocus>
+						</item>
+						<item id="5">
+							<icon>viewselect/vs_icon_list_window.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(50)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>![Control.IsVisible(50) | Control.IsVisible(550)]</visible>
-						</control>
-						<control type="button" id="30006">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vs_icon_wall_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vs_icon_wall.png</texturenofocus>
+							<visible>!Control.IsVisible(50)</visible>
+						</item>
+						<item id="6">
+							<icon>viewselect/vs_icon_list_fs.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(550)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>!Control.IsVisible(550)</visible>
+						</item>
+						<item id="7">
+							<icon>viewselect/vs_icon_wall.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(53)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
 							<visible>!Control.IsVisible(53)</visible>
-						</control>
-					</control>
+						</item>
+					</content>
 				</control>
+			</control>
 		</include>
 		
 		<include name="VerticalMenu_SecondColumnMultiplexStyleChange">
-			<!-- MediaInfo-Layoutwechsel (zweite Spalte) mit Screenshots -->
+			<control type="group">
+				<visible>ControlGroup(7000).HasFocus(30241) | ControlGroup(7000).HasFocus(30242) | ControlGroup(7000).HasFocus(30243) | ControlGroup(7000).HasFocus(30244) | ControlGroup(7000).HasFocus(30245) | ControlGroup(7000).HasFocus(30246)</visible>
+				<include>Animation_ViewMenuSlideVertical</include>
+				<include>Animation_MediaMenuSlideVertical</include>
+				
+				<control type="image">
+					<posx>215</posx>
+					<posy>20</posy>
+					<width>170</width>
+					<height>680</height>
+					<texture>common/menupanel_vertical2.png</texture>
+				</control>
+				
+				<control type="label">
+					<posx>225</posx>
+					<posy>550</posy>
+					<width>150</width>
+					<height>20</height>
+					<align>center</align>
+					<font>Font_MediaWindowMenu</font>
+					<textcolor>60FFFFFF</textcolor>
+					<label>$LOCALIZE[31970]:</label>
+				</control>
+				
 				<control type="group">
-					<visible>ControlGroup(7000).HasFocus(30241) | ControlGroup(7000).HasFocus(30242) | ControlGroup(7000).HasFocus(30243) | ControlGroup(7000).HasFocus(30244) | ControlGroup(7000).HasFocus(30245) | ControlGroup(7000).HasFocus(30246)</visible>
-					<include>Animation_ViewMenuSlideVertical</include>
-					<include>Animation_MediaMenuSlideVertical</include>
-					
+					<posx>225</posx>
+					<posy>580</posy>
 					<control type="image">
-						<posx>215</posx>
-						<posy>0</posy>
-						<width>170</width>
-						<height>720</height>
-						<texture>common/menupanel_vertical2.png</texture>
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
+						<visible>Container.Content(movies) + Skin.HasSetting(multiplexfanart) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
-					
-					<control type="label">
-						<posx>225</posx>
-						<posy>550</posy>
-						<width>150</width>
-						<height>20</height>
-						<align>center</align>
-						<font>Font_MediaWindowMenu</font>
-						<textcolor>60FFFFFF</textcolor>
-						<label>$LOCALIZE[31970]:</label>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_plot_window.png</texture>
+						<visible>Container.Content(movies) + Skin.HasSetting(multiplexplot) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
-					
-					<control type="group">
-						<posx>225</posx>
-						<posy>580</posy>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_art_window.png</texture>
-							<visible>Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexfanart) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_plot_window.png</texture>
-							<visible>Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexplot) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_poster_window.png</texture>
-							<visible>Skin.HasSetting(videomovies) + !Skin.HasSetting(multiplexplot)  + !Skin.HasSetting(multiplexfanart) + !Skin.HasSetting(multiplexbigthumb) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_thumb_window.png</texture>
-							<visible>Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexbigthumb) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_thumb_window.png</texture>
-							<visible>Skin.HasSetting(videotv) + Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_art_window.png</texture>
-							<visible>Skin.HasSetting(videotv) + !Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
-						</control>
-
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_art_fullscreen.png</texture>
-							<visible>Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexfanart) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_plot_fullscreen.png</texture>
-							<visible>Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexplot) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_poster_fullscreen.png</texture>
-							<visible>Skin.HasSetting(videomovies) + !Skin.HasSetting(multiplexplot)  + !Skin.HasSetting(multiplexfanart) + !Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_thumb_fullscreen.png</texture>
-							<visible>Skin.HasSetting(videomovies) + Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_thumb_fullscreen.png</texture>
-							<visible>Skin.HasSetting(videotv) + Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_art_fullscreen.png</texture>
-							<visible>Skin.HasSetting(videotv) + !Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
-						</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_poster_window.png</texture>
+						<visible>Container.Content(movies) + !Skin.HasSetting(multiplexplot)  + !Skin.HasSetting(multiplexfanart) + !Skin.HasSetting(multiplexbigthumb) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
-						
-<!-- 30021 - 30040 reserved for MultiplexInfoButtons -->
-					<control type="grouplist" id="7012">
-						<posx>225</posx>
-						<posy>60</posy>
-						<onleft>7000</onleft>
-						<onright>50</onright>
-						<onup>7012</onup>
-						<ondown>7012</ondown>
-						<orientation>vertical</orientation>
-						<scroll>true</scroll>
-						
-						<control type="button" id="30021">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_plot_window_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_plot_window.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [[Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)] | Control.IsVisible(52)] + !Skin.HasSetting(multiplexplot)</visible>
-						</control>
-						<control type="button" id="30022">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_poster_window_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_poster_window.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)] + !Skin.HasSetting(multiplexposter)</visible>
-						</control>
-						<control type="button" id="30023">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_art_window_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_art_window.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [[Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)] | Control.IsVisible(52)] + !Skin.HasSetting(multiplexfanart)</visible>
-						</control>
-						<control type="button" id="30024">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_thumb_window_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_thumb_window.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexbigthumb)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [[Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)] | Control.IsVisible(52)] + !Skin.HasSetting(multiplexbigthumb)</visible>
-						</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_thumb_window.png</texture>
+						<visible>Container.Content(movies) + Skin.HasSetting(multiplexbigthumb) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_thumb_window.png</texture>
+						<visible>Container.Content(episodes) + Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
+						<visible>Container.Content(episodes) + !Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+					</control>
 
-
-						<control type="button" id="30025">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_plot_fullscreen_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_plot_fullscreen.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexplot) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="button" id="30026">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_poster_fullscreen_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_poster_fullscreen.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexposter) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="button" id="30027">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_art_fullscreen_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_art_fullscreen.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexfanart) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-						<control type="button" id="30028">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_thumb_fullscreen_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_thumb_fullscreen.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexbigthumb)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-						</control>
-
-						<control type="button" id="30029">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_art_window_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_art_window.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplextvfanart)</onclick>
-							<onclick>Skin.Reset(multiplextvbigthumb)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(552) + Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
-						</control>
-						<control type="button" id="30030">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_thumb_window_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_thumb_window.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplextvbigthumb)</onclick>
-							<onclick>Skin.Reset(multiplextvfanart)</onclick>
-							<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(552) + !Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
-						</control>
-
-						<control type="button" id="30031">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_art_fullscreen_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_art_fullscreen.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplextvfanart)</onclick>
-							<onclick>Skin.Reset(multiplextvbigthumb)</onclick>
-							<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(552) + Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
-						</control>
-						<control type="button" id="30032">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_thumb_fullscreen_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_thumb_fullscreen.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplextvbigthumb)</onclick>
-							<onclick>Skin.Reset(multiplextvfanart)</onclick>
-							<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(552) + !Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
-						</control>
-
-						
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_art_fullscreen.png</texture>
+						<visible>Container.Content(movies) + Skin.HasSetting(multiplexfanart) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_plot_fullscreen.png</texture>
+						<visible>Container.Content(movies) + Skin.HasSetting(multiplexplot) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_poster_fullscreen.png</texture>
+						<visible>Container.Content(movies) + !Skin.HasSetting(multiplexplot)  + !Skin.HasSetting(multiplexfanart) + !Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_thumb_fullscreen.png</texture>
+						<visible>Container.Content(movies) + Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_thumb_fullscreen.png</texture>
+						<visible>Container.Content(episodes) + Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_art_fullscreen.png</texture>
+						<visible>Container.Content(episodes) + !Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 					</control>
 				</control>
+					
+<!-- 30021 - 30040 reserved for MultiplexInfoButtons -->
+
+				<control type="list" id="7012">
+					<posx>215</posx>
+					<posy>60</posy>
+					<height>500</height>
+					<width>250</width>
+					<onleft>7000</onleft>
+					<onright>7012</onright>
+					<onup>7012</onup>
+					<ondown>7012</ondown>
+					<viewtype>list</viewtype>
+					<orientation>vertical</orientation>
+					<focusposition>0</focusposition>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="150" height="110">
+						<control type="image">
+							<posx>10</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>90</height>
+							<info>ListItem.Icon</info>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+					</itemlayout>
+					<focusedlayout width="150" height="110">
+						<control type="image">
+							<posx>-5</posx>
+							<posy>0</posy>
+							<width>170</width>
+							<height>90</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>90</height>
+							<info>ListItem.Icon</info>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="1">
+							<icon>viewselect/vs_icon_multiplex_plot_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplexplot)</onclick>
+							<onclick>Skin.Reset(multiplexfanart)</onclick>
+							<onclick>Skin.Reset(multiplexposter)</onclick>
+							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)+ !Skin.HasSetting(multiplexplot)</visible>
+						</item>
+						<item id="2">
+							<icon>viewselect/vs_icon_multiplex_poster_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplexposter)</onclick>
+							<onclick>Skin.Reset(multiplexfanart)</onclick>
+							<onclick>Skin.Reset(multiplexplot)</onclick>
+							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(multiplexposter)</visible>
+						</item>
+						<item id="3">
+							<icon>viewselect/vs_icon_multiplex_art_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplexfanart)</onclick>
+							<onclick>Skin.Reset(multiplexplot)</onclick>
+							<onclick>Skin.Reset(multiplexposter)</onclick>
+							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(multiplexfanart)</visible>
+						</item>
+						<item id="4">
+							<icon>viewselect/vs_icon_multiplex_thumb_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplexbigthumb)</onclick>
+							<onclick>Skin.Reset(multiplexposter)</onclick>
+							<onclick>Skin.Reset(multiplexplot)</onclick>
+							<onclick>Skin.Reset(multiplexfanart)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(multiplexbigthumb)</visible>
+						</item>
+						<item id="5">
+							<icon>viewselect/vs_icon_multiplex_plot_fullscreen.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplexplot)</onclick>
+							<onclick>Skin.Reset(multiplexfanart)</onclick>
+							<onclick>Skin.Reset(multiplexposter)</onclick>
+							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexplot) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						</item>
+						<item id="6">
+							<icon>viewselect/vs_icon_multiplex_poster_fullscreen.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplexposter)</onclick>
+							<onclick>Skin.Reset(multiplexfanart)</onclick>
+							<onclick>Skin.Reset(multiplexplot)</onclick>
+							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexposter) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						</item>
+						<item id="7">
+							<icon>viewselect/vs_icon_multiplex_art_fullscreen.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplexfanart)</onclick>
+							<onclick>Skin.Reset(multiplexplot)</onclick>
+							<onclick>Skin.Reset(multiplexposter)</onclick>
+							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexfanart) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						</item>
+						<item id="8">
+							<icon>viewselect/vs_icon_multiplex_thumb_fullscreen.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplexbigthumb)</onclick>
+							<onclick>Skin.Reset(multiplexposter)</onclick>
+							<onclick>Skin.Reset(multiplexplot)</onclick>
+							<onclick>Skin.Reset(multiplexfanart)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						</item>
+						<item id="9">
+							<icon>viewselect/vs_icon_multiplex_art_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplextvfanart)</onclick>
+							<onclick>Skin.Reset(multiplextvbigthumb)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(25) + Container.Content(episodes) + Control.IsVisible(552) + Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						</item>
+						<item id="10">
+							<icon>viewselect/vs_icon_multiplex_thumb_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplextvbigthumb)</onclick>
+							<onclick>Skin.Reset(multiplextvfanart)</onclick>
+							<visible>Container.Content(episodes) + Window.IsActive(25) + Container.Content(episodes) + Control.IsVisible(552) + !Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						</item>
+						<item id="11">
+							<icon>viewselect/vs_icon_multiplex_art_fullscreen.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplextvfanart)</onclick>
+							<onclick>Skin.Reset(multiplextvbigthumb)</onclick>
+							<visible>Window.IsActive(25) + Container.Content(episodes) + Control.IsVisible(552) + Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						</item>
+						<item id="12">
+							<icon>viewselect/vs_icon_multiplex_thumb_fullscreen.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(multiplextvbigthumb)</onclick>
+							<onclick>Skin.Reset(multiplextvfanart)</onclick>
+							<visible>Window.IsActive(25) + Container.Content(episodes) + Control.IsVisible(552) + !Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						</item>
+					</content>
+				</control>
+			</control>
 		</include>
 
 <!-- 30061 - 30200 reserved for Additional Multiplex Info Buttons -->
 		<include name="VerticalMenu_SecondColumnInfoTrigger">
-			<!-- Ansichtenwechsel (zweite Spalte) mit Screenshots -->
 			<control type="group">
-				<visible>ControlGroup(7000).HasFocus(30211) | ControlGroup(7000).HasFocus(30212) | ControlGroup(7000).HasFocus(30213) | ControlGroup(7000).HasFocus(30214) | ControlGroup(7000).HasFocus(30215) | ControlGroup(7000).HasFocus(30216) | ControlGroup(7000).HasFocus(30217) | ControlGroup(7000).HasFocus(30218) | ControlGroup(7000).HasFocus(30219) | ControlGroup(7000).HasFocus(30220) | ControlGroup(7000).HasFocus(30221) | ControlGroup(7000).HasFocus(30222) | ControlGroup(7000).HasFocus(30223) | ControlGroup(7000).HasFocus(30224) | ControlGroup(7000).HasFocus(30225) | ControlGroup(7000).HasFocus(30226) | ControlGroup(7000).HasFocus(30227) | ControlGroup(7000).HasFocus(30228) | ControlGroup(7000).HasFocus(30229) | ControlGroup(7000).HasFocus(30230)</visible>
+				<visible>ControlGroup(7000).HasFocus(30211) | ControlGroup(7000).HasFocus(30212) | ControlGroup(7000).HasFocus(30213) | ControlGroup(7000).HasFocus(30214) | ControlGroup(7000).HasFocus(30215) | ControlGroup(7000).HasFocus(30216) | ControlGroup(7000).HasFocus(30217) | ControlGroup(7000).HasFocus(30218) | ControlGroup(7000).HasFocus(30219) | ControlGroup(7000).HasFocus(30220) | ControlGroup(7000).HasFocus(30221) | ControlGroup(7000).HasFocus(30222) | ControlGroup(7000).HasFocus(30223) | ControlGroup(7000).HasFocus(30224) | ControlGroup(7000).HasFocus(30225) | ControlGroup(7000).HasFocus(30226) | ControlGroup(7000).HasFocus(30227) | ControlGroup(7000).HasFocus(30228) | ControlGroup(7000).HasFocus(30229) | ControlGroup(7000).HasFocus(30230) | ControlGroup(7000).HasFocus(30231) | ControlGroup(7000).HasFocus(30232) | ControlGroup(7000).HasFocus(30233) | ControlGroup(7000).HasFocus(30234)</visible>
 				<include>Animation_ViewMenuSlideVertical</include>
 				<include>Animation_MediaMenuSlideVertical</include>
 					
 				<control type="image">
 					<posx>215</posx>
-					<posy>0</posy>
-					<width>170</width>
-					<height>200</height>
-					<texture>common/menupanel_vertical2.png</texture>
-				</control>
-					
-				<control type="image">
-					<posx>215</posx>
-					<posy>200</posy>
+					<posy>30</posy>
 					<width>170</width>
 					<height>170</height>
 					<texture>common/menupanel_vertical2_end.png</texture>
 				</control>
 					
-				<control type="grouplist" id="7013">
-					<posx>225</posx>
+				<control type="list" id="7013">
+					<posx>215</posx>
 					<posy>60</posy>
-					<itemgap>0</itemgap>
+					<height>500</height>
+					<width>250</width>
 					<onleft>7000</onleft>
-					<onright>50</onright>
+					<onright>7013</onright>
 					<onup>7013</onup>
 					<ondown>7013</ondown>
+					<viewtype>list</viewtype>
 					<orientation>vertical</orientation>
-					<scroll>false</scroll>
-						
-					<control type="button" id="30061">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31049]</label>
-						<onclick>Skin.SetBool(multiplexinfoauto)</onclick>
-						<onclick>Skin.Reset(multiplexinfooff)</onclick>
-						<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplexinfoon)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>Window.IsActive(25) + Container.Content(movies) + [Control.IsVisible(551) | Control.IsVisible(52)]  + !Skin.HasSetting(multiplexinfoauto)</visible>
-					</control>
-					<control type="button" id="30062">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31048]</label>
-						<onclick>Skin.SetBool(multiplexinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplexinfooff)</onclick>
-						<onclick>Skin.Reset(multiplexinfoon)</onclick>
-						<onclick>Skin.Reset(multiplexinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>Window.IsActive(25) + Container.Content(movies) + [Control.IsVisible(551) | Control.IsVisible(52)] + !Skin.HasSetting(multiplexinfotrigger)</visible>
-					</control>
-					<control type="button" id="30063">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31077]</label>
-						<onclick>Skin.SetBool(multiplexinfoon)</onclick>
-						<onclick>Skin.Reset(multiplexinfooff)</onclick>
-						<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplexinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>Window.IsActive(25) + Container.Content(movies) + [Control.IsVisible(551) | Control.IsVisible(52)] + !Skin.HasSetting(multiplexinfoon)</visible>
-					</control>	
-					<control type="button" id="30064">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31078]</label>
-						<onclick>Skin.SetBool(multiplexinfooff)</onclick>
-						<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplexinfoon)</onclick>
-						<onclick>Skin.Reset(multiplexinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>Window.IsActive(25) + Container.Content(movies) + [Control.IsVisible(551) | Control.IsVisible(52)] + !Skin.HasSetting(multiplexinfooff)</visible>
-					</control>
-
-					<control type="button" id="30065">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31049]</label>
-						<onclick>Skin.SetBool(multiplextvshowsinfoauto)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfoon)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfoauto)</visible>
-					</control>
-					<control type="button" id="30066">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31048]</label>
-						<onclick>Skin.SetBool(multiplextvshowsinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfoon)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfotrigger)</visible>
-					</control>
-					<control type="button" id="30067">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31077]</label>
-						<onclick>Skin.SetBool(multiplextvshowsinfoon)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfoon)</visible>
-					</control>	
-					<control type="button" id="30068">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31078]</label>
-						<onclick>Skin.SetBool(multiplextvshowsinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfoon)</onclick>
-						<onclick>Skin.Reset(multiplextvshowsinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfooff)</visible>
-					</control>	
-					<control type="button" id="30069">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31049]</label>
-						<onclick>Skin.SetBool(multiplextvseasonsinfoauto)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfoon)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfoauto)</visible>
-					</control>
-					<control type="button" id="30070">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31048]</label>
-						<onclick>Skin.SetBool(multiplextvseasonsinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfoon)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfotrigger)</visible>
-					</control>
-					<control type="button" id="30071">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31077]</label>
-						<onclick>Skin.SetBool(multiplextvseasonsinfoon)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfoon)</visible>
-					</control>	
-					<control type="button" id="30072">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31078]</label>
-						<onclick>Skin.SetBool(multiplextvseasonsinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfoon)</onclick>
-						<onclick>Skin.Reset(multiplextvseasonsinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfooff)</visible>
-					</control>	
-					<control type="button" id="30073">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31049]</label>
-						<onclick>Skin.SetBool(multiplextvepisodesinfoauto)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfoon)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfoauto)</visible>
-					</control>
-					<control type="button" id="30074">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31048]</label>
-						<onclick>Skin.SetBool(multiplextvepisodesinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfoon)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfotrigger)</visible>
-					</control>
-					<control type="button" id="30075">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31077]</label>
-						<onclick>Skin.SetBool(multiplextvepisodesinfoon)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfoon)</visible>
-					</control>	
-					<control type="button" id="30076">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31078]</label>
-						<onclick>Skin.SetBool(multiplextvepisodesinfooff)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfoon)</onclick>
-						<onclick>Skin.Reset(multiplextvepisodesinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfooff)</visible>
-					</control>	
-
-					<control type="button" id="30077">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31049]</label>
-						<onclick>Skin.SetBool(multiplexmusicinfoauto)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfoauto)</visible>
-					</control>
-					<control type="button" id="30078">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31048]</label>
-						<onclick>Skin.SetBool(multiplexmusicinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfotrigger)</visible>
-					</control>
-					<control type="button" id="30079">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31077]</label>
-						<onclick>Skin.SetBool(multiplexmusicinfoon)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfoon)</visible>
-					</control>	
-					<control type="button" id="30080">
-						<include>VerticalMenu_ButtonSecondColumn</include>				
-						<label>$LOCALIZE[31078]</label>
-						<onclick>Skin.SetBool(multiplexmusicinfooff)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
-						<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfooff)</visible>
-					</control>	
+					<focusposition>0</focusposition>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="150" height="35">
+						<control type="label">
+							<posx>85</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>35</height>
+							<textcolor>FF939597</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_MediaWindowTitle</font>
+							<info>ListItem.Label</info>
+						</control>
+					</itemlayout>
+					<focusedlayout width="150" height="35">
+						<control type="image">
+							<posx>10</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>35</height>
+							<texture>common/menubutton_vertical_focus.png</texture>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+						<control type="label">
+							<posx>85</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>35</height>
+							<textcolor>FF939597</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_MediaWindowTitle</font>
+							<info>ListItem.Label</info>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="1">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetBool(multiplexinfoauto)</onclick>
+							<onclick>Skin.Reset(multiplexinfooff)</onclick>
+							<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexinfoon)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexinfoauto)</visible>
+						</item>
+						<item id="2">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetBool(multiplexinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexinfooff)</onclick>
+							<onclick>Skin.Reset(multiplexinfoon)</onclick>
+							<onclick>Skin.Reset(multiplexinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexinfotrigger)</visible>
+						</item>
+						<item id="3">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetBool(multiplexinfoon)</onclick>
+							<onclick>Skin.Reset(multiplexinfooff)</onclick>
+							<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexinfoon)</visible>
+						</item>
+						<item id="4">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetBool(multiplexinfooff)</onclick>
+							<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexinfoon)</onclick>
+							<onclick>Skin.Reset(multiplexinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexinfooff)</visible>
+						</item>
+						<item id="5">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetBool(multiplextvshowsinfoauto)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfoon)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfoauto)</visible>
+						</item>
+						<item id="6">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetBool(multiplextvshowsinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfoon)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfotrigger)</visible>
+						</item>
+						<item id="7">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetBool(multiplextvshowsinfoon)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfoon)</visible>
+						</item>
+						<item id="8">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetBool(multiplextvshowsinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfoon)</onclick>
+							<onclick>Skin.Reset(multiplextvshowsinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfooff)</visible>
+						</item>
+						<item id="9">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetBool(multiplextvseasonsinfoauto)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfoon)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfoauto)</visible>
+						</item>
+						<item id="10">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetBool(multiplextvseasonsinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfoon)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfotrigger)</visible>
+						</item>
+						<item id="11">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetBool(multiplextvseasonsinfoon)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfoon)</visible>
+						</item>
+						<item id="12">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetBool(multiplextvseasonsinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfoon)</onclick>
+							<onclick>Skin.Reset(multiplextvseasonsinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfooff)</visible>
+						</item>
+						<item id="13">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetBool(multiplextvepisodesinfoauto)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfoon)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfoauto)</visible>
+						</item>
+						<item id="14">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetBool(multiplextvepisodesinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfoon)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfotrigger)</visible>
+						</item>
+						<item id="15">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetBool(multiplextvepisodesinfoon)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfoon)</visible>
+						</item>
+						<item id="16">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetBool(multiplextvepisodesinfooff)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfoon)</onclick>
+							<onclick>Skin.Reset(multiplextvepisodesinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfooff)</visible>
+						</item>
+						<item id="17">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetBool(multiplexmusicinfoauto)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfoauto)</visible>
+						</item>
+						<item id="18">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetBool(multiplexmusicinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfotrigger)</visible>
+						</item>
+						<item id="19">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetBool(multiplexmusicinfoon)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfoon)</visible>
+						</item>
+						<item id="20">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetBool(multiplexmusicinfooff)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
+							<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfooff)</visible>
+						</item>
+						<item id="21">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetBool(multiplexcommoninfoauto)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfooff)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfoon)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + !Skin.HasSetting(multiplexcommoninfoauto)</visible>
+						</item>
+						<item id="22">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetBool(multiplexcommoninfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfooff)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfoon)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + !Skin.HasSetting(multiplexcommoninfotrigger)</visible>
+						</item>
+						<item id="23">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetBool(multiplexcommoninfoon)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfooff)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + !Skin.HasSetting(multiplexcommoninfoon)</visible>
+						</item>
+						<item id="24">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetBool(multiplexcommoninfooff)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfotrigger)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfoon)</onclick>
+							<onclick>Skin.Reset(multiplexcommoninfoauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + !Skin.HasSetting(multiplexcommoninfooff)</visible>
+						</item>
+					</content>
 				</control>
 			</control>
 		</include>
-
-
-<!--		<include name="VerticalMenu_SecondColumnMultiplexWindowShade">
-				<control type="group">
-					<visible>ControlGroup(7000).HasFocus(30251) | ControlGroup(7000).HasFocus(30252) | ControlGroup(7000).HasFocus(30253)</visible>
-					<include>Animation_ViewMenuSlideVertical</include>
-					<include>Animation_MediaMenuSlideVertical</include>
-					
-					<control type="image">
-						<posx>215</posx>
-						<posy>0</posy>
-						<width>170</width>
-						<height>720</height>
-						<texture>common/menupanel_vertical2.png</texture>
-					</control>
-					
-					<control type="label">
-						<posx>225</posx>
-						<posy>550</posy>
-						<width>150</width>
-						<height>20</height>
-						<align>center</align>
-						<textcolor>60FFFFFF</textcolor>
-						<label>Current:</label>
-					</control>
-					
-					<control type="group">
-						<posx>225</posx>
-						<posy>580</posy>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_green_focus.png</texture>
-							<visible>!Skin.HasSetting(shadegrey) + !Skin.HasSetting(shadeblack)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_grey_focus.png</texture>
-							<visible>Skin.HasSetting(shadegrey)</visible>
-						</control>
-						<control type="image">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texture>viewselect/vertical/vs_icon_multiplex_black_focus.png</texture>
-							<visible>Skin.HasSetting(shadeblack)</visible>
-						</control>
-					</control> -->
-						
-					
-					<!-- 30041 - 30060 reserved for MultiplexStyleButtons -->
-<!--					<control type="grouplist" id="7014">
-						<posx>225</posx>
-						<posy>60</posy>
-						<onleft>7000</onleft>
-						<onright>50</onright>
-						<onup>7014</onup>
-						<ondown>7014</ondown>
-						<orientation>vertical</orientation>
-						<scroll>false</scroll>
-						
-						<control type="button" id="30041">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_green_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_green.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(shadegreen)</onclick>
-							<onclick>Skin.Reset(shadeblack)</onclick>
-							<onclick>Skin.Reset(shadegrey)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + !Skin.HasSetting(shadegreen)</visible>
-						</control>
-						
-						<control type="button" id="30042">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_grey_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_grey.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(shadegrey)</onclick>
-							<onclick>Skin.Reset(shadegreen)</onclick>
-							<onclick>Skin.Reset(shadeblack)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + !Skin.HasSetting(shadegrey)</visible>
-						</control>
-						
-						<control type="button" id="30043">
-							<include>VerticalMenu_ViewChangeImage</include>
-							<texturefocus>viewselect/vertical/vs_icon_multiplex_black_focus.png</texturefocus>
-	  						<texturenofocus>viewselect/vertical/vs_icon_multiplex_black.png</texturenofocus>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(shadeblack)</onclick>
-							<onclick>Skin.Reset(shadegreen)</onclick>
-							<onclick>Skin.Reset(shadegrey)</onclick>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + !Skin.HasSetting(shadeblack)</visible>
-						</control>
-					</control>
-				</control>
-		</include> -->
 
 	<!--############################################ VerticalMenu - Video Buttons ################################################-->
 	<!--##########################################################################################################################-->
 
 <!-- 30201 - 30500 reserved for Menu Buttons-->
-
-<!-- 30201 - 30210 reserved for Flatten/Flow Buttons
-		<include name="VerticalMenu_FlattenFlowButton">
-			<control type="togglebutton" id="30201">
-				<label>31061</label>
-				<altlabel>31060</altlabel>
-				<usealttexture>Skin.HasSetting(flattenshowcase)</usealttexture>
-				<include>VerticalMenu_Button</include>
-				<onclick>Skin.ToggleSetting(flattenshowcase)</onclick>
-				<visible>Control.IsVisible(57) + !Container.Content(episodes)</visible>
-			</control>		
-
-			<control type="togglebutton" id="30202">
-				<label>31061</label>
-				<altlabel>31060</altlabel>
-				<usealttexture>Skin.HasSetting(flattenmultiplex)</usealttexture>
-				<include>VerticalMenu_Button</include>
-				<onclick>Skin.ToggleSetting(flattenmultiplex)</onclick>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552)]</visible>
-			</control>		
-
-			<control type="togglebutton" id="30203">
-				<label>31061</label>
-				<altlabel>31060</altlabel>
-				<usealttexture>Skin.HasSetting(flattenflow)</usealttexture>					
-				<include>VerticalMenu_Button</include>
-				<onclick>Skin.ToggleSetting(flattenflow)</onclick>
-				<visible>Control.IsVisible(55) + !Container.Content(episodes)</visible>
-			</control>
-		</include> -->
-		
+	
 <!-- 30211 - 30240 reserved for Info Buttons-->
 		<include name="VerticalMenu_MultiplexInfoButtons">
 			<control type="button" id="30211">
@@ -915,28 +816,28 @@
 				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(25) + Container.Content(movies) + [Control.IsVisible(551) | Control.IsVisible(52)] + Skin.HasSetting(multiplexinfooff)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexinfooff)</visible>
 			</control>
 			<control type="button" id="30212">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(25) + Container.Content(movies) + [Control.IsVisible(551) | Control.IsVisible(52)] + ![Skin.HasSetting(multiplexinfotrigger) | Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfoon)]</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + ![Skin.HasSetting(multiplexinfotrigger) | Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfoon)]</visible>
 			</control>
 			<control type="button" id="30213">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(25) + Container.Content(movies) + [Control.IsVisible(551) | Control.IsVisible(52)] + Skin.HasSetting(multiplexinfotrigger)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexinfotrigger)</visible>
 			</control>	
 			<control type="button" id="30214">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(25) + Container.Content(movies) + [Control.IsVisible(551) | Control.IsVisible(52)] + Skin.HasSetting(multiplexinfoon)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexinfoon)</visible>
 			</control>
 	
 			<control type="button" id="30215">
@@ -1032,34 +933,60 @@
 				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(553) + Skin.HasSetting(multiplexmusicinfooff)</visible>
+				<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + Skin.HasSetting(multiplexmusicinfooff)</visible>
 			</control>
 			<control type="button" id="30228">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(553) + ![Skin.HasSetting(multiplexmusicinfotrigger) | Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfoon)]</visible>
+				<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + ![Skin.HasSetting(multiplexmusicinfotrigger) | Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfoon)]</visible>
 			</control>
 			<control type="button" id="30229">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(553) + Skin.HasSetting(multiplexmusicinfotrigger)</visible>
+				<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + Skin.HasSetting(multiplexmusicinfotrigger)</visible>
 			</control>	
 			<control type="button" id="30230">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(502) + Skin.HasSetting(music) + Control.IsVisible(553) + Skin.HasSetting(multiplexmusicinfoon)</visible>
+				<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + Skin.HasSetting(multiplexmusicinfoon)</visible>
 			</control>
 
+			<control type="button" id="30231">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + Skin.HasSetting(multiplexcommoninfooff)</visible>
+			</control>
+			<control type="button" id="30232">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + ![Skin.HasSetting(multiplexcommoninfotrigger) | Skin.HasSetting(multiplexcommoninfooff) | Skin.HasSetting(multiplexcommoninfoon)]</visible>
+			</control>
+			<control type="button" id="30233">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + Skin.HasSetting(multiplexcommoninfotrigger)</visible>
+			</control>	
+			<control type="button" id="30234">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + Skin.HasSetting(multiplexcommoninfoon)</visible>
+			</control>
 		</include>
 		
-
-
 <!-- 30241 - 30250 reserved for Style Buttons-->
 		<include name="VerticalMenu_MultiplexStyleButtons">
 			<control type="button" id="30241">
@@ -1067,7 +994,7 @@
 				<label>$LOCALIZE[31047]: $LOCALIZE[31960]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(551)] + ![Skin.HasSetting(multiplexbigthumb) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexplot)]</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + ![Skin.HasSetting(multiplexbigthumb) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexplot)]</visible>
 			</control>
 	
 			<control type="button" id="30242">
@@ -1075,7 +1002,7 @@
 				<label>$LOCALIZE[31047]: $LOCALIZE[31045]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(551)] + Skin.HasSetting(multiplexbigthumb)</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexbigthumb)</visible>
 			</control>
 	
 			<control type="button" id="30243">
@@ -1083,7 +1010,7 @@
 				<label>$LOCALIZE[31047]: $LOCALIZE[31044]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(551)] + Skin.HasSetting(multiplexfanart)</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexfanart)</visible>
 			</control>
 	
 			<control type="button" id="30244">
@@ -1091,7 +1018,7 @@
 				<label>$LOCALIZE[31047]: $LOCALIZE[31046]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(551)] + Skin.HasSetting(multiplexplot)</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexplot)</visible>
 			</control>	
 
 			<control type="button" id="30245">
@@ -1099,63 +1026,17 @@
 				<label>$LOCALIZE[31047]: $LOCALIZE[31063]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(552) + Skin.HasSetting(multiplextvbigthumb)</visible>
+				<visible>Container.Content(episodes) + Window.IsActive(25) + [Control.IsVisible(551) | Control.IsVisible(552)] + Skin.HasSetting(multiplextvbigthumb)</visible>
 			</control>		
 			<control type="button" id="30246">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31047]: $LOCALIZE[31064]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(552) + !Skin.HasSetting(multiplextvbigthumb)</visible>
+				<visible>Container.Content(episodes) + Window.IsActive(25) + [Control.IsVisible(551) | Control.IsVisible(552)] + !Skin.HasSetting(multiplextvbigthumb)</visible>
 			</control>		
 		</include>
-		
 
-<!-- 30251 - 30260 reserved for Shade Buttons
-		<include name="VerticalMenu_MultiplexShadeButtons">
-			<control type="button" id="30251">
-				<include>VerticalMenu_Button2</include>				
-				<label>$LOCALIZE[31955]: $LOCALIZE[31956]</label>
-				<onclick>SetFocus(7014)</onclick>
-				<onright>SetFocus(7014)</onright>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + ![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>
-			</control>
-	
-			<control type="button" id="30252">
-				<include>VerticalMenu_Button2</include>				
-				<label>$LOCALIZE[31955]: $LOCALIZE[31957]</label>
-				<onclick>SetFocus(7014)</onclick>
-				<onright>SetFocus(7014)</onright>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(shadegrey)</visible>
-			</control>
-	
-			<control type="button" id="30253">
-				<include>VerticalMenu_Button2</include>				
-				<label>$LOCALIZE[31955]: $LOCALIZE[31958]</label>
-				<onclick>SetFocus(7014)</onclick>
-				<onright>SetFocus(7014)</onright>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(shadeblack)</visible>
-			</control>
-		</include>
-
-
-		<include name="VerticalMenu_PanelDensityButton">
-			<control type="radiobutton" id="30261">
-				<label>$LOCALIZE[31959]</label>
-				<include>VerticalMenu_RadioButton</include>
-				<onclick>Skin.ToggleSetting(listpanelthin)</onclick>
-				<selected>Skin.HasSetting(listpanelthin)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)]</visible>
-			</control>
-			<control type="radiobutton" id="30262">
-				<label>$LOCALIZE[31959]</label>
-				<include>VerticalMenu_RadioButton</include>
-				<onclick>Skin.ToggleSetting(multiplexthin)</onclick>
-				<selected>Skin.HasSetting(multiplexthin)</selected>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552)] + !Skin.HasSetting(oldmultiplex)</visible>
-			</control>		
-		</include>-->
-		
 
 		<include name="VerticalMenu_FlagsButton">
 			<control type="radiobutton" id="30263">
@@ -1163,7 +1044,7 @@
 				<label>$LOCALIZE[31069]</label>
 				<onclick>Skin.ToggleSetting(nomediaflags)</onclick>
 				<selected>!Skin.HasSetting(nomediaflags)</selected>
-				<visible>[Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(551) | Control.IsVisible(552)] + [Skin.HasSetting(videomovies) | Skin.HasSetting(videotv)]</visible>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)]</visible>
 			</control>
 		</include>
 		
@@ -1199,9 +1080,9 @@
 				<onclick>XBMC.ReloadSkin</onclick>
 				<visible>Control.IsVisible(53) + [Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | [Window.IsActive(25) + Container.Content(episodes)]]</visible>
 			</control>		
-		</include>
+		</include>		
 
-		<include name="VerticalMenu_WallBackdropButton">
+		<include name="VerticalMenu_BackdropsButton">
 			<control type="radiobutton" id="30267">
 				<label>$LOCALIZE[31067]</label>
 				<include>VerticalMenu_RadioButton</include>
@@ -1209,131 +1090,117 @@
 				<selected>Skin.HasSetting(transparentwall)</selected>
 				<visible>Control.IsVisible(53) + !Window.IsActive(500)</visible>
 			</control>
-		</include>
-		
-
-		<include name="VerticalMenu_CurtainsButton">
 			<control type="radiobutton" id="30268">
 				<include>VerticalMenu_RadioButton</include>		
 				<label>$LOCALIZE[31067]</label>
 				<onclick>Skin.ToggleSetting(nocurtains)</onclick>
-<!--				<onclick>Skin.SetBool(notvfanart)</onclick>
-				<onclick>Skin.SetBool(nomoviefanart)</onclick>
-				<onclick>Skin.SetBool(nomusicfanart)</onclick>
-				<onclick>Skin.SetBool(nopicturefanart)</onclick>-->
 				<selected>Skin.HasSetting(nocurtains)</selected>
-				<visible>!Window.IsActive(500) + Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(57) | Control.IsVisible(551) | [[Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
-			</control>
-		</include>
-		
-
-<!--		<include name="VerticalMenu_LightNightButtons">
-			<control type="togglebutton" id="30269">
-				<include>VerticalMenu_Button</include>				
-				<label>$LOCALIZE[31042]</label>
-				<altlabel>$LOCALIZE[31043]</altlabel>
-				<usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
-				<onclick>Skin.ToggleSetting(darkshowcase)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
-				<visible>!Control.IsVisible(53)</visible>
+				<visible>!Window.IsActive(500) + [Control.IsVisible(552) | Control.IsVisible(551) | Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + [Container.Content(movies) | Container.Content(genres) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 			</control>
 		</include>
 
-
-		<include name="VerticalMenu_LightDarkWindows">
-			<control type="togglebutton" id="30270">
-				<include>VerticalMenu_Button</include>				
-				<label>$LOCALIZE[31952]: $LOCALIZE[31953]</label>
-				<altlabel>$LOCALIZE[31952]: $LOCALIZE[31954]</altlabel>
-				<usealttexture>Skin.HasSetting(darkwindow)</usealttexture>
-				<onclick>Skin.ToggleSetting(darkwindow)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
-				<visible>![Control.IsVisible(53) | Control.IsVisible(52)]</visible>
+		<include name="VerticalMenu_FanartButtons">
+			<control type="radiobutton" id="30293">
+				<include>VerticalMenu_RadioButton</include>				
+				<label>$LOCALIZE[31064]</label>
+				<onclick>Skin.ToggleSetting(nomoviefanart)</onclick>
+				<onclick>Skin.SetBool(nocurtains)</onclick>
+				<selected>!Skin.HasSetting(nomoviefanart)</selected>
+				<visible>Window.IsActive(25) + Container.Content(movies)</visible>
 			</control>
-		</include> -->
+					
+			<control type="radiobutton" id="30294">
+				<include>VerticalMenu_RadioButton</include>				
+				<label>$LOCALIZE[31064]</label>
+				<onclick>Skin.ToggleSetting(notvfanart)</onclick>
+				<onclick>Skin.SetBool(nocurtains)</onclick>
+				<selected>!Skin.HasSetting(notvfanart)</selected>
+				<visible>Window.IsActive(25) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+			</control>
+			
+			<control type="radiobutton" id="30295">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31064]</label>
+				<onclick>Skin.ToggleSetting(nomusicfanart)</onclick>
+				<onclick>Skin.SetBool(nocurtains)</onclick>
+				<selected>!Skin.HasSetting(nomusicfanart)</selected>
+				<visible>[Window.IsActive(501) | Window.IsActive(502)] + [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(553) | Control.IsVisible(51)]</visible>
+			</control>
+		</include>
 		
-
 		<include name="VerticalMenu_FullscreenButton">
 			<control type="radiobutton" id="30271">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenMovieMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenMovieMultiplex)</selected>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(videomovies) + ![Container.Content(files) | Container.Content(genres)]</visible>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(movies)</visible>
 			</control>
 			<control type="radiobutton" id="30272">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenTVShowsMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenTVShowsMultiplex)</selected>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(videotv) + Container.Content(tvshows)</visible>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows)</visible>
 			</control>
 			<control type="radiobutton" id="30273">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenTVSeasonsMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenTVSeasonsMultiplex)</selected>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(videotv) + Container.Content(seasons)</visible>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons)</visible>
 			</control>
 			<control type="radiobutton" id="30274">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenTVEpisodesMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenTVEpisodesMultiplex)</selected>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(videotv) + Container.Content(episodes)</visible>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes)</visible>
 			</control>
 			<control type="radiobutton" id="30275">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenSongsMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenSongsMultiplex)</selected>
-				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(music) + Container.Content(songs)</visible>
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(songs)</visible>
 			</control>
 			<control type="radiobutton" id="30276">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenArtistsMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenArtistsMultiplex)</selected>
-				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(music) + Container.Content(artists)</visible>
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(artists)</visible>
 			</control>
 			<control type="radiobutton" id="30277">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenAlbumsMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenAlbumsMultiplex)</selected>
-				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(music) + Container.Content(albums)</visible>
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(albums)</visible>
 			</control>
-			<control type="radiobutton" id="30278">
+<!--			<control type="radiobutton" id="30278">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenMusicCommonMultiplex)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenMusicCommonMultiplex)</selected>
-				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(music) + ![Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]</visible>
-			</control>
-			<control type="radiobutton" id="30279">
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + ![Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]</visible>
+			</control> -->
+<!--			<control type="radiobutton" id="30279">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenCommonMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenCommonMultiplex)</selected>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + ![Skin.HasSetting(music) | Container.Content(movies) | Skin.HasSetting(videotv) | Container.Content(genres) | Window.IsActive(28)] | Skin.HasSetting(videofiles)</visible>
-			</control>
-			<control type="radiobutton" id="30280">
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + ![Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(28)]</visible>
+			</control> -->
+<!--			<control type="radiobutton" id="30280">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenTVCommonMultiplex)</onclick>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<selected>Skin.HasSetting(FullscreenTVCommonMultiplex)</selected>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + Skin.HasSetting(videotv) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
-			</control>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+			</control> -->
 		</include>
 
 
@@ -1343,42 +1210,42 @@
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(movieslistfull)</onclick>
 				<selected>Skin.HasSetting(movieslistfull)</selected>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(50) | Control.IsVisible(550)]</visible>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + Container.Content(movies)</visible>
 			</control>
 			<control type="radiobutton" id="30282">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(tvshowslistfull)</onclick>
 				<selected>Skin.HasSetting(tvshowslistfull)</selected>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(tvshows)</visible>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + Container.Content(tvshows)</visible>
 			</control>
 			<control type="radiobutton" id="30283">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(tvseasonslistfull)</onclick>
 				<selected>Skin.HasSetting(tvseasonslistfull)</selected>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(seasons)]</visible>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + Container.Content(seasons)</visible>
 			</control>
 			<control type="radiobutton" id="30284">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(tvepisodeslistfull)</onclick>
 				<selected>Skin.HasSetting(tvepisodeslistfull)</selected>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(episodes)</visible>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + Container.Content(episodes)</visible>
 			</control>
 			<control type="radiobutton" id="30285">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musicalbumslistfull)</onclick>
 				<selected>Skin.HasSetting(musicalbumslistfull)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(albums) + !Window.IsActive(MyMusic)</visible>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(albums)</visible>
 			</control>
 			<control type="radiobutton" id="30286">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musicsongslistfull)</onclick>
 				<selected>Skin.HasSetting(musicsongslistfull)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(songs) + !Window.IsActive(MyMusic)</visible>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)]</visible>
 			</control>
 <!--			<control type="radiobutton" id="30287">
 				<include>VerticalMenu_RadioButton</include>
@@ -1433,44 +1300,13 @@
 				<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + [Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550)]</visible>
 			</control>
 		</include> -->
-		
-
-		<include name="VerticalMenu_FanartButtons">
-			<control type="radiobutton" id="30293">
-				<include>VerticalMenu_RadioButton</include>				
-				<label>$LOCALIZE[31064]</label>
-				<onclick>Skin.ToggleSetting(nomoviefanart)</onclick>
-				<onclick>Skin.SetBool(nocurtains)</onclick>
-				<selected>!Skin.HasSetting(nomoviefanart)</selected>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videomovies)</visible>
-			</control>
-					
-			<control type="radiobutton" id="30294">
-				<include>VerticalMenu_RadioButton</include>				
-				<label>$LOCALIZE[31064]</label>
-				<onclick>Skin.ToggleSetting(notvfanart)</onclick>
-				<onclick>Skin.SetBool(nocurtains)</onclick>
-				<selected>!Skin.HasSetting(notvfanart)</selected>
-				<visible>Window.IsActive(25) + Skin.HasSetting(videotv)</visible>
-			</control>
-			
-			<control type="radiobutton" id="30295">
-				<include>VerticalMenu_RadioButton</include>
-				<label>$LOCALIZE[31064]</label>
-				<onclick>Skin.ToggleSetting(nomusicfanart)</onclick>
-				<onclick>Skin.SetBool(nocurtains)</onclick>
-				<selected>!Skin.HasSetting(nomusicfanart)</selected>
-				<visible>[Window.IsActive(501) + Control.IsVisible(57)] | [Window.IsActive(502) + [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(553) | Control.IsVisible(51)]]</visible>
-			</control>
-		</include>
-		
 
 		<include name="VerticalMenu_FilesButtons">
 			<control type="button" id="30296">
 				<label>31057</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReplaceWindow(MyVideoFiles)</onclick>
-				<visible>Window.IsActive(25)</visible>
+				<visible>Window.IsActive(MyVideoLibrary)</visible>
 			</control>
 			<control type="button" id="30297">
 				<label>31057</label>
@@ -1486,7 +1322,7 @@
 				<label>31068</label>
 				<include>VerticalMenu_Button</include>
 				<onclick>XBMC.ReplaceWindow(MyVideoLibrary)</onclick>
-				<visible>Window.IsActive(MyVideos)</visible>
+				<visible>Window.IsActive(MyVideoFiles)</visible>
 			</control>
 			<control type="button" id="30299">
 				<label>31068</label>
@@ -1501,7 +1337,7 @@
 			<control type="button" id="8">
 				<label>137</label>
 				<include>VerticalMenu_Button</include>
-				<visible>[Skin.HasSetting(videomovies) + !Skin.HasSetting(nomenumoviesearch)] | [Skin.HasSetting(videotv) + !Skin.HasSetting(nomenutvsearch)] | Window.IsActive(502)</visible>					
+				<visible>[Container.Content(movies) + !Skin.HasSetting(nomenumoviesearch)] | [[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(nomenutvsearch)] | Window.IsActive(502)</visible>					
 			</control>
 		</include>
 		
@@ -1527,7 +1363,7 @@
 				<description>Watched Toggle Button</description>
 				<label>$LOCALIZE[31058]</label>
 				<include>VerticalMenu_RadioButton</include>
-				<visible>[Skin.HasSetting(videomovies) + !Skin.HasSetting(nomenumoviewatched)] | [Skin.HasSetting(videotv) + !Skin.HasSetting(nomenutvwatched)]</visible>
+				<visible>[Container.Content(movies) + !Skin.HasSetting(nomenumoviewatched)] | [[Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + !Skin.HasSetting(nomenutvwatched)]</visible>
 			</control>
 		</include>
 		
@@ -1538,7 +1374,7 @@
 				<label>$LOCALIZE[31066]</label>
 				<onclick>Skin.ToggleSetting(nooverlays)</onclick>
 				<selected>!Skin.HasSetting(nooverlays)</selected>
-				<visible>Window.IsActive(25) + [Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)]</visible>
+				<visible>Window.IsActive(25) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)]</visible>
 			</control>
 		</include>
 		
@@ -1617,25 +1453,17 @@
 			<control type="radiobutton" id="30311">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
-				<onclick>Skin.ToggleSetting(listvideosquare)</onclick>
-				<selected>!Skin.HasSetting(listvideosquare)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(24)</visible>
+				<onclick>Skin.ToggleSetting(listvideoposter)</onclick>
+				<selected>Skin.HasSetting(listvideoposter)</selected>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + [Window.IsActive(24) | Window.IsActive(25)]</visible>
 			</control>
 			<control type="radiobutton" id="30312">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31059]</label>
-				<onclick>Skin.ToggleSetting(listgamessquare)</onclick>
-				<selected>!Skin.HasSetting(listgamessquare)</selected>
+				<onclick>Skin.ToggleSetting(listgamesposter)</onclick>
+				<selected>Skin.HasSetting(listgamesposter)</selected>
 				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(35)</visible>
 			</control>
-<!--			<control type="radiobutton" id="30313">
-				<include>VerticalMenu_RadioButton</include>
-				<label>$LOCALIZE[31059]</label>
-				<onclick>Skin.ToggleSetting(tvposterview)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
-				<selected>Skin.HasSetting(tvposterview)</selected>
-				<visible>Skin.HasSetting(videotv)</visible>
-			</control> -->
 		</include>
 
 
@@ -1648,28 +1476,26 @@
 		
 			<!-- Movies/TvShows VideoNav Menu-->
 			<control type="group">
-<!--				<visible>!Skin.HasSetting(noverticalmenu)</visible>-->
 				
 				<!-- Second Columns -->
 				<include>VerticalMenu_SecondColumnInfoTrigger</include>
 				<include>VerticalMenu_SecondColumnViewChange</include>
 				<include>VerticalMenu_SecondColumnMultiplexStyleChange</include>
-			<!--	<include>VerticalMenu_SecondColumnMultiplexWindowShade</include> -->
 				
 				<!-- Background Image -->
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>215</width>
+					<width>225</width>
 					<height>720</height>
-					<texture>common/menupanel_vertical2.png</texture>
+					<texture>common/menupanel_vertical.png</texture>
 					<include>Animation_MediaMenuSlideVertical</include>
 					<visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553) | Control.IsVisible(51) | Control.IsVisible(57) | Control.IsVisible(53)</visible>
 				</control>
 				
 				<control type="image">
 					<posx>10</posx> 
-					<posy>9</posy>
+					<posy>15</posy>
 					<width>44</width>
 					<height>25</height>
 					<include>Animation_MediaMenuSlideVertical</include>
@@ -1680,7 +1506,7 @@
 
 				<control type="image">
 					<posx>10</posx> 
-					<posy>9</posy>
+					<posy>15</posy>
 					<width>44</width>
 					<height>30</height>
 					<include>Animation_MediaMenuSlideVertical</include>
@@ -1691,7 +1517,7 @@
 				
 				<control type="image">
 					<posx>10</posx> 
-					<posy>9</posy>
+					<posy>15</posy>
 					<width>44</width>
 					<height>30</height>
 					<include>Animation_MediaMenuSlideVertical</include>
@@ -1702,7 +1528,7 @@
 				
 				<control type="image">
 					<posx>10</posx> 
-					<posy>9</posy>
+					<posy>15</posy>
 					<width>44</width>
 					<height>30</height>
 					<include>Animation_MediaMenuSlideVertical</include>
@@ -1715,13 +1541,13 @@
 				<control type="label">
 					<label>31033</label>
 					<include>VerticalMenu_Label</include>
-					<visible>Skin.HasSetting(videotv) + Window.IsActive(25)</visible>
+					<visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + Window.IsActive(25)</visible>
 				</control>
 				<!-- Menu Title: Movies-->
 				<control type="label">
 					<label>31032</label>
 					<include>VerticalMenu_Label</include>
-					<visible>Skin.HasSetting(videomovies) + Window.IsActive(25)</visible>
+					<visible>Container.Content(movies) + Window.IsActive(25)</visible>
 				</control>
 				<!-- Menu Title: Videos-->
 				<control type="label">
@@ -1780,7 +1606,7 @@
 					<!--###### Buttons ######-->
 					<control type="button"  id="900">
 						<include>VerticalMenu_Button2</include>
-						<label>$LOCALIZE[31050]</label>
+						<label>$LOCALIZE[31050] $INFO[Container.Viewmode]</label>
 						<onclick>SetFocus(7011)</onclick>
 						<onright>SetFocus(7011)</onright>
 					</control>
@@ -1791,21 +1617,15 @@
 					</control>
 					
 					<include condition="!Skin.HasSetting(nomultiplexstylebuttons)">VerticalMenu_MultiplexStyleButtons</include>
-		<!--			<include>VerticalMenu_MultiplexShadeButtons</include> -->
 					<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">VerticalMenu_MultiplexInfoButtons</include>
-		<!--			<include>VerticalMenu_PosterThumbButtons</include> -->
-		<!--			<include>VerticalMenu_FlattenFlowButton</include> -->
+					<include>VerticalMenu_PosterThumbButtons</include>
 					<include>VerticalMenu_ListButtons</include>
-		<!--			<include>VerticalMenu_LightNightButtons</include>
-					<include>VerticalMenu_LightDarkWindows</include>
-					<include>VerticalMenu_PanelDensityButton</include> -->
 					<include>VerticalMenu_FullscreenButton</include>
 		<!--					<include>VerticalMenu_DVDCaseButtons</include> -->
 					<include condition="!Skin.HasSetting(nomediaflagsbutton)">VerticalMenu_FlagsButton</include>
 					<include>VerticalMenu_WallGridButton</include>
 					<include>VerticalMenu_FanartButtons</include>
-					<include>VerticalMenu_WallBackdropButton</include>
-					<include>VerticalMenu_CurtainsButton</include>
+					<include>VerticalMenu_BackdropsButton</include>
 					<include>VerticalMenu_OverlayButton</include>
 					
 					<control type="label" id="30501">

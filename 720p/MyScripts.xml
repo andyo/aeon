@@ -16,7 +16,7 @@
 		<include>Animation_OpenCloseZoom</include>
 		<include>Furniture_FloorBack</include>
 		<include>Furniture_shadow</include>
-		<include>Furniture_MediaPanel</include>
+		<include>Furniture_FloorFront</include>
 		<include>Viewtype_Wall</include>
 <!--		<include>Viewtype_Showcase</include> -->
 		<include>Viewtype_List</include>
@@ -26,7 +26,7 @@
 		<include>VerticalMenu</include>		
 	</control>
 
-	<include>Furniture_DarkGradient</include>	
+	<!--<include>Furniture_DarkGradient</include>-->	
 	<!--<include>Background_ContextBlack</include>-->
 	<include>Furniture_Debug</include>
 </controls>

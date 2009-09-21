@@ -1,12 +1,14 @@
 <skin>
-  <defaultresolution>720p</defaultresolution>
-  <defaultresolutionwide>720p</defaultresolutionwide>
-  <version>2.11</version>
-  <effectslowdown>1</effectslowdown>
-  <zoom>1.0</zoom>
+	<defaultresolution>720p</defaultresolution>
+	<defaultresolutionwide>720p</defaultresolutionwide>
+	<version>2.11</version>
+	<defaultthemename>textures.xpr</defaultthemename>
+	<effectslowdown>1</effectslowdown>
+	<zoom>1.0</zoom>
 
 <credits>
-	<skinname>Aeon</skinname>
+	<skinname>Aeon ShowMix</skinname>
+    	<name>Modded by Andy Blackburn</name>
     	<name>by Duncan Harris</name>
 </credits>
 </skin>

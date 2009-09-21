@@ -182,7 +182,7 @@
 
 <!-- Aeon Advanced Menu labels -->
   
-	<string id="31230">AEON</string> 
+	<string id="31230">AEON SHOWMIX</string> 
 	<string id="31231">OPTIONS</string>
 	<string id="31232">GENERAL</string>
 	<string id="31233">GLOBAL SETTINGS</string>
@@ -201,7 +201,7 @@
 	<string id="31246">SHOWMIX</string>
 	<string id="31247">MODS SETTINGS</string>
 	<string id="31248">CONFIGURE MENU'S</string>
-	<string id="31229">Add Remove Item's</string>
+	<string id="31229">ADD/REMOVE ITEMS</string>
 
 
   
@@ -503,10 +503,10 @@
 	<string id="31854">PARTY</string>
 	<string id="31855">ALARM</string>
 	<string id="31856">TIMER</string>
-	<string id="31857">New Item</string>
+	<string id="31857"> - (SELECT TO CLEAR)</string>
 	<string id="31858">Sub</string>
 	<string id="31859">Animated weather icons</string>
-	<string id="31860">CLEAR</string>
+	<string id="31860">EMPTY - (SELECT TO ADD A FAV)</string>
 	<string id="31861">10 DAYS</string>
 	<string id="31862">ALARM Off</string>
 	<string id="31863">Newest deviantart</string>
@@ -583,7 +583,7 @@
 	<string id="31979">GENRE ARTWORK (FANART) FOR MOVIES</string>
 	<string id="31980">GENRE ARTWORK (FANART) FOR MUSIC</string>
 	<string id="31981">-</string>	
-	<string id="31986">ADD AND REMOVE FAVORITES/WIDGETS TO HOME MENU</string>	
+	<string id="31986">ENABLE/DISABLE SHORTCUTS &amp; ADD CUSTOM ENTRIES</string>	
 	<string id="31987">NOTE: WHEN DONE CHANGES, XBMC WILL QUIT</string>	
 	<string id="31988">XBMC will quit automatically when leaving this menu</string>	
 	<string id="31989">ADD &amp; REMOVE</string>	

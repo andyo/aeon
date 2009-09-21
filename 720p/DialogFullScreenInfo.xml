@@ -8,45 +8,42 @@
 		<width>1280</width>
 		<height>151</height>
 		<animation type="Visible">
-			<effect type="fade" time="400" start="0" end="100" />
 			<effect type="slide" time="400" start="0,151" end="0,0" easing="out" tween="cubic" />
 		</animation>
 		<animation type="Hidden">
-			<effect type="fade" time="400" start="100" end="0" />
 			<effect type="slide" time="400" start="0,0" end="0,151" easing="in" tween="cubic" />
 		</animation>
 		<animation type="WindowOpen">
-			<effect type="fade" time="400" start="0" end="100" />
 			<effect type="slide" time="400" start="0,151" end="0,0" easing="out" tween="cubic" />
 		</animation>
 		<animation type="WindowClose">
-			<effect type="fade" time="400" start="100" end="0" />
 			<effect type="slide" time="400" start="0,0" end="0,151" easing="in" tween="cubic" />
 		</animation>
 
-		<control type="progress">
-			<description>Progressbar</description>
+		<control type="image">
+			<description>Panel</description>
 			<posx>0</posx>
 			<posy>0</posy>
+			<height>159</height>
 			<width>1280</width>
-			<height>151</height>
+			<texture>osd/osd_back.png</texture>
+		</control>
+
+		<control type="progress">
+			<description>Progressbar</description>
+			<posx>6</posx>
+			<posy>13</posy>
+			<width>1280</width>
+			<height>155</height>
 			<info>Player.Progress</info>
 			<texturebg>osd/osd_progress_clear.png</texturebg>
 			<lefttexture>-</lefttexture>
-			<midtexture>osd/osd_progressmid.png</midtexture>
+			<midtexture>osd/osd_progressmid_info.png</midtexture>
 			<righttexture>-</righttexture>
 			<overlaytexture>-</overlaytexture>
 			<include>Animation_CommonFade</include>				
 		</control>
 		
-		<control type="image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>			
-			<height>151</height>
-			<texture>osd/fullscreen_bottom.png</texture>
-		</control>
-
 		<control type="label">
 			<posx>0</posx>
 			<posy>45</posy>
@@ -73,13 +70,13 @@
 
 		<control type="label" id="212">
 			<posx>0</posx>
-			<posy>92</posy>
+			<posy>100</posy>
 			<width>1280</width>
 			<height>30</height>
 			<align>center</align>
 			<aligny>center</aligny>
 			<font>Font_OSDMusicArtist</font>
-			<label>[COLOR 91FFFFFF]$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration][/COLOR]</label>
+			<label>[COLOR 91FFFFFF]$INFO[VideoPlayer.Time,$LOCALIZE[31719] [CR],] / $INFO[VideoPlayer.Duration,][/COLOR]</label>
 		</control>		
 	
 	</control>

@@ -24,591 +24,84 @@
 			<visible>Window.Previous(4)</visible>
 			<animation effect="fade" time="300">Hidden</animation>
 		</control>
-	<control type="multiimage">
-		<include>BackgroundVarsGlobal</include>
-		<imagepath background="true">$INFO[Container(300).ListItem.Icon]</imagepath>
-		<visible>![control.HasFocus(8001)+[Container(300).HasFocus(6) | Container(300).HasFocus(7)]]</visible>
-	</control>
-	<control type="multiimage">
-		<include>BackgroundVarsGlobal</include>
-		<imagepath background="true">$INFO[Container(8001).ListItem.Thumb]</imagepath>
-		<visible>control.HasFocus(8001)+Container(300).HasFocus(6)</visible>
-	</control>
-<!-- TV Fanart -->
-	<control type="group">
-		<width>1280</width>
-		<height>720</height>
-		<visible>Container(300).HasFocus(7) + control.HasFocus(8001)</visible>
-		<control type="image">
-			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.1.Fanart)]</texture>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>Container(8001).Row(0)</visible>
-			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
-			<animation effect="fade" start="100" end="0" time="600" >Hidden</animation>
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<imagepath background="true">$INFO[Container(300).ListItem.Icon]</imagepath>
+			<visible>![control.HasFocus(8001)+[Container(300).HasFocus(6) | Container(300).HasFocus(7)]]</visible>
 		</control>
-		<control type="image">
-			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.2.Fanart)]</texture>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>Container(8001).Row(1)</visible>
-			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
-			<animation effect="fade" start="100" end="0" time="600" >Hidden</animation>
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<imagepath background="true">$INFO[Container(8001).ListItem.Thumb]</imagepath>
+			<visible>control.HasFocus(8001)+Container(300).HasFocus(6)</visible>
 		</control>
-		<control type="image">
-			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.3.Fanart)]</texture>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>Container(8001).Row(2)</visible>
-			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
-			<animation effect="fade" start="100" end="0" time="600" >Hidden</animation>
-		</control>
-		<control type="image">
-			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.4.Fanart)]</texture>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>Container(8001).Row(3)</visible>
-			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
-			<animation effect="fade" start="100" end="0" time="600" >Hidden</animation>
-		</control>
-		<control type="image">
-			<texture fallback="special://skin/media/backdrops/default_tvshows/default.png" background="true">$INFO[Window.Property(LatestEpisode.5.Fanart)]</texture>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>Container(8001).Row(4)</visible>
-			<animation effect="fade" start="0" end="100" time="600" >Visible</animation>
-			<animation effect="fade" start="100" end="0" time="600" >Hidden</animation>
-		</control>
-	</control>
-
-<!-- DEBUG INFO -->
-	<control type="label">
-		<posx>700</posx>
-		<posy>50</posy>
-		<width>900</width>
-		<height>13</height>
-		<font>Font_MultiplexInfoLabel</font>
-		<textcolor>FFFFFFFF</textcolor>		
-		<label>** $INFO[Window.Property(LatestEpisode.1.Fanart)][CR]** $INFO[Window.Property(LatestEpisode.2.Fanart)][CR]** $INFO[Window.Property(LatestEpisode.3.Fanart)][CR]** $INFO[Window.Property(LatestEpisode.4.Fanart)][CR]** $INFO[Window.Property(LatestEpisode.5.Fanart)]</label>
-		<visible>Skin.HasSetting(debug)</visible>
-	</control>	
-<!-- Windowopen -->
-    <control type="button" id="323">
-        <!-- <include>homesubmenu_but</include> -->
-        <onfocus>setProperty(extra_extras,)</onfocus>
-        <onfocus>setProperty(Picture_extras,)</onfocus>
-        <onfocus>setProperty(totals_extras,)</onfocus>
-        <onfocus>setProperty(recentadded_extras,)</onfocus>
-		<onfocus>setProperty(CustomMenu1_extras,)</onfocus>
-		<onfocus>setProperty(CustomMenu2_extras,)</onfocus>
-		<onfocus>setProperty(random_order,)</onfocus>
-		<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded_py</include>
-		<include condition="!Skin.HasSetting(Library_info)">Widget_Totals_py</include>
-		<include condition="Skin.HasSetting(extra_widget_on)">Widget_Extras_py</include>
-		<include condition="Skin.HasSetting(Pictures_widget_on)">Widget_Picture_py</include>
-		<include condition="Skin.HasSetting(CustomMenu1_widget_on)">Widget_CustomMenu1_py</include>
-		<include condition="Skin.HasSetting(CustomMenu2_widget_on)">Widget_CustomMenu2_py</include>
-		<include condition="Skin.HasSetting(Widget_random_order)">Widget_random_order_py</include>
-		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(random_order)]$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
-		<onfocus>Skin.Reset(Startup)</onfocus>
-        <onfocus>SetFocus(325)</onfocus>
-        <onfocus>SetFocus(300)</onfocus>
-        <onfocus>Skin.Reset(submenu)</onfocus>
-		<visible>Skin.HasSetting(Startup)</visible>
-    </control>
-    <control type="button" id="323">
-        <!-- <include>homesubmenu_but</include> -->
-        <onfocus>setProperty(extra_extras,)</onfocus>
-        <onfocus>setProperty(Picture_extras,)</onfocus>
-        <onfocus>setProperty(totals_extras,)</onfocus>
-        <onfocus>setProperty(recentadded_extras,)</onfocus>
-		<onfocus>setProperty(CustomMenu1_extras,)</onfocus>
-		<onfocus>setProperty(CustomMenu2_extras,)</onfocus>
-		<onfocus>setProperty(random_order,)</onfocus>
-		<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded_py</include>
-		<include condition="!Skin.HasSetting(Library_info)">Widget_Totals_py</include>
-		<include condition="Skin.HasSetting(extra_widget_on)">Widget_Extras_py</include>
-		<include condition="Skin.HasSetting(Pictures_widget_on)">Widget_Picture_py</include>
-		<include condition="Skin.HasSetting(CustomMenu1_widget_on)">Widget_CustomMenu1_py</include>
-		<include condition="Skin.HasSetting(CustomMenu2_widget_on)">Widget_CustomMenu2_py</include>
-		<include condition="Skin.HasSetting(Widget_random_order)">Widget_random_order_py</include>
-		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(random_order)]$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
-		<onfocus>Skin.Reset(LibraryUpdated)</onfocus>
-        <onfocus>SetFocus(325)</onfocus>
-        <onfocus>SetFocus(300)</onfocus>
-        <onfocus>Skin.Reset(submenu)</onfocus>
-		<visible>!Skin.HasSetting(Startup) + Skin.HasSetting(LibraryUpdated) + !Window.IsVisible(112) + !Window.IsVisible(133)</visible>
-    </control>
-    <control type="button" id="323">
-		<onfocus>Skin.Reset(LibraryUpdated)</onfocus>
-        <onfocus>SetFocus(325)</onfocus>
-        <onfocus>SetFocus(300)</onfocus>
-        <onfocus>Skin.Reset(submenu)</onfocus>
-		<visible>!Skin.HasSetting(Startup) + [!Skin.HasSetting(LibraryUpdated) | [Skin.HasSetting(LibraryUpdated) + [Window.IsVisible(112) | Window.IsVisible(133)]]]</visible>
-    </control>
-<!-- Windowopen end-->
-	<include>Furniture_HomeNowPlaying</include>
-	<include condition="!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)">Widget_RecentAdded</include>
-	<include>Widget_Extras</include>
-	<include>Widget_Picture</include>
-	<include>Widget_Custom_Mainmenu_1</include>
-	<include>Widget_Custom_Mainmenu_2</include>
-	<include condition="!StringCompare(Weather.Plugin,weather.com plus)">Objects_WeatherPopup</include>
-	<include condition="StringCompare(Weather.Plugin,weather.com plus)">Widget_Weather</include>
-	<include condition="!Skin.HasSetting(Library_info)">Furniture_Library</include>
-	<include>Furniture_Time</include>
-	<include>Furniture_HomeRSS</include>
-	<control type="group">
-		<posx>0</posx>
-		<posy>0</posy>
-		<width>1280</width>
-		<height>720</height>
-		<include>Conditions_HiddenByAeonAssistant</include>
-		<animation effect="slide" start="0,0" end="0,225" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-		<include>Animation_OpenCloseZoom</include>
-		<include>Animation_CommonFade</include>
-		<control type="image">
-			<posx>0</posx>
-			<posy>302</posy>
-			<width>1280</width>
-			<height>150</height>
-			<texture>home/homemenu_gradient.png</texture>
-			<include>Animation_CommonFade</include>
-			<visible>!Skin.HasSetting(nohomegradient)</visible>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>302</posy>
-			<width>1280</width>
-			<height>150</height>
-			<texture>home/homemenu_back.png</texture>
-			<include>Animation_CommonFade</include>
-			<visible>Skin.HasSetting(nohomegradient)</visible>
-		</control>
+	<!-- TV Fanart -->
 		<control type="group">
-			<posx>0</posx>
-			<posy>343</posy>
-			<width>1280</width>
-			<height>61</height>
-			<defaultcontrol>300</defaultcontrol>
-			<control type="wraplist" id="300">
-				<posx>0</posx>
-				<posy>0</posy>
-				<height>61</height>
-				<width>1280</width>
-				<onleft>300</onleft>
-				<onright>300</onright>
-				<viewtype>list</viewtype>
-				<orientation>horizontal</orientation>
-				<focusposition>2</focusposition>
-				<scrolltime>200</scrolltime>
-				<ondown>322</ondown>
-				<onup>324</onup>
-				<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
-					<effect type="slide" start="-1280" end="0" time="400" tween="quadratic" easing="out" />
-					<effect type="fade" start="0" end="100" time="400" />
-				</animation>
-				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-				<itemlayout width="280" height="61">
-					<control type="label">
-						<include>MainMenu_Label</include>
-						<textcolor>48FFFFFF</textcolor>
-						<texture diffuse="home/homemenu_mask.png">home/homemenu_back.png</texture>
-					</control>
-				</itemlayout>
-				<focusedlayout width="280" height="61">
-					<control type="label">
-						<include>MainMenu_Label</include>
-						<textcolor>48FFFFFF</textcolor>
-					</control>		
-					<control type="label">
-						<include>MainMenu_Label</include>
-						<textcolor>FFFFFFFF</textcolor>
-						<include>Animation_ButtonFocusFade</include>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="5">
-						<label>31012</label>
-						<include>BackgroundVarsPictures</include>				
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.ActivateWindow(MyPictures)</onclick>
-						<visible>!Skin.HasSetting(nopictures)</visible>
-					</item>
-					<item id="1">
-						<label>31010</label>
-						<include>BackgroundVarsMusic</include>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.ActivateWindow(MyMusic,return)</onclick>
-						<visible>!Skin.HasSetting(nomusic)</visible>
-					</item>
-					<item id="6">
-						<label>342</label>
-						<include>BackgroundVarsMovies</include>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.ActivateWindow(MyVideoLibrary,movietitles,return)</onclick>
-						<visible>library.hascontent(movies)</visible>
-						<visible>!Skin.HasSetting(nomovies)</visible>
-					</item>
-					<item id="7">
-						<label>31014</label>
-						<include>BackgroundVarsTV</include>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowtitles,return)</onclick>
-						<visible>library.hascontent(tvshows)</visible>
-						<visible>!Skin.HasSetting(notvshows)</visible>
-					</item>
-					<item id="8">
-						<label>31015</label>
-						<include>BackgroundVarsVideo</include>				
-						<onclick>Skin.SetBool(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
-						<visible>!Skin.HasSetting(novideos)</visible>
-					</item>
-					<item id="10">
-						<description>Weather</description>
-						<label>31017</label>
-						<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include>
-						<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include>
-						<onclick>SetFocus(324)</onclick>
-						<visible>System.HasNetwork</visible>
-						<visible>Skin.HasSetting(weather)</visible>
-						<visible>StringCompare(Weather.Plugin,weather.com plus)</visible>
-					</item>
-					<item id="10">
-						<description>Weather</description>
-						<label>31017</label>
-						<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include>
-						<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include>
-						<onclick>xbmc.activatewindow(2600)</onclick>
-						<visible>System.HasNetwork</visible>
-						<visible>Skin.HasSetting(weather)</visible>
-						<visible>!StringCompare(Weather.Plugin,weather.com plus)</visible>
-					</item>
-					<item id="2">
-						<description>Extras</description>
-						<label>31865</label>
-						<include>BackgroundVars_extras</include>					
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>SetFocus(324)</onclick>
-						<visible>!Skin.HasSetting(lowermainmenu)</visible>
-						<visible>!Skin.HasSetting(no_extras)</visible>
-					</item>
-					<item id="2">
-						<description>Extras</description>
-						<label>31865</label>
-						<include>BackgroundVars_extras</include>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>SetFocus(322)</onclick>
-						<visible>Skin.HasSetting(lowermainmenu)</visible>
-						<visible>!Skin.HasSetting(no_extras)</visible>
-					</item>
-				<!-- Add Items -->
-					<item id="30">
-						<label>$INFO[Skin.String(mainmenu_1name)]</label>
-						<include>BackgroundVars_mainmenu_1</include>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_1path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_1)</visible>
-						<visible>Skin.HasSetting(mainmenu_1)</visible>
-					</item>
-					<item id="31">
-						<label>$INFO[Skin.String(mainmenu_2name)]</label>
-						<include>BackgroundVars_mainmenu_2</include>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_2path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_2)</visible>
-						<visible>Skin.HasSetting(mainmenu_2)</visible>
-					</item>
-<!--					<item id="32">
-						<label>$INFO[Skin.String(mainmenu_3name)]</label>
-						<include>BackgroundVars_mainmenu_3</include>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_3path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_3)</visible>
-						<visible>Skin.HasSetting(mainmenu_3)</visible>
-					</item>
-					<item id="33">
-						<label>$INFO[Skin.String(mainmenu_4name)]</label>
-						<include>BackgroundVars_mainmenu_4</include>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_4path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_4)</visible>
-						<visible>Skin.HasSetting(mainmenu_4)</visible>
-					</item>
-					<item id="34">
-						<label>$INFO[Skin.String(mainmenu_5name)]</label>
-						<include>BackgroundVars_mainmenu_5</include>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_5path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_5)</visible>
-						<visible>Skin.HasSetting(mainmenu_5)</visible>
-					</item>
-					<item id="35">
-						<label>$INFO[Skin.String(mainmenu_6name)]</label>
-						<include>BackgroundVars_mainmenu_6</include>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_6path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_6)</visible>
-						<visible>Skin.HasSetting(mainmenu_6)</visible>
-					</item>
-					<item id="36">
-						<label>$INFO[Skin.String(mainmenu_7name)]</label>
-						<include>BackgroundVars_mainmenu_7</include>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_7path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_7)</visible>
-						<visible>Skin.HasSetting(mainmenu_7)</visible>
-					</item>
-					<item id="37">
-						<label>$INFO[Skin.String(mainmenu_8name)]</label>
-						<include>BackgroundVars_mainmenu_8</include>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_8path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_8)</visible>
-						<visible>Skin.HasSetting(mainmenu_8)</visible>
-					</item>
-					<item id="38">
-						<label>$INFO[Skin.String(mainmenu_9name)]</label>
-						<include>BackgroundVars_mainmenu_9</include>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_9path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_9)</visible>
-						<visible>Skin.HasSetting(mainmenu_9)</visible>
-					</item>
-					<item id="39">
-						<label>$INFO[Skin.String(mainmenu_10name)]</label>
-						<include>BackgroundVars_mainmenu_10</include>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>$INFO[Skin.String(mainmenu_10path)]</onclick>
-						<visible>!Skin.HasSetting(no_mainmenu_10)</visible>
-						<visible>Skin.HasSetting(mainmenu_10)</visible>
-					</item>	-->
-				<!-- Add Item End -->
-					<item id="3">
-						<label>0</label>
-						<include>BackgroundVarsGames</include>					
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.ActivateWindow(MyPrograms),return</onclick>
-						<visible>!Skin.HasSetting(no_programs)</visible>
-					</item>
-					<item id="9">
-						<label>31016</label>
-						<include>BackgroundVarsSettings</include>				
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.SetBool(bmtransit)</onclick>
-						<onclick>XBMC.ActivateWindow(4)</onclick>
-						<visible>!Skin.HasSetting(nosettings)</visible>
-					</item>
-					<item id="24">
-						<description>Scripts</description>
-						<include>BackgroundVarsScripts</include>					
-						<label>31020</label>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.ActivateWindow(20)</onclick>
-						<visible>Skin.HasSetting(scripts)</visible>
-					</item>
-					<item id="13">
-						<description>Play DVD</description>
-						<include>BackgroundVarsPlayDVD</include>					
-						<label>31018</label>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.PlayDVD</onclick>
-						<visible>System.HasMediadvd</visible>
-					</item>
-					<item id="20">
-						<description>Refresh</description>
-						<include>BackgroundVarsSettings</include>				
-						<label>31607</label>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
-						<onclick>XBMC.ReloadSkin</onclick>
-						<visible>Skin.HasSetting(debug)</visible>
-					</item>
-<!--					<item id="21">
-						<description>Assistant</description>
-						<include>BackgroundVarsAssistant</include>					
-						<label>31021</label>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.ActivateWindow(605)</onclick>
-						<visible>Skin.HasSetting(assistant)</visible>
-					</item> -->
-					<item id="23">
-						<description>Sign out</description>
-						<include>BackgroundVarsSignOut</include>					
-						<label>31209</label>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>System.LogOff</onclick>
-						<visible>System.HasLoginScreen</visible>
-						<visible>Skin.HasSetting(signout)</visible>
-					</item>				
-					<item id="22">
-						<description>Shutdown</description>
-						<include>BackgroundVarsShutdown</include>				
-						<label>31019</label>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videofiles)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>XBMC.Shutdown()</onclick>
-						<visible>Skin.HasSetting(shutdown)</visible>
-					</item>			
-				</content>
+			<visible>Container(300).HasFocus(7) + control.HasFocus(8001)</visible>
+			<control type="image">
+				<include>BackgroundVarsGlobal</include>
+				<texture fallback="special://skin/media/backdrops/default_tvshows/default.png">$INFO[Window.Property(LatestEpisode.1.Fanart)]</texture>
+				<visible>Container(8001).Row(0)</visible>
+			</control>
+			<control type="image">
+				<include>BackgroundVarsGlobal</include>
+				<texture fallback="special://skin/media/backdrops/default_tvshows/default.png">$INFO[Window.Property(LatestEpisode.2.Fanart)]</texture>
+				<visible>Container(8001).Row(1)</visible>
+			</control>
+			<control type="image">
+				<include>BackgroundVarsGlobal</include>
+				<texture fallback="special://skin/media/backdrops/default_tvshows/default.png">$INFO[Window.Property(LatestEpisode.3.Fanart)]</texture>
+				<visible>Container(8001).Row(2)</visible>
+			</control>
+			<control type="image">
+				<include>BackgroundVarsGlobal</include>
+				<texture fallback="special://skin/media/backdrops/default_tvshows/default.png">$INFO[Window.Property(LatestEpisode.4.Fanart)]</texture>
+				<visible>Container(8001).Row(3)</visible>
+			</control>
+			<control type="image">
+				<include>BackgroundVarsGlobal</include>
+				<texture fallback="special://skin/media/backdrops/default_tvshows/default.png">$INFO[Window.Property(LatestEpisode.5.Fanart)]</texture>
+				<visible>Container(8001).Row(4)</visible>
 			</control>
 		</control>
+
+	<!-- Windowopen -->
+		<control type="button" id="323">
+			<!-- <include>homesubmenu_but</include> -->
+			<onfocus>setProperty(extra_extras,)</onfocus>
+			<onfocus>setProperty(Picture_extras,)</onfocus>
+			<onfocus>setProperty(totals_extras,)</onfocus>
+			<onfocus>setProperty(recentadded_extras,)</onfocus>
+			<onfocus>setProperty(CustomMenu1_extras,)</onfocus>
+			<onfocus>setProperty(CustomMenu2_extras,)</onfocus>
+			<onfocus>setProperty(random_order,)</onfocus>
+			<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded_py</include>
+			<include condition="!Skin.HasSetting(Library_info)">Widget_Totals_py</include>
+			<include condition="Skin.HasSetting(extra_widget_on)">Widget_Extras_py</include>
+			<include condition="Skin.HasSetting(Pictures_widget_on)">Widget_Picture_py</include>
+			<include condition="Skin.HasSetting(CustomMenu1_widget_on)">Widget_CustomMenu1_py</include>
+			<include condition="Skin.HasSetting(CustomMenu2_widget_on)">Widget_CustomMenu2_py</include>
+			<include condition="Skin.HasSetting(Widget_random_order)">Widget_random_order_py</include>
+			<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(random_order)]$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
+			<onfocus>SetFocus(325)</onfocus>
+			<onfocus>SetFocus(300)</onfocus>
+			<onfocus>Skin.Reset(submenu)</onfocus>
+			<visible>!Window.Previous(560)</visible>
 		</control>
+		<control type="button" id="323">
+			<onfocus>Quit</onfocus>
+			<visible>Window.Previous(560)</visible>
+		</control>
+	<!-- Windowopen end-->
+		<include>Furniture_HomeNowPlaying</include>
+		<include condition="!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)">Widget_RecentAdded</include>
+		<include condition="Skin.HasSetting(extra_widget_on)">Widget_Extras</include>
+		<include condition="Skin.HasSetting(Pictures_widget_on)">Widget_Picture</include>
+		<include condition="Skin.HasSetting(CustomMenu1_widget_on)">Widget_Custom_Mainmenu_1</include>
+		<include condition="Skin.HasSetting(CustomMenu2_widget_on)">Widget_Custom_Mainmenu_2</include>
+		<include condition="!Skin.HasSetting(noweatherpopup)">Widget_Weather</include>
+		<include condition="!Skin.HasSetting(Library_info)">Furniture_Library</include>
+		<include>Furniture_Time</include>
+		<include>Furniture_HomeRSS</include>
 		<include>homesubmenu_anim</include>
 		<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
 			<effect type="slide" start="-1280" end="0" time="400" tween="quadratic" easing="out" />
@@ -620,10 +113,10 @@
 			<visible>!Skin.HasSetting(CustomMenuSub)</visible>
 			<control type="image">
 				<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
-				<animation effect="slide" end="0,230" time="0" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-				<posx>293</posx>
-				<posy>400</posy>
-				<width>695</width>
+				<animation effect="slide" end="0,225" time="0" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+				<posx>290</posx>
+				<posy>406</posy>
+				<width>700</width>
 				<height>33</height>
 				<texture>home/submenubar.png</texture>
 				<include>Animation_CommonFade</include>
@@ -631,11 +124,11 @@
 			</control>
 			<control type="wraplist" id="325">
 				<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
-				<animation effect="slide" end="0,230" time="0" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-				<posx>293</posx>
-				<posy>400</posy>
+				<animation effect="slide" end="0,225" time="0" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+				<posx>310</posx>
+				<posy>406</posy>
 				<height>33</height>
-				<width>665</width>
+				<width>660</width>
 				<onleft>325</onleft>
 				<onright>325</onright>
 				<viewtype>list</viewtype>
@@ -648,33 +141,53 @@
 				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				<itemlayout width="129" height="33">
 					<control type="label">
-						<width>127</width>
-						<posx>90</posx>
-						<include>SubMenu_Label</include>
+						<posx>74</posx>
+						<posy>0</posy>
+						<height>30</height>
+						<width>129</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_Submenu</font>
+						<info>ListItem.Label</info>
 						<textcolor>5fFFFFFF</textcolor>
 					</control>
 				</itemlayout>
 				<focusedlayout width="129" height="33">
 					<control type="label">
-						<width>127</width>
-						<posx>90</posx>
-						<include>SubMenu_Label</include>
+						<posx>74</posx>
+						<posy>0</posy>
+						<height>30</height>
+						<width>129</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_Submenu</font>
+						<info>ListItem.Label</info>
 						<textcolor>FFFFFFFF</textcolor>
 						<animation effect="fade" start="0" end="50" time="200">Focus</animation>
 						<animation effect="fade" start="0" end="0" time="200">Unfocus</animation>
 					</control>
 					<control type="label">
-						<width>127</width>
-						<posx>90</posx>
-						<include>SubMenu_Label</include>
+						<posx>74</posx>
+						<posy>0</posy>
+						<height>30</height>
+						<width>129</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_Submenu</font>
+						<info>ListItem.Label</info>
 						<textcolor>5FFFFFFF</textcolor>
 						<animation effect="fade" start="100" end="0" time="200">Focus</animation>
 						<animation effect="fade" start="0" end="100" time="100">Unfocus</animation>
 					</control>
 					<control type="label">
-						<width>127</width>
-						<posx>90</posx>
-						<include>SubMenu_Label</include>
+						<posx>74</posx>
+						<posy>0</posy>
+						<height>30</height>
+						<width>129</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_Submenu</font>
+						<info>ListItem.Label</info>
 						<textcolor>FFFFFFFF</textcolor>
 						<animation effect="fade" start="50" end="50" time="200">Focus</animation>
 						<animation effect="fade" start="50" end="0" time="100">Unfocus</animation>
@@ -687,6 +200,7 @@
 						<onclick>Skin.Reset(WeatherWidget36Hour)</onclick>
 						<onclick>Skin.Reset(WeatherWidgetWeekend)</onclick>
 						<onclick>Skin.Reset(WeatherWidget7Day)</onclick>
+						<visible>!Skin.HasSetting(sub_4day_weather)</visible>
 						<visible>Container(300).HasFocus(10)</visible>
 					</item>
 					<item id="2">
@@ -694,6 +208,7 @@
 						<onclick>Skin.SetBool(WeatherWidget36Hour)</onclick>
 						<onclick>Skin.Reset(WeatherWidgetWeekend)</onclick>
 						<onclick>Skin.Reset(WeatherWidget7Day)</onclick>
+						<visible>!Skin.HasSetting(sub_36hours_weather)</visible>
 						<visible>Container(300).HasFocus(10)</visible>
 					</item>
 					<item id="3">
@@ -701,6 +216,7 @@
 						<onclick>Skin.SetBool(WeatherWidgetWeekend)</onclick>
 						<onclick>Skin.Reset(WeatherWidget36Hour)</onclick>
 						<onclick>Skin.Reset(WeatherWidget7Day)</onclick>
+						<visible>!Skin.HasSetting(sub_weekend_weather)</visible>
 						<visible>Container(300).HasFocus(10)</visible>
 					</item>
 					<item id="4">
@@ -708,6 +224,7 @@
 						<onclick>Skin.SetBool(WeatherWidget7Day)</onclick>
 						<onclick>Skin.Reset(WeatherWidgetWeekend)</onclick>
 						<onclick>Skin.Reset(WeatherWidget36Hour)</onclick>
+						<visible>!Skin.HasSetting(sub_7day_weather)</visible>
 						<visible>Container(300).HasFocus(10)</visible>
 					</item>
 					<item id="5">
@@ -717,6 +234,7 @@
 						<onclick>Skin.Reset(WeatherWidget7Day)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>xbmc.activatewindow(2600)</onclick>
+						<visible>!Skin.HasSetting(sub_10day_weather)</visible>
 						<visible>Container(300).HasFocus(10)</visible>
 					</item>
 				<!-- weather (10) end -->
@@ -725,13 +243,6 @@
 						<description>By Genre</description>
 						<label>135</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videogenres)</onclick>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowgenres,return)</onclick>
 						<visible>!Skin.HasSetting(sub_tv_Genre)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
@@ -740,13 +251,6 @@
 						<description>Video Files</description>
 						<label>744</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(24)</onclick>
 						<visible>!Skin.HasSetting(sub_tv_file)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
@@ -755,13 +259,6 @@
 						<description>Recently Added</description>
 						<label>31920</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.SetBool(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedepisodes,return)</onclick>
 						<visible>!Skin.HasSetting(sub_tv_Recently)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
@@ -770,13 +267,6 @@
 						<description>By Year</description>
 						<label>345</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowyears,return)</onclick>
 						<visible>!Skin.HasSetting(sub_tv_year)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
@@ -785,13 +275,6 @@
 						<description>By Actor</description>
 						<label>344</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowactors,return)</onclick>
 						<visible>!Skin.HasSetting(sub_tv_Actor)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
@@ -800,13 +283,6 @@
 						<description>Video Plugins 1037</description>
 					<label fallback="PLUGINS">31850</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,plugins,return)</onclick>
 						<visible>!Skin.HasSetting(sub_tv_Plugins)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
@@ -814,13 +290,6 @@
 					<item id="233">
 						<description>TVShows_Sub 1</description>
 						<label>$INFO[Skin.String(TVShows_Sub_1name)]</label>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>$INFO[Skin.String(TVShows_Sub_1path)]</onclick>
 						<visible>Skin.HasSetting(TVShows_Sub_1)</visible>
@@ -830,13 +299,6 @@
 						<description>TVShows_Sub 2</description>
 						<label>$INFO[Skin.String(TVShows_Sub_2name)]</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>$INFO[Skin.String(TVShows_Sub_2path)]</onclick>
 						<visible>Skin.HasSetting(TVShows_Sub_2)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
@@ -845,45 +307,16 @@
 						<description>TVShows_Sub 3</description>
 						<label>$INFO[Skin.String(TVShows_Sub_3name)]</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>$INFO[Skin.String(TVShows_Sub_3path)]</onclick>
 						<visible>Skin.HasSetting(TVShows_Sub_3)</visible>
 						<visible>Container(300).HasFocus(7)</visible>
 					</item>
-<!--					<item id="236">
-						<description>TVShows_Sub 4</description>
-						<label>$INFO[Skin.String(TVShows_Sub_4name)]</label>
-						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>$INFO[Skin.String(TVShows_Sub_4path)]</onclick>
-						<visible>Skin.HasSetting(TVShows_Sub_4)</visible>
-						<visible>Container(300).HasFocus(7)</visible>
-					</item> -->
 					<!-- TV (7) end -->
 					<!-- Movies (6) -->
 					<item id="20">
 						<description>By Genre</description>
 						<label>135</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.SetBool(videogenres)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviegenres,return)</onclick>
 						<visible>!Skin.HasSetting(sub_movies_Genre)</visible>
 						<visible>Container(300).HasFocus(6)</visible>
@@ -892,13 +325,6 @@
 						<description>Video Files</description>
 						<label>744</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(24)</onclick>
 						<visible>!Skin.HasSetting(sub_movies_files)</visible>
 						<visible>Container(300).HasFocus(6)</visible>
@@ -907,13 +333,6 @@
 						<description>Recently Added</description>
 						<label>31920</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedmovies,return)</onclick>
 						<visible>!Skin.HasSetting(sub_movies_recently)</visible>
 						<visible>Container(300).HasFocus(6)</visible>
@@ -922,13 +341,6 @@
 						<description>By Year</description>
 						<label>345</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,movieyears,return)</onclick>
 						<visible>!Skin.HasSetting(sub_movies_Year)</visible>
 						<visible>Container(300).HasFocus(6)</visible>
@@ -936,14 +348,6 @@
 					<item id="24">
 						<description>By Actor</description>
 						<label>344</label>
-						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,movieactors,return)</onclick>
 						<visible>!Skin.HasSetting(sub_movies_Actor)</visible>
 						<visible>Container(300).HasFocus(6)</visible>
@@ -952,13 +356,6 @@
 						<description>By Director</description>
 						<label>20339</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviedirectors,return)</onclick>
 						<visible>!Skin.HasSetting(sub_movies_Director)</visible>
 						<visible>Container(300).HasFocus(6)</visible>
@@ -967,13 +364,6 @@
 						<description>By Studio</description>
 						<label>20388</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviestudios,return)</onclick>
 						<visible>!Skin.HasSetting(sub_movies_Studio)</visible>
 						<visible>Container(300).HasFocus(6)</visible>
@@ -982,13 +372,6 @@
 						<description>Video Plugins 1037</description>
 						<label fallback="PLUGINS">31850</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,plugins,return)</onclick>
 						<visible>!Skin.HasSetting(sub_movies_Plugins)</visible>
 						<visible>Container(300).HasFocus(6)</visible>
@@ -996,13 +379,6 @@
 					<item id="237">
 						<description>Movies_Sub 1</description>
 						<label>$INFO[Skin.String(Movies_Sub_1name)]</label>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>$INFO[Skin.String(Movies_Sub_1path)]</onclick>
 						<visible>Skin.HasSetting(Movies_Sub_1)</visible>
@@ -1011,13 +387,6 @@
 					<item id="238">
 						<description>Movies_Sub 2</description>
 						<label>$INFO[Skin.String(Movies_Sub_2name)]</label>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>$INFO[Skin.String(Movies_Sub_2path)]</onclick>
 						<visible>Skin.HasSetting(Movies_Sub_2)</visible>
@@ -1026,13 +395,6 @@
 					<item id="239">
 						<description>Movies_Sub 3</description>
 						<label>$INFO[Skin.String(Movies_Sub_3name)]</label>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>$INFO[Skin.String(Movies_Sub_3path)]</onclick>
 						<visible>Skin.HasSetting(Movies_Sub_3)</visible>
@@ -1041,13 +403,6 @@
 					<item id="240">
 						<description>Movies_Sub 4</description>
 						<label>$INFO[Skin.String(Movies_Sub_4name)]</label>
-						<onclick>Skin.SetBool(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>$INFO[Skin.String(Movies_Sub_4path)]</onclick>
 						<visible>Skin.HasSetting(Movies_Sub_4)</visible>
@@ -1058,13 +413,6 @@
 					<item id="41">
 						<description>Partymode</description>
 						<label fallback="PARTY">31854</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>PlayerControl(Partymode(music))</onclick>
 						<visible>!Skin.HasSetting(sub_music_Party)</visible>
@@ -1073,28 +421,14 @@
 					<item id="42">
 						<description>Last.FM</description>
 						<label>15200</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>XBMC.ActivateWindow(MusicFiles,Last.FM)</onclick>
-						<visible>Skin.HasSetting(sub_music_fm)</visible>
+						<visible>!Skin.HasSetting(sub_music_fm)</visible>
 						<visible>Container(300).HasFocus(1)</visible>
 					</item>
 					<item id="31">
 						<description>Browse Button</description>
 						<label>744</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>XBMC.ActivateWindow(501,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_files)</visible>
@@ -1103,13 +437,6 @@
 					<item id="32">
 						<description>Playlists</description>
 						<label>136</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>xbmc.activatewindow(musiclibrary,playlists,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_Playlists)</visible>
@@ -1118,13 +445,6 @@
 					<item id="33">
 						<description>Music Videos</description>
 						<label>20389</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>XBMC.ActivateWindow(MyVideoLibrary,musicvideos,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_Videos)</visible>
@@ -1133,12 +453,6 @@
 					<item id="34">
 						<description>Genres</description>
 						<label>135</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.SetBool(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>xbmc.activatewindow(musiclibrary,genres,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_genres)</visible>
@@ -1148,13 +462,6 @@
 						<description>Artists</description>
 						<label>133</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>xbmc.activatewindow(musiclibrary,artists,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_artists)</visible>
 						<visible>Container(300).HasFocus(1)</visible>
@@ -1163,13 +470,6 @@
 						<description>albums</description>
 						<label>132</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>xbmc.activatewindow(musiclibrary,albums,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_albums)</visible>
 						<visible>Container(300).HasFocus(1)</visible>
@@ -1178,13 +478,6 @@
 						<description>compilations</description>
 						<label>521</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>xbmc.activatewindow(musiclibrary,compilations,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_compilations)</visible>
 						<visible>Container(300).HasFocus(1)</visible>
@@ -1193,13 +486,6 @@
 						<description>top100</description>
 						<label>271</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>xbmc.activatewindow(musiclibrary,top100,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_top)</visible>
 						<visible>Container(300).HasFocus(1)</visible>
@@ -1207,13 +493,6 @@
 					<item id="39">
 						<description>Recently Added</description>
 						<label>31920</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>xbmc.activatewindow(musiclibrary,recentlyaddedalbums,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_recently)</visible>
@@ -1222,13 +501,6 @@
 					<item id="40">
 						<description>Music Plugins 1038</description>
 						<label fallback="PLUGINS">31850</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>XBMC.ActivateWindow(musiclibrary,plugins,return)</onclick>
 						<visible>!Skin.HasSetting(sub_music_Plugins)</visible>
@@ -1238,13 +510,6 @@
 					<item id="241">
 						<description>Music_Sub 1</description>
 						<label>$INFO[Skin.String(Music_Sub_1name)]</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>$INFO[Skin.String(Music_Sub_1path)]</onclick>
 						<visible>Skin.HasSetting(Music_Sub_1)</visible>
@@ -1253,13 +518,6 @@
 					<item id="242">
 						<description>Music_Sub 2</description>
 						<label>$INFO[Skin.String(Music_Sub_2name)]</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>$INFO[Skin.String(Music_Sub_2path)]</onclick>
 						<visible>Skin.HasSetting(Music_Sub_2)</visible>
@@ -1268,13 +526,6 @@
 					<item id="243">
 						<description>Music_Sub 3</description>
 						<label>$INFO[Skin.String(Music_Sub_3name)]</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>$INFO[Skin.String(Music_Sub_3path)]</onclick>
 						<visible>Skin.HasSetting(Music_Sub_3)</visible>
@@ -1283,13 +534,6 @@
 					<item id="244">
 						<description>Music_Sub 4</description>
 						<label>$INFO[Skin.String(Music_Sub_4name)]</label>
-						<onclick>Skin.SetBool(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>$INFO[Skin.String(Music_Sub_4path)]</onclick>
 						<visible>Skin.HasSetting(Music_Sub_4)</visible>
@@ -1300,13 +544,6 @@
 					<item id="51">
 						<description>Programs</description>
 						<label>0</label>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>xbmc.activatewindow(Programs)</onclick>
 						<visible>Skin.HasSetting(no_programs)</visible>
@@ -1316,30 +553,15 @@
 					<item id="52">
 						<description>scripts</description>
 						<label>247</label>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>xbmc.activatewindow(20)</onclick>
-						<visible>!Skin.HasSetting(scripts)</visible>
+						<visible>Skin.HasSetting(scripts)</visible>
 						<visible>!Skin.HasSetting(sub_extras_scripts)</visible>
 						<visible>Container(300).HasFocus(2)</visible>
 					</item>
 					<item id="53">
 						<description>Settings</description>
 						<label>31016</label>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(settingsfade)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>XBMC.ActivateWindow(4)</onclick>
 						<visible>Skin.HasSetting(nosettings)</visible>
@@ -1350,29 +572,15 @@
 					<item id="56">
 						<description>Shutdown</description>				
 						<label>31019</label>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>XBMC.Shutdown()</onclick>
-						<visible>!Skin.HasSetting(shutdown)</visible>
+						<visible>Skin.HasSetting(shutdown)</visible>
 						<visible>!Skin.HasSetting(sub_extras_shutdown)</visible>
 						<visible>Container(300).HasFocus(2)</visible>
 					</item>
 					<item id="57">
 						<description>Logout Button</description>
 						<label>20126</label>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(recenttv)</onclick>
-						<onclick>Skin.Reset(videomovies)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.Reset(submenu)</onclick>
 						<onclick>System.LogOff</onclick>
 						<visible>System.HasLoginScreen</visible>
@@ -1384,11 +592,6 @@
 					<item id="54">
 						<description>favourites</description>
 						<label>1036</label>
-						<onclick>Skin.SetBool(favourites)</onclick>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>xbmc.activatewindow(134)</onclick>
 						<visible>!Skin.HasSetting(sub_extras_favourites)</visible>
 						<visible>Container(300).HasFocus(2)</visible>
@@ -1397,11 +600,6 @@
 					<item id="55">
 						<description>AlarmClock setup</description>
 						<label fallback="ALARM">31855</label>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>Skin.SetString(AlarmString)</onclick>
 						<onclick>AlarmClock(Alarm,Notification(Alarm,$INFO[Skin.String(AlarmString)]),)</onclick>
 						<visible>!Skin.HasSetting(sub_extras_AlarmClock)</visible>
@@ -1411,71 +609,12 @@
 					<item id="55">
 						<description>AlarmClock off</description>
 						<label fallback="ALARM OFF">31862</label>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
 						<onclick>CancelAlarm(Alarm)</onclick>
 						<visible>!Skin.HasSetting(sub_extras_AlarmClock)</visible>
 						<visible>System.HasAlarm(Alarm)</visible>
 						<visible>Container(300).HasFocus(2)</visible>
 					</item>
-
-<!--					<item id="245">
-						<description>Extras_Sub 1</description>
-						<label>$INFO[Skin.String(Extras_Sub_1name)]</label>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>$INFO[Skin.String(Extras_Sub_1path)]</onclick>
-						<visible>Skin.HasSetting(Extras_Sub_1)</visible>
-						<visible>Container(300).HasFocus(2)</visible>
-					</item>
-					<item id="246">
-						<description>Extras_Sub 2</description>
-						<label>$INFO[Skin.String(Extras_Sub_2name)]</label>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>$INFO[Skin.String(Extras_Sub_2path)]</onclick>
-						<visible>Skin.HasSetting(Extras_Sub_2)</visible>
-						<visible>Container(300).HasFocus(2)</visible>
-					</item>
-					<item id="247">
-						<description>Extras_Sub 3</description>
-						<label>$INFO[Skin.String(Extras_Sub_3name)]</label>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>$INFO[Skin.String(Extras_Sub_3path)]</onclick>
-						<visible>Skin.HasSetting(Extras_Sub_3)</visible>
-						<visible>Container(300).HasFocus(2)</visible>
-					</item>
-					<item id="248">
-						<description>Extras_Sub 4</description>
-						<label>$INFO[Skin.String(Extras_Sub_4name)]</label>
-						<onclick>Skin.Reset(videotv)</onclick>
-						<onclick>Skin.Reset(music)</onclick>
-						<onclick>Skin.Reset(videogenres)</onclick>
-						<onclick>Skin.Reset(favourites)</onclick>
-						<onclick>Skin.Reset(musicgenres)</onclick>
-						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>$INFO[Skin.String(Extras_Sub_4path)]</onclick>
-						<visible>Skin.HasSetting(Extras_Sub_4)</visible>
-						<visible>Container(300).HasFocus(2)</visible>
-					</item> -->
 					<!-- extras (2) End -->
-
 					<!-- Shutdown (22) -->
 					<item id="62">
 						<description>Shutdown Timer</description>
@@ -1537,7 +676,6 @@
 						<visible>Container(300).HasFocus(22)</visible>
 					</item>
 					<!-- Shutdown (22) End -->
-
 					<!-- Settings (9) -->
 					<item id="69">
 						<description>Video Settings Button</description>
@@ -1587,15 +725,30 @@
 						<visible>Container(300).HasFocus(9)</visible>
 					</item>
 					<item id="75">
-						<description>Aeon Settings Button</description>
-						<label>31230</label>
+						<description>Customise Settings Button</description>
+						<label>31156</label>
 						<onclick>Skin.Reset(submenu)</onclick>
-						<onclick>Skin.SetBool(bmtransit)</onclick>				
 						<onclick>XBMC.ActivateWindow(604)</onclick>
-						<visible>!Skin.HasSetting(sub_Aeon_Settings)</visible>
+						<visible>!Skin.HasSetting(sub_customise_Settings)</visible>
 						<visible>Container(300).HasFocus(9)</visible>
 					</item>
 					<item id="76">
+						<description>Customise Menu's Settings Button</description>
+						<label>31248</label>
+						<onclick>Skin.Reset(submenu)</onclick>
+						<onclick>XBMC.ActivateWindow(560)</onclick>
+						<visible>!Skin.HasSetting(sub_customise_menus_Settings)</visible>
+						<visible>Container(300).HasFocus(9)</visible>
+					</item>
+					<item id="77">
+						<description>Advanced Settings Button</description>
+						<label>31158</label>
+						<onclick>Skin.Reset(submenu)</onclick>
+						<onclick>XBMC.ActivateWindow(603)</onclick>
+						<visible>!Skin.HasSetting(sub_advanced_Settings)</visible>
+						<visible>Container(300).HasFocus(9)</visible>
+					</item>
+					<item id="78">
 						<description>Aeon Settings Button</description>
 						<label>31154</label>
 						<onclick>Skin.Reset(submenu)</onclick>
@@ -1606,6 +759,210 @@
 					<!-- Settings (9) End -->
 				</content> 
 			</control> 
+		</control>
+		<control type="group">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<!-- <include>Conditions_HiddenByAeonAssistant</include> -->
+			<animation effect="slide" start="0,0" end="0,225" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<include>Animation_OpenCloseZoom</include>
+			<include>Animation_CommonFade</include>
+			<control type="image">
+				<posx>-5</posx>
+				<posy>302</posy>
+				<width>1290</width>
+				<height>150</height>
+				<texture>home/homemenu_back.png</texture>
+				<include>Animation_CommonFade</include>
+				<visible>Skin.HasSetting(nohomegradient)</visible>
+			</control>
+			<control type="image">
+				<posx>-5</posx>
+				<posy>302</posy>
+				<width>1290</width>
+				<height>150</height>
+				<texture>home/homemenu_gradient.png</texture>
+				<include>Animation_CommonFade</include>
+			</control>
+			<control type="group">
+				<posx>0</posx>
+				<posy>343</posy>
+				<width>1280</width>
+				<height>61</height>
+				<defaultcontrol>300</defaultcontrol>
+				<control type="wraplist" id="300">
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>61</height>
+					<width>1280</width>
+					<onleft>300</onleft>
+					<onright>300</onright>
+					<viewtype>list</viewtype>
+					<orientation>horizontal</orientation>
+					<focusposition>2</focusposition>
+					<scrolltime>200</scrolltime>
+					<ondown>322</ondown>
+					<onup>324</onup>
+					<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
+						<effect type="slide" start="-1280" end="0" time="400" tween="quadratic" easing="out" />
+						<effect type="fade" start="0" end="100" time="400" />
+					</animation>
+					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+					<itemlayout width="280" height="61">
+						<control type="label">
+							<include>MainMenu_Label</include>
+							<textcolor>48FFFFFF</textcolor>
+							<texture diffuse="home/homemenu_mask.png">home/homemenu_back.png</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="280" height="61">
+						<control type="label">
+							<include>MainMenu_Label</include>
+							<textcolor>48FFFFFF</textcolor>
+						</control>		
+						<control type="label">
+							<include>MainMenu_Label</include>
+							<textcolor>FFFFFFFF</textcolor>
+							<include>Animation_ButtonFocusFade</include>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="5">
+							<label>31012</label>
+							<include>BackgroundVarsPictures</include>
+							<onclick>XBMC.ActivateWindow(MyPictures)</onclick>
+							<visible>!Skin.HasSetting(nopictures)</visible>
+						</item>
+						<item id="1">
+							<label>31010</label>
+							<include>BackgroundVarsMusic</include>
+							<onclick>XBMC.ActivateWindow(MyMusic,return)</onclick>
+							<visible>!Skin.HasSetting(nomusic)</visible>
+						</item>
+						<item id="30">
+							<label>$INFO[Skin.String(mainmenu_1name)]</label>
+							<include>BackgroundVars_mainmenu_1</include>
+							<onclick>$INFO[Skin.String(mainmenu_1path)]</onclick>
+							<visible>!Skin.HasSetting(no_mainmenu_1)</visible>
+							<visible>Skin.HasSetting(mainmenu_1)</visible>
+						</item>
+						<item id="31">
+							<label>$INFO[Skin.String(mainmenu_2name)]</label>
+							<include>BackgroundVars_mainmenu_2</include>
+							<onclick>$INFO[Skin.String(mainmenu_2path)]</onclick>
+							<visible>!Skin.HasSetting(no_mainmenu_2)</visible>
+							<visible>Skin.HasSetting(mainmenu_2)</visible>
+						</item>
+						<item id="6">
+							<label>342</label>
+							<include>BackgroundVarsMovies</include>
+							<onclick>XBMC.ActivateWindow(MyVideoLibrary,movietitles,return)</onclick>
+							<visible>library.hascontent(movies)</visible>
+							<visible>!Skin.HasSetting(nomovies)</visible>
+						</item>
+						<item id="7">
+							<label>31014</label>
+							<include>BackgroundVarsTV</include>
+							<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowtitles,return)</onclick>
+							<visible>library.hascontent(tvshows)</visible>
+							<visible>!Skin.HasSetting(notvshows)</visible>
+						</item>
+						<item id="8">
+							<label>31015</label>
+							<include>BackgroundVarsVideo</include>				
+							<onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
+							<visible>!Skin.HasSetting(novideos)</visible>
+						</item>
+						<item id="10">
+							<description>Weather</description>
+							<label>31017</label>
+							<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include>
+							<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include>
+							<onclick>SetFocus(324)</onclick>
+							<visible>System.HasNetwork</visible>
+							<visible>!Skin.HasSetting(weather)</visible>
+							<visible>StringCompare(Weather.Plugin,weather.com plus)</visible>
+						</item>
+						<item id="10">
+							<description>Weather</description>
+							<label>31017</label>
+							<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include>
+							<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include>
+							<onclick>xbmc.activatewindow(2600)</onclick>
+							<visible>System.HasNetwork</visible>
+							<visible>!Skin.HasSetting(weather)</visible>
+							<visible>!StringCompare(Weather.Plugin,weather.com plus)</visible>
+						</item>
+						<item id="2">
+							<description>Extras</description>
+							<label>31865</label>
+							<include>BackgroundVars_extras</include>					
+							<onclick>SetFocus(324)</onclick>
+							<visible>!Skin.HasSetting(lowermainmenu)</visible>
+							<visible>!Skin.HasSetting(no_extras)</visible>
+						</item>
+						<item id="2">
+							<description>Extras</description>
+							<label>31865</label>
+							<include>BackgroundVars_extras</include>
+							<onclick>SetFocus(322)</onclick>
+							<visible>Skin.HasSetting(lowermainmenu)</visible>
+							<visible>!Skin.HasSetting(no_extras)</visible>
+						</item>
+						<item id="3">
+							<label>0</label>
+							<include>BackgroundVarsGames</include>					
+							<onclick>XBMC.ActivateWindow(MyPrograms),return</onclick>
+							<visible>!Skin.HasSetting(no_programs)</visible>
+						</item>
+						<item id="9">
+							<label>31016</label>
+							<include>BackgroundVarsSettings</include>				
+							<onclick>XBMC.ActivateWindow(4)</onclick>
+							<visible>!Skin.HasSetting(nosettings)</visible>
+						</item>
+						<item id="24">
+							<description>Scripts</description>
+							<include>BackgroundVarsScripts</include>					
+							<label>31020</label>
+							<onclick>XBMC.ActivateWindow(20)</onclick>
+							<visible>!Skin.HasSetting(scripts)</visible>
+						</item>
+						<item id="13">
+							<description>Play DVD</description>
+							<include>BackgroundVarsPlayDVD</include>					
+							<label>31018</label>
+							<onclick>XBMC.PlayDVD</onclick>
+							<visible>System.HasMediadvd</visible>
+							<visible>!Skin.HasSetting(mediaplay)</visible>
+						</item>
+						<item id="20">
+							<description>Refresh</description>
+							<include>BackgroundVarsSettings</include>				
+							<label>31607</label>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Skin.HasSetting(debug)</visible>
+						</item>
+						<item id="23">
+							<description>Sign out</description>
+							<include>BackgroundVarsSignOut</include>					
+							<label>31209</label>
+							<onclick>System.LogOff</onclick>
+							<visible>System.HasLoginScreen</visible>
+							<visible>!Skin.HasSetting(signout)</visible>
+						</item>				
+						<item id="22">
+							<description>Shutdown</description>
+							<include>BackgroundVarsShutdown</include>				
+							<label>31019</label>
+							<onclick>XBMC.Shutdown()</onclick>
+							<visible>!Skin.HasSetting(shutdown)</visible>
+						</item>			
+					</content>
+				</control>
+			</control>
 		</control>
 		<!--<include>Background_ContextBlack</include>-->
 		<include>Furniture_Debug</include>

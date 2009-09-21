@@ -1,11 +1,4 @@
 <includes>
-	<include name="MultiplexInfoAutoUp">
-		<onup>7000</onup>
-	</include>
-	<include name="MultiplexInfoTriggerUp">
-		<onup>111</onup>
-	</include>
-	
 	<include name="MultiplexIconDimensionsMusicWrap">
 		<posx>0</posx>
 		<posy>0</posy>
@@ -21,16 +14,16 @@
 	</include>	
 
 <!-- Common Flow labels -->
-	<include name="MultiplexLabelVars">
+	<include name="MultiplexMusicLabelVars">
 		<align>center</align>
 		<aligny>center</aligny>
 		<include>Animation_HideMultiplex</include>
-		<visible>![Control.HasFocus(60) | Control.HasFocus(94)]</visible>
+		<visible>![Control.HasFocus(61) | Control.HasFocus(94)]</visible>
 	</include>
-	<include name="MultiplexMainLabel">
-		<include>MultiplexLabelVars</include>
+	<include name="MultiplexMusicMainLabel">
+		<include>MultiplexMusicLabelVars</include>
 		<posx>415</posx>
-		<posy>673</posy>
+		<posy>680</posy>
 		<width>450</width>
 		<font>Font_ShowcaseMainLabel</font>
 		<include condition="!Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelLightShade</include>
@@ -41,8 +34,8 @@
 		<pauseatend>3000</pauseatend>
 		<scroll>true</scroll>
 	</include>
-	<include name="MultiplexItemsLabel">
-		<include>MultiplexLabelVars</include>
+	<include name="MultiplexMusicItemsLabel">
+		<include>MultiplexMusicLabelVars</include>
 		<posx>340</posx>
 		<posy>685</posy>
 		<width>600</width>
@@ -51,10 +44,10 @@
 		<include condition="Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelNightShade</include>
 		<visible>ControlGroup(7000).HasFocus()</visible>		
 	</include>	
-	<include name="MultiplexDetailLabel">
-		<include>MultiplexLabelVars</include>
+	<include name="MultiplexMusicDetailLabel">
+		<include>MultiplexMusicLabelVars</include>
 		<posx>415</posx>
-		<posy>693</posy>
+		<posy>700</posy>
 		<width>450</width>
 		<font>Font_ShowcaseDetailLabel</font>
 		<visible>!ControlGroup(7000).HasFocus()</visible>		
@@ -1473,56 +1466,6 @@
 	</include>
 
 	<include name="Viewtype_Multiplex_Music">
-		<include condition="Skin.HasSetting(music)">MultiplexInfoPaneMusic</include>
-
-		<control type="group">
-			<include>Furniture_MediaPanel</include>
-			<visible>Control.IsVisible(553)</visible>
-			<include>Animation_HideMultiplex</include>
-		</control>
-
-		<control type="group">
-			<visible>Control.IsVisible(553)</visible>
-			<include condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)">MultiplexMusic</include>
-			<include>Animation_HideMultiplex</include>
-		</control>
-
-		<control type="button" id="111">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>0</width>
-			<height>0</height>
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
-			<onleft>553</onleft>
-			<onright>553</onright>
-			<onup>7000</onup>
-			<ondown>600</ondown>
-			<onclick>553</onclick>
-		</control>
-
-		<control type="image">
-			<posx>40</posx>
-			<posy>567</posy>
-			<width>33</width>
-			<height>37</height>
-			<texture>multiplex/multiplex_arrow2.png</texture>
-			<include>Animation_HideMultiplex</include>
-			<visible>Control.IsVisible(553)</visible>
-			<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Container.Content(movies)">Conditional</animation>
-		</control>
-		
-		<control type="image">
-			<posx>1207</posx>
-			<posy>567</posy>
-			<width>33</width>
-			<height>37</height>
-			<texture flipx="true">multiplex/multiplex_arrow2.png</texture>
-			<include>Animation_HideMultiplex</include>
-			<visible>Control.IsVisible(553)</visible>
-			<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Container.Content(movies)">Conditional</animation>			
-		</control>		
-			  
 		<control type="wraplist" id="553">
 			<viewtype label="Multiplex">list</viewtype>
 			<posx>177.5</posx>
@@ -1531,16 +1474,15 @@
 			<height>300</height>	
 			<onleft>553</onleft>
 			<onright>553</onright>
-			<include condition="Skin.HasSetting(music) + !Skin.HasSetting(multiplexmusicinfotrigger)">MultiplexInfoAutoUp</include>
-			<include condition="Skin.HasSetting(music) + Skin.HasSetting(multiplexmusicinfotrigger)">MultiplexInfoTriggerUp</include>
-			<ondown>60</ondown>
-			<pagecontrol>60</pagecontrol>
+			<onup>111</onup>
+			<ondown>61</ondown>
+			<pagecontrol>61</pagecontrol>
 			<orientation>horizontal</orientation>
 			<focusposition>2</focusposition>	
 			<scrolltime>250</scrolltime>
 			<include>Animation_HideMultiplex</include> -->
 			<visible>Window.IsActive(501) | Window.IsActive(502)</visible>
-			<itemlayout width="190" height="300" condition="Skin.HasSetting(music)">
+			<itemlayout width="190" height="300">
 				<control type="image">
 					<include>MultiplexIconDimensionsMusicWrap</include>
 					<texture background="true" diffuse="thumbs/cdcover_mask.png">defaultaudio.png</texture>
@@ -1555,11 +1497,6 @@
 					<texture>thumbs/cd_glass.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5100)</visible>
-				</control>				
-				<control type="image">
-					<include>MultiplexIconDimensionsMusicWrap</include>
-					<texture>common/blank.png</texture>
-					<colordiffuse>58FFFFFF</colordiffuse>
 				</control>
 				<control type="image">
 					<include>MultiplexIconDimensionsMusicWrapReflect</include>
@@ -1578,7 +1515,7 @@
 					<visible>Skin.HasSetting(flattenmultiplex) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout width="190" height="300" condition="Skin.HasSetting(music)">
+			<focusedlayout width="190" height="300">
 				<control type="image">
 					<include>MultiplexIconDimensionsMusicWrap</include>
 					<texture background="true" diffuse="thumbs/cdcover_mask.png">defaultaudio.png</texture>
@@ -1594,12 +1531,6 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<include>Animation_MultiplexMusicFocusZoom</include>					
 					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5100)</visible>
-				</control>				
-				<control type="image">
-					<include>MultiplexIconDimensionsMusicWrap</include>
-					<texture>common/blank.png</texture>
-					<colordiffuse>58FFFFFF</colordiffuse>
-					<include>Animation_MultiplexMusicFocusZoom</include>					
 				</control>
 				<control type="image">
 					<include>MultiplexIconDimensionsMusicWrapReflect</include>
@@ -1620,147 +1551,5 @@
 				</control>
 			</focusedlayout>			
 		</control>
-
-		<include>ScrollOffsetLabel</include>	
-
-		<control type="scrollbar" id="60">
-			<description>My first scroll bar control</description>
-			<posx>305</posx>
-			<posy>663</posy>
-			<width>670</width>
-			<height>41</height>
-			<visible allowhiddenfocus="true">Control.IsVisible(553) + Control.HasFocus(60)</visible>
-			<texturesliderbackground>windows/scrollbarbackshowcase.png</texturesliderbackground>
-			<texturesliderbar>-</texturesliderbar>
-			<texturesliderbarfocus>-</texturesliderbarfocus>
-			<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
-			<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
-			<pulseonselect></pulseonselect>
-			<orientation>horizontal</orientation>
-			<showonepage>false</showonepage>
-			<onup>553</onup>
-			<ondown>197</ondown>
-			<onleft>60</onleft>
-			<onright>60</onright>
-			<include>Animation_HideMultiplex</include>
-			<include>Animation_CommonFade</include>
-		</control>
-		
-		<control type="button" id="197">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>0</width>
-			<height>0</height>
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
-			<onleft>553</onleft>
-			<onright>553</onright>
-			<onup>553</onup>
-			<ondown>553</ondown>
-		</control>		
-
-		<control type="group">
-			<visible>Control.IsVisible(553)</visible>
-			<control type="fadelabel">
-				<label>31609</label>
-				<label>31611</label>					
-				<scrollout>false</scrollout>
-				<pauseatend>3000</pauseatend>
-				<scroll>false</scroll>
-				<include>MultiplexMainLabel</include>
-				<visible>Window.IsActive(502) + Control.IsVisible(553) + stringcompare(numitems,0)</visible>
-			</control>
-
-<!-- POPUP FLOOR TEXT -->
-			<control type="group">
-				<visible>Skin.HasSetting(music) + !Skin.HasSetting(FullscreenMusicMultiplex)</visible>
-				<include>Animation_HideMultiplex</include>
-
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>[!Skin.HasSetting(music)] | Container.Content(genres) | substring(container.folderpath,special://musicplaylists/,Left)</visible>
-				</control>
-
-				<control type="label">
-					<label>$INFO[listitem.tracknumber]. $INFO[listitem.title]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)</visible>
-				</control>
-					<control type="label">
-					<label>$INFO[ListItem.Album,, -] $INFO[ListItem.Artist]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)</visible>
-				</control>
-				<control type="label">
-					<label>$INFO[ListItem.Artist]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>Container.Content(artists)</visible>
-				</control>
-				<control type="label">
-					<label>$INFO[ListItem.Album]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>Container.Content(albums)</visible>
-				</control>
-				<control type="label">
-					<label>$INFO[ListItem.Artist]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>Container.Content(albums)</visible>
-				</control>
-				<control type="label">
-					<info>ListItem.Label2</info>
-					<include>MultiplexMainLabel</include>
-					<visible>Window.IsActive(1) | Window.IsActive(501) + ![Container.Content(albums) | Container.Content(songs)]</visible>
-				</control>
-
-				<control type="label">
-					<label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31005][/UPPERCASE]</label>
-					<include>MultiplexItemsLabel</include>
-				</control>				
-			</control>
-
-<!-- FULLSCREEN FLOOR TEXT -->
-			<control type="group">
-				<visible>Skin.HasSetting(music) + Skin.HasSetting(FullscreenMusicMultiplex)</visible>
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>![Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>					
-				</control>
-
-				<!-- Music -->
-				<control type="label" id="72">
-					<label>$INFO[ListItem.Artist]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>!Control.IsVisible(109) + Container.Content(artists)</visible>
-				</control>
-				<control type="label" id="72">
-					<label>$INFO[ListItem.Album]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>!Control.IsVisible(109) + [Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
-				</control>
-				<control type="label" id="72">
-					<label>$INFO[ListItem.Artist]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>!Control.IsVisible(109) + [Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)]</visible>
-				</control>
-
-				<control type="label" id="72">
-					<label>$INFO[listitem.tracknumber]. $INFO[listitem.title]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>!Control.IsVisible(109) + Container.Content(songs)</visible>
-				</control>
-				<control type="label" id="72">
-					<label>$INFO[ListItem.Album,, -] $INFO[ListItem.Artist]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>!Control.IsVisible(109) + Container.Content(songs)</visible>
-				</control>
-
-				<control type="label">
-					<label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31005][/UPPERCASE]</label>
-					<include>MultiplexItemsLabel</include>
-				</control>				
-			</control>
-		</control>			
 	</include>
 </includes>

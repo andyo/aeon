@@ -46,7 +46,7 @@
 		<height>40</height>
 		<align>center</align>
 		<aligny>center</aligny>
-		<textcolor>66000000</textcolor>		
+		<textcolor>66FFFFFF</textcolor>		
 		<label>$LOCALIZE[1036]</label>
 		<font>Font_WeatherTitle</font>
 	</control>

@@ -58,9 +58,9 @@
 		
 		<control type="grouplist" id="5">
 			<description>control area</description>
-			<posx>10</posx>
+			<posx>18</posx>
 			<posy>35</posy>
-			<width>679</width>
+			<width>663</width>
 			<height>246</height>
 			<itemgap>0</itemgap>
 			<onup>5</onup>
@@ -146,9 +146,9 @@
 		<control type="group" id="9001">		
 		<control type="button" id="28">
 			<description>ok button</description>
-			<posx>689</posx>
+			<posx>682</posx>
 			<posy>240</posy>
-			<width>156</width>
+			<width>163</width>
 			<height>41</height>
 			<font>Font_SetContentMenu</font>
 			<label>186</label>
@@ -156,7 +156,7 @@
 			<textcolor>FFf5f5f5</textcolor>
 			<focusedcolor>FF262728</focusedcolor>
 			<selectedcolor>FF262728</selectedcolor>
-			<textoffsetx>20</textoffsetx>
+			<textoffsetx>28</textoffsetx>
 			<onleft>5</onleft>
 			<onright>5</onright>
 			<onup>29</onup>
@@ -166,9 +166,9 @@
 		</control>
 		<control type="button" id="29">
 			<description>cancel button</description>
-			<posx>689</posx>
+			<posx>682</posx>
 			<posy>199</posy>
-			<width>156</width>
+			<width>163</width>
 			<height>41</height>
 			<font>Font_SetContentMenu</font>
 			<label>222</label>
@@ -176,7 +176,7 @@
 			<textcolor>FFf5f5f5</textcolor>
 			<focusedcolor>FF262728</focusedcolor>
 			<selectedcolor>FF262728</selectedcolor>
-			<textoffsetx>20</textoffsetx>
+			<textoffsetx>28</textoffsetx>
 			<onleft>5</onleft>
 			<onright>5</onright>
 			<onup>28</onup>

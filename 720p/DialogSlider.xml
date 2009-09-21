@@ -4,43 +4,47 @@
 	<animation effect="fade" time="200">WindowClose</animation> 
 	<coordinates> 
 		<system>1</system> 
-		<posx>545</posx>
-		<posy>550</posy>
+		<posx>495</posx>
+		<posy>500</posy>
 	</coordinates> 
 	<controls>	 
-		<posx>545</posx>
-		<posy>550</posy>
-		<width>280</width>
-		<height>91</height>	
 		<include>Dialogs_Tablet_Audio_Offset</include> 
 
 		<control type="image"> 
-			<posx>6</posx> 
-			<posy>4</posy> 
-			<width>81</width> 
-			<height>82</height> 
-			<texture>dialogs/delay.png</texture> 
+			<posx>20</posx> 
+			<posy>23</posy> 
+			<width>60</width> 
+			<height>60</height> 
+			<texture>dialogs/configuration.png</texture> 
 		</control> 
 		 
 		<control type="label" id="10"> 
 			<description>Dialog header</description> 
-			<include>Dialogs_Label1</include> 
+			<description>Slider Value</description> 
+			<posx>85</posx> 
+			<posy>15</posy> 
+			<width>200</width> 
+			<height>21</height> 
+			<textcolor>FF929292</textcolor>
+			<font>Font_ProgressLabel</font>		
+			<align>center</align> 
 			<aligny>center</aligny> 
 		</control> 
 		<control type="label" id="12"> 
 			<description>Slider Value</description> 
-			<width>190</width> 
+			<posx>85</posx> 
+			<posy>35</posy> 
+			<width>200</width> 
 			<height>21</height> 
 			<textcolor>FFF5F5F5</textcolor> 
 			<font>Font_ProgressLabel</font>		 
-			<posy>36</posy>	 
 			<align>center</align> 
 			<aligny>center</aligny> 
 		</control> 
 		<control type="slider" id="11"> 
 			<description>Slider</description> 
-			<posy>42</posy> 
-			<posx>82</posx> 
+			<posy>45</posy> 
+			<posx>90</posx> 
 			<width>190</width> 
 			<height>55</height> 
 			<align>center</align> 

@@ -43,11 +43,11 @@
 			<posy>0</posy>
 			<height>39</height>
 			<width>350</width>
-			<textcolor>FF383838</textcolor>
-			<focusedcolor>FFdfdfdf</focusedcolor>
+			<textcolor>FF929292</textcolor>
+			<focusedcolor>FF363636</focusedcolor>
 			<texturenofocus>dialogs/context_nofocus.png</texturenofocus>
 			<texturefocus>dialogs/context_highlight.png</texturefocus>
-			<pulseonselect>true</pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<align>center</align>
 			<aligny>top</aligny>
 			<font>Font_ContextMenuButton</font>

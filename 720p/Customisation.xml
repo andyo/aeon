@@ -1,5 +1,5 @@
 <window id="603">
-	<defaultcontrol>11</defaultcontrol>
+	<defaultcontrol>12</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
 
@@ -18,11 +18,11 @@
 		</control>
 		<control type="label">
 			<posx>57</posx>
-			<posy>650</posy>
+			<posy>645</posy>
 			<width>500</width>
 			<height>49</height>
 			<font>Font_SettingsOptions</font>
-			<label>VER: 1.71  (GIT-206)</label>				
+			<label>VER: 2.0  (GIT-350)</label>				
 		</control>
 
 		<control type="label">
@@ -37,15 +37,15 @@
 			<font>Font_SettingsSectionTitle</font>
 		</control>
 
-		<control type="list" id="11">
+		<control type="list" id="12">
 			<include>Animation_CommonFade</include>
 			<posx>42</posx>
 			<posy>120</posy>
 			<height>650</height>
 			<width>250</width>
 			<onright>20</onright>
-			<onup>11</onup>
-			<ondown>11</ondown>
+			<onup>12</onup>
+			<ondown>12</ondown>
 			<viewtype>list</viewtype>
 			<orientation>vertical</orientation>
 			<focusposition>0</focusposition>
@@ -69,7 +69,7 @@
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>216</width>
+					<width>222</width>
 					<height>54</height>
 					<texture>settings/settings_leftmenufocus.png</texture>
 				</control>
@@ -133,469 +133,485 @@
 			<include>Objects_SettingsControlAreaVars</include>
 			<onup>20</onup>
 			<ondown>20</ondown>
-			<onleft>11</onleft>
-			<onright>11</onright>
-			<visible>Control.HasFocus(11) | ControlGroup(20).HasFocus</visible>
-				<control type="radiobutton" id="400">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31260</label>
-					<onclick>Skin.ToggleSetting(notime)</onclick>
-					<selected>!Skin.HasSetting(notime)</selected>
-					<visible>Container(11).HasFocus(1)</visible>
-				</control>
-				<control type="radiobutton" id="401">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31270</label>
-					<onclick>Skin.ToggleSetting(nozooms)</onclick>
-					<selected>!Skin.HasSetting(nozooms)</selected>
-					<visible>Container(11).HasFocus(1)</visible>
-				</control>
-				<control type="radiobutton" id="402">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31287</label>
-					<onclick>Skin.ToggleSetting(kiosk)</onclick>
-					<selected>Skin.HasSetting(kiosk)</selected>
-					<visible>Container(11).HasFocus(1)</visible>
-				</control>
-				<control type="radiobutton" id="404">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31294</label>
-					<onclick>Skin.ToggleSetting(keyboardzoom)</onclick>
-					<selected>Skin.HasSetting(keyboardzoom)</selected>
-					<visible>Container(11).HasFocus(1)</visible>
-				</control>		
-				<control type="radiobutton" id="405">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31280</label>
-					<onclick>Skin.ToggleSetting(debug)</onclick>
-					<selected>Skin.HasSetting(debug)</selected>
-					<visible>Container(11).HasFocus(1)</visible>
-				</control>
+			<onleft>12</onleft>
+			<onright>12</onright>
+			<visible>Control.HasFocus(12) | ControlGroup(20).HasFocus</visible>
+			<control type="radiobutton" id="400">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31260</label>
+				<onclick>Skin.ToggleSetting(notime)</onclick>
+				<selected>!Skin.HasSetting(notime)</selected>
+				<visible>Container(12).HasFocus(1)</visible>
+			</control>
+			<control type="radiobutton" id="401">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31270</label>
+				<onclick>Skin.ToggleSetting(nozooms)</onclick>
+				<selected>!Skin.HasSetting(nozooms)</selected>
+				<visible>Container(12).HasFocus(1)</visible>
+			</control>
+			<control type="radiobutton" id="402">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31287</label>
+				<onclick>Skin.ToggleSetting(kiosk)</onclick>
+				<selected>Skin.HasSetting(kiosk)</selected>
+				<visible>Container(12).HasFocus(1)</visible>
+			</control>
+			<control type="radiobutton" id="404">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31294</label>
+				<onclick>Skin.ToggleSetting(keyboardzoom)</onclick>
+				<selected>Skin.HasSetting(keyboardzoom)</selected>
+				<visible>Container(12).HasFocus(1)</visible>
+			</control>		
+			<control type="radiobutton" id="405">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31280</label>
+				<onclick>Skin.ToggleSetting(debug)</onclick>
+				<selected>Skin.HasSetting(debug)</selected>
+				<visible>Container(12).HasFocus(1)</visible>
+			</control>
 
-				<control type="radiobutton" id="500">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31261</label>
-					<onclick>Skin.ToggleSetting(noweatherpopup)</onclick>
-					<selected>!Skin.HasSetting(noweatherpopup)</selected>
-					<visible>Container(11).HasFocus(2)</visible>
-				</control>
-				<control type="radiobutton" id="501">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>-- $LOCALIZE[31859]</label>
-					<onclick>Skin.ToggleSetting(Weather_ani)</onclick>
-					<selected>Skin.HasSetting(Weather_ani)</selected>
-					<visible>!Skin.HasSetting(noweatherpopup)</visible>
-					<visible>Container(11).HasFocus(2)</visible>
-				</control>		
-				<control type="radiobutton" id="502">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>-- $LOCALIZE[31869]</label>
-					<onclick>Skin.ToggleSetting(CustomWeatherConditions)</onclick>
-					<selected>Skin.HasSetting(CustomWeatherConditions)</selected>
-					<visible>!Skin.HasSetting(noweatherpopup)</visible>
-					<visible>Container(11).HasFocus(2)</visible>
-				</control>		
-				<control type="radiobutton" id="503">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31295</label>
-					<onclick>Skin.ToggleSetting(bighome)</onclick>
-					<selected>Skin.HasSetting(bighome)</selected>
-					<visible>Container(11).HasFocus(2)</visible>
-				</control>	
-				<control type="radiobutton" id="504">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31253</label>
-					<onclick>Skin.ToggleSetting(launcherforgames)</onclick>
-					<selected>Skin.HasSetting(launcherforgames)</selected>
-					<visible>Container(11).HasFocus(2)</visible>
-				</control>
-				<control type="radiobutton" id="505">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31252</label>
-					<onclick>Skin.ToggleSetting(nohomegradient)</onclick>
-					<selected>!Skin.HasSetting(nohomegradient)</selected>
-					<visible>Container(11).HasFocus(2)</visible>
-				</control>		
-				<control type="radiobutton" id="506">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[1034]</label>
-					<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-					<selected>!Skin.HasSetting(CustomMenuSub)</selected>
-					<visible>Container(11).HasFocus(2)</visible>
-				</control>		
-				<control type="radiobutton" id="507">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31867] $LOCALIZE[31868]</label>
-					<onclick>Skin.ToggleSetting(CustomMenuanimation)</onclick>
-					<selected>Skin.HasSetting(CustomMenuanimation)</selected>
-					<visible>Container(11).HasFocus(2)</visible>
-				</control>		
-				<control type="radiobutton" id="508">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31864]</label>
-					<onclick>Skin.ToggleSetting(open_playlists)</onclick>
-					<selected>Skin.HasSetting(open_playlists)</selected>
-					<visible>Container(11).HasFocus(2)</visible>
-				</control>		
-
-				<control type="radiobutton" id="600">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31278</label>
-					<onclick>Skin.ToggleSetting(allowscroll)</onclick>
-					<selected>Skin.HasSetting(allowscroll)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
-				<control type="radiobutton" id="601">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31281</label>
-					<onclick>Skin.ToggleSetting(nomediaflags)</onclick>
-					<selected>!Skin.HasSetting(nomediaflags)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
-				<control type="radiobutton" id="602">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31259</label>
-					<onclick>Skin.ToggleSetting(nodefaultflags)</onclick>
-					<selected>!Skin.HasSetting(nodefaultflags)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
-				<control type="radiobutton" id="603">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31258</label>
-					<onclick>Skin.ToggleSetting(inforatings)</onclick>
-					<selected>Skin.HasSetting(inforatings)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>		
-				<control type="radiobutton" id="604">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31285</label>
-					<onclick>Skin.ToggleSetting(movieratingtext)</onclick>
-					<selected>Skin.HasSetting(movieratingtext)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
-				<control type="radiobutton" id="605">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31286</label>
-					<onclick>Skin.ToggleSetting(albumratingtext)</onclick>
-					<selected>Skin.HasSetting(albumratingtext)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
+			<control type="radiobutton" id="500">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31261</label>
+				<onclick>Skin.ToggleSetting(noweatherpopup)</onclick>
+				<selected>!Skin.HasSetting(noweatherpopup)</selected>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>
+			<control type="radiobutton" id="501">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>-- $LOCALIZE[31859]</label>
+				<onclick>Skin.ToggleSetting(Weather_ani)</onclick>
+				<selected>Skin.HasSetting(Weather_ani)</selected>
+				<visible>!Skin.HasSetting(noweatherpopup)</visible>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>		
+			<control type="radiobutton" id="502">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>-- $LOCALIZE[31869]</label>
+				<onclick>Skin.ToggleSetting(CustomWeatherConditions)</onclick>
+				<selected>Skin.HasSetting(CustomWeatherConditions)</selected>
+				<visible>!Skin.HasSetting(noweatherpopup)</visible>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>		
+			<control type="radiobutton" id="503">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31295</label>
+				<onclick>Skin.ToggleSetting(bighome)</onclick>
+				<selected>Skin.HasSetting(bighome)</selected>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>	
+			<control type="radiobutton" id="504">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31253</label>
+				<onclick>Skin.ToggleSetting(launcherforgames)</onclick>
+				<selected>Skin.HasSetting(launcherforgames)</selected>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>
+			<control type="radiobutton" id="505">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31252</label>
+				<onclick>Skin.ToggleSetting(nohomegradient)</onclick>
+				<selected>!Skin.HasSetting(nohomegradient)</selected>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>		
+			<control type="radiobutton" id="506">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[1034]</label>
+				<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+				<selected>!Skin.HasSetting(CustomMenuSub)</selected>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>		
+			<control type="radiobutton" id="507">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31867] $LOCALIZE[31868]</label>
+				<onclick>Skin.ToggleSetting(CustomMenuanimation)</onclick>
+				<selected>Skin.HasSetting(CustomMenuanimation)</selected>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>
+			<control type="radiobutton" id="508">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31864]</label>
+				<onclick>Skin.SetString(playlist,playlists=play)</onclick>
+				<selected>!Skin.String(playlist,playlists=play)</selected>
+				<visible>Container(12).HasFocus(2) + !stringcompare(Skin.String(playlist),playlists=play)</visible>
+			</control>		
+			<control type="radiobutton" id="509">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31864]</label>
+				<onclick>Skin.SetString(playlist,playlists=window)</onclick>
+				<selected>!Skin.String(playlist,playlists=play)</selected>
+				<visible>Container(12).HasFocus(2) + stringcompare(Skin.String(playlist),playlists=play)</visible>
+			</control>		
+			<control type="radiobutton" id="510">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[14022] $LOCALIZE[31878] $LOCALIZE[31992]: $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(Library_info)</onclick>
+				<selected>!Skin.HasSetting(Library_info)</selected>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>		
+			<control type="radiobutton" id="511">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31879] $LOCALIZE[31992]: $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(Recently_added)</onclick>
+				<selected>!Skin.HasSetting(Recently_added)</selected>
+				<visible>Container(12).HasFocus(2)+!Skin.HasSetting(Widget_random_order)</visible>
+			</control>		
+			<control type="radiobutton" id="512">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31994] $LOCALIZE[31992]: $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(Widget_random_order)</onclick>
+				<selected>Skin.HasSetting(Widget_random_order)</selected>
+				<visible>Container(12).HasFocus(2)+Skin.HasSetting(Recently_added)</visible>
+			</control>
+			<control type="radiobutton" id="513">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31865] $LOCALIZE[31992]:-$INFO[Skin.String(extra_widget_set)]: $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(extra_widget_on)</onclick>
+				<selected>Skin.HasSetting(extra_widget_on)</selected>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>		
+			<control type="radiobutton" id="514">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31012] $LOCALIZE[31992]:-$INFO[Skin.String(Pictures_widget_set)]: $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(Pictures_widget_on)</onclick>
+				<selected>Skin.HasSetting(Pictures_widget_on)</selected>
+				<visible>Container(12).HasFocus(2)</visible>
+			</control>		
+			
+			
+			<control type="radiobutton" id="600">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31278</label>
+				<onclick>Skin.ToggleSetting(allowscroll)</onclick>
+				<selected>Skin.HasSetting(allowscroll)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
+			<control type="radiobutton" id="601">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31281</label>
+				<onclick>Skin.ToggleSetting(nomediaflags)</onclick>
+				<selected>!Skin.HasSetting(nomediaflags)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
+<!--				<control type="radiobutton" id="602">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31259</label>
+				<onclick>Skin.ToggleSetting(nodefaultflags)</onclick>
+				<selected>!Skin.HasSetting(nodefaultflags)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control> -->
+			<control type="radiobutton" id="603">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31258</label>
+				<onclick>Skin.ToggleSetting(inforatings)</onclick>
+				<selected>Skin.HasSetting(inforatings)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>		
+			<control type="radiobutton" id="604">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31285</label>
+				<onclick>Skin.ToggleSetting(movieratingtext)</onclick>
+				<selected>Skin.HasSetting(movieratingtext)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
+			<control type="radiobutton" id="605">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31286</label>
+				<onclick>Skin.ToggleSetting(albumratingtext)</onclick>
+				<selected>Skin.HasSetting(albumratingtext)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
 <!--				<control type="radiobutton" id="608">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31299</label>
-					<onclick>Skin.ToggleSetting(showcaserss)</onclick>
-					<selected>Skin.HasSetting(showcaserss)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control> -->
-				<control type="radiobutton" id="608">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31268</label>
-					<onclick>Skin.ToggleSetting(wallrss)</onclick>
-					<selected>Skin.HasSetting(wallrss)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
-				<control type="button" id="609">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31955]: $LOCALIZE[31956]</label>
-					<onclick>Skin.SetBool(shadegrey)</onclick>
-					<onclick>Skin.Reset(shadegreen)</onclick>
-					<onclick>Skin.Reset(shadeblac)</onclick>
-					<selected>Skin.HasSetting(dynamicflowtv)</selected>
-					<visible>Container(11).HasFocus(3) + ![Skin.HasSetting(shadeblack) | Skin.HasSetting(shadegrey)]</visible>
-				</control>
-				<control type="button" id="610">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31955]: $LOCALIZE[31957]</label>
-					<onclick>Skin.Reset(shadegreen)</onclick>
-					<onclick>Skin.SetBool(shadeblack)</onclick>
-					<onclick>Skin.Reset(shadegrey)</onclick>
-					<selected>Skin.HasSetting(dynamicflowtv)</selected>
-					<visible>Container(11).HasFocus(3) + Skin.HasSetting(shadegrey)</visible>
-				</control>		
-				<control type="button" id="611">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31955]: $LOCALIZE[31958]</label>
-					<onclick>Skin.Reset(shadeblack)</onclick>
-					<onclick>Skin.Reset(shadegrey)</onclick>
-					<onclick>Skin.SetBool(shadegreen)</onclick>
-					<selected>Skin.HasSetting(dynamicflowtv)</selected>
-					<visible>Container(11).HasFocus(3) + Skin.HasSetting(shadeblack)</visible>
-				</control>		
-				<control type="radiobutton" id="612">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31752] $LOCALIZE[31952] $LOCALIZE[31959]</label>
-					<onclick>Skin.ToggleSetting(listpanelthin)</onclick>
-					<selected>Skin.HasSetting(listpanelthin)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>		
-				<control type="radiobutton" id="613">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31757] $LOCALIZE[31952] $LOCALIZE[31959]</label>
-					<onclick>Skin.ToggleSetting(multiplexthin)</onclick>
-					<selected>Skin.HasSetting(multiplexthin)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
-				<control type="togglebutton" id="614">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31042]</label>
-					<altlabel>$LOCALIZE[31043]</altlabel>
-					<usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
-					<onclick>Skin.ToggleSetting(darkshowcase)</onclick>
-					<selected>Skin.HasSetting(darkshowcase)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
-				<control type="togglebutton" id="615">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31952]: $LOCALIZE[31953]</label>
-					<altlabel>$LOCALIZE[31952]: $LOCALIZE[31954]</altlabel>
-					<usealttexture>Skin.HasSetting(darkwindow)</usealttexture>
-					<onclick>Skin.ToggleSetting(darkwindow)</onclick>
-					<selected>Skin.HasSetting(darkwindow)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
-				<control type="radiobutton" id="616">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31966]</label>
-					<onclick>Skin.ToggleSetting(tvposterview)</onclick>
-					<selected>Skin.HasSetting(tvposterview)</selected>
-					<visible>Container(11).HasFocus(3)</visible>
-				</control>
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31299</label>
+				<onclick>Skin.ToggleSetting(showcaserss)</onclick>
+				<selected>Skin.HasSetting(showcaserss)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control> -->
+			<control type="radiobutton" id="608">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31268</label>
+				<onclick>Skin.ToggleSetting(wallrss)</onclick>
+				<selected>Skin.HasSetting(wallrss)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
+			<control type="radiobutton" id="609">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31752] $LOCALIZE[31952] $LOCALIZE[31959]</label>
+				<onclick>Skin.ToggleSetting(listpanelthin)</onclick>
+				<selected>Skin.HasSetting(listpanelthin)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>		
+			<control type="radiobutton" id="610">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31757] $LOCALIZE[31952] $LOCALIZE[31959]</label>
+				<onclick>Skin.ToggleSetting(multiplexthin)</onclick>
+				<selected>Skin.HasSetting(multiplexthin)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
+			<control type="togglebutton" id="611">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31042]</label>
+				<altlabel>$LOCALIZE[31043]</altlabel>
+				<usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
+				<onclick>Skin.ToggleSetting(darkshowcase)</onclick>
+				<selected>Skin.HasSetting(darkshowcase)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
+			<control type="togglebutton" id="612">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31952]: $LOCALIZE[31953]</label>
+				<altlabel>$LOCALIZE[31952]: $LOCALIZE[31954]</altlabel>
+				<usealttexture>Skin.HasSetting(darkwindow)</usealttexture>
+				<onclick>Skin.ToggleSetting(darkwindow)</onclick>
+				<selected>Skin.HasSetting(darkwindow)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
+			<control type="radiobutton" id="613">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31966]</label>
+				<onclick>Skin.ToggleSetting(tvposterview)</onclick>
+				<selected>Skin.HasSetting(tvposterview)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
 
-				<control type="radiobutton" id="700">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31264</label>
-					<onclick>Skin.ToggleSetting(nomoviefanart)</onclick>
-					<selected>!Skin.HasSetting(nomoviefanart)</selected>
-					<visible>Container(11).HasFocus(4)</visible>
-				</control>
-				<control type="radiobutton" id="701">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31265</label>
-					<onclick>Skin.ToggleSetting(notvfanart)</onclick>
-					<selected>!Skin.HasSetting(notvfanart)</selected>
-					<visible>Container(11).HasFocus(4)</visible>
-				</control>
-				<control type="radiobutton" id="702">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31266</label>
-					<onclick>Skin.ToggleSetting(nopicturefanart)</onclick>
-					<selected>!Skin.HasSetting(nopicturefanart)</selected>
-					<visible>Container(11).HasFocus(4)</visible>
-				</control>
-				<control type="radiobutton" id="703">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31279</label>
-					<onclick>Skin.ToggleSetting(noinfofanart)</onclick>
-					<selected>!Skin.HasSetting(noinfofanart)</selected>
-					<visible>Container(11).HasFocus(4)</visible>
-				</control>
-				<control type="radiobutton" id="704">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31262</label>
-					<onclick>Skin.ToggleSetting(nomusicfanart)</onclick>
-					<selected>!Skin.HasSetting(nomusicfanart)</selected>
-					<visible>Container(11).HasFocus(4)</visible>
-				</control>
-				<control type="radiobutton" id="707">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31979</label>
-					<onclick>Skin.ToggleSetting(nogenrefanart)</onclick>
-					<selected>!skin.HasSetting(nogenrefanart)</selected>
-					<visible>Container(11).HasFocus(4)</visible>
-				</control>			
-				<control type="radiobutton" id="709">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31980</label>
-					<onclick>Skin.ToggleSetting(nomusicgenrefanart)</onclick>
-					<selected>!Skin.HasSetting(nomusicgenrefanart)</selected>
-					<visible>Container(11).HasFocus(4)</visible>
-				</control>
-				<control type="button" id="710">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31242</label>
-					<onclick>Skin.Reset(nomusicfanart)</onclick>
-					<onclick>Skin.Reset(nomoviefanart)</onclick>
-					<onclick>Skin.Reset(notvfanart)</onclick>
-					<onclick>Skin.Reset(nopicturefanart)</onclick>
-					<onclick>Skin.Reset(noinfofanart)</onclick>
-					<onclick>Skin.Reset(nogenrefanart)</onclick>
-					<onclick>Skin.Reset(nomusicgenrefanart)</onclick>
-					<visible>Skin.HasSetting(nomusicfanart) | Skin.HasSetting(nomoviefanart) | Skin.HasSetting(notvfanart) | Skin.HasSetting(nopicturefanart) | Skin.HasSetting(noinfofanart) | Skin.HasSetting(nogenrefanart) | Skin.HasSetting(nomusicgenrefanart)</visible>
-					<visible>Container(11).HasFocus(4)</visible>
-				</control>
-				<control type="button" id="711">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31243</label>
-					<onclick>Skin.SetBool(nomusicfanart)</onclick>
-					<onclick>Skin.SetBool(nomoviefanart)</onclick>
-					<onclick>Skin.SetBool(notvfanart)</onclick>
-					<onclick>Skin.SetBool(nopicturefanart)</onclick>
-					<onclick>Skin.SetBool(noinfofanart)</onclick>
-					<onclick>Skin.SetBool(nogenrefanart)</onclick>
-					<onclick>Skin.SetBool(nomusicgenrefanart)</onclick>
-					<visible>![Skin.HasSetting(nomusicfanart) | Skin.HasSetting(nomoviefanart) | Skin.HasSetting(notvfanart) | Skin.HasSetting(nopicturefanart) | Skin.HasSetting(noinfofanart) | Skin.HasSetting(nogenrefanart) | Skin.HasSetting(nomusicgenrefanart)]</visible>
-					<visible>Container(11).HasFocus(4)</visible>
-				</control>				
-				<control type="radiobutton" id="800">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31288</label>
-					<onclick>Skin.ToggleSetting(nomenumoviesearch)</onclick>
-					<selected>!Skin.HasSetting(nomenumoviesearch)</selected>
-					<visible>Container(11).HasFocus(5)</visible>
-				</control>
-				<control type="radiobutton" id="801">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31289</label>
-					<onclick>Skin.ToggleSetting(nomenutvsearch)</onclick>
-					<selected>!Skin.HasSetting(nomenutvsearch)</selected>
-					<visible>Container(11).HasFocus(5)</visible>
-				</control>		
-				<control type="radiobutton" id="802">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31290</label>
-					<onclick>Skin.ToggleSetting(nomenusettings)</onclick>
-					<selected>!Skin.HasSetting(nomenusettings)</selected>
-					<visible>Container(11).HasFocus(5)</visible>
-				</control>
-				<control type="radiobutton" id="803">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31291</label>
-					<onclick>Skin.ToggleSetting(nomenumoviewatched)</onclick>
-					<selected>!Skin.HasSetting(nomenumoviewatched)</selected>
-					<visible>Container(11).HasFocus(5)</visible>
-				</control>
-				<control type="radiobutton" id="804">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31292</label>
-					<onclick>Skin.ToggleSetting(nomenutvwatched)</onclick>
-					<selected>!Skin.HasSetting(nomenutvwatched)</selected>
-					<visible>Container(11).HasFocus(5)</visible>
-				</control>
-				<control type="radiobutton" id="805">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31293</label>
-					<onclick>Skin.ToggleSetting(nomenufiles)</onclick>
-					<selected>!Skin.HasSetting(nomenufiles)</selected>
-					<visible>Container(11).HasFocus(5)</visible>
-				</control>
-				<control type="radiobutton" id="806">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31251</label>
-					<onclick>Skin.ToggleSetting(nomultiplexinfobuttons)</onclick>
-					<selected>!Skin.HasSetting(nomultiplexinfobuttons)</selected>
-					<visible>Container(11).HasFocus(5)</visible>
-				</control>
-				<control type="radiobutton" id="807">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31250</label>
-					<onclick>Skin.ToggleSetting(nomultiplexstylebuttons)</onclick>
-					<selected>!Skin.HasSetting(nomultiplexstylebuttons)</selected>
-					<visible>Container(11).HasFocus(5)</visible>
-				</control>		
-				<control type="radiobutton" id="808">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>31249</label>
-					<onclick>Skin.ToggleSetting(nomediaflagsbutton)</onclick>
-					<selected>!Skin.HasSetting(nomediaflagsbutton)</selected>
-					<visible>Container(11).HasFocus(5)</visible>
-				</control>
+			<control type="radiobutton" id="700">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31264</label>
+				<onclick>Skin.ToggleSetting(nomoviefanart)</onclick>
+				<selected>!Skin.HasSetting(nomoviefanart)</selected>
+				<visible>Container(12).HasFocus(4)</visible>
+			</control>
+			<control type="radiobutton" id="701">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31265</label>
+				<onclick>Skin.ToggleSetting(notvfanart)</onclick>
+				<selected>!Skin.HasSetting(notvfanart)</selected>
+				<visible>Container(12).HasFocus(4)</visible>
+			</control>
+			<control type="radiobutton" id="702">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31266</label>
+				<onclick>Skin.ToggleSetting(nopicturefanart)</onclick>
+				<selected>!Skin.HasSetting(nopicturefanart)</selected>
+				<visible>Container(12).HasFocus(4)</visible>
+			</control>
+			<control type="radiobutton" id="703">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31279</label>
+				<onclick>Skin.ToggleSetting(noinfofanart)</onclick>
+				<selected>!Skin.HasSetting(noinfofanart)</selected>
+				<visible>Container(12).HasFocus(4)</visible>
+			</control>
+			<control type="radiobutton" id="704">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31262</label>
+				<onclick>Skin.ToggleSetting(nomusicfanart)</onclick>
+				<selected>!Skin.HasSetting(nomusicfanart)</selected>
+				<visible>Container(12).HasFocus(4)</visible>
+			</control>
+			<control type="radiobutton" id="707">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31979</label>
+				<onclick>Skin.ToggleSetting(nogenrefanart)</onclick>
+				<selected>!skin.HasSetting(nogenrefanart)</selected>
+				<visible>Container(12).HasFocus(4)</visible>
+			</control>			
+			<control type="radiobutton" id="709">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31980</label>
+				<onclick>Skin.ToggleSetting(nomusicgenrefanart)</onclick>
+				<selected>!Skin.HasSetting(nomusicgenrefanart)</selected>
+				<visible>Container(12).HasFocus(4)</visible>
+			</control>
+			<control type="button" id="710">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31242</label>
+				<onclick>Skin.Reset(nomusicfanart)</onclick>
+				<onclick>Skin.Reset(nomoviefanart)</onclick>
+				<onclick>Skin.Reset(notvfanart)</onclick>
+				<onclick>Skin.Reset(nopicturefanart)</onclick>
+				<onclick>Skin.Reset(noinfofanart)</onclick>
+				<onclick>Skin.Reset(nogenrefanart)</onclick>
+				<onclick>Skin.Reset(nomusicgenrefanart)</onclick>
+				<visible>Skin.HasSetting(nomusicfanart) | Skin.HasSetting(nomoviefanart) | Skin.HasSetting(notvfanart) | Skin.HasSetting(nopicturefanart) | Skin.HasSetting(noinfofanart) | Skin.HasSetting(nogenrefanart) | Skin.HasSetting(nomusicgenrefanart)</visible>
+				<visible>Container(12).HasFocus(4)</visible>
+			</control>
+			<control type="button" id="711">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31243</label>
+				<onclick>Skin.SetBool(nomusicfanart)</onclick>
+				<onclick>Skin.SetBool(nomoviefanart)</onclick>
+				<onclick>Skin.SetBool(notvfanart)</onclick>
+				<onclick>Skin.SetBool(nopicturefanart)</onclick>
+				<onclick>Skin.SetBool(noinfofanart)</onclick>
+				<onclick>Skin.SetBool(nogenrefanart)</onclick>
+				<onclick>Skin.SetBool(nomusicgenrefanart)</onclick>
+				<visible>![Skin.HasSetting(nomusicfanart) | Skin.HasSetting(nomoviefanart) | Skin.HasSetting(notvfanart) | Skin.HasSetting(nopicturefanart) | Skin.HasSetting(noinfofanart) | Skin.HasSetting(nogenrefanart) | Skin.HasSetting(nomusicgenrefanart)]</visible>
+				<visible>Container(12).HasFocus(4)</visible>
+			</control>				
+			<control type="radiobutton" id="800">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31288</label>
+				<onclick>Skin.ToggleSetting(nomenumoviesearch)</onclick>
+				<selected>!Skin.HasSetting(nomenumoviesearch)</selected>
+				<visible>Container(12).HasFocus(5)</visible>
+			</control>
+			<control type="radiobutton" id="801">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31289</label>
+				<onclick>Skin.ToggleSetting(nomenutvsearch)</onclick>
+				<selected>!Skin.HasSetting(nomenutvsearch)</selected>
+				<visible>Container(12).HasFocus(5)</visible>
+			</control>		
+			<control type="radiobutton" id="802">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31290</label>
+				<onclick>Skin.ToggleSetting(nomenusettings)</onclick>
+				<selected>!Skin.HasSetting(nomenusettings)</selected>
+				<visible>Container(12).HasFocus(5)</visible>
+			</control>
+			<control type="radiobutton" id="803">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31291</label>
+				<onclick>Skin.ToggleSetting(nomenumoviewatched)</onclick>
+				<selected>!Skin.HasSetting(nomenumoviewatched)</selected>
+				<visible>Container(12).HasFocus(5)</visible>
+			</control>
+			<control type="radiobutton" id="804">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31292</label>
+				<onclick>Skin.ToggleSetting(nomenutvwatched)</onclick>
+				<selected>!Skin.HasSetting(nomenutvwatched)</selected>
+				<visible>Container(12).HasFocus(5)</visible>
+			</control>
+			<control type="radiobutton" id="805">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31293</label>
+				<onclick>Skin.ToggleSetting(nomenufiles)</onclick>
+				<selected>!Skin.HasSetting(nomenufiles)</selected>
+				<visible>Container(12).HasFocus(5)</visible>
+			</control>
+			<control type="radiobutton" id="806">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31251</label>
+				<onclick>Skin.ToggleSetting(nomultiplexinfobuttons)</onclick>
+				<selected>!Skin.HasSetting(nomultiplexinfobuttons)</selected>
+				<visible>Container(12).HasFocus(5)</visible>
+			</control>
+			<control type="radiobutton" id="807">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31250</label>
+				<onclick>Skin.ToggleSetting(nomultiplexstylebuttons)</onclick>
+				<selected>!Skin.HasSetting(nomultiplexstylebuttons)</selected>
+				<visible>Container(12).HasFocus(5)</visible>
+			</control>		
+			<control type="radiobutton" id="808">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>31249</label>
+				<onclick>Skin.ToggleSetting(nomediaflagsbutton)</onclick>
+				<selected>!Skin.HasSetting(nomediaflagsbutton)</selected>
+				<visible>Container(12).HasFocus(5)</visible>
+			</control>
 
-				<control type="radiobutton" id="821">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31962] $LOCALIZE[31969]</label>
-					<onclick>Skin.ToggleSetting(tvpreview)</onclick>
-					<selected>Skin.HasSetting(tvpreview)</selected>
-					<visible>Container(11).HasFocus(6)</visible>
-				</control>		
-				<control type="radiobutton" id="822">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31963] $LOCALIZE[31969]</label>
-					<onclick>Skin.ToggleSetting(movietrailers)</onclick>
-					<selected>Skin.HasSetting(movietrailers)</selected>
-					<visible>Container(11).HasFocus(6)</visible>
-				</control>		
-				<control type="radiobutton" id="823">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31964] $LOCALIZE[31969]</label>
-					<onclick>Skin.ToggleSetting(nocertflag)</onclick>
-					<selected>!Skin.HasSetting(nocertflag)</selected>
-					<visible>Container(11).HasFocus(6)</visible>
-				</control>		
-				<control type="radiobutton" id="824">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31965] $LOCALIZE[31969]</label>
-					<onclick>Skin.ToggleSetting(noimdbflag)</onclick>
-					<selected>!Skin.HasSetting(noimdbflag)</selected>
-					<visible>Container(11).HasFocus(6)</visible>
-				</control>		
-				<control type="button" id="825">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31973]</label>
-					<onclick>Skin.SetPath(moviefolder)</onclick>
-					<visible>Container(11).HasFocus(6)</visible>
-				</control>		
+			<control type="radiobutton" id="821">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31962] $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(tvpreview)</onclick>
+				<selected>Skin.HasSetting(tvpreview)</selected>
+				<visible>Container(12).HasFocus(6)</visible>
+			</control>		
+			<control type="radiobutton" id="822">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31963] $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(movietrailers)</onclick>
+				<selected>Skin.HasSetting(movietrailers)</selected>
+				<visible>Container(12).HasFocus(6)</visible>
+			</control>		
+			<control type="radiobutton" id="823">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31964] $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(nocertflag)</onclick>
+				<selected>!Skin.HasSetting(nocertflag)</selected>
+				<visible>Container(12).HasFocus(6)</visible>
+			</control>		
+			<control type="radiobutton" id="824">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31965] $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(noimdbflag)</onclick>
+				<selected>!Skin.HasSetting(noimdbflag)</selected>
+				<visible>Container(12).HasFocus(6)</visible>
+			</control>		
+			<control type="button" id="825">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31973]</label>
+				<onclick>Skin.SetPath(moviefolder)</onclick>
+				<visible>Container(12).HasFocus(6)</visible>
+			</control>		
 <!--				<control type="radiobutton" id="826">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31751] $LOCALIZE[31995]: $LOCALIZE[31969]</label>
-					<onclick>Skin.ToggleSetting(flattenshowcase)</onclick>
-					<selected>!Skin.HasSetting(flattenshowcase)</selected>
-					<visible>Container(11).HasFocus(6)</visible>
-				</control>	-->
-				<control type="radiobutton" id="826">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label>$LOCALIZE[31757] $LOCALIZE[31995]: $LOCALIZE[31969]</label>
-					<onclick>Skin.ToggleSetting(flattenmultiplex)</onclick>
-					<selected>!Skin.HasSetting(flattenmultiplex)</selected>
-					<visible>Container(11).HasFocus(6)</visible>
-				</control>		
-	<!--			<control type="togglebutton" id="828">
-					<label>31061</label>
-					<altlabel>31060</altlabel>
-					<usealttexture>Skin.HasSetting(flattenflow)</usealttexture>					
-					<include>VerticalMenu_Button</include>
-					<onclick>Skin.ToggleSetting(flattenflow)</onclick>
-					<visible>Control.IsVisible(55) + !Container.Content(episodes)</visible>
-				</control> -->
-				<control type="radiobutton" id="827">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label> --$LOCALIZE[31974]: $LOCALIZE[31985]</label>
-					<onclick>Skin.ToggleSetting(dynamicflowtv)</onclick>
-					<selected>Skin.HasSetting(dynamicflowtv)</selected>
-					<visible>Container(11).HasFocus(6) + !Skin.HasSetting(flattenmultiplex)</visible>
-				</control>		
-				<control type="radiobutton" id="828">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label> --$LOCALIZE[31974]: $LOCALIZE[31984]</label>
-					<onclick>Skin.ToggleSetting(dynamicflowmovie)</onclick>
-					<selected>Skin.HasSetting(dynamicflowmovie)</selected>
-					<visible>Container(11).HasFocus(6) + !Skin.HasSetting(flattenmultiplex)</visible>
-				</control>		
-				<control type="radiobutton" id="829">
-					<include>Objects_SettingsDefaultRadioButton</include>
-					<label> --$LOCALIZE[31974]: $LOCALIZE[31010]</label>
-					<onclick>Skin.ToggleSetting(dynamicflowmusic)</onclick>
-					<selected>Skin.HasSetting(dynamicflowmusic)</selected>
-					<visible>Container(11).HasFocus(6) + !Skin.HasSetting(flattenmultiplex)</visible>
-				</control>		
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31751] $LOCALIZE[31995]: $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(flattenshowcase)</onclick>
+				<selected>!Skin.HasSetting(flattenshowcase)</selected>
+				<visible>Container(12).HasFocus(6)</visible>
+			</control>	-->
+			<control type="radiobutton" id="826">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31757] $LOCALIZE[31995]: $LOCALIZE[31969]</label>
+				<onclick>Skin.ToggleSetting(flattenmultiplex)</onclick>
+				<selected>!Skin.HasSetting(flattenmultiplex)</selected>
+				<visible>Container(12).HasFocus(6)</visible>
+			</control>		
+<!--			<control type="togglebutton" id="828">
+				<label>31061</label>
+				<altlabel>31060</altlabel>
+				<usealttexture>Skin.HasSetting(flattenflow)</usealttexture>					
+				<include>VerticalMenu_Button</include>
+				<onclick>Skin.ToggleSetting(flattenflow)</onclick>
+				<visible>Control.IsVisible(55) + !Container.Content(episodes)</visible>
+			</control> -->
+			<control type="radiobutton" id="827">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label> --$LOCALIZE[31974]: $LOCALIZE[31985]</label>
+				<onclick>Skin.ToggleSetting(dynamicflowtv)</onclick>
+				<selected>Skin.HasSetting(dynamicflowtv)</selected>
+				<visible>Container(12).HasFocus(6) + !Skin.HasSetting(flattenmultiplex)</visible>
+			</control>		
+			<control type="radiobutton" id="828">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label> --$LOCALIZE[31974]: $LOCALIZE[31984]</label>
+				<onclick>Skin.ToggleSetting(dynamicflowmovie)</onclick>
+				<selected>Skin.HasSetting(dynamicflowmovie)</selected>
+				<visible>Container(12).HasFocus(6) + !Skin.HasSetting(flattenmultiplex)</visible>
+			</control>		
+			<control type="radiobutton" id="829">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label> --$LOCALIZE[31974]: $LOCALIZE[31010]</label>
+				<onclick>Skin.ToggleSetting(dynamicflowmusic)</onclick>
+				<selected>Skin.HasSetting(dynamicflowmusic)</selected>
+				<visible>Container(12).HasFocus(6) + !Skin.HasSetting(flattenmultiplex)</visible>
+			</control>		
 		</control>
-<!-- TWEAKS END -->
+	<!-- TWEAKS END -->
 
-	<control type="label">
-		<posx>1180</posx>
-		<posy>270</posy>
-		<width>500</width>
-		<height>49</height>
-		<aligny>center</aligny>
-		<align>right</align>
-		<font>Font_SettingsOptions</font>
-		<label>$INFO[Skin.String(moviefolder)]</label>				
-		<visible>Container(10).HasFocus(6)</visible>
-	</control>
+		<control type="label">
+			<posx>1180</posx>
+			<posy>250</posy>
+			<width>500</width>
+			<height>49</height>
+			<aligny>center</aligny>
+			<align>right</align>
+			<font>Font_SettingsOptions</font>
+			<label>$INFO[Skin.String(moviefolder)]</label>				
+			<visible>Container(12).HasFocus(6)</visible>
+		</control>
 	
-	<include>Furniture_SettingsFrontPanel</include>
+		<include>Furniture_SettingsFrontPanel</include>
 	
 	<!--<include>Background_ContextBlack</include>-->
-	<include>Furniture_Debug</include>
+		<include>Furniture_Debug</include>
 	
 	</controls>
 </window>

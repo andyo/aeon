@@ -1,63 +1,55 @@
 <includes>
-	<include name="MultiplexInfoAutoUp">
-		<onup>7000</onup>
-	</include>
-	<include name="MultiplexInfoTriggerUp">
-		<onup>111</onup>
-	</include>	
-	
 	<include name="MultiplexIconDimensionsTVWrap">
 		<posx>4</posx>
 		<posy>0</posy>
 		<width>204</width>
-		<height>115</height>	
+		<height>115</height>
 	</include>
 	<include name="MultiplexIconDimensionsTVWrapReflect">
 		<posx>4</posx>
 		<posy>115</posy>
 		<width>204</width>
 		<height>115</height>
-		<colordiffuse>aaFFFFFF</colordiffuse>		
-	</include>	
-
+		<colordiffuse>aaFFFFFF</colordiffuse>
+	</include>
 <!-- Common Flow labels -->
-	<include name="MultiplexLabelVars">
+	<include name="MultiplexTVLabelVars">
 		<align>center</align>
 		<aligny>center</aligny>
 		<include>Animation_HideMultiplex</include>
-		<visible>![Control.HasFocus(60) | Control.HasFocus(94)]</visible>
+		<visible>![Control.HasFocus(63) | Control.HasFocus(94)]</visible>
 	</include>
-	<include name="MultiplexMainLabel">
-		<include>MultiplexLabelVars</include>
+	<include name="MultiplexTVMainLabel">
+		<include>MultiplexTVLabelVars</include>
 		<posx>415</posx>
-		<posy>673</posy>
+		<posy>680</posy>
 		<width>450</width>
 		<font>Font_ShowcaseMainLabel</font>
 		<include condition="!Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelLightShade</include>
 		<include condition="Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelNightShade</include>
-		<visible>!ControlGroup(7000).HasFocus()</visible>		
+		<visible>!ControlGroup(7000).HasFocus()</visible>
 		<scrollspeed>30</scrollspeed>
 		<scrollout>true</scrollout>
 		<pauseatend>3000</pauseatend>
 		<scroll>true</scroll>
 	</include>
 	<include name="MultiplexItemsLabel">
-		<include>MultiplexLabelVars</include>
+		<include>MultiplexTVLabelVars</include>
 		<posx>340</posx>
 		<posy>685</posy>
 		<width>600</width>
 		<font>Font_ShowcaseMainLabel</font>
 		<include condition="!Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelLightShade</include>
 		<include condition="Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelNightShade</include>
-		<visible>ControlGroup(7000).HasFocus()</visible>		
-	</include>	
-	<include name="MultiplexDetailLabel">
-		<include>MultiplexLabelVars</include>
+		<visible>ControlGroup(7000).HasFocus()</visible>
+	</include>
+	<include name="MultiplexTVDetailLabel">
+		<include>MultiplexTVLabelVars</include>
 		<posx>415</posx>
-		<posy>693</posy>
+		<posy>700</posy>
 		<width>450</width>
 		<font>Font_ShowcaseDetailLabel</font>
-		<visible>!ControlGroup(7000).HasFocus()</visible>		
+		<visible>!ControlGroup(7000).HasFocus()</visible>
 		<scrollspeed>30</scrollspeed>
 		<scrollout>true</scrollout>
 		<pauseatend>1500</pauseatend>
@@ -65,20 +57,20 @@
 		<include condition="!Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelLightShade</include>
 		<include condition="Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelNightShade</include>
 	</include>
-	
+
 <!-- TV Shows Multiplex Variables: Main thumbs -->
 	<include name="MultiplexTVShowsThumbDimensions">
-		<posx>21</posx>
+		<posx>24</posx>
 		<posy>148</posy>
 		<width>222</width>
-		<height>125</height>	
+		<height>125</height>
 	</include>
 	<include name="MultiplexTVShowsThumbReflectionDimensions">
-		<posx>21</posx>
-		<posy>262</posy>
+		<posx>24</posx>
+		<posy>273</posy>
 		<width>222</width>
 		<height>125</height>
-		<colordiffuse>aaFFFFFF</colordiffuse>		
+		<colordiffuse>aaFFFFFF</colordiffuse>
 	</include>
 	<include name="MultiplexTVShowsThumb">
 		<include>MultiplexTVShowsThumbDimensions</include>
@@ -501,18 +493,24 @@
 						</control>
 						<include>MultiplexTVThumbLabelBlock</include>
 						<control type="label">
-							<include>MultiplexTVThumbLabelLeft</include>
+							<posx>33</posx>
+							<posy>247</posy>
+							<width>204</width>
+							<height>50</height>
+							<align>center</align>
 							<label>EPISODE $INFO[ListItem(-1).Episode]</label>
+							<font>Font_MultiplexEpisodeLabel</font>
 							<visible>Container.Content(episodes)</visible>
 						</control>
 						<control type="label">
-							<include>MultiplexTVThumbLabelLeft</include>
+							<posx>33</posx>
+							<posy>247</posy>
+							<width>204</width>
+							<height>50</height>
+							<align>center</align>
 							<label>$INFO[ListItem(-1).Label]</label>
+							<font>Font_MultiplexEpisodeLabel</font>
 							<visible>Container.Content(seasons)</visible>
-						</control>
-						<control type="image">
-							<include>MultiplexTVThumbOverlayLeft</include>
-							<info>ListItem(-1).Overlay</info>
 						</control>
 					</control>
 				</control>
@@ -528,7 +526,7 @@
 				<posx>910</posx>
 				<visible>Container.OnPrevious</visible>
 				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
-				<animation effect="rotatey" center="1410" start="55" end="55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
 				<control type="group">
 					<visible>!Skin.HasSetting(dynamicflowtv) | [Skin.HasSetting(dynamicflowtv) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9)]]</visible>
 					<control type="image">
@@ -868,35 +866,41 @@
 							</control>
 						<include>MultiplexTVThumbLabelBlock</include>
 						<control type="label">
-							<include>MultiplexTVThumbLabelLeft</include>
-							<label>EPISODE $INFO[ListItem(1).Episode]</label>
+							<posx>33</posx>
+							<posy>247</posy>
+							<width>204</width>
+							<height>50</height>
+							<align>center</align>
+							<label>EPISODE $INFO[ListItem(0).Episode]</label>
+							<font>Font_MultiplexEpisodeLabel</font>
 							<visible>Container.Content(episodes)</visible>
 						</control>
 						<control type="label">
-							<include>MultiplexTVThumbLabelLeft</include>
-							<label>$INFO[ListItem(1).Label]</label>
+							<posx>33</posx>
+							<posy>247</posy>
+							<width>204</width>
+							<height>50</height>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Font_MultiplexEpisodeLabel</font>
 							<visible>Container.Content(seasons)</visible>
-						</control>
-						<control type="image">
-							<include>MultiplexTVThumbOverlayRight</include>
-							<info>ListItem(1).Overlay</info>
 						</control>
 					</control>
 				</control>
 			</control>
 		</control>
 
-		<control type="button" id="966">
+<!--		<control type="button" id="966">
 			<texture>-</texture>
 			<visible>!Skin.HasSetting(flattenmultiplex)</visible>
 			<animation effect="fade" start="100" end="0" time="800">Hidden</animation>
-		</control>
-		
+		</control> -->
+
 		<control type="group" id="5000">
 			<posy>380</posy>
 			<animation effect="fade" time="500">WindowOpen</animation>
 			<animation effect="fade" time="200">WindowClose</animation>
-			<visible>Control.IsVisible(552) + ![Control.IsVisible(5001) | Control.IsVisible(5002)] + Control.IsVisible(966)</visible>
+			<visible>Control.IsVisible(552) + ![Control.IsVisible(5001) | Control.IsVisible(5002)] + !Skin.HasSetting(flattenmultiplex)</visible>
 			<camera x="640" y="540" />
 			<control type="group">
 				<visible>!Skin.HasSetting(dynamicflowtv) | [Skin.HasSetting(dynamicflowtv) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8)]]</visible>
@@ -1211,133 +1215,55 @@
 						<info>ListItem(0).Overlay</info>
 					</control>
 				</control>
-			</control> 
+			</control>
 		</control>
 	</include>
 
 	<include name="Viewtype_Multiplex_TVShows">
-		<control type="group">
-			<include>Furniture_MediaPanel</include>
-			<visible>Control.IsVisible(552)</visible>
-			<include>Animation_HideMultiplex</include>
-		</control>
-
-		<control type="group">
-			<visible>Control.IsVisible(552) + !Container.Content(genres) + [!Skin.HasSetting(tvposterview) | Skin.HasSetting(tvposterview) + Container.Content(episodes)]</visible>
-			<include condition="Window.IsActive(25) + Skin.HasSetting(videotv)">MultiplexTVShows</include>
-			<include>Animation_HideMultiplex</include>
-		</control>
-
-		<control type="group" id="111">
-			<control type="button" id="112">
-				<visible>[Skin.HasSetting(videomovies) + !Skin.HasSetting(movietrailers)] | [Skin.HasSetting(videotv) + !Skin.HasSetting(tvpreview)] | [Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview) + !Container.Content(episodes)] | Skin.HasSetting(music) | ![Skin.HasSetting(videotv) + Skin.HasSetting(music)]</visible>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>0</width>
-				<height>0</height>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onleft>552</onleft>
-				<onright>552</onright>
-				<onup>7000</onup>
-				<ondown>600</ondown>
-				<onclick>552</onclick>
-			</control>
-			<control type="button" id="113">
-				<visible>[Skin.HasSetting(videomovies) + Skin.HasSetting(movietrailers) + !IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(videotv) + Skin.HasSetting(tvpreview) + Container.Content(episodes)]</visible>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>0</width>
-				<height>0</height>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onleft>552</onleft>
-				<onright>552</onright>
-				<onup>7000</onup>
-				<ondown>600</ondown>
-				<onclick>PlayMedia($INFO[listitem.path]$INFO[listitem.filename])</onclick>
-			</control>
-		</control>
-
-		<control type="image">
-			<posx>40</posx>
-			<posy>567</posy>
-			<width>33</width>
-			<height>37</height>
-			<texture>multiplex/multiplex_arrow2.png</texture>
-			<include>Animation_HideMultiplex</include>
-			<visible>Control.IsVisible(552)</visible>
-			<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Container.Content(movies)">Conditional</animation>
-		</control>
-		
-		<control type="image">
-			<posx>1207</posx>
-			<posy>567</posy>
-			<width>33</width>
-			<height>37</height>
-			<texture flipx="true">multiplex/multiplex_arrow2.png</texture>
-			<include>Animation_HideMultiplex</include>
-			<visible>Control.IsVisible(552)</visible>
-			<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Container.Content(movies)">Conditional</animation>			
-		</control>		
-			  
 		<control type="wraplist" id="552">
 			<posx>95</posx>
 			<posy>528</posy>
 			<width>1090</width>
-			<height>300</height>	
+			<height>300</height>
 			<onleft>552</onleft>
 			<onright>552</onright>
-			<include condition="Skin.HasSetting(videotv) + ![Skin.HasSetting(multiplextvshowsinfotrigger) | Skin.HasSetting(multiplextvseasonsinfotrigger) | Skin.HasSetting(multiplextvepisodesinfotrigger)]">MultiplexInfoAutoUp</include>
-			<include condition="Skin.HasSetting(videotv) + [Skin.HasSetting(multiplextvshowsinfotrigger) | Skin.HasSetting(multiplextvseasonsinfotrigger) | Skin.HasSetting(multiplextvepisodesinfotrigger)]">MultiplexInfoTriggerUp</include>
+			<onup>111</onup>
 			<ondown>600</ondown>
 			<viewtype label="Multiplex">list</viewtype>
-			<pagecontrol>60</pagecontrol>
+			<pagecontrol>61</pagecontrol>
 			<orientation>horizontal</orientation>
-			<focusposition>2</focusposition>	
+			<focusposition>2</focusposition>
 			<scrolltime>250</scrolltime>
 			<include>Animation_HideMultiplex</include>
 			<visible>!Window.IsActive(2003)</visible>
-			<visible>Window.IsActive(25) + [Container.Content(episodes) | [!Skin.HasSetting(tvposterview) + [Container.Content(tvshows) | Container.Content(seasons)]]]</visible>
-			<itemlayout width="219" height="300" condition="Skin.HasSetting(videotv)">
-				<control type="image">
-					<include>MultiplexIconDimensionsTVWrap</include>
-					<texture diffuse="multiplex/multiplex_tvmask.png">common/black.png</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
-				</control>				
+			<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Container.Content(episodes) | [!Skin.HasSetting(tvposterview) + [Container.Content(tvshows) | Container.Content(seasons)]] | substring(Container.FolderPath,plugin://video/IPlayer,left)]</visible>
+			<itemlayout width="219" height="300">
 				<control type="image">
 					<include>MultiplexIconDimensionsTVWrap</include>
 					<texture diffuse="multiplex/multiplex_tvmask.png">defaultvideo.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<info>ListItem.Icon</info>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
 				</control>
 				<control type="image">
 					<include>MultiplexIconDimensionsTVWrap</include>
 					<bordertexture border="-10">multiplex/multiplex_tvborder.png</bordertexture>
 					<texture>common/blank.png</texture>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
 				</control>
 				<control type="image">
 					<include>MultiplexIconDimensionsTVWrap</include>
 					<texture diffuse="multiplex/multiplex_tvmask.png">multiplex/multiplex_tvglass.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
-				</control>				
-				<control type="image">
-					<include>MultiplexIconDimensionsTVWrap</include>
-					<texture>common/blank.png</texture>
-					<colordiffuse>58FFFFFF</colordiffuse>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
 				</control>
 				<control type="image">
 					<include>MultiplexIconDimensionsTVWrapReflect</include>
 					<texture flipy="true" diffuse="multiplex/multiplex_tvmaskreflect.png">defaultvideo.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<info>ListItem.Icon</info>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
-				</control>				
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
+				</control>
 				<control type="image">
 					<posx>14</posx>
 					<posy>92</posy>
@@ -1345,15 +1271,6 @@
 					<height>60</height>
 					<texture>multiplex/multiplex_labelblock.png</texture>
 					<visible>[Container.Content(seasons) + Skin.HasSetting(flattenmultiplex)] | [Container.Content(episodes) + Skin.HasSetting(flattenmultiplex)]</visible>
-				</control>
-				<control type="image">
-					<posx>173</posx>
-					<posy>0</posy>
-					<width>35</width>
-					<height>35</height>
-					<include>detailcolorfocus</include>
-					<info>ListItem.Overlay</info>
-					<visible>Skin.HasSetting(flattenmultiplex) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
 				</control>
 				<control type="label">
 					<posx>107</posx>
@@ -1375,67 +1292,74 @@
 					<font>Font_MultiplexInfoLabel</font>
 					<visible>Container.Content(seasons) + !IsEmpty(ListItem.Season) + Skin.HasSetting(flattenmultiplex)</visible>
 				</control>
-				<control type="label">
-					<posx>107</posx>
-					<posy>98</posy>
-					<width>185</width>
-					<height>60</height>
-					<align>center</align>
-					<label>ALL SEASONS</label>
-					<font>Font_MultiplexInfoLabel</font>
-					<visible>Container.Content(seasons) + IsEmpty(ListItem.Season) + Skin.HasSetting(flattenmultiplex)</visible>
-				</control>					
-			</itemlayout>
-			<focusedlayout width="219" height="300" condition="Skin.HasSetting(videotv)">
 				<control type="image">
-					<include>MultiplexIconDimensionsTVWrap</include>
-					<texture diffuse="multiplex/multiplex_tvmask.png">common/black.png</texture>
-					<include>Animation_MultiplexTVFocusZoom</include>						
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
+					<posx>173</posx>
+					<posy>0</posy>
+					<width>35</width>
+					<height>35</height>
+					<info>ListItem.Overlay</info>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
 				</control>
+			</itemlayout>
+			<focusedlayout width="219" height="300">
 				<control type="image">
 					<include>MultiplexIconDimensionsTVWrap</include>
 					<texture diffuse="multiplex/multiplex_tvmask.png">defaultvideo.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<info>ListItem.Icon</info>
-					<include>Animation_MultiplexTVFocusZoom</include>					
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
-				</control>							
+					<include>Animation_MultiplexTVFocusZoom</include>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
+				</control>
 				<control type="image">
 					<include>MultiplexIconDimensionsTVWrap</include>
 					<bordertexture border="-10">multiplex/multiplex_tvborder.png</bordertexture>
 					<texture>common/blank.png</texture>
-					<include>Animation_MultiplexTVFocusZoom</include>					
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
+					<include>Animation_MultiplexTVFocusZoom</include>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
 				</control>
 				<control type="image">
 					<include>MultiplexIconDimensionsTVWrap</include>
 					<texture diffuse="multiplex/multiplex_tvmask.png">multiplex/multiplex_tvglass.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<include>Animation_MultiplexTVFocusZoom</include>					
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
-				</control>				
-				<control type="image">
-					<include>MultiplexIconDimensionsTVWrap</include>
-					<texture>common/blank.png</texture>
-					<colordiffuse>58FFFFFF</colordiffuse>
-					<include>Animation_MultiplexTVFocusZoom</include>					
+					<include>Animation_MultiplexTVFocusZoom</include>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
 				</control>
 				<control type="image">
 					<include>MultiplexIconDimensionsTVWrapReflect</include>
 					<texture flipy="true" diffuse="multiplex/multiplex_tvmaskreflect.png">defaultvideo.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<info>ListItem.Icon</info>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
-					<include>Animation_MultiplexTVFocusZoom</include>					
-				</control>					
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000)</visible>
+					<include>Animation_MultiplexTVFocusZoom</include>
+				</control>
 				<control type="image">
 					<posx>14</posx>
 					<posy>92</posy>
 					<width>185</width>
 					<height>60</height>
 					<texture>multiplex/multiplex_labelblock.png</texture>
+					<include>Animation_MultiplexTVFocusZoom</include>
 					<visible>[Container.Content(seasons) + Skin.HasSetting(flattenmultiplex)] | [Container.Content(episodes) + Skin.HasSetting(flattenmultiplex)]</visible>
+				</control>
+				<control type="label">
+					<posx>107</posx>
+					<posy>102</posy>
+					<width>185</width>
+					<height>60</height>
+					<align>center</align>
+					<label>EPISODE $INFO[ListItem.Episode]</label>
+					<font>Font_MultiplexEpisodeLabel</font>
+					<visible>Container.Content(episodes) + Skin.HasSetting(flattenmultiplex)</visible>
+				</control>
+				<control type="label">
+					<posx>107</posx>
+					<posy>102</posy>
+					<width>185</width>
+					<height>60</height>
+					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font_MultiplexEpisodeLabel</font>
+					<visible>Container.Content(seasons) + !IsEmpty(ListItem.Season) + Skin.HasSetting(flattenmultiplex)</visible>
 				</control>
 				<control type="image">
 					<posx>173</posx>
@@ -1443,222 +1367,10 @@
 					<width>35</width>
 					<height>35</height>
 					<info>ListItem.Overlay</info>
-					<include>Animation_MultiplexTVFocusZoom</include>	
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5000) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+					<include>Animation_MultiplexTVFocusZoom</include>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
 				</control>
-				<control type="label">
-					<posx>107</posx>
-					<posy>98</posy>
-					<width>185</width>
-					<height>60</height>
-					<align>center</align>
-					<label>EPISODE $INFO[ListItem.Episode]</label>
-					<font>Font_MultiplexInfoLabel</font>
-					<visible>Container.Content(episodes) + Skin.HasSetting(flattenmultiplex)</visible>
-				</control>
-			</focusedlayout>			
+			</focusedlayout>
 		</control>
-			
-		<control type="group" id="600">
-			<control type="button" id="601">
-				<visible>Player.Playing</visible>
-				<onleft>552</onleft>
-				<onright>552</onright>
-				<onup>7000</onup>
-				<ondown>604</ondown>
-				<onfocus>PlayerControl(stop)</onfocus>
-			</control>
-			<control type="button" id="602">
-				<visible>Container.Content(episodes) + Skin.HasSetting(tvpreview) + !Player.Playing + !Skin.HasSetting(multiplextvepisodesinfooff)</visible>
-				<onleft>552</onleft>
-				<onright>552</onright>
-				<onup>7000</onup>
-				<ondown>604</ondown>
-				<onfocus>PlayMedia($INFO[listitem.path]$INFO[listitem.filename],1)</onfocus>
-			</control>
-
-			<control type="button" id="603">
-			<visible>![Skin.HasSetting(tvpreview) | Player.Playing] | [[Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfooff)]]</visible>
-			<onfocus>SetFocus(60)</onfocus>
-			</control>
-		</control>
-
-		<control type="button" id="604">
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
-			<onleft>552</onleft>
-			<onright>552</onright>
-			<onup>7000</onup>
-			<ondown>600</ondown>
-			<onfocus>PlayerControl(stop)</onfocus>
-		</control>
-
-		<control type="scrollbar" id="60">
-			<description>My first scroll bar control</description>
-			<posx>305</posx>
-			<posy>663</posy>
-			<width>670</width>
-			<height>41</height>
-			<visible allowhiddenfocus="true">Control.IsVisible(552) + Control.HasFocus(60)</visible>
-			<texturesliderbackground>windows/scrollbarbackshowcase.png</texturesliderbackground>
-			<texturesliderbar>-</texturesliderbar>
-			<texturesliderbarfocus>-</texturesliderbarfocus>
-			<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
-			<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
-			<pulseonselect></pulseonselect>
-			<orientation>horizontal</orientation>
-			<showonepage>false</showonepage>
-			<onup>552</onup>
-			<ondown>197</ondown>
-			<onleft>60</onleft>
-			<onright>60</onright>
-			<include>Animation_HideMultiplex</include>
-			<include>Animation_CommonFade</include>
-		</control>
-		
-		<control type="button" id="197">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>0</width>
-			<height>0</height>
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
-			<onleft>552</onleft>
-			<onright>552</onright>
-			<onup>552</onup>
-			<ondown>552</ondown>
-		</control>		
-
-		<control type="group">
-			<visible>Control.IsVisible(552)</visible>
-			<control type="fadelabel">
-				<label>31609</label>
-				<label>31610</label>					
-				<scrollout>false</scrollout>
-				<pauseatend>3000</pauseatend>
-				<scroll>false</scroll>
-				<include>MultiplexMainLabel</include>
-				<visible>Window.IsActive(25) + Control.IsVisible(552) + stringcompare(numitems,0)</visible>
-			</control>
-
-<!-- POPUP FLOOR TEXT -->
-			<control type="group">
-				<visible>[[Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)]]</visible>
-				<include>Animation_HideMultiplex</include>
-
-				<control type="label" id="72">
-					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Genre)</visible>
-				</control>
-				<control type="label">
-					<label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes) + !stringcompare(ListItem.Season,0)] | [Container.Content(seasons) + Skin.HasSetting(tvposterview) + !stringcompare(ListItem.Season,0)]</visible>
-				</control>			
-				<control type="label">
-					<label>[UPPERCASE]SPECIALS[/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes) + stringcompare(ListItem.Season,0)] | [Container.Content(seasons) + Skin.HasSetting(tvposterview) + stringcompare(ListItem.Season,0)]</visible>
-				</control>			
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(seasons) + Skin.HasSetting(tvposterview)] | [Skin.HasSetting(tvposterview) + Container.Content(seasons)]</visible>
-				</control>
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>[!Skin.HasSetting(tvposterview) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
-				</control>
-				<control type="label" id="72">
-					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes)</visible>
-				</control>
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>[Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes)</visible>
-				</control>			
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle] - SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>[[Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes) + !stringcompare(ListItem.Season,0)]</visible>
-				</control>			
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle] - SPECIALS[/UPPERCASE]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>[[Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes) + stringcompare(ListItem.Season,0)]</visible>
-				</control>			
-
-				<control type="label">
-					<label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31005][/UPPERCASE]</label>
-					<include>MultiplexItemsLabel</include>
-				</control>				
-			</control>
-
-<!-- FULLSCREEN FLOOR TEXT -->
-			<control type="group">
-				<visible>[[Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes)] + Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)]]</visible>
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>					
-				</control>
-
-				<!-- Movie Text -->
-				<control type="label" id="72">
-					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>![Control.IsVisible(109) | Control.HasFocus(112)] + [!Container.Content(seasons) + !Container.Content(episodes) + Window.IsActive(25)]</visible>
-				</control>
-				
-				<!-- TV Shows -->
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
-				</control>
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(tvshows)</visible>
-				</control>
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>Container.Content(seasons)</visible>
-				</control>
-
-				<control type="label">
-					<label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(seasons) + !stringcompare(ListItem.Season,0) + Skin.HasSetting(tvposterview)]] | [![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(episodes) + !stringcompare(ListItem.Season,0)] + !VideoPlayer.Content(episodes)]</visible>
-				</control>			
-				<control type="label">
-					<label>[UPPERCASE]SPECIALS[/UPPERCASE]</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(seasons) + stringcompare(ListItem.Season,0) + Skin.HasSetting(tvposterview)]] | [![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(episodes) + stringcompare(ListItem.Season,0)] + !VideoPlayer.Content(episodes)]</visible>
-				</control>			
-
-				<control type="label" id="72">
-					<label>$INFO[ListItem.TVShowTitle]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes)</visible>
-				</control>
-				<control type="label">
-					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
-					<include>MultiplexMainLabel</include>
-					<visible>[Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes)</visible>
-				</control>			
-				
-				<control type="label" id="72">
-					<label>RUN TIME: $INFO[VideoPlayer.Duration] (FINISH TIME: $INFO[Player.FinishTime])</label>
-					<include>MultiplexDetailLabel</include>
-					<visible>VideoPlayer.Content(episodes) + Container.Content(episodes)</visible>
-				</control>
-			</control>
-		</control>			
 	</include>
 </includes>

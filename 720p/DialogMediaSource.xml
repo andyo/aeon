@@ -79,7 +79,7 @@
 		<control type="label" id="0">
 			<description>Path Label</description>
 			<posx>10</posx>
-			<posy>13</posy>
+			<posy>18</posy>
 			<width>673</width>
 			<height>28</height>
 			<align>center</align>
@@ -134,12 +134,12 @@
 		</control>
 		
 		<control type="group" id="9000">
-			<posx>382</posx>
+			<posx>376</posx>
 			<posy>97</posy>
 			<control type="button" id="11">
 				<description>Button: Browse</description>
 				<posy>0</posy>
-				<width>156</width>
+				<width>162</width>
 				<height>41</height>
 				<font>Font_SetContentMenu</font>
 				<label>1024</label>
@@ -159,7 +159,7 @@
 			<control type="button" id="13">
 				<description>Button: Add</description>
 				<posy>41</posy>
-				<width>156</width>
+				<width>162</width>
 				<height>41</height>
 				<font>Font_SetContentMenu</font>
 				<label>15019</label>
@@ -179,7 +179,7 @@
 			<control type="button" id="14">
 				<description>Button: Remove</description>
 				<posy>82</posy>
-				<width>156</width>
+				<width>162</width>
 				<height>41</height>
 				<font>Font_SetContentMenu</font>
 				<label>1210</label>
@@ -199,7 +199,7 @@
 			<control type="button" id="19">
 				<description>Button: Cancel</description>
 				<posy>123</posy>
-				<width>156</width>
+				<width>162</width>
 				<height>41</height>
 				<font>Font_SetContentMenu</font>
 				<label>222</label>
@@ -219,7 +219,7 @@
 			<control type="button" id="18">
 				<description>Button: OK</description>
 				<posy>164</posy>
-				<width>156</width>
+				<width>162</width>
 				<height>41</height>
 				<font>Font_SetContentMenu</font>
 				<label>186</label>

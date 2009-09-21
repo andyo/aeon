@@ -4,86 +4,82 @@
 	<views>50,550,553,53</views>
 	<controls>
 
-	<control type="group">
-		<visible>[!Skin.HasSetting(nomusicgenrefanart) + Container.Content(genres)] | !Container.Content(genres)</visible>
-		<control type="multiimage">
-			<include>BackgroundVarsGlobal</include>
-			<include>BackgroundVarsMusic</include>
+		<control type="group">
+			<visible>[!Skin.HasSetting(nomusicgenrefanart) + Container.Content(genres)] | !Container.Content(genres)</visible>
+			<control type="multiimage">
+				<include>BackgroundVarsGlobal</include>
+				<include>BackgroundVarsMusic</include>
+			</control>
+			<control type="largeimage" id="102">
+				<include>FullscreenDimensions</include>
+				<visible>!Control.IsVisible(103) + [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(553)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+				<fadetime>400</fadetime>
+				<texture>$INFO[listitem.property(fanart_image)]</texture>
+				<include>Animation_FanartFade</include>
+			</control>
+
+			<control type="largeimage" id="103">
+				<include>FullscreenDimensions</include>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(553)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+				<fadetime>400</fadetime>
+				<texture>$INFO[container.property(fanart_image)]</texture>
+				<include>Animation_FanartFade</include>
+			</control>
+			
+			<control type="largeimage" id="104">
+				<include>FullscreenDimensions</include>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(553)] + Container.Content(songs) + !Skin.HasSetting(nomusicfanart)</visible>
+				<fadetime>400</fadetime>
+				<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
+				<include>Animation_FanartFade</include>
+			</control>
 		</control>
-		<control type="largeimage" id="102">
-			<include>FullscreenDimensions</include>
-			<visible>!Control.IsVisible(103) + [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(553)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
-			<fadetime>400</fadetime>
-			<texture>$INFO[listitem.property(fanart_image)]</texture>
-			<include>Animation_FanartFade</include>
+		 
+		<include>MediaBackdropsMusicGenres</include>
+
+		<control type="image" id="109">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<texture>-</texture>
+			<visible>[Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(nomultiplexmusicpopup) + ![Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfotrigger)] + [Control.HasFocus(553) | Control.HasFocus(60) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]</visible>
+			<animation effect="fade" start="0" end="100" time="150" delay="1500">Visible</animation>
 		</control>
 
-		<control type="largeimage" id="103">
-			<include>FullscreenDimensions</include>
-			<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(553)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
-			<fadetime>400</fadetime>
-			<texture>$INFO[container.property(fanart_image)]</texture>
-			<include>Animation_FanartFade</include>
-		</control>
-		
-		<control type="largeimage" id="104">
-			<include>FullscreenDimensions</include>
-			<visible>[Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(553)] + Container.Content(songs) + !Skin.HasSetting(nomusicfanart)</visible>
-			<fadetime>400</fadetime>
-			<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
-			<include>Animation_FanartFade</include>
-		</control>
-	</control>
-	 
-	<include condition="Skin.HasSetting(music)">MediaBackdropsMusicGenres</include>
+		<include>Furniture_WallBackground</include>	
 
-	<control type="image" id="109">
-		<posx>0</posx>
-		<posy>0</posy>
-		<width>0</width>
-		<height>0</height>
-		<texture>-</texture>
-		<visible>Skin.HasSetting(music) + !Skin.HasSetting(nomultiplexmusicpopup) + ![Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfotrigger)] + [Control.HasFocus(553) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]</visible>
-		<animation effect="fade" start="0" end="100" time="150" delay="1500">Visible</animation>
-	</control>
-
-<!--	<include>MediaBackdropsMultiplex</include>	-->
-	
-	<include>Furniture_WallBackground</include>	
-
-	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
 		<include>Conditions_HiddenByInfoPages</include>
-		<include>Furniture_FloorBack</include>
-		<include>Furniture_shadow</include>
-		<include>Viewtype_Multiplex_Music</include>
-		<include>Viewtype_Wall</include>
-<!--		<include>Viewtype_Showcase</include> -->
-		<include>Viewtype_List</include>
 		<include>Furniture_Time</include>		
-		<include>Furniture_WallTime</include>
-		<include>Furniture_WallRSS</include>		
-		<include>Furniture_Multiplex_Showscase_MediaFlags</include>
-		<include>Furniture_ListMediaFlags</include>
-		<include>VerticalMenu</include>		
-	</control>
 
-	<include>Furniture_DarkGradient</include>	
-	<!--<include>ViewChange</include>-->
-	<!--<include>Background_ContextBlack</include>-->
-	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
-<!-- DEBUG INFO -->
-	<control type="label">
-		<posx>700</posx>
-		<posy>50</posy>
-		<width>900</width>
-		<height>13</height>
-		<font>Font_MultiplexInfoLabel</font>
-		<textcolor>FFFFFFFF</textcolor>		
-		<label>** $INFO[container.folderpath]</label>
-		<visible>Skin.HasSetting(debug)</visible>
-	</control>	
-	
+		<include>Furniture_shadow</include>
+		<include>Furniture_vignette</include>
+		<include>Furniture_FloorBack</include>
+
+		<include>Viewtype_Multiplex</include>
+		<include>Viewtype_Wall</include>
+		<include>Viewtype_List</include>
+
+		<include>Furniture_Multiplex_MediaFlags</include>
+		<include>Furniture_ListMediaFlags</include>
+		<include>ScrollOffsetLabel</include>	
+		<include>VerticalMenu</include>		
+
+		<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
+
+	<!-- DEBUG INFO -->
+		<control type="label">
+			<posx>700</posx>
+			<posy>50</posy>
+			<width>900</width>
+			<height>13</height>
+			<font>Font_MultiplexInfoLabel</font>
+			<textcolor>FFFFFFFF</textcolor>		
+			<label>** $INFO[container.folderpath]</label>
+			<visible>Skin.HasSetting(debug)</visible>
+		</control>	
+		
 	</controls>
 </window>

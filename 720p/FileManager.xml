@@ -20,14 +20,36 @@
 		<control type="group">
 			<posx>20</posx>
 			<posy>50</posy>
-			<include>FilemanagerPanelExtents</include>
+			<width>620</width>
+			<height>647</height>
 
 			<animation effect="slide" start="-640" end="0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" start="0" end="-640" time="300" tween="quadratic" easing="in">WindowClose</animation>
-			<animation effect="fade" time="200" start="75" end="100" reversible="false" condition="Control.HasFocus(20)">Conditional</animation>
-			<animation effect="fade" time="200" start="100" end="75" reversible="false" condition="Control.HasFocus(21)">Conditional</animation>
 		
-			<include>FilemanagerPanelCommonObjects</include>
+			<control type="image">
+				<width>620</width>
+				<height>647</height>
+				<posx>0</posx>
+				<posy>0</posy>
+				<texture>list/listpanel_back_noreflect.png</texture>
+				<visible>Control.HasFocus(20)</visible>
+			</control>
+			<control type="image">
+				<width>620</width>
+				<height>647</height>
+				<posx>0</posx>
+				<posy>0</posy>
+				<texture>list/listpanel_back_noselect_noreflect.png</texture>
+				<visible>Control.HasFocus(21)</visible>
+			</control>
+
+			<control type="image">
+				<posx>525</posx>
+				<posy>76</posy>
+				<width>85</width>
+				<height>555</height>
+				<texture>list/listpanel_detailwide.png</texture>
+			</control>
 			
 			<control type="label" id="101">
 				<posx>25</posx>
@@ -35,7 +57,7 @@
 				<width>475</width>
 				<font>Font_FileBrowserHeading</font>
 				<scroll>true</scroll>
-				<textcolor>1dFFFFFF</textcolor>
+				<textcolor>ADFFFFFF</textcolor>
 			</control>
 			
 			<control type="label">
@@ -43,7 +65,7 @@
 				<posy>32</posy>
 				<align>right</align>
 				<font>Font_ListSmall</font>
-				<textcolor>1dFFFFFF</textcolor>
+				<textcolor>ADFFFFFF</textcolor>
 				<label>$INFO[Container(20).NumItems] $LOCALIZE[31005]</label>
 			</control>
 		</control>
@@ -53,7 +75,7 @@
 		<control type="list" id="20">
 			<viewtype label="31752">list</viewtype>
 			<posx>20</posx> 
-			<posy>124</posy>
+			<posy>127</posy>
 			<width>620</width>
 			<height>525</height>
 			<scrolltime>0</scrolltime>
@@ -64,15 +86,13 @@
 
 			<animation effect="slide" start="-640" end="0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" start="0" end="-640" time="300" tween="quadratic" easing="in">WindowClose</animation>
-			<animation effect="fade" time="200" start="75" end="100" reversible="false" condition="Control.HasFocus(20)">Conditional</animation>
-			<animation effect="fade" time="200" start="100" end="75" reversible="false" condition="Control.HasFocus(21)">Conditional</animation>
 
 			<itemlayout height="40">
 				<control type="image">
-					<posx>12</posx>
-					<posy>41</posy>
+					<posx>19</posx>
+					<posy>38</posy>
 					<height>1</height>
-					<width>620</width>
+					<width>584</width>
 					<texture>list/listpanel_line.png</texture>
 				</control>
 				<control type="label">
@@ -82,8 +102,8 @@
 					<height>39</height>
 					<font>Font_ListSmall</font>
 					<aligny>center</aligny>
-					<textcolor>dcffffff</textcolor>
-					<selectedcolor>ff2e2e2e</selectedcolor>
+					<textcolor>FF949494</textcolor>
+					<selectedcolor>FFFFFFFF</selectedcolor>
 					<info>ListItem.Label</info>
 				</control>
 				<control type="label">
@@ -94,23 +114,23 @@
 					<font>Font_ListDetail</font>
 					<align>right</align>
 					<aligny>center</aligny>	
-					<textcolor>dcbdbdbd</textcolor>
-					<selectedcolor>FF585858</selectedcolor>
+					<textcolor>FF949494</textcolor>
+					<selectedcolor>FFFFFFFF</selectedcolor>
 					<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
 				</control>
 			</itemlayout>					
 			<focusedlayout height="40">
 				<control type="image">
-					<posx>12</posx>
-					<posy>41</posy>
+					<posx>19</posx>
+					<posy>38</posy>
 					<height>1</height>
-					<width>620</width>
+					<width>584</width>
 					<texture>list/listpanel_line.png</texture>
 				</control>
 				<control type="image">
-					<posx>8</posx>
+					<posx>15</posx>
 					<posy>-5</posy>
-					<width>604</width>
+					<width>590</width>
 					<height>50</height>
 					<visible>Control.HasFocus(20)</visible>
 					<texture>list/listpanel_selectbar.png</texture>
@@ -125,6 +145,7 @@
 					<textcolor>ff2e2e2e</textcolor>
 					<selectedcolor>ff2e2e2e</selectedcolor>
 					<info>ListItem.Label</info>
+					<visible>Control.HasFocus(20)</visible>
 				</control>
 				<control type="label">
 					<posx>600</posx>
@@ -134,9 +155,35 @@
 					<font>Font_ListDetail</font>
 					<align>right</align>
 					<aligny>center</aligny>	
-					<textcolor>FF585858</textcolor>
+					<textcolor>ff2e2e2e</textcolor>
+					<selectedcolor>ff2e2e2e</selectedcolor>
+					<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
+					<visible>Control.HasFocus(20)</visible>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<posy>0</posy>
+					<width>500</width>
+					<height>39</height>
+					<font>Font_ListSmall</font>
+					<aligny>center</aligny>
+					<textcolor>FF949494</textcolor>
+					<selectedcolor>ff2e2e2e</selectedcolor>
+					<info>ListItem.Label</info>
+					<visible>Control.HasFocus(21)</visible>
+				</control>
+				<control type="label">
+					<posx>600</posx>
+					<posy>0</posy>
+					<width>85</width>
+					<height>41</height>
+					<font>Font_ListDetail</font>
+					<align>right</align>
+					<aligny>center</aligny>	
+					<textcolor>FF949494</textcolor>
 					<selectedcolor>FF585858</selectedcolor>
 					<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
+					<visible>Control.HasFocus(21)</visible>
 				</control>
 			</focusedlayout>
 		</control>
@@ -146,14 +193,36 @@
 		<control type="group">
 			<posx>640</posx>
 			<posy>50</posy>
-			<include>FilemanagerPanelExtents</include>
+			<width>620</width>
+			<height>647</height>
 			
 			<animation effect="slide" start="640" end="0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" start="0" end="640" time="300" tween="quadratic" easing="in">WindowClose</animation>
-			<animation effect="fade" time="200" start="75" end="100" reversible="false" condition="Control.HasFocus(21)">Conditional</animation>
-			<animation effect="fade" time="200" start="100" end="75" reversible="false" condition="Control.HasFocus(20)">Conditional</animation>
 			
-			<include>FilemanagerPanelCommonObjects</include>
+			<control type="image">
+				<width>620</width>
+				<height>647</height>
+				<posx>0</posx>
+				<posy>0</posy>
+				<texture>list/listpanel_back_noreflect.png</texture>
+				<visible>Control.HasFocus(21)</visible>
+			</control>
+			<control type="image">
+				<width>620</width>
+				<height>647</height>
+				<posx>0</posx>
+				<posy>0</posy>
+				<texture>list/listpanel_back_noselect_noreflect.png</texture>
+				<visible>Control.HasFocus(20)</visible>
+			</control>
+
+			<control type="image">
+				<posx>525</posx>
+				<posy>76</posy>
+				<width>85</width>
+				<height>555</height>
+				<texture>list/listpanel_detailwide.png</texture>
+			</control>
 			
 			<control type="label" id="102">
 				<posx>25</posx>
@@ -161,7 +230,7 @@
 				<width>475</width>
 				<font>Font_FileBrowserHeading</font>
 				<scroll>true</scroll>
-				<textcolor>1dFFFFFF</textcolor>
+				<textcolor>ADFFFFFF</textcolor>
 			</control>
 			
 			<control type="label">
@@ -169,7 +238,7 @@
 				<posy>32</posy>
 				<align>right</align>
 				<font>Font_ListSmall</font>
-				<textcolor>1dFFFFFF</textcolor>
+				<textcolor>ADFFFFFF</textcolor>
 				<label>$INFO[Container(21).NumItems] $LOCALIZE[31005]</label>
 			</control>
 		</control>
@@ -179,7 +248,7 @@
 		<control type="list" id="21">
 			<viewtype label="31752">list</viewtype>
 			<posx>640</posx> <!-- 0 -->
-			<posy>124</posy> <!-- 74 -->
+			<posy>127</posy> <!-- 74 -->
 			<width>620</width>
 			<height>525</height>
 			<scrolltime>0</scrolltime>
@@ -192,10 +261,10 @@
 			<animation effect="fade" time="200" start="100" end="75" reversible="false" condition="Control.HasFocus(20)">Conditional</animation>
 			<itemlayout height="40">
 				<control type="image">
-					<posx>12</posx>
-					<posy>41</posy>
+					<posx>19</posx>
+					<posy>38</posy>
 					<height>1</height>
-					<width>620</width>
+					<width>594</width>
 					<texture>list/listpanel_line.png</texture>
 				</control>
 				<control type="label">
@@ -205,8 +274,8 @@
 					<height>39</height>
 					<font>Font_ListSmall</font>
 					<aligny>center</aligny>
-					<textcolor>dcffffff</textcolor>
-					<selectedcolor>ff2e2e2e</selectedcolor>
+					<textcolor>FF949494</textcolor>
+					<selectedcolor>FFFFFFFF</selectedcolor>
 					<info>ListItem.Label</info>
 				</control>
 				<control type="label">
@@ -217,23 +286,23 @@
 					<font>Font_ListDetail</font>
 					<align>right</align>
 					<aligny>center</aligny>	
-					<textcolor>dcbdbdbd</textcolor>
-					<selectedcolor>FF585858</selectedcolor>
+					<textcolor>FF949494</textcolor>
+					<selectedcolor>FFFFFFFF</selectedcolor>
 					<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
 				</control>
 			</itemlayout>					
 			<focusedlayout height="40">
 				<control type="image">
-					<posx>12</posx>
-					<posy>41</posy>
+					<posx>19</posx>
+					<posy>38</posy>
 					<height>1</height>
-					<width>620</width>
+					<width>584</width>
 					<texture>list/listpanel_line.png</texture>
 				</control>
 				<control type="image">
-					<posx>8</posx>
+					<posx>15</posx>
 					<posy>-5</posy>
-					<width>604</width>
+					<width>590</width>
 					<height>50</height>
 					<visible>Control.HasFocus(21)</visible>
 					<texture>list/listpanel_selectbar.png</texture>
@@ -248,6 +317,7 @@
 					<textcolor>ff2e2e2e</textcolor>
 					<selectedcolor>ff2e2e2e</selectedcolor>
 					<info>ListItem.Label</info>
+					<visible>Control.HasFocus(21)</visible>
 				</control>
 				<control type="label">
 					<posx>600</posx>
@@ -257,11 +327,35 @@
 					<font>Font_ListDetail</font>
 					<align>right</align>
 					<aligny>center</aligny>	
-
-					<textcolor>FF585858</textcolor>
-					<selectedcolor>FF585858</selectedcolor>
-					
+					<textcolor>ff2e2e2e</textcolor>
+					<selectedcolor>ff2e2e2e</selectedcolor>
 					<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
+					<visible>Control.HasFocus(21)</visible>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<posy>0</posy>
+					<width>500</width>
+					<height>39</height>
+					<font>Font_ListSmall</font>
+					<aligny>center</aligny>
+					<textcolor>FF949494</textcolor>
+					<selectedcolor>FF949494</selectedcolor>
+					<info>ListItem.Label</info>
+					<visible>Control.HasFocus(20)</visible>
+				</control>
+				<control type="label">
+					<posx>600</posx>
+					<posy>0</posy>
+					<width>85</width>
+					<height>41</height>
+					<font>Font_ListDetail</font>
+					<align>right</align>
+					<aligny>center</aligny>	
+					<textcolor>FF949494</textcolor>
+					<selectedcolor>FF585858</selectedcolor>
+					<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
+					<visible>Control.HasFocus(20)</visible>
 				</control>
 			</focusedlayout>
 		</control>

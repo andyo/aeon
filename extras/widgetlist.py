@@ -12,7 +12,7 @@ dialog = xbmcgui.DialogProgress()
 
 class Main:
     # grab the home window
-    WINDOW = Window ( 10004 )
+    WINDOW = Window ( 10560 )
     Home_CLEAN = Window ( 10000 )
 
     def __init__( self ):

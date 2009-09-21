@@ -25,9 +25,9 @@
 		
 		<control type="grouplist" id="2">
 			<description>control area</description>
-			<posx>10</posx>
+			<posx>18</posx>
 			<posy>35</posy>
-			<width>679</width>
+			<width>671</width>
 			<height>246</height>
 			<itemgap>0</itemgap>
 			<onup>2</onup>

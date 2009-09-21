@@ -71,7 +71,7 @@
 	<control type="group">
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
-		<include>Furniture_MediaPanel</include>
+		<include>Furniture_FloorFront</include>
 		<include>Viewtype_Wall</include>		
 		<include>Viewtype_StripShow</include>
 <!--		<include>Viewtype_Showcase</include> -->
@@ -82,7 +82,7 @@
 	<include>VerticalMenu</include>		
 	</control>
 
-	<include>Furniture_DarkGradient</include>	
+	<!--<include>Furniture_DarkGradient</include>-->	
 	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	

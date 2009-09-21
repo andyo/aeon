@@ -8,7 +8,6 @@
 			<include>Objects_SettingsSectionMenuButton</include>
 			<onup>9</onup>
 			<ondown>7</ondown>
-			<onfocus>Skin.Reset(bmtransitassistant)</onfocus>
 			<visible allowhiddenfocus="true">![Control.HasFocus(6) | Control.HasFocus(300)]</visible>
 		</control>
 		<control type="button" id="6">

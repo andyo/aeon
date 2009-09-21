@@ -8,7 +8,7 @@ dialog = xbmcgui.DialogProgress()
 
 class Main:
     # grab the home window
-    WINDOW = Window ( 10603 )
+    WINDOW = Window ( 10560 )
 
     def __init__( self ):
         dialog.create("Aeon Mod","Loading and parsing favourites data...")
@@ -20,7 +20,7 @@ class Main:
         dialog.close()
 
     def _clear_properties( self ):
-        for count in range( 20 ):
+        for count in range( 13 ):
             # clear Property
             self.WINDOW.clearProperty( "favourite.%d.path" % ( count + 1, ) )
             self.WINDOW.clearProperty( "favourite.%d.name" % ( count + 1, ) )

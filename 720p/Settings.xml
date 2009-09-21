@@ -2,25 +2,16 @@
 	<defaultcontrol always="true">6</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<controls>
+
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
 			<include>BackgroundTimings</include>
 			<imagepath>backdrops/default_settings</imagepath>
 			<info>Skin.String(CustomSettings)</info>
-			<animation effect="fade" start="0" end="100" time="200" condition="[Skin.HasSetting(settingsfade) + Window.Previous(Home)] | Skin.HasSetting(bmtransit)">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="200" condition="[[Skin.HasSetting(settingsfade) | Skin.HasSetting(nosettings)] + Window.Next(Home)] | [Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)]">WindowClose</animation>
 		</control>
        
 		<control type="group">
 			<include>FullscreenDimensions</include>
-             <animation type="WindowOpen" reversible="false" condition="!Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(18) + !Window.Previous(19) + !Window.Previous(17) + !Window.Previous(604) + !Window.Previous(56) + !Window.Previous(34)">
-				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-				<effect type="fade" start="0" end="100" time="300" />
-			</animation>
-			<animation type="WindowClose" reversible="false" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">
-				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-				<effect type="fade" start="100" end="0" time="300" />
-			</animation>
 			<include>Furniture_SettingsBackPanel</include>
 
 			<control type="image">
@@ -28,19 +19,13 @@
 				<include>Animation_SettingsInternalPanel</include>
 			</control>
 		
-<!--			<control type="button" id="6">
-				<onfocus>SetFocus(8)</onfocus>
-				<onfocus>Skin.Reset(bmtransit)</onfocus>
-			</control> -->
-
 			<control type="list" id="6">
 				<posx>42</posx>
-				<posy>67</posy>
+				<posy>62</posy>
 				<height>650</height>
 				<width>250</width>
 				<onup>6</onup>
 				<ondown>6</ondown>
-				<onfocus>Skin.Reset(bmtransit)</onfocus>
 				<viewtype>list</viewtype>
 				<orientation>vertical</orientation>
 				<focusposition>0</focusposition>
@@ -65,7 +50,7 @@
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
-						<width>216</width>
+						<width>220</width>
 						<height>54</height>
 						<texture>settings/settings_leftmenufocus.png</texture>
 					</control>
@@ -378,7 +363,7 @@
 				<width>1196</width>
 				<height>651</height>
 				<texture>settings/settings_panelfront.png</texture>
-			</control>
+			</control> 
 
 			<control type="image">
 				<posx>331</posx>

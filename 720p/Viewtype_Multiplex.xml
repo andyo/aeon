@@ -1,0 +1,406 @@
+<includes>
+	<include name="Viewtype_Multiplex">
+		<include>MultiplexInfoPaneMovies_FS</include>	
+		<include>MultiplexInfoPaneMovies_Window</include>	
+		<include>MultiplexInfoPaneTV_FS</include>
+		<include>MultiplexInfoPaneTV_Window</include>
+		<include>MultiplexInfoPaneMusic</include>
+
+		<include>Furniture_FloorFront</include>
+
+		<control type="group">
+			<visible>Control.IsVisible(551) + [[[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(tvposterview)] | ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
+			<include condition="Window.IsActive(24) | Window.IsActive(25)">MultiplexMovies</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(552) + !Container.Content(genres) + [!Skin.HasSetting(tvposterview) | Skin.HasSetting(tvposterview) + Container.Content(episodes)]</visible>
+			<include condition="Window.IsActive(24) | Window.IsActive(25)">MultiplexTVShows</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(553)</visible>
+			<include condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)">MultiplexMusic</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+
+		<control type="group" id="111">
+			<control type="button" id="112">
+				<visible>[![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Skin.HasSetting(multiplexcommoninfotrigger)] | [Container.Content(movies) + Skin.HasSetting(multiplexinfotrigger) + [!Skin.HasSetting(movietrailers) | [Skin.HasSetting(movietrailers) + IsEmpty(ListItem.Trailer)]]] | [!Skin.HasSetting(tvpreview) + Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)] | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [[Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Skin.HasSetting(multiplexmusicinfotrigger)]</visible>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>0</width>
+				<height>0</height>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>7000</onup>
+				<ondown>600</ondown>
+				<onclick>SetFocus(551)</onclick>
+			</control>
+			<control type="button" id="113">
+				<visible>[![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Skin.HasSetting(multiplexcommoninfotrigger)] | [Container.Content(movies) + Skin.HasSetting(multiplexinfotrigger) + Skin.HasSetting(movietrailers) + !IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(tvpreview) + Skin.HasSetting(multiplextvepisodesinfotrigger) + Container.Content(episodes)]</visible>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>0</width>
+				<height>0</height>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>7000</onup>
+				<ondown>600</ondown>
+				<onclick>PlayMedia($INFO[listitem.path]$INFO[listitem.filename])</onclick>
+			</control>
+			<control type="button" id="114">
+				<visible>[![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(multiplexcommoninfotrigger)] | [Container.Content(movies) + !Skin.HasSetting(multiplexinfotrigger)] | [Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfotrigger)] | [[Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(multiplexmusicinfotrigger)]</visible>
+				<onfocus>SetFocus(7000)</onfocus>
+			</control>
+		</control>
+
+		<control type="image">
+			<posx>38</posx>
+			<posy>537</posy>
+			<width>33</width>
+			<height>37</height>
+			<texture>multiplex/multiplex_arrow2.png</texture>
+			<include>Animation_HideMultiplex</include>
+			<visible>Control.IsVisible(551)|Control.IsVisible(552)|Control.IsVisible(553)</visible>
+			<animation effect="slide" end="0,30" time="0" condition="Control.IsVisible(552)">Conditional</animation>
+		</control>
+		<control type="image">
+			<posx>1210</posx>
+			<posy>537</posy>
+			<width>33</width>
+			<height>37</height>
+			<texture flipx="true">multiplex/multiplex_arrow2.png</texture>
+			<include>Animation_HideMultiplex</include>
+			<visible>Control.IsVisible(551)|Control.IsVisible(552)|Control.IsVisible(553)</visible>
+			<animation effect="slide" end="0,30" time="0" condition="Control.IsVisible(552)">Conditional</animation>
+		</control>
+
+		<include condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)">Viewtype_Multiplex_Music</include>
+		<include condition="Window.IsActive(28) | Window.IsActive(24) | Window.IsActive(25)">Viewtype_Multiplex_Movies</include>
+		<include condition="Window.IsActive(28) | Window.IsActive(24) | Window.IsActive(25)">Viewtype_Multiplex_TVShows</include>
+
+		<control type="group" id="600">
+			<control type="button" id="601">
+				<visible>Container.Content(episodes) + Skin.HasSetting(tvpreview) + !Player.Playing + !Skin.HasSetting(multiplextvepisodesinfooff)</visible>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>7000</onup>
+				<ondown>605</ondown>
+				<onfocus>PlayMedia($INFO[listitem.path]$INFO[listitem.filename],1)</onfocus>
+			</control>
+			<control type="button" id="602">
+				<visible>[Container.Content(movies) + Skin.HasSetting(movietrailers) + !Player.Playing + !Skin.HasSetting(multiplexinfooff) + !IsEmpty(ListItem.Trailer)] | [Container.Content(episodes) + Skin.HasSetting(tvpreview) + !Player.Playing + !Skin.HasSetting(multiplextvepisodesinfooff)]</visible>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>7000</onup>
+				<ondown>605</ondown>
+				<onfocus>PlayMedia($INFO[ListItem.Trailer],1)</onfocus>
+			</control>
+			<control type="button" id="603">
+				<visible>[Container.Content(movies) + IsEmpty(ListItem.Trailer)] | ![Skin.HasSetting(movietrailers) | Skin.HasSetting(tvpreview) | Player.Playing] | [[Container.Content(movies) + Skin.HasSetting(multiplexinfooff)] | [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfooff)]]</visible>
+				<onfocus>SetFocus(61)</onfocus>
+			</control>
+			<control type="button" id="604">
+				<visible>Player.Playing</visible>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>7000</onup>
+				<ondown>605</ondown>
+				<onfocus>PlayerControl(stop)</onfocus>
+			</control>
+		</control>
+
+		<control type="button" id="605">
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<onleft>50</onleft>
+			<onright>50</onright>
+			<onup>7000</onup>
+			<ondown>600</ondown>
+			<onfocus>PlayerControl(stop)</onfocus>
+		</control>
+
+		<control type="scrollbar" id="61">
+			<description>My first scroll bar control</description>
+			<posx>305</posx>
+			<posy>663</posy>
+			<width>670</width>
+			<height>41</height>
+			<visible allowhiddenfocus="true">[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + Control.HasFocus(61)</visible>
+			<texturesliderbackground>windows/scrollbarbackshowcase.png</texturesliderbackground>
+			<texturesliderbar>-</texturesliderbar>
+			<texturesliderbarfocus>-</texturesliderbarfocus>
+			<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+			<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+			<pulseonselect></pulseonselect>
+			<orientation>horizontal</orientation>
+			<showonepage>false</showonepage>
+			<onup>50</onup>
+			<ondown>197</ondown>
+			<onleft>61</onleft>
+			<onright>61</onright>
+			<include>Animation_HideMultiplex</include>
+			<include>Animation_CommonFade</include>
+		</control>
+		
+		<control type="button" id="197">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<onleft>50</onleft>
+			<onright>50</onright>
+			<onup>50</onup>
+			<ondown>50</ondown>
+		</control>		
+
+		<control type="group">
+			<visible>Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553) | Control.IsVisible(53)</visible>
+				<control type="label">
+					<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>Window.IsActive(24)</visible>
+				</control>
+				<control type="label">
+					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>Window.IsActive(24) + !IsEmpty(ListItem.Genre)</visible>
+				</control>
+
+
+<!-- POPUP FLOOR TEXT -->
+			<control type="group">
+				<visible>[Container.Content(movies) + !Skin.HasSetting(FullscreenMovieMultiplex)] | [Container.Content(tvshows) + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Container.Content(artists) + !Skin.HasSetting(FullscreenArtistsMultiplex)] | [Container.Content(albums) + !Skin.HasSetting(FullscreenAlbumsMultiplex)] | [Container.Content(songs) + !Skin.HasSetting(FullscreenSongsMultiplex)]</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+
+				<control type="label">
+					<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+					<include>MultiplexTVMainLabel</include>
+					<visible>![Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)]</visible>
+				</control>
+
+				<control type="label" id="72">
+					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>Container.Content(movies) + !IsEmpty(ListItem.Genre)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>[Container.Content(tvshows) | [Container.Content(seasons) + !Skin.HasSetting(tvposterview)]] + !IsEmpty(ListItem.Genre)</visible>
+				</control>
+
+				<control type="label">
+					<label>[B][UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes) + !stringcompare(ListItem.Season,0)] | [Container.Content(seasons) + Skin.HasSetting(tvposterview) + !stringcompare(ListItem.Season,0)]</visible>
+				</control>			
+				<control type="label">
+					<label>[B][UPPERCASE]SPECIALS[/UPPERCASE][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes) + stringcompare(ListItem.Season,0)] | [Container.Content(seasons) + Skin.HasSetting(tvposterview) + stringcompare(ListItem.Season,0)]</visible>
+				</control>			
+				<control type="label">
+					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>[![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(seasons) + Skin.HasSetting(tvposterview)] | [Skin.HasSetting(tvposterview) + Container.Content(seasons)]</visible>
+				</control>
+				<control type="label">
+					<label>[B][UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>[!Skin.HasSetting(tvposterview) + [Container.Content(tvshows) | Container.Content(seasons)]] | [Container.Content(tvshows) + Skin.HasSetting(tvposterview)]</visible>
+				</control>
+				<control type="label" id="72">
+					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>![Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes)</visible>
+				</control>
+				<control type="label">
+					<label>[B][UPPERCASE]$INFO[ListItem.Title][/UPPERCASE][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>[Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes)</visible>
+				</control>			
+				<control type="label">
+					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle] - SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>[[Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes) + !stringcompare(ListItem.Season,0)]</visible>
+				</control>			
+				<control type="label">
+					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle] - SPECIALS[/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>[[Control.IsVisible(109) | Control.HasFocus(113)] + Container.Content(episodes) + stringcompare(ListItem.Season,0)]</visible>
+				</control>			
+
+				<control type="label">
+					<label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31005][/UPPERCASE]</label>
+					<include>MultiplexItemsLabel</include>
+				</control>				
+
+
+				<control type="label">
+					<label>[B]$INFO[listitem.tracknumber]. $INFO[listitem.title][/B]</label>
+					<include>MultiplexMusicMainLabel</include>
+					<visible>Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)</visible>
+				</control>
+					<control type="label">
+					<label>$INFO[ListItem.Album,, -] $INFO[ListItem.Artist]</label>
+					<include>MultiplexMusicDetailLabel</include>
+					<visible>Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)</visible>
+				</control>
+
+				<control type="label" id="72">
+					<label>[B]$INFO[ListItem.Artist][/B]</label>
+					<include>MultiplexMusicMainLabel</include>
+					<visible>Container.Content(artists)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>$INFO[listitem.Property(Genre)]</label>
+					<include>MultiplexMusicDetailLabel</include>
+					<visible>!Control.IsVisible(109) + Container.Content(artists)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>[B]$INFO[ListItem.Album][/B]</label>
+					<include>MultiplexMusicMainLabel</include>
+					<visible>Container.Content(albums)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>$INFO[ListItem.Artist]</label>
+					<include>MultiplexMusicDetailLabel</include>
+					<visible>Container.Content(albums)</visible>
+				</control>
+				
+				<control type="label">
+					<info>[B]ListItem.Label2[/B]</info>
+					<include>MultiplexMusicMainLabel</include>
+					<visible>Window.IsActive(1) | Window.IsActive(501) + ![Container.Content(albums) | Container.Content(songs)]</visible>
+				</control>
+			</control>
+
+<!-- FULLSCREEN FLOOR TEXT -->
+			<control type="group">
+				<visible>[Container.Content(movies) + Skin.HasSetting(FullscreenMovieMultiplex)] | [Container.Content(tvshows) + Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)] | [Container.Content(artists) + Skin.HasSetting(FullscreenArtistsMultiplex)] | [Container.Content(albums) + Skin.HasSetting(FullscreenAlbumsMultiplex)] | [Container.Content(songs) + !Skin.HasSetting(FullscreenSongsMultiplex)]</visible>
+				
+				<control type="label">
+					<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + [!Container.Content(movies) | Window.IsActive(24)]</visible>					
+				</control>
+
+				<!-- Movie Text -->
+				<control type="label" id="72">
+					<label>[B][UPPERCASE]$INFO[ListItem.Title][/UPPERCASE][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>![Control.IsVisible(109) | Control.HasFocus(111)] + Container.Content(movies) + !IsEmpty(ListItem.Genre) | [!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + Window.IsActive(25)]</visible>
+				</control>
+				<control type="label" id="72">
+					<label>[B][UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>[Control.IsVisible(109) | Control.HasFocus(111)] + Container.Content(movies) + !IsEmpty(ListItem.Genre)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>![Control.IsVisible(109) | Control.HasFocus(111)] + Container.Content(movies) + !IsEmpty(ListItem.Genre)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>[UPPERCASE]$INFO[ListItem.Duration] / $INFO[ListItem.Year][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>[Control.IsVisible(109) | Control.HasFocus(111)] + Container.Content(movies)</visible>
+				</control>
+				
+				<!-- TV Shows -->
+				<control type="label">
+					<label>[B][UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>![Control.IsVisible(109) | Control.HasFocus(111)] + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
+				</control>
+				<control type="label">
+					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>![Control.IsVisible(109) | Control.HasFocus(111)] + Container.Content(tvshows)</visible>
+				</control>
+				<control type="label">
+					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>[Control.IsVisible(109) | Control.HasFocus(111)] + Container.Content(seasons)</visible>
+				</control>
+
+				<control type="label">
+					<label>[UPPERCASE]SEASON $INFO[ListItem.Season][/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>[![Control.IsVisible(109) | Control.HasFocus(111)] + [Container.Content(seasons) + !stringcompare(ListItem.Season,0) + Skin.HasSetting(tvposterview)]] | [![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(episodes) + !stringcompare(ListItem.Season,0)] + !VideoPlayer.Content(episodes)]</visible>
+				</control>			
+				<control type="label">
+					<label>[UPPERCASE]SPECIALS[/UPPERCASE]</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>[![Control.IsVisible(109) | Control.HasFocus(111)] + [Container.Content(seasons) + stringcompare(ListItem.Season,0) + Skin.HasSetting(tvposterview)]] | [![Control.IsVisible(109) | Control.HasFocus(113)] + [Container.Content(episodes) + stringcompare(ListItem.Season,0)] + !VideoPlayer.Content(episodes)]</visible>
+				</control>			
+
+				<control type="label" id="72">
+					<label>[B]$INFO[ListItem.Title][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>[Control.IsVisible(109) | Control.HasFocus(111)] + Container.Content(episodes)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>[B]$INFO[ListItem.TVShowTitle][/B]</label>
+					<include>MultiplexMovieMainLabel</include>
+					<visible>![Control.IsVisible(109) | Control.HasFocus(111)] + Container.Content(episodes)</visible>
+				</control>
+				
+				<control type="label" id="72">
+					<label>RUN TIME: $INFO[VideoPlayer.Duration] (FINISH TIME: $INFO[Player.FinishTime])</label>
+					<include>MultiplexMovieDetailLabel</include>
+					<visible>VideoPlayer.Content(episodes) + !Container.Content(movies)</visible>
+				</control>
+
+				<control type="label">
+					<label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31005][/UPPERCASE]</label>
+					<include>MultiplexItemsLabel</include>
+				</control>				
+
+				<!-- Music -->
+				<control type="label" id="72">
+					<label>[B]$INFO[ListItem.Artist][/B]</label>
+					<include>MultiplexMusicMainLabel</include>
+					<visible>!Control.IsVisible(109) + Container.Content(artists)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>$INFO[listitem.Property(Genre)]</label>
+					<include>MultiplexMusicDetailLabel</include>
+					<visible>!Control.IsVisible(109) + Container.Content(artists)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>$INFO[ListItem.Album]</label>
+					<include>MultiplexMusicMainLabel</include>
+					<visible>!Control.IsVisible(109) + Container.Content(albums)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>$INFO[ListItem.Artist]</label>
+					<include>MultiplexMusicDetailLabel</include>
+					<visible>!Control.IsVisible(109) + Container.Content(albums)</visible>
+				</control>
+
+				<control type="label" id="72">
+					<label>$INFO[listitem.tracknumber]. $INFO[listitem.title]</label>
+					<include>MultiplexMusicMainLabel</include>
+					<visible>!Control.IsVisible(109) + Container.Content(songs)</visible>
+				</control>
+				<control type="label" id="72">
+					<label>$INFO[ListItem.Album,, -] $INFO[ListItem.Artist]</label>
+					<include>MultiplexMusicDetailLabel</include>
+					<visible>!Control.IsVisible(109) + Container.Content(songs)</visible>
+				</control>
+			</control>
+		</control>			
+			
+	</include>
+
+</includes>

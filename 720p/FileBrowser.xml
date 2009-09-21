@@ -22,16 +22,16 @@
 			<animation effect="slide" start="-410,0" end="0,0" time="400" delay="500" tween="cubic" easing="out">WindowOpen</animation>
 			<control type="image">
 				<posx>809</posx>
-				<posy>103</posy>
-				<width>406</width>
-				<height>556</height>
+				<posy>78</posy>
+				<width>419</width>
+				<height>602</height>
 				<texture>list/filebrowser_sidecar.png</texture>
 			</control>
 			<control type="image">
 				<width>286</width>
 				<height>286</height>
 				<posx>867</posx>
-				<posy>167</posy>
+				<posy>165</posy>
 				<fadetime>400</fadetime>
 				<texture>$INFO[ListItem.Icon]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
@@ -40,7 +40,7 @@
 				<width>286</width>
 				<height>286</height>
 				<posx>867</posx>
-				<posy>453</posy>
+				<posy>449</posy>
 				<fadetime>400</fadetime>				
 				<texture flipy="true" diffuse="common/Thumb_Mask6.png">$INFO[ListItem.Icon]</texture>
 				<aspectratio aligny="top">keep</aspectratio>
@@ -109,15 +109,15 @@
 		
 		<control type="image">
 			<posx>60</posx>
-			<posy>73</posy>
+			<posy>67</posy>
 			<width>759</width>
-			<height>647</height>
+			<height>620</height>
 			<texture>list/listpanel_back_noreflect.png</texture>
 		</control>	
 	
 		<control type="image">
 			<posx>669</posx>
-			<posy>137</posy>
+			<posy>141\</posy>
 			<width>97</width>
 			<height>450</height>
 			<texture>list/listpanel_detailwide.png</texture>
@@ -125,18 +125,18 @@
 		
 		<control type="image">
 			<posx>60</posx>
-			<posy>600</posy>
+			<posy>585</posy>
 			<width>759</width>
-			<height>88</height>
+			<height>101</height>
 			<texture>list/list_filebrowser_buttons.png</texture>
 			<visible>Window.IsActive(604)</visible>
 		</control>
 		
 		<control type="image">
 			<posx>60</posx>
-			<posy>600</posy>
+			<posy>585</posy>
 			<width>759</width>
-			<height>88</height>
+			<height>101</height>
 			<texture>list/list_filebrowser_3buttons.png</texture>
 			<visible>!Window.IsActive(604)</visible>
 		</control>		
@@ -146,7 +146,17 @@
 			<posy>94</posy>
 			<width>771</width>
 			<font>Font_FileBrowserHeading</font>
-			<textcolor>1dFFFFFF</textcolor>
+			<textcolor>ADFFFFFF</textcolor>
+			<visible>!Window.IsActive(603)</visible>
+		</control>
+		<control type="label">
+			<posx>105</posx>
+			<posy>94</posy>
+			<width>771</width>
+			<font>Font_FileBrowserHeading</font>
+			<textcolor>ADFFFFFF</textcolor>
+			<label>657</label>	
+			<visible>Window.IsActive(603)</visible>
 		</control>
 		
 		<control type="list" id="451">
@@ -164,10 +174,10 @@
 			<animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(451)">Conditional</animation>
 			<itemlayout height="40">
 				<control type="image">
-					<posx>12</posx>
-					<posy>41</posy>
+					<posx>19</posx>
+					<posy>39</posy>
 					<height>1</height>
-					<width>739</width>
+					<width>723</width>
 					<texture>list/listpanel_line.png</texture>
 				</control>
 				<control type="label">
@@ -183,16 +193,16 @@
 			</itemlayout>					
 			<focusedlayout height="40">
 				<control type="image">
-					<posx>12</posx>
-					<posy>41</posy>
+					<posx>19</posx>
+					<posy>39</posy>
 					<height>1</height>
-					<width>739</width>
+					<width>723</width>
 					<texture>list/listpanel_line.png</texture>
 				</control>
 				<control type="image">
-					<posx>8</posx>
+					<posx>19</posx>
 					<posy>-5</posy>
-					<width>743</width>
+					<width>723</width>
 					<height>50</height>
 					<texture>list/listpanel_selectbar.png</texture>
 				</control>
@@ -218,7 +228,7 @@
 			<posx>68</posx>
 			<posy>601</posy>
 			<width>132</width>
-			<height>77</height>
+			<height>76</height>
 			<texturefocus>-</texturefocus>
 			<texturenofocus>-</texturenofocus>
 			<font>Font_FileBrowserButton</font>
@@ -235,20 +245,20 @@
 		</control>
 		
 		<control type="image">
-			<posx>68</posx>
-			<posy>601</posy>
+			<posx>66</posx>
+			<posy>602</posy>
 			<width>132</width>
-			<height>77</height>
+			<height>74</height>
 			<visible>Control.HasFocus(413)</visible>
 			<texture>list/filebrowser_button1down.png</texture>			
 			<include>Animation_VisibleChange400</include>
 		</control>
 
 		<control type="button" id="414">
-			<posx>201</posx>
-			<posy>601</posy>
+			<posx>199</posx>
+			<posy>602</posy>
 			<width>133</width>
-			<height>77</height>
+			<height>74</height>
 			<texturefocus>list/filebrowser_button2down.png</texturefocus>
 			<texturenofocus>-</texturenofocus>
 			<font>Font_FileBrowserButton</font>
@@ -265,10 +275,10 @@
 		</control>
 		
 		<control type="image">
-			<posx>201</posx>
-			<posy>601</posy>
+			<posx>199</posx>
+			<posy>602</posy>
 			<width>133</width>
-			<height>77</height>
+			<height>74</height>
 			<visible>Control.HasFocus(414)</visible>
 			<texture>list/filebrowser_button2down.png</texture>			
 			<include>Animation_VisibleChange400</include>
@@ -276,9 +286,9 @@
 
 		<control type="button" id="415">
 			<posx>335</posx>
-			<posy>601</posy>
+			<posy>602</posy>
 			<width>133</width>
-			<height>77</height>
+			<height>74</height>
 			<texturefocus>list/filebrowser_button2down.png</texturefocus>
 			<texturenofocus>-</texturenofocus>
 			<font>Font_FileBrowserButton</font>
@@ -298,7 +308,7 @@
 			<posx>335</posx>
 			<posy>601</posy>
 			<width>133</width>
-			<height>77</height>
+			<height>76</height>
 			<visible>Control.HasFocus(415)</visible>
 			<texture>list/filebrowser_button2down.png</texture>			
 			<include>Animation_VisibleChange400</include>

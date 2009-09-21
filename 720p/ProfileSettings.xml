@@ -33,16 +33,16 @@
 
 			<control type="image" id="2">
 				<description>Profile Image</description>
-				<posx>415</posx>
-				<posy>10</posy>
-				<width>268</width>
-				<height>268</height>
+				<posx>425</posx>
+				<posy>20</posy>
+				<width>248</width>
+				<height>248</height>
 				<align>left</align>
 				<texture>unknown-user.png</texture>
 				<colordiffuse>d0FFFFFF</colordiffuse>
 			</control>
 
-			<control type="label" id="0">
+<!--			<control type="label" id="0">
 				<description>Profile Name</description>
 				<posx>180</posx>
 				<posy>116</posy>
@@ -51,20 +51,20 @@
 				<font>special13</font>
 				<textcolor>DDced8da</textcolor>
 				<label>$LOCALIZE[ 20093 ]</label>
-			</control>
+			</control> -->
 
 			<control type="label" id="1000">
 				<description>Profile Name</description>
-				<posx>180</posx>
-				<posy>136</posy>
+				<posx>200</posx>
+				<posy>32</posy>
 				<width>280</width>
 				<align>left</align>
 				<font>special13</font>
 				<textcolor>FFFFFFFF</textcolor>
 			</control>
 
-			<control type="label" id="0">
-				<description>Profile Name</description>
+<!--			<control type="label" id="0">
+				<description>Profile Directory</description>
 				<posx>180</posx>
 				<posy>162</posy>
 				<width>280</width>
@@ -72,13 +72,13 @@
 				<font>special13</font>
 				<textcolor>DDced8da</textcolor>
 				<label>$LOCALIZE[ 20070 ]</label>
-			</control>
+			</control> -->
 
 			<control type="label" id="1001">
 				<description>Profile Directory</description>
-				<posx>180</posx>
-				<posy>182</posy>
-				<width>280</width>
+				<posx>200</posx>
+				<posy>114</posy>
+				<width>210</width>
 				<align>left</align>
 				<font>special13</font>
 				<textcolor>FFFFFFFF</textcolor>
@@ -86,7 +86,7 @@
 
 			<control type="spincontrol" id="60">
 				<description>Next page button</description>
-				<posx>300</posx>
+				<posx>3000</posx>
 				<posy>300</posy>
 				<subtype>int</subtype>
 				<font>font12</font>
@@ -97,9 +97,9 @@
 
 			<control type="grouplist" id="5">
 				<description>control area</description>
-				<posx>10</posx>
+				<posx>18</posx>
 				<posy>20</posy>
-				<width>405</width>
+				<width>397</width>
 				<height>246</height>
 				<itemgap>0</itemgap>
 				<onup>2</onup>
@@ -115,7 +115,7 @@
 				<font>Font_ContextMenuButton</font>
 				<textcolor>FF939597</textcolor>
 				<focusedcolor>FFFFFFFF</focusedcolor>
-				<textoffsetx>20</textoffsetx>
+				<textoffsetx>5</textoffsetx>
 				<aligny>center</aligny>
 				<texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
 				<texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
@@ -133,7 +133,7 @@
 				<radiowidth>94</radiowidth>
 				<radioposx>595</radioposx>
 				<radioheight>65</radioheight>
-				<textoffsetx>20</textoffsetx>
+				<textoffsetx>5</textoffsetx>
 				<aligny>center</aligny>
 				<textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
 				<textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
@@ -157,7 +157,7 @@
 				<spinposx>-4</spinposx>
 				<spinwidth>40</spinwidth>
 				<spinheight>65</spinheight>
-				<textoffsetx>20</textoffsetx>
+				<textoffsetx>5</textoffsetx>
 				<aligny>center</aligny>
 				<reverse>yes</reverse>
 			</control>
@@ -189,9 +189,9 @@
 			<control type="group" id="9001">
 				<control type="button" id="28">
 					<description>ok button</description>
-					<posx>683</posx>
+					<posx>676</posx>
 					<posy>230</posy>
-					<width>154</width>
+					<width>162</width>
 					<height>41</height>
 					<font>Font_SetContentMenu</font>
 					<label>186</label>
@@ -199,7 +199,7 @@
 					<textcolor>FFf5f5f5</textcolor>
 					<focusedcolor>FF262728</focusedcolor>
 					<selectedcolor>FF262728</selectedcolor>
-					<textoffsetx>20</textoffsetx>
+					<textoffsetx>28</textoffsetx>
 					<onleft>5</onleft>
 					<onright>5</onright>
 					<onup>29</onup>
@@ -210,9 +210,9 @@
 
 				<control type="button" id="29">
 					<description>cancel button</description>
-					<posx>683</posx>
+					<posx>676</posx>
 					<posy>189</posy>
-					<width>154</width>
+					<width>162</width>
 					<height>41</height>
 					<font>Font_SetContentMenu</font>
 					<label>222</label>
@@ -220,7 +220,7 @@
 					<textcolor>FFf5f5f5</textcolor>
 					<focusedcolor>FF262728</focusedcolor>
 					<selectedcolor>FF262728</selectedcolor>
-					<textoffsetx>20</textoffsetx>
+					<textoffsetx>28</textoffsetx>
 					<onleft>5</onleft>
 					<onright>5</onright>
 					<onup>28</onup>

@@ -86,8 +86,8 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>[[Skin.HasSetting(FullscreenMovieMultiplex) + Skin.HasSetting(videomovies) + Container.Content(movies)] | [Skin.HasSetting(FullscreenCommonMultiplex) + Skin.HasSetting(videomovies) + !Container.Content(movies)]] + Control.IsVisible(551) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(113) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7014).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
-			<animation effect="slide" start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexinfoon)">WindowOpen</animation>			
+			<visible>[[Skin.HasSetting(FullscreenMovieMultiplex) + Container.Content(movies)] | [Skin.HasSetting(FullscreenCommonMultiplex) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]]] + Control.IsVisible(551) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
+			<animation effect="slide" start="0,590" end="0,0" time="500" delay="1500" condition="[Container.Content(movies) + !Skin.HasSetting(multiplexinfoon)] | [![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(multiplexcommoninfoon)]">WindowOpen</animation>			
 			<animation effect="slide" start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide" start="0,590" end="0,0" time="500">VisibleChange</animation>			
 
@@ -104,20 +104,7 @@
 				<control type="image">
 					<width>1280</width>
 					<height>610</height>
-					<texture>multiplex/night/multiplex_fullscreen_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/night/multiplex_fullscreen_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/night/multiplex_fullscreen_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
+					<texture>multiplex/night/multiplex_fullscreen.png</texture>
 				</control>
 			</control>
 
@@ -126,21 +113,7 @@
 				<control type="image">
 					<width>1280</width>
 					<height>610</height>
-					<texture>multiplex/lite/multiplex_fullscreen_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/lite/multiplex_fullscreen_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/lite/multiplex_fullscreen_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
+					<texture>multiplex/lite/multiplex_fullscreen.png</texture>
 				</control>
 			</control>
 
@@ -172,7 +145,7 @@
 
 <!-- END MOVIE FULLSCREEN LINES -->
 			<control type="group">
-				<visible>Skin.HasSetting(videomovies)</visible>
+				<visible>Container.Content(movies)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>56</posy>
@@ -1182,8 +1155,8 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>[[!Skin.HasSetting(FullscreenMovieMultiplex) + Skin.HasSetting(videomovies) + Container.Content(movies)] | [!Skin.HasSetting(FullscreenCommonMultiplex) + Skin.HasSetting(videomovies) + !Container.Content(movies)]] + Control.IsVisible(551) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(113) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
-			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexinfoon)">WindowOpen</animation>			
+			<visible>[[!Skin.HasSetting(FullscreenMovieMultiplex) + Container.Content(movies)] | [!Skin.HasSetting(FullscreenCommonMultiplex) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]]] + Control.IsVisible(551) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
+			<animation effect="slide" start="0,590" end="0,0" time="500" delay="1500" condition="[Container.Content(movies) + !Skin.HasSetting(multiplexinfoon)] | [![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(multiplexcommoninfoon)]">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
 			<control type="image">
@@ -1196,55 +1169,20 @@
 			</control>			
 
 			<!-- COMMON BACKGRROUND -->
-			<control type="group">
+			<control type="image">
+				<posx>75</posx>
+				<width>1130</width>
+				<height>564</height>
+				<texture>multiplex/night/multiplex_window.png</texture>
 				<visible>Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/night/multiplex_window_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/night/multiplex_window_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/night/multiplex_window_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
 
-			<control type="group">
+			<control type="image">
+				<posx>75</posx>
+				<width>1130</width>
+				<height>564</height>
+				<texture>multiplex/lite/multiplex_window.png</texture>
 				<visible>!Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/lite/multiplex_window_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/lite/multiplex_window_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/lite/multiplex_window_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
 
 			<control type="image">
@@ -1276,7 +1214,7 @@
 
 <!-- MOVIE POPUP LINES -->
 			<control type="group">
-				<visible>Skin.HasSetting(videomovies)</visible>
+				<visible>Container.Content(movies)</visible>
 				<control type="image">
 					<posx>85</posx>
 					<posy>37</posy>
@@ -1964,7 +1902,7 @@
 		<control type="group">
 			<posx>0</posx>
 			<posy>0</posy>
-			<visible>[[Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes)] + Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)]] + [Control.IsVisible(551) | Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(113) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfoon)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfoon)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfoon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]]]</visible>
+			<visible>[[Container.Content(tvshows) + Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)]] + [Control.IsVisible(551) | Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfoon)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfoon)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfoon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="![[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
@@ -1976,49 +1914,17 @@
 				<include>Animation_CommonFade</include>
 			</control>			
 			<!-- COMMON BACKGRROUND -->
-			<control type="group">
+			<control type="image">
+				<width>1280</width>
+				<height>610</height>
+				<texture>multiplex/night/multiplex_fullscreen.png</texture>
 				<visible>Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/night/multiplex_fullscreen_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/night/multiplex_fullscreen_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/night/multiplex_fullscreen_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
-
-			<control type="group">
+			<control type="image">
+				<width>1280</width>
+				<height>610</height>
+				<texture>multiplex/lite/multiplex_fullscreen.png</texture>
 				<visible>!Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/lite/multiplex_fullscreen_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/lite/multiplex_fullscreen_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/lite/multiplex_fullscreen_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
 
 			<control type="image">
@@ -2432,8 +2338,8 @@
 					<width>710</width>
 					<height>399</height>
 					<aspectratio>scale</aspectratio>
-					<info>ListItem.Property(Fanart_Image)</info>
-					<visible>!Container.Content(episodes) + !Skin.HasSetting(tvposterview)</visible>					
+					<texture>$INFO[Fanart.Image]</texture>
+					<visible>Container.Content(seasons) + !Skin.HasSetting(tvposterview)</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="largeimage">
@@ -2442,8 +2348,8 @@
 					<width>710</width>
 					<height>399</height>
 					<aspectratio>scale</aspectratio>
-					<texture>$INFO[Fanart.Image]</texture>
-					<visible>!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>
+					<info>ListItem.Property(Fanart_Image)</info>
+					<visible>[!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)] | [Container.Content(tvshows) + !Skin.HasSetting(tvposterview)]</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="largeimage">
@@ -2453,7 +2359,7 @@
 					<height>399</height>
 					<aspectratio>scale</aspectratio>
 					<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
-					<visible>!Skin.HasSetting(multiplextvbigthumb) + !Container.Content(seasons) + !Skin.HasSetting(tvposterview)</visible>
+					<visible>!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="image">
@@ -2494,7 +2400,6 @@
 					<include>Animation_VisibleChange200</include>
 				</control>
 			</control>	
-
 
 			<control type="group">
 				<posx>565</posx>
@@ -2573,7 +2478,7 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>[[Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Skin.HasSetting(videotv) + Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)]] + [Control.IsVisible(551) | Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(113) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfoon)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfoon)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfoon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]]]</visible>
+			<visible>[[Container.Content(tvshows) + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)]] + [Control.IsVisible(551) | Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfoon)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfoon)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfoon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="![[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>		
@@ -2587,55 +2492,19 @@
 			</control>			
 
 			<!-- COMMON BACKGRROUND -->
-			<control type="group">
+			<control type="image">
+				<posx>75</posx>
+				<width>1130</width>
+				<height>564</height>
+				<texture>multiplex/night/multiplex_window.png</texture>
 				<visible>Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/night/multiplex_window_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/night/multiplex_window_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/night/multiplex_window_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
-
-			<control type="group">
+			<control type="image">
+				<posx>75</posx>
+				<width>1130</width>
+				<height>564</height>
+				<texture>multiplex/lite/multiplex_window.png</texture>
 				<visible>!Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/lite/multiplex_window_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/lite/multiplex_window_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/lite/multiplex_window_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
 
 			<control type="image">
@@ -2989,9 +2858,6 @@
 				<visible>Container.Content(seasons) + Skin.HasSetting(tvposterview)</visible>	
 			</control>			
 
-
-
-
 <!-- TV SHOWS & SEASONS NORMAL VIEW IMAGES -->
 			<control type="group">
 				<posx>512</posx>
@@ -3010,20 +2876,9 @@
 					<posy>1</posy>
 					<width>668</width>
 					<height>376</height>
-					<fadetime>400</fadetime>
-					<aspectratio>scale</aspectratio>
-					<info>ListItem.Property(Fanart_Image)</info>
-					<visible>!Container.Content(episodes) + !Skin.HasSetting(tvposterview)</visible>					
-					<include>Animation_VisibleChange200</include>
-				</control>
-				<control type="largeimage">
-					<posx>1</posx>
-					<posy>1</posy>
-					<width>668</width>
-					<height>376</height>
 					<aspectratio>scale</aspectratio>
 					<texture>$INFO[Fanart.Image]</texture>
-					<visible>!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>
+					<visible>Container.Content(seasons) + !Skin.HasSetting(tvposterview)</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="largeimage">
@@ -3033,7 +2888,7 @@
 					<height>376</height>
 					<aspectratio>scale</aspectratio>
 					<info>ListItem.Property(Fanart_Image)</info>
-					<visible>!Skin.HasSetting(multiplextvbigthumb) + !Container.Content(seasons) + !Skin.HasSetting(tvposterview)</visible>
+					<visible>[!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)] | [Container.Content(tvshows) + !Skin.HasSetting(tvposterview)]</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="largeimage">
@@ -3043,7 +2898,7 @@
 					<height>376</height>
 					<aspectratio>scale</aspectratio>
 					<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
-					<visible>!Skin.HasSetting(multiplextvbigthumb) + !Container.Content(seasons) + !Skin.HasSetting(tvposterview)</visible>
+					<visible>!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="image">
@@ -3160,7 +3015,7 @@
 	<include name="MultiplexInfoPaneMusic">
 		<!-- FULLSCREEN MULTIPLEX MUSIC WINDOW & TEXT -->
 		<control type="group">
-			<visible>[[Skin.HasSetting(music) + ![Container.Content(albums) | Container.Content(artists) | Container.Content(songs)] + Skin.HasSetting(FullscreenMusicCommonMultiplex)] | [Skin.HasSetting(music) + Container.Content(artists) + Skin.HasSetting(FullscreenArtistsMultiplex)] | [Skin.HasSetting(music) + Container.Content(albums) + Skin.HasSetting(FullscreenAlbumsMultiplex)] | [Skin.HasSetting(music) + Container.Content(songs) + Skin.HasSetting(FullscreenSongsMultiplex)]] + Control.IsVisible(553) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(60) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)]]</visible>
+			<visible>[[Container.Content(artists) + Skin.HasSetting(FullscreenArtistsMultiplex)] | [Container.Content(albums) + Skin.HasSetting(FullscreenAlbumsMultiplex)] | [Container.Content(songs) + Skin.HasSetting(FullscreenSongsMultiplex)]] + Control.IsVisible(553) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(60) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexmusicinfoon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
@@ -3173,49 +3028,17 @@
 			</control>			
 
 			<!-- COMMON BACKGRROUND -->
-			<control type="group">
+			<control type="image">
+				<width>1280</width>
+				<height>610</height>
+				<texture>multiplex/night/multiplex_fullscreen.png</texture>
 				<visible>Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/night/multiplex_fullscreen_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/night/multiplex_fullscreen_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/night/multiplex_fullscreen_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
-
-			<control type="group">
+			<control type="image">
+				<width>1280</width>
+				<height>610</height>
+				<texture>multiplex/lite/multiplex_fullscreen.png</texture>
 				<visible>!Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/lite/multiplex_fullscreen_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/lite/multiplex_fullscreen_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-
-				<control type="image">
-					<width>1280</width>
-					<height>610</height>
-					<texture>multiplex/lite/multiplex_fullscreen_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
 
 			<control type="image">
@@ -3688,7 +3511,7 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>[[Skin.HasSetting(music) + ![Container.Content(albums) | Container.Content(artists) | Container.Content(songs)] + !Skin.HasSetting(FullscreenMusicCommonMultiplex)] | [Skin.HasSetting(music) + Container.Content(artists) + !Skin.HasSetting(FullscreenArtistsMultiplex)] | [Skin.HasSetting(music) + Container.Content(albums) + !Skin.HasSetting(FullscreenAlbumsMultiplex)] | [Skin.HasSetting(music) + Container.Content(songs) + !Skin.HasSetting(FullscreenSongsMultiplex)]] + Control.IsVisible(553) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(60) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)]]</visible>
+			<visible>[[![Container.Content(albums) | Container.Content(artists) | Container.Content(songs)] + !Skin.HasSetting(FullscreenMusicCommonMultiplex)] | [Container.Content(artists) + !Skin.HasSetting(FullscreenArtistsMultiplex)] | [Container.Content(albums) + !Skin.HasSetting(FullscreenAlbumsMultiplex)] | [Container.Content(songs) + !Skin.HasSetting(FullscreenSongsMultiplex)]] + Control.IsVisible(553) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(60) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)]]</visible>
 			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexmusicinfoon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>		
@@ -3702,57 +3525,20 @@
 			</control>			
 
 			<!-- COMMON BACKGRROUND -->
-			<control type="group">
+			<control type="image">
+				<posx>75</posx>
+				<width>1130</width>
+				<height>564</height>
+				<texture>multiplex/night/multiplex_window.png</texture>
 				<visible>Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/night/multiplex_window_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/night/multiplex_window_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/night/multiplex_window_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
-
-			<control type="group">
+			<control type="image">
+				<posx>75</posx>
+				<width>1130</width>
+				<height>564</height>
+				<texture>multiplex/lite/multiplex_window.png</texture>
 				<visible>!Skin.HasSetting(darkwindow)</visible>				
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/lite/multiplex_window_green.png</texture>
-					<visible>![Skin.HasSetting(shadegrey) | Skin.HasSetting(shadeblack)]</visible>				
-				</control>
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/lite/multiplex_window_grey.png</texture>
-					<visible>Skin.HasSetting(shadegrey)</visible>				
-				</control>
-
-				<control type="image">
-					<posx>75</posx>
-					<width>1130</width>
-					<height>564</height>
-					<texture>multiplex/lite/multiplex_window_black.png</texture>
-					<visible>Skin.HasSetting(shadeblack)</visible>				
-				</control>
 			</control>
-
 			<control type="image">
 				<posx>75</posx>
 				<posy>0</posy>

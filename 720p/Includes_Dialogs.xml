@@ -1,18 +1,18 @@
 <includes>
 
 	<include name="Dialogs_Group">
-		<posx>386</posx>
-		<posy>300</posy>
-		<width>509</width>
-		<height>91</height>	
+		<posx>371</posx>
+		<posy>400</posy>
+		<width>537</width>
+		<height>111</height>	
 	</include>
 
 	<include name="Dialogs_Tablet">
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>
-			<width>509</width>
-			<height>91</height>
+			<width>537</width>
+			<height>111</height>
 			<texture>dialogs/scan_backg.png</texture>		
 		</control>	
 	</include>
@@ -21,16 +21,16 @@
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>
-			<width>280</width>
-			<height>91</height>
+			<width>290</width>
+			<height>102</height>
 			<texture>dialogs/scan_backg_audio_offset.png</texture>		
 		</control>	
 	</include>
 
 	<include name="Dialogs_Exclam">
 		<control type="image">
-			<posx>9</posx>
-			<posy>9</posy>
+			<posx>14</posx>
+			<posy>18</posy>
 			<width>73</width>
 			<height>73</height>
 			<texture>dialogs/exclam_icon.png</texture>
@@ -39,18 +39,33 @@
 	
 	<include name="Dialogs_HardDrive">
 		<control type="image">
-			<posx>12</posx>
-			<posy>4</posy>
+			<posx>18</posx>
+			<posy>14</posy>
 			<width>67</width>
 			<height>83</height>
 			<texture>dialogs/scan_icon.png</texture>
 		</control>
+<!--		<control type="image">
+			<posx>33</posx>
+			<posy>27</posy>
+			<width>39</width>
+			<height>39</height>
+			<texture>dialogs/scan_icon_spin.png</texture>
+           <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+		</control>
+		<control type="image">
+			<posx>18</posx>
+			<posy>14</posy>
+			<width>67</width>
+			<height>83</height>
+			<texture>dialogs/scan_icon_top.png</texture>
+		</control>-->
 	</include>
 	
 	<include name="Dialogs_VolumeIcon">
 		<control type="image">
-			<posx>6</posx>
-			<posy>4</posy>
+			<posx>9</posx>
+			<posy>14</posy>
 			<width>81</width>
 			<height>82</height>
 			<texture>dialogs/volume_icon.png</texture>
@@ -59,10 +74,10 @@
 
 	<include name="Dialogs_Progress">
 		<description>Progressbar</description>
-		<posx>3</posx>
-		<posy>3</posy>
-		<width>85</width>
-		<height>85</height>
+		<posx>95</posx>
+		<posy>10</posy>
+		<width>432</width>
+		<height>92</height>
 		<reveal>true</reveal>
 		<texturebg>dialogs/scan_blank.png</texturebg>
 		<lefttexture>common/blank.png</lefttexture>
@@ -72,28 +87,28 @@
 	</include>
 	
 	<include name="Dialogs_LabelVars">
-		<posx>105</posx>
+		<posx>120</posx>
 		<width>390</width>
 		<height>21</height>
-		<textcolor>FF323232</textcolor>
+		<textcolor>FFBBBBBB</textcolor>
 		<align>left</align>
 		<font>Font_ProgressLabel</font>		
 	</include>
 
 	<include name="Dialogs_Pos1">
-		<posy>8</posy>	
+		<posy>18</posy>	
 	</include>
 	
 	<include name="Dialogs_Pos2">
-		<posy>26</posy>	
+		<posy>36</posy>	
 	</include>
 
 	<include name="Dialogs_Pos3">
-		<posy>44</posy>	
+		<posy>54</posy>	
 	</include>
 
 	<include name="Dialogs_Pos4">
-		<posy>62</posy>	
+		<posy>72</posy>	
 	</include>	
 	
 	<include name="Dialogs_Label1">

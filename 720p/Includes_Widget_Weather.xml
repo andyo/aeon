@@ -218,7 +218,7 @@
                 <posx>312</posx>
                 <orientation>horizontal</orientation>
                 <!--Container(945).HasFocus(40)-->
-				<visible>!Skin.HasSetting(WeatherWidget36Hour) + !Skin.HasSetting(WeatherWidgetWeekend) + !Skin.HasSetting(WeatherWidget7Day) + !Window.IsVisible(2600) + !IsEmpty(Window(Weather).Property(Day3.Title)) + StringCompare(Weather.Plugin,weather.com plus)</visible>
+				<visible>[!Skin.HasSetting(WeatherWidget36Hour) + !Skin.HasSetting(WeatherWidgetWeekend) + !Skin.HasSetting(WeatherWidget7Day) + !Window.IsVisible(2600) + StringCompare(Weather.Plugin,weather.com plus)] | !StringCompare(Weather.Plugin,weather.com plus)</visible>
                 <control type="group">
                     <include>Widget_Weather4DayGroup</include>
                     <animation effect="fade" start="0" end="100" delay="550" time="400">Visible</animation>				

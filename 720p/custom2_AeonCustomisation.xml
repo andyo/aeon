@@ -1,6 +1,6 @@
 <window id="604">
 	<defaultcontrol always="true">6</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
+	<allowoverlay>no</allowoverlay>
 	<controls>
 		<control type="multiimage">
 			<description>Settings Backdrop</description>
@@ -8,22 +8,35 @@
 			<imagepath>backdrops/default_settings</imagepath>
 			<info>Skin.String(CustomSettings)</info>
 			<include>BackgroundTimings</include>
-			<animation effect="fade" start="0" end="100" time="200" condition="Window.Previous(Home) | Skin.HasSetting(bmtransit)">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">WindowClose</animation>
 		</control>
 		
 		<control type="group">
 			<include>FullscreenDimensions</include>
-			<animation type="WindowOpen" reversible="false" condition="Window.Previous(Home) | Skin.HasSetting(bmtransit)">
-				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-				<effect type="fade" start="0" end="100" time="300" />
-			</animation>
-			<animation type="WindowClose" reversible="false" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">
-				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-				<effect type="fade" start="100" end="0" time="300" />
-			</animation>
 
 			<include>Furniture_SettingsBackPanel</include>
+
+			<control type="label">
+				<description>sectiontitle</description>
+				<posx>308</posx>
+				<posy>70</posy>
+				<width>936</width>
+				<height>39</height>
+				<label>31231</label>
+				<textcolor>FFbec0c2</textcolor>
+				<include>Animation_CommonFadeOpenClose</include>
+				<font>Font_SettingsSectionTitle</font>
+				<visible>Container(10).HasFocus(8)|Container(10).HasFocus(9)</visible>
+			</control>
+			<control type="image">
+				<posx>265</posx>
+				<posy>120</posy>
+				<width>150</width>
+				<height>547</height>
+				<texture>common/black.png</texture>
+				<colordiffuse>50FFFFFF</colordiffuse>
+				<visible>Container(10).HasFocus(9)</visible>
+			</control>				
+
 
 			<control type="button" id="6">
 				<onfocus>SetFocus(10)</onfocus>
@@ -48,7 +61,6 @@
 				<focusposition>0</focusposition>
 				<scrolltime>200</scrolltime>
 				<visible>true</visible>
-	<!--			<animation effect="fade" start="100" end="0" time="1000" condition="controlgroup.HasFocus(22)">Conditional</animation> -->
 				<itemlayout width="216" height="54">
 					<control type="label">
 						<posx>20</posx>
@@ -67,7 +79,7 @@
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
-						<width>216</width>
+						<width>222</width>
 						<height>54</height>
 						<texture>settings/settings_leftmenufocus.png</texture>
 					</control>
@@ -92,14 +104,7 @@
 						<description>Backdrops</description>
 						<label>$LOCALIZE[31120]</label>
 						<label2>$LOCALIZE[31121]</label2>
-						<onfocus>Skin.Reset(bmtransit)</onfocus>
 						<onclick>SetFocus(300)</onclick>
-					</item>
-					<item id="2">
-					<description>Shorcuts</description>
-						<label>$LOCALIZE[31122]</label>
-						<label2>$LOCALIZE[31123]</label2>
-						<onclick>SetFocus(301)</onclick>
 					</item>
 					<item id="3">
 					<description>Furniture</description>
@@ -125,6 +130,19 @@
 						<label2>$LOCALIZE[31229]</label2>
 						<onclick>XBMC.ActivateWindow(560)</onclick>
 					</item>
+					<item id="2">
+						<description>Favourites</description>
+						<label>$LOCALIZE[1036]</label>
+						<label2>31990</label2>
+						<onfocus>xbmc.activatewindow(134)</onfocus>
+						<onclick>xbmc.activatewindow(134)</onclick>
+					</item>
+					<item id="8">
+						<description>Widgets</description>
+						<label>Widgets</label>
+						<label2>31102</label2>
+						<onclick>SetFocus(976)</onclick>
+					</item>
 				</content>
 			</control>
 
@@ -132,23 +150,23 @@
 				<description>Internal Panel (rear texture)</description>
 				<include>Furniture_SettingsInternalBackPanel</include>
 				<include>Animation_SettingsInternalPanel</include>
-				<visible>![Container(10).HasFocus(8) | Container(10).HasFocus(9) | Container(10).HasFocus(10) | Container(10).HasFocus(11) | Container(10).HasFocus(12) | Container(10).HasFocus(13)]</visible>
+				<visible>![Container(10).HasFocus(2) | Container(10).HasFocus(8) | Container(10).HasFocus(9) | Container(10).HasFocus(10) | Container(10).HasFocus(11) | Container(10).HasFocus(12) | Container(10).HasFocus(13)]</visible>
 			</control>
 
-<!-- Virtual Home page environment starts -->
+			<!-- Virtual Home page environment starts -->
 			<control type="group">
-				<visible>![Container(10).HasFocus(8) | Container(10).HasFocus(9) | Container(10).HasFocus(10) | Container(10).HasFocus(11) | Container(10).HasFocus(12) | Container(10).HasFocus(13)]</visible>
+				<visible>![Container(10).HasFocus(2) | Container(10).HasFocus(8) | Container(10).HasFocus(9) | Container(10).HasFocus(10) | Container(10).HasFocus(11) | Container(10).HasFocus(12) | Container(10).HasFocus(13)]</visible>
 				<posx>332</posx>
 				<posy>58</posy>
 				<include>Furniture_SettingsVHPVars</include>
 				<include>Animation_CommonFade</include>
 				<control type="image" id="87">
-					<visible>[Container(300).OnNext | Container(300).OnPrevious] | [Container(301).OnNext | Container(301).OnPrevious]</visible>
+					<visible>[Container(300).OnNext | Container(300).OnPrevious]</visible>
 					<animation effect="fade" time="300">Hidden</animation>
 				</control>
 	
 				<control type="image" id="88">
-					<visible>Control.IsVisible(300) | Control.IsVisible(301)</visible>
+					<visible>Control.IsVisible(300)</visible>
 					<animation effect="fade" time="300">Hidden</animation>
 				</control>
 		
@@ -158,12 +176,6 @@
 					<visible>Control.IsVisible(300)</visible>
 				</control>
 				
-				<control type="multiimage">
-					<include>BackgroundVarsVirtual</include>
-					<imagepath background="true">$INFO[Container(301).ListItem.Icon]</imagepath>
-					<visible>Control.IsVisible(301)</visible>
-				</control>				
-
 				<include>Furniture_VirtualTime</include>
 				<include>Furniture_VirtualRSS</include>
 				<control type="image">
@@ -221,7 +233,7 @@
 						<orientation>horizontal</orientation>
 						<focusposition>2</focusposition>
 						<scrolltime>200</scrolltime>
-						<visible>![Control.HasFocus(301) | Container(10).HasFocus(2) | Control.HasFocus(7) | Control.HasFocus(345) | Control.HasFocus(346)]</visible>
+						<visible>![Control.HasFocus(7) | Control.HasFocus(345) | Control.HasFocus(346)]</visible>
 						<animation effect="fade" start="0" end="100" time="200" condition="!Window.Previous(56) + !Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(17) + !Window.Previous(18) + !Window.Previous(19)">WindowOpen</animation>
 						<itemlayout width="184" height="40">
 							<control type="label">
@@ -248,27 +260,37 @@
 							</control>
 						</focusedlayout>
 						<content>
-							<item id="1">
-								<label>31010</label>
-								<include>BackgroundVarsMusic</include>				
-								<onclick>Skin.SetString(custom,CustomMusic)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(nomusic)</visible>
-							</item>
 							<item id="5">
 								<label>31012</label>
 								<include>BackgroundVarsPictures</include>						
 								<onclick>Skin.SetString(custom,CustomPictures)</onclick>
 								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(nopictures)</visible>
+							</item>
+							<item id="1">
+								<label>31010</label>
+								<include>BackgroundVarsMusic</include>				
+								<onclick>Skin.SetString(custom,CustomMusic)</onclick>
+								<onclick>SetFocus(92)</onclick>
+							</item>
+							<item id="30">
+								<label>$INFO[Skin.String(mainmenu_1name)]</label>
+								<include>BackgroundVars_mainmenu_1</include>
+								<onclick>Skin.SetString(custom,Custom_mainmenu_1)</onclick>
+								<onclick>SetFocus(92)</onclick>
+								<visible>Skin.HasSetting(mainmenu_1)</visible>
+							</item>
+							<item id="31">
+								<label>$INFO[Skin.String(mainmenu_2name)]</label>
+								<include>BackgroundVars_mainmenu_2</include>
+								<onclick>Skin.SetString(custom,Custom_mainmenu_2)</onclick>
+								<onclick>SetFocus(92)</onclick>
+								<visible>Skin.HasSetting(mainmenu_2)</visible>
 							</item>
 							<item id="6">
 								<label>31013</label>
 								<include>BackgroundVarsMovies</include>				
 								<onclick>Skin.SetString(custom,CustomMovies)</onclick>
 								<onclick>SetFocus(92)</onclick>
-								<visible>library.hascontent(movies)</visible>
-								<visible>!Skin.HasSetting(nomovies)</visible>
 							</item>
 							<item id="7">
 								<description>My Videos</description>
@@ -276,15 +298,12 @@
 								<include>BackgroundVarsTV</include>						
 								<onclick>Skin.SetString(custom,CustomTV)</onclick>
 								<onclick>SetFocus(92)</onclick>
-								<visible>library.hascontent(tvshows)</visible>
-								<visible>!Skin.HasSetting(notvshows)</visible>
 							</item>
 							<item id="8">
 								<label>31015</label>
 								<include>BackgroundVarsVideo</include>					
 								<onclick>Skin.SetString(custom,CustomVideos)</onclick>
 								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(novideos)</visible>
 							</item>
 							<item id="2">
 								<description>Extras</description>
@@ -292,28 +311,24 @@
 								<include>BackgroundVars_extras</include>				
 								<onclick>Skin.SetString(custom,Custom_extras)</onclick>
 								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_extras)</visible>
 							</item>
 							<item id="24">
 								<label>31020</label>
 								<include>BackgroundVarsScripts</include>						
 								<onclick>Skin.SetString(custom,CustomScripts)</onclick>
 								<onclick>SetFocus(92)</onclick>
-								<visible>Skin.HasSetting(scripts)</visible>
 							</item>			
 							<item id="3">
 								<label>0</label>
 								<include>BackgroundVarsGames</include>					
 								<onclick>Skin.SetString(custom,CustomGames)</onclick>
 								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_programs)</visible>
 							</item>	
 							<item id="9">
 								<include>BackgroundVarsSettings</include>						
 								<onclick>Skin.SetString(custom,CustomSettings)</onclick>				
 								<onclick>SetFocus(92)</onclick>				
 								<label>31016</label>
-								<visible>!Skin.HasSetting(nosettings)</visible>
 							</item>
 							<item id="10">
 								<description>Weather</description>
@@ -323,7 +338,6 @@
 								<onclick>SetFocus(92)</onclick>
 								<visible>System.HasNetwork</visible>
 								<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
-								<visible>Skin.HasSetting(weather)</visible>
 							</item>
 							<item id="10">
 								<description>Weather</description>
@@ -333,90 +347,8 @@
 								<onclick>SetFocus(92)</onclick>
 								<visible>System.HasNetwork</visible>
 								<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
-								<visible>Skin.HasSetting(weather)</visible>
 							</item>
 						<!-- Add Item -->
-							<item id="30">
-								<label>$INFO[Skin.String(mainmenu_1name)]</label>
-								<include>BackgroundVars_mainmenu_1</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_1)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_1)</visible>
-								<visible>Skin.HasSetting(mainmenu_1)</visible>
-							</item>
-							<item id="31">
-								<label>$INFO[Skin.String(mainmenu_2name)]</label>
-								<include>BackgroundVars_mainmenu_2</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_2)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_2)</visible>
-								<visible>Skin.HasSetting(mainmenu_2)</visible>
-							</item>
-<!--							<item id="32">
-								<label>$INFO[Skin.String(mainmenu_3name)]</label>
-								<include>BackgroundVars_mainmenu_3</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_3)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_3)</visible>
-								<visible>Skin.HasSetting(mainmenu_3)</visible>
-							</item>
-							<item id="33">
-								<label>$INFO[Skin.String(mainmenu_4name)]</label>
-								<include>BackgroundVars_mainmenu_4</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_4)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_4)</visible>
-								<visible>Skin.HasSetting(mainmenu_4)</visible>
-							</item>
-							<item id="34">
-								<label>$INFO[Skin.String(mainmenu_5name)]</label>
-								<include>BackgroundVars_mainmenu_5</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_5)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_5)</visible>
-								<visible>Skin.HasSetting(mainmenu_5)</visible>
-							</item>
-							<item id="35">
-								<label>$INFO[Skin.String(mainmenu_6name)]</label>
-								<include>BackgroundVars_mainmenu_6</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_6)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_6)</visible>
-								<visible>Skin.HasSetting(mainmenu_6)</visible>
-							</item>
-							<item id="36">
-								<label>$INFO[Skin.String(mainmenu_7name)]</label>
-								<include>BackgroundVars_mainmenu_7</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_7)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_7)</visible>
-								<visible>Skin.HasSetting(mainmenu_7)</visible>
-							</item>
-							<item id="37">
-								<label>$INFO[Skin.String(mainmenu_8name)]</label>
-								<include>BackgroundVars_mainmenu_8</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_8)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_8)</visible>
-								<visible>Skin.HasSetting(mainmenu_8)</visible>
-							</item>
-							<item id="38">
-								<label>$INFO[Skin.String(mainmenu_9name)]</label>
-								<include>BackgroundVars_mainmenu_9</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_9)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_9)</visible>
-								<visible>Skin.HasSetting(mainmenu_9)</visible>
-							</item>
-							<item id="39">
-								<label>$INFO[Skin.String(mainmenu_10name)]</label>
-								<include>BackgroundVars_mainmenu_10</include>
-								<onclick>Skin.SetString(custom,Custom_mainmenu_10)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_10)</visible>
-								<visible>Skin.HasSetting(mainmenu_10)</visible>
-							</item> -->
-						<!-- Add Item End -->	
 							<item id="13">
 								<description>Play DVD</description>
 								<label>31018</label>
@@ -424,22 +356,12 @@
 								<onclick>Skin.SetString(custom,CustomPlayDVD)</onclick>
 								<onclick>SetFocus(92)</onclick>
 							</item>
-<!--							<item id="21">
-								<description>Assistant</description>
-								<label>31021</label>
-								<include>BackgroundVarsAssistant</include>					
-								<onclick>Skin.SetString(custom,CustomAssistant)</onclick>
-								<onclick>SetFocus(92)</onclick>
-								<visible>Skin.HasSetting(assistant)</visible>				
-							</item> -->
 							<item id="23">
 								<description>Sign Out</description>
 								<label>31209</label>
 								<include>BackgroundVarsSignOut</include>						
 								<onclick>Skin.SetString(custom,CustomSignOut)</onclick>
 								<onclick>SetFocus(92)</onclick>
-								<visible>System.HasLoginScreen</visible>
-								<visible>Skin.HasSetting(signout)</visible>				
 							</item>
 							<item id="22">
 								<description>Shutdown</description>
@@ -447,1584 +369,276 @@
 								<include>BackgroundVarsShutdown</include>					
 								<onclick>Skin.SetString(custom,CustomShutdown)</onclick>
 								<onclick>SetFocus(92)</onclick>
-								<visible>Skin.HasSetting(shutdown)</visible>
 							</item>				
 						</content>
-					</control>
-					<control type="wraplist" id="301">
-						<posx>0</posx>
-						<posy>-1</posy>
-						<height>40</height>
-						<width>840</width>
-						<onleft>301</onleft>
-						<onright>301</onright>
-						<onup>346</onup>
-						<ondown>10</ondown>
-						<viewtype>list</viewtype>
-						<orientation>horizontal</orientation>
-						<focusposition>2</focusposition>
-						<scrolltime>200</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(301) | Container(10).HasFocus(2) | Control.HasFocus(345)</visible>
-						<include>homesubmenu_Customiseanimation</include>
-						<animation effect="fade" start="0" end="100" time="200" condition="!Window.Previous(56) + !Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(17) + !Window.Previous(18) + !Window.Previous(19)">WindowOpen</animation>
-						<itemlayout width="184" height="40">
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<info>ListItem.Label</info>
-								<textcolor>48FFFFFF</textcolor>
-								<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-							</control>
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<info>ListItem.Label2</info>
-								<textcolor>48000000</textcolor>
-								<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-							</control>
-						</itemlayout>
-						<focusedlayout width="184" height="40">
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<info>ListItem.Label</info>
-								<textcolor>48FFFFFF</textcolor>
-								<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-							</control>		
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<info>ListItem.Label</info>
-								<textcolor>FFFFFFFF</textcolor>
-								<animation effect="fade" start="0" end="100" time="200">Focus</animation>
-								<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>				
-								<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-							</control>
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<info>ListItem.Label2</info>
-								<textcolor>48000000</textcolor>
-								<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-							</control>
-						</focusedlayout>
-						<content>
-							<item id="1">
-								<label>31010</label>
-								<include>BackgroundVarsMusic</include>						
-								<onclick>Skin.ToggleSetting(nomusic)</onclick>
-								<visible>!Skin.HasSetting(nomusic)</visible>
-							</item>
-							<item id="1">
-								<label2>31010</label2>
-								<include>BackgroundVarsMusic</include>						
-								<onclick>Skin.Reset(nomusic)</onclick>
-								<visible>Skin.HasSetting(nomusic)</visible>
-							</item>
-							<item id="5">
-								<label>31012</label>
-								<include>BackgroundVarsPictures</include>					
-								<onclick>Skin.SetBool(nopictures)</onclick>
-								<visible>!Skin.HasSetting(nopictures)</visible>
-							</item>
-							<item id="5">
-								<label2>31012</label2>
-								<include>BackgroundVarsPictures</include>					
-								<onclick>Skin.Reset(nopictures)</onclick>
-								<visible>Skin.HasSetting(nopictures)</visible>
-							</item>
-							<item id="6">
-								<label>31013</label>
-								<include>BackgroundVarsMovies</include>					
-								<onclick>Skin.SetBool(nomovies)</onclick>
-								<visible>library.hascontent(movies)</visible>
-								<visible>!Skin.HasSetting(nomovies)</visible>
-							</item>
-							<item id="6">
-								<label2>31013</label2>
-								<include>BackgroundVarsMovies</include>					
-								<onclick>Skin.Reset(nomovies)</onclick>
-								<visible>library.hascontent(movies)</visible>
-								<visible>Skin.HasSetting(nomovies)</visible>
-							</item>
-							<item id="7">
-								<description>My Videos</description>
-								<label>31014</label>
-								<include>BackgroundVarsTV</include>					
-								<onclick>Skin.SetBool(notvshows)</onclick>
-								<visible>library.hascontent(tvshows)</visible>
-								<visible>!Skin.HasSetting(notvshows)</visible>
-							</item>
-							<item id="7">
-								<description>My Videos</description>
-								<label2>31014</label2>
-								<include>BackgroundVarsTV</include>					
-								<onclick>Skin.Reset(notvshows)</onclick>
-								<visible>Skin.HasSetting(notvshows)</visible>
-							</item>
-							<item id="8">
-								<label>31015</label>
-								<include>BackgroundVarsVideo</include>					
-								<onclick>Skin.SetBool(novideos)</onclick>
-								<visible>!Skin.HasSetting(novideos)</visible>
-							</item>
-							<item id="8">
-								<label2>31015</label2>
-								<include>BackgroundVarsVideo</include>					
-								<onclick>Skin.Reset(novideos)</onclick>
-								<visible>Skin.HasSetting(novideos)</visible>
-							</item>
-							<item id="10">
-								<description>Weather On</description>
-								<label>31017</label>
-								<include>BackgroundVarsWeather</include>
-								<onclick>Skin.Reset(weather)</onclick>
-								<visible>System.HasNetwork</visible>
-								<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
-								<visible>Skin.HasSetting(weather)</visible>
-							</item>
-							<item id="10">
-								<description>Weather Off</description>
-								<label2>31017</label2>
-								<include>BackgroundVarsWeather</include>
-								<onclick>Skin.SetBool(weather)</onclick>
-								<visible>System.HasNetwork</visible>
-								<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
-								<visible>!Skin.HasSetting(weather)</visible>
-							</item>
-							<item id="10">
-								<description>Weather On</description>
-								<label>31017</label>
-								<include>BackgroundVarsWeather2</include>
-								<onclick>Skin.Reset(weather)</onclick>
-								<visible>System.HasNetwork</visible>
-								<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
-								<visible>Skin.HasSetting(weather)</visible>
-							</item>
-							<item id="10">
-								<description>Weather Off</description>
-								<label2>31017</label2>
-								<include>BackgroundVarsWeather2</include>
-								<onclick>Skin.SetBool(weather)</onclick>
-								<visible>System.HasNetwork</visible>
-								<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
-								<visible>!Skin.HasSetting(weather)</visible>
-							</item>
-							<item id="2">
-								<description>Extras on</description>
-								<label>31865</label>
-								<include>BackgroundVars_extras</include>				
-								<onclick>Skin.SetBool(no_extras)</onclick>
-								<visible>!Skin.HasSetting(no_extras)</visible>
-							</item>
-							<item id="2">
-								<description>Extras off</description>
-								<label2>31865</label2>
-								<include>BackgroundVars_extras</include>					
-								<onclick>Skin.Reset(no_extras)</onclick>
-								<visible>Skin.HasSetting(no_extras)</visible>
-							</item>
-							<item id="3">
-								<description>Programs On</description>
-								<label>0</label>
-								<include>BackgroundVarsGames</include>
-								<onclick>Skin.SetBool(no_programs)</onclick>
-								<visible>!Skin.HasSetting(no_programs)</visible>
-							</item>
-							<item id="3">
-								<description>Programs Off</description>
-								<label2>0</label2>
-								<include>BackgroundVarsGames</include>
-								<onclick>Skin.Reset(no_programs)</onclick>
-								<visible>Skin.HasSetting(no_programs)</visible>
-							</item>
-						<!-- Add Items -->
-							<item id="30">
-								<label>$INFO[Skin.String(mainmenu_1name)]</label>
-								<include>BackgroundVars_mainmenu_1</include>
-								<onclick>Skin.SetBool(no_mainmenu_1)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_1)</visible>
-								<visible>Skin.HasSetting(mainmenu_1)</visible>
-							</item>
-							<item id="30">
-								<label2>$INFO[Skin.String(mainmenu_1name)]</label2>
-								<include>BackgroundVars_mainmenu_1</include>
-								<onclick>Skin.Reset(no_mainmenu_1)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu_1)</visible>
-								<visible>Skin.HasSetting(mainmenu_1)</visible>
-							</item>
-							<item id="31">
-								<label>$INFO[Skin.String(mainmenu_2name)]</label>
-								<include>BackgroundVars_mainmenu_2</include>
-								<onclick>Skin.SetBool(no_mainmenu_2)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_2)</visible>
-								<visible>Skin.HasSetting(mainmenu_2)</visible>
-							</item>
-							<item id="31">
-								<label2>$INFO[Skin.String(mainmenu_2name)]</label2>
-								<include>BackgroundVars_mainmenu_2</include>
-								<onclick>Skin.Reset(no_mainmenu_2)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu_2)</visible>
-								<visible>Skin.HasSetting(mainmenu_2)</visible>
-							</item>
-<!--							<item id="32">
-								<label>$INFO[Skin.String(mainmenu_3name)]</label>
-								<include>BackgroundVars_mainmenu_3</include>
-								<onclick>Skin.SetBool(no_mainmenu_3)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_3)</visible>
-								<visible>Skin.HasSetting(mainmenu_3)</visible>
-							</item>
-							<item id="32">
-								<label2>$INFO[Skin.String(mainmenu_3name)]</label2>
-								<include>BackgroundVars_mainmenu_3</include>
-								<onclick>Skin.Reset(no_mainmenu_3)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu_3)</visible>
-								<visible>Skin.HasSetting(mainmenu_3)</visible>
-							</item>
-							<item id="33">
-								<label>$INFO[Skin.String(mainmenu_4name)]</label>
-								<include>BackgroundVars_mainmenu_4</include>
-								<onclick>Skin.SetBool(no_mainmenu_4)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_4)</visible>
-								<visible>Skin.HasSetting(mainmenu_4)</visible>
-							</item>
-							<item id="33">
-								<label2>$INFO[Skin.String(mainmenu_4name)]</label2>
-								<include>BackgroundVars_mainmenu_4</include>
-								<onclick>Skin.Reset(no_mainmenu_4)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu_4)</visible>
-								<visible>Skin.HasSetting(mainmenu_4)</visible>
-							</item>
-							<item id="34">
-								<label>$INFO[Skin.String(mainmenu_5name)]</label>
-								<include>BackgroundVars_mainmenu_5</include>
-								<onclick>Skin.SetBool(no_mainmenu_5)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_5)</visible>
-								<visible>Skin.HasSetting(mainmenu_5)</visible>
-							</item>
-							<item id="34">
-								<label2>$INFO[Skin.String(mainmenu_5name)]</label2>
-								<include>BackgroundVars_mainmenu_5</include>
-								<onclick>Skin.Reset(no_mainmenu_5)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu_5)</visible>
-								<visible>Skin.HasSetting(mainmenu_5)</visible>
-							</item>
-							<item id="35">
-								<label>$INFO[Skin.String(mainmenu_6name)]</label>
-								<include>BackgroundVars_mainmenu_6</include>
-								<onclick>Skin.SetBool(no_mainmenu_6)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_6)</visible>
-								<visible>Skin.HasSetting(mainmenu_6)</visible>
-							</item>
-							<item id="35">
-								<label2>$INFO[Skin.String(mainmenu_6name)]</label2>
-								<include>BackgroundVars_mainmenu_6</include>
-								<onclick>Skin.Reset(no_mainmenu_6)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu_6)</visible>
-								<visible>Skin.HasSetting(mainmenu_6)</visible>
-							</item>
-							<item id="36">
-								<label>$INFO[Skin.String(mainmenu_7name)]</label>
-								<include>BackgroundVars_mainmenu_7</include>
-								<onclick>Skin.SetBool(no_mainmenu_7)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_7)</visible>
-								<visible>Skin.HasSetting(mainmenu_7)</visible>
-							</item>
-							<item id="36">
-								<label2>$INFO[Skin.String(mainmenu_7name)]</label2>
-								<include>BackgroundVars_mainmenu_7</include>
-								<onclick>Skin.Reset(no_mainmenu_7)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu_7)</visible>
-								<visible>Skin.HasSetting(mainmenu_7)</visible>
-							</item>
-							<item id="37">
-								<label>$INFO[Skin.String(mainmenu_8name)]</label>
-								<include>BackgroundVars_mainmenu_8</include>
-								<onclick>Skin.SetBool(no_mainmenu_8)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_8)</visible>
-								<visible>Skin.HasSetting(mainmenu_8)</visible>
-							</item>
-							<item id="37">
-								<label2>$INFO[Skin.String(mainmenu_8name)]</label2>
-								<include>BackgroundVars_mainmenu_8</include>
-								<onclick>Skin.Reset(no_mainmenu_8)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu_8)</visible>
-								<visible>Skin.HasSetting(mainmenu_8)</visible>
-							</item>
-							<item id="38">
-								<label>$INFO[Skin.String(mainmenu_9name)]</label>
-								<include>BackgroundVars_mainmenu_9</include>
-								<onclick>Skin.SetBool(no_mainmenu_9)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_9)</visible>
-								<visible>Skin.HasSetting(mainmenu_1)</visible>
-							</item>
-							<item id="38">
-								<label2>$INFO[Skin.String(mainmenu_9name)]</label2>
-								<include>BackgroundVars_mainmenu_9</include>
-								<onclick>Skin.Reset(no_mainmenu_9)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu9)</visible>
-								<visible>Skin.HasSetting(mainmenu_9)</visible>
-							</item>
-							<item id="39">
-								<label>$INFO[Skin.String(mainmenu_10name)]</label>
-								<include>BackgroundVars_mainmenu_10</include>
-								<onclick>Skin.SetBool(no_mainmenu_10)</onclick>
-								<visible>!Skin.HasSetting(no_mainmenu_10)</visible>
-								<visible>Skin.HasSetting(mainmenu_10)</visible>
-							</item>
-							<item id="39">
-								<label2>$INFO[Skin.String(mainmenu_10name)]</label2>
-								<include>BackgroundVars_mainmenu_10</include>
-								<onclick>Skin.Reset(no_mainmenu_10)</onclick>
-								<visible>Skin.HasSetting(no_mainmenu_10)</visible>
-								<visible>Skin.HasSetting(mainmenu_10)</visible>
-							</item> -->
-					<!-- Add Item End -->
-							<item id="24">
-								<label>31020</label>
-								<include>BackgroundVarsScripts</include>					
-								<onclick>Skin.Reset(scripts)</onclick>
-								<visible>Skin.HasSetting(scripts)</visible>
-							</item>
-							<item id="24">
-								<label2>31020</label2>
-								<include>BackgroundVarsScripts</include>					
-								<onclick>Skin.SetBool(scripts)</onclick>
-								<visible>!Skin.HasSetting(scripts)</visible>
-							</item>			
-							<item id="9">
-								<label>31016</label>
-								<include>BackgroundVarsSettings</include>					
-								<onclick>Skin.SetBool(nosettings)</onclick>
-								<visible>!Skin.HasSetting(nosettings)</visible>
-							</item>
-							<item id="9">
-								<label2>31016</label2>
-								<include>BackgroundVarsSettings</include>					
-								<onclick>Skin.Reset(nosettings)</onclick>
-								<visible>Skin.HasSetting(nosettings)</visible>
-							</item>
-							<item id="22">
-								<description>Shutdown</description>
-								<label>31019</label>
-								<include>BackgroundVarsShutdown</include>					
-								<onclick>Skin.Reset(shutdown)</onclick>
-								<visible>Skin.HasSetting(shutdown)</visible>
-							</item>
-							<item id="22">
-								<description>Shutdown</description>
-								<label2>31019</label2>
-								<include>BackgroundVarsShutdown</include>					
-								<onclick>Skin.SetBool(shutdown)</onclick>
-								<visible>!Skin.HasSetting(shutdown)</visible>
-							</item>
-<!--							<item id="21">
-								<description>Assistant</description>
-								<label>31021</label>
-								<include>BackgroundVarsAssistant</include>					
-								<onclick>Skin.Reset(assistant)</onclick>
-								<visible>Skin.HasSetting(assistant)</visible>
-							</item>
-							<item id="21">
-								<description>Assistant</description>
-								<label2>31021</label2>
-								<include>BackgroundVarsAssistant</include>					
-								<onclick>Skin.SetBool(assistant)</onclick>
-								<visible>!Skin.HasSetting(assistant)</visible>
-							</item> -->
-							<item id="23">
-								<description>Sign Out</description>
-								<label>31209</label>
-								<include>BackgroundVarsSignOut</include>					
-								<onclick>Skin.Reset(signout)</onclick>
-								<visible>System.HasLoginScreen</visible>
-								<visible>Skin.HasSetting(signout)</visible>
-							</item>
-							<item id="23">
-								<description>Sign Out</description>
-								<label2>31209</label2>
-								<include>BackgroundVarsSignOut</include>					
-								<onclick>Skin.SetBool(signout)</onclick>
-								<visible>!Skin.HasSetting(signout)</visible>
-							</item>				
-						</content>
-					</control>
-				</control>
-				<control type="button" id="346">
-					<visible>!Control.IsVisible(2345)</visible>
-					<onfocus>SetFocus(10)</onfocus>
-				</control>
-				<control type="button" id="346">
-					<visible>Control.IsVisible(2345)</visible>
-					<onfocus>SetFocus(345)</onfocus>
-				</control>
-				<control type="group">
-					<posx>0</posx>
-					<posy>239</posy>
-					<width>840</width>
-					<height>40</height>
-					<defaultcontrol>300</defaultcontrol>
-					<visible>Container(301).HasFocus(9) | Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1) | Container(301).HasFocus(2)</visible>
-					<control type="group">
-						<posx>328</posx>
-						<posy>-21</posy>
-						<control type="image">
-							<description>Panel</description>
-							<visible>Control.HasFocus(345)</visible>
-							<include>homesubmenu_Customiseanimation2</include>
-							<posx>0</posx>
-							<posy>0</posy>
-							<height>20</height>
-							<width>184</width>
-							<texture>osd/osd_button_paused.png</texture>
-							<colordiffuse>FFFFFFFF</colordiffuse>
-						</control>
-						<control type="label">
-							<visible>Control.HasFocus(345)</visible>
-							<include>homesubmenu_Customiseanimation2</include>
-							<posx>10</posx>
-							<posy>0</posy>
-								<width>164</width>
-								<height>20</height>
-								<font>Font_Time</font>
-							<align>center</align>
-							<aligny>center</aligny>
-							<textcolor>a9000000</textcolor>
-								<label>$INFO[Container(301).ListItem.Label]</label>
-						</control>
-					</control>
-					<control type="image">
-						<visible>Control.HasFocus(345)</visible>
-						<posx>0</posx>
-						<posy>-28</posy>
-						<width>840</width>
-						<height>99</height>
-						<texture>home/homemenu_back.png</texture>
-						<include>Animation_CommonFade</include>
-						<include>homesubmenu_Customiseanimation2</include>
-					</control>
-					<control type="wraplist" id="345">
-						<visible allowhiddenfocus="true">Control.HasFocus(345)</visible>
-						<posx>0</posx>
-						<posy>-1</posy>
-						<height>40</height>
-						<width>840</width>
-						<onleft>345</onleft>
-						<onright>345</onright>
-						<onup>301</onup>
-						<ondown>301</ondown>
-						<viewtype>list</viewtype>
-						<orientation>horizontal</orientation>
-						<focusposition>2</focusposition>
-						<scrolltime>200</scrolltime>
-						<include>homesubmenu_Customiseanimation2</include>
-						<itemlayout width="184" height="40">
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<textcolor>48FFFFFF</textcolor>
-								<info>ListItem.Label</info>
-							</control>
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<info>ListItem.Label2</info>
-								<textcolor>48000000</textcolor>
-							</control>
-						</itemlayout>
-						<focusedlayout width="184" height="40">
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<info>ListItem.Label2</info>
-								<textcolor>48000000</textcolor>
-							</control>
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<info>ListItem.Label2</info>
-								<textcolor>48000000</textcolor>
-								<include>Animation_ButtonFocusFade</include>
-							</control>
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<textcolor>48FFFFFF</textcolor>  
-								<info>ListItem.Label</info>		
-							</control>
-							<control type="label">
-								<include>VirtualMainMenu_Label</include>
-								<textcolor>FFFFFFFF</textcolor>
-								<info>ListItem.Label</info>
-								<include>Animation_ButtonFocusFade</include>
-							</control>
-						</focusedlayout>
-						<content>
-						<!-- TV (7) -->
-						<item id="10">
-							<description>By Genre on</description>
-							<label>135</label>
-							<onclick>Skin.SetBool(sub_tv_Genre)</onclick>
-							<visible>!Skin.HasSetting(sub_tv_Genre)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="10">
-							<description>By Genre off</description>
-							<label2>135</label2>
-							<onclick>Skin.Reset(sub_tv_Genre)</onclick>
-							<visible>Skin.HasSetting(sub_tv_Genre)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="11">
-							<description>Files on</description>
-							<label>744</label>
-							<onclick>Skin.SetBool(sub_tv_file)</onclick>
-							<visible>!Skin.HasSetting(sub_tv_file)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="11">
-							<description>Files off</description>
-							<label2>744</label2>
-							<onclick>Skin.Reset(sub_tv_file)</onclick>
-							<visible>Container(301).HasFocus(7)</visible>
-							<visible>Skin.HasSetting(sub_tv_file)</visible>
-						</item>
-						<item id="12">
-							<description>Recently Added on</description>
-							<label>31920</label>
-							<onclick>Skin.SetBool(sub_tv_recently)</onclick>
-							<visible>!Skin.HasSetting(sub_tv_recently)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="12">
-							<description>Recently Added off</description>
-							<label2>31920</label2>
-							<onclick>Skin.Reset(sub_tv_recently)</onclick>
-							<visible>Skin.HasSetting(sub_tv_recently)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="13">
-							<description>By Year on</description>
-							<label>345</label>
-							<onclick>Skin.SetBool(sub_tv_year)</onclick>
-							<visible>!Skin.HasSetting(sub_tv_year)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-								</item>
-						<item id="13">
-							<description>By Year off</description>
-							<label2>345</label2>
-							<onclick>Skin.Reset(sub_tv_year)</onclick>
-							<visible>Skin.HasSetting(sub_tv_year)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-								</item>
-						<item id="14">
-							<description>By Actor on</description>
-							<label>344</label>
-							<onclick>Skin.SetBool(sub_tv_Actor)</onclick>
-							<visible>!Skin.HasSetting(sub_tv_Actor)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="14">
-							<description>By Actor off</description>
-							<label2>344</label2>
-							<onclick>Skin.Reset(sub_tv_Actor)</onclick>
-							<visible>Skin.HasSetting(sub_tv_Actor)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="15">
-							<description>Video Plugins on</description>
-						<label fallback="PLUGINS">31850</label>
-							<onclick>Skin.SetBool(sub_tv_Plugins)</onclick>
-							<visible>!Skin.HasSetting(sub_tv_Plugins)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="15">
-							<description>Video Plugins off</description>
-						<label2 fallback="PLUGINS">31850</label2>
-							<onclick>Skin.Reset(sub_tv_Plugins)</onclick>
-							<visible>Skin.HasSetting(sub_tv_Plugins)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="233">
-							<description>TVShows_Sub 1 on</description>
-							<label>$INFO[Skin.String(TVShows_Sub_1name)]</label>
-							<onclick>Skin.SetBool(no_TVShows_Sub_1)</onclick>
-							<visible>!Skin.HasSetting(no_TVShows_Sub_1)</visible>
-							<visible>Skin.HasSetting(TVShows_Sub_1)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="233">
-							<description>TVShows_Sub 1 off</description>
-							<label2>$INFO[Skin.String(TVShows_Sub_1name)]</label2>
-							<onclick>Skin.Reset(no_TVShows_Sub_1)</onclick>
-							<visible>Skin.HasSetting(no_TVShows_Sub_1)</visible>
-							<visible>Skin.HasSetting(TVShows_Sub_1)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="234">
-							<description>TVShows_Sub 2 on</description>
-							<label>$INFO[Skin.String(TVShows_Sub_2name)]</label>
-							<onclick>Skin.SetBool(no_TVShows_Sub_2)</onclick>
-							<visible>!Skin.HasSetting(no_TVShows_Sub_2)</visible>
-							<visible>Skin.HasSetting(TVShows_Sub_2)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="234">
-							<description>TVShows_Sub 2 off</description>
-							<label2>$INFO[Skin.String(TVShows_Sub_2name)]</label2>
-							<onclick>Skin.Reset(no_TVShows_Sub_2)</onclick>
-							<visible>Skin.HasSetting(no_TVShows_Sub_2)</visible>
-							<visible>Skin.HasSetting(TVShows_Sub_2)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="235">
-							<description>TVShows_Sub 3 on</description>
-							<label>$INFO[Skin.String(TVShows_Sub_3name)]</label>
-							<onclick>Skin.SetBool(no_TVShows_Sub_3)</onclick>
-							<visible>!Skin.HasSetting(no_TVShows_Sub_3)</visible>
-							<visible>Skin.HasSetting(TVShows_Sub_3)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="235">
-							<description>TVShows_Sub 3 off</description>
-							<label2>$INFO[Skin.String(TVShows_Sub_3name)]</label2>
-							<onclick>Skin.Reset(no_TVShows_Sub_3)</onclick>
-							<visible>Skin.HasSetting(no_TVShows_Sub_3)</visible>
-							<visible>Skin.HasSetting(TVShows_Sub_3)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-<!--						<item id="236">
-							<description>TVShows_Sub 4 on</description>
-							<label>$INFO[Skin.String(TVShows_Sub_4name)]</label>
-							<onclick>Skin.SetBool(no_TVShows_Sub_4)</onclick>
-							<visible>!Skin.HasSetting(no_TVShows_Sub_4)</visible>
-							<visible>Skin.HasSetting(TVShows_Sub_4)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item>
-						<item id="236">
-							<description>TVShows_Sub 4 off</description>
-							<label2>$INFO[Skin.String(TVShows_Sub_4name)]</label2>
-							<onclick>Skin.Reset(no_TVShows_Sub_4)</onclick>
-							<visible>Skin.HasSetting(no_TVShows_Sub_4)</visible>
-							<visible>Skin.HasSetting(TVShows_Sub_4)</visible>
-							<visible>Container(301).HasFocus(7)</visible>
-						</item> -->
-					<!-- TV (7) end -->
-					<!-- Movies (6) -->
-						<item id="20">
-							<description>By Genre on</description>
-							<label>135</label>
-							<onclick>Skin.SetBool(sub_movies_Genre)</onclick>
-							<visible>!Skin.HasSetting(sub_movies_Genre)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="20">
-							<description>By Genre off</description>
-							<label2>135</label2>
-							<onclick>Skin.Reset(sub_movies_Genre)</onclick>
-							<visible>Skin.HasSetting(sub_movies_Genre)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="21">
-							<description>files on</description>
-							<label>744</label>
-							<onclick>Skin.SetBool(sub_movies_files)</onclick>
-							<visible>!Skin.HasSetting(sub_movies_files)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="21">
-							<description>files off</description>
-							<label2>744</label2>
-							<onclick>Skin.Reset(sub_movies_files)</onclick>
-							<visible>Skin.HasSetting(sub_movies_files)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="22">
-							<description>Recently Added on</description>
-							<label>31920</label>
-							<onclick>Skin.SetBool(sub_movies_recently)</onclick>
-							<visible>!Skin.HasSetting(sub_movies_recently)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="22">
-							<description>Recently Added off</description>
-							<label2>31920</label2>
-							<onclick>Skin.Reset(sub_movies_recently)</onclick>
-							<visible>Skin.HasSetting(sub_movies_recently)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="23">
-							<description>By Year on</description>
-							<label>345</label>
-							<onclick>Skin.SetBool(sub_movies_Year)</onclick>
-							<visible>Container(301).HasFocus(6)</visible>
-							<visible>!Skin.HasSetting(sub_movies_Year)</visible>
-						</item>
-						<item id="23">
-							<description>By Year off</description>
-							<label2>345</label2>
-							<onclick>Skin.Reset(sub_movies_Year)</onclick>
-							<visible>Skin.HasSetting(sub_movies_Year)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="24">
-							<description>By Actor on</description>
-							<label>344</label>
-							<onclick>Skin.SetBool(sub_movies_Actor)</onclick>
-							<visible>!Skin.HasSetting(sub_movies_Actor)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="24">
-							<description>By Actor off</description>
-							<label2>344</label2>
-							<onclick>Skin.Reset(sub_movies_Actor)</onclick>
-							<visible>Skin.HasSetting(sub_movies_Actor)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="25">
-							<description>By Director on</description>
-							<label>20339</label>
-							<onclick>Skin.SetBool(sub_movies_Director)</onclick>
-							<visible>!Skin.HasSetting(sub_movies_Director)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="25">
-							<description>By Director off</description>
-							<label2>20339</label2>
-							<onclick>Skin.Reset(sub_movies_Director)</onclick>
-							<visible>Skin.HasSetting(sub_movies_Director)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="26">
-							<description>By Studio on</description>
-							<label>20388</label>
-							<onclick>Skin.SetBool(sub_movies_Studio)</onclick>
-							<visible>!Skin.HasSetting(sub_movies_Studio)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="26">
-							<description>By Studio off</description>
-							<label2>20388</label2>
-							<onclick>Skin.Reset(sub_movies_Studio)</onclick>
-							<visible>Skin.HasSetting(sub_movies_Studio)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="27">
-							<description>Video Plugins on</description>
-						<label fallback="PLUGINS">31850</label>
-							<onclick>Skin.SetBool(sub_movies_Plugins)</onclick>
-							<visible>!Skin.HasSetting(sub_movies_Plugins)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="27">
-							<description>Video Plugins off</description>
-						<label2 fallback="PLUGINS">31850</label2>
-							<onclick>Skin.Reset(sub_movies_Plugins)</onclick>
-							<visible>Skin.HasSetting(sub_movies_Plugins)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="237">
-							<description>Movies_Sub 1 on</description>
-							<label>$INFO[Skin.String(Movies_Sub_1name)]</label>
-							<onclick>Skin.SetBool(no_Movies_Sub_1)</onclick>
-							<visible>!Skin.HasSetting(no_Movies_Sub_1)</visible>
-							<visible>Skin.HasSetting(Movies_Sub_1)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="237">
-							<description>Movies_Sub 1 off</description>
-							<label2>$INFO[Skin.String(Movies_Sub_1name)]</label2>
-							<onclick>Skin.Reset(no_Movies_Sub_1)</onclick>
-							<visible>Skin.HasSetting(no_Movies_Sub_1)</visible>
-							<visible>Skin.HasSetting(Movies_Sub_1)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="238">
-							<description>Movies_Sub 2 on</description>
-							<label>$INFO[Skin.String(Movies_Sub_2name)]</label>
-							<onclick>Skin.SetBool(no_Movies_Sub_2)</onclick>
-							<visible>!Skin.HasSetting(no_Movies_Sub_2)</visible>
-							<visible>Skin.HasSetting(Movies_Sub_2)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="238">
-							<description>Movies_Sub 2 off</description>
-							<label2>$INFO[Skin.String(Movies_Sub_2name)]</label2>
-							<onclick>Skin.Reset(no_Movies_Sub_2)</onclick>
-							<visible>Skin.HasSetting(no_Movies_Sub_2)</visible>
-							<visible>Skin.HasSetting(Movies_Sub_2)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="239">
-							<description>Movies_Sub 3 on</description>
-							<label>$INFO[Skin.String(Movies_Sub_3name)]</label>
-							<onclick>Skin.SetBool(no_Movies_Sub_3)</onclick>
-							<visible>!Skin.HasSetting(no_Movies_Sub_3)</visible>
-							<visible>Skin.HasSetting(Movies_Sub_3)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="239">
-							<description>Movies_Sub 3 off</description>
-							<label2>$INFO[Skin.String(Movies_Sub_3name)]</label2>
-							<onclick>Skin.Reset(no_Movies_Sub_3)</onclick>
-							<visible>Skin.HasSetting(no_Movies_Sub_3)</visible>
-							<visible>Skin.HasSetting(Movies_Sub_3)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="240">
-							<description>Movies_Sub 4 on</description>
-							<label>$INFO[Skin.String(Movies_Sub_4name)]</label>
-							<onclick>Skin.SetBool(no_Movies_Sub_4)</onclick>
-							<visible>!Skin.HasSetting(no_Movies_Sub_4)</visible>
-							<visible>Skin.HasSetting(Movies_Sub_4)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-						<item id="240">
-							<description>Movies_Sub 4 off</description>
-							<label2>$INFO[Skin.String(Movies_Sub_4name)]</label2>
-							<onclick>Skin.Reset(no_Movies_Sub_4)</onclick>
-							<visible>Skin.HasSetting(no_Movies_Sub_4)</visible>
-							<visible>Skin.HasSetting(Movies_Sub_4)</visible>
-							<visible>Container(301).HasFocus(6)</visible>
-						</item>
-					<!-- Movies (6) End -->
-					<!-- Music (1)  -->
-						<item id="41">
-							<description>Partymode on</description>
-						<label fallback="PARTY">31854</label>
-							<onclick>Skin.SetBool(sub_music_Party)</onclick>
-							<visible>!Skin.HasSetting(sub_music_Party)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="41">
-							<description>Partymode off</description>
-						<label2 fallback="PARTY">31854</label2>
-							<onclick>Skin.Reset(sub_music_Party)</onclick>
-							<visible>Skin.HasSetting(sub_music_Party)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="42">
-							<description>Last.FM off</description>
-							<label>15200</label>
-							<onclick>Skin.Reset(sub_music_fm)</onclick>
-							<visible>Skin.HasSetting(sub_music_fm)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="42">
-							<description>Last.FM on</description>
-							<label2>$LOCALIZE[15200]</label2>
-							<onclick>Skin.SetBool(sub_music_fm)</onclick>
-							<visible>!Skin.HasSetting(sub_music_fm)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="31">
-							<description>Music files on</description>
-							<label>744</label>
-							<onclick>Skin.SetBool(sub_music_files)</onclick>
-							<visible>!Skin.HasSetting(sub_music_files)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="31">
-							<description>Music files off</description>
-							<label2>744</label2>
-							<onclick>Skin.Reset(sub_music_files)</onclick>
-							<visible>Skin.HasSetting(sub_music_files)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="32">
-							<description>Playlists on</description>
-							<label>136</label>
-							<onclick>Skin.SetBool(sub_music_Playlists)</onclick>
-							<visible>!Skin.HasSetting(sub_music_Playlists)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="32">
-							<description>Playlists off</description>
-							<label2>136</label2>
-							<onclick>Skin.Reset(sub_music_Playlists)</onclick>
-							<visible>Skin.HasSetting(sub_music_Playlists)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="33">
-							<description>Music Videos on</description>
-							<label>20389</label>
-							<onclick>Skin.SetBool(sub_music_Videos)</onclick>
-							<visible>!Skin.HasSetting(sub_music_Videos)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="33">
-							<description>Music Videos off</description>
-							<label2>20389</label2>
-							<onclick>Skin.Reset(sub_music_Videos)</onclick>
-							<visible>Skin.HasSetting(sub_music_Videos)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="34">
-							<description>genres on</description>
-							<label>135</label>
-							<onclick>Skin.SetBool(sub_music_genres)</onclick>
-							<visible>!Skin.HasSetting(sub_music_genres)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="34">
-							<description>genres off</description>
-							<label2>135</label2>
-							<onclick>Skin.Reset(sub_music_genres)</onclick>
-							<visible>Skin.HasSetting(sub_music_genres)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="35">
-							<description>artists on</description>
-							<label>133</label>
-							<onclick>Skin.SetBool(sub_music_artists)</onclick>
-							<visible>!Skin.HasSetting(sub_music_artists)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="35">
-							<description>artists off</description>
-							<label2>133</label2>
-							<onclick>Skin.Reset(sub_music_artists)</onclick>
-							<visible>Skin.HasSetting(sub_music_artists)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="36">
-							<description>Albums on</description>
-							<label>132</label>
-							<onclick>Skin.SetBool(sub_music_albums)</onclick>
-							<visible>!Skin.HasSetting(sub_music_albums)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="36">
-							<description>Albums off</description>
-							<label2>132</label2>
-							<onclick>Skin.Reset(sub_music_albums)</onclick>
-							<visible>Skin.HasSetting(sub_music_albums)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="37">
-							<description>compilations on</description>
-							<label>521</label>
-							<onclick>Skin.SetBool(sub_music_compilations)</onclick>
-							<visible>!Skin.HasSetting(sub_music_compilations)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="37">
-							<description>compilations off</description>
-							<label2>521</label2>
-							<onclick>Skin.Reset(sub_music_compilations)</onclick>
-							<visible>Skin.HasSetting(sub_music_compilations)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="38">
-							<description>Top 100 on</description>
-							<label>271</label>
-							<onclick>Skin.SetBool(sub_music_top)</onclick>
-							<visible>!Skin.HasSetting(sub_music_top)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="38">
-							<description>Top 100 off</description>
-							<label2>271</label2>
-							<onclick>Skin.Reset(sub_music_top)</onclick>
-							<visible>Skin.HasSetting(sub_music_top)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="39">
-							<description>recently added albums on</description>
-							<label>31920</label>
-							<onclick>Skin.SetBool(sub_music_recently)</onclick>
-							<visible>!Skin.HasSetting(sub_music_recently)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="39">
-							<description>recently added albums off</description>
-							<label2>31920</label2>
-							<onclick>Skin.Reset(sub_music_recently)</onclick>
-							<visible>Skin.HasSetting(sub_music_recently)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="40">
-							<description>Music Plugins on</description>
-						<label fallback="PLUGINS">31850</label>
-							<onclick>Skin.SetBool(sub_music_Plugins)</onclick>
-							<visible>!Skin.HasSetting(sub_music_Plugins)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="40">
-							<description>Music Plugins off</description>
-						<label2 fallback="PLUGINS">31850</label2>
-							<onclick>Skin.Reset(sub_music_Plugins)</onclick>
-							<visible>Skin.HasSetting(sub_music_Plugins)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="241">
-							<description>Music_Sub 1 on</description>
-							<label>$INFO[Skin.String(Music_Sub_1name)]</label>
-							<onclick>Skin.SetBool(no_Music_Sub_1)</onclick>
-							<visible>!Skin.HasSetting(no_Music_Sub_1)</visible>
-							<visible>Skin.HasSetting(Music_Sub_1)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="241">
-							<description>Music_Sub 1 off</description>
-							<label2>$INFO[Skin.String(Music_Sub_1name)]</label2>
-							<onclick>Skin.Reset(no_Music_Sub_1)</onclick>
-							<visible>Skin.HasSetting(no_Music_Sub_1)</visible>
-							<visible>Skin.HasSetting(Music_Sub_1)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="242">
-							<description>Music_Sub 2 on</description>
-							<label>$INFO[Skin.String(Music_Sub_2name)]</label>
-							<onclick>Skin.SetBool(no_Music_Sub_2)</onclick>
-							<visible>!Skin.HasSetting(no_Music_Sub_2)</visible>
-							<visible>Skin.HasSetting(Music_Sub_2)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="242">
-							<description>Music_Sub 2 off</description>
-							<label2>$INFO[Skin.String(Music_Sub_2name)]</label2>
-							<onclick>Skin.Reset(no_Music_Sub_2)</onclick>
-							<visible>Skin.HasSetting(no_Music_Sub_2)</visible>
-							<visible>Skin.HasSetting(Music_Sub_2)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="243">
-							<description>Music_Sub 3 on</description>
-							<label>$INFO[Skin.String(Music_Sub_3name)]</label>
-							<onclick>Skin.SetBool(no_Music_Sub_3)</onclick>
-							<visible>!Skin.HasSetting(no_Music_Sub_3)</visible>
-							<visible>Skin.HasSetting(Music_Sub_3)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="243">
-							<description>Music_Sub 3 off</description>
-							<label2>$INFO[Skin.String(Music_Sub_3name)]</label2>
-							<onclick>Skin.Reset(no_Music_Sub_3)</onclick>
-							<visible>Skin.HasSetting(no_Music_Sub_3)</visible>
-							<visible>Skin.HasSetting(Music_Sub_3)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="244">
-							<description>Music_Sub 4 on</description>
-							<label>$INFO[Skin.String(Music_Sub_4name)]</label>
-							<onclick>Skin.SetBool(no_Music_Sub_4)</onclick>
-							<visible>!Skin.HasSetting(no_Music_Sub_4)</visible>
-							<visible>Skin.HasSetting(Music_Sub_4)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-						<item id="244">
-							<description>Music_Sub 4 off</description>
-							<label2>$INFO[Skin.String(Music_Sub_4name)]</label2>
-							<onclick>Skin.Reset(no_Music_Sub_4)</onclick>
-							<visible>Skin.HasSetting(no_Music_Sub_4)</visible>
-							<visible>Skin.HasSetting(Music_Sub_4)</visible>
-							<visible>Container(301).HasFocus(1)</visible>
-						</item>
-					<!-- Music (1) end -->
-					<!-- Extras (2) -->
-						<item id="51">
-							<description>Extras sub Programs on</description>
-							<label>0</label>
-							<onclick>Skin.SetBool(sub_extras_Programs)</onclick>
-							<visible>Skin.HasSetting(no_programs)</visible>
-							<visible>!Skin.HasSetting(sub_extras_Programs)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="51">
-							<description>Extras sub Programs off</description>
-							<label2>0</label2>
-							<onclick>Skin.Reset(sub_extras_Programs)</onclick>
-							<visible>Skin.HasSetting(no_programs)</visible>
-							<visible>Skin.HasSetting(sub_extras_Programs)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="52">
-							<description>Extras sub scripts on</description>
-							<label>247</label>
-							<onclick>Skin.SetBool(sub_extras_scripts)</onclick>
-							<visible>Container(301).HasFocus(2)</visible>
-							<visible>!Skin.HasSetting(sub_extras_scripts)</visible>
-						</item>
-						<item id="52">
-							<description>Extras sub scripts off</description>
-							<label2>247</label2>
-							<onclick>Skin.Reset(sub_extras_scripts)</onclick>
-							<visible>Skin.HasSetting(sub_extras_scripts)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="53">
-							<description>Extras sub Settings on</description>
-							<label>31016</label>
-							<onclick>Skin.SetBool(sub_extras_settings)</onclick>
-							<visible>Skin.HasSetting(nosettings)</visible>
-							<visible>!Skin.HasSetting(sub_extras_settings)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="53">
-							<description>Extras sub Settings off</description>
-							<label2>31016</label2>
-							<onclick>Skin.Reset(sub_extras_settings)</onclick>
-							<visible>Skin.HasSetting(nosettings)</visible>
-							<visible>Skin.HasSetting(sub_extras_settings)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="54">
-							<description>favourite on</description>
-							<label>1036</label>
-							<onclick>Skin.SetBool(sub_extras_favourites)</onclick>
-							<visible>!Skin.HasSetting(sub_extras_favourites)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="54">
-							<description>favourite off</description>
-							<label2>1036</label2>
-							<onclick>Skin.Reset(sub_extras_favourites)</onclick>
-							<visible>Skin.HasSetting(sub_extras_favourites)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="56">
-							<description>Shutdown</description>				
-							<label>31019</label>
-							<onclick>Skin.SetBool(sub_extras_shutdown)</onclick>
-							<visible>!Skin.HasSetting(shutdown)</visible>
-							<visible>!Skin.HasSetting(sub_extras_shutdown)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="56">
-							<description>Shutdown</description>				
-							<label2>31019</label2>
-							<onclick>Skin.Reset(sub_extras_shutdown)</onclick>
-							<visible>!Skin.HasSetting(shutdown)</visible>
-							<visible>Skin.HasSetting(sub_extras_shutdown)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="57">
-							<description>Logout on</description>
-							<label>20126</label>
-							<onclick>Skin.SetBool(sub_Shutdown_Logout)</onclick>
-							<visible>System.HasLoginScreen</visible>
-							<visible>!Skin.HasSetting(signout)</visible>
-							<visible>!Skin.HasSetting(shutdown)</visible>
-							<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="57">
-							<description>Logout off</description>
-							<label2>20126</label2>
-							<onclick>Skin.Reset(sub_Shutdown_Logout)</onclick>
-							<visible>System.HasLoginScreen</visible>
-							<visible>!Skin.HasSetting(signout)</visible>
-							<visible>!Skin.HasSetting(shutdown)</visible>
-							<visible>Skin.HasSetting(sub_Shutdown_Logout)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="55">
-							<description>AlarmClock setup</description>
-						<label fallback="ALARM">31855</label>
-							<onclick>Skin.SetBool(sub_extras_AlarmClock)</onclick>
-							<visible>!Skin.HasSetting(sub_extras_AlarmClock)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="55">
-							<description>AlarmClock setup</description>
-						<label2 fallback="ALARM">31855</label2>
-							<onclick>Skin.Reset(sub_extras_AlarmClock)</onclick>
-							<visible>Skin.HasSetting(sub_extras_AlarmClock)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-<!--						<item id="245">
-							<description>Extras_Sub 1 on</description>
-							<label>$INFO[Skin.String(Extras_Sub_1name)]</label>
-							<onclick>Skin.SetBool(no_Extras_Sub_1)</onclick>
-							<visible>!Skin.HasSetting(no_Extras_Sub_1)</visible>
-							<visible>Skin.HasSetting(Extras_Sub_1)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="245">
-							<description>Extras_Sub 1 off</description>
-							<label2>$INFO[Skin.String(Extras_Sub_1name)]</label2>
-							<onclick>Skin.Reset(no_Extras_Sub_1)</onclick>
-							<visible>Skin.HasSetting(no_Extras_Sub_1)</visible>
-							<visible>Skin.HasSetting(Extras_Sub_1)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="246">
-							<description>Extras_Sub 2 on</description>
-							<label>$INFO[Skin.String(Extras_Sub_2name)]</label>
-							<onclick>Skin.SetBool(no_Extras_Sub_2)</onclick>
-							<visible>!Skin.HasSetting(no_Extras_Sub_2)</visible>
-							<visible>Skin.HasSetting(Extras_Sub_2)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="246">
-							<description>Extras_Sub 2 off</description>
-							<label2>$INFO[Skin.String(Extras_Sub_2name)]</label2>
-							<onclick>Skin.Reset(no_Extras_Sub_2)</onclick>
-							<visible>Skin.HasSetting(no_Extras_Sub_2)</visible>
-							<visible>Skin.HasSetting(Extras_Sub_2)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="247">
-							<description>Extras_Sub 3 on</description>
-							<label>$INFO[Skin.String(Extras_Sub_3name)]</label>
-							<onclick>Skin.SetBool(no_Extras_Sub_3)</onclick>
-							<visible>!Skin.HasSetting(no_Extras_Sub_3)</visible>
-							<visible>Skin.HasSetting(Extras_Sub_3)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="247">
-							<description>Extras_Sub 3 off</description>
-							<label2>$INFO[Skin.String(Extras_Sub_3name)]</label2>
-							<onclick>Skin.Reset(no_Extras_Sub_3)</onclick>
-							<visible>Skin.HasSetting(no_Extras_Sub_3)</visible>
-							<visible>Skin.HasSetting(Extras_Sub_3)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="248">
-							<description>Extras_Sub 4 on</description>
-							<label>$INFO[Skin.String(Extras_Sub_4name)]</label>
-							<onclick>Skin.SetBool(no_Extras_Sub_4)</onclick>
-							<visible>!Skin.HasSetting(no_Extras_Sub_4)</visible>
-							<visible>Skin.HasSetting(Extras_Sub_4)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item>
-						<item id="248">
-							<description>Extras_Sub 4 off</description>
-							<label2>$INFO[Skin.String(Extras_Sub_4name)]</label2>
-							<onclick>Skin.Reset(no_Extras_Sub_4)</onclick>
-							<visible>Skin.HasSetting(no_Extras_Sub_4)</visible>
-							<visible>Skin.HasSetting(Extras_Sub_4)</visible>
-							<visible>Container(301).HasFocus(2)</visible>
-						</item> -->
-					<!-- extras (2) End -->
-					<!-- Shutdown (22) -->
-						<item id="61">
-							<description>Shutdown Timer on</description>
-						<label fallback="TIMER">31856</label>
-							<onclick>Skin.SetBool(sub_Shutdown_Timer)</onclick>
-							<visible>!Skin.HasSetting(sub_Shutdown_Timer)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="61">
-							<description>Shutdown Timer off</description>
-						<label2 fallback="TIMER">31856</label2>
-							<onclick>Skin.Reset(sub_Shutdown_Timer)</onclick>
-							<visible>Skin.HasSetting(sub_Shutdown_Timer)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="62">
-							<description>Restart on</description>
-							<label>13313</label>
-							<onclick>Skin.SetBool(sub_Shutdown_Restart)</onclick>
-							<visible>!Skin.HasSetting(sub_Shutdown_Restart)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="62">
-							<description>Restart off</description>
-							<label2>13313</label2>
-							<onclick>Skin.Reset(sub_Shutdown_Restart)</onclick>
-							<visible>Skin.HasSetting(sub_Shutdown_Restart)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="63">
-							<description>Reload on</description>
-							<label>31410</label>
-							<onclick>Skin.SetBool(sub_Shutdown_Reload)</onclick>
-							<visible>!Skin.HasSetting(sub_Shutdown_Reload)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="63">
-							<description>Reload off</description>
-							<label2>31410</label2>
-							<onclick>Skin.Reset(sub_Shutdown_Reload)</onclick>
-							<visible>Skin.HasSetting(sub_Shutdown_Reload)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="64">
-							<description>Refresh on</description>
-							<label>31607</label>
-							<onclick>Skin.SetBool(sub_Shutdown_Refresh)</onclick>
-							<visible>!Skin.HasSetting(sub_Shutdown_Refresh)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="64">
-							<description>Refresh off</description>
-							<label2>31607</label2>
-							<onclick>Skin.Reset(sub_Shutdown_Refresh)</onclick>
-							<visible>Skin.HasSetting(sub_Shutdown_Refresh)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="65">
-							<description>Dashboard on</description>
-							<label>13006</label>
-							<onclick>Skin.SetBool(sub_Shutdown_Dashboard)</onclick>
-							<visible>System.Platform.Xbox</visible>
-							<visible>!Skin.HasSetting(sub_Shutdown_Dashboard)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="65">
-							<description>Dashboard off</description>
-							<label2>13006</label2>
-							<onclick>Skin.Reset(sub_Shutdown_Dashboard)</onclick>
-							<visible>System.Platform.Xbox</visible>
-							<visible>Skin.HasSetting(sub_Shutdown_Dashboard)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="66">
-							<description>Suspend on</description>
-							<label>13011</label>
-							<onclick>Skin.SetBool(sub_Shutdown_Suspend)</onclick>
-							<visible>!System.Platform.Xbox</visible>
-							<visible>!Skin.HasSetting(sub_Shutdown_Suspend)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="66">
-							<description>Suspend off</description>
-							<label2>13011</label2>
-							<onclick>Skin.Reset(sub_Shutdown_Suspend)</onclick>
-							<visible>!System.Platform.Xbox</visible>
-							<visible>Skin.HasSetting(sub_Shutdown_Suspend)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="67">
-							<description>Hibernate on</description>
-							<label>13010</label>
-							<onclick>Skin.SetBool(sub_Shutdown_Hibernate)</onclick>
-							<visible>!System.Platform.Xbox</visible>
-							<visible>!Skin.HasSetting(sub_Shutdown_Hibernate)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="67">
-							<description>Hibernate off</description>
-							<label2>13010</label2>
-							<onclick>Skin.Reset(sub_Shutdown_Hibernate)</onclick>
-							<visible>!System.Platform.Xbox</visible>
-							<visible>Skin.HasSetting(sub_Shutdown_Hibernate)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="68">
-							<description>Logout Button on</description>
-							<label>$LOCALIZE[20126]</label>
-							<onclick>Skin.SetBool(sub_Shutdown_Logout)</onclick>
-							<visible>System.HasLoginScreen</visible>
-							<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-						<item id="68">
-							<description>Logout Button off</description>
-							<label2>20126</label2>
-							<onclick>Skin.Reset(sub_Shutdown_Logout)</onclick>
-							<visible>System.HasLoginScreen</visible>
-							<visible>Skin.HasSetting(sub_Shutdown_Logout)</visible>
-							<visible>Container(301).HasFocus(22)</visible>
-						</item>
-					<!-- Shutdown (22) End -->
-
-						<!-- Settings (9) -->
-						<item id="69">
-							<description>Video Settings Button on</description>
-							<label>31140</label>
-							<onclick>Skin.SetBool(sub_Video_Settings)</onclick>
-							<visible>!Skin.HasSetting(sub_Video_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="69">
-							<description>Video Settings Button off</description>
-							<label2>31140</label2>
-							<onclick>Skin.Reset(sub_Video_Settings)</onclick>
-							<visible>Skin.HasSetting(sub_Video_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="70">
-							<description>Music Settings Button</description>
-							<label>31142</label>
-							<onclick>Skin.SetBool(sub_Music_Settings)</onclick>
-							<visible>!Skin.HasSetting(sub_Music_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="70">
-							<description>Music Settings Button</description>
-							<label2>31142</label2>
-							<onclick>Skin.Reset(sub_Music_Settings)</onclick>
-							<visible>Skin.HasSetting(sub_Music_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="71">
-							<description>Programs Settings Button</description>
-							<label>31144</label>
-							<onclick>Skin.SetBool(sub_Programs_Settings)</onclick>
-							<visible>!Skin.HasSetting(sub_Programs_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="71">
-							<description>Programs Settings Button</description>
-							<label2>31144</label2>
-							<onclick>Skin.Reset(sub_Programs_Settings)</onclick>
-							<visible>Skin.HasSetting(sub_Programs_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="72">
-							<description>Pictures Settings Button</description>
-							<label>31146</label>
-							<onclick>Skin.SetBool(sub_Pictures_Settings)</onclick>
-							<visible>!Skin.HasSetting(sub_Pictures_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="72">
-							<description>Pictures Settings Button</description>
-							<label2>31146</label2>
-							<onclick>Skin.Reset(sub_Pictures_Settings)</onclick>
-							<visible>Skin.HasSetting(sub_Pictures_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="73">
-							<description>Network Settings Button</description>
-							<label>31150</label>
-							<onclick>Skin.SetBool(sub_Network_Settings)</onclick>
-							<visible>!Skin.HasSetting(sub_Network_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="73">
-							<description>Network Settings Button</description>
-							<label2>31150</label2>
-							<onclick>Skin.Reset(sub_Network_Settings)</onclick>
-							<visible>Skin.HasSetting(sub_Network_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="74">
-							<description>System Settings Button</description>
-							<label>31152</label>
-							<onclick>Skin.SetBool(sub_System_Settings)</onclick>
-							<visible>!Skin.HasSetting(sub_System_settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="74">
-							<description>System Settings Button</description>
-							<label2>31152</label2>
-							<onclick>Skin.SetBool(sub_System_Settings)</onclick>
-							<visible>!Skin.HasSetting(sub_System_settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="75">
-							<description>Aeon Settings Button</description>
-							<label>31230</label>
-							<onclick>Skin.SetBool(sub_Aeon_Settings)</onclick>
-							<visible>!Skin.HasSetting(sub_Aeon_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="75">
-							<description>Aeon Settings Button</description>
-							<label2>31230</label2>
-							<onclick>Skin.Reset(sub_Aeon_Settings)</onclick>
-							<visible>Skin.HasSetting(sub_Aeon_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="76">
-							<description>Aeon Settings Button</description>
-							<label>31154</label>
-							<onclick>Skin.SetBool(sub_Appearance_Settings)</onclick>
-							<visible>!Skin.HasSetting(sub_Appearance_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<item id="76">
-							<description>Aeon Settings Button</description>
-							<label2>31154</label2>
-							<onclick>Skin.Reset(sub_Appearance_Settings)</onclick>
-							<visible>Skin.HasSetting(sub_Appearance_Settings)</visible>
-							<visible>Container(301).HasFocus(9)</visible>
-						</item>
-						<!-- Settings (9) End -->
-						</content> 
-					</control>
-				</control>
-				<control type="group">
-					<visible>Control.HasFocus(345)|Control.HasFocus(300)|Control.HasFocus(301)</visible>
-					<posx>300</posx>
-					<posy>-512</posy>
-					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-					<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
-					<animation effect="slide" start="0" end="0,-150" time="0" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-					<control type="image">
-						<description>Panel</description>
-						<posx>20</posx>
-						<posy>0</posy>
-						<height>20</height>
-						<width>200</width>
-						<texture flipy="true">osd/osd_button_paused.png</texture>
-						<colordiffuse>FFFFFFFF</colordiffuse>
-					</control>
-					<control type="label" id="2345">
-						<visible>Container(301).HasFocus(9) | Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1) | Container(301).HasFocus(2)</visible>
-						<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
-						<posx>25</posx>
-						<posy>-1</posy>
-						<width>190</width>
-						<height>20</height>
-						<font>Font_Time</font>
-						<align>center</align>
-						<aligny>center</aligny>
-						<textcolor>a9000000</textcolor>
-						<label>exit</label>	
-					</control>
-					<control type="label">
-						<visible>!Control.IsVisible(2345)</visible>
-						<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
-						<posx>25</posx>
-						<posy>-1</posy>
-							<width>190</width>
-							<height>20</height>
-						<font>Font_Time</font>
-						<align>center</align>
-						<aligny>center</aligny>
-						<textcolor>a9000000</textcolor>
-						<label>submenu</label>	
-					</control>
-				</control>
-				<control type="group">
-					<visible>Control.HasFocus(345)|Control.HasFocus(300)|Control.HasFocus(301)</visible>
-					<posx>300</posx>
-					<posy>1465</posy>
-					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-					<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
-					<animation effect="slide" start="0" end="0,-150" time="0" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-					<control type="image">
-						<description>Panel</description>
-						<posx>20</posx>
-						<posy>0</posy>
-						<height>20</height>
-						<width>200</width>
-						<texture>osd/osd_button_paused.png</texture>
-						<colordiffuse>FFFFFFFF</colordiffuse>
-					</control>
-					<control type="label">
-						<posx>25</posx>
-						<posy>-1</posy>
-							<width>190</width>
-						<height>20</height>
-							<font>Font_Time</font>
-						<align>center</align>
-						<aligny>center</aligny>
-						<textcolor>a9000000</textcolor>
-						<label>exit</label>	
-					</control>
-				</control>
-				<control type="group">
-					<description>31086</description>
-					<posx>-112</posx>
-					<posy>505</posy>
-					<width>1280</width>
-					<height>720</height>
-					<animation effect="slide" start="0" end="0,-150" time="0" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-					<animation effect="fade" time="500">Visible</animation>
-					<animation effect="fade" time="200">Hidden</animation>
-					<animation effect="fade" time="500">WindowOpen</animation>
-					<animation effect="fade" time="200">WindowClose</animation>
-					<animation effect="slide" start="0,-8" end="0,-8" time="0" condition="Window.IsActive(4)">Conditional</animation>
-					<visible>Control.HasFocus(345)</visible>
-					<control type="label">
-						<visible>Control.HasFocus(345)</visible>
-						<include>Labels_MainLabelBigVars</include>
-						<label>$LOCALIZE[31104] $INFO[Container(301).ListItem.Label]$INFO[Container(301).ListItem.Label2] - $INFO[Container(345).ListItem.Label]$INFO[Container(345).ListItem.Label2] $LOCALIZE[31105]</label>
-					</control>
-					<control type="label">
-						<include>Labels_MainLabelSmallVars</include>
-						<label>31088</label>
 					</control>
 				</control>
 			</control>
-		</control>
+			<!-- Virtual Home page environment ends -->
+		</control> 
+
+		<control type="list" id="976">
+			<posx>258</posx>
+			<posy>150</posy>
+			<height>430</height>
+			<width>936</width>
+			<onleft>971</onleft>
+			<onright>971</onright>
+			<onup>972</onup>
+			<ondown>972</ondown>
+			<viewtype>list</viewtype>
+			<scrolltime>200</scrolltime>
+			<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="control.HasFocus(6)|control.HasFocus(974)|control.HasFocus(973)">Conditional</animation>
 			
+			<itemlayout height="39">
+				<control type="image">
+					<posx>6</posx>
+					<posy>0</posy>
+					<height>39</height>
+					<width>936</width>
+					<texture>settings/settings_radiobuttonoff.png</texture>
+				</control>
+				<control type="label">
+					<posy>0</posy>
+					<posx>50</posx>
+					<height>39</height>
+					<width>936</width>
+					<aligny>center</aligny>
+					<font>Font_SettingsOptions</font>
+					<textcolor>FF939597</textcolor>
+					<info>ListItem.Label</info>
+				</control>
+			</itemlayout>
+			<focusedlayout height="39">
+				<control type="image">
+					<posx>6</posx>
+					<posy>0</posy>
+					<height>39</height>
+					<width>936</width>
+					<texture>settings/settings_radiobuttonoff.png</texture>
+				</control>
+				<control type="image">
+					<posx>6</posx>
+					<posy>0</posy>
+					<width>936</width>
+					<height>39</height>
+					<texture>settings/settings_radiobuttonofffocus.png</texture>
+					<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+					<visible>!control.HasFocus(971)</visible>
+				</control>
+				<control type="label">
+					<posy>0</posy>
+					<posx>50</posx>
+					<height>39</height>
+					<width>936</width>
+					<aligny>center</aligny>
+					<font>Font_SettingsOptions</font>
+					<textcolor>ffFFFFFF</textcolor>
+					<info>ListItem.Label</info>
+					<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+				</control>
+				<control type="label">
+					<posy>0</posy>
+					<posx>50</posx>
+					<height>39</height>
+					<width>936</width>
+					<aligny>center</aligny>
+					<font>Font_SettingsOptions</font>
+					<info>ListItem.Label</info>
+					<visible>control.HasFocus(971)</visible>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="101">
+					<label>extras $LOCALIZE[31992]: $INFO[Skin.String(extra_widget_set)]</label>
+					<onclick>Skin.SetString(widget_set,extra_widget_set)</onclick>
+					<onclick>Skin.SetString(widget_on,extra_widget_on)</onclick>
+					<onclick>XBMC.RunScript(special://skin/extras/widgetlist.py)</onclick>
+					<onclick>SetFocus(974)</onclick>
+					<visible>Container(10).HasFocus(8)</visible>
+				</item>
+				<item id="102">
+					<label>$LOCALIZE[31012] $LOCALIZE[31992]: $INFO[Skin.String(Pictures_widget_set)]</label>
+					<onclick>Skin.SetString(widget_set,Pictures_widget_set)</onclick>
+					<onclick>Skin.SetString(widget_on,Pictures_widget_on)</onclick>
+					<onclick>XBMC.RunScript(special://skin/extras/widgetlist.py)</onclick>
+					<onclick>SetFocus(974)</onclick>
+					<visible>Container(10).HasFocus(8)</visible>
+				</item>
+				<item id="105">
+					<label>$INFO[Skin.String(mainmenu_1name)] $LOCALIZE[31992]: $INFO[Skin.String(CustomMenu1_widget_set)]</label>
+					<onclick>Skin.SetString(widget_set,CustomMenu1_widget_set)</onclick>
+					<onclick>Skin.SetString(widget_on,CustomMenu1_widget_on)</onclick>
+					<onclick>XBMC.RunScript(special://skin/extras/widgetlist.py)</onclick>
+					<onclick>SetFocus(974)</onclick>
+					<visible>Container(10).HasFocus(8)</visible>
+					<visible>Skin.HasSetting(mainmenu_1)</visible>
+				</item>
+				<item id="106">
+					<label>$INFO[Skin.String(mainmenu_2name)] $LOCALIZE[31992]: $INFO[Skin.String(CustomMenu2_widget_set)]</label>
+					<onclick>Skin.SetString(widget_set,CustomMenu2_widget_set)</onclick>
+					<onclick>Skin.SetString(widget_on,CustomMenu2_widget_on)</onclick>
+					<onclick>XBMC.RunScript(special://skin/extras/widgetlist.py)</onclick>
+					<onclick>SetFocus(974)</onclick>
+					<visible>Container(10).HasFocus(8)</visible>
+					<visible>Skin.HasSetting(mainmenu_2)</visible>
+				</item>
+			</content>
+		</control>
+
+
+		<control type="list" id="974">
+			<posx>258</posx>
+			<posy>150</posy>
+			<height>430</height>
+			<width>936</width>
+			<onleft>972</onleft>
+			<onright>972</onright>
+			<onup>974</onup>
+			<ondown>974</ondown>
+			<viewtype>list</viewtype>
+			<scrolltime>200</scrolltime>
+			<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="!control.HasFocus(974)">Conditional</animation>
+			<itemlayout height="39">
+				<control type="image">
+					<posx>6</posx>
+					<posy>0</posy>
+					<height>39</height>
+					<width>936</width>
+					<texture>settings/settings_radiobuttonoff.png</texture>
+				</control>
+				<control type="label">
+					<posy>0</posy>
+					<posx>50</posx>
+					<height>39</height>
+					<width>936</width>
+					<aligny>center</aligny>
+					<font>Font_SettingsOptions</font>
+					<textcolor>FF939597</textcolor>
+					<info>ListItem.Label</info>
+				</control>
+			</itemlayout>
+			<focusedlayout height="39">
+				<control type="image">
+					<posx>6</posx>
+					<posy>0</posy>
+					<height>39</height>
+					<width>936</width>
+					<texture>settings/settings_radiobuttonoff.png</texture>
+				</control>
+				<control type="image">
+					<posx>6</posx>
+					<posy>0</posy>
+					<width>936</width>
+					<height>39</height>
+					<texture>settings/settings_radiobuttonofffocus.png</texture>
+					<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+					<visible>!control.HasFocus(971)</visible>
+				</control>
+				<control type="label">
+					<posy>0</posy>
+					<posx>50</posx>
+					<height>39</height>
+					<width>936</width>
+					<aligny>center</aligny>
+					<font>Font_SettingsOptions</font>
+					<textcolor>ffFFFFFF</textcolor>
+					<info>ListItem.Label</info>
+					<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+				</control>
+				<control type="label">
+					<posy>0</posy>
+					<posx>50</posx>
+					<height>39</height>
+					<width>936</width>
+					<aligny>center</aligny>
+					<font>Font_SettingsOptions</font>
+					<info>ListItem.Label</info>
+					<visible>control.HasFocus(971)</visible>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>$INFO[Window(560).Property(widget.1.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.1.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.1.name))</visible>
+				</item>
+				<item id="2">
+					<label>$INFO[Window(560).Property(widget.2.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.2.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.2.name))</visible>
+				</item>
+				<item id="3">
+					<label>$INFO[Window(560).Property(widget.3.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.3.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.3.name))</visible>
+				</item>
+				<item id="4">
+					<label>$INFO[Window(560).Property(widget.4.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.4.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.4.name))</visible>
+				</item>
+				<item id="5">
+					<label>$INFO[Window(560).Property(widget.5.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.5.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.5.name))</visible>
+				</item>
+				<item id="6">
+					<label>$INFO[Window(560).Property(widget.6.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.6.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.6.name))</visible>
+				</item>
+				<item id="7">
+					<label>$INFO[Window(560).Property(widget.7.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.7.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.7.name))</visible>
+				</item>
+				<item id="8">
+					<label>$INFO[Window(560).Property(widget.8.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.8.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.8.name))</visible>
+				</item>
+				<item id="9">
+					<label>$INFO[Window(560).Property(widget.9.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.9.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.9.name))</visible>
+				</item>
+				<item id="10">
+					<label>$INFO[Window(560).Property(widget.10.name)]</label>
+					<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(560).Property(widget.10.name)])</onclick>
+					<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+					<onclick>SetFocus(976)</onclick>
+					<visible>!IsEmpty(Window(560).Property(widget.10.name))</visible>
+				</item>
+			</content>
+		</control>
+
+
+
 <!-- Virtual OSD environment starts -->
 			<control type="image" id="213">
 				<texture>-</texture>
@@ -2207,10 +821,11 @@
 				<pulseonselect>true</pulseonselect>
 				<include>Animation_CommonFadeFocus</include>
 				<onclick>Skin.ResetSettings</onclick>
+				<include>Objects_SetDefaults</include>
 				<onclick>XBMC.ReloadSkin</onclick>
 			</control>
 
-			<include>Furniture_SettingsFrontPanel</include>
+<!--				<include>Furniture_SettingsInternalBackPanel</include> -->
 
 			<control type="image">
 				<posx>331</posx>
@@ -2219,7 +834,7 @@
 				<height>634</height>
 				<texture>settings/settings_intframe_top.png</texture>
 				<include>Animation_SettingsInternalPanel</include>
-				<visible>![Container(10).HasFocus(8) | Container(10).HasFocus(9) | Container(10).HasFocus(10) | Container(10).HasFocus(11) | Container(10).HasFocus(12) | Container(10).HasFocus(13)]</visible>
+				<visible>![Container(10).HasFocus(2) | Container(10).HasFocus(8) | Container(10).HasFocus(9) | Container(10).HasFocus(10) | Container(10).HasFocus(11) | Container(10).HasFocus(12) | Container(10).HasFocus(13)]</visible>
 			</control>
 
 			<control type="group">
@@ -2255,7 +870,7 @@
 					</control>
 				</control>
 				
-				<control type="group">
+<!--				<control type="group">
 					<description>31086</description>
 					<include>Labels_MainLabelGroup</include>
 					<visible>Container(10).HasFocus(2) + ![Control.HasFocus(301) | Control.HasFocus(345)]</visible>
@@ -2267,7 +882,7 @@
 						<include>Labels_MainLabelSmallVars</include>
 						<label>31088</label>
 					</control>
-				</control>
+				</control> -->
 
 				<control type="group">
 					<description>31086</description>
