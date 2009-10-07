@@ -505,13 +505,13 @@
 					<include>ListLabel_MainSmall</include>
 					<include>listcolornofocus</include>
 					<label>$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title]</label>
-					<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + ![Container.Content(albums)|Container.Content(artists)]</visible>
+					<visible>Container.Content(songs)|substring(container.folderpath,special://profile/playlists/music/,Left)</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_MainSmall</include>
 					<include>listcolornofocus</include>
 					<info>ListItem.Label</info>
-					<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | IsEmpty(ListItem.Title)</visible>
+					<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]+![Container.Content(episodes)|Container.Content(songs)|substring(container.folderpath,special://profile/playlists/music/,Left)]]</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_MainSmall</include>
@@ -615,13 +615,13 @@
 					<include>ListLabel_MainSmall</include>
 					<include>listcolorfocus</include>
 					<label>$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title]</label>
-					<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + ![Container.Content(albums)|Container.Content(artists)]</visible>
+					<visible>Container.Content(songs)|substring(container.folderpath,special://profile/playlists/music/,Left)</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_MainSmall</include>
 					<include>listcolorfocus</include>
 					<info>ListItem.Label</info>
-					<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | IsEmpty(ListItem.Title)</visible>
+					<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]+![Container.Content(episodes)|Container.Content(songs)|substring(container.folderpath,special://profile/playlists/music/,Left)]]</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_MainSmall</include>

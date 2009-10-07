@@ -342,20 +342,14 @@
 					<control type="label">
 						<include>LowListLabel_MainSmall</include>
 						<include>listcolornofocus</include>
-						<label>$INFO[ListItem.Title]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
-					</control>
-					<control type="label">
-						<include>LowListLabel_MainSmall</include>
-						<include>listcolornofocus</include>
 						<info>ListItem.Label</info>
-						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | IsEmpty(ListItem.Title)</visible>
+						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]+![Container.Content(episodes)|Container.Content(songs)|substring(container.folderpath,special://profile/playlists/music/,Left)]]</visible>
 					</control>
 					<control type="label">
 						<include>LowListLabel_MainSmall</include>
 						<include>listcolornofocus</include>
 						<info>ListItem.Title</info>
-						<visible>Container.Content(episodes)</visible>
+						<visible>Container.Content(episodes)|Container.Content(songs)|substring(container.folderpath,special://profile/playlists/music/,Left)</visible>
 					</control>
 					<control type="label">
 						<include>LowListLabel_MainSmall</include>
@@ -471,14 +465,8 @@
 					<control type="label">
 						<include>LowListLabel_Main</include>
 						<include>listcolorfocus</include>
-						<info>ListItem.Title</info>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
-					</control>
-					<control type="label">
-						<include>LowListLabel_Main</include>
-						<include>listcolorfocus</include>
 						<info>ListItem.Label</info>
-						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | IsEmpty(ListItem.Title)</visible>
+						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]+![Container.Content(episodes)|Container.Content(songs)|substring(container.folderpath,special://profile/playlists/music/,Left)]]</visible>
 					</control>
 
 					<control type="label">
@@ -492,7 +480,7 @@
 						<include>LowListLabel_Main</include>
 						<include>listcolorfocus</include>
 						<info>ListItem.Title</info>
-						<visible>Container.Content(episodes)</visible>
+						<visible>Container.Content(episodes)|Container.Content(songs)|substring(container.folderpath,special://profile/playlists/music/,Left)</visible>
 					</control>
 					<control type="label" id="623">
 						<include>LowListLabel_Sub</include>
