@@ -210,7 +210,7 @@
 		<pauseatend>3000</pauseatend>
 		<scroll>true</scroll>
 			<textcolor>FFFFFFFF</textcolor>		
-			<label>** $INFO[listitem.filenameandpath]</label>
+			<label>Database Path: $INFO[container.folderpath][CR]File Path: $INFO[listitem.filenameandpath]</label>
 			<visible>Skin.HasSetting(debug)</visible>
 		</control>	
 		

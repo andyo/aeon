@@ -266,7 +266,7 @@
 				<width>1180</width>
 				<height>653</height>
 				<texture>list/listpanel_mask_square_window.png</texture>
-				<visible>Control.IsVisible(50) + [[![Window.IsActive(24)|Window.IsActive(25)]+!Skin.HasSetting(listgamesposter)] | [[Window.IsActive(24)|Window.IsActive(25)]+[[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]|[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[[!Container.Content(genres)+!Container.Content(movies)+!Container.Content(tvshows)+!Container.Content(seasons)]+!Skin.HasSetting(listvideoposter)]]] | [Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]]</visible>
+				<visible>Control.IsVisible(50) + [[![Window.IsActive(24)|Window.IsActive(25)]+!Skin.HasSetting(listgamesposter)] | [[Window.IsActive(24)|Window.IsActive(25)]+[Container.Content(episodes)|[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]|[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[[!Container.Content(genres)+!Container.Content(movies)+!Container.Content(tvshows)+!Container.Content(seasons)]+!Skin.HasSetting(listvideoposter)]]] | [Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]]</visible>
 			</control>
 			<control type="image">
 				<posy>67</posy>
@@ -280,7 +280,7 @@
 
 <!-- POPUP WINDOW BACKGROUND -- SQARE -->
 		<control type="group">
-			<visible>Control.IsVisible(50) + [[![Window.IsActive(24)|Window.IsActive(25)]+!Skin.HasSetting(listgamesposter)] | [[Window.IsActive(24)|Window.IsActive(25)]+[[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]|[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[[!Container.Content(genres)+!Container.Content(movies)+!Container.Content(tvshows)+!Container.Content(seasons)]+!Skin.HasSetting(listvideoposter)]]] | [Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]]</visible>
+			<visible>Control.IsVisible(50) + [[![Window.IsActive(24)|Window.IsActive(25)]+!Skin.HasSetting(listgamesposter)] | [[Window.IsActive(24)|Window.IsActive(25)]+[Container.Content(episodes)|[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]|[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[[!Container.Content(genres)+!Container.Content(movies)+!Container.Content(tvshows)+!Container.Content(seasons)]+!Skin.HasSetting(listvideoposter)]]] | [Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]]</visible>
 			<control type="image">
 				<posy>67</posy>
 				<posx>58</posx>
@@ -504,14 +504,20 @@
 				<control type="label">
 					<include>ListLabel_MainSmall</include>
 					<include>listcolornofocus</include>
-					<label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
-					<visible>[Window.IsActive(500) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)] + !IsEmpty(ListItem.Artist)</visible>
+					<label>$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title]</label>
+					<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + ![Container.Content(albums)|Container.Content(artists)]</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_MainSmall</include>
 					<include>listcolornofocus</include>
-					<label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
-					<visible>Window.IsActive(501) + !IsEmpty(ListItem.Artist) + !substring(container.folderpath,shout:,Left)</visible>
+					<info>ListItem.Label</info>
+					<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | IsEmpty(ListItem.Title)</visible>
+				</control>
+				<control type="label">
+					<include>ListLabel_MainSmall</include>
+					<include>listcolornofocus</include>
+					<label>$INFO[ListItem.Artist]</label>
+					<visible>Container.Content(artists)</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_Track</include>
@@ -534,12 +540,6 @@
 				<control type="label">
 					<include>ListLabel_MainSmall</include>
 					<include>listcolornofocus</include>
-					<info>ListItem.Label</info>
-					<visible>[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)] + !Container.Content(episodes)</visible>
-				</control>
-				<control type="label">
-					<include>ListLabel_MainSmall</include>
-					<include>listcolornofocus</include>
 					<label>$INFO[ListItem.Label] - $INFO[ListItem.Label2]</label>
 					<visible>Container.Content(albums) + !IsEmpty(ListItem.Label2)</visible>
 				</control>
@@ -552,8 +552,8 @@
 				<control type="label">
 					<include>ListLabel_DetailSmall</include>
 					<include>detailcolornofocus</include>
-					<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-					<visible>![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + !substring(container.folderpath,shout:,Left)</visible>
+					<label>[UPPERCASE]$INFO[ListItem.Duration][/UPPERCASE]</label>
+					<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_Track</include>
@@ -614,14 +614,20 @@
 				<control type="label">
 					<include>ListLabel_MainSmall</include>
 					<include>listcolorfocus</include>
-					<label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
-					<visible>[Window.IsActive(500) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)] + !IsEmpty(ListItem.Artist)</visible>
+					<label>$INFO[ListItem.Artist,, - ]$INFO[ListItem.Title]</label>
+					<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + ![Container.Content(albums)|Container.Content(artists)]</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_MainSmall</include>
 					<include>listcolorfocus</include>
-					<label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
-					<visible>Window.IsActive(501) + !IsEmpty(ListItem.Artist) + !substring(container.folderpath,shout:,Left)</visible>
+					<info>ListItem.Label</info>
+					<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | IsEmpty(ListItem.Title)</visible>
+				</control>
+				<control type="label">
+					<include>ListLabel_MainSmall</include>
+					<include>listcolorfocus</include>
+					<label>$INFO[ListItem.Artist]</label>
+					<visible>Container.Content(artists)</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_Track</include>
@@ -644,12 +650,6 @@
 				<control type="label">
 					<include>ListLabel_MainSmall</include>
 					<include>listcolorfocus</include>
-					<info>ListItem.Label</info>
-					<visible>[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)] + !Container.Content(episodes)</visible>
-				</control>
-				<control type="label">
-					<include>ListLabel_MainSmall</include>
-					<include>listcolorfocus</include>
 					<label>$INFO[ListItem.Label] - $INFO[ListItem.Label2]</label>
 					<visible>Container.Content(albums) + !IsEmpty(ListItem.Label2)</visible>
 				</control>
@@ -662,8 +662,8 @@
 				<control type="label">
 					<include>ListLabel_DetailSmall</include>
 					<include>detailcolorfocus</include>
-					<label fallback="-">[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-					<visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)] + !substring(container.folderpath,shout:,Left)</visible>
+					<label>[UPPERCASE]$INFO[ListItem.Duration][/UPPERCASE]</label>
+					<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
 				</control>
 				<control type="label">
 					<include>ListLabel_Track</include>
@@ -1212,7 +1212,7 @@
 			</control>
 
 			<control type="group">
-				<visible>[![Window.IsActive(24)|Window.IsActive(25)]+!Skin.HasSetting(listgamesposter)] | [[Window.IsActive(24)|Window.IsActive(25)]+[[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]|[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[[!Container.Content(genres)+!Container.Content(movies)+!Container.Content(tvshows)+!Container.Content(seasons)]+!Skin.HasSetting(listvideoposter)]]] | [Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
+				<visible>[![Window.IsActive(24)|Window.IsActive(25)]+!Skin.HasSetting(listgamesposter)] | [[Window.IsActive(24)|Window.IsActive(25)]+[Container.Content(episodes)|[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]|[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[[!Container.Content(genres)+!Container.Content(movies)+!Container.Content(tvshows)+!Container.Content(seasons)]+!Skin.HasSetting(listvideoposter)]]] | [Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
 				<posx>28</posx>
 				<posy>106</posy>
 				<control type="image">

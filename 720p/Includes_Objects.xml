@@ -9,7 +9,7 @@
 		<onfocus>Skin.SetBool(MusicArtistsInfoPopupauto)</onfocus>
 		<onfocus>Skin.SetBool(MusicAlbumsInfoPopupauto)</onfocus>
 		<onfocus>Skin.SetBool(MusicSongsInfoPopupauto)</onfocus>
-		<onfocus>Skin.SetBool(CommonInfoPopuptrigger)</onfocus>
+		<onfocus>Skin.SetBool(CommonInfoPopupauto)</onfocus>
 		<onfocus>Skin.SetBool(FullscreenMovieMultiplex)</onfocus>
 		<onfocus>Skin.SetBool(FullscreenTVShowsMultiplex)</onfocus>
 		<onfocus>Skin.SetBool(FullscreenTVSeasonsMultiplex)</onfocus>

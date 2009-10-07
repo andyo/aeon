@@ -24,8 +24,8 @@
 		<scrollout>true</scrollout>
 		<pauseatend>3000</pauseatend>
 		<scroll>true</scroll>
-		<animation effect="slide" end="0,-10" time="0" condition="Container.Content(albums)|Container.Content(songs)|Container.Content(artists)|Container.Content(movies)|substring(container.folderpath,special://profile/playlists/music/,Left) | substring(container.folderpath,playlistmusic://,Left)|[Container(550).HasFiles + Window.IsActive(501)+ !Container(550).HasFolders]">Conditional</animation>
-		<animation effect="slide" end="45," time="0" condition="Container.Content(songs)|Container.Content(episodes)|substring(container.folderpath,shout:,Left)|substring(container.folderpath,special://profile/playlists/music/,Left) | substring(container.folderpath,playlistmusic://,Left)|[Container(550).HasFiles + Window.IsActive(501)+ !Container(550).HasFolders]">Conditional</animation>
+		<animation effect="slide" end="0,-10" time="0" condition="!IsEmpty(ListItem.Genres) | !IsEmpty(ListItem.Artist) | [!IsEmpty(ListItem.Genre) + Container.Content(movies)]">Conditional</animation>
+		<animation effect="slide" end="45," time="0" condition="Container.Content(songs)|Container.Content(episodes)|substring(container.folderpath,shout:,Left)|[substring(container.folderpath,special://profile/playlists/music/,Left)+!substring(ListItem.FolderName,shout:,Left)] | substring(container.folderpath,playlistmusic://,Left)|[Container(550).HasFiles + Window.IsActive(501)+ !Container(550).HasFolders]">Conditional</animation>
 	</include>
 	
 	<include name="LowListLabel_MainSmall">
@@ -37,7 +37,7 @@
 		<height>30</height>
 		<font>Font_ListSmall</font>
 		<aligny>center</aligny>
-		<animation effect="slide" end="45,0" time="0" condition="Container.Content(episodes)|Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left) | substring(container.folderpath,playlistmusic://,Left)|[Container(550).HasFiles + Window.IsActive(501)+ !Container(550).HasFolders]">Conditional</animation>
+		<animation effect="slide" end="45,0" time="0" condition="Container.Content(episodes)|Container.Content(songs) | [substring(container.folderpath,special://profile/playlists/music/,Left)+!substring(ListItem.FolderName,shout:,Left)] | substring(container.folderpath,playlistmusic://,Left)|[Container(550).HasFiles + Window.IsActive(501)+ !Container(550).HasFolders]">Conditional</animation>
 	</include>
 	
 	<include name="LowListLabel_MainMusic">
@@ -212,7 +212,7 @@
 				<onclick>SetFocus(550)</onclick>
 			</control>
 			<control type="button" id="117">
-				<visible>[![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Skin.HasSetting(CommonInfoPopuptrigger)] | [Container.Content(movies) + Skin.HasSetting(MovieInfoPopuptrigger) + Skin.HasSetting(movietrailers) + !IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(tvpreview) + Skin.HasSetting(TVEpisodesInfoPopuptrigger) + Container.Content(episodes)]</visible>
+				<visible>[Container.Content(movies) + Skin.HasSetting(MovieInfoPopuptrigger) + Skin.HasSetting(movietrailers) + !IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(tvpreview) + Skin.HasSetting(TVEpisodesInfoPopuptrigger) + Container.Content(episodes)]</visible>
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>0</width>
@@ -234,7 +234,7 @@
 		<control type="group" id="606">
 			<visible>Control.IsVisible(550)</visible>
 			<control type="button" id="607">
-				<visible>![Window.IsActive(502)|Window.IsActive(501)|Window.IsActive(502)] + Container.Content(episodes) + Skin.HasSetting(tvpreview) + !Player.Playing + !Skin.HasSetting(TVEpisodesInfoPopupoff)</visible>
+				<visible>![Window.IsActive(500)|Window.IsActive(501)|Window.IsActive(502)] + Container.Content(episodes) + Skin.HasSetting(tvpreview) + !Player.Playing + !Skin.HasSetting(TVEpisodesInfoPopupoff)</visible>
 				<onleft>7000</onleft>
 				<onright>611</onright>
 				<onup>550</onup>
@@ -242,7 +242,7 @@
 				<onfocus>PlayMedia($INFO[listitem.path]$INFO[listitem.filename],1,noresume)</onfocus>
 			</control>
 			<control type="button" id="608">
-				<visible>![Window.IsActive(502)|Window.IsActive(501)|Window.IsActive(502)]+[Container.Content(movies) + Skin.HasSetting(movietrailers) + !Player.Playing + !Skin.HasSetting(MovieInfoPopupoff) + !IsEmpty(ListItem.Trailer)]</visible>
+				<visible>![Window.IsActive(500)|Window.IsActive(501)|Window.IsActive(502)]+[Container.Content(movies) + Skin.HasSetting(movietrailers) + !Player.Playing + !Skin.HasSetting(MovieInfoPopupoff) + !IsEmpty(ListItem.Trailer)]</visible>
 				<onleft>7000</onleft>
 				<onright>611</onright>
 				<onup>550</onup>
@@ -250,11 +250,11 @@
 				<onfocus>PlayMedia($INFO[ListItem.Trailer],1,noresume)</onfocus>
 			</control>
 			<control type="button" id="609">
-				<visible>[Window.IsActive(502)|Window.IsActive(501)|Window.IsActive(502)] | [Container.Content(movies) + IsEmpty(ListItem.Trailer)] | ![Skin.HasSetting(movietrailers) | Skin.HasSetting(tvpreview) | Player.Playing] | [[Container.Content(movies) + Skin.HasSetting(MovieInfoPopupoff)] | [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopupoff)]]</visible>
+				<visible>[Window.IsActive(500)|Window.IsActive(501)|Window.IsActive(502)] | [Container.Content(movies) + IsEmpty(ListItem.Trailer)] | ![Skin.HasSetting(movietrailers) | Skin.HasSetting(tvpreview) | Player.Playing] | [[Container.Content(movies) + Skin.HasSetting(MovieInfoPopupoff)] | [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopupoff)]]</visible>
 				<onfocus>SetFocus(65)</onfocus>
 			</control>
 			<control type="button" id="610">
-				<visible>Player.Playing+![Window.IsActive(502)|Window.IsActive(501)|Window.IsActive(502)]</visible>
+				<visible>Player.Playing+![Window.IsActive(500)|Window.IsActive(501)|Window.IsActive(502)]</visible>
 				<onleft>7000</onleft>
 				<onright>611</onright>
 				<onup>550</onup>
@@ -343,7 +343,7 @@
 						<include>LowListLabel_MainSmall</include>
 						<include>listcolornofocus</include>
 						<label>$INFO[ListItem.Title]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)] + !IsEmpty(ListItem.Artist)</visible>
+						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
 					</control>
 					<control type="label">
 						<include>LowListLabel_MainSmall</include>
@@ -373,7 +373,13 @@
 						<include>LowListLabel_DetailSmall</include>
 						<include>detailcolornofocus</include>
 						<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-						<visible>![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows) | Container.Content(episodes)]</visible>
+						<visible>Container.Content(tvshows)|substring(container.folderpath,shout:,Left)</visible>
+					</control>
+					<control type="label">
+						<include>LowListLabel_DetailFull</include>
+						<include>detailcolornofocus</include>
+						<label>[UPPERCASE]$INFO[ListItem.Duration][/UPPERCASE]</label>
+						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
 					</control>
 					<control type="label">
 						<include>LowListLabel_DetailTV</include>
@@ -431,6 +437,7 @@
 						<animation effect="slide" end="-115,0" time="0" condition="Container.Content(movies)">Conditional</animation>
 					</control>
 				</itemlayout>
+
 				<focusedlayout height="60">
 					<control type="image">
 						<posx>10</posx>
@@ -467,6 +474,12 @@
 						<info>ListItem.Title</info>
 						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
 					</control>
+					<control type="label">
+						<include>LowListLabel_Main</include>
+						<include>listcolorfocus</include>
+						<info>ListItem.Label</info>
+						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | IsEmpty(ListItem.Title)</visible>
+					</control>
 
 					<control type="label">
 						<include>LowListLabel_Track_LargeTV</include>
@@ -480,12 +493,6 @@
 						<include>listcolorfocus</include>
 						<info>ListItem.Title</info>
 						<visible>Container.Content(episodes)</visible>
-					</control>
-					<control type="label">
-						<include>LowListLabel_Main</include>
-						<include>listcolorfocus</include>
-						<info>ListItem.Label</info>
-						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(episodes)] | IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label" id="623">
 						<include>LowListLabel_Sub</include>
