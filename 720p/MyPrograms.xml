@@ -1,5 +1,5 @@
 <window id="1">
-	<defaultcontrol>50</defaultcontrol>
+	<defaultcontrol>550</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<views>550,50,53</views>
 	<controls>
@@ -14,9 +14,11 @@
 		<include>Animation_OpenCloseZoom</include>
 		<include>Furniture_FloorBack</include>
 		<include>Furniture_shadow</include>
-		<include>Viewtype_Wall</include>
-<!--		<include>Viewtype_Showcase</include> -->
+		<include>Viewtype_LowList</include>
 		<include>Viewtype_List</include>
+		<include>Viewtype_Wall</include>
+		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
 		<include>VerticalMenu</include>		

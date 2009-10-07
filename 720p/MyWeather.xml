@@ -14,8 +14,9 @@
 
 	<include>Furniture_Time</include>
 	<!--include>Furniture_WindowRSS</include-->
-	<include condition="!StringCompare(Weather.Plugin,weather.com plus)">Objects_WeatherPopup</include>
-	<include condition="StringCompare(Weather.Plugin,weather.com plus)">Widget_Weather</include>
+<!--	<include condition="!StringCompare(Weather.Plugin,weather.com plus)">Objects_WeatherPopup</include>
+	<include condition="StringCompare(Weather.Plugin,weather.com plus)">Widget_Weather</include>-->
+	<include>Widget_Weather</include>
 	<control type="button" id="50">
 		<description>invisible button to trigger view options</description>
 		<texturefocus>-</texturefocus>

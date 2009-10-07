@@ -45,7 +45,7 @@
 			<height>83</height>
 			<texture>dialogs/scan_icon.png</texture>
 		</control>
-<!--		<control type="image">
+		<control type="image">
 			<posx>33</posx>
 			<posy>27</posy>
 			<width>39</width>
@@ -59,7 +59,7 @@
 			<width>67</width>
 			<height>83</height>
 			<texture>dialogs/scan_icon_top.png</texture>
-		</control>-->
+		</control>
 	</include>
 	
 	<include name="Dialogs_VolumeIcon">

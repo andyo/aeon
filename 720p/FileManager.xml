@@ -360,10 +360,6 @@
 			</focusedlayout>
 		</control>
 		<!-- /Right list -->
-
-		<include>HorizontalMovieMenu</include>		
-		<include>VerticalMenu</include>		
-
 		
 	</controls>
 

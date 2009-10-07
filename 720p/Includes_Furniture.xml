@@ -176,7 +176,7 @@
 <!-- Widget Recent Added -->
 	<include name="Widget_RecentAdded">
 		<control type="group">
-			<visible>[!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)] + [Container(300).HasFocus(6)+!IsEmpty(Window.Property(LatestEpisode.1.ShowTitle))] | [Container(300).HasFocus(7)+!IsEmpty(Window.Property(LatestMovie.1.Title))] | [Container(300).HasFocus(1)+!IsEmpty(Window.Property(LatestSong.1.Album))] + !Control.IsVisible(87)</visible>
+			<visible>[!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)] + [[Container(300).HasFocus(7)+!IsEmpty(Window.Property(LatestEpisode.1.ShowTitle))] | [Container(300).HasFocus(6)+!IsEmpty(Window.Property(LatestMovie.1.Title))] | [Container(300).HasFocus(1)+!IsEmpty(Window.Property(LatestSong.1.Album))]] + !Control.IsVisible(87)</visible>
 			<posx>1390</posx>
 			<posy>460</posy>
 			<include>widget_animation</include>
@@ -1148,15 +1148,6 @@
 			<height>360</height>
 			<texture border="20">home/recent_widget_list.png</texture>
 		</control>
-	</include>
-	<include name="widget_animation">
-		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
-		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-		<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
-		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-		<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Skin.HasSetting(lowerrss)+!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-		<animation effect="slide" start="0,0" end="-372,0" time="500" easing="inout" tween="cubic" condition="!control.HasFocus(8001)">Conditional</animation>
-		<animation effect="slide" start="0" end="0,-180" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 	</include>
 	<include name="widget_Title">
 		<posx>10</posx>
@@ -2284,6 +2275,12 @@
 	</include>
 
 
+	<include name="Fanart-FloorShadowNight">
+		<texture>common/Fanart_Floor_Shadow_Night.png</texture>	
+	</include>
+	<include name="Fanart-FloorShadowLight">
+		<texture>common/Fanart_Floor_Shadow_Lite.png</texture>	
+	</include>
 	<include name="ListFloorBackNight">
 		<texture>list/night/list_floor.png</texture>	
 	</include>
@@ -2310,6 +2307,7 @@
 			<include condition="!Skin.HasSetting(darkshowcase)">ListFloorBackLight</include>
 			<include condition="Skin.HasSetting(darkshowcase)">ListFloorBackNight</include>			
 			<visible>Control.IsVisible(50) | Control.IsVisible(550)</visible>
+			<animation effect="zoom" end="100,80" center="0,750" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
 			<include>Animation_HideMultiplex</include>
 		</control>
 	</include>
@@ -2341,20 +2339,13 @@
 	<include name="Furniture_shadow">
 		<control type="image">
 			<posx>0</posx>
-			<posy>430</posy>
+			<posy>525</posy>
 			<width>1280</width>
-			<height>267</height>
-			<texture>multiplex/night/multiplex_floorshadow.png</texture>
-			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
-			<include>Animation_HideMultiplex</include>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>430</posy>
-			<width>1280</width>
-			<height>267</height>
-			<texture>Multiplex/lite/multiplex_floorshadow.png</texture>
-			<visible>!Skin.HasSetting(darkshowcase) + [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<height>80</height>
+			<include condition="!Skin.HasSetting(darkshowcase)">Fanart-FloorShadowLight</include>
+			<include condition="Skin.HasSetting(darkshowcase)">Fanart-FloorShadowNight</include>			
+			<visible>[Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]</visible>
+			<animation effect="slide" end="0,30" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
 			<include>Animation_HideMultiplex</include>
 		</control>
 	</include>
@@ -2367,6 +2358,8 @@
 			<height>750</height>
 			<texture>multiplex/multiplex_vignette.png</texture>
 			<visible>[Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
+			<animation effect="zoom" end="100,120" center="auto" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
 				<effect type="slide" start="-464,0" end="0,0" time="400" easing="inout" tween="cubic" />
@@ -2392,6 +2385,7 @@
 			<height>750</height>
 			<texture flipx="true">multiplex/multiplex_vignette.png</texture>
 			<visible>[Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + ![Control.HasFocus(94) | Control.HasFocus(197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)]]</visible>
+			<animation effect="zoom" end="100,120" center="auto" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
 				<effect type="slide" start="464,0" end="0,0" time="400" easing="inout" tween="cubic" />
@@ -2550,7 +2544,7 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
-			<visible>Player.HasAudio + Skin.HasSetting(homevis)</visible>
+			<visible>Player.HasAudio + Skin.HasSetting(homevis) + Window.IsActive(Home)</visible>
 		</control>
 
 		<control type="image">
@@ -2653,25 +2647,76 @@
 
 	<include name="Furniture_NowPlayingWidget">
 		<control type="group">
-			<animation effect="fade" delay="1500" start="0" end="100" time="400">Visible</animation>
+			<animation effect="fade" delay="500" start="0" end="100" time="400">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-			<animation effect="slide" time="1000" start="0,300" end="0,0" tween="cubic" easing="out">WindowOpen</animation>				
-			<animation effect="slide" start="25,0" end="25,0" time="0" condition="Skin.HasSetting(FullscreenMusicMultiplex)">Conditional</animation>
-		
+			<animation effect="slide" time="1000" start="-300,0" end="0,0" tween="cubic" easing="inout">WindowOpen</animation>				
+			<animation effect="slide" time="1000" start="0,0" end="-300,0" tween="cubic" easing="inout">WindowClose</animation>				
 			<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Player.HasAudio</visible>
+
+		<control type="group">
+			<include>Animation_CommonFade</include>
 			<control type="image">
-				<posx>870</posx>
-				<posy>565</posy>
-				<width>318</width>
-				<height>113</height>
-				<texture>list/list_nowplaying.png</texture>
+				<posx>-75</posx>
+				<posy>-15</posy>
+				<width>562</width>
+				<height>70</height>
+				<texture flipx="true" flipy="true">common/nowplaying_panel.png</texture>
 			</control>
 
+			<control type="image">
+				<posx>7</posx>
+				<posy>2</posy>
+				<width>40</width>
+				<height>40</height>
+				<texture>common/cd.png</texture>
+			</control>
+			<control type="image">
+				<posx>8</posx>
+				<posy>3</posy>
+				<width>38</width>
+				<height>38</height>
+				<texture>common/cd-animation.png</texture>
+			   <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+			</control>
+			<control type="label">
+				<posx>60</posx>
+				<posy>0</posy>
+				<width>240</width>
+				<height>18</height>
+				<font>Font_ListPlaying</font>
+				<textcolor>a8FFFFFF</textcolor>
+				<scrollspeed>10</scrollspeed>
+				<scrollout>true</scrollout>
+				<pauseatend>3000</pauseatend>
+				<scroll>true</scroll>
+				<label>[UPPERCASE]$INFO[MusicPlayer.Artist][/UPPERCASE]</label>
+			</control>
+			<control type="label">
+				<posx>60</posx>
+				<posy>20</posy>
+				<width>240</width>
+				<height>18</height>
+				<font>Font_ListPlaying</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<scrollspeed>10</scrollspeed>
+				<scrollout>true</scrollout>
+				<pauseatend>3000</pauseatend>
+				<scroll>true</scroll>
+				<label>[UPPERCASE]$INFO[MusicPlayer.Title][/UPPERCASE]</label>
+			</control>
+
+			<control type="label" id="212">
+				<posx>310</posx>
+				<posy>0</posy>
+				<textcolor>abFFFFFF</textcolor>
+				<label>[UPPERCASE]$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration][/UPPERCASE]</label>
+				<font>Font_HomeNowPlayingAlbum</font>
+			</control>		
 			<control type="progress" id="20">
 				<description>Progressbar</description>
-				<posx>855</posx>
-				<posy>645</posy>
-				<width>346</width>
+				<posx>310</posx>
+				<posy>22</posy>
+				<width>120</width>
 				<height>18</height>
 				<texturebg>list/progress_back.png</texturebg>
 				<lefttexture>list/progress_left.png</lefttexture>
@@ -2680,28 +2725,13 @@
 				<overlaytexture>-</overlaytexture>
 				<info>Player.Progress</info>
 			</control>
-
-			<control type="label">
-				<include>List_NowPlaying</include>
-				<posy>590</posy>
-				<textcolor>a8FFFFFF</textcolor>
-				<scroll>true</scroll>
-				<label>[UPPERCASE][COLOR a8FFFFFF]$INFO[MusicPlayer.Artist][/COLOR][CR][COLOR FFFFFFFF]$INFO[MusicPlayer.Title][/COLOR][/UPPERCASE]</label>
-				<visible>true</visible>
-			</control>
-		</control>
-	</include>
-
-	<include name="Furniture_DarkGradient">
-		<control type="image">
-			<posx>0</posx>
-			<posy>675</posy>
-			<width>1280</width>
-			<height>48</height>
-			<texture>multiplex/multiplex_gradient.png</texture>
-			<visible>Skin.HasSetting(darkshowcase) + [Control.IsVisible(53) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)]</visible>
-			<include>Animation_CommonFade</include>
 		</control>		
+
+
+
+
+
+		</control>
 	</include>
 	
 	
@@ -2818,7 +2848,7 @@
 			<animation effect="slide" end="605,500" time="0" condition="Control.IsVisible(551)">Conditional</animation>
 			<animation effect="slide" end="605,530" time="0" condition="Control.IsVisible(552)">Conditional</animation>
 			<animation effect="slide" end="605,500" time="0" condition="Control.IsVisible(553)">Conditional</animation>
-			<animation effect="slide" end="350,280" time="0" condition="Control.IsVisible(550)">Conditional</animation>
+			<animation effect="slide" end="80,550" time="0" condition="Control.IsVisible(550)">Conditional</animation>
 			<animation effect="slide" end="410,280" time="0" condition="Control.IsVisible(50)">Conditional</animation>
 			<animation effect="slide" end="605,280" time="0" condition="Control.IsVisible(53)">Conditional</animation>
 			<control type="image">

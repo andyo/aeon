@@ -156,7 +156,7 @@
 					</control>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
-						<texture>viewselect/vs_icon_list_fs.png</texture>
+						<texture>viewselect/vs_icon_lowlist.png</texture>
 						<visible>Control.IsVisible(550)</visible>
 					</control>
 					<control type="image">
@@ -217,14 +217,14 @@
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(551)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>!Control.IsVisible(551) + [Window.IsActive(25) | Window.IsActive(24)] + [[[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(tvposterview)] | ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | substring(Container.FolderPath,plugin://video/IPlayer,left)]]</visible>
+							<visible>!Control.IsVisible(551) + [Window.IsActive(25) | [Window.IsActive(24)+substring(Container.FolderPath,plugin://video/apple,left)]] + [[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)] | ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | substring(Container.FolderPath,plugin://video/IPlayer,left)]]</visible>
 						</item>
 						<item id="2">
 							<icon>viewselect/vs_icon_multiplex.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(552)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>!Control.IsVisible(552) + [Window.IsActive(25) | Window.IsActive(24)] + [[[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(tvposterview)] | Container.Content(episodes) | substring(Container.FolderPath,plugin://video/IPlayer,left)]</visible>
+							<visible>!Control.IsVisible(552) + [Window.IsActive(25) |[Window.IsActive(24)+substring(Container.FolderPath,plugin://video/apple,left)]] + [[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)] | Container.Content(episodes) | substring(Container.FolderPath,plugin://video/IPlayer,left)]</visible>
 						</item>
 						<item id="3">
 							<icon>viewselect/vs_icon_multiplex.png</icon>
@@ -248,7 +248,7 @@
 							<visible>!Control.IsVisible(50)</visible>
 						</item>
 						<item id="6">
-							<icon>viewselect/vs_icon_list_fs.png</icon>
+							<icon>viewselect/vs_icon_lowlist.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Container.SetViewMode(550)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
@@ -268,7 +268,7 @@
 		
 		<include name="VerticalMenu_SecondColumnMultiplexStyleChange">
 			<control type="group">
-				<visible>ControlGroup(7000).HasFocus(30241) | ControlGroup(7000).HasFocus(30242) | ControlGroup(7000).HasFocus(30243) | ControlGroup(7000).HasFocus(30244) | ControlGroup(7000).HasFocus(30245) | ControlGroup(7000).HasFocus(30246)</visible>
+				<visible>ControlGroup(7000).HasFocus(30251) | ControlGroup(7000).HasFocus(30252) | ControlGroup(7000).HasFocus(30253) | ControlGroup(7000).HasFocus(30254) | ControlGroup(7000).HasFocus(30255) | ControlGroup(7000).HasFocus(30256) | ControlGroup(7000).HasFocus(30257) | ControlGroup(7000).HasFocus(30258) | ControlGroup(7000).HasFocus(30259)</visible>
 				<include>Animation_ViewMenuSlideVertical</include>
 				<include>Animation_MediaMenuSlideVertical</include>
 				
@@ -296,68 +296,88 @@
 					<posy>580</posy>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
-						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
-						<visible>Container.Content(movies) + Skin.HasSetting(multiplexfanart) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-					</control>
-					<control type="image">
-						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_plot_window.png</texture>
-						<visible>Container.Content(movies) + Skin.HasSetting(multiplexplot) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						<visible>Container.Content(movies) + Skin.HasSetting(movieplot) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_poster_window.png</texture>
-						<visible>Container.Content(movies) + !Skin.HasSetting(multiplexplot)  + !Skin.HasSetting(multiplexfanart) + !Skin.HasSetting(multiplexbigthumb) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						<visible>Container.Content(movies) + Skin.HasSetting(movieposter) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_thumb_window.png</texture>
-						<visible>Container.Content(movies) + Skin.HasSetting(multiplexbigthumb) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
-					</control>
-					<control type="image">
-						<include>VerticalMenu_ViewChangeImage</include>
-						<texture>viewselect/vs_icon_multiplex_thumb_window.png</texture>
-						<visible>Container.Content(episodes) + Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						<visible>Container.Content(movies) + Skin.HasSetting(moviebigthumb) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
-						<visible>Container.Content(episodes) + !Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						<visible>Container.Content(movies) + Skin.HasSetting(moviefanart) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+					</control>
+
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_thumb_window.png</texture>
+						<visible>Container.Content(episodes) + Skin.HasSetting(multiplextvbigthumb) + [Control.IsVisible(551)|Control.IsVisible(552)] +  + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
+						<visible>Container.Content(episodes) + !Skin.HasSetting(multiplextvbigthumb) + [Control.IsVisible(551)|Control.IsVisible(552)] +  + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 					</control>
 
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_art_fullscreen.png</texture>
-						<visible>Container.Content(movies) + Skin.HasSetting(multiplexfanart) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						<visible>Container.Content(movies) + Skin.HasSetting(moviefanart) + Control.IsVisible(551) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_plot_fullscreen.png</texture>
-						<visible>Container.Content(movies) + Skin.HasSetting(multiplexplot) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						<visible>Container.Content(movies) + Skin.HasSetting(movieplot) + Control.IsVisible(551) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_poster_fullscreen.png</texture>
-						<visible>Container.Content(movies) + !Skin.HasSetting(multiplexplot)  + !Skin.HasSetting(multiplexfanart) + !Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						<visible>Container.Content(movies) + !Skin.HasSetting(movieplot) + Control.IsVisible(551) + !Skin.HasSetting(moviefanart) + !Skin.HasSetting(moviebigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_thumb_fullscreen.png</texture>
-						<visible>Container.Content(movies) + Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+						<visible>Container.Content(movies) + Skin.HasSetting(moviebigthumb) + Control.IsVisible(551) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 					</control>
+
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_thumb_fullscreen.png</texture>
-						<visible>Container.Content(episodes) + Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						<visible>Container.Content(episodes) + Skin.HasSetting(multiplextvbigthumb) + [Control.IsVisible(551)|Control.IsVisible(552)] + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 					</control>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_art_fullscreen.png</texture>
-						<visible>Container.Content(episodes) + !Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						<visible>Container.Content(episodes) + !Skin.HasSetting(multiplextvbigthumb) + [Control.IsVisible(551)|Control.IsVisible(552)] + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 					</control>
+
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_lowlist_noextras.png</texture>
+						<visible>Container.Content(movies) + Skin.HasSetting(noextrathumbs) + Control.IsVisible(550)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_lowlist_2extras.png</texture>
+						<visible>Container.Content(movies) + Skin.HasSetting(2extrathumbs) + Control.IsVisible(550)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_lowlist_4extras.png</texture>
+						<visible>Container.Content(movies) + Skin.HasSetting(4extrathumbs) + Control.IsVisible(550)</visible>
+					</control>
+
+
 				</control>
 					
-<!-- 30021 - 30040 reserved for MultiplexInfoButtons -->
+<!-- 30021 - 30040 reserved for MovieInfoPopupButtons -->
 
 				<control type="list" id="7012">
 					<posx>215</posx>
@@ -408,82 +428,82 @@
 						<item id="1">
 							<icon>viewselect/vs_icon_multiplex_plot_window.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>Skin.SetBool(movieplot)</onclick>
+							<onclick>Skin.Reset(moviefanart)</onclick>
+							<onclick>Skin.Reset(movieposter)</onclick>
+							<onclick>Skin.Reset(moviebigthumb)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex)+ !Skin.HasSetting(multiplexplot)</visible>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(movieplot)</visible>
 						</item>
 						<item id="2">
 							<icon>viewselect/vs_icon_multiplex_poster_window.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>Skin.SetBool(movieposter)</onclick>
+							<onclick>Skin.Reset(moviefanart)</onclick>
+							<onclick>Skin.Reset(movieplot)</onclick>
+							<onclick>Skin.Reset(moviebigthumb)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(multiplexposter)</visible>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(movieposter)</visible>
 						</item>
 						<item id="3">
 							<icon>viewselect/vs_icon_multiplex_art_window.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>Skin.SetBool(moviefanart)</onclick>
+							<onclick>Skin.Reset(movieplot)</onclick>
+							<onclick>Skin.Reset(movieposter)</onclick>
+							<onclick>Skin.Reset(moviebigthumb)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(multiplexfanart)</visible>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(moviefanart)</visible>
 						</item>
 						<item id="4">
 							<icon>viewselect/vs_icon_multiplex_thumb_window.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexbigthumb)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
+							<onclick>Skin.SetBool(moviebigthumb)</onclick>
+							<onclick>Skin.Reset(movieposter)</onclick>
+							<onclick>Skin.Reset(movieplot)</onclick>
+							<onclick>Skin.Reset(moviefanart)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(multiplexbigthumb)</visible>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(FullscreenMovieMultiplex) + !Skin.HasSetting(moviebigthumb)</visible>
 						</item>
 						<item id="5">
 							<icon>viewselect/vs_icon_multiplex_plot_fullscreen.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>Skin.SetBool(movieplot)</onclick>
+							<onclick>Skin.Reset(moviefanart)</onclick>
+							<onclick>Skin.Reset(movieposter)</onclick>
+							<onclick>Skin.Reset(moviebigthumb)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexplot) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(movieplot) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 						</item>
 						<item id="6">
 							<icon>viewselect/vs_icon_multiplex_poster_fullscreen.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>Skin.SetBool(movieposter)</onclick>
+							<onclick>Skin.Reset(moviefanart)</onclick>
+							<onclick>Skin.Reset(movieplot)</onclick>
+							<onclick>Skin.Reset(moviebigthumb)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexposter) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(movieposter) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 						</item>
 						<item id="7">
 							<icon>viewselect/vs_icon_multiplex_art_fullscreen.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexfanart)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexbigthumb)</onclick>
+							<onclick>Skin.SetBool(moviefanart)</onclick>
+							<onclick>Skin.Reset(movieplot)</onclick>
+							<onclick>Skin.Reset(movieposter)</onclick>
+							<onclick>Skin.Reset(moviebigthumb)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexfanart) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(moviefanart) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 						</item>
 						<item id="8">
 							<icon>viewselect/vs_icon_multiplex_thumb_fullscreen.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<onclick>Skin.SetBool(multiplexbigthumb)</onclick>
-							<onclick>Skin.Reset(multiplexposter)</onclick>
-							<onclick>Skin.Reset(multiplexplot)</onclick>
-							<onclick>Skin.Reset(multiplexfanart)</onclick>
+							<onclick>Skin.SetBool(moviebigthumb)</onclick>
+							<onclick>Skin.Reset(movieposter)</onclick>
+							<onclick>Skin.Reset(movieplot)</onclick>
+							<onclick>Skin.Reset(moviefanart)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexbigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(moviebigthumb) + Skin.HasSetting(FullscreenMovieMultiplex)</visible>
 						</item>
 						<item id="9">
 							<icon>viewselect/vs_icon_multiplex_art_window.png</icon>
@@ -500,19 +520,43 @@
 							<onclick>Skin.Reset(multiplextvfanart)</onclick>
 							<visible>Container.Content(episodes) + Window.IsActive(25) + Container.Content(episodes) + Control.IsVisible(552) + !Skin.HasSetting(multiplextvbigthumb) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 						</item>
-						<item id="11">
+						<item id="12">
 							<icon>viewselect/vs_icon_multiplex_art_fullscreen.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Skin.SetBool(multiplextvfanart)</onclick>
 							<onclick>Skin.Reset(multiplextvbigthumb)</onclick>
 							<visible>Window.IsActive(25) + Container.Content(episodes) + Control.IsVisible(552) + Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 						</item>
-						<item id="12">
+						<item id="13">
 							<icon>viewselect/vs_icon_multiplex_thumb_fullscreen.png</icon>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<onclick>Skin.SetBool(multiplextvbigthumb)</onclick>
 							<onclick>Skin.Reset(multiplextvfanart)</onclick>
 							<visible>Window.IsActive(25) + Container.Content(episodes) + Control.IsVisible(552) + !Skin.HasSetting(multiplextvbigthumb) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						</item>
+						<item id="14">
+							<icon>viewselect/vs_icon_lowlist_noextras.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(noextrathumbs)</onclick>
+							<onclick>Skin.Reset(2extrathumbs)</onclick>
+							<onclick>Skin.Reset(4extrathumbs)</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(550) + !Skin.HasSetting(noextrathumbs)</visible>
+						</item>
+						<item id="15">
+							<icon>viewselect/vs_icon_lowlist_2extras.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(2extrathumbs)</onclick>
+							<onclick>Skin.Reset(noextrathumbs)</onclick>
+							<onclick>Skin.Reset(4extrathumbs)</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(550) + !Skin.HasSetting(2extrathumbs)</visible>
+						</item>
+						<item id="16">
+							<icon>viewselect/vs_icon_lowlist_4extras.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetBool(4extrathumbs)</onclick>
+							<onclick>Skin.Reset(noextrathumbs)</onclick>
+							<onclick>Skin.Reset(2extrathumbs)</onclick>
+							<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(550) + !Skin.HasSetting(4extrathumbs)</visible>
 						</item>
 					</content>
 				</control>
@@ -522,7 +566,7 @@
 <!-- 30061 - 30200 reserved for Additional Multiplex Info Buttons -->
 		<include name="VerticalMenu_SecondColumnInfoTrigger">
 			<control type="group">
-				<visible>ControlGroup(7000).HasFocus(30211) | ControlGroup(7000).HasFocus(30212) | ControlGroup(7000).HasFocus(30213) | ControlGroup(7000).HasFocus(30214) | ControlGroup(7000).HasFocus(30215) | ControlGroup(7000).HasFocus(30216) | ControlGroup(7000).HasFocus(30217) | ControlGroup(7000).HasFocus(30218) | ControlGroup(7000).HasFocus(30219) | ControlGroup(7000).HasFocus(30220) | ControlGroup(7000).HasFocus(30221) | ControlGroup(7000).HasFocus(30222) | ControlGroup(7000).HasFocus(30223) | ControlGroup(7000).HasFocus(30224) | ControlGroup(7000).HasFocus(30225) | ControlGroup(7000).HasFocus(30226) | ControlGroup(7000).HasFocus(30227) | ControlGroup(7000).HasFocus(30228) | ControlGroup(7000).HasFocus(30229) | ControlGroup(7000).HasFocus(30230) | ControlGroup(7000).HasFocus(30231) | ControlGroup(7000).HasFocus(30232) | ControlGroup(7000).HasFocus(30233) | ControlGroup(7000).HasFocus(30234)</visible>
+				<visible>ControlGroup(7000).HasFocus(30211) | ControlGroup(7000).HasFocus(30212) | ControlGroup(7000).HasFocus(30213) | ControlGroup(7000).HasFocus(30214) | ControlGroup(7000).HasFocus(30215) | ControlGroup(7000).HasFocus(30216) | ControlGroup(7000).HasFocus(30217) | ControlGroup(7000).HasFocus(30218) | ControlGroup(7000).HasFocus(30219) | ControlGroup(7000).HasFocus(30220) | ControlGroup(7000).HasFocus(30221) | ControlGroup(7000).HasFocus(30222) | ControlGroup(7000).HasFocus(30223) | ControlGroup(7000).HasFocus(30224) | ControlGroup(7000).HasFocus(30225) | ControlGroup(7000).HasFocus(30226) | ControlGroup(7000).HasFocus(30227) | ControlGroup(7000).HasFocus(30228) | ControlGroup(7000).HasFocus(30229) | ControlGroup(7000).HasFocus(30230) | ControlGroup(7000).HasFocus(30231) | ControlGroup(7000).HasFocus(30232) | ControlGroup(7000).HasFocus(30233) | ControlGroup(7000).HasFocus(30234) | ControlGroup(7000).HasFocus(30235) | ControlGroup(7000).HasFocus(30236) | ControlGroup(7000).HasFocus(30237) | ControlGroup(7000).HasFocus(30238) | ControlGroup(7000).HasFocus(30239) | ControlGroup(7000).HasFocus(30240) | ControlGroup(7000).HasFocus(30241) | ControlGroup(7000).HasFocus(30242)</visible>
 				<include>Animation_ViewMenuSlideVertical</include>
 				<include>Animation_MediaMenuSlideVertical</include>
 					
@@ -585,219 +629,291 @@
 					<content>
 						<item id="1">
 							<label>$LOCALIZE[31049]</label>
-							<onclick>Skin.SetBool(multiplexinfoauto)</onclick>
-							<onclick>Skin.Reset(multiplexinfooff)</onclick>
-							<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexinfoon)</onclick>
+							<onclick>Skin.SetBool(MovieInfoPopupauto)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopupon)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexinfoauto)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + !Skin.HasSetting(MovieInfoPopupauto)</visible>
 						</item>
 						<item id="2">
 							<label>$LOCALIZE[31048]</label>
-							<onclick>Skin.SetBool(multiplexinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexinfooff)</onclick>
-							<onclick>Skin.Reset(multiplexinfoon)</onclick>
-							<onclick>Skin.Reset(multiplexinfoauto)</onclick>
+							<onclick>Skin.SetBool(MovieInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexinfotrigger)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + !Skin.HasSetting(MovieInfoPopuptrigger)</visible>
 						</item>
 						<item id="3">
 							<label>$LOCALIZE[31077]</label>
-							<onclick>Skin.SetBool(multiplexinfoon)</onclick>
-							<onclick>Skin.Reset(multiplexinfooff)</onclick>
-							<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexinfoauto)</onclick>
+							<onclick>Skin.SetBool(MovieInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexinfoon)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + !Skin.HasSetting(MovieInfoPopupon)</visible>
 						</item>
 						<item id="4">
 							<label>$LOCALIZE[31078]</label>
-							<onclick>Skin.SetBool(multiplexinfooff)</onclick>
-							<onclick>Skin.Reset(multiplexinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexinfoon)</onclick>
-							<onclick>Skin.Reset(multiplexinfoauto)</onclick>
+							<onclick>Skin.SetBool(MovieInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MovieInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + !Skin.HasSetting(multiplexinfooff)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + !Skin.HasSetting(MovieInfoPopupoff)</visible>
 						</item>
 						<item id="5">
 							<label>$LOCALIZE[31049]</label>
-							<onclick>Skin.SetBool(multiplextvshowsinfoauto)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfoon)</onclick>
+							<onclick>Skin.SetBool(TVShowsInfoPopupauto)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopupon)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfoauto)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(TVShowsInfoPopupauto)</visible>
 						</item>
 						<item id="6">
 							<label>$LOCALIZE[31048]</label>
-							<onclick>Skin.SetBool(multiplextvshowsinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfoon)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfoauto)</onclick>
+							<onclick>Skin.SetBool(TVShowsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfotrigger)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(TVShowsInfoPopuptrigger)</visible>
 						</item>
 						<item id="7">
 							<label>$LOCALIZE[31077]</label>
-							<onclick>Skin.SetBool(multiplextvshowsinfoon)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfoauto)</onclick>
+							<onclick>Skin.SetBool(TVShowsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfoon)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(TVShowsInfoPopupon)</visible>
 						</item>
 						<item id="8">
 							<label>$LOCALIZE[31078]</label>
-							<onclick>Skin.SetBool(multiplextvshowsinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfoon)</onclick>
-							<onclick>Skin.Reset(multiplextvshowsinfoauto)</onclick>
+							<onclick>Skin.SetBool(TVShowsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(TVShowsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(multiplextvshowsinfooff)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !Skin.HasSetting(TVShowsInfoPopupoff)</visible>
 						</item>
 						<item id="9">
 							<label>$LOCALIZE[31049]</label>
-							<onclick>Skin.SetBool(multiplextvseasonsinfoauto)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfoon)</onclick>
+							<onclick>Skin.SetBool(TVSeasonsInfoPopupauto)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopupon)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfoauto)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(TVSeasonsInfoPopupauto)</visible>
 						</item>
 						<item id="10">
 							<label>$LOCALIZE[31048]</label>
-							<onclick>Skin.SetBool(multiplextvseasonsinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfoon)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfoauto)</onclick>
+							<onclick>Skin.SetBool(TVSeasonsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfotrigger)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(TVSeasonsInfoPopuptrigger)</visible>
 						</item>
 						<item id="11">
 							<label>$LOCALIZE[31077]</label>
-							<onclick>Skin.SetBool(multiplextvseasonsinfoon)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfoauto)</onclick>
+							<onclick>Skin.SetBool(TVSeasonsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfoon)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(TVSeasonsInfoPopupon)</visible>
 						</item>
 						<item id="12">
 							<label>$LOCALIZE[31078]</label>
-							<onclick>Skin.SetBool(multiplextvseasonsinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfoon)</onclick>
-							<onclick>Skin.Reset(multiplextvseasonsinfoauto)</onclick>
+							<onclick>Skin.SetBool(TVSeasonsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(TVSeasonsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(multiplextvseasonsinfooff)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !Skin.HasSetting(TVSeasonsInfoPopupoff)</visible>
 						</item>
 						<item id="13">
 							<label>$LOCALIZE[31049]</label>
-							<onclick>Skin.SetBool(multiplextvepisodesinfoauto)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfoon)</onclick>
+							<onclick>Skin.SetBool(TVEpisodesInfoPopupauto)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopupon)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfoauto)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(TVEpisodesInfoPopupauto)</visible>
 						</item>
 						<item id="14">
 							<label>$LOCALIZE[31048]</label>
-							<onclick>Skin.SetBool(multiplextvepisodesinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfoon)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfoauto)</onclick>
+							<onclick>Skin.SetBool(TVEpisodesInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopupon)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfotrigger)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(TVEpisodesInfoPopuptrigger)</visible>
 						</item>
 						<item id="15">
 							<label>$LOCALIZE[31077]</label>
-							<onclick>Skin.SetBool(multiplextvepisodesinfoon)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfoauto)</onclick>
+							<onclick>Skin.SetBool(TVEpisodesInfoPopupon)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfoon)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(TVEpisodesInfoPopupon)</visible>
 						</item>
 						<item id="16">
 							<label>$LOCALIZE[31078]</label>
-							<onclick>Skin.SetBool(multiplextvepisodesinfooff)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfoon)</onclick>
-							<onclick>Skin.Reset(multiplextvepisodesinfoauto)</onclick>
+							<onclick>Skin.SetBool(TVEpisodesInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopupon)</onclick>
+							<onclick>Skin.Reset(TVEpisodesInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(multiplextvepisodesinfooff)</visible>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !Skin.HasSetting(TVEpisodesInfoPopupoff)</visible>
 						</item>
 						<item id="17">
 							<label>$LOCALIZE[31049]</label>
-							<onclick>Skin.SetBool(multiplexmusicinfoauto)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
+							<onclick>Skin.SetBool(MusicSongsInfoPopupauto)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopupon)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfoauto)</visible>
+							<visible>Window.IsActive(502) + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicSongsInfoPopupauto)</visible>
 						</item>
 						<item id="18">
 							<label>$LOCALIZE[31048]</label>
-							<onclick>Skin.SetBool(multiplexmusicinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
+							<onclick>Skin.SetBool(MusicSongsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfotrigger)</visible>
+							<visible>Window.IsActive(502) + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicSongsInfoPopuptrigger)</visible>
 						</item>
 						<item id="19">
 							<label>$LOCALIZE[31077]</label>
-							<onclick>Skin.SetBool(multiplexmusicinfoon)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfooff)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
+							<onclick>Skin.SetBool(MusicSongsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfoon)</visible>
+							<visible>Window.IsActive(502) + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicSongsInfoPopupon)</visible>
 						</item>
 						<item id="20">
 							<label>$LOCALIZE[31078]</label>
-							<onclick>Skin.SetBool(multiplexmusicinfooff)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfoon)</onclick>
-							<onclick>Skin.Reset(multiplexmusicinfoauto)</onclick>
+							<onclick>Skin.SetBool(MusicSongsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MusicSongsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + !Skin.HasSetting(multiplexmusicinfooff)</visible>
+							<visible>Window.IsActive(502) + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicSongsInfoPopupoff)</visible>
 						</item>
 						<item id="21">
 							<label>$LOCALIZE[31049]</label>
-							<onclick>Skin.SetBool(multiplexcommoninfoauto)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfooff)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfoon)</onclick>
+							<onclick>Skin.SetBool(MusicArtistsInfoPopupauto)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopupon)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + !Skin.HasSetting(multiplexcommoninfoauto)</visible>
+							<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicArtistsInfoPopupauto)</visible>
 						</item>
 						<item id="22">
 							<label>$LOCALIZE[31048]</label>
-							<onclick>Skin.SetBool(multiplexcommoninfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfooff)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfoon)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfoauto)</onclick>
+							<onclick>Skin.SetBool(MusicArtistsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + !Skin.HasSetting(multiplexcommoninfotrigger)</visible>
+							<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicArtistsInfoPopuptrigger)</visible>
 						</item>
 						<item id="23">
 							<label>$LOCALIZE[31077]</label>
-							<onclick>Skin.SetBool(multiplexcommoninfoon)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfooff)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfoauto)</onclick>
+							<onclick>Skin.SetBool(MusicArtistsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + !Skin.HasSetting(multiplexcommoninfoon)</visible>
+							<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicArtistsInfoPopupon)</visible>
 						</item>
 						<item id="24">
 							<label>$LOCALIZE[31078]</label>
-							<onclick>Skin.SetBool(multiplexcommoninfooff)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfotrigger)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfoon)</onclick>
-							<onclick>Skin.Reset(multiplexcommoninfoauto)</onclick>
+							<onclick>Skin.SetBool(MusicArtistsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MusicArtistsInfoPopupauto)</onclick>
 							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + !Skin.HasSetting(multiplexcommoninfooff)</visible>
+							<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicArtistsInfoPopupoff)</visible>
+						</item>
+						<item id="25">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetBool(MusicAlbumsInfoPopupauto)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopupon)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicAlbumsInfoPopupauto)</visible>
+						</item>
+						<item id="26">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetBool(MusicAlbumsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopupauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicAlbumsInfoPopuptrigger)</visible>
+						</item>
+						<item id="27">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetBool(MusicAlbumsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopupauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicAlbumsInfoPopupon)</visible>
+						</item>
+						<item id="28">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetBool(MusicAlbumsInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopupon)</onclick>
+							<onclick>Skin.Reset(MusicAlbumsInfoPopupauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + !Skin.HasSetting(MusicAlbumsInfoPopupoff)</visible>
+						</item>
+						<item id="29">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetBool(CommonInfoPopupauto)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopupon)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)] + !Skin.HasSetting(CommonInfoPopupauto)</visible>
+						</item>
+						<item id="30">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetBool(CommonInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopupon)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopupauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)] + !Skin.HasSetting(CommonInfoPopuptrigger)</visible>
+						</item>
+						<item id="31">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetBool(CommonInfoPopupon)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopupauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)] + !Skin.HasSetting(CommonInfoPopupon)</visible>
+						</item>
+						<item id="32">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetBool(CommonInfoPopupoff)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopuptrigger)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopupon)</onclick>
+							<onclick>Skin.Reset(CommonInfoPopupauto)</onclick>
+							<onclick>XBMC.ReloadSkin</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)] + !Skin.HasSetting(CommonInfoPopupoff)</visible>
 						</item>
 					</content>
 				</control>
@@ -810,34 +926,34 @@
 <!-- 30201 - 30500 reserved for Menu Buttons-->
 	
 <!-- 30211 - 30240 reserved for Info Buttons-->
-		<include name="VerticalMenu_MultiplexInfoButtons">
+		<include name="VerticalMenu_InfoPopupButtons">
 			<control type="button" id="30211">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexinfooff)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + Skin.HasSetting(MovieInfoPopupoff)</visible>
 			</control>
 			<control type="button" id="30212">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + ![Skin.HasSetting(multiplexinfotrigger) | Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfoon)]</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + ![Skin.HasSetting(MovieInfoPopuptrigger) | Skin.HasSetting(MovieInfoPopupoff) | Skin.HasSetting(MovieInfoPopupon)]</visible>
 			</control>
 			<control type="button" id="30213">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexinfotrigger)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + Skin.HasSetting(MovieInfoPopuptrigger)</visible>
 			</control>	
 			<control type="button" id="30214">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexinfoon)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + Skin.HasSetting(MovieInfoPopupon)</visible>
 			</control>
 	
 			<control type="button" id="30215">
@@ -845,28 +961,28 @@
 				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfooff)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopupoff)</visible>
 			</control>
 			<control type="button" id="30216">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + ![Skin.HasSetting(multiplextvshowsinfotrigger) | Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfoon)]</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + ![Skin.HasSetting(TVShowsInfoPopuptrigger) | Skin.HasSetting(TVShowsInfoPopupoff) | Skin.HasSetting(TVShowsInfoPopupon)]</visible>
 			</control>
 			<control type="button" id="30217">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)</visible>
 			</control>	
 			<control type="button" id="30218">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfoon)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopupon)</visible>
 			</control>		
 
 			<control type="button" id="30219">
@@ -874,28 +990,28 @@
 				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfooff)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopupoff)</visible>
 			</control>
 			<control type="button" id="30220">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + ![Skin.HasSetting(multiplextvseasonsinfotrigger) | Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfoon)]</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + ![Skin.HasSetting(TVSeasonsInfoPopuptrigger) | Skin.HasSetting(TVSeasonsInfoPopupoff) | Skin.HasSetting(TVSeasonsInfoPopupon)]</visible>
 			</control>
 			<control type="button" id="30221">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)</visible>
 			</control>	
 			<control type="button" id="30222">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfoon)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopupon)</visible>
 			</control>		
 
 			<control type="button" id="30223">
@@ -903,138 +1019,212 @@
 				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfooff)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopupoff)</visible>
 			</control>
 			<control type="button" id="30224">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + ![Skin.HasSetting(multiplextvepisodesinfotrigger) | Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfoon)]</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + ![Skin.HasSetting(TVEpisodesInfoPopuptrigger) | Skin.HasSetting(TVEpisodesInfoPopupoff) | Skin.HasSetting(TVEpisodesInfoPopupon)]</visible>
 			</control>
 			<control type="button" id="30225">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)</visible>
 			</control>	
 			<control type="button" id="30226">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfoon)</visible>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopupon)</visible>
 			</control>		
-
 
 			<control type="button" id="30227">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + Skin.HasSetting(multiplexmusicinfooff)</visible>
+				<visible>Window.IsActive(502) + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + Skin.HasSetting(MusicSongsInfoPopupoff)</visible>
 			</control>
 			<control type="button" id="30228">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + ![Skin.HasSetting(multiplexmusicinfotrigger) | Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfoon)]</visible>
+				<visible>Window.IsActive(502) + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + ![Skin.HasSetting(MusicSongsInfoPopuptrigger) | Skin.HasSetting(MusicSongsInfoPopupoff) | Skin.HasSetting(MusicSongsInfoPopupon)]</visible>
 			</control>
 			<control type="button" id="30229">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + Skin.HasSetting(multiplexmusicinfotrigger)</visible>
+				<visible>Window.IsActive(502) + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + Skin.HasSetting(MusicSongsInfoPopuptrigger)</visible>
 			</control>	
 			<control type="button" id="30230">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>Window.IsActive(502) + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(553) + Skin.HasSetting(multiplexmusicinfoon)</visible>
+				<visible>Window.IsActive(502) + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + Skin.HasSetting(MusicArtistsInfoPopupon)</visible>
 			</control>
-
 			<control type="button" id="30231">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + Skin.HasSetting(multiplexcommoninfooff)</visible>
+				<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + Skin.HasSetting(MusicArtistsInfoPopupoff)</visible>
 			</control>
 			<control type="button" id="30232">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + ![Skin.HasSetting(multiplexcommoninfotrigger) | Skin.HasSetting(multiplexcommoninfooff) | Skin.HasSetting(multiplexcommoninfoon)]</visible>
+				<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + ![Skin.HasSetting(MusicArtistsInfoPopuptrigger) | Skin.HasSetting(MusicArtistsInfoPopupoff) | Skin.HasSetting(MusicArtistsInfoPopupon)]</visible>
 			</control>
 			<control type="button" id="30233">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + Skin.HasSetting(multiplexcommoninfotrigger)</visible>
+				<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + Skin.HasSetting(MusicArtistsInfoPopuptrigger)</visible>
 			</control>	
 			<control type="button" id="30234">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
 				<onclick>SetFocus(7013)</onclick>
 				<onright>SetFocus(7013)</onright>
-				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Control.IsVisible(551) + Skin.HasSetting(multiplexcommoninfoon)</visible>
+				<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + Skin.HasSetting(MusicArtistsInfoPopupon)</visible>
+			</control>
+			<control type="button" id="30235">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + Skin.HasSetting(MusicAlbumsInfoPopupoff)</visible>
+			</control>
+			<control type="button" id="30236">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + ![Skin.HasSetting(MusicAlbumsInfoPopuptrigger) | Skin.HasSetting(MusicAlbumsInfoPopupoff) | Skin.HasSetting(MusicAlbumsInfoPopupon)]</visible>
+			</control>
+			<control type="button" id="30237">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + Skin.HasSetting(MusicAlbumsInfoPopuptrigger)</visible>
+			</control>	
+			<control type="button" id="30238">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + Skin.HasSetting(MusicAlbumsInfoPopupon)</visible>
+			</control>
+
+			<control type="button" id="30239">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)|Control.IsVisible(552)|Control.IsVisible(553)] + Skin.HasSetting(CommonInfoPopupoff)</visible>
+			</control>
+			<control type="button" id="30240">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)|Control.IsVisible(552)|Control.IsVisible(553)] + ![Skin.HasSetting(CommonInfoPopuptrigger) | Skin.HasSetting(CommonInfoPopupoff) | Skin.HasSetting(CommonInfoPopupon)]</visible>
+			</control>
+			<control type="button" id="30241">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31048]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)|Control.IsVisible(552)|Control.IsVisible(553)] + Skin.HasSetting(CommonInfoPopuptrigger)</visible>
+			</control>	
+			<control type="button" id="30242">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)|Control.IsVisible(552)|Control.IsVisible(553)] + Skin.HasSetting(CommonInfoPopupon)</visible>
 			</control>
 		</include>
 		
 <!-- 30241 - 30250 reserved for Style Buttons-->
 		<include name="VerticalMenu_MultiplexStyleButtons">
-			<control type="button" id="30241">
+			<control type="button" id="30251">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31047]: $LOCALIZE[31960]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + ![Skin.HasSetting(multiplexbigthumb) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexplot)]</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + ![Skin.HasSetting(moviebigthumb) + Skin.HasSetting(moviefanart) + Skin.HasSetting(movieplot)]</visible>
 			</control>
-	
-			<control type="button" id="30242">
+			<control type="button" id="30252">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31047]: $LOCALIZE[31045]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexbigthumb)</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(moviebigthumb)</visible>
 			</control>
-	
-			<control type="button" id="30243">
+			<control type="button" id="30253">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31047]: $LOCALIZE[31044]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexfanart)</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(moviefanart)</visible>
 			</control>
-	
-			<control type="button" id="30244">
+			<control type="button" id="30254">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31047]: $LOCALIZE[31046]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(multiplexplot)</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + Skin.HasSetting(movieplot)</visible>
 			</control>	
 
-			<control type="button" id="30245">
+			<control type="button" id="30255">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31047]: $LOCALIZE[31063]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
 				<visible>Container.Content(episodes) + Window.IsActive(25) + [Control.IsVisible(551) | Control.IsVisible(552)] + Skin.HasSetting(multiplextvbigthumb)</visible>
 			</control>		
-			<control type="button" id="30246">
+			<control type="button" id="30256">
 				<include>VerticalMenu_Button2</include>				
 				<label>$LOCALIZE[31047]: $LOCALIZE[31064]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
 				<visible>Container.Content(episodes) + Window.IsActive(25) + [Control.IsVisible(551) | Control.IsVisible(552)] + !Skin.HasSetting(multiplextvbigthumb)</visible>
 			</control>		
+
+			<control type="button" id="30257">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31047]: $LOCALIZE[32008]</label>
+				<onclick>SetFocus(7012)</onclick>
+				<onright>SetFocus(7012)</onright>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(550) + ![Skin.HasSetting(2extrathumbs)|Skin.HasSetting(4extrathumbs)]</visible>
+			</control>
+			<control type="button" id="30258">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31047]: $LOCALIZE[32009]</label>
+				<onclick>SetFocus(7012)</onclick>
+				<onright>SetFocus(7012)</onright>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(550) + Skin.HasSetting(2extrathumbs)</visible>
+			</control>
+			<control type="button" id="30259">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31047]: $LOCALIZE[32010]</label>
+				<onclick>SetFocus(7012)</onclick>
+				<onright>SetFocus(7012)</onright>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(550) + Skin.HasSetting(4extrathumbs)</visible>
+			</control>
 		</include>
 
 
@@ -1122,9 +1312,8 @@
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31064]</label>
 				<onclick>Skin.ToggleSetting(nomusicfanart)</onclick>
-				<onclick>Skin.SetBool(nocurtains)</onclick>
 				<selected>!Skin.HasSetting(nomusicfanart)</selected>
-				<visible>[Window.IsActive(501) | Window.IsActive(502)] + [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(553) | Control.IsVisible(51)]</visible>
+				<visible>Window.IsActive(501) | Window.IsActive(502)</visible>
 			</control>
 		</include>
 		
@@ -1162,45 +1351,22 @@
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenSongsMultiplex)</onclick>
 				<selected>Skin.HasSetting(FullscreenSongsMultiplex)</selected>
-				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(songs)</visible>
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50)] + Container.Content(songs)</visible>
 			</control>
 			<control type="radiobutton" id="30276">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenArtistsMultiplex)</onclick>
 				<selected>Skin.HasSetting(FullscreenArtistsMultiplex)</selected>
-				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(artists)</visible>
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50)] + Container.Content(artists)</visible>
 			</control>
 			<control type="radiobutton" id="30277">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31968]</label>
 				<onclick>Skin.ToggleSetting(FullscreenAlbumsMultiplex)</onclick>
 				<selected>Skin.HasSetting(FullscreenAlbumsMultiplex)</selected>
-				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(albums)</visible>
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50)] + Container.Content(albums)</visible>
 			</control>
-<!--			<control type="radiobutton" id="30278">
-				<include>VerticalMenu_RadioButton</include>
-				<label>$LOCALIZE[31968]</label>
-				<onclick>Skin.ToggleSetting(FullscreenMusicCommonMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
-				<selected>Skin.HasSetting(FullscreenMusicCommonMultiplex)</selected>
-				<visible>[Control.IsVisible(553) | Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + ![Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]</visible>
-			</control> -->
-<!--			<control type="radiobutton" id="30279">
-				<include>VerticalMenu_RadioButton</include>
-				<label>$LOCALIZE[31968]</label>
-				<onclick>Skin.ToggleSetting(FullscreenCommonMultiplex)</onclick>
-				<selected>Skin.HasSetting(FullscreenCommonMultiplex)</selected>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + ![Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(28)]</visible>
-			</control> -->
-<!--			<control type="radiobutton" id="30280">
-				<include>VerticalMenu_RadioButton</include>
-				<label>$LOCALIZE[31968]</label>
-				<onclick>Skin.ToggleSetting(FullscreenTVCommonMultiplex)</onclick>
-				<onclick>XBMC.ReloadSkin</onclick>
-				<selected>Skin.HasSetting(FullscreenTVCommonMultiplex)</selected>
-				<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
-			</control> -->
 		</include>
 
 
@@ -1210,51 +1376,43 @@
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(movieslistfull)</onclick>
 				<selected>Skin.HasSetting(movieslistfull)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + Container.Content(movies)</visible>
+				<visible>Control.IsVisible(50) + Window.IsActive(25) + Container.Content(movies)</visible>
 			</control>
 			<control type="radiobutton" id="30282">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(tvshowslistfull)</onclick>
 				<selected>Skin.HasSetting(tvshowslistfull)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + Container.Content(tvshows)</visible>
+				<visible>Control.IsVisible(50) + Window.IsActive(25) + Container.Content(tvshows)</visible>
 			</control>
 			<control type="radiobutton" id="30283">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(tvseasonslistfull)</onclick>
 				<selected>Skin.HasSetting(tvseasonslistfull)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + Container.Content(seasons)</visible>
+				<visible>Control.IsVisible(50) + Window.IsActive(25) + Container.Content(seasons)</visible>
 			</control>
 			<control type="radiobutton" id="30284">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(tvepisodeslistfull)</onclick>
 				<selected>Skin.HasSetting(tvepisodeslistfull)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + Container.Content(episodes)</visible>
+				<visible>Control.IsVisible(50) + Window.IsActive(25) + Container.Content(episodes)</visible>
 			</control>
 			<control type="radiobutton" id="30285">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musicalbumslistfull)</onclick>
 				<selected>Skin.HasSetting(musicalbumslistfull)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Container.Content(albums)</visible>
+				<visible>Control.IsVisible(50) + Container.Content(albums)</visible>
 			</control>
 			<control type="radiobutton" id="30286">
 				<include>VerticalMenu_RadioButton</include>
 				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
 				<onclick>Skin.ToggleSetting(musicsongslistfull)</onclick>
 				<selected>Skin.HasSetting(musicsongslistfull)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left)]</visible>
+				<visible>Control.IsVisible(50) + [Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left) | substring(container.folderpath,PLAYLISTMUSIC:,Left)]</visible>
 			</control>
-<!--			<control type="radiobutton" id="30287">
-				<include>VerticalMenu_RadioButton</include>
-				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
-				<onclick>Skin.ToggleSetting(musiclistfull)</onclick>
-				<selected>Skin.HasSetting(musiclistfull)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)]</visible>
-			</control>-->
-
 		</include>
 
 
@@ -1402,26 +1560,26 @@
 		
 
 		<include name="VerticalMenu_PlaylistButtons">
-			<control type="togglebutton" id="30304">
+			<control type="togglebutton" id="20">
 				<label>ORDER: NORMAL</label>
 				<altlabel>ORDER: RANDOM</altlabel>
 				<include>VerticalMenu_ToggleButton</include>
-				<visible>Window.IsActive(500)</visible>
+				<visible>Window.IsActive(500)|Window.IsActive(28)</visible>
 			</control>
-			<control type="button" id="30305">
+			<control type="button" id="26">
 				<label>REPEAT</label>
 				<include>VerticalMenu_Button</include>
-				<visible>Window.IsActive(500)</visible>
+				<visible>Window.IsActive(500)|Window.IsActive(28)</visible>
 			</control>
-			<control type="button" id="30306">
+			<control type="button" id="21">
 				<label>190</label>
 				<include>VerticalMenu_Button</include>
-				<visible>Window.IsActive(500)</visible>
+				<visible>Window.IsActive(500)|Window.IsActive(28)</visible>
 			</control>
-			<control type="button" id="30307">
+			<control type="button" id="22">
 				<label>192</label>
 				<include>VerticalMenu_Button</include>
-				<visible>Window.IsActive(500)</visible>
+				<visible>Window.IsActive(500)|Window.IsActive(28)</visible>
 			</control>	
 		</include>
 		
@@ -1455,7 +1613,7 @@
 				<label>$LOCALIZE[31059]</label>
 				<onclick>Skin.ToggleSetting(listvideoposter)</onclick>
 				<selected>Skin.HasSetting(listvideoposter)</selected>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + [Window.IsActive(24) | Window.IsActive(25)]</visible>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + [[Window.IsActive(24) | Window.IsActive(25)] + ![Window.IsActive(25) + Container.Content(movies)]+![Container.Content(seasons)|Container.Content(tvshows)|Container.Content(episodes)]]</visible>
 			</control>
 			<control type="radiobutton" id="30312">
 				<include>VerticalMenu_RadioButton</include>
@@ -1617,7 +1775,7 @@
 					</control>
 					
 					<include condition="!Skin.HasSetting(nomultiplexstylebuttons)">VerticalMenu_MultiplexStyleButtons</include>
-					<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">VerticalMenu_MultiplexInfoButtons</include>
+					<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">VerticalMenu_InfoPopupButtons</include>
 					<include>VerticalMenu_PosterThumbButtons</include>
 					<include>VerticalMenu_ListButtons</include>
 					<include>VerticalMenu_FullscreenButton</include>

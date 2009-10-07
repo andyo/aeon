@@ -1236,7 +1236,7 @@
 			<scrolltime>250</scrolltime>
 			<include>Animation_HideMultiplex</include>
 			<visible>!Window.IsActive(2003)</visible>
-			<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Container.Content(episodes) | [!Skin.HasSetting(tvposterview) + [Container.Content(tvshows) | Container.Content(seasons)]] | substring(Container.FolderPath,plugin://video/IPlayer,left)]</visible>
+			<visible>[Window.IsActive(24) | Window.IsActive(25)] + [Container.Content(episodes) | [[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]|[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]] | substring(Container.FolderPath,plugin://video/IPlayer,left)]</visible>
 			<itemlayout width="219" height="300">
 				<control type="image">
 					<include>MultiplexIconDimensionsTVWrap</include>

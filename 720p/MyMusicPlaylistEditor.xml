@@ -11,10 +11,10 @@
 
 	<include>FullscreenDimensions</include>
 	<include>Animation_OpenCloseZoom</include>
-	<include>Furniture_Time</include>
+		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
 	<include>Furniture_FloorBack</include>
 	<include>Furniture_shadow</include>
-
 	<include>Furniture_vignette</include>
 	<include>Furniture_FloorFront</include>
 
@@ -90,6 +90,7 @@
 			<textcolor>FFFFFFFF</textcolor>		
 			<label>31038</label>
 		</control>	
+
 		<control type="list" id="50">
 			<viewtype label="List">list</viewtype>
 			<posx>54</posx>

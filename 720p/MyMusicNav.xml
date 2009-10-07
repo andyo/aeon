@@ -1,5 +1,5 @@
 <window id="502">
-	<defaultcontrol>50</defaultcontrol>
+	<defaultcontrol>550</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<views>50,550,553,53</views>
 	<controls>
@@ -12,7 +12,7 @@
 			</control>
 			<control type="largeimage" id="102">
 				<include>FullscreenDimensions</include>
-				<visible>!Control.IsVisible(103) + [Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(553)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+				<visible>!Control.IsVisible(103) + [Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(553)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 				<fadetime>400</fadetime>
 				<texture>$INFO[listitem.property(fanart_image)]</texture>
 				<include>Animation_FanartFade</include>
@@ -20,7 +20,7 @@
 
 			<control type="largeimage" id="103">
 				<include>FullscreenDimensions</include>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(553)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(553)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 				<fadetime>400</fadetime>
 				<texture>$INFO[container.property(fanart_image)]</texture>
 				<include>Animation_FanartFade</include>
@@ -28,7 +28,7 @@
 			
 			<control type="largeimage" id="104">
 				<include>FullscreenDimensions</include>
-				<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(553)] + Container.Content(songs) + !Skin.HasSetting(nomusicfanart)</visible>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(550) | Control.IsVisible(553)] + Container.Content(songs) + !Skin.HasSetting(nomusicfanart)</visible>
 				<fadetime>400</fadetime>
 				<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
 				<include>Animation_FanartFade</include>
@@ -43,7 +43,7 @@
 			<width>0</width>
 			<height>0</height>
 			<texture>-</texture>
-			<visible>[Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(nomultiplexmusicpopup) + ![Skin.HasSetting(multiplexmusicinfooff) | Skin.HasSetting(multiplexmusicinfotrigger)] + [Control.HasFocus(553) | Control.HasFocus(60) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]</visible>
+			<visible>[!Skin.HasSetting(nomultiplexmusicpopup) + [Container.Content(artists) + ![Skin.HasSetting(MusicArtistsInfoPopupoff)|Skin.HasSetting(MusicArtistsInfoPopuptrigger)]] | [Container.Content(albums)+![Skin.HasSetting(MusicAlbumsInfoPopupoff)|Skin.HasSetting(MusicAlbumsInfoPopuptrigger)]] | [Container.Content(songs)+![Skin.HasSetting(MusicSongsInfoPopupoff)|Skin.HasSetting(MusicSongsInfoPopuptrigger)]]]  + [Control.HasFocus(550) | Control.HasFocus(553) | Control.HasFocus(60) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]</visible>
 			<animation effect="fade" start="0" end="100" time="150" delay="1500">Visible</animation>
 		</control>
 
@@ -52,32 +52,165 @@
 		<include>FullscreenDimensions</include>
 		<include>Animation_OpenCloseZoom</include>
 		<include>Conditions_HiddenByInfoPages</include>
-		<include>Furniture_Time</include>		
 
 		<include>Furniture_shadow</include>
 		<include>Furniture_vignette</include>
 		<include>Furniture_FloorBack</include>
 
+		<include>Viewtype_LowList</include>
 		<include>Viewtype_Multiplex</include>
-		<include>Viewtype_Wall</include>
 		<include>Viewtype_List</include>
+		<include>Viewtype_Wall</include>
 
+		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
 		<include>Furniture_Multiplex_MediaFlags</include>
-		<include>Furniture_ListMediaFlags</include>
 		<include>ScrollOffsetLabel</include>	
-		<include>VerticalMenu</include>		
+			<control type="group">
+				
+				<!-- Second Columns -->
+				<include>VerticalMenu_SecondColumnInfoTrigger</include>
+				<include>VerticalMenu_SecondColumnViewChange</include>
+				
+				<!-- Background Image -->
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>225</width>
+					<height>720</height>
+					<texture>common/menupanel_vertical.png</texture>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553) | Control.IsVisible(51) | Control.IsVisible(57) | Control.IsVisible(53)</visible>
+				</control>
+				
+				<control type="image">
+					<posx>10</posx> 
+					<posy>15</posy>
+					<width>44</width>
+					<height>25</height>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<include>common-fade-quick</include>
+					<texture>windows/logo_movies.png</texture>
+					<visible>Window.IsActive(28) | Window.IsActive(24) | Window.IsActive(25)</visible>
+				</control>	
+
+				<control type="image">
+					<posx>10</posx> 
+					<posy>15</posy>
+					<width>44</width>
+					<height>30</height>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<include>common-fade-quick</include>
+					<texture>windows/logo_music.png</texture>
+					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)</visible>
+				</control>
+				
+				<control type="image">
+					<posx>10</posx> 
+					<posy>15</posy>
+					<width>44</width>
+					<height>30</height>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<include>common-fade-quick</include>
+					<texture>windows/logo_pics.png</texture>
+					<visible>Window.IsActive(2)</visible>
+				</control>
+				
+				<control type="image">
+					<posx>10</posx> 
+					<posy>15</posy>
+					<width>44</width>
+					<height>30</height>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<include>common-fade-quick</include>
+					<texture>windows/logo_games.png</texture>
+					<visible>Window.IsActive(1)</visible>
+				</control>			
+				
+				<!-- Menu Title: Music-->
+				<control type="label">
+					<label>31037</label>
+					<include>VerticalMenu_Label</include>
+					<visible>Window.IsActive(502)</visible>
+				</control>
+				
+				<!-- Main Menu (First Column) -->
+				<control type="grouplist" id="7000">
+					<posx>10</posx>
+					<posy>55</posy>
+					<width>225</width>
+					<height>720</height>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<scroll>false</scroll>
+					<onleft>50</onleft>
+					<!--<onright>50</onright>-->
+					<onup>7000</onup>
+					<ondown>7000</ondown>
+					<include>Animation_CommonFade</include>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<visible>!Skin.HasSetting(kiosk)</visible>
+					
+					<!--###### Buttons ######-->
+					<control type="button"  id="900">
+						<include>VerticalMenu_Button2</include>
+						<label>$LOCALIZE[31050] $INFO[Container.Viewmode]</label>
+						<onclick>SetFocus(7011)</onclick>
+						<onright>SetFocus(7011)</onright>
+					</control>
+					
+					<control type="label" id="3070">
+						<include>VerticalMenu_GroupTitle</include>
+						<label>$LOCALIZE[31971]</label>
+					</control>
+					
+					<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">VerticalMenu_InfoPopupButtons</include>
+					<include>VerticalMenu_PosterThumbButtons</include>
+					<include>VerticalMenu_ListButtons</include>
+					<include>VerticalMenu_FullscreenButton</include>
+					<include>VerticalMenu_WallGridButton</include>
+					<include>VerticalMenu_FanartButtons</include>
+					<include>VerticalMenu_BackdropsButton</include>
+					
+					<control type="label" id="30501">
+						<include>VerticalMenu_GroupTitle</include>
+						<label>$LOCALIZE[31967]</label>
+					</control>
+									
+					<include>VerticalMenu_SortButton</include>
+					<include>VerticalMenu_FilterButton</include>
+					<include>VerticalMenu_SearchButton</include>
+					<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_LibraryButtons</include>
+					<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_FilesButtons</include>
+
+					<include condition="!Skin.HasSetting(nomenusettings)">VerticalMenu_SetupButtons</include>
+
+					<control type="label" id="30502">
+						<include>VerticalMenu_GroupTitle</include>
+						<label>DEBUG</label>
+						<visible>Skin.HasSetting(debug)</visible>
+					</control>
+ 					<include condition="Skin.HasSetting(debug)">VerticalMenu_MediaDebugButtons</include>
+
+
+				</control>
+			</control>
 
 		<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 
 	<!-- DEBUG INFO -->
 		<control type="label">
-			<posx>700</posx>
+			<posx>100</posx>
 			<posy>50</posy>
-			<width>900</width>
+			<width>1000</width>
 			<height>13</height>
 			<font>Font_MultiplexInfoLabel</font>
+		<scrollspeed>10</scrollspeed>
+		<scrollout>true</scrollout>
+		<pauseatend>3000</pauseatend>
+		<scroll>true</scroll>
 			<textcolor>FFFFFFFF</textcolor>		
-			<label>** $INFO[container.folderpath]</label>
+			<label>** $INFO[listitem.filenameandpath]</label>
 			<visible>Skin.HasSetting(debug)</visible>
 		</control>	
 		

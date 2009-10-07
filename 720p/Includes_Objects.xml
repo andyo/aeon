@@ -1,11 +1,15 @@
 <includes>
 	<include name="Objects_SetDefaults">
 		<onfocus>Skin.SetBool(lowermainmenu)</onfocus>
-		<onfocus>Skin.SetBool(multiplexinfoauto)</onfocus>
-		<onfocus>Skin.SetBool(multiplextvshowsinfoauto)</onfocus>
-		<onfocus>Skin.SetBool(multiplextvseasonsinfoauto)</onfocus>
-		<onfocus>Skin.SetBool(multiplextvepisodesinfoauto)</onfocus>
-		<onfocus>Skin.SetBool(multiplexmusicinfoauto)</onfocus>
+		<onfocus>Skin.SetBool(movieplot)</onfocus>
+		<onfocus>Skin.SetBool(MovieInfoPopupauto)</onfocus>
+		<onfocus>Skin.SetBool(TVShowsInfoPopupauto)</onfocus>
+		<onfocus>Skin.SetBool(TVSeasonsInfoPopupauto)</onfocus>
+		<onfocus>Skin.SetBool(TVEpisodesInfoPopupauto)</onfocus>
+		<onfocus>Skin.SetBool(MusicArtistsInfoPopupauto)</onfocus>
+		<onfocus>Skin.SetBool(MusicAlbumsInfoPopupauto)</onfocus>
+		<onfocus>Skin.SetBool(MusicSongsInfoPopupauto)</onfocus>
+		<onfocus>Skin.SetBool(CommonInfoPopuptrigger)</onfocus>
 		<onfocus>Skin.SetBool(FullscreenMovieMultiplex)</onfocus>
 		<onfocus>Skin.SetBool(FullscreenTVShowsMultiplex)</onfocus>
 		<onfocus>Skin.SetBool(FullscreenTVSeasonsMultiplex)</onfocus>

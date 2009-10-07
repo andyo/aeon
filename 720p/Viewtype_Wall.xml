@@ -1,7 +1,7 @@
 <includes>
 
 	<include name="Furniture_WallBackground">
-		<control type="image">
+<!--		<control type="image">
 			<include>FullscreenDimensions</include>
 			<texture>wall/wall_background.png</texture>
 			<visible>Control.IsVisible(53) + ![Skin.HasSetting(smallmoviewall) + Window.IsActive(25)]</visible>
@@ -14,7 +14,7 @@
 			<visible>Control.IsVisible(53) + Skin.HasSetting(smallmoviewall) + Window.IsActive(25)</visible>
 			<include>Animation_WindowFade200</include>
 			<animation effect="fade" start="100" end="70" time="400" condition="Skin.HasSetting(transparentwall)">Conditional</animation>
-		</control>
+		</control>-->
 		<control type="image">
 			<posx>115</posx>
 			<posy>102</posy>
@@ -59,10 +59,22 @@
 		<width>128</width>
 		<height>128</height>
 	</include>
+	<include name="WallIconDimensionsReflect">
+		<posx>3</posx>
+		<posy>131</posy>
+		<width>128</width>
+		<height>128</height>
+	</include>
 	
 	<include name="WallIconDimensionsSmall">
 		<posx>3</posx>
 		<posy>3</posy>
+		<width>102</width>
+		<height>102</height>
+	</include>
+	<include name="WallIconDimensionsSmallReflect">
+		<posx>3</posx>
+		<posy>105</posy>
 		<width>102</width>
 		<height>102</height>
 	</include>
@@ -74,13 +86,6 @@
 		<width>118</width>
 		<height>174</height>
 	</include>
-	
-	<include name="WallIconMovieDimensionsSmall">
-		<posx>3</posx>
-		<posy>3</posy>
-		<width>97</width>
-		<height>142</height>
-	</include>
 	<include name="WallIconMovieDimensionsReflect">
 		<posx>3</posx>
 		<posy>178</posy>
@@ -88,12 +93,19 @@
 		<height>174</height>
 	</include>
 	
+	<include name="WallIconMovieDimensionsSmall">
+		<posx>3</posx>
+		<posy>3</posy>
+		<width>97</width>
+		<height>142</height>
+	</include>
 	<include name="WallIconMovieDimensionsSmallReflect">
 		<posx>3</posx>
 		<posy>145</posy>
 		<width>97</width>
 		<height>142</height>
 	</include>
+	
 
 
 	<include name="WallLabelVars">
@@ -135,8 +147,8 @@
 			<viewtype label="31750">icon</viewtype>
 			<include condition="!Skin.HasSetting(smallmusicwall)">WallWidthBig</include>
 			<include condition="Skin.HasSetting(smallmusicwall)">WallWidthSmall</include>
-			<posy>93</posy>
-			<height>540</height>
+			<posy>91</posy>
+			<height>600</height>
 			<pagecontrol>61</pagecontrol>
 			<scrolltime>200</scrolltime>
 			<onleft>53</onleft>
@@ -183,13 +195,19 @@
 					<include>WallIconDimensions</include>
 					<texture diffuse="wall/wall_mask.png">special://skin/media/musicgenre/$INFO[ListItem.Label].jpg</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<animation effect="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
 				</control>
 				<control type="image">
 					<include>WallIconDimensions</include>
 					<bordertexture border="-3">wall/wall_nfborder.png</bordertexture>
 					<texture>wall/wall_nfoverlay.png</texture>
 				</control>
+				<control type="image">
+					<include>WallIconDimensionsReflect</include>
+					<texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">defaultvideo.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+					<visible>!Container.Content(genres)</visible>
+				</control>				
 				<control type="image">
 					<posx>80</posx>
 					<posy>2</posy>
@@ -206,14 +224,28 @@
 					<texture diffuse="wall/wall_mask.png">defaultaudio.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)</visible>
-					<animation effect="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+					<animation type="Focus" condition="Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,133" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 				</control>
 				<control type="image">
 					<include>WallIconDimensions</include>
 					<texture diffuse="wall/wall_mask.png">defaultpicture.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<visible>Window.IsActive(2)</visible>
-					<animation effect="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+					<animation type="Focus" condition="Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,133" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 				</control>
 				
 				<control type="image">
@@ -222,10 +254,15 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<info>ListItem.Icon</info>
 					<fadetime>500</fadetime>
-					
-					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)</visible>
-					<animation effect="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
-					<visible>!Container.Content(genres)</visible>
+					<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)]+!Container.Content(genres)</visible>
+					<animation type="Focus" condition="Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,133" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 				</control>
 				<control type="image">
 					<include>WallIconDimensions</include>
@@ -235,7 +272,14 @@
 					<fadetime>500</fadetime>
 					
 					<visible>Window.IsActive(2)</visible>
-					<animation effect="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+					<animation type="Focus" condition="Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,133" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 					<visible>!Container.Content(genres)</visible>
 				</control>
 				<control type="image">
@@ -249,8 +293,12 @@
 					<include>WallIconDimensions</include>
 					<bordertexture border="-3">wall/wall_nfborder.png</bordertexture>
 					<texture>wall/wall_nfoverlay.png</texture>
-					<animation type="Focus" reversible="false">
-						<effect type="fade" start="100" end="0" time="200" reversible="false" />
+					<animation type="Focus" condition="Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,133" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
 						<effect type="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
 					</animation>
 				</control>
@@ -258,11 +306,30 @@
 					<include>WallIconDimensions</include>
 					<bordertexture border="-8">wall/wall_fborder.png</bordertexture>
 					<texture>common/blank.png</texture>
-					<animation type="Focus" reversible="false">
+					<animation type="Focus" condition="Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,133" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(3)" reversible="false">
 						<effect type="fade" start="0" end="100" time="400" reversible="false" />
 						<effect type="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
 					</animation>
 				</control>
+				<control type="image">
+					<include>WallIconDimensionsReflect</include>
+					<texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">defaultvideo.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+					<animation type="Focus" condition="Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,133" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<visible>!Container.Content(genres)+Container(53).Row(3)</visible>
+				</control>				
 				<control type="image">
 					<posx>80</posx>
 					<posy>2</posy>
@@ -270,6 +337,14 @@
 					<height>35</height>
 					<info>ListItem.Overlay</info>
 					<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+					<animation type="Focus" condition="Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,133" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(3)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 				</control>
 					
 			</focusedlayout>
@@ -320,6 +395,13 @@
 					<texture>wall/wall_nfoverlay.png</texture>
 				</control>
 				<control type="image">
+					<include>WallIconDimensionsSmallReflect</include>
+					<texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">defaultvideo.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+					<visible>!Container.Content(genres)</visible>
+				</control>				
+				<control type="image">
 					<posx>80</posx>
 					<posy>2</posy>
 					<width>35</width>
@@ -335,7 +417,14 @@
 					<texture diffuse="wall/wall_mask.png">defaultaudio.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)</visible>
-					<animation effect="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+					<animation type="Focus" condition="Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,106" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 					<visible>!Container.Content(genres)</visible>
 				</control>
 				<control type="image">
@@ -343,7 +432,14 @@
 					<texture diffuse="wall/wall_mask.png">defaultpicture.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<visible>Window.IsActive(2)</visible>
-					<animation effect="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+					<animation type="Focus" condition="Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,106" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 				</control>
 				<control type="image">
 					<include>WallIconDimensionsSmall</include>
@@ -351,9 +447,15 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<info>ListItem.Icon</info>
 					<fadetime>500</fadetime>
-					
 					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)</visible>
-					<animation effect="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+					<animation type="Focus" condition="Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,106" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 				</control>
 				<control type="image">
 					<include>WallIconDimensionsSmall</include>
@@ -363,7 +465,14 @@
 					<fadetime>500</fadetime>
 					
 					<visible>Window.IsActive(2)</visible>
-					<animation effect="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+					<animation type="Focus" condition="Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,106" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 					<visible>!Container.Content(genres)</visible>
 				</control>
 				<control type="image">
@@ -371,14 +480,25 @@
 					<include>WallIconDimensionsSmall</include>
 					<texture diffuse="wall/wall_mask.png">special://skin/media/musicgenre/$INFO[ListItem.Label].jpg</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<animation effect="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+					<animation type="Focus" condition="Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,106" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
 				</control>
 				<control type="image">
 					<include>WallIconDimensionsSmall</include>
 					<bordertexture border="-3">wall/wall_nfborder.png</bordertexture>
 					<texture>wall/wall_nfoverlay.png</texture>
-					<animation type="Focus" reversible="false">
-						<effect type="fade" start="100" end="0" time="200" reversible="false" />
+					<animation type="Focus" condition="Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,106" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
 						<effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
 					</animation>
 				</control>
@@ -386,11 +506,30 @@
 					<include>WallIconDimensionsSmall</include>
 					<bordertexture border="-5">wall/wall_fborder.png</bordertexture>
 					<texture>common/blank.png</texture>
-					<animation type="Focus" reversible="false">
+					<animation type="Focus" condition="Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,106" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(4)" reversible="false">
 						<effect type="fade" start="0" end="100" time="400" reversible="false" />
 						<effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
 					</animation>
 				</control>
+				<control type="image">
+					<include>WallIconDimensionsSmallReflect</include>
+					<texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">defaultvideo.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+					<animation type="Focus" condition="Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,106" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<visible>!Container.Content(genres)+Container(53).Row(4)</visible>
+				</control>				
 				<control type="image">
 					<posx>80</posx>
 					<posy>2</posy>
@@ -398,7 +537,11 @@
 					<height>35</height>
 					<info>ListItem.Overlay</info>
 					<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
-					<animation type="Focus" reversible="false">
+					<animation type="Focus" condition="Container(53).Row(4)" reversible="false">
+						<effect type="fade" start="0" end="100" time="400" reversible="false" />
+						<effect type="zoom" center="51,106" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
+					</animation>
+					<animation type="Focus" condition="!Container(53).Row(4)" reversible="false">
 						<effect type="fade" start="0" end="100" time="400" reversible="false" />
 						<effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false" />
 					</animation>

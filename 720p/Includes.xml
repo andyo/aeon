@@ -20,6 +20,7 @@
 <include file="Viewtype_Multiplex_TVShows.xml" />
 <include file="Viewtype_Multiplex_Info.xml" />
 <include file="Viewtype_List.xml" />
+<include file="Viewtype_LowList.xml" />
 <include file="Viewtype_Wall.xml" />
 
 <include file="Includes_Widget_Weather.xml" />
@@ -34,7 +35,7 @@
 
 <include name="listcolornofocus">
 	<textcolor>dcffffff</textcolor>
-	<selectedcolor>dcffffff</selectedcolor>
+	<selectedcolor>9b3cd2fd</selectedcolor>
 </include>
 
 <include name="subcolorfocus">
@@ -49,7 +50,7 @@
 
 <include name="detailcolornofocus">
 	<textcolor>dcbdbdbd</textcolor>
-	<selectedcolor>dcbdbdbd</selectedcolor>
+	<selectedcolor>9b3cd2fd</selectedcolor>
 </include>
 
 <include name="listobjects">
@@ -57,8 +58,8 @@
 </include>
 
 <include name="detailcolorfocus">
-	<textcolor>FF585858</textcolor>
-	<selectedcolor>FF585858</selectedcolor>
+	<textcolor>ff2e2e2e</textcolor>
+	<selectedcolor>ff2e2e2e</selectedcolor>
 </include>
 
 <include name="playsymbol">

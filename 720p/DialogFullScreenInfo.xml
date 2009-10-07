@@ -4,9 +4,7 @@
 	<controls>
 	<control type="group">
 		<posx>0</posx>
-		<posy>569</posy>
-		<width>1280</width>
-		<height>151</height>
+		<posy>600</posy>
 		<animation type="Visible">
 			<effect type="slide" time="400" start="0,151" end="0,0" easing="out" tween="cubic" />
 		</animation>
@@ -29,28 +27,15 @@
 			<texture>osd/osd_back.png</texture>
 		</control>
 
-		<control type="progress">
-			<description>Progressbar</description>
-			<posx>6</posx>
-			<posy>13</posy>
-			<width>1280</width>
-			<height>155</height>
-			<info>Player.Progress</info>
-			<texturebg>osd/osd_progress_clear.png</texturebg>
-			<lefttexture>-</lefttexture>
-			<midtexture>osd/osd_progressmid_info.png</midtexture>
-			<righttexture>-</righttexture>
-			<overlaytexture>-</overlaytexture>
-			<include>Animation_CommonFade</include>				
-		</control>
 		
 		<control type="label">
 			<posx>0</posx>
-			<posy>45</posy>
+			<posy>50</posy>
 			<width>1280</width>
 			<height>30</height>
 			<align>center</align>
 			<aligny>center</aligny>
+			<textcolor>60ffffff</textcolor>
 			<font>Font_OSDMusicArtist</font>
 			<label>31006</label>
 			<animation effect="slide" start="0,0" end="0,-12" time="200" condition="Control.IsVisible(212)">Conditional</animation>			
@@ -58,7 +43,7 @@
 		
 		<control type="label">
 			<posx>0</posx>
-			<posy>75</posy>
+			<posy>80</posy>
 			<width>1280</width>
 			<height>30</height>
 			<align>center</align>
@@ -68,16 +53,85 @@
 			<animation effect="slide" start="0,0" end="0,-12" time="200" condition="Control.IsVisible(212)">Conditional</animation>			
 		</control>
 
-		<control type="label" id="212">
-			<posx>0</posx>
-			<posy>100</posy>
-			<width>1280</width>
-			<height>30</height>
-			<align>center</align>
-			<aligny>center</aligny>
+		<control type="progress" id="23">
+			<description>Progressbar</description>
+			<posx>137</posx>
+			<posy>30</posy>
+			<width>1000</width>
+			<height>15</height>
+			<info>Player.Progress</info>
+			<texturebg>osd/osd_progress_back.png</texturebg>
+			<lefttexture>osd/osd_progress_left.png</lefttexture>
+			<midtexture>osd/osd_progress_mid.png</midtexture>
+			<righttexture>osd/osd_progress_right.png</righttexture>
+			<overlaytexture>-</overlaytexture>
+			<visible>true</visible>
+		</control>
+		<control type="label">
+			<posx>140</posx>
+			<posy>45</posy>
+			<width>110</width>
+			<height>25</height>
+			<align>left</align>
 			<font>Font_OSDMusicArtist</font>
-			<label>[COLOR 91FFFFFF]$INFO[VideoPlayer.Time,$LOCALIZE[31719] [CR],] / $INFO[VideoPlayer.Duration,][/COLOR]</label>
-		</control>		
+			<colordiffuse>d0FFFFFF</colordiffuse>
+			<label>$INFO[VideoPlayer.Time]</label>
+		</control>
+		<control type="label">
+			<posx>1060</posx>
+			<posy>45</posy>
+			<width>80</width>
+			<height>25</height>
+			<align>center</align>
+			<font>Font_OSDMusicArtist</font>
+			<align>right</align>
+			<colordiffuse>d0FFFFFF</colordiffuse>
+			<label>$INFO[VideoPlayer.Duration]</label>
+		</control>
+
+		
+
+		<control type="label">
+			<posx>0</posx>
+			<posy>20</posy>
+			<width>110</width>
+			<height>25</height>
+			<align>center</align>
+			<font>Font_OSDMusicArtist</font>
+			<textcolor>60ffffff</textcolor>
+			<label>$LOCALIZE[555]</label>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>45</posy>
+			<width>110</width>
+			<height>25</height>
+			<align>center</align>
+			<font>Font_OSDMusicArtist</font>
+			<label>$INFO[System.Time]</label>
+		</control>
+
+		<control type="label">
+			<posx>1160</posx>
+			<posy>20</posy>
+			<width>110</width>
+			<height>25</height>
+			<align>center</align>
+			<font>Font_OSDMusicArtist</font>
+			<wrapmultiline>yes</wrapmultiline>
+			<textcolor>60ffffff</textcolor>
+			<label>$LOCALIZE[31710]</label>
+		</control>
+		<control type="label">
+			<posx>1160</posx>
+			<posy>45</posy>
+			<width>110</width>
+			<height>25</height>
+			<align>center</align>
+			<font>Font_OSDMusicArtist</font>
+			<label>$INFO[Player.FinishTime]</label>	
+		</control>
+
 	
 	</control>
 	</controls>

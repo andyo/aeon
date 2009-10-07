@@ -1,5 +1,5 @@
 <window id="20">
-	<defaultcontrol>50</defaultcontrol>
+	<defaultcontrol>550</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<views>550,50,53</views>
 	<controls>
@@ -18,9 +18,10 @@
 		<include>Furniture_shadow</include>
 		<include>Furniture_FloorFront</include>
 		<include>Viewtype_Wall</include>
-<!--		<include>Viewtype_Showcase</include> -->
+		<include>Viewtype_LowList</include>
 		<include>Viewtype_List</include>
 		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
 		<include>VerticalMenu</include>		

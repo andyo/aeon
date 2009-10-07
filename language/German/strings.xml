@@ -416,7 +416,8 @@
 	<string id="31716">SONGTITEL</string>
 	<string id="31717">ALBUM TITEL</string>
 	<string id="31718">KÜNSTLER NAME</string>
-	<string id="31719">ZEIT ABGELAUFEN / GESAMT</string>
+	<string id="31719">ZEIT ABGELAUFEN</string>
+	<string id="31720">GESAMT</string>
 	
 <!-- View select -->
 
@@ -573,6 +574,11 @@
 	<string id="31973">POSITION DES ORDNERS MIT FILMEN (FÜR 'EXTRATHUMBS')</string>
 	<string id="31974">DYNAMISCHE FLUSS-ANSICHT</string>
 	<string id="31984">-</string>
+	<string id="31995">COVERFLOW</string>
+
+	<string id="31997">TV SERIES POSTER VIEW</string>
+	<string id="31998">TV SEASON POSTER VIEW</string>
+	<string id="31999">TV EPISODE POSTER VIEW</string>
 
 <!-- customisation strings added by azido -->
 
@@ -593,5 +599,22 @@
 	<string id="31992">- WIDGET</string>
 	<string id="31993">EIN &amp; AUSSCHALTEN</string>
 	<string id="31994">ZUFÄLLIGE UNGESEHENE ALBEN, FILME &amp; EPISODEN</string>
+	<string id="31996">CAST</string>
+
+	<string id="31997">TV SERIES POSTER VIEW</string>
+	<string id="31998">TV SEASON POSTER VIEW</string>
+	<string id="31999">TV EPISODE POSTER VIEW</string>
+
+	<string id="32001">VITAL INFORMATION</string>
+	<string id="32002">NO TRACK PLAYING</string>
+	<string id="32003">CODEC</string>
+	<string id="32004">KBPS</string>
+	<string id="32005">SAMPLERATE</string>
+	<string id="32006">KHZ</string>
+	<string id="32007">CHANNELS</string>
+	<string id="32008">NO THUMBS</string>
+	<string id="32009">2 THUMBS</string>
+	<string id="32010">4 THUMBS</string>
+
 
 </strings>

@@ -22,7 +22,7 @@
 			<width>500</width>
 			<height>49</height>
 			<font>Font_SettingsOptions</font>
-			<label>VER: 2.01  (GIT-355)</label>				
+			<label>VER: 2.1  (GIT-450)</label>				
 		</control>
 
 		<control type="label">
@@ -371,9 +371,23 @@
 			</control>
 			<control type="radiobutton" id="613">
 				<include>Objects_SettingsDefaultRadioButton</include>
-				<label>$LOCALIZE[31966]</label>
-				<onclick>Skin.ToggleSetting(tvposterview)</onclick>
-				<selected>Skin.HasSetting(tvposterview)</selected>
+				<label>$LOCALIZE[31997]</label>
+				<onclick>Skin.ToggleSetting(tvshowposterview)</onclick>
+				<selected>Skin.HasSetting(tvshowposterview)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
+			<control type="radiobutton" id="614">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31998]</label>
+				<onclick>Skin.ToggleSetting(tvseasonposterview)</onclick>
+				<selected>Skin.HasSetting(tvseasonposterview)</selected>
+				<visible>Container(12).HasFocus(3)</visible>
+			</control>
+			<control type="radiobutton" id="615">
+				<include>Objects_SettingsDefaultRadioButton</include>
+				<label>$LOCALIZE[31999]</label>
+				<onclick>Skin.ToggleSetting(tvepisodeposterview)</onclick>
+				<selected>Skin.HasSetting(tvepisodeposterview)</selected>
 				<visible>Container(12).HasFocus(3)</visible>
 			</control>
 

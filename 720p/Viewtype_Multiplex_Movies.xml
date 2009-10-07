@@ -2019,7 +2019,7 @@
 			<scrolltime>250</scrolltime>
 			<include>Animation_HideMultiplex</include>
 			<visible>!Window.IsActive(2003)</visible>
-			<visible>[[[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(tvposterview)] | ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]</visible>
+			<visible>[[Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)]|[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)]] | ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 			<itemlayout width="140" height="300">
 				<control type="image">
 					<include>MultiplexIconDimensionsWrap</include>

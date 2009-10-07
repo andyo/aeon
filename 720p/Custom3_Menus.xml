@@ -1096,15 +1096,15 @@
 				<selected>!Skin.HasSetting(sub_Shutdown_Reload)</selected>
 				<visible>Container(11).HasFocus(7) + Container(971).HasFocus(2)</visible>
 			</control>
-			<control type="radiobutton" id="4224">
+<!--			<control type="radiobutton" id="4224">
 				<description>Refresh</description>
  				<include>Objects_SettingsCustMenuRadioButton</include>
 				<label>31607</label>
 				<onclick>Skin.ToggleSetting(sub_Shutdown_Refresh)</onclick>
 				<selected>!Skin.HasSetting(sub_Shutdown_Refresh)</selected>
 				<visible>Container(11).HasFocus(7) + Container(971).HasFocus(2)</visible>
-			</control>
-			<control type="radiobutton" id="4225">
+			</control>-->
+			<control type="radiobutton" id="4224">
 				<description>Dashboard</description>
  				<include>Objects_SettingsCustMenuRadioButton</include>
 				<label>13006</label>
@@ -1113,7 +1113,7 @@
 				<selected>!Skin.HasSetting(sub_Shutdown_Dashboard)</selected>
 				<visible>Container(11).HasFocus(7) + Container(971).HasFocus(2)</visible>
 			</control>
-			<control type="radiobutton" id="4226">
+			<control type="radiobutton" id="4225">
 				<description>Suspend</description>
  				<include>Objects_SettingsCustMenuRadioButton</include>
 				<label>13011</label>
@@ -1122,7 +1122,7 @@
 				<selected>!Skin.HasSetting(sub_Shutdown_Suspend)</selected>
 				<visible>Container(11).HasFocus(7) + Container(971).HasFocus(2)</visible>
 			</control>
-			<control type="radiobutton" id="4227">
+			<control type="radiobutton" id="4226">
 				<description>Hibernate</description>
  				<include>Objects_SettingsCustMenuRadioButton</include>
 				<label>13010</label>
@@ -1131,7 +1131,7 @@
 				<selected>!Skin.HasSetting(sub_Shutdown_Hibernate)</selected>
 				<visible>Container(11).HasFocus(7) + Container(971).HasFocus(2)</visible>
 			</control>
-			<control type="radiobutton" id="4228">
+			<control type="radiobutton" id="4227">
 				<description>Logout Button</description>
  				<include>Objects_SettingsCustMenuRadioButton</include>
 				<label>$LOCALIZE[20126]</label>

@@ -416,7 +416,8 @@
 	<string id="31716">SONG TITLE</string>
 	<string id="31717">ALBUM TITLE</string>
 	<string id="31718">ARTIST NAME</string>
-	<string id="31719">TIME ELAPSED / DURATION</string>
+	<string id="31719">TIME ELAPSED</string>
+	<string id="31720">DURATION</string>
 	
 <!-- View select -->
 
@@ -563,10 +564,10 @@
 	<string id="31963">MOVIE TRAILERS</string>
 	<string id="31964">CERTIFICATION FLAG</string>
 	<string id="31965">IMDB FLAG</string>
-	<string id="31966">TV POSTER VIEW</string>
-	<string id="31969">ON/OFF</string>
+
 	<string id="31967">MISCELLANEOUS</string>
 	<string id="31968">FULLSCREEN</string>
+	<string id="31969">ON/OFF</string>
 	<string id="31970">CURRENT</string>
 	<string id="31971">VIEWTYPE OPTIONS</string>
 	<string id="31972">VERTICAL MENU</string>
@@ -592,4 +593,23 @@
 	<string id="31992">WIDGET</string>
 	<string id="31993">ENABLE/DISABLE</string>
 	<string id="31994">Random UnWatched Movies &amp; TV shows</string>
+	<string id="31996">CAST</string>
+
+	<string id="31997">TV SERIES POSTER VIEW</string>
+	<string id="31998">TV SEASON POSTER VIEW</string>
+	<string id="31999">TV EPISODE POSTER VIEW</string>
+
+	<string id="32001">VITAL INFORMATION</string>
+	<string id="32002">NO TRACK PLAYING</string>
+	<string id="32003">CODEC</string>
+	<string id="32004">KBPS</string>
+	<string id="32005">SAMPLERATE</string>
+	<string id="32006">KHZ</string>
+	<string id="32007">CHANNELS</string>
+	<string id="32008">NO THUMBS</string>
+	<string id="32009">2 THUMBS</string>
+	<string id="32010">4 THUMBS</string>
+
+
+
 </strings>

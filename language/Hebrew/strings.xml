@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
-<!--Date of translation: 09/01/2009-->
+<!--Date of translation: 09/30/2009-->
 <!--$Revision$-->
 <!--Based on english strings version 204-->
 <strings>
@@ -368,7 +368,8 @@
   <string id="31716">שם שיר</string>
   <string id="31717">שם אלבום</string>
   <string id="31718">שם אומן</string>
-  <string id="31719">זמן עבר \ אורך</string>
+  <string id="31719">זמן עבר</string>
+  <string id="31720">אורך</string>
   <string id="31750">WALL</string>
   <string id="31751">SHOWCASE</string>
   <string id="31752">LIST</string>
@@ -478,7 +479,6 @@
   <string id="31963">קדימוני סרטים</string>
   <string id="31964">דגל CERTIFICATION</string>
   <string id="31965">דגל IMDB</string>
-  <string id="31966">תצוגת פוסטר לסדרות</string>
   <string id="31967">שונות</string>
   <string id="31968">מסך מלא</string>
   <string id="31969">מופעל/מכובה</string>
@@ -498,7 +498,7 @@
   <string id="31983">ווידג'ט עידכוני RSS</string>
   <string id="31984">פוסטר</string>
   <string id="31985">רחב</string>
-  <string id="31986">ENABLE/DISABLE SHORTCUTS &amp; ADD CUSTOM ENTRIES</string>
+  <string id="31986">הפעל/בטל קיצורים והוסף תפריטים אישיים</string>
   <string id="31987">הארה: בסיום השינויים, XBMC ייסגר</string>
   <string id="31988">XBMC ייסגר אוטומטית אחרי היציאה מתפריט זה</string>
   <string id="31989">הוסף תפריט חדש</string>
@@ -508,4 +508,18 @@
   <string id="31993">הפעל/בטל</string>
   <string id="31994">סרטים ופרקים אקראיים, שלא ניצפו</string>
   <string id="31995">COVERFLOW</string>
+  <string id="31996">בהשתתפות</string>
+  <string id="31997">תצוגת פוסטר לסדרות</string>
+  <string id="31998">תצוגת פוסטר לעונות הסדרות</string>
+  <string id="31999">תצוגת פוסטר לפרקי הסדרות</string>
+  <string id="32001">מידע חיוני</string>
+  <string id="32002">אין טראק מנגנן</string>
+  <string id="32003">מקודד</string>
+  <string id="32004">קב"ש</string>
+  <string id="32005">קצב דגימה</string>
+  <string id="32006">KHZ</string>
+  <string id="32007">ערוצים</string>
+	<string id="32008">NO THUMBS</string>
+	<string id="32009">2 THUMBS</string>
+	<string id="32010">4 THUMBS</string>
 </strings>

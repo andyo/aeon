@@ -20,7 +20,7 @@
 		<textcolor>c0FFFFFF</textcolor>
 	</include>
 	<include name="Widget_WeatherSubtitleWide">
-        <posy>40</posy>
+        <posy>35</posy>
         <font>Font_WeatherLabel</font>
         <include>Widget_WeatherTitleWide</include>
 	</include>
@@ -960,6 +960,7 @@
 					</control>
 					<control type="image">
 						<texture>$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</texture>				
+						<include>Widget_WeatherIconWide</include>
 						<visible>!Skin.HasSetting(Weather_ani)</visible>					
 					</control>
 					<control type="multiimage">

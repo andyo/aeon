@@ -40,8 +40,9 @@
       <activate>startup.wav</activate>
     </window>
     <window>
-      <name>0</name>
-      <deactivate>-</deactivate>
+      <name>111</name>
+      <activate>settings.wav</activate>
+	  <deactivate>settings-out.wav</deactivate>
     </window>
     <window>
       <name>4</name>

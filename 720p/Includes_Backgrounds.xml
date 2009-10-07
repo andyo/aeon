@@ -27,7 +27,7 @@
 		<fadetime>1000</fadetime>
 		<aspectratio scalediffuse="false">scale</aspectratio>
 		<include>Animation_BackgroundFade</include>
-		<visible>![Control.IsVisible(52) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552)] | [[Control.IsVisible(52) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + Skin.HasSetting(nocurtains)]</visible>
+		<visible>![Control.IsVisible(52) | Control.IsVisible(551) | Control.IsVisible(552)] | [[Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + Skin.HasSetting(nocurtains)]</visible>
 	</include>
 	
 	<include name="BackgroundVarsMultiplex">
@@ -35,7 +35,7 @@
 		<timeperimage>20000</timeperimage>
 		<randomize>true</randomize>
 		<fadetime>1000</fadetime>
-		<visible>[Control.IsVisible(52) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | [[Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Skin.HasSetting(nocurtains)</visible>
+		<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550) | [substring(container.folderpath,videodb://1,Left) | substring(container.folderpath,videodb://2,Left)]] + !Skin.HasSetting(nocurtains)</visible>
 		<include>Animation_BackgroundFade</include>
 	</include>
 	
@@ -212,14 +212,14 @@
 		<control type="multiimage">
 			<include>BackgroundVarsGlobal</include>
 			<include>BackgroundVarsMovies</include>
-			<visible>[Skin.HasSetting(nomoviefanart) | IsEmpty(listitem.property(fanart_image))] + Container.Content(movies) + Skin.HasSetting(nocurtains) + [[Skin.HasSetting(nogenrefanart) + Container.Content(genres)] | !Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(nomoviefanart) | IsEmpty(listitem.property(fanart_image))] + substring(container.folderpath,videodb://1,Left) + Skin.HasSetting(nocurtains) + [[Skin.HasSetting(nogenrefanart) + Container.Content(genres)] | !Container.Content(genres)]</visible>
 		</control>
 	</include>
 	<include name="MediaBackdropsTV">
 		<control type="multiimage">
 			<include>BackgroundVarsGlobal</include>
 			<include>BackgroundVarsTV</include>
-			<visible>[Skin.HasSetting(notvfanart) | IsEmpty(listitem.property(fanart_image))] + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + Skin.HasSetting(nocurtains) + [[Skin.HasSetting(nogenrefanart) + Container.Content(genres)] | !Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(notvfanart) | IsEmpty(listitem.property(fanart_image))] + substring(container.folderpath,videodb://2,Left) + Skin.HasSetting(nocurtains) + [[Skin.HasSetting(nogenrefanart) + Container.Content(genres)] | !Container.Content(genres)]</visible>
 		</control>
 	</include>
 
@@ -229,7 +229,7 @@
 			<include>FullscreenDimensions</include>
 			<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>!Skin.HasSetting(nogenrefanart) + Container.Content(genres) + substring(Container().ListItem.Label,,Left)</visible>
+			<visible>!Skin.HasSetting(nogenrefanart) + [substring(container.folderpath,videodb://1,Left)|substring(container.folderpath,videodb://2,Left)]+ Container.Content(genres) + substring(Container().ListItem.Label,,Left)</visible>
 		</control>
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
@@ -237,7 +237,7 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<fadetime>400</fadetime>
 			<include>Animation_BackgroundFade</include>
-			<visible>!Skin.HasSetting(nogenrefanart) + Container.Content(genres)</visible>
+			<visible>!Skin.HasSetting(nogenrefanart) + [substring(container.folderpath,videodb://1,Left)|substring(container.folderpath,videodb://2,Left)] + Container.Content(genres)</visible>
 		</control>
 	</include>
 
@@ -246,7 +246,7 @@
 			<include>FullscreenDimensions</include>
 			<imagepath>special://skin/media/backdrops/default_music/default.png</imagepath>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<visible>!Skin.HasSetting(nogenrefanart) + Container.Content(genres)+substring(Container().ListItem.Label,,Left)+ !Skin.HasSetting(nocurtains)</visible>
+			<visible>!Skin.HasSetting(nogenrefanart) + substring(container.folderpath,musicdb://1,Left) + Container.Content(genres)+substring(Container().ListItem.Label,,Left)+ !Skin.HasSetting(nocurtains)</visible>
 		</control>
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
@@ -254,7 +254,7 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<fadetime>400</fadetime>
 			<include>Animation_BackgroundFade</include>
-			<visible>!Skin.HasSetting(nogenrefanart) + Container.Content(genres) + !Skin.HasSetting(nocurtains)</visible>
+			<visible>!Skin.HasSetting(nogenrefanart) + substring(container.folderpath,musicdb://1,Left) + Container.Content(genres) + !Skin.HasSetting(nocurtains)</visible>
 		</control>
 	</include>
 	
@@ -362,54 +362,6 @@
 		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
 		<info>Skin.String(Custom_mainmenu_2)</info>
 	</include>
-<!--	<include name="BackgroundVars_mainmenu_3">
-		<icon>special://skin/media/backdrops/default_movies/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_3)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_3)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_4">
-		<icon>special://skin/media/backdrops/default_music/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_4)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_music/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_4)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_5">
-		<icon>special://skin/media/backdrops/default_pictures/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_5)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_pictures/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_5)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_6">
-		<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_6)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_scripts/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_6)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_7">
-		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_7)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_settings/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_7)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_8">
-		<icon>special://skin/media/backdrops/default_tvshows/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_8)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_tvshows/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_8)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_9">
-		<icon>special://skin/media/backdrops/default_assistant/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_9)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_assistant/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_9)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_10">
-		<icon>special://skin/media/backdrops/default_games/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_10)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_11)</info>
-	</include>-->
 <!-- Add Menu item End -->
 
 	

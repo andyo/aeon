@@ -1,6 +1,6 @@
 <window>
 	<id>6</id>
-	<defaultcontrol>50</defaultcontrol>
+	<defaultcontrol>550</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<views>550,50,53,551,552</views>
 	<controls>
@@ -11,7 +11,7 @@
 			<width>0</width>
 			<height>0</height>
 			<texture>-</texture>
-			<visible>[[[!Skin.HasSetting(nomultiplexpopup) + Container.Content(movies) + ![Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfotrigger)]] | [!Skin.HasSetting(nomultiplexpopup) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + ![Skin.HasSetting(multiplexcommoninfooff) | Skin.HasSetting(multiplexcommoninfotrigger)]] | [!Skin.HasSetting(nomultiplextvpopup) + [Container.Content(tvshows) + ![Skin.HasSetting(multiplextvshowsinfooff) | Skin.HasSetting(multiplextvshowsinfotrigger)]] | [Container.Content(seasons) + ![Skin.HasSetting(multiplextvseasonsinfooff) | Skin.HasSetting(multiplextvseasonsinfotrigger)]] | [Container.Content(episodes) + ![Skin.HasSetting(multiplextvepisodesinfooff) | Skin.HasSetting(multiplextvepisodesinfotrigger)]]]] + [Control.HasFocus(551) | Control.HasFocus(552) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]]</visible>
+			<visible>[[[!Skin.HasSetting(nomultiplexpopup) + Container.Content(movies) + ![Skin.HasSetting(MovieInfoPopupoff) | Skin.HasSetting(MovieInfoPopuptrigger)]] | [!Skin.HasSetting(nomultiplexpopup) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + ![Skin.HasSetting(CommonInfoPopupoff) | Skin.HasSetting(CommonInfoPopuptrigger)]] | [!Skin.HasSetting(nomultiplextvpopup) + [Container.Content(tvshows) + ![Skin.HasSetting(TVShowsInfoPopupoff) | Skin.HasSetting(TVShowsInfoPopuptrigger)]] | [Container.Content(seasons) + ![Skin.HasSetting(TVSeasonsInfoPopupoff) | Skin.HasSetting(TVSeasonsInfoPopuptrigger)]] | [Container.Content(episodes) + ![Skin.HasSetting(TVEpisodesInfoPopupoff) | Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]]] + [Control.HasFocus(551) | Control.HasFocus(552) | Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()] + [!Container().OnNext + !Container().OnPrevious]]</visible>
 			<animation effect="fade" start="0" end="100" time="500" delay="1500">Visible</animation>
 		</control>
 
@@ -20,13 +20,8 @@
 			<include>BackgroundVarsVideo</include>
 		</control>
 
-		<control type="largeimage">
-			<include>FullscreenDimensions</include>
-			<visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(57) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(52) | Control.IsVisible(53)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomoviefanart)</visible>
-			<include>Animation_FanartFade</include>
-			<fadetime>400</fadetime>		
-			<texture>$INFO[listitem.property(fanart_image)]</texture>
-		</control>
+		<include>MediaBackdropsFanart</include>
+		<include>MediaBackdropsMultiplex</include>	
 
 		<include>Furniture_WallBackground</include>
 		<include>Furniture_WallRSS</include>		
@@ -37,26 +32,123 @@
 		<include>Furniture_vignette</include>
 		<include>Furniture_FloorBack</include>
 
+		<include>Viewtype_LowList</include>
 		<include>Viewtype_Multiplex</include>
-		<include>Furniture_Time</include>	
-		<include>Viewtype_Wall</include>
 		<include>Viewtype_List</include>
+		<include>Viewtype_Wall</include>
+		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
 		<include>Furniture_Multiplex_MediaFlags</include>
-		<include>Furniture_ListMediaFlags</include>
 		<include>ScrollOffsetLabel</include>
-		<include>VerticalMenu</include>		
+
+		<!-- Movies/TvShows VideoNav Menu-->
+		<control type="group">
+			
+			<!-- Second Columns -->
+			<include>VerticalMenu_SecondColumnInfoTrigger</include>
+			<include>VerticalMenu_SecondColumnViewChange</include>
+			<include>VerticalMenu_SecondColumnMultiplexStyleChange</include>
+			
+			<!-- Background Image -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>225</width>
+				<height>720</height>
+				<texture>common/menupanel_vertical.png</texture>
+				<include>Animation_MediaMenuSlideVertical</include>
+				<visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553) | Control.IsVisible(51) | Control.IsVisible(57) | Control.IsVisible(53)</visible>
+			</control>
+			
+			<control type="image">
+				<posx>10</posx> 
+				<posy>15</posy>
+				<width>44</width>
+				<height>25</height>
+				<include>Animation_MediaMenuSlideVertical</include>
+				<include>common-fade-quick</include>
+				<texture>windows/logo_movies.png</texture>
+			</control>	
+									
+			<!-- Menu Title: Videos-->
+			<control type="label">
+				<label>31034</label>
+				<include>VerticalMenu_Label</include>
+				<visible>Window.IsActive(6) | Window.IsActive(24)</visible>
+			</control>
+
+			<!-- Main Menu (First Column) -->
+			<control type="grouplist" id="7000">
+				<posx>10</posx>
+				<posy>55</posy>
+				<width>225</width>
+				<height>720</height>
+				<itemgap>0</itemgap>
+				<orientation>vertical</orientation>
+				<scroll>false</scroll>
+				<onleft>50</onleft>
+				<onup>7000</onup>
+				<ondown>7000</ondown>
+				<include>Animation_CommonFade</include>
+				<include>Animation_MediaMenuSlideVertical</include>
+				<visible>!Skin.HasSetting(kiosk)</visible>
+				
+				<!--###### Buttons ######-->
+				<control type="button"  id="900">
+					<include>VerticalMenu_Button2</include>
+					<label>$LOCALIZE[31050] $INFO[Container.Viewmode]</label>
+					<onclick>SetFocus(7011)</onclick>
+					<onright>SetFocus(7011)</onright>
+				</control>
+				
+				<control type="label" id="3070">
+					<include>VerticalMenu_GroupTitle</include>
+					<label>$LOCALIZE[31971]</label>
+				</control>
+				
+				<include condition="!Skin.HasSetting(nomultiplexstylebuttons)">VerticalMenu_MultiplexStyleButtons</include>
+				<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">VerticalMenu_InfoPopupButtons</include>
+				<include>VerticalMenu_WallGridButton</include>
+				<include>VerticalMenu_PosterThumbButtons</include>
+				<include>VerticalMenu_ListButtons</include>
+				<include>VerticalMenu_FullscreenButton</include>
+				<include condition="!Skin.HasSetting(nomediaflagsbutton)">VerticalMenu_FlagsButton</include>
+				<include>VerticalMenu_FanartButtons</include>
+				<include>VerticalMenu_BackdropsButton</include>
+				<include>VerticalMenu_OverlayButton</include>
+				
+				<control type="label" id="30501">
+					<include>VerticalMenu_GroupTitle</include>
+					<label>$LOCALIZE[31967]</label>
+				</control>
+								
+				<include>VerticalMenu_WatchedButton</include>
+				<include>VerticalMenu_SortButton</include>
+				<include>VerticalMenu_FilterButton</include>
+				<include>VerticalMenu_SearchButton</include>
+				<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_LibraryButtons</include>
+				<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_FilesButtons</include>
+				<include condition="!Skin.HasSetting(nomenusettings)">VerticalMenu_SetupButtons</include>
+				<control type="label" id="30502">
+					<include>VerticalMenu_GroupTitle</include>
+					<label>DEBUG</label>
+					<visible>Skin.HasSetting(debug)</visible>
+				</control>
+				<include condition="Skin.HasSetting(debug)">VerticalMenu_MediaDebugButtons</include>
+			</control>
+		</control>
 
 	<!-- DEBUG INFO -->
 		<control type="label">
-			<posx>700</posx>
+			<posx>500</posx>
 			<posy>50</posy>
 			<width>900</width>
 			<height>13</height>
 			<font>Font_MultiplexInfoLabel</font>
 			<textcolor>FFFFFFFF</textcolor>		
-			<label>** $INFO[Container.FolderPath]</label>
+			<label>** $INFO[ListItem.Path][CR]$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</label>
 			<visible>Skin.HasSetting(debug)</visible>
-		</control>	
+		</control>
 
 		<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 		

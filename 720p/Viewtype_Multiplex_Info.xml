@@ -44,11 +44,11 @@
 	</include>
 	<include name="MultiplexInfoValueVars">
 		<posx>0</posx>
-		<posy>15</posy>
+		<posy>20</posy>
 		<height>13</height>
-		<font>Font_MultiplexInfoLabel</font>	
+		<font>Font_MultiplexInfoValue</font>	
 		<textcolor>FFFFFFFF</textcolor>
-		<scrollspeed>30</scrollspeed>
+		<scrollspeed>10</scrollspeed>
 		<scrollout>true</scrollout>
 		<pauseatend>3000</pauseatend>
 		<scroll>true</scroll>
@@ -56,6 +56,14 @@
 	<include name="MultiplexInfoValue">
 		<include>MultiplexInfoValueVars</include>
 		<width>370</width>
+	</include>
+	<include name="MultiplexInfoValue_50">
+		<include>MultiplexInfoValueVars</include>
+		<width>50</width>
+	</include>
+	<include name="MultiplexInfoValue_100">
+		<include>MultiplexInfoValueVars</include>
+		<width>100</width>
 	</include>
 	<include name="MultiplexInfoValue_200">
 		<include>MultiplexInfoValueVars</include>
@@ -86,8 +94,8 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>[[Skin.HasSetting(FullscreenMovieMultiplex) + Container.Content(movies)] | [Skin.HasSetting(FullscreenCommonMultiplex) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]]] + Control.IsVisible(551) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
-			<animation effect="slide" start="0,590" end="0,0" time="500" delay="1500" condition="[Container.Content(movies) + !Skin.HasSetting(multiplexinfoon)] | [![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(multiplexcommoninfoon)]">WindowOpen</animation>			
+			<visible>[[Skin.HasSetting(FullscreenMovieMultiplex) + Container.Content(movies)+ !Skin.HasSetting(MovieInfoPopupoff)] | [Skin.HasSetting(FullscreenCommonMultiplex) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]] + !Skin.HasSetting(CommonInfoPopupoff)] + Control.IsVisible(551) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Skin.HasSetting(MovieInfoPopupon) | [[ControlGroup(7000).HasFocus()|ControlGroup(7011).HasFocus()|ControlGroup(7012).HasFocus()|ControlGroup(7013).HasFocus()|ControlGroup(7014).HasFocus()] + [Skin.HasSetting(MovieInfoPopuptrigger)|Skin.HasSetting(CommonInfoPopuptrigger)]]]</visible>
+			<animation effect="slide" start="0,590" end="0,0" time="500" delay="1500" condition="[Container.Content(movies) + !Skin.HasSetting(MovieInfoPopupon)] | [![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(CommonInfoPopupon)]">WindowOpen</animation>			
 			<animation effect="slide" start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide" start="0,590" end="0,0" time="500">VisibleChange</animation>			
 
@@ -172,7 +180,7 @@
 
 <!-- POSTER VIEW LINES -->
 			<control type="group">
-				<visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
+				<visible>![Skin.HasSetting(movieplot) | Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)]</visible>				
 				<control type="image">
 					<posx>272</posx>
 					<posy>58</posy>
@@ -199,7 +207,7 @@
 
 <!-- PLOT VIEW LINES -->
 			<control type="group">
-				<visible>Skin.HasSetting(multiplexplot)</visible>				
+				<visible>Skin.HasSetting(movieplot)</visible>				
 				<control type="image">
 					<posx>349</posx>
 					<posy>58</posy>
@@ -226,7 +234,7 @@
 
 <!-- THUMB & ART VIEW LINES -->
 			<control type="group">
-				<visible>Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)</visible>				
+				<visible>Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)</visible>				
 				<control type="image">
 					<posx>559</posx>
 					<posy>58</posy>
@@ -258,9 +266,9 @@
 			<control type="group">
 				<posx>365</posx>
 				<posy>50</posy>
-				<visible>Skin.HasSetting(multiplexplot)</visible>	
+				<visible>Skin.HasSetting(movieplot)</visible>	
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31402]:</label>
@@ -272,7 +280,7 @@
 				</control>
 				
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<posx>285</posx>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
@@ -349,7 +357,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.Plot</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>![Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + !IsEmpty(ListItem.Plot)</visible>	
 				</control>
 				<control type="textbox">
@@ -360,7 +368,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>listitem.PlotOutline</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>![Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + IsEmpty(ListItem.Plot)</visible>	
 				</control>
 
@@ -372,7 +380,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.Plot</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>[Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + !IsEmpty(ListItem.Plot)</visible>	
 				</control>
 				<control type="textbox">
@@ -383,7 +391,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.PlotOutline</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>[Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + IsEmpty(ListItem.Plot)</visible>	
 				</control>
 				
@@ -584,9 +592,9 @@
 			<control type="group">
 				<posx>290</posx>
 				<posy>50</posy>
-				<visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>	
+				<visible>![Skin.HasSetting(movieplot) | Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)]</visible>	
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31402]:</label>
@@ -598,7 +606,7 @@
 				</control>
 				
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<posx>315</posx>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
@@ -676,7 +684,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.Plot</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>![Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + !IsEmpty(ListItem.Plot)</visible>	
 				</control>
 				<control type="textbox">
@@ -687,7 +695,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.PlotOutline</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>![Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + IsEmpty(ListItem.Plot)</visible>	
 				</control>
 
@@ -699,7 +707,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.Plot</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>[Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + !IsEmpty(ListItem.Plot)</visible>	
 				</control>
 				<control type="textbox">
@@ -710,7 +718,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.PlotOutline</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>[Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + IsEmpty(ListItem.Plot)</visible>	
 				</control>
 
@@ -862,9 +870,9 @@
 			<control type="group">
 				<posx>15</posx>
 				<posy>50</posy>
-				<visible>Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)</visible>	
+				<visible>Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)</visible>	
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31402]:</label>
@@ -877,7 +885,7 @@
 				
 				<control type="group">
 					<posx>285</posx>
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31401]:</label>
@@ -954,7 +962,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.Plot</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>![Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)]  + !IsEmpty(ListItem.Plot)</visible>	
 				</control>			
 				<control type="textbox">
@@ -965,7 +973,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.PlotOutline</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>![Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + IsEmpty(ListItem.Plot)</visible>	
 				</control>			
 				
@@ -977,7 +985,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.Plot</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>[Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + !IsEmpty(ListItem.Plot)</visible>	
 				</control>
 				<control type="textbox">
@@ -988,7 +996,7 @@
 					<font>Font_MultiplexPlot</font>
 					<info>ListItem.PlotOutline</info>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>[Skin.HasSetting(noimdbflag) | Skin.HasSetting(nocertflag)] + IsEmpty(ListItem.Plot)</visible>	
 				</control>
 				
@@ -996,7 +1004,7 @@
 				<control type="group">
 					<posx>549</posx>
 					<posy>12</posy>
-					<visible>Skin.HasSetting(multiplexbigthumb)</visible>				
+					<visible>Skin.HasSetting(moviebigthumb)</visible>				
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1034,7 +1042,7 @@
 				<control type="group">
 					<posx>549</posx>
 					<posy>12</posy>
-					<visible>Skin.HasSetting(multiplexfanart)</visible>				
+					<visible>Skin.HasSetting(moviefanart)</visible>				
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -1126,7 +1134,7 @@
 			</control>
 			<control type="group">
 				<posx>396</posx>
-				<posy>22</posy>
+				<posy>18</posy>
 				<visible>false</visible>				
 				<control type="label">
 					<width>305</width>
@@ -1155,8 +1163,8 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>[[!Skin.HasSetting(FullscreenMovieMultiplex) + Container.Content(movies)] | [!Skin.HasSetting(FullscreenCommonMultiplex) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]]] + Control.IsVisible(551) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Skin.HasSetting(multiplexinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexinfotrigger)]]</visible>
-			<animation effect="slide" start="0,590" end="0,0" time="500" delay="1500" condition="[Container.Content(movies) + !Skin.HasSetting(multiplexinfoon)] | [![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(multiplexcommoninfoon)]">WindowOpen</animation>			
+			<visible>[[!Skin.HasSetting(FullscreenMovieMultiplex) + Container.Content(movies) + !Skin.HasSetting(MovieInfoPopupoff)] | [!Skin.HasSetting(FullscreenCommonMultiplex)+substring(Container.FolderPath,plugin://video/apple,left) + ![Container.Content(movies)|Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(CommonInfoPopupoff)]] + Control.IsVisible(551) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Skin.HasSetting(MovieInfoPopupon) | [[ControlGroup(7000).HasFocus()|ControlGroup(7011).HasFocus()|ControlGroup(7012).HasFocus()|ControlGroup(7013).HasFocus()|ControlGroup(7014).HasFocus()] + [Skin.HasSetting(MovieInfoPopuptrigger)|Skin.HasSetting(CommonInfoPopuptrigger)]]]</visible>
+			<animation effect="slide" start="0,590" end="0,0" time="500" delay="1500" condition="[Container.Content(movies) + !Skin.HasSetting(MovieInfoPopupon)] | [![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(CommonInfoPopupon)]">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
 			<control type="image">
@@ -1234,7 +1242,7 @@
 
 <!-- POSTER VIEW LINES -->
 			<control type="group">
-				<visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
+				<visible>![Skin.HasSetting(movieplot) | Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)]</visible>				
 				<control type="image">
 					<posx>398</posx>
 					<posy>39</posy>
@@ -1254,7 +1262,7 @@
 
 <!-- PLOT VIEW LINES -->
 			<control type="group">
-				<visible>Skin.HasSetting(multiplexplot)</visible>				
+				<visible>Skin.HasSetting(movieplot)</visible>				
 				<control type="image">
 					<posx>398</posx>
 					<posy>39</posy>
@@ -1274,7 +1282,7 @@
 
 <!-- THUMB & ART VIEW LINES -->
 			<control type="group">
-				<visible>Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)</visible>				
+				<visible>Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)</visible>				
 				<control type="image">
 					<posx>323</posx>
 					<posy>39</posy>
@@ -1303,9 +1311,9 @@
 			<control type="group">
 				<posx>105</posx>
 				<posy>26</posy>
-				<visible>![Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>	
+				<visible>![Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)]</visible>	
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31402]:</label>
@@ -1394,9 +1402,9 @@
 			<control type="group">
 				<posx>105</posx>
 				<posy>26</posy>
-				<visible>Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)</visible>	
+				<visible>Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)</visible>	
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31402]:</label>
@@ -1434,7 +1442,7 @@
 
 				<control type="group">
 					<posx>240</posx>
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31709]:</label>
@@ -1481,8 +1489,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.Plot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>Skin.HasSetting(multiplexplot) + !IsEmpty(ListItem.Plot)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Skin.HasSetting(movieplot) + !IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			<control type="textbox">
 				<posx>416</posx>
@@ -1492,8 +1500,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.PlotOutline</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>Skin.HasSetting(multiplexplot) + IsEmpty(ListItem.Plot)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Skin.HasSetting(movieplot) + IsEmpty(ListItem.Plot)</visible>	
 			</control>
 
 			<!-- PLOT TEXT FOR POSTER VIEW -->
@@ -1505,8 +1513,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.Plot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)] + !IsEmpty(ListItem.Plot)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>![Skin.HasSetting(movieplot) | Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)] + !IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			<control type="textbox">
 				<posx>416</posx>
@@ -1516,8 +1524,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.PlotOutline</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)] + IsEmpty(ListItem.Plot)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>![Skin.HasSetting(movieplot) | Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)] + IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			
 			<!-- PLOT TEXT FOR MULTI-IMAGE VIEW -->
@@ -1529,8 +1537,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.Plot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>[Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)] + !IsEmpty(ListItem.Plot)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>[Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)] + !IsEmpty(ListItem.Plot)</visible>	
 			</control>			
 			<control type="textbox">
 				<posx>105</posx>
@@ -1540,15 +1548,15 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.PlotOutline</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>[Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)] + IsEmpty(ListItem.Plot)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>[Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)] + IsEmpty(ListItem.Plot)</visible>	
 			</control>			
 			
 			<!-- IMAGES PLOT VIEW -->
 			<control type="group">
 				<posx>913</posx>
 				<posy>50</posy>
-				<visible>Skin.HasSetting(multiplexplot)</visible>				
+				<visible>Skin.HasSetting(movieplot)</visible>				
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -1609,11 +1617,89 @@
 				</control>				
 			</control>
 
+			<!-- IMAGES FOR POSTER VIEW -->
+			<control type="group">
+				<posx>952</posx>
+				<posy>39</posy>
+				<visible>![Skin.HasSetting(movieplot) | Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)]</visible>				
+				<control type="largeimage">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>245</width>
+					<height>360</height>
+					<aspectratio>scale</aspectratio>
+					<fadetime>400</fadetime>
+					<texture>$INFO[ListItem.Icon]</texture>
+				</control>
+			</control>
+			<!-- IMAGES FOR THUMB VIEW -->
+			<control type="group">
+				<posx>590</posx>
+				<posy>50</posy>
+				<visible>Skin.HasSetting(moviebigthumb)</visible>				
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>595</width>
+					<height>335</height>
+					<texture>common/black.png</texture>
+					<colordiffuse>94FFFFFF</colordiffuse>
+					<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+				</control>				
+				<control type="multiimage">
+					<posx>1</posx>
+					<posy>1</posy>
+					<width>593</width>
+					<height>333</height>
+					<aspectratio>scale</aspectratio>
+					<fadetime>400</fadetime>
+					<timeperimage>4000</timeperimage>					
+					<imagepath background="true">$INFO[ListItem.Path,,extrathumbs]</imagepath>
+					<visible>!substring(ListItem.Path,stack)</visible>	
+				</control>			
+				<control type="multiimage">
+					<posx>1</posx>
+					<posy>1</posy>
+					<width>593</width>
+					<height>333</height>
+					<aspectratio>scale</aspectratio>
+					<fadetime>400</fadetime>
+					<timeperimage>4000</timeperimage>					
+					<imagepath background="true">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs]</imagepath>
+					<visible>substring(ListItem.Path,stack)</visible>	
+				</control>			
+			</control>
+
+			<!-- IMAGES FOR ART VIEW -->
+			<control type="group">
+				<posx>590</posx>
+				<posy>50</posy>
+				<visible>Skin.HasSetting(moviefanart)</visible>				
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>595</width>
+					<height>335</height>
+					<texture>common/black.png</texture>
+					<colordiffuse>94FFFFFF</colordiffuse>
+					<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+				</control>				
+				<control type="largeimage">
+					<posx>1</posx>
+					<posy>1</posy>
+					<width>593</width>
+					<height>333</height>
+					<aspectratio>scale</aspectratio>
+					<fadetime>400</fadetime>
+					<texture>$INFO[listitem.property(fanart_image)]</texture>
+				</control>
+			</control>
+
 			<!-- VIDEO WINDOW FOR PLOT VIEW -->
 			<control type="group">
 				<posx>400</posx>
 				<posy>39</posy>
-				<visible>Skin.HasSetting(multiplexplot) + Skin.HasSetting(movietrailers)</visible>	
+				<visible>Skin.HasSetting(movieplot) + Skin.HasSetting(movietrailers)</visible>	
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -1678,27 +1764,11 @@
 				</control>
 			</control>			
 
-			<!-- IMAGES FOR POSTER VIEW -->
-			<control type="group">
-				<posx>952</posx>
-				<posy>39</posy>
-				<visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>				
-				<control type="largeimage">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>245</width>
-					<height>360</height>
-					<aspectratio>scale</aspectratio>
-					<fadetime>400</fadetime>
-					<texture>$INFO[ListItem.Icon]</texture>
-				</control>
-			</control>
-
 			<!-- VIDEO WINDOW FOR POSTER VIEW -->
 			<control type="group">
 				<posx>400</posx>
 				<posy>39</posy>
-				<visible>![Skin.HasSetting(multiplexplot) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)] + Skin.HasSetting(movietrailers)</visible>	
+				<visible>![Skin.HasSetting(movieplot) | Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)] + Skin.HasSetting(movietrailers)</visible>	
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -1763,74 +1833,11 @@
 				</control>
 			</control>			
 
-			<!-- IMAGES FOR THUMB VIEW -->
-			<control type="group">
-				<posx>590</posx>
-				<posy>50</posy>
-				<visible>Skin.HasSetting(multiplexbigthumb)</visible>				
-				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>595</width>
-					<height>335</height>
-					<texture>common/black.png</texture>
-					<colordiffuse>94FFFFFF</colordiffuse>
-					<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
-				</control>				
-				<control type="multiimage">
-					<posx>1</posx>
-					<posy>1</posy>
-					<width>593</width>
-					<height>333</height>
-					<aspectratio>scale</aspectratio>
-					<fadetime>400</fadetime>
-					<timeperimage>4000</timeperimage>					
-					<imagepath background="true">$INFO[ListItem.Path,,extrathumbs]</imagepath>
-					<visible>!substring(ListItem.Path,stack)</visible>	
-				</control>			
-				<control type="multiimage">
-					<posx>1</posx>
-					<posy>1</posy>
-					<width>593</width>
-					<height>333</height>
-					<aspectratio>scale</aspectratio>
-					<fadetime>400</fadetime>
-					<timeperimage>4000</timeperimage>					
-					<imagepath background="true">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs]</imagepath>
-					<visible>substring(ListItem.Path,stack)</visible>	
-				</control>			
-			</control>
-
-			<!-- IMAGES FOR ART VIEW -->
-			<control type="group">
-				<posx>590</posx>
-				<posy>50</posy>
-				<visible>Skin.HasSetting(multiplexfanart)</visible>				
-				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>595</width>
-					<height>335</height>
-					<texture>common/black.png</texture>
-					<colordiffuse>94FFFFFF</colordiffuse>
-					<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
-				</control>				
-				<control type="largeimage">
-					<posx>1</posx>
-					<posy>1</posy>
-					<width>593</width>
-					<height>333</height>
-					<aspectratio>scale</aspectratio>
-					<fadetime>400</fadetime>
-					<texture>$INFO[listitem.property(fanart_image)]</texture>
-				</control>
-			</control>
-
 			<!-- VIDEO WINDOW MULTI-IMAGE VIEW -->
 			<control type="group">
 				<posx>590</posx>
 				<posy>50</posy>
-				<visible>Skin.HasSetting(movietrailers) + [Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplexbigthumb)]</visible>	
+				<visible>Skin.HasSetting(movietrailers) + [Skin.HasSetting(moviefanart) | Skin.HasSetting(moviebigthumb)]</visible>	
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -1897,13 +1904,473 @@
 		</control>			
 	</include>
 
+	<include name="LowListInfoPane">
+		<!-- POPUP LOWLIST WINDOW & TEXT -->
+		<control type="group">
+			<posx>175</posx>
+			<posy>70</posy>
+			<width>1280</width>
+			<height>381</height>
+			<visible>[[Container.Content(movies) + !Skin.HasSetting(MovieInfoPopupoff)] | [Container.Content(Artists) + !Skin.HasSetting(MusicArtistsInfoPopupoff)] | [Container.Content(Albums) + !Skin.HasSetting(MusicAlbumsInfoPopupoff)]|[Container.Content(Songs) + !Skin.HasSetting(MusicSongsInfoPopupoff)] | [Container.Content(tvshows) + !Skin.HasSetting(TVShowsInfoPopupoff)] | [Container.Content(seasons) + !Skin.HasSetting(TVSeasonsInfoPopupoff)] | [Container.Content(episodes) + !Skin.HasSetting(TVEpisodesInfoPopupoff)]] + Control.IsVisible(550) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(115) | Control.HasFocus(116) | Control.HasFocus(117) | Control.HasFocus(118) | Control.HasFocus(606) | Control.HasFocus(607) | Control.HasFocus(608) | Control.HasFocus(609) | Control.HasFocus(610) | Control.HasFocus(611) | [[Container.Content(movies) + Skin.HasSetting(MovieInfoPopupon)] | [Container.Content(Artists) + Skin.HasSetting(MusicArtistsInfoPopupon)] | [Container.Content(Albums) + Skin.HasSetting(MusicAlbumsInfoPopupon)]|[Container.Content(Songs) + Skin.HasSetting(MusicSongsInfoPopupon)] | [Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopupon)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopupon)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopupon)]] | [[ControlGroup(7000).HasFocus()|ControlGroup(7011).HasFocus()|ControlGroup(7012).HasFocus()|ControlGroup(7013).HasFocus()|ControlGroup(7014).HasFocus()] + [[Container.Content(movies)+Skin.HasSetting(MovieInfoPopuptrigger)] | [Container.Content(Artists) + Skin.HasSetting(MusicArtistsInfoPopuptrigger)] | [Container.Content(Albums) + Skin.HasSetting(MusicAlbumsInfoPopuptrigger)]|[Container.Content(Songs) + Skin.HasSetting(MusicSongsInfoPopuptrigger)] | [Container.Content(tvshows)+Skin.HasSetting(TVShowsInfoPopuptrigger)]|[Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]]]</visible>
+			<animation effect="slide" start="0,-500" end="0,0" time="500" delay="1500" condition="[Container.Content(movies) + !Skin.HasSetting(MovieInfoPopupon)] | [Container.Content(Artists) + !Skin.HasSetting(MusicArtistsInfoPopupon)] | [Container.Content(Albums) + !Skin.HasSetting(MusicAlbumsInfoPopupon)]|[Container.Content(Songs) + !Skin.HasSetting(MusicSongsInfoPopupon)] | [![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !Skin.HasSetting(CommonInfoPopupon)]">WindowOpen</animation>			
+			<animation effect="slide" start="0,0" end="0,-500" time="500">WindowClose</animation>
+			<animation effect="slide" start="0,-500" end="0,0" time="500">VisibleChange</animation>
+			<control type="group">
+				<animation type="Conditional" condition="Player.HasVideo" reversible="true">
+					<effect type="rotatey" center="465" start="0" end="180" time="800" delay="0"/>
+				</animation>
+				<control type="group">
+					<control type="image">
+						<posx>106</posx>
+						<width>718</width>
+						<height>363</height>
+						<texture>list/LowList_Info_Mask.png</texture>
+						<visible>!Skin.HasSetting(listpanelthin)</visible>
+						<include>Animation_CommonFade</include>
+					</control>			
+
+					<!-- COMMON BACKGRROUND -->
+					<control type="image">
+						<posx>106</posx>
+						<width>718</width>
+						<height>363</height>
+						<texture>list/lite/LowList_Info_Pannel.png</texture>
+						<visible>!Skin.HasSetting(darkwindow)</visible>				
+					</control>
+					<control type="image">
+						<posx>106</posx>
+						<width>718</width>
+						<height>363</height>
+						<texture>list/night/LowList_Info_Pannel.png</texture>
+						<visible>Skin.HasSetting(darkwindow)</visible>				
+					</control>
+				</control>
+
+				<control type="group">
+					<description>-- MOVIE LINES --</description>
+	<!--				<control type="image">
+						<posx>120</posx>
+						<posy>37</posy>
+						<width>690</width>
+						<height>2</height>
+						<texture flipy="false">multiplex/hort_line.png</texture>
+					</control>-->
+					<control type="image">
+						<posx>120</posx>
+						<posy>77</posy>
+						<width>690</width>
+						<height>2</height>
+						<texture flipy="true">multiplex/hort_line.png</texture>
+						<animation effect="slide" end="0,-20" time="0" condition="Container.Content(seasons)">Conditional</animation>
+					</control>
+					<control type="image">
+						<posx>395</posx>
+						<posy>78</posy>
+						<width>2</width>
+						<height>202</height>
+						<texture>multiplex/vert_line.png</texture>
+						<visible>Container.Content(songs)</visible>
+					</control>
+					<control type="image">
+						<posx>395</posx>
+						<posy>280</posy>
+						<width>400</width>
+						<height>2</height>
+						<texture flipy="true">multiplex/hort_line.png</texture>
+						<visible>Container.Content(songs)</visible>
+					</control>
+					<control type="image">
+						<posx>797</posx>
+						<posy>78</posy>
+						<width>2</width>
+						<height>202</height>
+						<texture>multiplex/vert_line.png</texture>
+						<visible>Container.Content(songs)</visible>
+					</control>
+				</control>
+
+				<control type="group">
+					<visible>!Player.HasVideo</visible>
+					<animation effect="fade" start="0" end="100" time="400" delay="200">VisibleChange</animation>
+					<posx>136</posx>
+					<posy>6</posy>
+					<control type="group">
+						<posy>18</posy>
+						<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[20339]:</label>
+						</control>
+						<control type="label">
+							<width>192</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Director]</label>
+						</control>
+						<control type="label">
+							<posx>205</posx>
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31401]:</label>
+						</control>
+						<control type="label">
+							<posx>205</posx>
+							<include>MultiplexInfoValue_300</include>
+							<label fallback="-">$INFO[ListItem.Writer]</label>
+						</control>
+						<control type="label">
+							<posx>515</posx>
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31408]:</label>
+						</control>
+						<control type="label">
+							<posx>515</posx>
+							<width>140</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.RatingAndVotes]</label>
+						</control>
+					</control>
+
+					<control type="group">
+						<posy>18</posy>
+						<description>TVSHOWS</description>
+						<control type="label">
+							<posx>0</posx>
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31438]:</label>
+							<visible>Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<width>450</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Genre]</label>
+							<visible>Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>540</posx>
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31407]:</label>
+							<visible>Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>540</posx>
+							<width>450</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Date]</label>
+							<visible>Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>-5</posy>
+							<align>center</align>
+							<width>660</width>
+							<font>Font_List</font>	
+							<label>[B]$INFO[ListItem.TVShowTitle][/B]</label>
+							<visible>Container.Content(seasons)</visible>
+						</control>
+					</control>
+
+
+					<control type="group">
+						<posy>18</posy>
+						<description>MUSIC</description>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[21894]:</label>
+							<visible>Container.Content(artists)</visible>
+						</control>
+						<control type="label">
+							<width>320</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Property(Formed)]</label>
+							<visible>Container.Content(artists)</visible>
+						</control>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[176]:</label>
+							<visible>Container.Content(albums)</visible>
+						</control>
+						<control type="label">
+							<width>320</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Property(Style)]</label>
+							<visible>Container.Content(albums)</visible>
+						</control>
+
+						<control type="label">
+							<posx>335</posx>
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[175]:</label>
+							<visible>Container.Content(artists)|Container.Content(albums)</visible>
+						</control>
+						<control type="label">
+							<posx>335</posx>
+							<width>325</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Property(Mood)]</label>
+							<visible>Container.Content(artists)|Container.Content(albums)</visible>
+						</control>
+
+
+						<control type="group">
+							<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[556]:</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>20</posy>
+								<width>300</width>
+								<include>MultiplexInfoValue</include>
+								<label fallback="32002">$INFO[Musicplayer.Title]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>320</posx>
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[557]:</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>320</posx>
+								<width>300</width>
+								<include>MultiplexInfoValue</include>
+								<label fallback="32002">$INFO[Musicplayer.Artist]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+
+							<control type="label">
+								<posx>0</posx>
+								<posy>60</posy>
+								<width>190</width>
+								<font>Font_ListSmall</font>	
+								<textcolor>FFFFFFFF</textcolor>
+								<label>$LOCALIZE[32001]:</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>95</posy>
+								<textcolor>ABFFFFFF</textcolor>
+								<font>Font_ListObjects</font>	
+								<label>$LOCALIZE[32003]:[COLOR FFFFFFFF]$INFO[Musicplayer.Codec,  ,][/COLOR]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>120</posy>
+								<font>Font_ListObjects</font>	
+								<textcolor>ABFFFFFF</textcolor>
+								<label>$LOCALIZE[623]:[COLOR FFFFFFFF]$INFO[MusicPlayer.BitRate,  , $LOCALIZE[32004]][/COLOR]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>145</posy>
+								<font>Font_ListObjects</font>	
+								<textcolor>ABFFFFFF</textcolor>
+								<label>$LOCALIZE[32005]:[COLOR FFFFFFFF]$INFO[MusicPlayer.SampleRate,  , $LOCALIZE[32006]][/COLOR]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>170</posy>
+								<font>Font_ListObjects</font>	
+								<textcolor>ABFFFFFF</textcolor>
+								<label>$LOCALIZE[32007]:[COLOR FFFFFFFF]$INFO[MusicPlayer.Channels,  ,][/COLOR]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>200</posy>
+								<font>Font_ListObjects</font>	
+								<textcolor>ABFFFFFF</textcolor>
+								<label>$LOCALIZE[563]:[COLOR FFFFFFFF]$INFO[MusicPlayer.Rating,  ,][/COLOR]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>240</posy>
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[569]:</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>260</posy>
+								<width>660</width>
+								<include>MultiplexInfoValue</include>
+								<label fallback="-">$INFO[MusicPlayer.Comment]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+
+							<control type="label">
+								<posx>0</posx>
+								<posy>285</posy>
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[210]:</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>300</posy>
+								<width>295</width>
+								<include>MultiplexInfoValue</include>
+								<label fallback="-">$INFO[MusicPlayer.offset(-1).Title]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>320</posx>
+								<posy>285</posy>
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[209]:</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+							<control type="label">
+								<posx>320</posx>
+								<posy>300</posy>
+								<width>335</width>
+								<include>MultiplexInfoValue</include>
+								<label fallback="-">$INFO[MusicPlayer.offset(1).Title]</label>
+								<visible>Container.Content(songs)</visible>
+							</control>
+						</control>
+					</control>
+
+					<control type="textbox">
+						<description>-- MAIN PANEL TEXT --</description>
+						<posx>0</posx>
+						<posy>82</posy>
+						<width>660</width>
+						<height>258</height>
+						<font>Font_MultiplexPlot</font>
+						<info>ListItem.Plot</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>[Container.Content(movies) | Container.Content(episodes)] + !IsEmpty(ListItem.Plot)</visible>	
+					</control>
+					<control type="textbox">
+						<posx>0</posx>
+						<posy>82</posy>
+						<width>660</width>
+						<height>258</height>
+						<font>Font_MultiplexPlot</font>
+						<info>ListItem.PlotOutline</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>[Container.Content(movies) | Container.Content(episodes)] + IsEmpty(ListItem.Plot)</visible>	
+					</control>
+
+					<control type="textbox">
+						<description>-- MAIN PANEL TEXT --</description>
+						<posx>0</posx>
+						<posy>87</posy>
+						<width>660</width>
+						<height>258</height>
+						<font>Font_MultiplexPlot</font>
+						<info>ListItem.Plot</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>Container.Content(tvshows) + !IsEmpty(ListItem.Plot)</visible>	
+					</control>
+					<control type="textbox">
+						<posx>0</posx>
+						<posy>87</posy>
+						<width>660</width>
+						<height>258</height>
+						<font>Font_MultiplexPlot</font>
+						<info>ListItem.PlotOutline</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>Container.Content(tvshows) + !IsEmpty(ListItem.Plot)</visible>	
+					</control>
+					<control type="textbox">
+						<posx>0</posx>
+						<posy>62</posy>
+						<width>660</width>
+						<height>280</height>
+						<font>Font_MultiplexPlot</font>
+						<info>Container.ShowPlot</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>Container.Content(seasons) + !IsEmpty(Container.ShowPlot)</visible>	
+					</control>
+					<control type="textbox">
+						<posx>0</posx>
+						<posy>87</posy>
+						<width>660</width>
+						<height>258</height>
+						<font>Font_MultiplexPlot</font>
+						<label fallback="31424">$INFO[ListItem.Property(Description)]</label>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>Container.Content(Artists)|Container.Content(albums)</visible>	
+					</control>
+				</control>
+				<control type="image">
+					<posx>120</posx>
+					<posy>14</posy>
+					<visible>Player.HasVideo</visible>
+					<animation effect="fade" start="0" end="100" time="400" delay="250" reversible="true">VisibleChange</animation>
+					<width>690</width>
+					<height>333</height>
+					<texture diffuse="list/LowList_Trailer_Mask.png">common/black.png</texture>
+				</control>
+			</control>
+
+
+
+			<!-- VIDEO WINDOW FOR POSTER VIEW -->
+			<control type="group" id="222">
+				<posx>120</posx>
+				<posy>14</posy>
+				<visible>Player.HasVideo</visible>	
+				<animation effect="fade" start="0" end="100" time="400" delay="800">VisibleChange</animation>
+				<control type="videowindow">
+					<width>690</width>
+					<height>333</height>
+				</control>
+			</control>
+
+			<control type="group">
+				<posx>120</posx>
+				<posy>14</posy>
+				<visible>Container.Content(songs)</visible>	
+				<control type="largeimage">
+					<posx>278</posx>
+					<posy>65</posy>
+					<width>398</width>
+					<height>200</height>
+					<fadetime>400</fadetime>
+					<aspectratio>scale</aspectratio>
+					<texture>$INFO[container.property(fanart_image)]</texture>
+					<visible>Player.HasAudio</visible>
+					<include>Animation_VisibleChange200</include>
+				</control>
+				<control type="largeimage">
+					<posx>278</posx>
+					<posy>65</posy>
+					<width>398</width>
+					<height>200</height>
+					<fadetime>400</fadetime>
+					<aspectratio>scale</aspectratio>
+					<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
+					<visible>!substring(container.folderpath,MUSICDB://2/,Left) + Player.HasAudio</visible>
+					<include>Animation_VisibleChange200</include>
+				</control>
+			</control>			
+		</control>			
+	</include>
+
 	<include name="MultiplexInfoPaneTV_FS">
 		<!-- FULLSCREEN MULTIPLEX TV WINDOW & TEXT -->
 		<control type="group">
 			<posx>0</posx>
 			<posy>0</posy>
-			<visible>[[Container.Content(tvshows) + Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex)]] + [Control.IsVisible(551) | Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfoon)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfoon)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfoon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]]]</visible>
-			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="![[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]">WindowOpen</animation>			
+			<visible>[[Container.Content(tvshows) + Skin.HasSetting(FullscreenTVShowsMultiplex) + !Skin.HasSetting(TVShowsInfoPopupoff)] | [Container.Content(seasons) + Skin.HasSetting(FullscreenTVSeasonsMultiplex) + !Skin.HasSetting(TVSeasonsInfoPopupoff)] | [Container.Content(episodes) + Skin.HasSetting(FullscreenTVEpisodesMultiplex) + !Skin.HasSetting(TVEpisodesInfoPopupoff)]] + [Control.IsVisible(551) | Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | [Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopupon)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopupon)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopupon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]]]</visible>
+			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="![[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
 			<control type="image">
@@ -1938,7 +2405,7 @@
 
 <!-- TV SHOWS & SEASONS NORMAL VIEW BACKGROUND -->
 			<control type="group">
-				<visible>[Container.Content(episodes) + Skin.HasSetting(tvposterview)] | !Skin.HasSetting(tvposterview)</visible>
+				<visible>Container.Content(episodes) | [Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>514</posy>
@@ -1961,7 +2428,7 @@
 					<width>1280</width>
 					<height>2</height>
 					<texture flipy="true">multiplex/hort_line.png</texture>
-					<visible>[Container.Content(episodes) + Skin.HasSetting(tvposterview)] | !Skin.HasSetting(tvposterview)</visible>
+					<visible>Container.Content(episodes) | [Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]</visible>
 				</control>
 				<control type="image">
 					<posx>560</posx>
@@ -1990,7 +2457,7 @@
 
 <!-- TV SHOWS & SEASONS POSTER VIEW BACKGROUND -->
 			<control type="group">
-				<visible>!Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>
+				<visible>[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>467</posy>
@@ -2117,7 +2584,7 @@
 				<posy>100</posy>
 				<visible>Container.Content(tvshows)</visible>
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31438]:</label>
@@ -2130,7 +2597,7 @@
 				
 				<control type="group">
 					<posx>320</posx>
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31407]:</label>
@@ -2143,7 +2610,7 @@
 
 				<control type="group">
 					<posx>450</posx>
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31406]:</label>
@@ -2162,13 +2629,13 @@
 				<control type="group">
 					<control type="label">
 						<posx>65</posx>
-						<posy>22</posy>
+						<posy>18</posy>
 						<include>MultiplexInfoLabel_Right</include>
 						<label>$LOCALIZE[31403]:</label>
 					</control>
 					<control type="fadelabel">
 						<posx>70</posx>
-						<posy>22</posy>
+						<posy>18</posy>
 						<include>MultiplexInfoValue_200</include>				
 						<label fallback="31425">$INFO[ListItem.Episode]</label>
 					</control>
@@ -2177,13 +2644,13 @@
 				<control type="group">
 					<control type="label">
 						<posx>270</posx>
-						<posy>22</posy>
+						<posy>18</posy>
 						<include>MultiplexInfoLabel_Right</include>
 						<label>$LOCALIZE[31439]:</label>
 					</control>
 					<control type="label">
 						<posx>275</posx>
-						<posy>22</posy>
+						<posy>18</posy>
 						<include>MultiplexInfoValue_200</include>
 						<label fallback="31425">$INFO[ListItem.Property(WatchedEpisodes)]</label>
 					  </control>			
@@ -2192,13 +2659,13 @@
 				<control type="group">
 					<control type="label">
 						<posx>485</posx>
-						<posy>22</posy>
+						<posy>18</posy>
 						<include>MultiplexInfoLabel_Right</include>
 						<label>$LOCALIZE[31440]:</label>
 					</control>
 					<control type="label">
 						<posx>490</posx>
-						<posy>22</posy>
+						<posy>18</posy>
 						<include>MultiplexInfoValue_200</include>
 						<label fallback="31425">$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
 					  </control>			
@@ -2210,7 +2677,7 @@
 				<posy>100</posy>
 				<visible>Container.Content(episodes)</visible>
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31402]:</label>
@@ -2223,7 +2690,7 @@
 				
 				<control type="group">
 					<posx>220</posx>
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31401]:</label>
@@ -2236,7 +2703,7 @@
 
 				<control type="group">
 					<posx>440</posx>
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31407]:</label>
@@ -2258,8 +2725,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.Plot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>[!Container.Content(seasons) + !IsEmpty(ListItem.Plot)] + !Skin.HasSetting(tvposterview)] | [Container.Content(episodes) + !IsEmpty(ListItem.Plot) + Skin.HasSetting(tvposterview)]</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview) + !IsEmpty(ListItem.Plot)] | [Container.Content(episodes) + !IsEmpty(ListItem.Plot)]</visible>	
 			</control>
 			<control type="textbox">
 				<posx>15</posx>
@@ -2269,8 +2736,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.PlotOutline</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>[!Container.Content(seasons) + IsEmpty(ListItem.Plot)] + !Skin.HasSetting(tvposterview)] | [Container.Content(episodes) + !IsEmpty(ListItem.Plot) + Skin.HasSetting(tvposterview)]</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview) + IsEmpty(ListItem.Plot)] | [Container.Content(episodes) + !IsEmpty(ListItem.Plot)]</visible>	
 			</control>
 			<control type="textbox">
 				<posx>15</posx>
@@ -2280,8 +2747,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>Container.ShowPlot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>Container.Content(seasons) + !Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)</visible>	
 			</control>			
 
 <!-- TV SHOWS & SEASONS POSTER VIEW PLOT TEXT -->
@@ -2293,8 +2760,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.Plot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>!Container.Content(seasons) + !IsEmpty(ListItem.Plot) + !Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)] + !IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			<control type="textbox">
 				<posx>15</posx>
@@ -2304,8 +2771,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.PlotOutline</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>!Container.Content(seasons) + IsEmpty(ListItem.Plot) + !Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)] + IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			<control type="textbox">
 				<posx>15</posx>
@@ -2315,8 +2782,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>Container.ShowPlot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>Container.Content(seasons) + Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)</visible>	
 			</control>			
 
 <!-- TV SHOWS & SEASONS NORMAL VIEW IMAGES -->
@@ -2330,7 +2797,7 @@
 					<height>401</height>
 					<texture>common/black.png</texture>
 					<colordiffuse>94FFFFFF</colordiffuse>
-					<visible>Container.Content(episodes) | [!Container.Content(episodes) + !Skin.HasSetting(tvposterview)]</visible>
+					<visible>Container.Content(episodes) | [Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]</visible>
 				</control>
 				<control type="largeimage">
 					<posx>1</posx>
@@ -2339,7 +2806,7 @@
 					<height>399</height>
 					<aspectratio>scale</aspectratio>
 					<texture>$INFO[Fanart.Image]</texture>
-					<visible>Container.Content(seasons) + !Skin.HasSetting(tvposterview)</visible>
+					<visible>Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="largeimage">
@@ -2349,7 +2816,7 @@
 					<height>399</height>
 					<aspectratio>scale</aspectratio>
 					<info>ListItem.Property(Fanart_Image)</info>
-					<visible>[!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)] | [Container.Content(tvshows) + !Skin.HasSetting(tvposterview)]</visible>
+					<visible>[!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)] | [Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="largeimage">
@@ -2386,7 +2853,7 @@
 					<height>356</height>
 					<texture>common/black.png</texture>
 					<colordiffuse>94FFFFFF</colordiffuse>
-					<visible>!Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>
+					<visible>[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)]</visible>
 				</control>
 				<control type="largeimage">
 					<posx>1</posx>
@@ -2396,7 +2863,7 @@
 					<fadetime>400</fadetime>
 					<aspectratio>scale</aspectratio>
 					<info>ListItem.Property(Fanart_Image)</info>
-					<visible>!Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>					
+					<visible>[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)]</visible>					
 					<include>Animation_VisibleChange200</include>
 				</control>
 			</control>	
@@ -2478,8 +2945,8 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>[[Container.Content(tvshows) + !Skin.HasSetting(FullscreenTVShowsMultiplex)] | [Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex)] | [Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)]] + [Control.IsVisible(551) | Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | [Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfoon)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfoon)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfoon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]]]</visible>
-			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="![[Container.Content(tvshows) + Skin.HasSetting(multiplextvshowsinfotrigger)] | [Container.Content(seasons) + Skin.HasSetting(multiplextvseasonsinfotrigger)] | [Container.Content(episodes) + Skin.HasSetting(multiplextvepisodesinfotrigger)]]">WindowOpen</animation>			
+			<visible>[[Container.Content(tvshows) + !Skin.HasSetting(FullscreenTVShowsMultiplex) + !Skin.HasSetting(TVShowsInfoPopupoff)] | [Container.Content(seasons) + !Skin.HasSetting(FullscreenTVSeasonsMultiplex) + !Skin.HasSetting(TVSeasonsInfoPopupoff)] | [Container.Content(episodes) + !Skin.HasSetting(FullscreenTVEpisodesMultiplex) + !Skin.HasSetting(TVEpisodesInfoPopupoff)]] + [Control.IsVisible(551) | Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(600) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | [Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopupon)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopupon)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopupon)] | [ControlGroup(7000).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]] | [ControlGroup(7012).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]] | [ControlGroup(7011).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]] | [ControlGroup(7014).HasFocus() + [[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]]]</visible>
+			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="![[Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)]]">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>		
 			<control type="image">
@@ -2526,7 +2993,7 @@
 
 <!-- TV SHOWS & SEASONS NORMAL VIEW BACKGROUND -->
 			<control type="group">
-				<visible>[Container.Content(episodes) + Skin.HasSetting(tvposterview)] | !Skin.HasSetting(tvposterview)</visible>
+				<visible>Container.Content(episodes) | [[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]]</visible>
 				<control type="image">
 					<posx>84</posx>
 					<posy>444</posy>
@@ -2577,7 +3044,7 @@
 
 <!-- TV SHOWS & SEASONS POSTER VIEW BACKGROUND -->
 			<control type="group">
-				<visible>!Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>
+				<visible>!Container.Content(episodes) + [[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)]|[Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)]]</visible>
 				<control type="image">
 					<posx>84</posx>
 					<posy>423</posy>
@@ -2628,107 +3095,47 @@
 
 			<control type="group">
 				<posx>105</posx>
-				<posy>30</posy>
-				<visible>Container.Content(tvshows)</visible>
-<!--				<control type="group">
-					<posy>22</posy>
-					<control type="label">
-						<include>MultiplexInfoLabel_Left</include>
-						<label>$LOCALIZE[31438]:</label>
-					</control>
-					<control type="label">
-						<include>MultiplexInfoValue</include>				
-						<label fallback="31425">$INFO[ListItem.Genre]</label>
-					</control>			
-				</control> -->
-				
-				<control type="group">
-					<control type="label">
-					<posx>70</posx>
-					<posy>22</posy>
-						<include>MultiplexInfoLabel_Right</include>
-						<label>$LOCALIZE[31406]:</label>
-					</control>
-					<control type="fadelabel">
-					<posx>75</posx>
-					<posy>22</posy>
-						<include>MultiplexInfoValue</include>				
-						<label fallback="31425">$INFO[ListItem.Episode]</label>
-					</control>			
+				<posy>33</posy>
+				<visible>Container.Content(tvshows)|Container.Content(seasons)</visible>
+				<control type="label">
+					<posx>0</posx>
+					<posy>18</posy>
+					<include>MultiplexInfoLabel_Left</include>
+					<label>$LOCALIZE[31406]:[COLOR FFFFFFFF]$INFO[ListItem.Episode,  ,][/COLOR]</label>
 				</control>
 
-				<control type="group">
-					<control type="label">
-						<posx>265</posx>
-						<posy>22</posy>
-						<include>MultiplexInfoLabel_Right</include>
-						<label>$LOCALIZE[31407]:</label>
-					</control>
-					<control type="label">
-						<posx>270</posx>
-						<posy>22</posy>
-						<include>MultiplexInfoValue</include>				
-						<label fallback="31425">$INFO[ListItem.Date]</label>
-					</control>			
+				<control type="label">
+					<posx>360</posx>
+					<posy>18</posy>
+					<width>200</width>
+					<include>MultiplexInfoLabel_Right</include>
+					<label>$LOCALIZE[31407]:[COLOR FFFFFFFF]$INFO[ListItem.Date,  ,][/COLOR]</label>
+					<visible>Container.Content(tvshows)</visible>
 				</control>
-			</control>	
 
-			<control type="group">
-				<posx>105</posx>
-				<posy>30</posy>
+				<control type="label">
+					<posx>280</posx>
+					<posy>18</posy>
+					<include>MultiplexInfoLabel_Right</include>
+					<label>$LOCALIZE[31439]:[COLOR FFFFFFFF]$INFO[ListItem.Property(WatchedEpisodes),  ,][/COLOR]</label>
 				<visible>Container.Content(seasons)</visible>
-				<control type="group">
-					<control type="label">
-					<posx>70</posx>
-					<posy>22</posy>
-						<include>MultiplexInfoLabel_Right</include>
-						<label>$LOCALIZE[31403]:</label>
-					</control>
-					<control type="label">
-						<posx>75</posx>
-						<posy>22</posy>
-						<include>MultiplexInfoValue</include>				
-						<label fallback="31425">$INFO[ListItem.Episode]</label>
-					</control>			
-				</control>
-				
-				<control type="group">
-					<control type="label">
-						<posx>205</posx>
-						<posy>22</posy>
-						<include>MultiplexInfoLabel_Right</include>
-						<label>$LOCALIZE[31439]:</label>
-					</control>
-					<control type="label">
-						<posx>210</posx>
-						<posy>22</posy>
-						<include>MultiplexInfoValue</include>				
-						<label fallback="31425">$INFO[ListItem.Property(WatchedEpisodes)]</label>
-					</control>			
 				</control>
 
-				<control type="group">
-					<control type="label">
-						<posx>345</posx>
-						<posy>22</posy>
-						<include>MultiplexInfoLabel_Right</include>
-						<label>$LOCALIZE[31440]:</label>
-					</control>
-					<control type="label">
-						<posx>350</posx>
-						<posy>22</posy>
-						<include>MultiplexInfoValue</include>				
-						<label fallback="31425">$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
-					</control>			
+				<control type="label">
+					<posx>440</posx>
+					<posy>18</posy>
+					<include>MultiplexInfoLabel_Right</include>
+					<label>$LOCALIZE[31440]:[COLOR FFFFFFFF]$INFO[ListItem.Property(UnwatchedEpisodes),  ,][/COLOR]</label>
+				<visible>Container.Content(seasons)</visible>
 				</control>
 			</control>				
 
 			<control type="group">
 				<posx>105</posx>
-				<posy>30</posy>
+				<posy>27</posy>
 				<visible>Container.Content(episodes)</visible>
 				<control type="group">
-					<posy>22</posy>
+					<posy>18</posy>
 					<control type="label">
 						<include>MultiplexInfoLabel_Left</include>
 						<label>$LOCALIZE[31402]:</label>
@@ -2775,8 +3182,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.Plot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>[Container.Content(tvshows) + !IsEmpty(ListItem.Plot)] + !Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview) + !IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			<control type="textbox">
 				<posx>105</posx>
@@ -2786,8 +3193,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.PlotOutline</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>[Container.Content(tvshows) + IsEmpty(ListItem.Plot)] + !Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview) + IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			<control type="textbox">
 				<posx>105</posx>
@@ -2797,8 +3204,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>Container.ShowPlot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>Container.Content(seasons) + !Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)</visible>	
 			</control>			
 			<control type="textbox">
 				<posx>105</posx>
@@ -2808,7 +3215,7 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.Plot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 				<visible>Container.Content(episodes) + !IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			<control type="textbox">
@@ -2819,7 +3226,7 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.PlotOutline</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 				<visible>Container.Content(episodes) + !IsEmpty(ListItem.Plot)</visible>	
 			</control>
 
@@ -2832,8 +3239,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.Plot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>Container.Content(tvshows) + !IsEmpty(ListItem.Plot) + Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Container.Content(tvshows)+Skin.HasSetting(tvshowposterview) + !IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			<control type="textbox">
 				<posx>105</posx>
@@ -2843,8 +3250,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>ListItem.PlotOutline</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>Container.Content(tvshows) + IsEmpty(ListItem.Plot) + Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Container.Content(tvshows)+Skin.HasSetting(tvshowposterview) + IsEmpty(ListItem.Plot)</visible>	
 			</control>
 			<control type="textbox">
 				<posx>105</posx>
@@ -2854,8 +3261,8 @@
 				<font>Font_MultiplexPlot</font>
 				<info>Container.ShowPlot</info>
 				<textcolor>d0FFFFFF</textcolor>
-				<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
-				<visible>Container.Content(seasons) + Skin.HasSetting(tvposterview)</visible>	
+				<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				<visible>Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)</visible>	
 			</control>			
 
 <!-- TV SHOWS & SEASONS NORMAL VIEW IMAGES -->
@@ -2869,7 +3276,7 @@
 					<height>378</height>
 					<texture>common/black.png</texture>
 					<colordiffuse>94FFFFFF</colordiffuse>
-					<visible>Container.Content(episodes) | [!Container.Content(episodes) + !Skin.HasSetting(tvposterview)]</visible>
+					<visible>Container.Content(episodes) | [[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]]</visible>
 				</control>
 				<control type="largeimage">
 					<posx>1</posx>
@@ -2878,7 +3285,7 @@
 					<height>376</height>
 					<aspectratio>scale</aspectratio>
 					<texture>$INFO[Fanart.Image]</texture>
-					<visible>Container.Content(seasons) + !Skin.HasSetting(tvposterview)</visible>
+					<visible>Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="largeimage">
@@ -2888,7 +3295,7 @@
 					<height>376</height>
 					<aspectratio>scale</aspectratio>
 					<info>ListItem.Property(Fanart_Image)</info>
-					<visible>[!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)] | [Container.Content(tvshows) + !Skin.HasSetting(tvposterview)]</visible>
+					<visible>[!Skin.HasSetting(multiplextvbigthumb) + Container.Content(episodes)] | [Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]</visible>
 					<include>Animation_VisibleChange200</include>
 				</control>
 				<control type="largeimage">
@@ -2924,7 +3331,7 @@
 					<height>342</height>
 					<texture>common/black.png</texture>
 					<colordiffuse>94FFFFFF</colordiffuse>
-					<visible>!Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>
+					<visible>[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)]|[Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)]</visible>
 				</control>
 				<control type="largeimage">
 					<posx>1</posx>
@@ -2934,7 +3341,7 @@
 					<fadetime>400</fadetime>
 					<aspectratio>scale</aspectratio>
 					<info>ListItem.Property(Fanart_Image)</info>
-					<visible>!Container.Content(episodes) + Skin.HasSetting(tvposterview)</visible>					
+					<visible>[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)]|[Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)]</visible>					
 					<include>Animation_VisibleChange200</include>
 				</control>
 			</control>	
@@ -3015,8 +3422,8 @@
 	<include name="MultiplexInfoPaneMusic">
 		<!-- FULLSCREEN MULTIPLEX MUSIC WINDOW & TEXT -->
 		<control type="group">
-			<visible>[[Container.Content(artists) + Skin.HasSetting(FullscreenArtistsMultiplex)] | [Container.Content(albums) + Skin.HasSetting(FullscreenAlbumsMultiplex)] | [Container.Content(songs) + Skin.HasSetting(FullscreenSongsMultiplex)]] + Control.IsVisible(553) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(60) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)]]</visible>
-			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexmusicinfoon)">WindowOpen</animation>			
+			<visible>[[Container.Content(Artists) + Skin.HasSetting(FullscreenArtistsMultiplex) + !Skin.HasSetting(MusicArtistsInfoPopupoff)] | [Container.Content(Albums) + Skin.HasSetting(FullscreenAlbumsMultiplex) + !Skin.HasSetting(MusicAlbumsInfoPopupoff)]|[Container.Content(Songs) + Skin.HasSetting(FullscreenSongsMultiplex) + !Skin.HasSetting(MusicSongsInfoPopupoff)]] + Control.IsVisible(553) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(60) | [[Container.Content(Artists) + Skin.HasSetting(FullscreenArtistsMultiplex) + Skin.HasSetting(MusicArtistsInfoPopupon)] | [Container.Content(Albums) + Skin.HasSetting(FullscreenAlbumsMultiplex) + Skin.HasSetting(MusicAlbumsInfoPopupon)]|[Container.Content(Songs) + Skin.HasSetting(FullscreenSongsMultiplex) + Skin.HasSetting(MusicSongsInfoPopupon)]] | [[ControlGroup(7000).HasFocus()|ControlGroup(7011).HasFocus()|ControlGroup(7012).HasFocus()|ControlGroup(7013).HasFocus()|ControlGroup(7014).HasFocus()] + [[Container.Content(Artists) + Skin.HasSetting(FullscreenArtistsMultiplex) + Skin.HasSetting(MusicArtistsInfoPopuptrigger)] | [Container.Content(Albums) + Skin.HasSetting(FullscreenAlbumsMultiplex) + Skin.HasSetting(MusicAlbumsInfoPopuptrigger)]|[Container.Content(Songs) + Skin.HasSetting(FullscreenSongssMultiplex) + Skin.HasSetting(MusicSongsInfoPopuptrigger)]]]]</visible>
+			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(MusicInfoPopupon)">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>
 			<control type="image">
@@ -3262,7 +3669,7 @@
 					<font>Font_MultiplexPlot</font>
 					<label fallback="31424">$INFO[ListItem.Property(Description)]</label>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 				</control>
 			</control>
 <!-- End Artist Info -->
@@ -3440,7 +3847,7 @@
 					<font>Font_MultiplexPlot</font>
 					<label fallback="31424">$INFO[ListItem.Property(Description)]</label>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 					<visible>Container.Content(albums) | substring(container.folderpath,musicdb://5/1/,Left) | substring(container.folderpath,musicdb://5/2/,Left) | substring(container.folderpath,musicdb://6/,Right) | substring(container.folderpath,musicdb://7/,Right) | substring(container.folderpath,musicdb://8/,Right)</visible>
 				</control>
 			</control>
@@ -3511,8 +3918,8 @@
 			<posy>65</posy>
 			<width>1280</width>
 			<height>381</height>
-			<visible>[[![Container.Content(albums) | Container.Content(artists) | Container.Content(songs)] + !Skin.HasSetting(FullscreenMusicCommonMultiplex)] | [Container.Content(artists) + !Skin.HasSetting(FullscreenArtistsMultiplex)] | [Container.Content(albums) + !Skin.HasSetting(FullscreenAlbumsMultiplex)] | [Container.Content(songs) + !Skin.HasSetting(FullscreenSongsMultiplex)]] + Control.IsVisible(553) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(60) | Skin.HasSetting(multiplexmusicinfoon) | [ControlGroup(7000).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7012).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7011).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)] | [ControlGroup(7013).HasFocus() + Skin.HasSetting(multiplexmusicinfotrigger)]]</visible>
-			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="!Skin.HasSetting(multiplexmusicinfoon)">WindowOpen</animation>			
+			<visible>[[Container.Content(Artists) + !Skin.HasSetting(FullscreenArtistsMultiplex) + !Skin.HasSetting(MusicArtistsInfoPopupoff)] | [Container.Content(Albums) + !Skin.HasSetting(FullscreenAlbumsMultiplex) + !Skin.HasSetting(MusicAlbumsInfoPopupoff)]|[Container.Content(Songs) + !Skin.HasSetting(FullscreenSongsMultiplex) + !Skin.HasSetting(MusicSongsInfoPopupoff)]] + Control.IsVisible(553) + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(60) | [[Container.Content(Artists) + !Skin.HasSetting(FullscreenArtistsMultiplex) + Skin.HasSetting(MusicArtistsInfoPopupon)] | [Container.Content(Albums) + !Skin.HasSetting(FullscreenAlbumsMultiplex) + Skin.HasSetting(MusicAlbumsInfoPopupon)]|[Container.Content(Songs) + !Skin.HasSetting(FullscreenSongsMultiplex) + Skin.HasSetting(MusicSongsInfoPopupon)]] | [[ControlGroup(7000).HasFocus()|ControlGroup(7011).HasFocus()|ControlGroup(7012).HasFocus()|ControlGroup(7013).HasFocus()|ControlGroup(7014).HasFocus()] + [[Container.Content(Artists) + !Skin.HasSetting(FullscreenArtistsMultiplex) + Skin.HasSetting(MusicArtistsInfoPopuptrigger)] | [Container.Content(Albums) + !Skin.HasSetting(FullscreenAlbumsMultiplex) + Skin.HasSetting(MusicAlbumsInfoPopuptrigger)]|[Container.Content(Songs) + !Skin.HasSetting(FullscreenSongssMultiplex) + Skin.HasSetting(MusicSongsInfoPopuptrigger)]]]]</visible>
+			<animation effect="slide"  start="0,590" end="0,0" time="500" delay="1500" condition="[Container.Content(Artists) + !Skin.HasSetting(MusicArtistsInfoPopupon)] | [Container.Content(Albums) + !Skin.HasSetting(MusicAlbumsInfoPopupon)]|[Container.Content(Songs) + !Skin.HasSetting(MusicSongsInfoPopupon)]">WindowOpen</animation>			
 			<animation effect="slide"  start="0,590" end="0,0">WindowClose</animation>
 			<animation effect="slide"  start="0,590" end="0,0" time="500">VisibleChange</animation>		
 			<control type="image">
@@ -3716,7 +4123,7 @@
 					<font>Font_MultiplexPlot</font>
 					<label fallback="31424">$INFO[ListItem.Property(Description)]</label>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 				</control>
 			</control>
 <!-- End Artist Info -->
@@ -3844,7 +4251,7 @@
 					<font>Font_MultiplexPlot</font>
 					<label fallback="31424">$INFO[ListItem.Property(Description)]</label>
 					<textcolor>d0FFFFFF</textcolor>
-					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+					<autoscroll delay="15000" time="3000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
 				</control>
 
 

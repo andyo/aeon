@@ -93,6 +93,7 @@
 		</control>
 	<!-- Windowopen end-->
 		<include>Furniture_HomeNowPlaying</include>
+
 		<include condition="!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)">Widget_RecentAdded</include>
 		<include condition="Skin.HasSetting(extra_widget_on)">Widget_Extras</include>
 		<include condition="Skin.HasSetting(Pictures_widget_on)">Widget_Picture</include>
@@ -938,13 +939,6 @@
 							<visible>System.HasMediadvd</visible>
 							<visible>!Skin.HasSetting(mediaplay)</visible>
 						</item>
-						<item id="20">
-							<description>Refresh</description>
-							<include>BackgroundVarsSettings</include>				
-							<label>31607</label>
-							<onclick>XBMC.ReloadSkin</onclick>
-							<visible>Skin.HasSetting(debug)</visible>
-						</item>
 						<item id="23">
 							<description>Sign out</description>
 							<include>BackgroundVarsSignOut</include>					
@@ -963,6 +957,17 @@
 					</content>
 				</control>
 			</control>
+		</control>
+	<!-- DEBUG INFO -->
+		<control type="label">
+			<posx>500</posx>
+			<posy>50</posy>
+			<width>900</width>
+			<height>13</height>
+			<font>Font_MultiplexInfoLabel</font>
+			<textcolor>FFFFFFFF</textcolor>		
+			<label>** $INFO[ListItem.Path][CR]$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</label>
+			<visible>Skin.HasSetting(debug)</visible>
 		</control>
 		<!--<include>Background_ContextBlack</include>-->
 		<include>Furniture_Debug</include>
