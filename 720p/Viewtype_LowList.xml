@@ -199,8 +199,8 @@
 			<visible>Control.IsVisible(550)</visible>
 			<control type="button" id="116">
 				<visible>[![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + Skin.HasSetting(CommonInfoPopuptrigger)] | [Container.Content(movies) + Skin.HasSetting(MovieInfoPopuptrigger) + [!Skin.HasSetting(movietrailers) | [Skin.HasSetting(movietrailers) + IsEmpty(ListItem.Trailer)]]] | [!Skin.HasSetting(tvpreview) + Container.Content(episodes) + Skin.HasSetting(TVEpisodesInfoPopuptrigger)] | [Container.Content(tvshows) + Skin.HasSetting(TVShowsInfoPopuptrigger)] | [Container.Content(seasons) + Skin.HasSetting(TVSeasonsInfoPopuptrigger)] | [Container.Content(Artists) + Skin.HasSetting(MusicArtistsInfoPopuptrigger)] | [Container.Content(Albums) + Skin.HasSetting(MusicAlbumsInfoPopuptrigger)]|[Container.Content(Songs) + Skin.HasSetting(MusicSongsInfoPopuptrigger)]</visible>
-				<posx>0</posx>
-				<posy>0</posy>
+				<posx>640</posx>
+				<posy>400</posy>
 				<width>0</width>
 				<height>0</height>
 				<texturefocus>-</texturefocus>
