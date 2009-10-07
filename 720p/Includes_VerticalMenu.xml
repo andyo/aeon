@@ -318,12 +318,12 @@
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_thumb_window.png</texture>
-						<visible>Container.Content(episodes) + Skin.HasSetting(multiplextvbigthumb) + [Control.IsVisible(551)|Control.IsVisible(552)] +  + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						<visible>Container.Content(episodes) + Skin.HasSetting(multiplextvbigthumb) + [Control.IsVisible(551)|Control.IsVisible(552)] + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 					</control>
 					<control type="image">
 						<include>VerticalMenu_ViewChangeImage</include>
 						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
-						<visible>Container.Content(episodes) + !Skin.HasSetting(multiplextvbigthumb) + [Control.IsVisible(551)|Control.IsVisible(552)] +  + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
+						<visible>Container.Content(episodes) + !Skin.HasSetting(multiplextvbigthumb) + [Control.IsVisible(551)|Control.IsVisible(552)] + !Skin.HasSetting(FullscreenTVEpisodesMultiplex)</visible>
 					</control>
 
 					<control type="image">
@@ -1165,7 +1165,7 @@
 				<label>$LOCALIZE[31047]: $LOCALIZE[31960]</label>
 				<onclick>SetFocus(7012)</onclick>
 				<onright>SetFocus(7012)</onright>
-				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + ![Skin.HasSetting(moviebigthumb) + Skin.HasSetting(moviefanart) + Skin.HasSetting(movieplot)]</visible>
+				<visible>Window.IsActive(25) + Container.Content(movies) + Control.IsVisible(551) + ![Skin.HasSetting(moviebigthumb) | Skin.HasSetting(moviefanart) | Skin.HasSetting(movieplot)]</visible>
 			</control>
 			<control type="button" id="30252">
 				<include>VerticalMenu_Button2</include>				
