@@ -24,7 +24,7 @@
 		<scrollout>true</scrollout>
 		<pauseatend>3000</pauseatend>
 		<scroll>true</scroll>
-		<animation effect="slide" end="0,-10" time="0" condition="!IsEmpty(ListItem.Genres) | !IsEmpty(ListItem.Artist) | [!IsEmpty(ListItem.Genre) + Container.Content(movies)]">Conditional</animation>
+		<animation effect="slide" end="0,-10" time="0" condition="[!IsEmpty(ListItem.Genres) | !IsEmpty(ListItem.Artist) | [!IsEmpty(ListItem.Genre) + Container.Content(movies)]] + !substring(container.folderpath,shout:,Left)">Conditional</animation>
 		<animation effect="slide" end="45," time="0" condition="Container.Content(songs)|Container.Content(episodes)|substring(container.folderpath,shout:,Left)|[substring(container.folderpath,special://profile/playlists/music/,Left)+!substring(ListItem.FolderName,shout:,Left)] | substring(container.folderpath,playlistmusic://,Left)|[Container(550).HasFiles + Window.IsActive(501)+ !Container(550).HasFolders]">Conditional</animation>
 	</include>
 	
@@ -37,7 +37,7 @@
 		<height>30</height>
 		<font>Font_ListSmall</font>
 		<aligny>center</aligny>
-		<animation effect="slide" end="45,0" time="0" condition="Container.Content(episodes)|Container.Content(songs) | [substring(container.folderpath,special://profile/playlists/music/,Left)+!substring(ListItem.FolderName,shout:,Left)] | substring(container.folderpath,playlistmusic://,Left)|[Container(550).HasFiles + Window.IsActive(501)+ !Container(550).HasFolders]">Conditional</animation>
+		<animation effect="slide" end="45,0" time="0" condition="Container.Content(episodes)|Container.Content(songs) |substring(container.folderpath,shout:,Left) | [substring(container.folderpath,special://profile/playlists/music/,Left)+!substring(ListItem.FolderName,shout:,Left)] | substring(container.folderpath,playlistmusic://,Left)|[Container(550).HasFiles + Window.IsActive(501)+ !Container(550).HasFolders]">Conditional</animation>
 	</include>
 	
 	<include name="LowListLabel_MainMusic">
@@ -364,12 +364,6 @@
 						<visible>Container.Content(movies) | Container.Content(albums)</visible>
 					</control>
 					<control type="label">
-						<include>LowListLabel_DetailSmall</include>
-						<include>detailcolornofocus</include>
-						<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-						<visible>Container.Content(tvshows)|substring(container.folderpath,shout:,Left)</visible>
-					</control>
-					<control type="label">
 						<include>LowListLabel_DetailFull</include>
 						<include>detailcolornofocus</include>
 						<label>[UPPERCASE]$INFO[ListItem.Duration][/UPPERCASE]</label>
@@ -392,19 +386,13 @@
 						<include>LowListLabel_DetailTV</include>
 						<include>detailcolornofocus</include>
 						<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-						<visible>Container.Content(tvshows)</visible>
+						<visible>Container.Content(tvshows)|substring(container.folderpath,shout:,Left)</visible>
 					</control>
 					<control type="label">
 						<include>LowListLabel_Track</include>
 						<include>listcolornofocus</include>
 						<info>ListItem.Artist</info>
 						<visible>substring(container.folderpath,shout:,Left)</visible>
-					</control>
-					<control type="label">
-						<include>LowListLabel_MainSmall</include>
-						<include>listcolornofocus</include>
-						<info>ListItem.Label</info>
-						<visible>substring(container.folderpath,SHOUT:,Left)</visible>
 					</control>
 
 					<control type="image">
@@ -415,8 +403,7 @@
 						<height>13</height>
 						<info>ListItem.StarRating</info>
 						<colordiffuse>dcbdbdbd</colordiffuse>
-						<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
-						<animation effect="slide" end="45,20" time="0" condition="substring(container.folderpath,shout:,Left)">Conditional</animation>
+						<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | Container.Content(tvshows)|substring(container.folderpath,shout:,Left)]</visible>
 					</control>
 					<control type="image">
 						<posx>590</posx>
